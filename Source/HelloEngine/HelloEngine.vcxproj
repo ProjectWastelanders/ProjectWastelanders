@@ -339,6 +339,7 @@
     <ClCompile Include="ComponentUISlider.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Emitter.cpp" />
+    <ClCompile Include="FfmpegVideoPlayer.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -418,6 +419,8 @@
     <ClCompile Include="TransformComponent.cpp" />
     <ClCompile Include="Uniform.cpp" />
     <ClCompile Include="UUID.cpp" />
+    <ClCompile Include="VideoPlayerComponent.cpp" />
+    <ClCompile Include="VideoPlayerManager.cpp" />
     <ClCompile Include="XMLNode.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -550,6 +553,7 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="CycleArray.hpp" />
     <ClInclude Include="Emitter.h" />
+    <ClInclude Include="FfmpegVideoPlayer.h" />
     <ClInclude Include="FileTree.hpp" />
     <ClInclude Include="File_Model.h" />
     <ClInclude Include="FontManager.h" />
@@ -627,6 +631,8 @@
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Uniform.h" />
     <ClInclude Include="UUID.h" />
+    <ClInclude Include="VideoPlayerComponent.h" />
+    <ClInclude Include="VideoPlayerManager.h" />
     <ClInclude Include="XMLNode.h" />
   </ItemGroup>
   <ItemGroup>

@@ -17,10 +17,7 @@ void VideoPlayerManager::Update()
 {
     for (auto& video : videoPlayers)
     {
-        if (video.second.Update())
-        {
-            videoComponents[video.first].
-        }
+        video.second.Update();
     }
 }
 

@@ -1,7 +1,9 @@
 #include "Headers.h"
 #include "VideoPlayerManager.h"
+#include "VideoPlayerComponent.h"
 
 std::map<uint, FfmpegVideoPlayer> VideoPlayerManager::videoPlayers;
+std::map<uint, VideoPlayerComponent*> VideoPlayerManager::videoComponents;
 
 VideoPlayerManager::VideoPlayerManager()
 {
@@ -13,6 +15,13 @@ VideoPlayerManager::~VideoPlayerManager()
 
 void VideoPlayerManager::Update()
 {
+    for (auto& video : videoPlayers)
+    {
+        if (video.second.Update())
+        {
+            videoComponents[video.first].
+        }
+    }
 }
 
 uint VideoPlayerManager::AddVideoPlayer(std::string& path)

@@ -2,13 +2,20 @@
 #include "VideoPlayerComponent.h"
 #include "GameObject.h"
 #include "VideoPlayerManager.h"
+#include "TextureComponent.h"
 
-VideoPlayerComponent::VideoPlayerComponent(GameObject* go) : Component(go)
+VideoPlayerComponent::VideoPlayerComponent(GameObject* go) : ComponentUI(go)
 {
 }
 
 VideoPlayerComponent::~VideoPlayerComponent()
 {
+}
+
+void VideoPlayerComponent::CreateVideo(std::string& path)
+{
+	UID = VideoPlayerManager::AddVideoPlayer(path);
+	this->_material->ChangeTexture(GetVideoPlayer()->GetOpenGLTexture());
 }
 
 void VideoPlayerComponent::OnEditor()

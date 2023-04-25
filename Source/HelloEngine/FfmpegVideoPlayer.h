@@ -11,13 +11,19 @@ class FfmpegVideoPlayer
 {
 public:
 	FfmpegVideoPlayer(const char* filename);
+	~FfmpegVideoPlayer();
 	void CleanUp();
-	AVFrame* GetFrame();
-	double GetFPS();
-private:
-	bool LoadVideo(const char* filename);
+	// Returns true if the frame has changed.
+	void Update();
+
+	uint GetOpenGLTexture() { return glTexture; }
 
 private:
+	bool LoadVideo(const char* filename);
+	double GetFPS();
+	AVFrame* GetFrame();
+private:
+	// Context should be unique?
 	AVFormatContext* avFormatCtx = nullptr;
 	int videoStreamIndex = -1;
 	AVCodecParameters* avCodecParams = nullptr;
@@ -25,5 +31,11 @@ private:
 	AVCodecContext* avCodecCtx = nullptr;
 	AVFrame* avFrame = nullptr;
 	AVPacket* avPacket = nullptr;
+	double frameRate = 0;
+	double currentTime = 0;
+	int width = 0;
+	int height = 0;
+	uint glTexture = 0;
+	uint8_t* frameData = nullptr;
 };
 

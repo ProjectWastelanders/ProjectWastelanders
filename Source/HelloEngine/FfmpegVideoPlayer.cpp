@@ -6,6 +6,11 @@ FfmpegVideoPlayer::FfmpegVideoPlayer(const char* filename)
 	LoadVideo(filename);
 }
 
+FfmpegVideoPlayer::~FfmpegVideoPlayer()
+{
+	CleanUp();
+}
+
 bool FfmpegVideoPlayer::LoadVideo(const char* filename)
 {
 	//First we need to create a context to store the video data int
@@ -78,6 +83,26 @@ bool FfmpegVideoPlayer::LoadVideo(const char* filename)
 		return 0;
 	}
 	avPacket = av_packet_alloc();
+	frameRate = 1.0 / GetFPS();
+
+	// Get first frame and get init variables.
+	AVFrame* firstFrame = GetFrame();
+	width = firstFrame->width;
+	height = firstFrame->height;
+	frameData = new uint8_t[width * height * 4]; // 4 = RGBA
+
+	av_image_copy_plane(frameData, 0, firstFrame->data[0], firstFrame->linesize[0], width * 4, height);
+
+	// Create texture
+	glGenTextures(1, &glTexture);
+	glBindTexture(GL_TEXTURE_2D, glTexture);
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, frameData);
 	return true;
 }
 
@@ -131,4 +156,36 @@ void FfmpegVideoPlayer::CleanUp()
 	avformat_close_input(&avFormatCtx);
 	avformat_free_context(avFormatCtx);
 	avcodec_free_context(&avCodecCtx);
+
+	glDeleteTextures(1, &glTexture);
+	delete[] frameData;
+}
+
+void FfmpegVideoPlayer::Update()
+{
+	currentTime += EngineTime::EngineTimeDeltaTime();
+
+	if (currentTime >= frameRate)
+	{
+		currentTime = 0;
+		AVFrame* frame = GetFrame();
+
+		if (frame == nullptr)
+		{
+			// Video ended
+			return;
+		}
+		// Update texture
+		
+		av_image_copy_plane(frameData, 0, frame->data[0], frame->linesize[0], width * 4, height);
+
+		// Create texture
+		glBindTexture(GL_TEXTURE_2D, glTexture);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, frameData);
+
+		//2D case
+
+		//3D case
+		// Obtain videoPlayerComponent and change its texture.	
+	}
 }

@@ -3,6 +3,8 @@
 #include <map>
 #include "FfmpegVideoPlayer.h"
 
+class VideoPlayerComponent;
+
 class VideoPlayerManager
 {
 public:
@@ -19,5 +21,7 @@ public:
 private:
 
 	static std::map<uint, FfmpegVideoPlayer> videoPlayers;
+	static std::map<uint, VideoPlayerComponent*> videoComponents;
+
 };
 

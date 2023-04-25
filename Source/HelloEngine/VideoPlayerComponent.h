@@ -1,13 +1,15 @@
 #pragma once
-#include "Component.h"
+#include "ComponentUI.h"
 #include "FfmpegVideoPlayer.h"
 
-class VideoPlayerComponent : public Component
+class VideoPlayerComponent : public ComponentUI
 {
 public:
 
 	VideoPlayerComponent(GameObject* go);
 	~VideoPlayerComponent();
+
+	void CreateVideo(std::string& path);
 
 	void OnEditor() override;
 

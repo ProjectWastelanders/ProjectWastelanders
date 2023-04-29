@@ -7,12 +7,14 @@
 	
 	uniform mat4 view;
 	uniform mat4 projection;
+	uniform mat4 lightSpaceMatrix;
 	
 	uniform sampler2D normal_texture;
 	
 	out vec2 TextureCoords;
 	out vec3 Normal;
 	out vec3 FragPos;
+	out vec4 FragPosLightSpace;
 	
 	void main()
 	{
@@ -22,6 +24,7 @@
 		FragPos = vec3(model * aPos4);
 		TextureCoords = texCoords;
 		Normal = normalize(mat3(transpose(inverse(model))) * normals);
+		FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0f);
 		
 		gl_Position = projection * view * model * aPos4;
 	}
@@ -41,6 +44,7 @@
 	{
 		Light Base;
 		vec3 Direction;
+		mat4 lightSpaceMatrix;
 	};
 	
 	struct PointLight
@@ -77,6 +81,7 @@
 	uniform int Actual_Spot;
 	
 	uniform sampler2D albedo_texture;
+	uniform sampler2D shadowMap;
 	
 	uniform vec3 ViewPoint;
 	
@@ -86,6 +91,7 @@
 	in vec2 TextureCoords;
 	in vec3 FragPos;
 	in vec3 Normal;
+	in vec4 FragPosLightSpace;
 	
 	out vec4 FragColor;
 	
@@ -123,6 +129,24 @@
 		return vec3(rotation * vec4(direction, 0.0f));
 	}
 	
+	//SHADOW METHODS
+	
+	float CalculateShadow(vec4 fragPosLightSpace)
+	{
+		//Perspective divide
+		vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+		//transform to [0, 1] range
+		projCoords = projCoords * 0.5 + 0.5;
+		// get closest depth value from light's perspective (using [0, 1 range fragPosLight as coords)
+		float closestDepth = texture(shadowMap, projCoords.xy).r;
+		// get depth of current fragment from light's perspective
+		float currentDepth = projCoords.z;
+		// check wheatjer cirremt frag pos os in shadow
+		float shadow = currentDepth > closestDepth ? 1.0 : 0.0;
+		
+		return shadow;
+	}
+	
 	//LIGHT METHODS
 	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
 	{
@@ -137,6 +161,8 @@
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0);
 	
+		//float shadow = CalculateShadow(FragPosLightSpace);
+		//vec4 result = (Ambient + (1.0 - shadow) * Diffuse);
 		vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
 		return result;
@@ -227,6 +253,8 @@
 		}
 	}
 #endif
+
+
 
 
 

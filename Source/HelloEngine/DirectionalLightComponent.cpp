@@ -31,6 +31,8 @@ void DirectionalLightComponent::UpdateToLightMap()
 {
 	UpdateData(this->data);
 	Lighting::SetDirectionalLight(this->data);
+
+	CalculateLightSpaceMatrix();
 }
 
 void DirectionalLightComponent::SerializationUnique(json& j)
@@ -61,3 +63,17 @@ void DirectionalLightComponent::MarkAsAlive()
 	UpdateToLightMap();
 }
 #endif
+
+void DirectionalLightComponent::CalculateLightSpaceMatrix()
+{
+	lightFrustum.type = math::FrustumType::OrthographicFrustum;
+	lightFrustum.nearPlaneDistance = 0.1f;
+	lightFrustum.farPlaneDistance = 1000.0f;
+
+	//Look At
+	lightFrustum.front = (float3(0.0f, 0.0f, 0.0f) - lightFrustum.pos).Normalized();
+	float3 X = float3(0, 1, 0).Cross(lightFrustum.front).Normalized();
+	lightFrustum.up = lightFrustum.front.Cross(X);
+
+	data.lightSpaceMatrix = lightFrustum.ProjectionMatrix().Transposed();
+}

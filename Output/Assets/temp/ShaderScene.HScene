@@ -1,0 +1,165 @@
+[
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "Name": "Root",
+        "ParentUID": 0,
+        "PrefabUID": 0,
+        "Tag": "None",
+        "UID": 3697978039
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    -1.3219194412231445,
+                    0.0
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    25.0,
+                    24.99974250793457,
+                    24.99974250793457
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 1314098061,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": true,
+        "Name": "Plane",
+        "ParentUID": 3697978039,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 3704429091
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -121.53752899169922,
+                    -0.8208613991737366,
+                    -145.79319763183594
+                ],
+                "Scale": [
+                    1.0000324249267578,
+                    1.0000503063201904,
+                    1.000067949295044
+                ],
+                "Type": 1
+            },
+            {
+                "Ambient Intensity": 1.0,
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Diffuse Intensity": 1.0,
+                "Enabled": true,
+                "Type": 20
+            }
+        ],
+        "FirstOnPrefab": true,
+        "Name": "Directional Light",
+        "ParentUID": 3697978039,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1168003571
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 10,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 4158210607,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": true,
+        "Name": "Cube",
+        "ParentUID": 3697978039,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 2021910291
+    }
+]

@@ -21,6 +21,7 @@ Mesh::Mesh()
 {
 	modelMatrix.SetIdentity();
 	stencilShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/stencil.shader", 109, "Stencil");
+	depthShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMap.shader", 111, "Depth Map (Normal)");
 }
 
 Mesh::~Mesh()
@@ -39,6 +40,11 @@ Mesh::~Mesh()
 	{
 		stencilShader->Dereference();
 		stencilShader = nullptr;
+	}
+	if (depthShader)
+	{
+		depthShader->Dereference();
+		depthShader = nullptr;
 	}
 	if (drawPerMesh2D)
 	{

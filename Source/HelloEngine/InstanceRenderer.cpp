@@ -5,9 +5,12 @@
 #include "MeshRenderComponent.h"
 
 #include "RenderManager.h"
+#include "Lighting.h"
 
 InstanceRenderer::InstanceRenderer()
 {
+    instancedDepthShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMapInstanced.shader", 112, "Depth Map (Instanced)");
+
     instancedShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced.shader", 102, "Instanced");
     perMeshShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/basic.shader", 103, "Basic");
     mesh2DShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced2D.shader", 104, "Instanced 2D");
@@ -15,6 +18,9 @@ InstanceRenderer::InstanceRenderer()
 
 InstanceRenderer::~InstanceRenderer()
 {
+    instancedDepthShader->Dereference();
+    instancedDepthShader = nullptr;
+
     instancedShader->Dereference();
     instancedShader = nullptr;
     perMeshShader->Dereference();
@@ -102,9 +108,18 @@ void InstanceRenderer::DrawMaterial()
     if (!modelMatrices.empty())
     {
         //Update all the uniforms
-        resMat->material.UpdateInstanced(Application::Instance()->camera->currentDrawingCamera->GetViewMatrix(),
-            Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
-
+        if (!depthDraw)
+        {
+            resMat->material.UpdateInstanced(Application::Instance()->camera->currentDrawingCamera->GetViewMatrix(),
+                Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+        }
+        else
+        {
+            instancedDepthShader->shader.Bind();
+            instancedDepthShader->shader.SetMatFloat4v("dirLightSpaceMatrix", 
+                &Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+        }
+        
         // Draw using Dynamic Geometrys
         glBindVertexArray(VAO);
 
@@ -118,6 +133,8 @@ void InstanceRenderer::DrawMaterial()
         glDrawElementsInstanced(GL_TRIANGLES, totalIndices->size(), GL_UNSIGNED_INT, 0, modelMatrices.size());
         glBindVertexArray(0);
     }
+
+    depthDraw = !depthDraw;
 
     resMat->material.UnbindAllTextures();
     // Reset model matrices.

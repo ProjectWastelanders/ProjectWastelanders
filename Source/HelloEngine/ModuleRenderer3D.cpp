@@ -10,10 +10,11 @@
 
 #include "Emitter.h"
 #include "ParticleSystemComponent.h"
+#include "Lighting.h"
 
 ModuleRenderer3D::ModuleRenderer3D(bool start_enabled) : Module(start_enabled)
 {
-	
+
 }
 
 // Destructor
@@ -112,14 +113,30 @@ void ModuleRenderer3D::DrawGame()
 UpdateStatus ModuleRenderer3D::PostUpdate()
 {
 #ifdef STANDALONE
+
+	//SCENE RENDERING
 	if (_cameras->sceneCamera->active)
 	{
+
+		Lighting::GetLightMap().shadowMap = _cameras->sceneCamera->frameBuffer.GetDepthTexture();
+		//Depth map (Shadow)
+		glViewport(0, 0, 1024, 1024);
+		_cameras->sceneCamera->frameBuffer.BindShadowBuffer();
+		glClear(GL_DEPTH_BUFFER_BIT);
+		_cameras->currentDrawingCamera = _cameras->sceneCamera;
+			//RENDER SCENE
+			renderManager.Draw();
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+		//Normal Rendering of scene
+		glViewport(0, 0, ModuleWindow::width, ModuleWindow::height);
 		_cameras->sceneCamera->frameBuffer.Bind();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		//ConfigureShadowAndMatrices();
+		_cameras->sceneCamera->frameBuffer.BindShadowTexture();
 
-		_cameras->currentDrawingCamera = _cameras->sceneCamera;
-
+		//RENDER SCENE
 		ModuleLayers::S_DrawLayers();
 		particleManager.Draw();
 		renderManager.Draw();
@@ -127,6 +144,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		_cameras->DrawCameraFrustums();
 	}
 
+	//CANVAS RENDERING
 	if (_cameras->UICamera->active)
 	{
 		_cameras->UICamera->frameBuffer.Bind();
@@ -140,6 +158,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 
 	}
 
+	//ImWin GAME RENDERING
 	if (_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
 	{
 		_cameras->activeGameCamera->frameBuffer.Bind();

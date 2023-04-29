@@ -17,6 +17,16 @@ void FrameBuffer::Bind()
 	glBindFramebuffer(GL_FRAMEBUFFER, FBO);
 }
 
+void FrameBuffer::BindShadowBuffer()
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+}
+
+void FrameBuffer::BindShadowTexture()
+{
+	glBindTexture(GL_TEXTURE_2D, depthMap);
+}
+
 void FrameBuffer::SetDimensions(int width, int height)
 {
 	this->width = width;
@@ -57,5 +67,29 @@ void FrameBuffer::RegenerateBuffer()
 	glDeleteTextures(1, &textureColorbuffer);
 	glDeleteRenderbuffers(1, &RBO);
 
+	glDeleteFramebuffers(1, &depthMapFBO);
+	glDeleteTextures(1, &textureColorbuffer);
+
 	SetBufferInfo();
+	SetDepthMapInfo();
+}
+
+/*Depth map for shadow mapping*/
+void FrameBuffer::SetDepthMapInfo()
+{
+	glGenFramebuffers(1, &depthMapFBO);
+
+	glGenTextures(1, &depthMap);
+	glBindTexture(GL_TEXTURE_2D, depthMap);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
+	glDrawBuffer(GL_NONE);
+	glReadBuffer(GL_NONE);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }

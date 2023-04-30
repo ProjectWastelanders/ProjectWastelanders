@@ -149,6 +149,20 @@ void ModuleResourceManager::S_ImportFile(const std::string& filePath)
 		RELEASE(buffer);
 		break;
 	}
+	case ResourceType::VIDEO:
+	{
+		// Temporal import method: Copy and paste file into Resources.
+		uint UUID = HelloUUID::GenerateGUID(filePath);
+
+		char* buffer = nullptr;
+		uint size = ModuleFiles::S_Load(filePath, &buffer);
+		std::string resourcePath = "Resources/Videos/" + std::to_string(UUID) + ".HVideo";
+
+		ModuleFiles::S_Save(resourcePath, &buffer[0], size, false);
+		ModuleFiles::S_CreateMetaData(filePath, resourcePath, UUID);
+		RELEASE(buffer);
+	}
+	break;
 	default:
 		break;
 	}
@@ -291,6 +305,12 @@ void ModuleResourceManager::S_LoadFileIntoResource(Resource* resource)
 	{
 		ResourceMaterial* materialRes = (ResourceMaterial*)resource;
 		materialRes->material.LoadJSON(materialRes->assetsPath);
+	}
+	break;
+	case ResourceType::VIDEO:
+	{
+		ResourceVideo* videoRes = (ResourceVideo*)resource;
+		videoRes->video = new FfmpegVideoPlayer(videoRes->resourcePath.c_str());
 	}
 	break;
 	}

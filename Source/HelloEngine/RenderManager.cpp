@@ -16,6 +16,7 @@
 #include "Math/float4x4.h"
 #include "LayerEditor.h"
 #include "PhysicsComponent.h"
+#include "VideoPlayerComponent.h"
 
 #include "ModuleRenderer3D.h"
 
@@ -516,6 +517,13 @@ void RenderManager::CreateUI(GameObject* parent, UIType type)
 			GameObject* image = new GameObject(parent, "Text", "UI");
 			image->AddComponent<TextRendererComponent>();
 			image->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::VIDEO	:
+		{
+			GameObject* video = new GameObject(parent, "Text", "UI");
+			video->AddComponent<VideoPlayerComponent>();
+			video->transform->SetScale({ 0.5f,0.5f,0.5f });
 			break;
 		}
 	}

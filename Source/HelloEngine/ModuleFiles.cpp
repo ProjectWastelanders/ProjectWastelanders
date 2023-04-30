@@ -643,6 +643,10 @@ ResourceType ModuleFiles::S_GetResourceType(const std::string& filename)
     if (fileExtension == "material")
         return ResourceType::MATERIAL;
 
+    if (fileExtension == "mp4" || fileExtension == "avi" || fileExtension == "mkv" || fileExtension == "wav")
+        return ResourceType::VIDEO;
+
+
     return ResourceType::UNDEFINED;
 }
 

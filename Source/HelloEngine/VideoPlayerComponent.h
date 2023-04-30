@@ -9,7 +9,7 @@ public:
 	VideoPlayerComponent(GameObject* go);
 	~VideoPlayerComponent();
 
-	void CreateVideo(std::string& path);
+	void CreateVideo(uint videoUID);
 
 	void OnEditor() override;
 
@@ -20,5 +20,6 @@ public:
 
 private:
 	uint UID = 0;
+	uint resourceUID = 0;
 };
 

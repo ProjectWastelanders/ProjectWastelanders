@@ -10,11 +10,25 @@ VideoPlayerComponent::VideoPlayerComponent(GameObject* go) : ComponentUI(go)
 
 VideoPlayerComponent::~VideoPlayerComponent()
 {
+	if (UID != 0)
+	{
+		VideoPlayerManager::RemoveVideoPlayer(UID);
+		if (ModuleResourceManager::S_IsResourceCreated(resourceUID))
+		{
+			ResourceVideo* videoRes = (ResourceVideo*)ModuleResourceManager::resources[resourceUID];
+			videoRes->Dereference();
+		}
+	}
+
 }
 
-void VideoPlayerComponent::CreateVideo(std::string& path)
+void VideoPlayerComponent::CreateVideo(uint videoUID)
 {
-	UID = VideoPlayerManager::AddVideoPlayer(path);
+	if (ModuleResourceManager::S_IsResourceCreated(videoUID))
+	{
+		resourceUID = videoUID;
+		UID = VideoPlayerManager::AddVideoPlayer(resourceUID);
+	}
 	this->_material->ChangeTexture(GetVideoPlayer()->GetOpenGLTexture());
 }
 
@@ -25,7 +39,22 @@ void VideoPlayerComponent::OnEditor()
 	{
 		if (UID == 0)
 		{
-			// DRAG VIDEO 
+			ImGui::TextColored(ImVec4(1, 0, 1, 1), "Drag a video here");
+			if (ImGui::BeginDragDropTarget())
+			{
+				if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Video"))
+				{
+					const uint* drop = (uint*)payload->Data;
+
+					if (ModuleResourceManager::S_IsResourceCreated(*drop))
+					{
+						resourceUID = *drop;
+						UID = VideoPlayerManager::AddVideoPlayer(resourceUID);
+					}
+
+				}
+				ImGui::EndDragDropTarget();
+			}
 		}
 		else
 		{

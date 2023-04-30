@@ -14,13 +14,13 @@ public:
 
 	static void Update();
 
-	static uint AddVideoPlayer(std::string& path);
+	static uint AddVideoPlayer(uint videoResourceUID);
 	static FfmpegVideoPlayer* GetVideoPlayer(uint UID);
 	static void RemoveVideoPlayer(uint UID);
 
 private:
 
-	static std::map<uint, FfmpegVideoPlayer> videoPlayers;
+	static std::map<uint, FfmpegVideoPlayer*> videoPlayers;
 	static std::map<uint, VideoPlayerComponent*> videoComponents;
 
 };

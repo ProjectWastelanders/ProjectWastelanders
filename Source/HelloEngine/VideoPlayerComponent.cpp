@@ -46,11 +46,7 @@ void VideoPlayerComponent::OnEditor()
 				{
 					const uint* drop = (uint*)payload->Data;
 
-					if (ModuleResourceManager::S_IsResourceCreated(*drop))
-					{
-						resourceUID = *drop;
-						UID = VideoPlayerManager::AddVideoPlayer(resourceUID);
-					}
+					CreateVideo(*drop);
 
 				}
 				ImGui::EndDragDropTarget();

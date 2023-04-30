@@ -53,6 +53,10 @@ bool Application::Init()
 	{
 		std::filesystem::create_directory("Resources/Shaders");
 	}
+	if (!std::filesystem::exists("Resources/Videos"))
+	{
+		std::filesystem::create_directory("Resources/Videos");
+	}
 
 	window = new ModuleWindow(true);
 	file = new ModuleFiles();

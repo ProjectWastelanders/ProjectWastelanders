@@ -884,6 +884,9 @@ void ModuleResourceManager::S_CreateResource(const MetaFile& metaFile)
 		materialRes->assetsPath = metaFile.assetsPath;
 	}
 	break;
+	case ResourceType::VIDEO:
+		resources[metaFile.UID] = new ResourceVideo();
+		break;
 	default:
 		Console::S_Log("Cannot create a resource of an undefined meta file!");
 		return;

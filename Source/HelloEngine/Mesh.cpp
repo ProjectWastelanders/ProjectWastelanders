@@ -12,6 +12,7 @@
 #include "AnimationComponent.h"
 
 #include "Uniform.h"
+#include "Lighting.h"
 
 #define _USE_MATH_DEFINES
 
@@ -190,6 +191,14 @@ void Mesh::DefaultDraw()
 
 void Mesh::UniformDraw(Material material)
 {
+	if (material.depthDraw)
+	{
+		depthShader->shader.Bind();
+		depthShader->shader.SetMatFloat4v("dirLightSpaceMatrix",
+			&Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+		depthShader->shader.SetMatFloat4v("model", &modelMatrix.v[0][0]);
+		return;
+	}
 	//Update the material uniforms
 	material.Update(Application::Instance()->camera->currentDrawingCamera->GetViewMatrix(),
 		Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix(),

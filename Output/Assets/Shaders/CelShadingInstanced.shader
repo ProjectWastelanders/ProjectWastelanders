@@ -123,7 +123,7 @@
 		rotation[3] = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 		
 		rotation = rotate(rotation, radians(euler.x), vec3(-1.0f, 0.0f, 0.0f));
-		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, -1.0f, 0.0f));
+		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, 1.0f, 0.0f));
 		rotation = rotate(rotation, radians(euler.z), vec3(0.0f, 0.0f, -1.0f));
 		
 		return vec3(rotation * vec4(direction, 0.0f));
@@ -133,22 +133,23 @@
 	
 	float CalculateShadow(vec4 fragPosLightSpace)
 	{
-		//Perspective divide
-		vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
-		//transform to [0, 1] range
-		projCoords = projCoords * 0.5 + 0.5;
-		// get closest depth value from light's perspective (using [0, 1 range fragPosLight as coords)
-		float closestDepth = texture(shadowMap, projCoords.xy).r;
-		// get depth of current fragment from light's perspective
-		float currentDepth = projCoords.z;
-		// check wheatjer cirremt frag pos os in shadow
-		float shadow = currentDepth > closestDepth ? 1.0 : 0.0;
-		
-		return shadow;
+		// perform perspective divide
+	    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+	    // transform to [0,1] range
+	    projCoords = (projCoords * 0.5 + 0.5);
+	    // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+	    float closestDepth = texture(shadowMap, projCoords.xy).r; 
+	    // get depth of current fragment from light's perspective
+	    float currentDepth = projCoords.z;
+	    // check whether current frag pos is in shadow
+	    float bias = 0.0002;
+	    float shadow = currentDepth - bias > closestDepth  ? 0.0 : 1.0;
+	
+	    return shadow;
 	}
 	
 	//LIGHT METHODS
-	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
+	vec4 CalculateLight(Light light, vec3 direction, vec3 normal, float shadowFactor)
 	{
 		//Ambient
 		vec4 Ambient = vec4(light.Color, 1.0f) * light.AmbientIntensity;
@@ -161,9 +162,8 @@
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0);
 	
-		//float shadow = CalculateShadow(FragPosLightSpace);
-		//vec4 result = (Ambient + (1.0 - shadow) * Diffuse);
-		vec4 result = (Ambient * Diffuse);
+		vec4 result = (Ambient + shadowFactor) * Diffuse;
+		//vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
 		return result;
 	}
@@ -173,7 +173,9 @@
 	{
 		vec3 dir = normalize(CalculateDirection(Light_Directional.Direction));
 		
-		return CalculateLight(Light_Directional.Base, dir, normal);
+		float shadow = CalculateShadow(FragPosLightSpace); 
+		
+		return CalculateLight(Light_Directional.Base, dir, normal, shadow);
 	}
 	
 	vec4 CalculatePointLight(PointLight light, vec3 normal)
@@ -185,7 +187,8 @@
 		
 		if (light.Distance > dist)
 		{
-			color = CalculateLight(light.Base, lightDir, normal);
+			float shadow = 1.0f;
+			color = CalculateLight(light.Base, lightDir, normal, shadow);
 		}
 		
 		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist) * (dist * dist);
@@ -207,7 +210,8 @@
 		
 			if (light.Distance > dist)
 			{
-				color = CalculateLight(light.Base, lightDir, normal);
+				float shadow = 1.0f;
+				color = CalculateLight(light.Base, lightDir, normal, shadow);
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -253,6 +257,17 @@
 		}
 	}
 #endif
+
+
+
+
+
+
+
+
+
+
+
 
 
 

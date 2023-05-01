@@ -12,6 +12,13 @@ DirectionalLightComponent::DirectionalLightComponent(GameObject* gameObject) : L
 	data = DirectionalLight();
 
 	Lighting::SetDirectionalLight(this->data);
+
+	lightFrustum.type = math::FrustumType::OrthographicFrustum;
+	lightFrustum.nearPlaneDistance = 0.0f;
+	lightFrustum.farPlaneDistance = 75.0f;
+	lightFrustum.orthographicHeight = 32;
+	lightFrustum.orthographicWidth = 32;
+
 }
 
 DirectionalLightComponent::~DirectionalLightComponent()
@@ -30,9 +37,10 @@ void DirectionalLightComponent::OnTransformCallback(float4x4 worldMatrix)
 void DirectionalLightComponent::UpdateToLightMap()
 {
 	UpdateData(this->data);
-	Lighting::SetDirectionalLight(this->data);
-
 	CalculateLightSpaceMatrix();
+
+	//Always last
+	Lighting::SetDirectionalLight(this->data);
 }
 
 void DirectionalLightComponent::SerializationUnique(json& j)
@@ -54,8 +62,12 @@ void DirectionalLightComponent::DeSerializationUnique(json& j)
 #ifdef STANDALONE
 void DirectionalLightComponent::OnEditorUnique()
 {
+	/*ImGui::DragFloat("Near plane Distance", &lightFrustum.nearPlaneDistance);
+	ImGui::DragFloat("Far plane Distance", &lightFrustum.farPlaneDistance);
+	ImGui::DragFloat("Orthographic Height", &lightFrustum.orthographicHeight);
+	ImGui::DragFloat("Orthographic Width", &lightFrustum.orthographicWidth);*/
+
 	UpdateToLightMap();
-	//ImGui::DragFloat3("Direction", &data.direction.At(0), 0.05f, -1.0f, 1.0f);
 }
 
 void DirectionalLightComponent::MarkAsAlive()
@@ -66,14 +78,16 @@ void DirectionalLightComponent::MarkAsAlive()
 
 void DirectionalLightComponent::CalculateLightSpaceMatrix()
 {
-	lightFrustum.type = math::FrustumType::OrthographicFrustum;
+	/*lightFrustum.type = math::FrustumType::OrthographicFrustum;
 	lightFrustum.nearPlaneDistance = 0.1f;
-	lightFrustum.farPlaneDistance = 1000.0f;
+	lightFrustum.farPlaneDistance = 75.0f;
+	lightFrustum.orthographicHeight = 35;
+	lightFrustum.orthographicWidth = 35;*/
 
 	//Look At
-	lightFrustum.front = (float3(0.0f, 0.0f, 0.0f) - lightFrustum.pos).Normalized();
+	lightFrustum.front = (lightFrustum.pos - data.direction).Normalized();
 	float3 X = float3(0, 1, 0).Cross(lightFrustum.front).Normalized();
 	lightFrustum.up = lightFrustum.front.Cross(X);
 
-	data.lightSpaceMatrix = lightFrustum.ProjectionMatrix().Transposed();
+	data.lightSpaceMatrix = lightFrustum.ViewProjMatrix().Transposed();
 }

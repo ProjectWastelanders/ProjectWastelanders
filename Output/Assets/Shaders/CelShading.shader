@@ -7,23 +7,14 @@
 	uniform mat4 view;
 	uniform mat4 projection;
 	uniform mat4 model;
+	uniform mat4 lightSpaceMatrix;
 	
 	uniform sampler2D normal_texture;
 	
 	out vec2 TextureCoords;
 	out vec3 Normal;
 	out vec3 FragPos;
-	
-	
-	mat4 ScaleNormalize(mat4 matrix)
-	{
-		matrix[0][0] = normalize(matrix[0][0]);
-		matrix[1][1] = normalize(matrix[1][1]);
-		matrix[2][2] = normalize(matrix[2][2]);
-		matrix[3][3] = normalize(matrix[3][3]);
-		
-		return matrix;
-	}
+	out vec4 FragPosLightSpace;
 	
 	void main()
 	{
@@ -32,8 +23,9 @@
 		
 		//OUT
 		FragPos = vec3(model * aPos4);
-		TextureCoords = textCoords;
 		Normal = normalize(mat3(transpose(inverse(model))) * normals);
+		FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0f);
+		TextureCoords = textCoords;
 		
 		gl_Position = projection * view * model * aPos4;
 	}
@@ -53,6 +45,7 @@
 	{
 		Light Base;
 		vec3 Direction;
+		mat4 lightSpaceMatrix;
 	};
 	
 	struct PointLight
@@ -89,6 +82,7 @@
 	uniform int Actual_Spot;
 	
 	uniform sampler2D albedo_texture;
+	uniform sampler2D shadowMap;
 	
 	uniform vec3 ViewPoint;
 	
@@ -98,6 +92,7 @@
 	in vec2 TextureCoords;
 	in vec3 FragPos;
 	in vec3 Normal;
+	in vec4 FragPosLightSpace;
 	
 	out vec4 FragColor;
 	
@@ -129,14 +124,33 @@
 		rotation[3] = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 		
 		rotation = rotate(rotation, radians(euler.x), vec3(-1.0f, 0.0f, 0.0f));
-		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, -1.0f, 0.0f));
+		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, 1.0f, 0.0f));
 		rotation = rotate(rotation, radians(euler.z), vec3(0.0f, 0.0f, -1.0f));
 		
 		return vec3(rotation * vec4(direction, 0.0f));
 	}
 	
+	//SHADOW METHODS
+	
+	float CalculateShadow(vec4 fragPosLightSpace)
+	{
+		// perform perspective divide
+	    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+	    // transform to [0,1] range
+	    projCoords = (projCoords * 0.5 + 0.5);
+	    // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+	    float closestDepth = texture(shadowMap, projCoords.xy).r; 
+	    // get depth of current fragment from light's perspective
+	    float currentDepth = projCoords.z;
+	    // check whether current frag pos is in shadow
+	    float bias = 0.0002;
+	    float shadow = currentDepth - bias > closestDepth  ? 0.15 : 1.0;
+	
+	    return shadow;
+	}
+	
 	//LIGHT METHODS
-	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
+	vec4 CalculateLight(Light light, vec3 direction, vec3 normal, float shadowFactor)
 	{
 		//Ambient
 		vec4 Ambient = vec4(light.Color, 1.0f) * light.AmbientIntensity;
@@ -148,10 +162,9 @@
 		vec4 Diffuse = vec4(light.Color, 1.0f) * light.DiffuseIntensity * diff;
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0);
-		
-		Diffuse.w = 1.0f;
 	
-		vec4 result = (Ambient * Diffuse);
+		vec4 result = (Ambient + shadowFactor) * Diffuse;
+		//vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
 		return result;
 	}
@@ -161,7 +174,9 @@
 	{
 		vec3 dir = normalize(CalculateDirection(Light_Directional.Direction));
 		
-		return CalculateLight(Light_Directional.Base, dir, normal);
+		float shadow = CalculateShadow(FragPosLightSpace); 
+		
+		return CalculateLight(Light_Directional.Base, dir, normal, shadow);
 	}
 	
 	vec4 CalculatePointLight(PointLight light, vec3 normal)
@@ -173,7 +188,8 @@
 		
 		if (light.Distance > dist)
 		{
-			color = CalculateLight(light.Base, lightDir, normal);
+			float shadow = 1.0f;
+			color = CalculateLight(light.Base, lightDir, normal, shadow);
 		}
 		
 		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist) * (dist * dist);
@@ -195,7 +211,8 @@
 		
 			if (light.Distance > dist)
 			{
-				color = CalculateLight(light.Base, lightDir, normal);
+				float shadow = 1.0f;
+				color = CalculateLight(light.Base, lightDir, normal, shadow);
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -209,7 +226,7 @@
 		return color;
 	}
 	
-	uniform vec4 ColourTest;
+	uniform vec3 ColourTest;
 	
 	void main()
 	{
@@ -233,16 +250,12 @@
 		vec3 texDiffCol = texture2D(albedo_texture, TextureCoords).rgb;
 		if (length(texDiffCol) != 0.0)
 		{
-			FragColor = texture(albedo_texture, TextureCoords) * result * ColourTest;
+			FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 		}
 		else
 		{
-			FragColor = result * ColourTest;
+			FragColor = result * vec4(ColourTest, 1.0f);
 		}
 	}
 #endif
-
-
-
-
 

@@ -117,31 +117,30 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	//SCENE RENDERING
 	if (_cameras->sceneCamera->active)
 	{
-
-		Lighting::GetLightMap().shadowMap = _cameras->sceneCamera->frameBuffer.GetDepthTexture();
+		_cameras->currentDrawingCamera = _cameras->sceneCamera;
+		
+		glCullFace(GL_FRONT);
 		//Depth map (Shadow)
-		glViewport(0, 0, 1024, 1024);
 		_cameras->sceneCamera->frameBuffer.BindShadowBuffer();
 		glClear(GL_DEPTH_BUFFER_BIT);
-		_cameras->currentDrawingCamera = _cameras->sceneCamera;
 			//RENDER SCENE
 			renderManager.Draw();
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glCullFace(GL_BACK);
 
 		//Normal Rendering of scene
-		glViewport(0, 0, ModuleWindow::width, ModuleWindow::height);
+		Lighting::GetLightMap().shadowMap = _cameras->sceneCamera->frameBuffer.GetDepthTexture();
 		_cameras->sceneCamera->frameBuffer.Bind();
+		glViewport(0, 0, ModuleWindow::width, ModuleWindow::height);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		//ConfigureShadowAndMatrices();
-		_cameras->sceneCamera->frameBuffer.BindShadowTexture();
 
-		//RENDER SCENE
-		ModuleLayers::S_DrawLayers();
-		particleManager.Draw();
-		renderManager.Draw();
-		renderManager.DrawDebug();
-		_cameras->DrawCameraFrustums();
+			//RENDER SCENE
+			ModuleLayers::S_DrawLayers();
+			particleManager.Draw();
+			renderManager.Draw();
+			renderManager.DrawDebug();
+			_cameras->DrawCameraFrustums();
 	}
 
 	//CANVAS RENDERING

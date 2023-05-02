@@ -23,6 +23,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
@@ -53,6 +54,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Canvas",
         "ParentUID": 931044216,
         "PrefabUID": 0,
@@ -91,6 +93,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BackGround",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -129,6 +132,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "PlanetDestination",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -163,11 +167,15 @@
                 "MeshEnabled": false,
                 "Type": 16,
                 "listButtons": [
-                    0
+                    1086020048,
+                    355431247,
+                    186048598,
+                    2549467301
                 ]
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Levels",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -198,19 +206,20 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 0,
+                "MaterialResource": 2413304871,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 14,
-                "hoverActiveImage": 0,
-                "hoverImage": 0,
-                "idleActiveImage": 0,
-                "idleImage": 0,
-                "pressActiveImage": 0,
-                "pressImage": 0
+                "hoverActiveImage": 2450359488,
+                "hoverImage": 1048084744,
+                "idleActiveImage": 2984314687,
+                "idleImage": 2413304871,
+                "pressActiveImage": 3703264764,
+                "pressImage": 567303012
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Level_1",
         "ParentUID": 4017731757,
         "PrefabUID": 0,
@@ -254,6 +263,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Level_2",
         "ParentUID": 4017731757,
         "PrefabUID": 0,
@@ -297,6 +307,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Level_3",
         "ParentUID": 4017731757,
         "PrefabUID": 0,
@@ -340,6 +351,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Level_4",
         "ParentUID": 4017731757,
         "PrefabUID": 0,
@@ -378,6 +390,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Map",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -417,6 +430,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Misions",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -455,6 +469,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Main",
         "ParentUID": 700667039,
         "PrefabUID": 0,
@@ -493,6 +508,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Secundary_1",
         "ParentUID": 700667039,
         "PrefabUID": 0,
@@ -531,6 +547,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Secundary_2",
         "ParentUID": 700667039,
         "PrefabUID": 0,
@@ -570,6 +587,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "CheckCompleted",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -608,6 +626,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Check_Main",
         "ParentUID": 4079862537,
         "PrefabUID": 0,
@@ -646,6 +665,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Check_S1",
         "ParentUID": 4079862537,
         "PrefabUID": 0,
@@ -684,6 +704,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Check_S2",
         "ParentUID": 4079862537,
         "PrefabUID": 0,
@@ -720,9 +741,41 @@
                 "listButtons": [
                     0
                 ]
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Hold Button Time": 1.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    }
+                ],
+                "Script Resource": 4223611270,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Select",
         "ParentUID": 582930903,
         "PrefabUID": 0,
@@ -736,8 +789,8 @@
                 "Enabled": true,
                 "Position": [
                     -0.800000011920929,
-                    0.20000000298023224,
-                    -0.009999999776482582
+                    0.5299999713897705,
+                    -0.05999999865889549
                 ],
                 "Rotation": [
                     0.0,
@@ -754,13 +807,14 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 3703264764,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Selected",
         "ParentUID": 2547002226,
         "PrefabUID": 0,
@@ -800,6 +854,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "HoldingBar",
         "ParentUID": 2547002226,
         "PrefabUID": 0,
@@ -838,6 +893,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BackgroundBar",
         "ParentUID": 321702245,
         "PrefabUID": 0,
@@ -868,18 +924,62 @@
             },
             {
                 "Enabled": true,
-                "FillImage": 0.41200000047683716,
-                "MaterialResource": 240240,
+                "FillImage": 0.0,
+                "MaterialResource": 4194253043,
                 "MeshEnabled": true,
                 "OpacityDirection": 1,
                 "Type": 15
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ChargedBar",
         "ParentUID": 321702245,
         "PrefabUID": 0,
         "Tag": "UI",
         "UID": 253572886
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 1.99245285987854,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Empty",
+        "ParentUID": 931044216,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4144045469
     }
 ]

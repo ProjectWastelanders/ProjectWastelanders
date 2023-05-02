@@ -4,6 +4,8 @@
 #include "ModuleFiles.h"
 #include "Texture.h"
 #include "File_Model.h"
+#include "UUID.h"
+#include "glew.h"
 
 class GameObject;
 class FileTree;
@@ -92,7 +94,6 @@ private:
     void UpdateResourceMeshesRecursive(ModelNode& node);
 
     uint currentLoadedMesh = 0;
-
 };
 
 class ResourceMesh : public Resource
@@ -132,6 +133,9 @@ public:
     void CalculateNormalsAndAABB();
 
 public:
+    // Just for InputGeom use
+    MeshInfo GetMeshInfo();
+
     void Destroy() override;
     void ReImport(const std::string& filePath) override;
 

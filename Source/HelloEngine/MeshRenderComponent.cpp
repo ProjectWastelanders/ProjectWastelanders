@@ -445,6 +445,11 @@ void MeshRenderComponent::DeSerialization(json& j)
 		
 }
 
+ResourceMesh* MeshRenderComponent::GetResource()
+{
+	return _resource;
+}
+
 uint MeshRenderComponent::GetResourceUID()
 {
 	if (this->_resource != nullptr)

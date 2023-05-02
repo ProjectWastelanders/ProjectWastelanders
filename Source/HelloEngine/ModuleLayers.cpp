@@ -10,6 +10,7 @@
 
 #include "ModuleInput.h"
 #include "ModuleWindow.h"
+#include "ModuleNavMesh.h"
 
 //TEMPORAL
 #include "ComponentUI.h"
@@ -86,6 +87,8 @@ bool ModuleLayers::Start()
         
         ModuleResourceManager::S_SerializeScene(rootGameObject);
     }
+    else
+        ModuleNavMesh::S_Load();
 
 #ifndef STANDALONE
     LayerGame::S_Play();
@@ -98,8 +101,10 @@ UpdateStatus ModuleLayers::PreUpdate()
 {
     if(_requestScene)
     {
-        if(!ModuleResourceManager::S_DeserializeScene(_requestScenePath))
+        if (!ModuleResourceManager::S_DeserializeScene(_requestScenePath))
             _requestScenePath = "null";
+        else
+            ModuleNavMesh::S_Load(_requestScenePath);
 
         _requestScene = false;
     }
@@ -165,8 +170,7 @@ void ModuleLayers::S_DrawEditor()
 }
 
 bool ModuleLayers::CleanUp()
-{
-   
+{ 
 #ifdef STANDALONE
     XMLNode sceneXML = Application::Instance()->xml->GetConfigXML();
 
@@ -224,9 +228,8 @@ void ModuleLayers::S_RequestLoadScene(const std::string& scenePath)
 GameObject* ModuleLayers::S_GetGameObject(uint ID)
 {
     if (gameObjects.find(ID) != gameObjects.end())
-    {
         return gameObjects[ID];
-    }
+
     return nullptr;
 }
 

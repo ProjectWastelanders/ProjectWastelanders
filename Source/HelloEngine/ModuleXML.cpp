@@ -209,6 +209,7 @@ void ModuleXML::CreateDefaultConfigFile()
 			"<renderer>\n"
 				"<vsync value = \"true\"/>\n"
 				"<framerate value = \"90\"/>\n"
+				"<drawNavMesh value = \"true\"/>\n"
 			"</renderer>\n"
 			"<input>\n"
 				"<mouseWheel value = \"0.1\"/>\n"

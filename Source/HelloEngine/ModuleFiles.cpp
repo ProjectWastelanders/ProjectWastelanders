@@ -56,7 +56,7 @@ bool ModuleFiles::S_Exists(const std::string& file)
 
 bool ModuleFiles::S_MakeDir(const std::string& dir)
 {
-    if (S_Exists(dir) == false)
+    if (!S_Exists(dir))
     {
         PHYSFS_mkdir(dir.c_str());
 

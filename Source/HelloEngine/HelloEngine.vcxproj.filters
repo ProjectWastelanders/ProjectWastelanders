@@ -54,26 +54,6 @@
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkFilePackageLUT.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkGeneratedSoundBanksResolver.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkMultipleFileLocation.cpp" />
-    <ClCompile Include="API\API_AnimationPlayer.cpp" />
-    <ClCompile Include="API\API_Audio.cpp" />
-    <ClCompile Include="API\API_UIButton.cpp" />
-    <ClCompile Include="API\API_Console.cpp" />
-    <ClCompile Include="API\API_GameObject.cpp" />
-    <ClCompile Include="API\API_Input.cpp" />
-    <ClCompile Include="API\API_Material.cpp" />
-    <ClCompile Include="API\API_MeshRenderer.cpp" />
-    <ClCompile Include="API\API_RigidBody.cpp" />
-    <ClCompile Include="API\API_Scene.cpp" />
-    <ClCompile Include="API\API_Time.cpp" />
-    <ClCompile Include="API\API_Transform.cpp" />
-    <ClCompile Include="API\API_Game.cpp" />
-    <ClCompile Include="API\API_UIImage.cpp" />
-    <ClCompile Include="API\API_Vector2.cpp" />
-    <ClCompile Include="API\API_Vector3.cpp" />
-    <ClCompile Include="API\API_Engine.cpp" />
-    <ClCompile Include="API\API_Camera.cpp" />
-    <ClCompile Include="API\API_ParticleSystem.cpp" />
-    <ClCompile Include="Application.cpp" />
     <ClCompile Include="BillBoardComponent.cpp" />
     <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="CameraObject.cpp" />
@@ -81,41 +61,16 @@
     <ClCompile Include="CommandChangeTransform.cpp" />
     <ClCompile Include="CommandDeleteGameObject.cpp" />
     <ClCompile Include="CommandSetParentGameObject.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="ComponentUI.cpp" />
-    <ClCompile Include="ComponentUIButton.cpp" />
-    <ClCompile Include="ComponentUICheckbox.cpp" />
-    <ClCompile Include="ComponentUIImage.cpp" />
-    <ClCompile Include="ComponentUIInput.cpp" />
-    <ClCompile Include="ComponentUISlider.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Emitter.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Globals.h" />
     <ClCompile Include="Headers.cpp" />
     <ClCompile Include="API\HelloBehavior.cpp" />
     <ClCompile Include="ImGuiUtils.cpp" />
-    <ClCompile Include="ImWindowGame.cpp" />
-    <ClCompile Include="ImWindowGLSL.cpp" />
-    <ClCompile Include="ImWindowHierarchy.cpp" />
-    <ClCompile Include="ImWindowInspector.cpp" />
-    <ClCompile Include="ImWindowPerformanceTest.cpp" />
-    <ClCompile Include="ImWindowProject.cpp" />
-    <ClCompile Include="ImWindowConsole.cpp" />
-    <ClCompile Include="ImWindow.cpp" />
-    <ClCompile Include="ImWindowAbout.cpp" />
-    <ClCompile Include="ImWindowConfiguration.cpp" />
-    <ClCompile Include="ImWindowQuickSave.cpp" />
-    <ClCompile Include="ImWindowResources.cpp" />
-    <ClCompile Include="ImWindowScene.cpp" />
-    <ClCompile Include="ImWindowUI.cpp" />
     <ClCompile Include="ImWrapper.cpp" />
     <ClCompile Include="ImWrapperInputBox.cpp" />
-    <ClCompile Include="Layer.cpp" />
-    <ClCompile Include="LayerGame.cpp" />
-    <ClCompile Include="LayerUI.cpp" />
     <ClCompile Include="Lighting.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -131,16 +86,13 @@
     <ClCompile Include="P_MainModule.cpp" />
     <ClCompile Include="ModulePhysics.cpp" />
     <ClCompile Include="PhysBody3D.cpp" />
-    <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
     <ClCompile Include="P_Module.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="ModuleCamera3D.cpp" />
-    <ClCompile Include="LayerEditor.cpp" />
     <ClCompile Include="ModuleCommand.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
-    <ClCompile Include="ModuleLayers.cpp" />
     <ClCompile Include="ModuleFiles.cpp" />
     <ClCompile Include="ModuleRenderer3D.cpp" />
     <ClCompile Include="ModuleResourceManager.cpp" />
@@ -150,7 +102,6 @@
     <ClCompile Include="QuickSave.cpp" />
     <ClCompile Include="InstanceRenderer.cpp" />
     <ClCompile Include="SceneCameraObject.cpp" />
-    <ClCompile Include="ScriptComponent.cpp" />
     <ClCompile Include="ScriptToInspectorInterface.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SkinnedMeshRenderComponent.cpp" />
@@ -163,16 +114,292 @@
     <ClCompile Include="Uniform.cpp" />
     <ClCompile Include="UUID.cpp" />
     <ClCompile Include="XMLNode.cpp" />
+    <ClCompile Include="sha256.cpp" />
+    <ClCompile Include="..\External\RecastDetour\ChunkyTriMesh.cpp">
+      <Filter>External\RecastDetour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\InputGeom.cpp">
+      <Filter>External\RecastDetour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\NavMeshBuilder.cpp">
+      <Filter>External\RecastDetour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\DebugDraw.cpp">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\DetourDebugDraw.cpp">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\RecastDebugDraw.cpp">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\RecastDump.cpp">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\SampleInterfaces.cpp">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourAlloc.cpp">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourCommon.cpp">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNavMesh.cpp">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNavMeshBuilder.cpp">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNavMeshQuery.cpp">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNode.cpp">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourCrowd.cpp">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourLocalBoundary.cpp">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourObstacleAvoidance.cpp">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourPathCorridor.cpp">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourPathQueue.cpp">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourProximityGrid.cpp">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourTileCache\DetourTileCache.cpp">
+      <Filter>External\RecastDetour\DetourTileCache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourTileCache\DetourTileCacheBuilder.cpp">
+      <Filter>External\RecastDetour\DetourTileCache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastRasterization.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastRegion.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\Recast.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastAlloc.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastArea.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastContour.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastFilter.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastLayers.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastMesh.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastMeshDetail.cpp">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_AnimationPlayer.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Audio.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Camera.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Console.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Engine.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Game.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_GameObject.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Input.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Material.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_MeshRenderer.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_ParticleSystem.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_QuickSave.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_RigidBody.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Scene.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_SkinnedMeshRenderer.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Time.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Transform.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_UIButton.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_UIImage.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_UIInput.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_UIText.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Vector2.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Vector3.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleNavMesh.cpp">
+      <Filter>Modules\NavMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="NavMeshImporter.cpp">
+      <Filter>Modules\NavMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="NavAgentComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="Globals.h">
+      <Filter>Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindow.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowAbout.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowConfiguration.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowConsole.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowGame.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowGLSL.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowHierarchy.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowInspector.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowNavMesh.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowPerformanceTest.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowProject.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowQuickSave.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowResources.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowScene.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ImWindowUI.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleLayers.cpp">
+      <Filter>Modules\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Modules\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerEditor.cpp">
+      <Filter>Modules\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerGame.cpp">
+      <Filter>Modules\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerUI.cpp">
+      <Filter>Modules\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentUI.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentUIButton.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentUICheckbox.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentUIImage.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentUIInput.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentUISlider.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_Agent.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
     <ClCompile Include="API\API_UIInput.cpp" />
     <ClCompile Include="API\API_UIText.cpp" />
     <ClCompile Include="API\API_QuickSave.cpp" />
     <ClCompile Include="API\API_SkinnedMeshRenderer.cpp" />
+    <ClCompile Include="LightComponent.cpp" />
+    <ClCompile Include="DirectionalLightComponent.cpp" />
+    <ClCompile Include="PointLightComponent.cpp" />
+    <ClCompile Include="SpotLightComponent.cpp" />
     <ClCompile Include="sha256.cpp" />
     <ClCompile Include="API\API_String.cpp" />
     <ClCompile Include="API\API_ShaderComponent.cpp" />
     <ClCompile Include="VideoPlayerComponent.cpp" />
     <ClCompile Include="VideoPlayerManager.cpp" />
     <ClCompile Include="FfmpegVideoPlayer.cpp" />
+    <ClCompile Include="ScriptComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_UICheckBox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -256,28 +483,6 @@
     <ClInclude Include="..\External\PugiXml\src\pugiconfig.hpp" />
     <ClInclude Include="..\External\PugiXml\src\pugixml.hpp" />
     <ClInclude Include="AnimationComponent.h" />
-    <ClInclude Include="API\API.h" />
-    <ClInclude Include="API\API_AnimationPlayer.h" />
-    <ClInclude Include="API\API_Audio.h" />
-    <ClInclude Include="API\API_UIButton.h" />
-    <ClInclude Include="API\API_Console.h" />
-    <ClInclude Include="API\API_GameObject.h" />
-    <ClInclude Include="API\API_Input.h" />
-    <ClInclude Include="API\API_KeyCode.h" />
-    <ClInclude Include="API\API_Material.h" />
-    <ClInclude Include="API\API_MeshRenderer.h" />
-    <ClInclude Include="API\API_RigidBody.h" />
-    <ClInclude Include="API\API_Scene.h" />
-    <ClInclude Include="API\API_Time.h" />
-    <ClInclude Include="API\API_Transform.h" />
-    <ClInclude Include="API\API_Game.h" />
-    <ClInclude Include="API\API_UIImage.h" />
-    <ClInclude Include="API\API_Vector2.h" />
-    <ClInclude Include="API\API_Vector3.h" />
-    <ClInclude Include="API\API_Engine.h" />
-    <ClInclude Include="API\API_Camera.h" />
-    <ClInclude Include="API\API_ParticleSystem.h" />
-    <ClInclude Include="Application.h" />
     <ClInclude Include="BaseShader.h" />
     <ClInclude Include="BillBoardComponent.h" />
     <ClInclude Include="CameraComponent.h" />
@@ -288,13 +493,6 @@
     <ClInclude Include="CommandChangeValue.hpp" />
     <ClInclude Include="CommandDeleteGameObject.h" />
     <ClInclude Include="CommandSetParentGameObject.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="ComponentUI.h" />
-    <ClInclude Include="ComponentUIButton.h" />
-    <ClInclude Include="ComponentUICheckbox.h" />
-    <ClInclude Include="ComponentUIImage.h" />
-    <ClInclude Include="ComponentUIInput.h" />
-    <ClInclude Include="ComponentUISlider.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CycleArray.hpp" />
     <ClInclude Include="Emitter.h" />
@@ -306,25 +504,8 @@
     <ClInclude Include="Headers.h" />
     <ClInclude Include="API\HelloBehavior.h" />
     <ClInclude Include="ImGuiUtils.h" />
-    <ClInclude Include="ImWindowGame.h" />
-    <ClInclude Include="ImWindowGLSL.h" />
-    <ClInclude Include="ImWindowHierarchy.h" />
-    <ClInclude Include="ImWindowInspector.h" />
-    <ClInclude Include="ImWindowPerformanceTest.h" />
-    <ClInclude Include="ImWindowProject.h" />
-    <ClInclude Include="ImWindowConsole.h" />
-    <ClInclude Include="ImWindow.h" />
-    <ClInclude Include="ImWindowAbout.h" />
-    <ClInclude Include="ImWindowConfiguration.h" />
-    <ClInclude Include="ImWindowQuickSave.h" />
-    <ClInclude Include="ImWindowResources.h" />
-    <ClInclude Include="ImWindowScene.h" />
-    <ClInclude Include="ImWindowUI.h" />
     <ClInclude Include="ImWrapper.h" />
     <ClInclude Include="ImWrapperInputBox.h" />
-    <ClInclude Include="Layer.h" />
-    <ClInclude Include="LayerGame.h" />
-    <ClInclude Include="LayerUI.h" />
     <ClInclude Include="Lighting.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="MaterialComponent.h" />
@@ -339,17 +520,14 @@
     <ClInclude Include="P_MainModule.h" />
     <ClInclude Include="ModulePhysics.h" />
     <ClInclude Include="PhysBody3D.h" />
-    <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="Primitive.h" />
     <ClInclude Include="ModuleAudio.h" />
     <ClInclude Include="P_Module.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="ModuleCamera3D.h" />
-    <ClInclude Include="LayerEditor.h" />
     <ClInclude Include="ModuleCommand.h" />
     <ClInclude Include="ModuleInput.h" />
-    <ClInclude Include="ModuleLayers.h" />
     <ClInclude Include="ModuleFiles.h" />
     <ClInclude Include="ModuleRenderer3D.h" />
     <ClInclude Include="ModuleResourceManager.h" />
@@ -360,7 +538,6 @@
     <ClInclude Include="InstanceRenderer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SceneCameraObject.h" />
-    <ClInclude Include="ScriptComponent.h" />
     <ClInclude Include="ScriptToInspectorInterface.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderData.h" />
@@ -375,16 +552,283 @@
     <ClInclude Include="Uniform.h" />
     <ClInclude Include="UUID.h" />
     <ClInclude Include="XMLNode.h" />
+    <ClInclude Include="sha256.h" />
+    <ClInclude Include="..\External\RecastDetour\ChunkyTriMesh.h">
+      <Filter>External\RecastDetour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\InputGeom.h">
+      <Filter>External\RecastDetour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\NavMeshBuilder.h">
+      <Filter>External\RecastDetour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\SampleInterfaces.h">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\DebugDraw.h">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\DetourDebugDraw.h">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\RecastDebugDraw.h">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\RecastDump.h">
+      <Filter>External\RecastDetour\DebugUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourStatus.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourAlloc.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourAssert.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourCommon.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourMath.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNavMesh.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNavMeshBuilder.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNavMeshQuery.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNode.h">
+      <Filter>External\RecastDetour\Detour</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourProximityGrid.h">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourCrowd.h">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourLocalBoundary.h">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourObstacleAvoidance.h">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourPathCorridor.h">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourPathQueue.h">
+      <Filter>External\RecastDetour\DetourCrowd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourTileCache\DetourTileCacheBuilder.h">
+      <Filter>External\RecastDetour\DetourTileCache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\DetourTileCache\DetourTileCache.h">
+      <Filter>External\RecastDetour\DetourTileCache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Recast\Recast.h">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Recast\RecastAlloc.h">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External\RecastDetour\Recast\RecastAssert.h">
+      <Filter>External\RecastDetour\Recast</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_AnimationPlayer.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Audio.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Camera.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Console.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Engine.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Game.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_GameObject.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Input.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_KeyCode.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Material.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_MeshRenderer.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_ParticleSystem.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_QuickSave.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_RigidBody.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Scene.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_SkinnedMeshRenderer.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Time.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Transform.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_UIButton.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_UIImage.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_UIInput.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_UIText.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Vector2.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Vector3.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleNavMesh.h">
+      <Filter>Modules\NavMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="NavMeshImporter.h">
+      <Filter>Modules\NavMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="NavAgentComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowUI.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindow.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowAbout.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowConfiguration.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowConsole.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowGame.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowGLSL.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowHierarchy.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowInspector.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowNavMesh.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowPerformanceTest.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowProject.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowQuickSave.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowResources.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ImWindowScene.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleLayers.h">
+      <Filter>Modules\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Modules\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerEditor.h">
+      <Filter>Modules\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerGame.h">
+      <Filter>Modules\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerUI.h">
+      <Filter>Modules\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentUI.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentUIButton.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentUICheckbox.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentUIImage.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentUIInput.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentUISlider.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_Agent.h">
+      <Filter>API</Filter>
+    </ClInclude>
     <ClInclude Include="API\API_UIInput.h" />
     <ClInclude Include="API\API_UIText.h" />
     <ClInclude Include="API\API_QuickSave.h" />
     <ClInclude Include="API\API_SkinnedMeshRenderer.h" />
+    <ClInclude Include="LightComponent.h" />
+    <ClInclude Include="DirectionalLightComponent.h" />
+    <ClInclude Include="PointLightComponent.h" />
+    <ClInclude Include="SpotLightComponent.h" />
     <ClInclude Include="sha256.h" />
     <ClInclude Include="API\API_String.h" />
     <ClInclude Include="API\API_ShaderComponent.h" />
     <ClInclude Include="VideoPlayerComponent.h" />
     <ClInclude Include="VideoPlayerManager.h" />
     <ClInclude Include="FfmpegVideoPlayer.h" />
+    <ClInclude Include="ScriptComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_UICheckBox.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />
@@ -399,5 +843,49 @@
     <None Include="..\External\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_CPP.inl" />
     <None Include="..\External\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_SSE.inl" />
     <None Include="..\External\MathGeoLib\include\Math\Matrix.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="External">
+      <UniqueIdentifier>{16aa5198-0d3a-4d4f-9343-6d41a174fdfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RecastDetour">
+      <UniqueIdentifier>{ed79d092-5ec3-4b3e-b635-850b48f92fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RecastDetour\DebugUtils">
+      <UniqueIdentifier>{6a2a182e-e909-46d6-8316-d07803337a17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RecastDetour\Detour">
+      <UniqueIdentifier>{78d9f934-dd74-4edd-873e-a73a1040408a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RecastDetour\DetourCrowd">
+      <UniqueIdentifier>{81da8575-0d88-4c7b-9437-753044c5d7fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RecastDetour\DetourTileCache">
+      <UniqueIdentifier>{ecc29d4e-ba5c-43ae-9476-20844c97dfa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\RecastDetour\Recast">
+      <UniqueIdentifier>{86d72da1-5a90-445e-afa7-1bd433d34003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{bbde7961-ed9c-4ed2-88f4-0126b5c39e9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\NavMesh">
+      <UniqueIdentifier>{31263c93-a5a7-444a-9e87-cd6f057cc51a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API">
+      <UniqueIdentifier>{73d90966-5a9c-4b8f-aef5-7078b4b0cb5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{bc604b56-fbd3-4783-8b04-4916c1c44e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Globals">
+      <UniqueIdentifier>{cd9c39de-5c7c-479a-9acc-dfe1e7a48599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{926114eb-5b48-4c22-aa1c-894c2dadc43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Layer">
+      <UniqueIdentifier>{f97622bc-9f87-48bb-9edb-7dc2b9de815c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

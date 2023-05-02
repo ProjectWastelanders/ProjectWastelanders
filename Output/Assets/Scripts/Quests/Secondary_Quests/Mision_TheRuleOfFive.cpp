@@ -1,5 +1,6 @@
 #include "Mision_TheRuleOfFive.h"
 #include "../../Quests/Secondary_Quests/EnemyDieEvent.h"
+#include "../../Player/PlayerStorage.h"
 
 HELLO_ENGINE_API_C Mision_TheRuleOfFive* CreateMision_TheRuleOfFive(ScriptToInspectorInterface* script)
 {
@@ -44,6 +45,8 @@ void Mision_TheRuleOfFive::Update()
 		{
 
 			misionCompleted = true;
+			playerStorage->skillPoints += 2;
+			playerStorage->SaveData();
 
 		}
 		else if(ruleOfFiveTimer > 5.0f)

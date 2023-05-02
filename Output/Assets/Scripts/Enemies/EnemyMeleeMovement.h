@@ -55,6 +55,8 @@ public:
     bool dashing = false;
    // bool shooted = false;
 
+    bool attacking = false;
+
     float detectionDis = 2.0f;
     float lossingDis = 10.0f;
     float lossingZoneDis = 200.0f;

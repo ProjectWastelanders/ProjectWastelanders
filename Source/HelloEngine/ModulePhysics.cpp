@@ -62,21 +62,21 @@ bool ModulePhysics::Start()
 	//testBody2->body->setGravity(btVector3(0, 0, 0));
 	// Testing------------------------------------------
 
-	for (int i = 0; i < physBodies.size(); i++) 
-	{
-		if (ModuleLayers::gameObjects.count(physBodies[i]->gameObjectUID) != 0)
-		{
-			GameObject* go = ModuleLayers::gameObjects[physBodies[i]->gameObjectUID];
-			go->GetComponent<PhysicsComponent>()->CheckRenderBuffers();
-		}
-	}
+	//for (int i = 0; i < physBodies.size(); i++) 
+	//{
+	//	if (ModuleLayers::gameObjects.count(physBodies[i]->gameObjectUID) != 0)
+	//	{
+	//		GameObject* go = ModuleLayers::gameObjects[physBodies[i]->gameObjectUID];
+	//		go->GetComponent<PhysicsComponent>()->CheckRenderBuffers();
+	//	}
+	//}
 
 	return true;
 }
 
 UpdateStatus ModulePhysics::PreUpdate()
 {
-	if (hasToSetRenderBuffers == true) 
+	/*if (hasToSetRenderBuffers == true) 
 	{
 		for (int i = 0; i < physBodies.size(); i++) 
 		{
@@ -87,7 +87,7 @@ UpdateStatus ModulePhysics::PreUpdate()
 			}
 		}
 		hasToSetRenderBuffers = false;
-	}
+	}*/
 	//world->stepSimulation(Application::Instance()->GetDeltaTime(), 15);
 
 	////testBody->Push(1, 1, 1);

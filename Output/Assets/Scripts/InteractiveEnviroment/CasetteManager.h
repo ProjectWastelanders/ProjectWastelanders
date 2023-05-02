@@ -21,5 +21,8 @@ public:
     PlayerStorage* playerStorage;
 
     bool check;
+    API_String playAudio1;
+    API_String playAudio2;
+    API_String playAudio3;
 };
 

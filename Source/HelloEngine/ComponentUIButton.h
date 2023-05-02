@@ -7,7 +7,10 @@ enum class ButtonState {
 	HOVERED,
 	ONPRESS,
 	ONHOLD,
-	BLOCKED
+	NORMALBLOCKED,
+	HOVEREDBLOCKED,
+	ONPRESSBLOCKED,
+	ONHOLDBLOCKED
 };
 
 class ComponentUIButton : public ComponentUI
@@ -39,7 +42,9 @@ private:
 	int textureIDIdle = -1;
 	int textureIDHover = -1;
 	int textureIDPress = -1;
-	int textureIDBlocked = -1;
+	int textureIDIdleBlocked = -1;
+	int textureIDHoverBlocked = -1;
+	int textureIDHPressBlocked = -1;
 
 	MeshRenderComponent* meshRenderer = nullptr;
 	ResourceTexture* currentResource = nullptr;
@@ -47,7 +52,9 @@ private:
 	ResourceTexture* idleButton = nullptr;
 	ResourceTexture* hoverButton = nullptr;
 	ResourceTexture* pressButton = nullptr;
-	ResourceTexture* blockedButton = nullptr;
+	ResourceTexture* idleblockedButton = nullptr;
+	ResourceTexture* hoverblockedButton = nullptr;
+	ResourceTexture* pressblockedButton = nullptr;
 
 	bool AisPress = true;
 

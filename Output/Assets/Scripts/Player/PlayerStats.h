@@ -3,13 +3,16 @@
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
 
+
 #include "API/API.h"
+
 
 #include "PlayerStorage.h"
 
 class PlayerMove;
 class HpBar;
 class HUD_Power_Up_Scrip;
+class UI_Municion;
 
 class PlayerStats : HelloBehavior
 {
@@ -34,7 +37,8 @@ public:
     float lastHitTime;
     float deathTime = 0.0f;
     void Heal(float amount);
-    API_ParticleSystem hitParticles;
+    API_ShaderComponent material;
+    float blinkTime = 0.0f;
     API_ParticleSystem healParticles;
     bool playingHealParticles;
     API_ParticleSystem aidKitParticles;
@@ -46,10 +50,10 @@ public:
     int laserAmmo; // index 1
     int maxLaserAmmo;
     int specialAmmo;
-    int maxFireAmmo; // index 2
-    int maxRicochetAmmo; // index 3
-
+    int maxSpecialAmmo; // index 2
+     
     bool detected; //if the player is being detected somehow
+    bool inCombat = false;
     API_RigidBody actualZone;//the zone where the player is
 
     // skills values
@@ -88,4 +92,7 @@ public:
     // HUD
     HUD_Power_Up_Scrip* hudPowerUp;
     API_GameObject hudPowerUpGO;
+
+    API_GameObject ammo_ScriptGO;
+    UI_Municion* ammo_Script;
 };

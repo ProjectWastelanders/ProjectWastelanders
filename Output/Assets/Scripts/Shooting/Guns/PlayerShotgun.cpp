@@ -119,33 +119,41 @@ void PlayerShotgun::SetGunStatsPerLevel(int level)
         cadence = 1.3f;
         pellets = 3;
         pelletsDisersion = 0.2f;
+        // explosion damage 10
+        // bomb num 2
         break;
     case 1:
         projectileSpeed = 40.0f;
-        projectileDamage = 3.0f;
-        projectileResistanceDamage = 0.0f;
+        projectileDamage = 5.0f;
+        projectileResistanceDamage = 5.0f;
         projectileLifetime = 0.2f;
         cadence = 1.3f;
-        pellets = 10;
-        pelletsDisersion = 0.4f;
+        pellets = 4;
+        pelletsDisersion = 0.2f;
+        // explosion damage 10
+        // bomb num 2
         break;
     case 2:
         projectileSpeed = 40.0f;
-        projectileDamage = 3.0f;
-        projectileResistanceDamage = 0.0f;
+        projectileDamage = 5.0f;
+        projectileResistanceDamage = 5.0f;
         projectileLifetime = 0.2f;
         cadence = 1.3f;
-        pellets = 14;
-        pelletsDisersion = 0.4f;
+        pellets = 4;
+        pelletsDisersion = 0.2f;
+        // explosion damage 10
+        // bomb num 3
         break;
     case 3:
         projectileSpeed = 40.0f;
-        projectileDamage = 5.0f;
-        projectileResistanceDamage = 0.0f;
+        projectileDamage = 10.0f;
+        projectileResistanceDamage = 10.0f;
         projectileLifetime = 0.2f;
         cadence = 1.3f;
-        pellets = 14;
-        pelletsDisersion = 0.4f;
+        pellets = 4;
+        pelletsDisersion = 0.2f;
+        // explosion damage 15
+        // bomb num 3
         break;
     default:
         Console::Log("Shotgun gun level can't be different from 0, 1, 2 or 3.");

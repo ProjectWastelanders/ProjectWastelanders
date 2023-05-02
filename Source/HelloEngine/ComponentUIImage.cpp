@@ -30,6 +30,11 @@ void ComponentUIImage::SetFill(float fill)
 	_meshRenderer->GetMesh().opacityLimit = fill;
 }
 
+void ComponentUIImage::SetOpacity(float opacity)
+{
+	_meshRenderer->GetMesh().opacity = opacity;
+}
+
 void ComponentUIImage::Serialization(json& j)
 {
 	json _j;
@@ -73,6 +78,8 @@ void ComponentUIImage::OnEditor()
 		_gameObject->DestroyComponent(this);
 		return;
 	}
+
+	ImGui::SliderFloat("Opacity", &_meshRenderer->GetMesh().opacity, 0.0f, 1.0f);
 
 	ImGui::SliderFloat("Fill", &_meshRenderer->GetMesh().opacityLimit, 0.0f, 1.0f);
 

@@ -11,6 +11,7 @@ class ComponentUIImage : public ComponentUI
 	void InputUpdate() override;
 
 	void SetFill(float fill);
+	void SetOpacity(float opacity);
 
 	void Serialization(json& j) override;
 	void DeSerialization(json& j) override;

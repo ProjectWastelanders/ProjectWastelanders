@@ -32,4 +32,9 @@ public:
 
     API_GameObject playerGO;
     PlayerMove* playerMove;
+
+    bool ability1 = true;
+    bool ability2 = true;
+    bool ability3 = true;
+    bool ability4 = true;
 };

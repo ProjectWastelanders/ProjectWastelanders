@@ -66,7 +66,7 @@ void PlayerUltimate::Update()
     }
 }
 
-void PlayerUltimate::OnCollisionEnter(API::API_RigidBody other)
+void PlayerUltimate::OnCollisionStay(API::API_RigidBody other)
 {
     if (!triggerUlt) return;
     std::string detectionTag = other.GetGameObject().GetTag();

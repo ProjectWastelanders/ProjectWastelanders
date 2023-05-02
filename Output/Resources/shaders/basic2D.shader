@@ -22,6 +22,7 @@ out vec4 FragColor;
 	uniform vec2 normalizedSize;
 	uniform float limit;
 	uniform int opacityDir;
+	uniform float totalOpacity; // Opacity applied on non-ignored fragments.
 
 	uniform sampler2D diffuseTexture;
 
@@ -64,5 +65,6 @@ out vec4 FragColor;
 				break;
 		}
 		FragColor = texture(diffuseTexture, TextureCoords);
+		FragColor.a *= totalOpacity;
 	}
 #endif

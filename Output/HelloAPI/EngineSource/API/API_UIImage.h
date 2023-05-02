@@ -15,6 +15,7 @@ namespace API
 		API_GameObject GetGameObject();
 		/// Value gets clamped to 0->1 range.
 		void FillImage(float _GetFillImage);
+		void SetOpacity(float opacity);
 
 	private:
 		ComponentUIImage* GetComponent();

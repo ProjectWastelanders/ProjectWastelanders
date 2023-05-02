@@ -8,24 +8,25 @@
 class SmokeExtractorTrap : HelloBehavior
 {
 public:
-	void Start() override; 
-	void Update() override;
+    void Start() override;
+    void Update() override;
 
-	void OnCollisionEnter(API_RigidBody other);
+    void OnCollisionStay(API_RigidBody other);
 
-	API_ParticleSystem smoke;
-	API_ParticleSystem fire;
-	API_GameObject playerRef;
+    API_ParticleSystem smoke;
+    API_ParticleSystem fire;
+    API_GameObject playerRef;
 
-	API_Vector3 goPos;
+    API_Vector3 goPos;
 
-	int minDistance = 5;
+    int minDistance = 5;
 
-	float delay;
-	float currentDelay = 0.0f;
-	float fireTimer;
-	float fireSeconds;
+    float delay;
+    float currentDelay = 0.0f;
+    float fireTimer;
+    float fireSeconds;
 
-	bool throwFire = false;
+    bool throwFire = false;
+    bool hitPlayer = true;
 };
 

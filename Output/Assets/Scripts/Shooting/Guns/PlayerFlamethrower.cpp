@@ -25,7 +25,7 @@ void PlayerFlamethrower::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("flamethrower_level")); // read from save file
+    SetGunStatsPerLevel(0);
 
     if (cadence == 0)
     {
@@ -47,7 +47,7 @@ void PlayerFlamethrower::Update()
     if (playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
 
-    fireParticles.SetInitialSpeed(player.GetTransform().GetForward() * 2.0f);
+    fireParticles.SetInitialSpeed(player.GetTransform().GetForward() * 4.0f);
 
     if (playingParticlesCd > 0)
     {
@@ -82,7 +82,6 @@ void PlayerFlamethrower::Shoot()
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
 
-
         if (playingParticlesCd <= 0.0f) fireParticles.Play();
         playingParticlesCd = 0.2f;
     }
@@ -95,38 +94,9 @@ void PlayerFlamethrower::EnableGuns(bool enable)
 
 void PlayerFlamethrower::SetGunStatsPerLevel(int level)
 {
-    switch (level)
-    {
-    case 0:
-        projectileSpeed = 30.0f;
-        projectileDamage = 5.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 20.0f;
-        break;
-    case 1:
-        projectileSpeed = 30.0f;
-        projectileDamage = 5.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 4.0f;
-        break;
-    case 2:
-        projectileSpeed = 45.0f;
-        projectileDamage = 5.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 4.0f;
-        break;
-    case 3:
-        projectileSpeed = 45.0f;
-        projectileDamage = 15.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 4.0f;
-        break;
-    default:
-        Console::Log("Automatic gun level can't be different from 0, 1, 2 or 3.");
-        break;
-    }
+    projectileSpeed = 4.0f;
+    projectileDamage = 5.0f;
+    projectileResistanceDamage = 5.0f;
+    projectileLifetime = 2.0f;
+    cadence = 20.0f;
 }

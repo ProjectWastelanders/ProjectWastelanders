@@ -119,7 +119,7 @@ void PlayerSemiAuto::SetGunStatsPerLevel(int level)
     case 1:
         projectileSpeed = 80.0f;
         projectileDamageWithoutCrit = 70.0f;
-        projectileResistanceDamage = 0.0f;
+        projectileResistanceDamage = 70.0f;
         projectileLifetime = 0.5f;
         cadence = 1.0f;
         canCrit = false;
@@ -127,16 +127,16 @@ void PlayerSemiAuto::SetGunStatsPerLevel(int level)
     case 2:
         projectileSpeed = 100.0f;
         projectileDamageWithoutCrit = 70.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 0.5f;
+        projectileResistanceDamage = 70.0f;
+        projectileLifetime = 0.4f;
         cadence = 1.0f;
         canCrit = false;
         break;
     case 3:
         projectileSpeed = 100.0f;
         projectileDamageWithoutCrit = 70.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 0.5f;
+        projectileResistanceDamage = 70.0f;
+        projectileLifetime = 0.4f;
         cadence = 1.0f;
         canCrit = true;
         break;

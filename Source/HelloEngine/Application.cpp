@@ -1,7 +1,5 @@
 #include "Headers.h"
 
-#include "Application.h"
-#include "ModuleWindow.h"
 #include "ModuleCamera3D.h"
 #include "ModuleRenderer3D.h"
 #include "ModuleLayers.h"
@@ -11,6 +9,7 @@
 #include "ModuleResourceManager.h"
 #include "ModulePhysics.h"
 #include "ModuleAudio.h"
+#include "ModuleNavMesh.h"
 
 #include "API/API_Vector2.h"
 #include "API/API_Vector3.h"
@@ -28,7 +27,7 @@ Application::Application()
 Application::~Application()
 {
 }
-//test
+
 bool Application::Init()
 {
 	// Check if resource folders exist HOTFIX
@@ -58,17 +57,18 @@ bool Application::Init()
 		std::filesystem::create_directory("Resources/Videos");
 	}
 
-	window = new ModuleWindow(true);
+	window = new ModuleWindow();
 	file = new ModuleFiles();
-	input = new ModuleInput(true);
-	camera = new ModuleCamera3D(true);
-	renderer3D = new ModuleRenderer3D(true);
+	input = new ModuleInput();
+	camera = new ModuleCamera3D();
+	renderer3D = new ModuleRenderer3D();
 	layers = new ModuleLayers();
 	xml = new ModuleXML();
 	command = new ModuleCommand();
 	resource = new ModuleResourceManager();
 	physic = new ModulePhysics();
 	audio = new ModuleAudio();
+	navMesh = new ModuleNavMesh();
 
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
@@ -83,7 +83,10 @@ bool Application::Init()
 
 	AddModule(input);
 
+	AddModule(navMesh);
+
 	AddModule(physic);
+
 	AddModule(audio);
 
 	AddModule(resource);
@@ -184,7 +187,7 @@ bool Application::CleanUp()
 
 Application* Application::Instance()
 {
-	if (_app == nullptr) 
+	if (!_app) 
 		_app = new Application();
 
 	return _app;

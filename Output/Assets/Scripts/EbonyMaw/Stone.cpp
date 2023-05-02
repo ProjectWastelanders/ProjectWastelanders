@@ -13,6 +13,7 @@ HELLO_ENGINE_API_C Stone* CreateStone(ScriptToInspectorInterface* script)
 void Stone::Start()
 {
 	bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
+	gameObject.GetTransform().SetScale(gameObject.GetTransform().GetGlobalScale() / 2);
 
 }
 void Stone::Update()

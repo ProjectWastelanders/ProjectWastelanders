@@ -64,12 +64,13 @@ void BossAttacks::Start()
 	if (bLoop == nullptr) {
 		Console::Log("BossLoop is nullptr in BOSSATTACK script");
 	}
+	takeobjTimer = 0;
 }
 
 void BossAttacks::Update()
 {
 	distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
-
+	dt = Time::GetDeltaTime();
 	if (isFireOn == true) {
 		fireTime += Time::GetDeltaTime();
 		if (fireTime > 10.0f) {
@@ -145,12 +146,46 @@ void BossAttacks::Update()
 
 					for (int i = 0; i < numRocks[attackType]; i++) {
 						Seek(&rocks[currentRock[i]], bossPosition[i], speed / 3, i, false, 60.0f);
+					}			
+
+					//if (takeobjTimer <= 6) {
+						if (bLoop->animState != BossLoop::AnimationState::TAKEOBJ && bLoop->animState != BossLoop::AnimationState::THROWOBJ)
+						{
+							bLoop->animState = BossLoop::AnimationState::TAKEOBJ;
+							bLoop->animationPlayer.ChangeAnimation(bLoop->recoverAnim);
+							bLoop->animationPlayer.SetLoop(true);
+							bLoop->animationPlayer.Play();
+						}/*
+						takeobjTimer = 0;
 					}
+					else {
+						takeobjTimer += dt;
+					}*/
+
 					break;
-				case BossAttacks::BOSS_STATE::HOLDING: HoldRock();
+				case BossAttacks::BOSS_STATE::HOLDING:
+
+					if (bLoop->animState != BossLoop::AnimationState::IDLE2 && bLoop->animState != BossLoop::AnimationState::TAKEOBJ && bLoop->animState != BossLoop::AnimationState::THROWOBJ && bLoop->animState != BossLoop::AnimationState::KNOCKUP && bLoop->animState != BossLoop::AnimationState::RECOVER)
+					{
+						bLoop->animState = BossLoop::AnimationState::IDLE2;
+						bLoop->animationPlayer.ChangeAnimation(bLoop->idleAnim2);
+						bLoop->animationPlayer.SetLoop(true);
+						bLoop->animationPlayer.Play();
+					}
+
+					HoldRock();
+
 					break;
 				case BossAttacks::BOSS_STATE::THROWING:
 					currentTimeAttack += Time::GetDeltaTime();
+
+					if (bLoop->animState != BossLoop::AnimationState::THROWOBJ)
+					{
+						bLoop->animState = BossLoop::AnimationState::THROWOBJ;
+						bLoop->animationPlayer.ChangeAnimation(bLoop->throwObjAnim);
+						bLoop->animationPlayer.SetLoop(false);
+						bLoop->animationPlayer.Play();
+					}
 
 					for (int i = 0; i < numRocks[attackType]; i++) {
 						if (currentTimeAttack <= timeAttack[i]) {
@@ -218,6 +253,14 @@ void BossAttacks::Update()
 					Seek(&rocks[currentRock[1]], { boss.GetTransform().GetGlobalPosition().x,  boss.GetTransform().GetGlobalPosition().y + 12.0f, boss.GetTransform().GetGlobalPosition().z}, speed / 3, 1, false, 60.0f);
 					dir[1] = player.GetTransform().GetGlobalPosition() - rocks[1].GetTransform().GetGlobalPosition();
 
+					if (bLoop->animState != BossLoop::AnimationState::TAKEOBJ)
+					{
+						bLoop->animState = BossLoop::AnimationState::TAKEOBJ;
+						bLoop->animationPlayer.ChangeAnimation(bLoop->takeObjAnim);
+						bLoop->animationPlayer.SetLoop(true);
+						bLoop->animationPlayer.Play();
+					}
+
 					break;
 
 				case BossAttacks::BOSS_STATE::RESIZINGROCK:
@@ -242,6 +285,14 @@ void BossAttacks::Update()
 					else {
 						rocks[1].GetTransform().Scale(10 * Time::GetDeltaTime());
 						lastPlayerPosition = player.GetTransform().GetGlobalPosition();
+					}
+
+					if (bLoop->animState != BossLoop::AnimationState::SPECIAL)
+					{
+						bLoop->animState = BossLoop::AnimationState::SPECIAL;
+						bLoop->animationPlayer.ChangeAnimation(bLoop->specialAnim);
+						bLoop->animationPlayer.SetLoop(false);
+						bLoop->animationPlayer.Play();
 					}
 
 					break;
@@ -274,6 +325,15 @@ void BossAttacks::Update()
 					bossState = BOSS_STATE::SELECTATTACK;
 					cooldownAttack = 0;
 				}
+
+				if (bLoop->animState != BossLoop::AnimationState::IDLE && bLoop->animState != BossLoop::AnimationState::KNOCKUP && bLoop->animState != BossLoop::AnimationState::RECOVER)
+				{
+					bLoop->animState = BossLoop::AnimationState::IDLE;
+					bLoop->animationPlayer.ChangeAnimation(bLoop->idleAnim);
+					bLoop->animationPlayer.SetLoop(true);
+					bLoop->animationPlayer.Play();
+				}
+
 				break;
 			case BOSS_STATE::SELECTATTACK:
 				// Generate a random integer between 0 and 0
@@ -435,7 +495,17 @@ void BossAttacks::SpecialAttack()
 			playerPosition[i+5] = player.GetTransform().GetGlobalPosition();
 			dir[i+5] = player.GetTransform().GetGlobalPosition() - rocks[currentRock[i+5]].GetTransform().GetGlobalPosition();
 		}
-		if (currentTimeAttack > specialTimeAttack[i] && hasReachedTarget[i + 5] == false) Seek(&rocks[currentRock[i + 5]], playerPosition[i + 5], speed / 2, i + 5, false, 80.0f);
+		if (currentTimeAttack > specialTimeAttack[i] && hasReachedTarget[i + 5] == false) 
+		{
+			Seek(&rocks[currentRock[i + 5]], playerPosition[i + 5], speed / 2, i + 5, false, 80.0f);
+
+			if (bLoop->animState != BossLoop::AnimationState::SPECIAL2)
+			{
+				bLoop->animState = BossLoop::AnimationState::SPECIAL2;
+				bLoop->animationPlayer.ChangeAnimation(bLoop->specialAnim2);
+				bLoop->animationPlayer.Play();
+			}
+		}
 	}
 }
 

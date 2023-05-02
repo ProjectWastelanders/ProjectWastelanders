@@ -33,9 +33,9 @@ void BreakableBox::OnCollisionEnter(API_RigidBody other)
 {
     if (!gameObject.IsActive())return;
 
-    std::string detectionName = other.GetGameObject().GetName();
+    std::string detectionTag = other.GetGameObject().GetTag();
 
-    if (detectionName == "Projectile")
+    if (detectionTag == "Projectile")
     {
 
         Projectile* projectile = (Projectile*)other.GetGameObject().GetScript("Projectile");
@@ -43,7 +43,7 @@ void BreakableBox::OnCollisionEnter(API_RigidBody other)
         ShootBox(projectile->damage);
 
     }
-    else if (detectionName == "Player")
+    else if (detectionTag == "Player")
     {
         PlayerMove* playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
 

@@ -28,15 +28,15 @@ void BreakableWall::Update()
 
 void BreakableWall::OnCollisionEnter(API_RigidBody other)
 {
-    std::string detectionName = other.GetGameObject().GetName();
+    std::string detectionTag = other.GetGameObject().GetTag();
 
-    if (detectionName == "Projectile")
+    if (detectionTag == "Projectile")
     {
         Projectile* projectile = (Projectile*)other.GetGameObject().GetScript("Projectile");
         ShootWall(projectile->damage);
 
     }
-    else if (detectionName == "Player")
+    else if (detectionTag == "Player")
     {
         PlayerMove* playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
 

@@ -98,8 +98,6 @@ bool ModuleWindow::Init()
 	S_SetTitle("Hello Engine");
 #endif // STANDALONE
 
-
-
 	return ret;
 }
 
@@ -117,10 +115,8 @@ bool ModuleWindow::CleanUp()
 	LOG("Destroying SDL window and quitting all SDL systems");
 
 	//Destroy window
-	if(window != nullptr)
-	{
+	if(window)
 		SDL_DestroyWindow(window);
-	}
 
 	LOG("Quit SDL");
 

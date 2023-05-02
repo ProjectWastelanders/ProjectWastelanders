@@ -33,5 +33,9 @@ public:
 
     float manteinTime = 0.0f;
     int upgradingLevel;
+
+    bool audioUp1 = true;
+    bool audioUp2 = true;
+    bool audioUp3 = true;
 };
 

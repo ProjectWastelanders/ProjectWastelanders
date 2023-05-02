@@ -88,29 +88,37 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 1.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 1.0f;
+        projectileLifetime = 0.3f;
         cadence = 10.0f;
+        // max damage 10
+        // damage aument speed 0%
         break;
     case 1:
         projectileSpeed = 40.0f;
-        projectileDamage = 25.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 5.0f;
+        projectileDamage = 1.0f;
+        projectileResistanceDamage = 1.0f;
+        projectileLifetime = 0.5f;
+        cadence = 10.0f;
+        // max damage 10
+        // damage aument speed 0%
         break;
     case 2:
-        projectileSpeed = 50.0f;
-        projectileDamage = 25.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 5.0f;
+        projectileSpeed = 40.0f;
+        projectileDamage = 1.0f;
+        projectileResistanceDamage = 1.0f;
+        projectileLifetime = 0.5f;
+        cadence = 10.0f;
+        // max damage 15
+        // damage aument speed 0%
         break;
     case 3:
-        projectileSpeed = 50.0f;
-        projectileDamage = 35.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 5.0f;
+        projectileSpeed = 40.0f;
+        projectileDamage = 1.0f;
+        projectileResistanceDamage = 1.0f;
+        projectileLifetime = 0.5f;
+        cadence = 10.0f;
+        // max damage 15
+        // damage aument speed 50%
         break;
     default:
         Console::Log("Automatic gun level can't be different from 0, 1, 2 or 3.");

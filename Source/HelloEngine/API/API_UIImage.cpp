@@ -39,6 +39,22 @@ void API::API_UIImage::FillImage(float fill)
 	_UIImage->SetFill(fill);
 }
 
+void API::API_UIImage::SetOpacity(float opacity)
+{
+	if (!_UIImage)
+	{
+		Engine::Console::S_Log("Trying to acces a NULLPTR UI Image. FillImage()");
+		return;
+	}
+
+	if (opacity > 1.0f)
+		opacity = 1.0f;
+	if (opacity < 0.0f)
+		opacity = 0.0f;
+
+	_UIImage->SetOpacity(opacity);
+}
+
 ComponentUIImage* API::API_UIImage::GetComponent()
 {
 	return _UIImage;

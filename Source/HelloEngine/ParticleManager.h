@@ -11,6 +11,7 @@ public:
 	~ParticleManager();
 
 	void Init();
+	void Start();
 	void Draw();
 
 	void RemoveEmitterInList(Emitter* emitter);

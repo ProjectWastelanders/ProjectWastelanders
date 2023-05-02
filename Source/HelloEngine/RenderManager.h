@@ -73,7 +73,7 @@ public:
 	uint AddIndependentMesh(ResourceMesh* resource, uint resMat);
 	uint AddInstancedMesh(ResourceMesh* resource, uint resMat);
 	uint Add2DMesh();
-	uint AddTextObject(std::string text = "Default Text", float4 color = {1,1,1,1}, float2 position = {0, 0}, float scale = 1.0f);
+	uint AddTextObject(std::string text = "Default Text", float4 color = { 1,1,1,1 }, float2 position = { 0, 0 }, float scale = 1.0f);
 
 	void CreatePrimitive(GameObject* parent, PrimitiveType type);
 	void CreateUI(GameObject* parent, UIType type);
@@ -90,11 +90,17 @@ public:
 	void DrawOBB(Mesh* mesh);
 	void DrawAABB(Mesh* mesh);
 	void DrawColliderBox(PhysBody3D* phsyBody, float4 color = { 0.5f, 0.0f, 0.5f, 1.0f }, float wireSize = 3.0f);
-	void DrawColliderSphere(PhysBody3D* phsyBody, float radius = 0.f, float4 color = { 0.5f, 0.0f, 0.5f, 1.0f }, float wireSize = 3.0f, uint verSlices = 16, uint horSlices = 16);
-	void DrawColliderCylinder(PhysBody3D* phsyBody, float2 radiusHeight = { 1.0f, 1.0f } , float4 color = { 0.5f, 0.0f, 0.5f, 1.0f }, float wireSize = 3.0f, uint verSlices = 16);
+	void DrawColliderSphere(std::vector<float3>* spherePointsComp, std::vector<uint>* sphereIndicesComp, float4 color = { 0.5f, 0.0f, 0.5f, 1.0f }, float wireSize = 1.0f);
+	void DrawColliderCylinder(std::vector<float3>* cylinderPointsComp, std::vector<uint>* cylinderIndicesComp, float4 color, float wireSize);
 
-	void CalculateSphereBuffer(uint verSlices = 16, uint horSlices = 16);
-	void CalculateCylinderBuffer(uint verSlices = 16);
+	void CalculateSphereBuffer(std::vector<uint>* sphereIndicesComp, uint verSlices = 16, uint horSlices = 16);
+	void CalculateCylinderBuffer(std::vector<uint>* cylinderIndicesComp, uint verSlices = 16);
+
+	void CalculateSphereIndices(std::vector<uint>* sphereIndicesComp, uint verSlices, uint horSlices);
+	void CalculateSpherePoints(PhysBody3D* physBody, std::vector<float3>* spherePointsComp, float radius, uint verSlices, uint horSlices);
+
+	void CalculateCylinderIndices(std::vector<uint>* sphereIndicesComp, uint verSlices);
+	void CalculateCylinderPoints(PhysBody3D* physBody, std::vector<float3>* cylinderPointsComp, float2 radiusHeight, uint verSlices);
 
 	void DestroyInstanceRenderers();
 
@@ -106,19 +112,21 @@ private:
 	std::map<uint, InstanceRenderer> _renderMap; // Render managers that use instance rendering to draw opaque meshes.
 	std::map<uint, RenderEntry> _transparencyMeshes; // Meshes with transparency that must be drawn with a draw call per mesh.
 	std::multimap<float, RenderEntry*> _orderedMeshes; // Meshes with transparency ordered from furthest to closest to the camera.
-	
+
 	std::map<uint, RenderEntry> _independentMeshes; // Opaque meshes that need to be drawn in an independent draw call.
 
 	TextureManager* _textureManager = nullptr;
-	
+
 	std::vector<uint> _emptyRenderManagers;
 
 	RenderEntry* _selectedMesh = nullptr;
 	Mesh* _selectedMeshRaw = nullptr;
 
 	std::vector<uint> boxIndices; // Used to display bounding boxes.
-	std::vector<uint> sphereIndices;
-	std::vector<uint> cylinderIndices;
+	/*std::vector<uint> sphereIndices;*/
+	/*std::vector<uint> cylinderIndices;*/
+	std::vector<uint> sphereIndicesMax;
+	std::vector<uint> cylinderIndicesMax;
 
 	// ModelResources for primitives
 	ResourceModel* primitiveModels[5];

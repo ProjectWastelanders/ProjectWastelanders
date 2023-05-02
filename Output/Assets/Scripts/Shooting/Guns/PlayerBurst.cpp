@@ -132,39 +132,43 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
     {
     case 0:
         projectileSpeed = 35.0f;
-        projectileDamage = 20.0f;
-        projectileResistanceDamage = 20.0f;
+        projectileDamage = 0.0f;
+        projectileResistanceDamage = 0.0f;
+        projectileLifetime = 1.0f;
+        cadence = 1.0f;
+        burstLenght = 2;
+        fullBurstDelay = 0.1f;
+        // bomb 15
+        break;
+    case 1:
+        projectileSpeed = 35.0f;
+        projectileDamage = 0.0f;
+        projectileResistanceDamage = 0.0f;
         projectileLifetime = 1.0f;
         cadence = 1.0f;
         burstLenght = 3;
         fullBurstDelay = 0.1f;
-        break;
-    case 1:
-        projectileSpeed = 35.0f;
-        projectileDamage = 20.0f;
-        projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.0f;
-        burstLenght = 4;
-        fullBurstDelay = 0.1f;
+        // bomb 15
         break;
     case 2:
         projectileSpeed = 45.0f;
-        projectileDamage = 20.0f;
+        projectileDamage = 0.0f;
         projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
+        projectileLifetime = 0.78f;
         cadence = 1.0f;
-        burstLenght = 4;
+        burstLenght = 3;
         fullBurstDelay = 0.1f;
+        // bomb 15
         break;
     case 3:
         projectileSpeed = 45.0f;
-        projectileDamage = 30.0f;
+        projectileDamage = 0.0f;
         projectileResistanceDamage = 0.0f;
-        projectileLifetime = 1.0f;
+        projectileLifetime = 0.78f;
         cadence = 1.0f;
-        burstLenght = 4;
+        burstLenght = 3;
         fullBurstDelay = 0.1f;
+        // bomb 30
         break;
     default:
         Console::Log("Burst gun level can't be different from 0, 1, 2 or 3.");

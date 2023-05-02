@@ -30,7 +30,7 @@ PhysicsComponent::PhysicsComponent(GameObject* gameObject) : Component(gameObjec
 	renderColColor[2] = 0.5f;
 	renderColColor[3] = 1.0f;
 
-	wireframeSize = 3.0f;
+	wireframeSize = 1.0f;
 
 	sphereVerSlices = 16;
 	sphereHorSlices = 16;
@@ -90,7 +90,7 @@ void PhysicsComponent::Serialization(json& j)
 		_j["HasPhysBody"] = true;
 		_j["IsRenderingCol"] = _physBody->isRenderingCol;
 	}
-	else 
+	else
 	{
 		_j["HasPhysBody"] = false;
 		_j["IsRenderingCol"] = false;
@@ -229,7 +229,7 @@ void PhysicsComponent::OnEditor()
 	bool created = true;
 	if (ImGui::CollapsingHeader("Physics", &created, ImGuiTreeNodeFlags_DefaultOpen))
 	{
-		if (ImGui::DragFloat("Mass: ", &temporalMass, 0.01, 0, 99999.999)) 
+		if (ImGui::DragFloat("Mass: ", &temporalMass, 0.01, 0, 99999.999))
 		{
 			if (_physBody)
 			{
@@ -251,7 +251,7 @@ void PhysicsComponent::OnEditor()
 
 			CheckShapes();
 
-			if (_shapeSelected != ColliderShape::NONE) 
+			if (_shapeSelected != ColliderShape::NONE)
 			{
 				if (ImGui::Button("Create Collider"))
 				{
@@ -261,7 +261,7 @@ void PhysicsComponent::OnEditor()
 			}
 
 		}
-		else 
+		else
 		{
 			const char* colliderType = "";
 			switch (_shapeSelected)
@@ -296,21 +296,21 @@ void PhysicsComponent::OnEditor()
 				}
 			}
 
-			if (ImGui::Checkbox("Kinematic", &_physBody->isKinematic)) 
+			if (ImGui::Checkbox("Kinematic", &_physBody->isKinematic))
 			{
 				if (_physBody)
 				{
-					if (_physBody->isKinematic) 
+					if (_physBody->isKinematic)
 						_physBody->isStatic = false;
 
 					CallUpdateAllPram();
 				}
 			}
 
-			if (ImGui::Checkbox("Trigger", &_physBody->isTrigger)) 
+			if (ImGui::Checkbox("Trigger", &_physBody->isTrigger))
 			{
 				if (_physBody)
-					CallUpdateAllPram();		
+					CallUpdateAllPram();
 			}
 
 			if (ImGui::DragFloat3("Gravity", _gravity, 0.01))
@@ -321,13 +321,13 @@ void PhysicsComponent::OnEditor()
 
 			if (ImGui::DragFloat3("Angular Factor", _angularFactor))
 			{
-				if (_physBody) 
+				if (_physBody)
 					SetAngularFactor({ _angularFactor[0], _angularFactor[1], _angularFactor[2] });
 			}
 
-			if (ImGui::Checkbox("Render", &_physBody->isRenderingCol)) 
+			if (ImGui::Checkbox("Render", &_physBody->isRenderingCol))
 			{
-				if (_physBody->isRenderingCol) 
+				if (_physBody->isRenderingCol)
 				{
 					switch (_shapeSelected)
 					{
@@ -346,20 +346,22 @@ void PhysicsComponent::OnEditor()
 						if (sphereHorSlices > MAX_HORIZONTAL_SLICES_SPHERE) {
 							sphereHorSlices = MAX_HORIZONTAL_SLICES_SPHERE;
 						}
-						Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(sphereVerSlices, sphereHorSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateSphereIndices(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
 					}
 					break;
 					case ColliderShape::CYLINDER:
 					{
-						if (cylinderVerSlices < 3) 
+						if (cylinderVerSlices < 3)
 						{
 							cylinderVerSlices = 3;
 						}
-						if (cylinderVerSlices > MAX_VERTICAL_SLICES_CYLINDER) 
+						if (cylinderVerSlices > MAX_VERTICAL_SLICES_CYLINDER)
 						{
 							cylinderVerSlices = MAX_VERTICAL_SLICES_CYLINDER;
 						}
-						Application::Instance()->renderer3D->renderManager.CalculateCylinderBuffer(cylinderVerSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateCylinderIndices(&cylinderIndicesComp, cylinderVerSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateCylinderBuffer(&cylinderIndicesComp, cylinderVerSlices);
 					}
 					break;
 					}
@@ -379,11 +381,13 @@ void PhysicsComponent::OnEditor()
 				{
 					if (ImGui::DragInt("Ver. Slices: ", &sphereVerSlices, 1, 3, MAX_VERTICAL_SLICES_SPHERE))
 					{
-						Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(sphereVerSlices, sphereHorSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateSphereIndices(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
 					}
 					if (ImGui::DragInt("Hor. Slices: ", &sphereHorSlices, 1, 1, MAX_HORIZONTAL_SLICES_SPHERE))
 					{
-						Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(sphereVerSlices, sphereHorSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateSphereIndices(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
 					}
 				}
 				break;
@@ -391,12 +395,12 @@ void PhysicsComponent::OnEditor()
 				{
 					if (ImGui::DragInt("Ver. Slices: ", &cylinderVerSlices, 1, 3, MAX_VERTICAL_SLICES_CYLINDER))
 					{
-						Application::Instance()->renderer3D->renderManager.CalculateCylinderBuffer(cylinderVerSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateCylinderIndices(&cylinderIndicesComp, cylinderVerSlices);
+						//Application::Instance()->renderer3D->renderManager.CalculateCylinderBuffer(&cylinderIndicesComp, cylinderVerSlices);
 					}
 				}
 				break;
 				}
-				//CheckRenderBuffers();
 			}
 
 
@@ -472,12 +476,14 @@ void PhysicsComponent::CheckRenderBuffers()
 	{
 	case ColliderShape::SPHERE:
 	{
-		Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(sphereVerSlices, sphereHorSlices);
+		//Application::Instance()->renderer3D->renderManager.CalculateSphereIndices(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
+		//Application::Instance()->renderer3D->renderManager.CalculateSphereBuffer(&sphereIndicesComp, sphereVerSlices, sphereHorSlices);
 	}
 	break;
 	case ColliderShape::CYLINDER:
 	{
-		Application::Instance()->renderer3D->renderManager.CalculateCylinderBuffer(cylinderVerSlices);
+		//Application::Instance()->renderer3D->renderManager.CalculateCylinderIndices(&cylinderIndicesComp, cylinderVerSlices);
+		//Application::Instance()->renderer3D->renderManager.CalculateCylinderBuffer(&cylinderIndicesComp, cylinderVerSlices);
 	}
 	break;
 	default:
@@ -621,6 +627,7 @@ void PhysicsComponent::CreateCollider()
 
 	_physBody->gameObjectUID = _gameObject->GetID();
 	_physBody->SetPos(_physBody->colPos.x, _physBody->colPos.y, _physBody->colPos.z);
+	
 	CallUpdatePos();
 }
 

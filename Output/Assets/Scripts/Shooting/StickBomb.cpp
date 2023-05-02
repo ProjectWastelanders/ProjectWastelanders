@@ -22,7 +22,7 @@ void StickBomb::Update()
     }
 }
 
-void StickBomb::OnCollisionEnter(API::API_RigidBody other)
+void StickBomb::OnCollisionStay(API::API_RigidBody other)
 {
     if (!triggerActive) return;
 

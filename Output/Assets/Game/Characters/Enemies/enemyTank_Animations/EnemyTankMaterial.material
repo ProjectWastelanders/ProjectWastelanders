@@ -1,0 +1,73 @@
+{
+    "Shader resource UID": 1090855872,
+    "Uniforms": [
+        {
+            "Index": 0,
+            "Name": "Actual_Point",
+            "Read": 12,
+            "Size": 1,
+            "String Type": "int",
+            "Type": 5124,
+            "Value": 0
+        },
+        {
+            "Index": 1,
+            "Name": "Actual_Spot",
+            "Read": 11,
+            "Size": 1,
+            "String Type": "int",
+            "Type": 5124,
+            "Value": 0
+        },
+        {
+            "Index": 2,
+            "Name": "ColourTest",
+            "Read": 10,
+            "Size": 1,
+            "String Type": "vec4",
+            "Type": 35666,
+            "Value": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "Index": 615,
+            "Layer": 0,
+            "Name": "albedo_texture",
+            "Read": 14,
+            "Size": 1,
+            "String Type": "sampler2D",
+            "Type": 35678,
+            "Value": 3001046179
+        },
+        {
+            "Index": 616,
+            "Name": "finalBonesMatrices[0]",
+            "Read": 21,
+            "Size": 100,
+            "String Type": "mat4",
+            "Type": 35676,
+            "Value": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        }
+    ]
+}

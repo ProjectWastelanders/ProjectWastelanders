@@ -20,6 +20,12 @@
 
 #include "ModuleRenderer3D.h"
 
+#include "ModuleNavMesh.h"
+#include "NavMeshBuilder.h"
+
+#include "LayerEditor.h"
+#include "NavAgentComponent.h"
+
 RenderManager::RenderManager()
 {
 }
@@ -27,7 +33,7 @@ RenderManager::RenderManager()
 RenderManager::~RenderManager()
 {
 	RELEASE(_textureManager);
-	
+
 	if (lineShader)
 	{
 		lineShader->Dereference();
@@ -153,9 +159,6 @@ void RenderManager::Init()
 
 	glBindVertexArray(0);
 
-	CalculateSphereBuffer();
-	CalculateCylinderBuffer();
-
 	// text rendering
 	glGenVertexArrays(1, &TextVAO);
 	glGenBuffers(1, &TextVBO);
@@ -166,6 +169,12 @@ void RenderManager::Init()
 	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
+
+	CalculateSphereIndices(&sphereIndicesMax, MAX_VERTICAL_SLICES_SPHERE, MAX_HORIZONTAL_SLICES_SPHERE);
+	CalculateSphereBuffer(&sphereIndicesMax, MAX_VERTICAL_SLICES_SPHERE, MAX_HORIZONTAL_SLICES_SPHERE);
+
+	CalculateCylinderIndices(&cylinderIndicesMax, MAX_VERTICAL_SLICES_CYLINDER);
+	CalculateCylinderBuffer(&cylinderIndicesMax, MAX_VERTICAL_SLICES_CYLINDER);
 
 }
 
@@ -181,14 +190,14 @@ void RenderManager::OnEditor()
 			if (manager.second.resource == nullptr)
 				continue;
 			std::string headerName = manager.second.resource->debugName + "##" + std::to_string(manager.second.GetRenderID());
-			if(ImGui::CollapsingHeader(headerName.c_str()))
+			if (ImGui::CollapsingHeader(headerName.c_str()))
 			{
 				std::string maxInstances = "Maximum number of instances: " + std::to_string(manager.second.instanceNum);
 				ImGui::Text(maxInstances.c_str());
-				
+
 				ImGui::Text("Instances: "); ImGui::SameLine();
 				ImGui::TextColored(textColour, std::to_string(manager.second.meshes.size()).c_str());
-				
+
 				ImGui::Text("Memory usage in bytes: "); ImGui::SameLine();
 				float memory = manager.second.instanceNum * sizeof(float4x4) + manager.second.instanceNum * sizeof(float);
 				memory += manager.second.totalIndices->size() * sizeof(uint);
@@ -228,7 +237,7 @@ InstanceRenderer* RenderManager::GetRenderManager(uint meshID, uint materialID, 
 	//It has to check first or otherwise a NULL resource could be generated
 	if (materialID > 0)
 		if (ModuleResourceManager::resources.count(materialID))
-			mat = (ResourceMaterial*) ModuleResourceManager::resources[materialID];
+			mat = (ResourceMaterial*)ModuleResourceManager::resources[materialID];
 
 	// If there is no instance Renderer for this mesh resource
 	if (_renderMap.count(ID) == 0)
@@ -236,7 +245,7 @@ InstanceRenderer* RenderManager::GetRenderManager(uint meshID, uint materialID, 
 		if (create)
 		{
 			_renderMap[ID].SetMeshInformation((ResourceMesh*)ModuleResourceManager::resources[meshID],
-					mat);
+				mat);
 		}
 		else
 			return nullptr;
@@ -258,7 +267,7 @@ void RenderManager::Draw()
 		_renderMap.erase(_emptyRenderManagers[i]);
 	}
 	_emptyRenderManagers.clear();
-	
+
 	// Draw meshes that must be rendered in an individual draw call.
 	DrawIndependentMeshes();
 	// Draw selected mesh
@@ -270,36 +279,46 @@ void RenderManager::Draw()
 
 void RenderManager::DrawDebug()
 {
-	if (Application::Instance()->renderer3D->isRenderingColliders) 
+	if (Application::Instance()->renderer3D->isRenderingColliders)
 	{
 		for (int i = 0; i < ModulePhysics::physBodies.size(); i++)
 		{
 			ModulePhysics::physBodies[i]->RenderCollider();
 		}
 	}
-	else 
+	else
 	{
 		if (LayerEditor::selectedGameObject != nullptr)
 		{
 			PhysicsComponent* physComp = LayerEditor::selectedGameObject->GetComponent<PhysicsComponent>();
-			if (physComp) 
+			if (physComp)
 			{
 				for (int i = 0; i < ModulePhysics::physBodies.size(); i++)
 				{
 					if (ModuleLayers::gameObjects.count(ModulePhysics::physBodies[i]->gameObjectUID) != 0)
 					{
 						GameObject* go = ModuleLayers::gameObjects[ModulePhysics::physBodies[i]->gameObjectUID];
-						if (go == LayerEditor::selectedGameObject) 
+						if (go == LayerEditor::selectedGameObject)
 						{
 							ModulePhysics::physBodies[i]->RenderCollider();
 						}
 					}
 				}
 			}
-			
+
 		}
 	}
 	
+	if (ModuleRenderer3D::drawNavMesh && ModuleNavMesh::S_GetNavMeshBuilder())
+	{
+		ModuleNavMesh::S_GetNavMeshBuilder()->DebugDraw();
+
+		if (LayerEditor::selectedGameObject && 
+			LayerEditor::selectedGameObject->GetComponent<ComponentAgent>())
+		{
+			ModuleNavMesh::S_GetPathfinding()->RenderPath(LayerEditor::selectedGameObject->GetComponent<ComponentAgent>());
+		}		
+	}
 }
 
 void RenderManager::Draw2D()
@@ -307,11 +326,11 @@ void RenderManager::Draw2D()
 	// Draw all 2D meshes.
 	if (renderer2D != nullptr)
 		renderer2D->Draw2D();
-	
+
 	DrawTextObjects();
 }
 
-uint RenderManager::AddMesh(ResourceMesh* resource, uint resMat,  MeshRenderType type)
+uint RenderManager::AddMesh(ResourceMesh* resource, uint resMat, MeshRenderType type)
 {
 	switch (type)
 	{
@@ -426,48 +445,48 @@ uint RenderManager::AddTextObject(std::string text, float4 color, float2 positio
 
 void RenderManager::CreatePrimitive(GameObject* parent, PrimitiveType type)
 {
-	if (parent == nullptr) 
+	if (parent == nullptr)
 		parent = ModuleLayers::rootGameObject;
 
 	switch (type)
 	{
-		case PrimitiveType::CUBE:
-		{
-			GameObject* cube = new GameObject(parent, "Cube", "Primitive");
-			MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
-			meshRenderer->CreateMesh(cubeUID);
-			break;
-		}
-		case PrimitiveType::SPHERE:
-		{
-			GameObject* cube = new GameObject(parent, "Sphere", "Primitive");
-			MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
-			meshRenderer->CreateMesh(sphereUID);
-			break;
-		}
-		case PrimitiveType::CYLINDER:
-		{
-			GameObject* cube = new GameObject(parent, "Cylinder", "Primitive");
-			MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
-			meshRenderer->CreateMesh(cylinderUID);
-			break;
-		}
-		case PrimitiveType::PLANE:
-		{
-			GameObject* cube = new GameObject(parent, "Plane", "Primitive");
-			MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
-			meshRenderer->CreateMesh(planeUID);
-			break;
-		}
-		case PrimitiveType::PLANE2D:
-		{
-			GameObject* canvas = new GameObject(parent, "Canvas", "UI");
+	case PrimitiveType::CUBE:
+	{
+		GameObject* cube = new GameObject(parent, "Cube", "Primitive");
+		MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
+		meshRenderer->CreateMesh(cubeUID);
+		break;
+	}
+	case PrimitiveType::SPHERE:
+	{
+		GameObject* cube = new GameObject(parent, "Sphere", "Primitive");
+		MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
+		meshRenderer->CreateMesh(sphereUID);
+		break;
+	}
+	case PrimitiveType::CYLINDER:
+	{
+		GameObject* cube = new GameObject(parent, "Cylinder", "Primitive");
+		MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
+		meshRenderer->CreateMesh(cylinderUID);
+		break;
+	}
+	case PrimitiveType::PLANE:
+	{
+		GameObject* cube = new GameObject(parent, "Plane", "Primitive");
+		MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
+		meshRenderer->CreateMesh(planeUID);
+		break;
+	}
+	case PrimitiveType::PLANE2D:
+	{
+		GameObject* canvas = new GameObject(parent, "Canvas", "UI");
 
-			//GameObject* cube = new GameObject(parent, "Canvas", "Primitive");
-			//MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
-			//meshRenderer->CreateMesh(plane2DUID);
-			break;
-		}
+		//GameObject* cube = new GameObject(parent, "Canvas", "Primitive");
+		//MeshRenderComponent* meshRenderer = cube->AddComponent<MeshRenderComponent>();
+		//meshRenderer->CreateMesh(plane2DUID);
+		break;
+	}
 	}
 }
 
@@ -575,7 +594,7 @@ void RenderManager::DrawSelectedMesh()
 			return;
 		}
 		_selectedMeshRaw->DrawAsSelected();
-	}		
+	}
 }
 
 void RenderManager::RemoveSelectedMesh()
@@ -710,39 +729,6 @@ void RenderManager::DrawColliderBox(PhysBody3D* physBody, float4 color, float wi
 		AABBPoints[i] = { corners[i][0], corners[i][1],corners[i][2] };
 	}
 
-	//AABBPoints[0].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[0].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[0].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//AABBPoints[1].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[1].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[1].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//AABBPoints[2].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[2].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[2].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//AABBPoints[3].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[3].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[3].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//
-	//AABBPoints[4].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[4].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[4].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//AABBPoints[5].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[5].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[5].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//AABBPoints[6].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[6].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[6].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
-	//AABBPoints[7].x = (float)physBody->body->getCenterOfMassTransform().getOrigin().getX() * mult;
-	//AABBPoints[7].y = (float)physBody->body->getCenterOfMassTransform().getOrigin().getY() * mult;
-	//AABBPoints[7].z = (float)physBody->body->getCenterOfMassTransform().getOrigin().getZ() * mult;
-
 	glBindVertexArray(AABBVAO);
 
 	glBindBuffer(GL_ARRAY_BUFFER, AABBVBO);
@@ -761,25 +747,194 @@ void RenderManager::DrawColliderBox(PhysBody3D* physBody, float4 color, float wi
 	glLineWidth(1.0f);
 
 	glBindVertexArray(0);
-	
+
 }
 
-void RenderManager::DrawColliderSphere(PhysBody3D* physBody, float radius, float4 color, float wireSize, uint verSlices, uint horSlices)
+void RenderManager::DrawColliderSphere(std::vector<float3>* spherePointsComp, std::vector<uint>* sphereIndicesComp, float4 color, float wireSize)
+{
+
+	//glGenVertexArrays(1, &SPVAO);
+	glBindVertexArray(SPVAO);
+
+	//glGenBuffers(1, &SPIBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, SPIBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * sphereIndicesComp->size(), &sphereIndicesComp->at(0), GL_DYNAMIC_DRAW);
+
+	//glGenBuffers(1, &SPVBO);
+	glBindBuffer(GL_ARRAY_BUFFER, SPVBO);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * spherePointsComp->size(), nullptr, GL_DYNAMIC_DRAW);
+
+	//glBindVertexArray(0);
+
+	///
+
+	glBindVertexArray(SPVAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, SPVBO);
+	void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+	memcpy(ptr, &spherePointsComp->at(0), spherePointsComp->size() * sizeof(float3));
+	glUnmapBuffer(GL_ARRAY_BUFFER);
+
+	localLineShader->shader.Bind();
+	localLineShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+	localLineShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+	localLineShader->shader.SetFloat4("lineColor", color[0], color[1], color[2], color[3]);
+
+	glLineWidth(wireSize);
+	glDrawElements(GL_LINES, sphereIndicesComp->size(), GL_UNSIGNED_INT, 0);
+	//Console::S_Log(std::to_string(sphereIndicesComp->size()));
+	glLineWidth(1.0f);
+
+	glBindVertexArray(0);
+
+}
+
+void RenderManager::DrawColliderCylinder(std::vector<float3>* cylinderPointsComp, std::vector<uint>* cylinderIndicesComp, float4 color, float wireSize)
+{
+
+	//glGenVertexArrays(1, &CYVAO);
+	glBindVertexArray(CYVAO);
+
+	//glGenBuffers(1, &CYIBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, CYIBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * cylinderIndicesComp->size(), &cylinderIndicesComp->at(0), GL_DYNAMIC_DRAW);
+
+	//glGenBuffers(1, &CYVBO);
+	glBindBuffer(GL_ARRAY_BUFFER, CYVBO);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * cylinderPointsComp->size(), nullptr, GL_DYNAMIC_DRAW);
+
+	//glBindVertexArray(0);
+
+	///
+
+	glBindVertexArray(CYVAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, CYVBO);
+	void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+	memcpy(ptr, &cylinderPointsComp->at(0), cylinderPointsComp->size() * sizeof(float3));
+	glUnmapBuffer(GL_ARRAY_BUFFER);
+
+	localLineShader->shader.Bind();
+	localLineShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+	localLineShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+	localLineShader->shader.SetFloat4("lineColor", color[0], color[1], color[2], color[3]);
+
+	glLineWidth(wireSize);
+	glDrawElements(GL_LINES, cylinderIndicesComp->size(), GL_UNSIGNED_INT, 0);
+	glLineWidth(1.0f);
+
+	glBindVertexArray(0);
+}
+
+void RenderManager::CalculateSphereBuffer(std::vector<uint>* sphereIndicesComp, uint verSlices, uint horSlices)
+{
+
+	glGenVertexArrays(1, &SPVAO);
+	glBindVertexArray(SPVAO);
+
+	glGenBuffers(1, &SPIBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, SPIBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * sphereIndicesComp->size(), &sphereIndicesComp->at(0), GL_DYNAMIC_DRAW);
+
+	glGenBuffers(1, &SPVBO);
+	glBindBuffer(GL_ARRAY_BUFFER, SPVBO);
+	const uint sphereVertexNum = verSlices * horSlices + 2;
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * sphereVertexNum, nullptr, GL_DYNAMIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
+
+	glBindVertexArray(0);
+}
+
+void RenderManager::CalculateCylinderBuffer(std::vector<uint>* cylinderIndicesComp, uint verSlices)
+{
+	// Set up buffer for Cylinder lines.
+	glGenVertexArrays(1, &CYVAO);
+	glBindVertexArray(CYVAO);
+
+	glGenBuffers(1, &CYIBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, CYIBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * cylinderIndicesComp->size(), &cylinderIndicesComp->at(0), GL_DYNAMIC_DRAW);
+
+	glGenBuffers(1, &CYVBO);
+	glBindBuffer(GL_ARRAY_BUFFER, CYVBO);
+	const uint cylinderVertexNum = verSlices * 2;
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * cylinderVertexNum, nullptr, GL_DYNAMIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
+
+	glBindVertexArray(0);
+}
+
+void RenderManager::CalculateSphereIndices(std::vector<uint>* sphereIndicesComp, uint verSlices, uint horSlices)
+{
+	// Set up buffer for Sphere lines.
+	sphereIndicesComp->clear();
+
+	for (int j = 1; j < verSlices + 1; j++) {
+		sphereIndicesComp->push_back(0);
+		sphereIndicesComp->push_back(j);
+	}
+
+	for (int i = 0; i < horSlices - 1; i++) {
+
+		//Vertical
+		for (int j = 0; j < verSlices; j++) {
+			sphereIndicesComp->push_back((i * verSlices + 1) + j);
+			sphereIndicesComp->push_back(((i + 1) * verSlices + 1) + j);
+		}
+
+		//Horizontal
+		for (int j = 0; j < verSlices; j++) {
+			if (j == verSlices - 1) {
+				sphereIndicesComp->push_back((i * verSlices + 1) + j);
+				sphereIndicesComp->push_back((i * verSlices + 1));
+			}
+			else {
+				sphereIndicesComp->push_back((i * verSlices + 1) + j);
+				sphereIndicesComp->push_back((i * verSlices + 1) + j + 1);
+			}
+		}
+	}
+
+	for (int i = 0; i < verSlices; i++) {
+
+		//Vertical
+		sphereIndicesComp->push_back(((horSlices - 1) * verSlices + 1) + i);
+		sphereIndicesComp->push_back(horSlices * verSlices + 1);
+
+		//Horizontal
+		if (i == verSlices - 1) {
+			sphereIndicesComp->push_back(((horSlices - 1) * verSlices + 1) + i);
+			sphereIndicesComp->push_back((horSlices - 1) * verSlices + 1);
+		}
+		else {
+			sphereIndicesComp->push_back(((horSlices - 1) * verSlices + 1) + i);
+			sphereIndicesComp->push_back(((horSlices - 1) * verSlices + 1) + i + 1);
+		}
+	}
+}
+
+void RenderManager::CalculateSpherePoints(PhysBody3D* physBody, std::vector<float3>* spherePointsComp, float radius, uint verSlices, uint horSlices)
 {
 	const float newRadius = radius / 2.f;
 
 	const float3 origin = (float3)physBody->body->getCenterOfMassTransform().getOrigin();
-	const float3 startingPointY = - float3(0, newRadius, 0);
+	const float3 startingPointY = -float3(0, newRadius, 0);
 	const float diferenceBetweenSlicesY = (newRadius * 2) / (horSlices + 1);
 
 	const btQuaternion rotBtQuat = physBody->body->getCenterOfMassTransform().getRotation();
 
 	float3 rotAxis = (float3)rotBtQuat.getAxis();
 	float rotAngle = (float)rotBtQuat.getAngle();
-	Quat rotQuat = Quat::RotateAxisAngle(rotAxis, rotAngle);
+	const Quat rotQuat = Quat::RotateAxisAngle(rotAxis, rotAngle);
 
-	std::vector<float3> SpherePoints;
-
+	//std::vector<float3> SpherePoints;
+	spherePointsComp->clear();
 
 	float3 tempPointFirst = float3(startingPointY);
 
@@ -787,14 +942,14 @@ void RenderManager::DrawColliderSphere(PhysBody3D* physBody, float radius, float
 
 	rotatedPointFirst += origin;
 
-	SpherePoints.push_back(rotatedPointFirst);
+	spherePointsComp->push_back(rotatedPointFirst);
 
 	for (int i = 1; i < horSlices + 1; i++)
 	{
 		for (int j = 0; j < verSlices; j++)
 		{
-			float tempY = startingPointY.y + diferenceBetweenSlicesY * i;
-			float tempYRad = sqrt(Pow(newRadius, 2) - Pow(-newRadius + diferenceBetweenSlicesY * i,2));
+			/*float tempY = startingPointY.y + diferenceBetweenSlicesY * i;
+			float tempYRad = sqrt(Pow(newRadius, 2) - Pow(-newRadius + diferenceBetweenSlicesY * i, 2));
 			float tempX = tempYRad * cos(2 * math::pi * j / verSlices);
 			float tempZ = tempYRad * sin(2 * math::pi * j / verSlices);
 
@@ -804,41 +959,58 @@ void RenderManager::DrawColliderSphere(PhysBody3D* physBody, float radius, float
 
 			rotatedPoint += origin;
 
-			SpherePoints.push_back(rotatedPoint);
+			spherePointsComp->push_back(rotatedPoint);*/
+
+
+			float3 rotatedPoint = rotQuat * float3(sqrt(Pow(newRadius, 2) - Pow(-newRadius + diferenceBetweenSlicesY * i, 2)) * cos(2 * math::pi * j / verSlices), startingPointY.y + diferenceBetweenSlicesY * i, sqrt(Pow(newRadius, 2) - Pow(-newRadius + diferenceBetweenSlicesY * i, 2)) * sin(2 * math::pi * j / verSlices));;
+
+			rotatedPoint += origin;
+
+			spherePointsComp->push_back(rotatedPoint);
 		}
-		
+
 	}
 
-	float3 tempPointLast = float3(0, newRadius, 0);
+	/*float3 tempPointLast = float3(0, newRadius, 0);
 
-	float3 rotatedPointLast = rotQuat * tempPointLast;
+	float3 rotatedPointLast = rotQuat * tempPointLast;*/
+
+
+	float3 rotatedPointLast = rotQuat * float3(0, newRadius, 0);
 
 	rotatedPointLast += origin;
 
-	SpherePoints.push_back(rotatedPointLast);
+	spherePointsComp->push_back(rotatedPointLast);
 
-
-	glBindVertexArray(SPVAO);
-
-	glBindBuffer(GL_ARRAY_BUFFER, SPVBO);
-	void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-	memcpy(ptr, &SpherePoints.at(0), SpherePoints.size() * sizeof(float3));
-	glUnmapBuffer(GL_ARRAY_BUFFER);
-
-	localLineShader->shader.Bind();
-	localLineShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
-	localLineShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
-	localLineShader->shader.SetFloat4("lineColor", color[0], color[1], color[2], color[3]);
-
-	glLineWidth(wireSize);
-	glDrawElements(GL_LINES, sphereIndices.size() , GL_UNSIGNED_INT, 0);
-	glLineWidth(1.0f);
-
-	glBindVertexArray(0);
-	
 }
 
-void RenderManager::DrawColliderCylinder(PhysBody3D* physBody, float2 radiusHeight, float4 color, float wireSize, uint verSlices)
+void RenderManager::CalculateCylinderIndices(std::vector<uint>* cylinderIndicesComp, uint verSlices)
+{
+	cylinderIndicesComp->clear();
+
+	//Vertical
+	for (int i = 0; i < verSlices; i++) {
+		cylinderIndicesComp->push_back(i);
+		cylinderIndicesComp->push_back(i + verSlices);
+	}
+
+	//Horizontal
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < verSlices; j++) {
+			if (j == verSlices - 1) {
+				cylinderIndicesComp->push_back(i * verSlices + j);
+				cylinderIndicesComp->push_back(i * verSlices);
+			}
+			else {
+				cylinderIndicesComp->push_back(i * verSlices + j);
+				cylinderIndicesComp->push_back(i * verSlices + j + 1);
+			}
+		}
+	}
+
+}
+
+void RenderManager::CalculateCylinderPoints(PhysBody3D* physBody, std::vector<float3>* cylinderPointsComp, float2 radiusHeight, uint verSlices)
 {
 	const float radius = radiusHeight.x / 5.f;
 	const float height = radiusHeight.y;
@@ -855,68 +1027,8 @@ void RenderManager::DrawColliderCylinder(PhysBody3D* physBody, float2 radiusHeig
 	Quat rotQuat = Quat::RotateAxisAngle(rotAxis, rotAngle);
 
 
+	cylinderPointsComp->clear();
 
-	
-
-	/*float rad = rotQuat.Angle();
-	btScalar rotBtAngle = RadToDeg(rad);*/
-	
-	//float rotAngle = (float)rotBtAngle;
-
-	//float3 rotAxis;
-
-	//rotAxis.x = rotQuat.Axis().x;
-	//rotAxis.y = rotQuat.Axis().y;
-	//rotAxis.z = rotQuat.Axis().z;
-
-	////SCLrotAxis.Normalized();
-
-	//float rotMatrix[16];
-
-	
-		
-	/*rotMatrix[0] = (cos(rotAngle) + pow(rotAxis.x, 2) * (1 - cos(rotAngle)));
-	rotMatrix[4] = rotAxis.x * rotAxis.y * (1 - cos(rotAngle)) - rotAxis.z * sin(rotAngle);
-	rotMatrix[8] = rotAxis.x * rotAxis.z * (1 - cos(rotAngle)) + rotAxis.y * sin(rotAngle);
-	rotMatrix[12] = 0;
-
-	rotMatrix[1] = rotAxis.y * rotAxis.x * (1 - cos(rotAngle)) + rotAxis.z * sin(rotAngle);
-	rotMatrix[5] = cos(rotAngle) + pow(rotAxis.y, 2) * (1 - cos(rotAngle));
-	rotMatrix[9] = rotAxis.y * rotAxis.z * (1 - cos(rotAngle)) - rotAxis.x * sin(rotAngle);
-	rotMatrix[13] = 0;
-
-	rotMatrix[2] = rotAxis.z * rotAxis.x * (1 - cos(rotAngle)) - rotAxis.y * sin(rotAngle);
-	rotMatrix[6] = rotAxis.z * rotAxis.y * (1 - cos(rotAngle)) + rotAxis.x * sin(rotAngle);
-	rotMatrix[10] = cos(rotAngle) + pow(rotAxis.z, 2) * (1 - cos(rotAngle));
-	rotMatrix[14] = 0;
-
-	rotMatrix[3] = 0;
-	rotMatrix[7] = 0;
-	rotMatrix[11] = 0;
-	rotMatrix[15] = 1;*/
-
-	//rotMatrix[0] = (cos(rotAngle) + pow(rotAxis.x, 2) * (1 - cos(rotAngle)));
-	//rotMatrix[3] = rotAxis.x * rotAxis.y * (1 - cos(rotAngle)) - rotAxis.z * sin(rotAngle);
-	//rotMatrix[6] = rotAxis.x * rotAxis.z * (1 - cos(rotAngle)) + rotAxis.y * sin(rotAngle);
-	////rotMatrix[9] = 0;
-
-	//rotMatrix[1] = rotAxis.y * rotAxis.x * (1 - cos(rotAngle)) + rotAxis.z * sin(rotAngle);
-	//rotMatrix[4] = cos(rotAngle) + pow(rotAxis.y, 2) * (1 - cos(rotAngle));
-	//rotMatrix[7] = rotAxis.y * rotAxis.z * (1 - cos(rotAngle)) - rotAxis.x * sin(rotAngle);
-	////rotMatrix[10] = 0;
-
-	//rotMatrix[2] = rotAxis.z * rotAxis.x * (1 - cos(rotAngle)) - rotAxis.y * sin(rotAngle);
-	//rotMatrix[5] = rotAxis.z * rotAxis.y * (1 - cos(rotAngle)) + rotAxis.x * sin(rotAngle);
-	//rotMatrix[8] = cos(rotAngle) + pow(rotAxis.z, 2) * (1 - cos(rotAngle));
-	//rotMatrix[11] = 0;
-
-	//rotMatrix[3] = 0;
-	//rotMatrix[7] = 0;
-	//rotMatrix[11] = 0;
-	//rotMatrix[15] = 1;
-
-	std::vector<float3> CylinderPoints;
-	
 	//Down
 	for (int i = 0; i < verSlices; i++)
 	{
@@ -929,157 +1041,23 @@ void RenderManager::DrawColliderCylinder(PhysBody3D* physBody, float2 radiusHeig
 
 		rotatedPoint += origin;
 
-		CylinderPoints.push_back(rotatedPoint);
+		cylinderPointsComp->push_back(rotatedPoint);
 	}
 
 	//Up
 	for (int i = 0; i < verSlices; i++)
 	{
 		float tempY = endingPointY.y;
-		float tempX =  radius * cos(2 * math::pi * i / verSlices);
-		float tempZ =  radius * sin(2 * math::pi * i / verSlices);
+		float tempX = radius * cos(2 * math::pi * i / verSlices);
+		float tempZ = radius * sin(2 * math::pi * i / verSlices);
 
 		float3 tempPoint = float3(tempX, tempY, tempZ);
 		float3 rotatedPoint = rotQuat * tempPoint;
-		
+
 		rotatedPoint += origin;
 
-		CylinderPoints.push_back(rotatedPoint);
+		cylinderPointsComp->push_back(rotatedPoint);
 	}
-
-	glBindVertexArray(CYVAO);
-
-	glBindBuffer(GL_ARRAY_BUFFER, CYVBO);
-	void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-	memcpy(ptr, &CylinderPoints.at(0), CylinderPoints.size() * sizeof(float3));
-	glUnmapBuffer(GL_ARRAY_BUFFER);
-
-	localLineShader->shader.Bind();
-	localLineShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
-	localLineShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
-	localLineShader->shader.SetFloat4("lineColor", color[0], color[1], color[2], color[3]);
-
-	glLineWidth(wireSize);
-	glDrawElements(GL_LINES, cylinderIndices.size(), GL_UNSIGNED_INT, 0);
-	glLineWidth(1.0f);
-
-	glBindVertexArray(0);
-}
-
-void RenderManager::CalculateSphereBuffer(uint verSlices, uint horSlices)
-{
-	// Set up buffer for Sphere lines.
-
-	sphereIndices.clear();
-
-	for (int j = 1; j < verSlices + 1; j++) {
-		sphereIndices.push_back(0);
-		sphereIndices.push_back(j);
-	}
-
-	for (int i = 0; i < horSlices - 1; i++) {
-
-		//Vertical
-		for (int j = 0; j < verSlices; j++) {
-			sphereIndices.push_back((i * verSlices + 1) + j);
-			sphereIndices.push_back(((i + 1) * verSlices + 1) + j);
-		}
-
-		//Horizontal
-		for (int j = 0; j < verSlices; j++) {
-			if (j == verSlices - 1) {
-				sphereIndices.push_back((i * verSlices + 1) + j);
-				sphereIndices.push_back((i * verSlices + 1));
-			}
-			else {
-				sphereIndices.push_back((i * verSlices + 1) + j);
-				sphereIndices.push_back((i * verSlices + 1) + j + 1);
-			}
-
-		}
-	}
-
-	for (int i = 0; i < verSlices ; i++) {
-
-		//Vertical
-		sphereIndices.push_back(((horSlices - 1 ) * verSlices + 1) + i);
-		sphereIndices.push_back(horSlices * verSlices + 1);
-
-		//Horizontal
-		if (i == verSlices - 1) {
-			sphereIndices.push_back(((horSlices-1) * verSlices + 1) + i);
-			sphereIndices.push_back((horSlices - 1) * verSlices  + 1);
-		}
-		else {
-			sphereIndices.push_back(((horSlices - 1) * verSlices + 1) + i);
-			sphereIndices.push_back(((horSlices - 1) * verSlices + 1) + i + 1);
-		}
-
-
-	}
-
-	glGenVertexArrays(1, &SPVAO);
-	glBindVertexArray(SPVAO);
-
-	glGenBuffers(1, &SPIBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, SPIBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * sphereIndices.size(), &sphereIndices[0], GL_STATIC_DRAW);
-
-	glGenBuffers(1, &SPVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, SPVBO);
-	const uint sphereVertexNum = verSlices * horSlices + 2;
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * sphereVertexNum, nullptr, GL_DYNAMIC_DRAW);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
-
-	glBindVertexArray(0);
-}
-
-void RenderManager::CalculateCylinderBuffer(uint verSlices)
-{
-
-	cylinderIndices.clear();
-
-	//Vertical
-	for (int i = 0; i < verSlices; i++) {
-		cylinderIndices.push_back(i);
-		cylinderIndices.push_back(i + verSlices);
-	}
-
-	//Horizontal
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < verSlices; j++) {
-			if (j == verSlices - 1) {
-				cylinderIndices.push_back(i * verSlices + j);
-				cylinderIndices.push_back(i * verSlices);
-			}
-			else {
-				cylinderIndices.push_back(i * verSlices + j);
-				cylinderIndices.push_back(i * verSlices + j + 1);
-			}
-
-		}
-	}
-
-
-	// Set up buffer for Cylinder lines.
-	glGenVertexArrays(1, &CYVAO);
-	glBindVertexArray(CYVAO);
-
-	glGenBuffers(1, &CYIBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, CYIBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * cylinderIndices.size(), &cylinderIndices[0], GL_STATIC_DRAW);
-
-	glGenBuffers(1, &CYVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, CYVBO);
-	const uint cylinderVertexNum = verSlices * 2;
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * cylinderVertexNum, nullptr, GL_DYNAMIC_DRAW);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
-
-	glBindVertexArray(0);
 }
 
 void RenderManager::DestroyInstanceRenderers()

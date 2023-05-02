@@ -24,7 +24,14 @@ void EnemyMeleeAttackZone::OnCollisionEnter(API::API_RigidBody other)
     {
         shooted = true;
     }
-    else if (detectionTag == "Player")
+    
+}
+
+void EnemyMeleeAttackZone::OnCollisionStay(API::API_RigidBody other)
+{
+    std::string detectionTag = other.GetGameObject().GetTag();
+
+     if (detectionTag == "Player")
     {
         attack = true;
     }

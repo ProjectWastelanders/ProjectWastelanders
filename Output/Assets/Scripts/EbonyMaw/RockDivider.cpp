@@ -78,7 +78,7 @@ void RockDivider::OnCollisionEnter(API::API_RigidBody other)
 			pStats->TakeDamage(bAttacks->orbitingRockDmg, 0);
 		}
 	}
-	else if ((detectionTag == "Cover" || detectionTag == "Wall") && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {
+	else if ((detectionTag == "Default" || detectionTag == "Wall") && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {
 		rockDivided = true;
 	}
 

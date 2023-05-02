@@ -117,4 +117,6 @@ public:
 
 	BOSS_STATE bossState = BOSS_STATE::IDLE;
 
+	float takeobjTimer;
+
 };

@@ -53,4 +53,6 @@ public:
     // ricochet
     int targetsHitted = 0;
     uint ricochetTarget;
+
+    int shotgunLevel;
 };

@@ -174,14 +174,27 @@ void Shader::VertexShaderCheck()
 	//String used to check if a shader is meant to be used as an Instanced Shader.
 	std::string instanced = "layout (location = 1) in mat4 model;";
 	std::string boned = "layout (location = 3) in ivec4 boneIds;";
+	std::string engineLight = "uniform DirectionalLight Light_Directional;";
+
 	if (data.vertexCode.find(instanced) != std::string::npos)
-	{
 		data.isIstanced = true;
-	}
 
 	if (data.vertexCode.find(boned) != std::string::npos)
-	{
 		data.isBoned = true;
+
+	if (data.fragmentCode.find(engineLight) != std::string::npos)
+	{
+		data.hasEngineLight = true;
+
+		//Get max number of lights the shader will be using.
+		std::string spotLights = "const uint MAX_SPOT";
+		std::string pointLights = "const uint MAX_POINT";
+
+		if (data.fragmentCode.find(spotLights) != std::string::npos)
+			data._maxSpotLights = 32;
+
+		if (data.fragmentCode.find(pointLights) != std::string::npos)
+			data._maxSpotLights = 32;
 	}
 }
 
@@ -210,7 +223,11 @@ void Shader::UniformParser(std::vector<Uniform*>& vec)
 
 		uni.name = uniName.data();
 
-		if (uni.name == "view" || uni.name == "projection" || uni.name == "model") continue;
+		//Skip uniforms that doesn't need to be handled dynamically by the engine
+		if (uni.name == "view" || uni.name == "projection" || uni.name == "model" || 
+			uni.name.find("Light_Directional") != std::string::npos ||
+			uni.name.find("Light_Spot") != std::string::npos ||
+			uni.name.find("Light_Point") != std::string::npos) continue;
 
 		switch (uni.type)
 		{
@@ -229,10 +246,6 @@ void Shader::UniformParser(std::vector<Uniform*>& vec)
 			case GL_FLOAT_MAT4: vec.push_back((Uniform*) new UniFloat4x4(uni)); break;
 		}
 	}
-
-	std::string aux = "A total of '" + std::to_string(vec.size()) + "' uniform variables have been parsed in the shader'" + data.name + "'.";
-	Console::S_Log(aux, LogType::INFO);
-
 }
 
 void Shader::Bind()

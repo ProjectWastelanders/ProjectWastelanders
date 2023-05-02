@@ -41,6 +41,8 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 	particleProps.endColor = float4(255.0f, 255.0f, 255.0f, 1.0f); //r g b a
 
 	particleProps.Lifetime = 5.0f;
+
+	ParticleEmitter.SetParticlePoolSize(size);
 }
 
 ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, ParticleSystemComponent& copy) : Component(gameObject)
@@ -85,6 +87,8 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, Particl
 	ParticleEmitter.Duration = copy.ParticleEmitter.Duration;
 	ParticleEmitter.enableEmissionModule = copy.ParticleEmitter.enableEmissionModule;
 	ParticleEmitter.ParticlesPerSecond = copy.ParticleEmitter.ParticlesPerSecond;
+
+	ParticleEmitter.SetParticlePoolSize(size);
 
 	CreateEmitterMesh(copy._resource->UID);
 	if (copy._resourceText != nullptr)
@@ -243,6 +247,20 @@ void ParticleSystemComponent::OnEditor()
 		if (ImGui::Button("Stop"))
 		{
 			StopEmitter();
+		}
+		if (ImGui::DragInt("Particle Vector Size", &size, 1.0f, 1, 2000))
+		{
+			if (!LayerGame::S_IsPlaying() && !GetPlayOnScene() && !GetPauseOnScene())
+			{
+				ParticleEmitter.SetParticlePoolSize(size);
+				sizeCpy = size;
+			}
+			else
+			{
+				size = sizeCpy;
+				std::string popUpmessage = "This Option only works when the emitter is stopped. Please Stop the emitter first";
+				LayerEditor::S_AddPopUpMessage(popUpmessage);
+			}
 		}
 
 		if (ParticleEmitter._meshID == -1)
@@ -463,7 +481,7 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
 		_j["ParticleModules"]["ModuleMain"]["PlayOnAwake"] = ParticleEmitter.playOnAwake;
 	}
-
+	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
 
 	j["Components"].push_back(_j);
@@ -516,6 +534,8 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	ParticleEmitter.StartDelay = j["ParticleModules"]["ModuleMain"]["Delay"];
 	ParticleEmitter.playOnAwake = j["ParticleModules"]["ModuleMain"]["PlayOnAwake"];
 	ParticleEmitter.loop = j["ParticleModules"]["ModuleMain"]["Looping"];
+	//size = j["ParticleVectorSize"];
+	//sizeCpy = j["ParticleVectorSize"];
 	bool enabled = j["Enabled"];
 
 }

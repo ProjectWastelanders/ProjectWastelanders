@@ -19,8 +19,16 @@ void ChestManager::Start()
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in ChestManager.");
 
     specialGunAsigned = false;
-    gunBlueprintAsigned = false;
-    remainingUpgradeBlueprints = 2;
+    if (playerStorage && playerStorage->levelIndex == 3)
+    {
+        gunBlueprintAsigned = true;
+        remainingUpgradeBlueprints = 3;
+    }
+    else
+    {
+        gunBlueprintAsigned = false;
+        remainingUpgradeBlueprints = 2;
+    }
 
     check = false;
 }
@@ -267,12 +275,12 @@ int ChestManager::GetRandomLoot()
         if (!specialGunAsigned) return 0;
         else return GetRandomLoot();
     }
-    else if (random == 1 && playerStorage->levelIndex != 3) // level 3 dont have gun blueprint
+    else if (random == 1 && playerStorage && playerStorage->levelIndex != 3) // level 3 dont have gun blueprint
     {
         if (!gunBlueprintAsigned) return 1;
         else return GetRandomLoot();
     }
-    else if (random > 1 || (random == 1 && playerStorage->levelIndex == 3))
+    else if (random > 1 || (random == 1 && playerStorage && playerStorage->levelIndex == 3))
     {
         if (remainingUpgradeBlueprints > 0) return 2;
         else return GetRandomLoot();
@@ -287,17 +295,16 @@ int ChestManager::GetGunBlueprint()
     bool gun2 = API_QuickSave::GetBool("automaticGunBlueprint");
     bool gun3 = API_QuickSave::GetBool("burstGunBlueprint");
     bool gun4 = API_QuickSave::GetBool("shotgunGunBlueprint");
-    bool gun5 = API_QuickSave::GetBool("handgunGunBlueprint");
-    if (gun1 && gun2 && gun3 && gun4 && gun5)
+    if (gun1 && gun2 && gun3 && gun4)
     {
-        Console::Log("ChestManager funtion: GetGunBlueprint. That should never happend. Why can't have more than 5 normal guns...", API::Console::MessageType::ERR);
+        Console::Log("ChestManager funtion: GetGunBlueprint. That should never happend. Why can't have more than 4 normal guns...", API::Console::MessageType::ERR);
         return -1;
     }
 
     do
     {
-        random = (rand() % 5) + 1;
-        if ((random == 1 && gun1) || (random == 2 && gun2) || (random == 3 && gun3) || (random == 4 && gun4) || (random == 5 && gun5))
+        random = (rand() % 4) + 1;
+        if ((random == 1 && gun1) || (random == 2 && gun2) || (random == 3 && gun3) || (random == 4 && gun4))
         {
             random = -1;
         }
@@ -313,6 +320,6 @@ int ChestManager::GetGunBlueprint()
 int ChestManager::GetSpecialGun()
 {
     specialGunAsigned = true;
-    int random = (rand() % 2) + 6;
+    int random = (rand() % 2) + 5;
     return random;
 }

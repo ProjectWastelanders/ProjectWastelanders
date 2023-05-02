@@ -25,7 +25,7 @@ void AllyEnemiesDetection::Update()
 	}
 }
 
-void AllyEnemiesDetection::OnCollisionEnter(API::API_RigidBody other)
+void AllyEnemiesDetection::OnCollisionStay(API::API_RigidBody other)
 {
 	std::string detectionTag = other.GetGameObject().GetTag();
 	if (detectionTag == "Enemy")
@@ -36,20 +36,5 @@ void AllyEnemiesDetection::OnCollisionEnter(API::API_RigidBody other)
 			tankScript->isProtectingAlly = true;
 			distanceToAlly = distanceToCurrentAlly;
 		}
-		//bool enemyOnList = false;
-		//for (int i = 0; i < allyEnemies.size(); i++) 
-		//{
-		//	//	if (allyEnemies.at(i) == other.GetGameObject()) {}
-
-		//	/*std::string enemyTag = allyEnemies.at(i).GetTag();
-		//	if (enemyTag == "")
-		//	{
-		//	
-		//	}*/
-		//}
-		/*if (protectedEnemy.GetScript("Enemy") != null)
-		{
-		
-		}*/
 	}
 }

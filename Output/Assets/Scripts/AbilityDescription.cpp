@@ -6,15 +6,15 @@ HELLO_ENGINE_API_C AbilityDescription* CreateAbilityDescription(ScriptToInspecto
 	script->AddDragBoxGameObject("Current Description", &classInstance->currentDescription);
 	script->AddDragBoxGameObject("Next Description", &classInstance->nextDescription);
 	script->AddDragBoxGameObject("Previous Description", &classInstance->previousDescription);
+	script->AddDragBoxGameObject("Description 4", &classInstance->description4);
+	script->AddDragBoxGameObject("Description 5", &classInstance->description5);
 	script->AddDragBoxUIButton("Button", &classInstance->HoveredButton);
 	return classInstance;
 }
 
 void AbilityDescription::Start()
 {
-	currentDescription.SetActive(false);
-	nextDescription.SetActive(false);
-	previousDescription.SetActive(false);
+	audioON = false;
 }
 void AbilityDescription::Update()
 {
@@ -22,5 +22,17 @@ void AbilityDescription::Update()
 		previousDescription.SetActive(false);
 		currentDescription.SetActive(true);
 		nextDescription.SetActive(false);
+		description4.SetActive(false);
+		description5.SetActive(false);
+		if (audioON)
+		{
+			audioON = false;
+			Console::Log("David");
+			Audio::Event("hover");
+		}
+	}
+	else if (!HoveredButton.OnHovered() && !HoveredButton.OnPress())
+	{
+		audioON = true;
 	}
 }

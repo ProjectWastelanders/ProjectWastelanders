@@ -36,8 +36,19 @@ HELLO_ENGINE_API_C BossLoop* CreateBossLoop(ScriptToInspectorInterface* script)
     script->AddDragBoxTextureResource("Texture Bomb 5", &classInstance->textureBomb[4]);
     script->AddDragBoxTextureResource("Texture Bomb 6", &classInstance->textureBomb[5]);
 
+    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer);
+    script->AddDragBoxAnimationResource("Idle Animation", &classInstance->idleAnim);
+    script->AddDragBoxAnimationResource("Idle 2 Animation", &classInstance->idleAnim2);
+    script->AddDragBoxAnimationResource("Knock Up Animation", &classInstance->knockUpAnim);
+    script->AddDragBoxAnimationResource("Move Animation", &classInstance->movingAnim);
+    script->AddDragBoxAnimationResource("Move with Obj Animation", &classInstance->movingWithObjAnim);
+    script->AddDragBoxAnimationResource("Recover Animation", &classInstance->recoverAnim);
+    script->AddDragBoxAnimationResource("Special Animation", &classInstance->specialAnim);
+    script->AddDragBoxAnimationResource("Special 2 Animation", &classInstance->specialAnim2);
+    script->AddDragBoxAnimationResource("Take Obj Animation", &classInstance->takeObjAnim);
+    script->AddDragBoxAnimationResource("Throw Obj Animation", &classInstance->throwObjAnim);
+    script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
     //TEMPORAL FOR ALPHA 1
-    script->AddDragBoxGameObject("TEMPORAL- finalTextPanel", &classInstance->finalTextPanel);
 
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     return classInstance;
@@ -45,6 +56,10 @@ HELLO_ENGINE_API_C BossLoop* CreateBossLoop(ScriptToInspectorInterface* script)
 
 void BossLoop::Start()
 {
+    shotgunLevel = API_QuickSave::GetInt("shotgun_level");
+    recoverTimer = 0;
+    DieTimer = 0;
+    knockUpTimer = 0;
 }
 
 void BossLoop::Update()
@@ -57,6 +72,21 @@ void BossLoop::Update()
                 dt = Time::GetDeltaTime();
                 weakTime += dt;
                 rockShield.SetActive(false);
+
+                if (knockUpTimer <= 1) {
+                    if (animState != AnimationState::KNOCKUP)
+                    {
+                        animState = AnimationState::KNOCKUP;
+                        animationPlayer.ChangeAnimation(knockUpAnim);
+                        animationPlayer.SetLoop(true);
+                        //animationPlayer.SetStayLast(true);
+                        animationPlayer.Play();
+                    }
+                    knockUpTimer += dt;
+                }
+                else {
+                    animationPlayer.Pause();
+                }
             }
             else {
                 rockShield.SetActive(true);
@@ -66,6 +96,23 @@ void BossLoop::Update()
                 phase--;
                 shield[phase] = maxShield[phase];
                 canTakeDamage = false;
+                dt = Time::GetDeltaTime();
+                if (recoverTimer <= 6) {
+                    if (animState != AnimationState::RECOVER)
+                    {
+                        animState = AnimationState::RECOVER;
+                        animationPlayer.ChangeAnimation(recoverAnim);
+                        animationPlayer.SetLoop(true);
+                        animationPlayer.Play();
+                    }
+                    recoverTimer += dt;
+                    
+                }
+                else {
+                    animationPlayer.Pause();
+                    recoverTimer = 0;
+                    knockUpTimer = 0;
+                }
             }
             if (hp <= maxHpLoss[phase - 1]) {
                 weakTime = 0;
@@ -87,27 +134,39 @@ void BossLoop::Update()
             }
         }
         else {
-            gameObject.SetActive(false);
-            gameObject.GetTransform().SetScale(0, 0, 0);
-            //TEMPORAL FOR ALPHA 1
-            finalTextPanel.SetActive(true);
-            API_QuickSave::SetBool("level3_completed", true);
+            dt = Time::GetDeltaTime();
+            if (animState != BossLoop::AnimationState::DIE)
+            {
+                animState = BossLoop::AnimationState::DIE;
+                animationPlayer.ChangeAnimation(dieAnim);
+                animationPlayer.Play();
+            }
+            if (DieTimer >= 4) {
+                gameObject.SetActive(false);
+                gameObject.GetTransform().SetScale(0, 0, 0);
+                //TEMPORAL FOR ALPHA 1
+                finalTextPanel.SetActive(true);
+                API_QuickSave::SetBool("level3_completed", true);
+            }
+            else {
+                DieTimer += dt;
+            }
         }
     }
 
     //burn
     if (burnTime > 3.0f)
     {
-        if (resetBurn >= 0.0f)
+        TakeDamage(30.0f * Time::GetDeltaTime());
+    }
+    if (resetBurn > 0.0f)
+    {
+        resetBurn -= Time::GetDeltaTime();
+        if (resetBurn <= 0.0f)
         {
-            resetBurn -= Time::GetDeltaTime();
-            if (resetBurn <= 0.0f)
-            {
-                resetBurn = 0.0f;
-                burnTime -= Time::GetDeltaTime();
-            }
+            resetBurn = 0.0f;
+            burnTime -= Time::GetDeltaTime();
         }
-        TakeDamage(0.5f);
     }
 }
 
@@ -127,7 +186,7 @@ void BossLoop::OnCollisionEnter(API::API_RigidBody other)
 void BossLoop::TakeDamage(float damage)
 {
     if (hp <= 0) return;
-
+    
     if (canTakeDamage == true) {
 
         hp -= damage;
@@ -168,7 +227,8 @@ void BossLoop::CheckBombs()
         else
         {
             stickBomb->triggerActive = true;
-            TakeDamage(5.0f * currentBombNum);
+            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
+            else stickBomb->damage = 10.0f * currentBombNum;
         }
         currentBombNum = 0;
         bomb.SetActive(false);

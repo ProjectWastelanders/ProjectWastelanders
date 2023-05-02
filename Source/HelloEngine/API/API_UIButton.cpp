@@ -31,7 +31,15 @@ bool API::API_UIButton::OnPress()
         return false;
     }
 
-    return _UIButton->State == ButtonState::ONPRESS;
+     if (_UIButton->isBlocked)
+     {
+         return _UIButton->State == ButtonState::ONPRESSBLOCKED;
+     }
+     else
+     {
+         return _UIButton->State == ButtonState::ONPRESS;
+     }
+    //return _UIButton->State == ButtonState::ONPRESS;
 }
 
 bool API::API_UIButton::OnHold()
@@ -42,6 +50,14 @@ bool API::API_UIButton::OnHold()
         return false;
     }
 
+    /* if (_UIButton->isBlocked)
+     {
+         return _UIButton->State == ButtonState::ONHOLDBLOCKED;
+     }
+     else
+     {
+         return _UIButton->State == ButtonState::ONHOLD;
+     }*/
     return _UIButton->State == ButtonState::ONHOLD;
 }
 
@@ -52,8 +68,14 @@ bool API::API_UIButton::OnHovered()
         Engine::Console::S_Log("Trying to acces a NULLPTR UI Button");
         return false;
     }
-
-    return _UIButton->State == ButtonState::HOVERED;
+    if (_UIButton->isBlocked)
+    {
+        return _UIButton->State == ButtonState::HOVEREDBLOCKED;
+    }
+    else
+    {
+        return _UIButton->State == ButtonState::HOVERED;
+    }
 }
 
 ComponentUIButton* API::API_UIButton::GetComponent()

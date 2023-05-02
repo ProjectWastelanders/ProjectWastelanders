@@ -36,10 +36,13 @@ struct File : public SelectableFile
 			metaPath = path + ".helloMeta";
 			metaFile = ModuleFiles::S_LoadMeta(metaPath);
 
+			
 			// Check if this meta file has a different modify time than the file.
+#ifdef STANDALONE
 			unsigned long long modifyTime = ModuleFiles::S_CheckFileLastModify(path);
 			if (metaFile.lastModified != modifyTime)
 				Reimport();
+#endif // STANDALONE
 		}
 		else
 		{

@@ -142,7 +142,7 @@ void SceneCameraObject::UpdateInput()
 
 	if (mouseZ != 0)
 	{
-		float speed = 10.05f * ImGui::GetIO().Framerate;
+		float speed = _wheelSpeed * ImGui::GetIO().Framerate;
 		if (mouseZ > 0)
 			cameraFrustum.pos += cameraFrustum.front * speed;
 		if (mouseZ < 0)
@@ -168,6 +168,15 @@ void SceneCameraObject::UpdateInput()
 		if (selectedGO != nullptr)
 			Focus(selectedGO);
 	}
+}
+
+bool SceneCameraObject::SetWheelSpeed(float speed)
+{
+	if (speed < 0)
+		return false;
+
+	_wheelSpeed = speed;
+	return true;
 }
 
 void SceneCameraObject::Focus(const float3& focusPoint, float distance)

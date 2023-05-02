@@ -3,6 +3,7 @@
 HELLO_ENGINE_API_C ThanosLoop* CreateThanosLoop(ScriptToInspectorInterface* script)
 {
     ThanosLoop* classInstance = new ThanosLoop();
+    script->AddDragFloat("Hp", &classInstance->hp);
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     script->AddDragBoxGameObject("Bomb", &classInstance->bomb);
     script->AddDragBoxTextureResource("Texture Bomb 1", &classInstance->textureBomb[0]);
@@ -16,24 +17,35 @@ HELLO_ENGINE_API_C ThanosLoop* CreateThanosLoop(ScriptToInspectorInterface* scri
 
 void ThanosLoop::Start()
 {
-
+    shotgunLevel = API_QuickSave::GetInt("shotgun_level");
 }
 void ThanosLoop::Update()
 {
     //burn
     if (burnTime > 3.0f)
     {
-        if (resetBurn >= 0.0f)
-        {
-            resetBurn -= Time::GetDeltaTime();
-            if (resetBurn <= 0.0f)
-            {
-                resetBurn = 0.0f;
-                burnTime -= Time::GetDeltaTime();
-            }
-        }
-        TakeDamage(0.5f);
+        TakeDamage(30.0f * Time::GetDeltaTime());
     }
+    if (resetBurn > 0.0f)
+    {
+        resetBurn -= Time::GetDeltaTime();
+        if (resetBurn <= 0.0f)
+        {
+            resetBurn = 0.0f;
+            burnTime -= Time::GetDeltaTime();
+        }
+    }
+
+    if (hp < 0) {
+        gameObject.SetActive(false);
+    }
+    else if (hp > 2000) {
+        phase = 1;
+    }
+    else {
+        phase = 2;
+    }
+
 }
 
 void ThanosLoop::OnCollisionEnter(API::API_RigidBody other)
@@ -45,7 +57,7 @@ void ThanosLoop::OnCollisionEnter(API::API_RigidBody other)
         if (detectionName == "Player")
         {
             PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-            pStats->TakeDamage(meleeDmg, 0);
+            //pStats->TakeDamage(meleeDmg, 0);
         }
     }
 }
@@ -74,7 +86,8 @@ void ThanosLoop::CheckBombs()
         else
         {
             stickBomb->triggerActive = true;
-            TakeDamage(5.0f * currentBombNum);
+            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
+            else stickBomb->damage = 10.0f * currentBombNum;
         }
         currentBombNum = 0;
         bomb.SetActive(false);

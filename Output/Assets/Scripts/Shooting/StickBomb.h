@@ -8,10 +8,10 @@
 class StickBomb : HelloBehavior
 {
 public:
-	void Start() override; 
-	void Update() override;
+    void Start() override;
+    void Update() override;
 
-	void OnCollisionEnter(API::API_RigidBody other) override;
+    void OnCollisionStay(API::API_RigidBody other) override;
 
     bool triggerActive;
     API_GameObject shotgunBomb; // parent

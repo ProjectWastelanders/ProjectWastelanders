@@ -16,6 +16,7 @@ class ModuleCommand;
 class ModuleResourceManager;
 class ModulePhysics;
 class ModuleAudio;
+class ModuleNavMesh;
 
 #define DEVELOPMENT
 
@@ -70,6 +71,8 @@ public:
 	ModuleResourceManager* resource = nullptr;
 	ModulePhysics* physic = nullptr;
 	ModuleAudio* audio = nullptr;
+	ModuleNavMesh* navMesh = nullptr;
+
 	float fps = 1.0f/60.0f;
 	int frameCap = 60;
 	Timer	timer;

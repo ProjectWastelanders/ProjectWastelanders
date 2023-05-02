@@ -28,7 +28,7 @@ void ComponentUIButton::InputUpdate()
     switch (State)
     {
     case ButtonState::NORMAL:
-        if (isBlocked) _material->ChangeTexture(textureIDBlocked);
+        if (isBlocked) _material->ChangeTexture(textureIDIdleBlocked);
         else _material->ChangeTexture(textureIDIdle);
         gameTimeCopy = EngineTime::GameTimeCount();
         break;
@@ -46,9 +46,16 @@ void ComponentUIButton::InputUpdate()
     case ButtonState::ONHOLD:
         //State = ButtonState::HOVERED;
         break;
-    case ButtonState::BLOCKED:
-        _material->ChangeTexture(textureIDBlocked);
-        //isBlocked = true;
+    case ButtonState::NORMALBLOCKED:
+        _material->ChangeTexture(textureIDIdleBlocked);
+        gameTimeCopy = EngineTime::GameTimeCount();
+        break;
+    case ButtonState::HOVEREDBLOCKED:
+        _material->ChangeTexture(textureIDHoverBlocked);
+        gameTimeCopy = EngineTime::GameTimeCount();
+        break;
+    case ButtonState::ONPRESSBLOCKED:
+        _material->ChangeTexture(textureIDHPressBlocked);
         gameTimeCopy = EngineTime::GameTimeCount();
         break;
     default:
@@ -67,7 +74,9 @@ void ComponentUIButton::Serialization(json& j)
     _j["idleImage"] = idleButton ? idleButton->UID : 0;
     _j["hoverImage"] = hoverButton ? hoverButton->UID : 0;
     _j["pressImage"] = pressButton ? pressButton->UID : 0;
-    _j["blockImage"] = blockedButton ? blockedButton->UID : 0;
+    _j["idleBlockImage"] = idleblockedButton ? idleblockedButton->UID : 0;
+    _j["hoverBlockImage"] = hoverblockedButton ? hoverblockedButton->UID : 0;
+    _j["pressBlockImage"] = pressblockedButton ? pressblockedButton->UID : 0;
     SaveMeshState(_j);
     j["Components"].push_back(_j);
 }
@@ -103,14 +112,34 @@ void ComponentUIButton::DeSerialization(json& j)
     else
         textureIDPress = -1;
 
-    if (j.contains("blockImage"))
+    if (j.contains("idleBlockImage"))
     {
-        uint savedUIDBlocked = j["blockImage"];
-        blockedButton = savedUIDBlocked == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["blockImage"]);
-        if (blockedButton != nullptr)
-            textureIDBlocked = blockedButton->OpenGLID;
+        uint savedUIDBlocked = j["idleBlockImage"];
+        idleblockedButton = savedUIDBlocked == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["idleBlockImage"]);
+        if (idleblockedButton != nullptr)
+            textureIDIdleBlocked = idleblockedButton->OpenGLID;
         else
-            textureIDBlocked = -1;
+            textureIDIdleBlocked = -1;
+    }
+
+    if (j.contains("hoverBlockImage"))
+    {
+        uint savedUIDBlocked = j["hoverBlockImage"];
+        hoverblockedButton = savedUIDBlocked == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["hoverBlockImage"]);
+        if (hoverblockedButton != nullptr)
+            textureIDHoverBlocked = hoverblockedButton->OpenGLID;
+        else
+            textureIDHoverBlocked = -1;
+    }
+
+    if (j.contains("pressBlockImage"))
+    {
+        uint savedUIDBlocked = j["pressBlockImage"];
+        pressblockedButton = savedUIDBlocked == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["pressBlockImage"]);
+        if (pressblockedButton != nullptr)
+            textureIDHPressBlocked = pressblockedButton->OpenGLID;
+        else
+            textureIDHPressBlocked = -1;
     }
 
     State = j["State"];
@@ -131,8 +160,17 @@ void ComponentUIButton::DeSerialization(json& j)
     case ButtonState::ONHOLD:
         _material->ChangeTexture(pressButton);
         break;
-    case ButtonState::BLOCKED:
-        _material->ChangeTexture(blockedButton);
+    case ButtonState::NORMALBLOCKED:
+        _material->ChangeTexture(idleblockedButton);
+        break;
+    case ButtonState::HOVEREDBLOCKED:
+        _material->ChangeTexture(hoverblockedButton);
+        break;
+    case ButtonState::ONPRESSBLOCKED:
+        _material->ChangeTexture(pressblockedButton);
+        break;
+    case ButtonState::ONHOLDBLOCKED:
+        _material->ChangeTexture(pressblockedButton);
         break;
     default:
         break;
@@ -185,34 +223,59 @@ void ComponentUIButton::UpdateGamePadInput(bool selected)
 
     if (selected)
     {
-        if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_DOWN && State != ButtonState::ONPRESS)
+        if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_DOWN && (State != ButtonState::ONPRESS && State != ButtonState::ONPRESSBLOCKED))
         {
             ModuleInput::S_HandleGamePadButton(GamePad::BUTTON_A); // Handle A button so no other UI detects it.
-            State = ButtonState::ONPRESS;
+            if (isBlocked)
+            {
+                State = ButtonState::ONPRESSBLOCKED;
+            }
+            else
+            {
+                State = ButtonState::ONPRESS;
+            }
             isPress = true;
         }
         else if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_REPEAT)
         {
-            State = ButtonState::ONHOLD;
+            if (isBlocked)
+            {
+                State = ButtonState::ONHOLDBLOCKED;
+            }
+            else
+            {
+                State = ButtonState::ONHOLD;
+            }
         }
         else
         {
             // If previous state was hold or press, this frame the button was released
-            if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_UP && (State == ButtonState::ONHOLD || State == ButtonState::ONPRESS))
+            if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_UP && ((State == ButtonState::ONHOLD || State == ButtonState::ONHOLDBLOCKED) || (State == ButtonState::ONPRESS || State == ButtonState::ONPRESSBLOCKED)))
             {
                 isReleased = true;
             }
-                
-            State = ButtonState::HOVERED;
+            if (isBlocked)
+            {
+                State = ButtonState::HOVEREDBLOCKED;
+            }
+            else
+            {
+                State = ButtonState::HOVERED;
+            }
         }
     }
     else
     {
-        State = ButtonState::NORMAL;
+        if (isBlocked)
+        {
+            State = ButtonState::NORMALBLOCKED;
+        }
+        else
+        {
+            State = ButtonState::NORMAL;
+        }
     }
     
-    if (isBlocked)
-        State = ButtonState::BLOCKED;
 
     switch (State)
     {
@@ -223,11 +286,20 @@ void ComponentUIButton::UpdateGamePadInput(bool selected)
         _material->ChangeTexture(textureIDHover);
         break;
     case ButtonState::ONPRESS:
+        break;
     case ButtonState::ONHOLD:
         _material->ChangeTexture(textureIDPress);
         break;
-    case ButtonState::BLOCKED:
-        _material->ChangeTexture(textureIDBlocked);
+    case ButtonState::NORMALBLOCKED:
+        _material->ChangeTexture(textureIDIdleBlocked);
+        break;
+    case ButtonState::HOVEREDBLOCKED:
+        _material->ChangeTexture(textureIDHoverBlocked);
+        break;
+    case ButtonState::ONPRESSBLOCKED:
+        break;
+    case ButtonState::ONHOLDBLOCKED:
+        _material->ChangeTexture(textureIDHPressBlocked);
         break;
     default:
         break;
@@ -406,7 +478,7 @@ void ComponentUIButton::OnEditor()
     ///////////////////////////////////////////////////////////////////////////////////////////
     ImGui::Text("");
     ImGui::Text("");
-    ImGui::Text("Block:"); ImGui::SameLine();
+    ImGui::Text("Normal Block:"); ImGui::SameLine();
     {
         //Mesh& mesh = _material->GetMesh();
 
@@ -414,13 +486,13 @@ void ComponentUIButton::OnEditor()
         int width = 0;
         int height = 0;
 
-        if (textureIDBlocked != -1.0f && blockedButton != nullptr)
+        if (textureIDIdleBlocked != -1.0f && idleblockedButton != nullptr)
         {
-            ImGui::Image((ImTextureID)(uint)textureIDBlocked, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+            ImGui::Image((ImTextureID)(uint)textureIDIdleBlocked, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 
-            imageName = blockedButton->debugName;
-            width = blockedButton->width;
-            height = blockedButton->height;
+            imageName = idleblockedButton->debugName;
+            width = idleblockedButton->width;
+            height = idleblockedButton->height;
         }
         else
         {
@@ -435,8 +507,104 @@ void ComponentUIButton::OnEditor()
                 //Drop asset from Asset window to scene window
                 const uint* drop = (uint*)payload->Data;
 
-                blockedButton = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
-                textureIDBlocked = blockedButton->OpenGLID;
+                idleblockedButton = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+                textureIDIdleBlocked = idleblockedButton->OpenGLID;
+            }
+            ImGui::EndDragDropTarget();
+        }
+
+        ImGui::TextWrapped("Path: "); ImGui::SameLine();
+        ImGui::TextColored(ImVec4(1, 1, 0, 1), imageName.c_str());
+
+        ImGui::TextWrapped("Width: "); ImGui::SameLine();
+        ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(width).c_str());
+
+        ImGui::TextWrapped("Height: "); ImGui::SameLine();
+        ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(height).c_str());
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    ImGui::Text("");
+    ImGui::Text("");
+    ImGui::Text("Hover Block:"); ImGui::SameLine();
+    {
+        //Mesh& mesh = _material->GetMesh();
+
+        std::string imageName;
+        int width = 0;
+        int height = 0;
+
+        if (textureIDHoverBlocked != -1.0f && hoverblockedButton != nullptr)
+        {
+            ImGui::Image((ImTextureID)(uint)textureIDHoverBlocked, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+
+            imageName = hoverblockedButton->debugName;
+            width = hoverblockedButton->width;
+            height = hoverblockedButton->height;
+        }
+        else
+        {
+            ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+            imageName = "None";
+        }
+
+        if (ImGui::BeginDragDropTarget())
+        {
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+            {
+                //Drop asset from Asset window to scene window
+                const uint* drop = (uint*)payload->Data;
+
+                hoverblockedButton = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+                textureIDHoverBlocked = hoverblockedButton->OpenGLID;
+            }
+            ImGui::EndDragDropTarget();
+        }
+
+        ImGui::TextWrapped("Path: "); ImGui::SameLine();
+        ImGui::TextColored(ImVec4(1, 1, 0, 1), imageName.c_str());
+
+        ImGui::TextWrapped("Width: "); ImGui::SameLine();
+        ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(width).c_str());
+
+        ImGui::TextWrapped("Height: "); ImGui::SameLine();
+        ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(height).c_str());
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    ImGui::Text("");
+    ImGui::Text("");
+    ImGui::Text("Press Block:"); ImGui::SameLine();
+    {
+        //Mesh& mesh = _material->GetMesh();
+
+        std::string imageName;
+        int width = 0;
+        int height = 0;
+
+        if (textureIDHPressBlocked != -1.0f && pressblockedButton != nullptr)
+        {
+            ImGui::Image((ImTextureID)(uint)textureIDHPressBlocked, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+
+            imageName = pressblockedButton->debugName;
+            width = pressblockedButton->width;
+            height = pressblockedButton->height;
+        }
+        else
+        {
+            ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+            imageName = "None";
+        }
+
+        if (ImGui::BeginDragDropTarget())
+        {
+            if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+            {
+                //Drop asset from Asset window to scene window
+                const uint* drop = (uint*)payload->Data;
+
+                pressblockedButton = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+                textureIDHPressBlocked = pressblockedButton->OpenGLID;
             }
             ImGui::EndDragDropTarget();
         }

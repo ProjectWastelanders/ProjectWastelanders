@@ -21,6 +21,7 @@
 #include "ModuleRenderer3D.h"
 #include "Component.h"
 #include "LayerEditor.h"
+#include "Lighting.h"
 
 // In create resource mesh method save my index and model UID.
 // Save ResourceModel UID and index.
@@ -68,7 +69,6 @@ bool ModuleResourceManager::Start()
 	_fileTree = new FileTree();
 
 	ModuleFiles::S_UpdateFileTree(_fileTree);
-
 	return true;
 }
 
@@ -622,7 +622,7 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 	ModuleLayers::DestroyMeshes(); // When all meshes are destroyed, the Instance Renderers get destroyed as well. In this case, we want this to happen BEFORE we Deserialize the scene
 									   // If we let it happen afterwards, the old meshes will destroy the new Instance Renderers.
 	LayerGame::RemoveAllScripts();
-
+	Lighting::ClearLights();
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)
 		ModuleLayers::rootGameObject->Destroy();
@@ -636,6 +636,10 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		//if (loadedPrefabs.count(prefabUID) > 0 && !sceneFile[i]["FirstOnPrefab"]) continue;
 
 		GameObject* g = new GameObject(nullptr, sceneFile[i]["Name"], sceneFile[i]["Tag"], sceneFile[i]["UID"]);
+		
+		if(sceneFile[i].contains("IsStatic"))
+			g->SetIsStatic(sceneFile[i]["IsStatic"]);
+		
 		g->SetPrefabUID(prefabUID);
 		/*if (prefabUID != 0)
 		{
@@ -669,12 +673,16 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		for (int j = 0; j < object.size(); j++)
 		{
 			Component::Type componentType = object[j]["Type"];
-			if (componentType == Component::Type::SCRIPT || componentType == Component::Type::MATERIAL ||componentType == Component::Type::UI_INPUT)
+			if (componentType == Component::Type::SCRIPT ||
+				componentType == Component::Type::MATERIAL ||
+				componentType == Component::Type::UI_INPUT ||
+				componentType == Component::Type::AGENT)
 				continue;
 			/*if (temp[i].first->_prefabUID == 0)*/ temp[i].first->AddComponentSerialized(componentType, object[j]);
 		}
 	}
 
+	// Create UI & Agent
 	for (int i = 0; i < sceneFile.size(); i++)
 	{
 		// Create components
@@ -682,12 +690,15 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		for (int j = 0; j < object.size(); j++)
 		{
 			Component::Type componentType = object[j]["Type"];
-			if (componentType != Component::Type::MATERIAL && componentType != Component::Type::UI_INPUT)
-				continue;
-			/*if (temp[i].first->_prefabUID == 0)*/ temp[i].first->AddComponentSerialized(componentType, object[j]);
+			if (componentType == Component::Type::MATERIAL || 
+				componentType == Component::Type::UI_INPUT ||
+				componentType == Component::Type::AGENT)
+				temp[i].first->AddComponentSerialized(componentType, object[j]);
+			/*if (temp[i].first->_prefabUID == 0)*/ 
 		}
 	}
 
+	// Create Scripting
 	for (int i = 0; i < sceneFile.size(); i++)
 	{
 		// Create components
@@ -695,9 +706,10 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		for (int j = 0; j < object.size(); j++)
 		{
 			Component::Type componentType = object[j]["Type"];
-			if (componentType != Component::Type::SCRIPT)
-				continue;
-			/*if (temp[i].first->_prefabUID == 0)*/ temp[i].first->AddComponentSerialized(componentType, object[j]);
+
+			if (componentType == Component::Type::SCRIPT)
+				temp[i].first->AddComponentSerialized(componentType, object[j]);
+			/*if (temp[i].first->_prefabUID == 0)*/ 
 		}
 	}
 
@@ -1009,7 +1021,9 @@ std::vector<Resource*> ModuleResourceManager::S_GetResourcePool(ResourceType typ
 	{
 		if (r.second == nullptr)
 			continue;
-		if (r.second->type == type) toReturn.push_back(r.second);
+
+		if (r.second->type == type) 
+			toReturn.push_back(r.second);
 	}
 
 	return toReturn;
@@ -1018,9 +1032,8 @@ std::vector<Resource*> ModuleResourceManager::S_GetResourcePool(ResourceType typ
 void ModuleResourceManager::GetResourcePath(ModelNode& node, std::vector<std::string>& vector)
 {
 	if (node.meshPath != "N")
-	{
 		vector.push_back(node.meshPath);
-	}
+
 	for (int i = 0; i < node.children.size(); i++)
 	{
 		GetResourcePath(node.children[i], vector);
@@ -1037,14 +1050,11 @@ void ModuleResourceManager::SerializeSceneRecursive(const GameObject* g, json& j
 	_j["Tag"] = g->tag;
 	_j["Active"] = g->_isActive;
 	_j["PrefabUID"] = g->_prefabUID;
-	if (g->_prefabUID != 0 && g->_parent->_prefabUID != 0)
-	{
+	_j["IsStatic"] = g->_isStatic;
+	if (g->_prefabUID != 0)
 		_j["FirstOnPrefab"] = false;
-	}
 	else
-	{
 		_j["FirstOnPrefab"] = true;
-	}
 
 	// We delay the serialization of script components because they may need to reference another component when Deserialized.
 	// this way, ScriptComponents will always deserialize last, and will find any other component they need inside their game object.
@@ -1329,7 +1339,6 @@ void ResourceMesh::CalculateNormalsAndAABB()
 			vertexNormals[i] = meshInfo.vertices[j].position + (meshInfo.vertices[j].normals * lineMangitude);
 			j++;
 		}
-
 	}
 
 	// Face normals
@@ -1402,7 +1411,11 @@ void ResourceMesh::CalculateNormalsAndAABB()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
 
 	glBindVertexArray(0);
+}
 
+MeshInfo ResourceMesh::GetMeshInfo()
+{
+	return meshInfo;
 }
 
 void ResourceMesh::Destroy()
@@ -1410,7 +1423,7 @@ void ResourceMesh::Destroy()
 	for (auto& gameObject : ModuleLayers::gameObjects)
 	{
 		MeshRenderComponent* meshComponent = gameObject.second->GetComponent<MeshRenderComponent>();
-		if (meshComponent != nullptr)
+		if (meshComponent)
 		{
 			if (meshComponent->GetResourceUID() == this->UID)
 				meshComponent->DestroyedResource();
@@ -1451,7 +1464,7 @@ void ResourceTexture::Destroy()
 	for (auto& gameObject : ModuleLayers::gameObjects)
 	{
 		TextureComponent* materialComponent = gameObject.second->GetComponent<TextureComponent>();
-		if (materialComponent != nullptr)
+		if (materialComponent)
 		{
 			if (materialComponent->GetResourceUID() == this->UID)
 				materialComponent->DestroyedResource();
@@ -1490,9 +1503,7 @@ void ResourceScript::Destroy()
 				ScriptComponent* script = (ScriptComponent*)components[i];
 
 				if (script->GetResourceUID() == this->UID)
-				{
 					script->DestroyedResource();
-				}
 			}
 		}
 	}
@@ -1519,7 +1530,7 @@ void ResourceShader::ReImport(const std::string& filePath)
 	char* buffer = nullptr;
 	uint size = ModuleFiles::S_Load(assetsPath, &buffer);
 
-	if (buffer != nullptr)
+	if (buffer)
 	{
 		ModuleFiles::S_Save(resourcePath, buffer, size, false);
 

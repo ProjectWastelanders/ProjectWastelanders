@@ -143,6 +143,7 @@ void Mesh::DefaultDraw()
 		drawPerMesh2D->shader.SetFloat2v("normalizedSize", quadDimensions.ptr());
 		drawPerMesh2D->shader.SetFloat("limit", opacityLimit);
 		drawPerMesh2D->shader.SetInt("opacityDir", (int)opacityDir);
+		drawPerMesh2D->shader.SetFloat("totalOpacity", opacity);
 
 		return;
 	}

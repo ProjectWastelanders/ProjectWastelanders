@@ -5,9 +5,10 @@
 enum class CheckboxState {
 	NORMAL,
 	HOVERED,
-	HOVEREDACTIVE,
 	ONPRESS,
-	ACTIVE
+	NORMALACTIVE,
+	HOVEREDACTIVE,
+	ONPRESSACTIVE
 };
 
 class ComponentUICheckbox : public ComponentUI
@@ -34,11 +35,15 @@ private:
 	int textureIDHoverCB = -1;
 	int textureIDPressCB = -1;
 	int textureIDActiveCB = -1;
+	int textureIDHoverActiveCB = -1;
+	int textureIDPressActiveCB = -1;
 
 	ResourceTexture* idleCB = nullptr;
 	ResourceTexture* hoverCB = nullptr;
 	ResourceTexture* pressCB = nullptr;
 	ResourceTexture* activeCB = nullptr;
+	ResourceTexture* hoverActiveCB = nullptr;
+	ResourceTexture* pressActiveCB = nullptr;
 
 #ifdef STANDALONE
 	void OnEditor() override;

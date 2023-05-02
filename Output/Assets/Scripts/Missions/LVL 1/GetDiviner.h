@@ -13,7 +13,7 @@ public:
     void Start() override;
     void Update() override;
 
-    void OnCollisionEnter(API_RigidBody other);
+    void OnCollisionStay(API_RigidBody other);
 
     API_GameObject playerStorageGO;
     PlayerStorage* playerStorage;

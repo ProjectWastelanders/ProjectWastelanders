@@ -62,16 +62,18 @@ void MaterialComponent::OnEditor()
 		//Loop Uniforms GUI
 		if (_resource != nullptr && _resource->material.uniforms.size() > 0)
 		{
+			/*std::string numU = "Num of uniforms -> " + std::to_string(_resource->material.uniforms.size());
+			ImGui::Text(numU.c_str());
+			ImGui::NewLine();*/
 			for (int i = 0; i < _resource->material.uniforms.size(); ++i)
 			{
-				if (_resource->material.uniforms[i]->data.name == "view" ||
-					_resource->material.uniforms[i]->data.name == "projection" ||
-					_resource->material.uniforms[i]->data.name == "model" ||
-					_resource->material.uniforms[i]->data.name == "LightColor" ||
+				if (_resource->material.uniforms[i]->data.name == "LightColor" ||
 					_resource->material.uniforms[i]->data.name == "LightStrength" ||
 					_resource->material.uniforms[i]->data.name == "LightPosition" ||
 					_resource->material.uniforms[i]->data.name == "ViewPoint" ||
-					_resource->material.uniforms[i]->data.name == "finalBonesMatrices[0]")
+					_resource->material.uniforms[i]->data.name == "finalBonesMatrices[0]" ||
+					_resource->material.uniforms[i]->data.name == "Actual_Spot" ||
+					_resource->material.uniforms[i]->data.name == "Actual_Point")
 				{
 					continue;
 				}

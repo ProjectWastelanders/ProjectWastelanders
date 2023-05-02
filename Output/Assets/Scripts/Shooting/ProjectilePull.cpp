@@ -23,10 +23,11 @@ void ProjectilePull::Start()
     playerStats = (PlayerStats*)playerGO.GetScript("PlayerStats");
     if (playerStats == nullptr) Console::Log("Missing PlayerStats on ProjectilePull Script.");
 
+    automaticLevel = API_QuickSave::GetInt("automatic_level");
+
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newProjectile = Game::InstancePrefab(projectilePrefab, API_GameObject());
-        //all start
         Projectile* projectileScript = (Projectile*)newProjectile.GetScript("Projectile");
         projectileScript->pull = this;
         pull.push_back(newProjectile);
@@ -35,7 +36,6 @@ void ProjectilePull::Start()
     for (size_t i = 0; i < shotgunBombPullSize; i++)
     {
         API_GameObject newBomb = Game::InstancePrefab(shotgunBombPrefab, API_GameObject());
-        //all start
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
         API_GameObject explosion[1];
         newBomb.GetChildren(explosion);
@@ -61,9 +61,11 @@ void ProjectilePull::Update()
         if (resetAuto <= 0.0f)
         {
             resetAuto = 0.0f;
-            autoForce -= dt * 1.0f;
+            autoForce -= dt * 3.0f;
         }
     }
+
+    if (autoForce < 0.0f) autoForce = 0.0f;
 }
 
 API_GameObject ProjectilePull::GetFirstInactiveProjectile()
@@ -157,13 +159,29 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
-    projectile->damage = projectileDamage + (autoForce * 4.8f);
-    projectile->resistanceDamage = projectileResistanceDamage;
+    projectile->damage = projectileDamage + (autoForce * 1.5f);
+    projectile->resistanceDamage = projectileResistanceDamage + (autoForce * 4.8f);
     projectile->lifeTime = projectileLifetime;
     projectile->type = PROJECTILE_TYPE::AUTO;
     projectile->ignoreGO = 0;
 
-    if (autoForce <= 6.0f) autoForce += 0.1f;
+    switch (automaticLevel)
+    {
+    case 0:
+        if (autoForce <= 6.0f) autoForce += 0.1f;
+        break;
+    case 1:
+        if (autoForce <= 6.0f) autoForce += 0.1f;
+        break;
+    case 2:
+        if (autoForce <= 9.0f) autoForce += 0.15f;
+        break;
+    case 3:
+        if (autoForce <= 9.0f) autoForce += 0.225f;
+        break;
+    default:
+        break;
+    }
     resetAuto = 0.2f;
 }
 
@@ -237,7 +255,7 @@ void ProjectilePull::LauchProjectileFLAMETHROWER(float projectileSpeed, float pr
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
-    //go.GetMeshRenderer().SetActive(false);
+    go.GetMeshRenderer().SetActive(false);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;

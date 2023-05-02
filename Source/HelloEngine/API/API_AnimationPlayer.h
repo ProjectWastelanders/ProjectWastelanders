@@ -29,6 +29,8 @@ namespace API
 
 		void SetLoop(bool loop);
 
+		void SetStayLast(bool stayLast);
+
 	private:
 		AnimationComponent* GetComponent();
 		void SetComponent(AnimationComponent* component);

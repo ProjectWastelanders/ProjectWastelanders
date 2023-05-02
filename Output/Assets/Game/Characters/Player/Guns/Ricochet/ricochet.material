@@ -1,0 +1,109 @@
+{
+    "Shader resource UID": 3576356457,
+    "Uniforms": [
+        {
+            "Index": 0,
+            "Name": "ColourTest",
+            "Read": 10,
+            "Size": 1,
+            "String Type": "vec3",
+            "Type": 35665,
+            "Value": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "Index": 1,
+            "Name": "LightColor",
+            "Read": 10,
+            "Size": 1,
+            "String Type": "vec3",
+            "Type": 35665,
+            "Value": [
+                -1.5816464369601856e+38,
+                -1.5816464369601856e+38,
+                -1.5816464369601856e+38
+            ]
+        },
+        {
+            "Index": 2,
+            "Name": "LightPosition",
+            "Read": 13,
+            "Size": 1,
+            "String Type": "vec4",
+            "Type": 35666,
+            "Value": [
+                -0.0013270393246784806,
+                -0.0013270393246784806,
+                -6.259853398707798e+18,
+                -6.260125527835673e+18
+            ]
+        },
+        {
+            "Index": 3,
+            "Name": "ViewPoint",
+            "Read": 9,
+            "Size": 1,
+            "String Type": "vec3",
+            "Type": 35665,
+            "Value": [
+                -1.5816464369601856e+38,
+                -1.5816464369601856e+38,
+                -1.5816464369601856e+38
+            ]
+        },
+        {
+            "Index": 4,
+            "Layer": 0,
+            "Name": "albedo_texture",
+            "Read": 14,
+            "Size": 1,
+            "String Type": "sampler2D",
+            "Type": 35678,
+            "Value": 4199318258
+        },
+        {
+            "Index": 5,
+            "Layer": 1,
+            "Name": "metallic_texture",
+            "Read": 16,
+            "Size": 1,
+            "String Type": "sampler2D",
+            "Type": 35678,
+            "Value": -1
+        },
+        {
+            "Index": 7,
+            "Name": "shininess",
+            "Read": 9,
+            "Size": 1,
+            "String Type": "float",
+            "Type": 5126,
+            "Value": 1.0
+        },
+        {
+            "Index": 8,
+            "Name": "specularIntensity",
+            "Read": 17,
+            "Size": 1,
+            "String Type": "float",
+            "Type": 5126,
+            "Value": 0.0
+        },
+        {
+            "Index": 9,
+            "Name": "specularLightColor",
+            "Read": 18,
+            "Size": 1,
+            "String Type": "vec3",
+            "Type": 35665,
+            "Value": [
+                -1.5816464369601856e+38,
+                -1.5816464369601856e+38,
+                -1.5816464369601856e+38
+            ]
+        }
+    ]
+}

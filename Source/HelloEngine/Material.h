@@ -1,5 +1,6 @@
 #pragma once
 
+struct LightMap;
 class ResourceShader;
 class Uniform;
 
@@ -15,6 +16,7 @@ public:
 	~Material();
 
 	void UpdateBones(std::vector<float4x4>& bones);
+	void UpdateLights();
 	void Update(const float* view, const float* projection, const float* model);
 	void UpdateInstanced(const float* view, const float* projection);
 

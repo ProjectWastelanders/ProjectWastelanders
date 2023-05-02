@@ -32,8 +32,10 @@ typedef void* (*CreateFunc)(ScriptToInspectorInterface*);
 
 LayerGame::LayerGame()
 {
+#ifdef STANDALONE
 	_dllChangeTime = ModuleFiles::S_CheckFileLastModify(CHECK_DIRECTORY);
 	CopyFile(TEXT(DLL_DIRECTORY), TEXT("APILibrary/HelloAPI.dll"), FALSE);
+#endif
 	_dllFile = LoadLibrary("APILibrary/HelloAPI.dll");
 }
 
@@ -47,6 +49,7 @@ void LayerGame::Start()
 
 void LayerGame::PreUpdate()
 {
+#ifdef STANDALONE
 	static int frameWaitCompile = 300;
 	if (_compileDLL)
 	{
@@ -75,6 +78,7 @@ void LayerGame::PreUpdate()
 			frameWaitHotReload = 100;
 		}
 	}
+#endif
 
 	if ((!_isPlaying || _paused) && !_oneFrame)
 	{
@@ -322,10 +326,9 @@ void LayerGame::S_CreateBehaviorScript(ScriptComponent* component)
 
 	uint randomUID = HelloUUID::GenerateUUID();
 	_behaviorScripts[randomUID].script = (HelloBehavior*)create(component);
-	_behaviorScripts[randomUID].active = component->IsEnabled();
-
+	_behaviorScripts[randomUID].active = component->IsEnabled() && component->_gameObject->IsActive();
 	_behaviorScripts[randomUID].script->gameObject.SetGameObject(component->_gameObject);
-
+	_behaviorScripts[randomUID].debugName = component->scriptResource->className;
 	component->scriptUID = randomUID;
 }
 

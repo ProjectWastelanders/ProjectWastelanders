@@ -41,6 +41,8 @@ void ArmoryUnlock::Update()
 {
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN && PanelUnlock.IsEnabled())
     {
+        Audio::Event("click");
+
         Input::HandleGamePadButton(GamePadButton::BUTTON_B);
         SelectWeaponList.SetEnable(true);
         PanelUnlock.SetEnable(false);
@@ -86,6 +88,11 @@ void ArmoryUnlock::Update()
     
     if (Unlock.OnPress() && manteinTime == 0.0f && haveBlueprint)
     {
+        Audio::Event("w_upgrade");
         manteinTime = 1.0f;
+    }
+    else if (Unlock.OnPress())
+    {
+        Audio::Event("click");
     }
 }

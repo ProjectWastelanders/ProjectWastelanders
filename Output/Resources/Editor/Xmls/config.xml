@@ -8,9 +8,10 @@
 	<renderer>
 		<vsync value="false" />
 		<framerate value="120" />
+		<drawNavMesh value="true" />
 	</renderer>
 	<scene>
-		<currentScene value="Assets/LVL5_Blockout.HScene" />
+		<currentScene value="Assets/temp/NavMesh/testScene.HScene" />
 	</scene>
 	<openGL>
 		<blend value="true" tag="0x0BE2" />

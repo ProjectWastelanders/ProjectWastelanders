@@ -35,10 +35,11 @@ ModuleFiles::ModuleFiles() :Module()
     S_AddPathToFileSystem(".");
 
     //S_AddPathToFileSystem("Resources");
-
+#ifdef STANDALONE
     int res = system("msbuild -version");
     _automaticCompilation = res == 0;
     _enabledAutomaticCompilation = _automaticCompilation;
+#endif // STANDALONE
 }
 
 ModuleFiles::~ModuleFiles()
@@ -55,7 +56,7 @@ bool ModuleFiles::S_Exists(const std::string& file)
 
 bool ModuleFiles::S_MakeDir(const std::string& dir)
 {
-    if (S_Exists(dir) == false)
+    if (!S_Exists(dir))
     {
         PHYSFS_mkdir(dir.c_str());
 

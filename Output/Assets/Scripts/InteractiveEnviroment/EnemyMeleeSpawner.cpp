@@ -2,6 +2,8 @@
 #include "../Enemies/EnemyMeleeMovement.h"
 #include "../Enemies/Enemy.h"
 #include "../Shooting/Projectile.h"
+#include "API/API_AnimationPlayer.h"
+#include "SpawnerArea.h"
 
 HELLO_ENGINE_API_C EnemyMeleeSpawner* CreateEnemyMeleeSpawner(ScriptToInspectorInterface* script)
 {
@@ -28,27 +30,49 @@ HELLO_ENGINE_API_C EnemyMeleeSpawner* CreateEnemyMeleeSpawner(ScriptToInspectorI
 
 void EnemyMeleeSpawner::Start()
 {
+    spawnerArea = (SpawnerArea*)actionZone.GetScript("SpawnerArea");
+    if (spawnerArea == nullptr) Console::Log("SpawnerArea missing in EnemyMeleeSpawner Script.");
 
     enemiesInSpawn.resize(spawnPoolSize);
 
-    spawnDestroyedRef = Game::InstancePrefab(spawnDestroyedRes, parentOfSpawn);
+    /*spawnDestroyedRef = Game::InstancePrefab(spawnDestroyedRes, parentOfSpawn);
     spawnDestroyedRef.GetTransform().SetPosition(spawnEntireRef.GetTransform().GetLocalPosition());
     spawnDestroyedRef.GetTransform().SetRotation(spawnEntireRef.GetTransform().GetLocalRotation());
     spawnDestroyedRef.GetTransform().SetScale(spawnEntireRef.GetTransform().GetLocalScale());
-    spawnDestroyedRef.SetActive(false);
+    spawnDestroyedRef.SetActive(false);*/
 
     for (size_t i = 0; i < spawnPoolSize; i++)
     {
 
         API_GameObject rootBoneRef;
         API_SkinnedMeshRenderer skinnedMeshRef;
+        API_ShaderComponent material;
         API_GameObject attackZoneRef;
+        API_GameObject bomb;
 
         std::string detectionTag;
 
         enemiesInSpawn[i] = Game::InstancePrefab(enemyPrefabRes, parent);
 
         enemiesInSpawn[i].GetChildren(childs);
+        switch (i)
+        {
+        case 0:
+            enemiesInSpawn[i].SetName('0'); break;
+        case 1:
+            enemiesInSpawn[i].SetName('1'); break;
+        case 2:
+            enemiesInSpawn[i].SetName('2'); break;
+        case 3:
+            enemiesInSpawn[i].SetName('3'); break;
+        case 4:
+            enemiesInSpawn[i].SetName('4'); break;
+        case 5:
+            enemiesInSpawn[i].SetName('5'); break;
+        default:
+            Console::Log("111:");
+            break;
+        }
 
         for (API_GameObject& var : childs)
         {
@@ -62,6 +86,7 @@ void EnemyMeleeSpawner::Start()
             if (detectionTag == "SkinnedMesh")
             {
                 skinnedMeshRef = var.GetSkinnedMeshRender();
+                //material = var.GetShader();
             }
             else if (detectionTag == "RootBone")
             {
@@ -71,6 +96,10 @@ void EnemyMeleeSpawner::Start()
             {
                 attackZoneRef = var;
             }
+            else if (detectionTag == "Bomb")
+            {
+                bomb = var;
+            }
         }
 
         skinnedMeshRef.SetRootBone(rootBoneRef);
@@ -79,6 +108,7 @@ void EnemyMeleeSpawner::Start()
         if (enemyScript != nullptr)
         {
             enemyScript->enemyRb = enemiesInSpawn[i].GetRigidBody();
+            enemyScript->bomb = bomb;
 
             enemyScript->Start();
         }
@@ -86,7 +116,6 @@ void EnemyMeleeSpawner::Start()
         EnemyMeleeMovement* enemyMeleeMov = (EnemyMeleeMovement*)enemiesInSpawn[i].GetScript("EnemyMeleeMovement");
         if (enemyMeleeMov != nullptr)
         {
-
             enemyMeleeMov->target = target;
             enemyMeleeMov->actionZone = actionZone;
             enemyMeleeMov->zoneRb = zoneRb;
@@ -94,6 +123,7 @@ void EnemyMeleeSpawner::Start()
             enemyMeleeMov->listPoints[1] = listPoints[1];
             enemyMeleeMov->listPoints[2] = listPoints[2];
             enemyMeleeMov->attackZoneGO = attackZoneRef;
+            enemyMeleeMov->animationPlayer = skinnedMeshRef.GetGameObject().GetAnimationPlayer();
 
             enemyMeleeMov->Start();
         }
@@ -103,17 +133,15 @@ void EnemyMeleeSpawner::Start()
 }
 void EnemyMeleeSpawner::Update()
 {
-    if (!destroyed)
+    if (!destroyed && spawnerArea && spawnerArea->playerIn)
     {
         spawnTimer += Time::GetDeltaTime();
 
         if (spawnTimer >= 3.0f)
         {
-
             SpawnEnemy(GetEnemyIndexInactive());
 
             spawnTimer = 0.0f;
-
         }
     }
 }
@@ -122,19 +150,13 @@ void EnemyMeleeSpawner::OnCollisionEnter(API_RigidBody other)
 {
     if (!destroyed)
     {
-        std::string detectionName = other.GetGameObject().GetName();
+        std::string detectionTag = other.GetGameObject().GetTag();
 
-        if (detectionName == "Projectile")
+        if (detectionTag == "Projectile")
         {
-
             Projectile* projectile = (Projectile*)other.GetGameObject().GetScript("Projectile");
 
             ShootSpawn(projectile->damage);
-
-        }
-        else if (detectionName == "Cube")
-        {
-            DestroySpawn();
         }
     }
 }
@@ -144,9 +166,10 @@ void EnemyMeleeSpawner::SpawnEnemy(int i)
 
     if (i == -1)
     {
+        Console::Log("NOT SPAWN");
         return;
     }
-
+    Console::Log("YES SPAWN");
     enemiesInSpawn[i].GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
     enemiesInSpawn[i].SetActive(true);
 

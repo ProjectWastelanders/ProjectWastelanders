@@ -1,4 +1,5 @@
 #include "Chest.h"
+
 HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
 {
     Chest* classInstance = new Chest();
@@ -9,6 +10,8 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
     script->AddCheckBox("Tutorial Weapon Blueprint", &classInstance->tutorialWeaponBlueprint);
     script->AddDragInt("Chest Index", &classInstance->chestIndex);
     script->AddDragInt("Item Index", &classInstance->itemIndex);
+
+    script->AddDragBoxUIImage("Guide Button", &classInstance->guideButton);
     return classInstance;
 }
 
@@ -20,10 +23,10 @@ void Chest::Start()
 
 void Chest::Update()
 {
+    guideButton.FillImage(openChestTime / maxOpenChestTime);
     if (opening)
     {
         openChestTime -= Time::GetRealTimeDeltaTime();
-
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_UP)
         {
             if (playerMove) playerMove->StopOpenChestAnim();
@@ -43,24 +46,29 @@ void Chest::Update()
             switch (itemIndex)
             {
             case 0: // Upgrade Blueprint
+                playerStats->SaveChestData(itemIndex, chestIndex);
+                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->UpgradeAlert(itemIndex);
+                break;
             case 1: // Unlock Gun
             case 2:
             case 3:
             case 4:
-            case 5:
                 playerStats->SaveChestData(itemIndex, chestIndex);
+                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->New_WeaponAlert(itemIndex);
                 break;
-            case 6: // Get Flamethrower
-                playerGunManager->GetGun(3, 6);
-                playerStats->specialAmmo = 200;
-                playerStats->GetAmmo(2, 200);
+            case 5: // Get Flamethrower
+                playerGunManager->GetGun(3, 5);
+                playerStats->specialAmmo = 600;
+                playerStats->maxSpecialAmmo = 600;
                 playerStats->SaveChestData(6, chestIndex); // save game
+                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(5);
                 break;
-            case 7: // Get Ricochet
-                playerGunManager->GetGun(3, 7);
-                playerStats->specialAmmo = 15;
-                playerStats->GetAmmo(3, 15);
+            case 6: // Get Ricochet
+                playerGunManager->GetGun(3, 6);
+                playerStats->specialAmmo = 20;
+                playerStats->maxSpecialAmmo = 20;
                 playerStats->SaveChestData(7, chestIndex); // save game
+                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(6);
                 break;
             default:
                 Console::Log("Item Index is not between 0 and 7.");
@@ -75,7 +83,7 @@ void Chest::Update()
     }
 }
 
-void Chest::OnCollisionEnter(API::API_RigidBody other)
+void Chest::OnCollisionStay(API::API_RigidBody other)
 {
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "Player")
@@ -136,4 +144,22 @@ void Chest::OpenChestOnStart()
 {
     chestAnimatorPlayer.Play();
     gameObject.SetActive(false);
+}
+
+void Chest::OnCollisionEnter(API::API_RigidBody other)
+{
+    std::string detectionTag = other.GetGameObject().GetTag();
+    if (detectionTag == "Player")
+    {
+        guideButton.GetGameObject().SetActive(true);
+    }
+}
+
+void Chest::OnCollisionExit(API::API_RigidBody other)
+{
+    std::string detectionTag = other.GetGameObject().GetTag();
+    if (detectionTag == "Player")
+    {
+        guideButton.GetGameObject().SetActive(false);
+    }
 }

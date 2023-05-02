@@ -30,6 +30,63 @@ void Material::UpdateBones(std::vector<float4x4>& bones)
 	}
 }
 
+void Material::UpdateLights()
+{
+	LightMap& lightMap = Lighting::GetLightMap();
+
+	uint actualSpot = 0;
+	uint actualPoint = 0;
+
+	//Directional Light
+	if (lightMap.directionalLight.isEnabled)
+	{
+		shader->shader.SetFloat3v("Light_Directional.Base.Color", &lightMap.directionalLight.color.At(0));
+		shader->shader.SetFloat("Light_Directional.Base.AmbientIntensity", lightMap.directionalLight.ambientIntensity);
+		shader->shader.SetFloat("Light_Directional.Base.DiffuseIntensity", lightMap.directionalLight.diffuseIntensity);
+		shader->shader.SetFloat3v("Light_Directional.Direction", &lightMap.directionalLight.direction.At(0));
+	}
+	
+	//Point Light
+	for (auto& pl : lightMap.pointLight)
+	{
+		if (!pl.second.isEnabled) continue;
+		shader->shader.SetFloat3v("Light_Point[" + std::to_string(actualPoint) + "].Base.Color", &pl.second.color.At(0));
+		shader->shader.SetFloat("Light_Point[" + std::to_string(actualPoint) + "].Base.AmbientIntensity", pl.second.ambientIntensity);
+		shader->shader.SetFloat("Light_Point[" + std::to_string(actualPoint) + "].Base.DiffuseIntensity", pl.second.diffuseIntensity);
+
+		shader->shader.SetFloat("Light_Point[" + std::to_string(actualPoint) + "].Linear", pl.second.linear);
+		shader->shader.SetFloat("Light_Point[" + std::to_string(actualPoint) + "].Exp", pl.second.exp);
+		shader->shader.SetFloat("Light_Point[" + std::to_string(actualPoint) + "].Distance", pl.second.distance);
+		shader->shader.SetFloat3v("Light_Point[" + std::to_string(actualPoint) + "].Position", &pl.second.position.At(0));
+		
+		actualPoint++;
+		if (actualPoint == shader->shader.data._maxPointLights) break;
+	}
+
+	//Spot Light
+
+	for (auto& sl : lightMap.spotLight)
+	{
+		if (!sl.second.isEnabled) continue;
+		shader->shader.SetFloat3v("Light_Spot[" + std::to_string(actualSpot) + "].Base.Color", &sl.second.color.At(0));
+		shader->shader.SetFloat("Light_Spot[" + std::to_string(actualSpot) + "].Base.AmbientIntensity", sl.second.ambientIntensity);
+		shader->shader.SetFloat("Light_Spot[" + std::to_string(actualSpot) + "].Base.DiffuseIntensity", sl.second.diffuseIntensity);
+
+		shader->shader.SetFloat("Light_Spot[" + std::to_string(actualSpot) + "].Linear", sl.second.linear);
+		shader->shader.SetFloat("Light_Spot[" + std::to_string(actualSpot) + "].Exp", sl.second.exp);
+		shader->shader.SetFloat("Light_Spot[" + std::to_string(actualSpot) + "].Cutoff", math::Cos(math::DegToRad(sl.second.cutoff)));
+		shader->shader.SetFloat("Light_Spot[" + std::to_string(actualSpot) + "].Distance", sl.second.distance);
+		shader->shader.SetFloat3v("Light_Spot[" + std::to_string(actualSpot) + "].Position", &sl.second.position.At(0));
+		shader->shader.SetFloat3v("Light_Spot[" + std::to_string(actualSpot) + "].Direction", &sl.second.direction.At(0));
+		
+		actualSpot++;
+		if (actualSpot == shader->shader.data._maxSpotLights) break;
+	}
+
+	shader->shader.SetInt("Actual_Spot", actualSpot);
+	shader->shader.SetInt("Actual_Point", actualPoint);
+}
+
 void Material::Update(const float* view, const float* projection, const float* model)
 {
 	shader->shader.Bind();
@@ -43,9 +100,11 @@ void Material::Update(const float* view, const float* projection, const float* m
 		//If true, the uniform was Key and has already been Handled (Given Data)
 		if (HandleKeyUniforms(uniforms[i])) continue;
 
-
 		uniforms[i]->Update(shader->shader);
 	}
+
+	//Update Engine lights if the shader uses them
+	if (shader->shader.data.hasEngineLight) UpdateLights();
 }
 
 void Material::UpdateInstanced(const float* view, const float* projection)
@@ -63,6 +122,9 @@ void Material::UpdateInstanced(const float* view, const float* projection)
 
 		uniforms[i]->Update(shader->shader);
 	}
+
+	//Update Engine lights if the shader uses them
+	if (shader->shader.data.hasEngineLight) UpdateLights();
 }
 
 void Material::UnbindAllTextures()
@@ -117,15 +179,12 @@ void Material::CleanUniforms()
 bool Material::HandleKeyUniforms(Uniform* uni)
 {
 	bool toReturn = false;
+
+	//By Type and name
 	switch (uni->data.type)
 	{
 		case GL_FLOAT_VEC3:
-			if (uni->data.name == "LightColor")
-			{
-				shader->shader.SetFloat3v("LightColor", &Lighting::global.lightColor.At(0));
-				toReturn = true;
-			}
-			else if (uni->data.name == "ViewPoint")
+			if (uni->data.name == "ViewPoint")
 			{
 				float3 viewPoint = Application::Instance()->camera->currentDrawingCamera->GetPosition();
 				shader->shader.SetFloat3v("ViewPoint", &viewPoint.At(0));
@@ -134,18 +193,11 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 			}
 			break;
 		case GL_FLOAT_VEC4:
-			if (uni->data.name == "LightPosition")
-			{
-				shader->shader.SetFloat4v("LightPosition", &Lighting::global.lightDirection.At(0));
-				
-				toReturn = true;
-			}
+			
 			break;
 		case GL_FLOAT:
-			if (uni->data.name == "LightStrength")
+			if (uni->data.name == "Actual_Spot" || uni->data.name == "Actual_Point")
 			{
-				shader->shader.SetFloat3v("LightStrength", &Lighting::global.lightStrength);
-				
 				toReturn = true;
 			}
 			break;
@@ -163,11 +215,11 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 void Material::CheckVersion()
 {
 	if (shader == nullptr) return;
-	if (shader->version == shaderVersion) return;
-	
-	//The version change when the shader is recompiled. The Material must ask for the new uniforms
-	CleanUniforms();
-	this->shader->shader.UniformParser(uniforms);
+	//if (shader->version == shaderVersion) return;
+	//
+	////The version change when the shader is recompiled. The Material must ask for the new uniforms
+	//CleanUniforms();
+	//this->shader->shader.UniformParser(uniforms);
 	shaderVersion = shader->version;
 }
 

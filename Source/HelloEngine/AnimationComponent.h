@@ -24,15 +24,14 @@ public:
 
 	bool IsPlaying() { return isPlaying; };
 	void SetLoop(bool value) { isLoop = value; }
+	void SetStayLast(bool value) { isStayLast = value; }
 #ifdef STANDALONE
 	void OnEditor() override;
 #endif
 private:
 	void AnimationDropArea();
 	
-	bool GetLoop(bool value) { return isLoop; }
-	
-	void SetStayLast(bool value) { isStayLast = value; }
+	bool GetLoop(bool value) { return isLoop; }	
 	bool GetStayLast(bool value) { return isStayLast; }
 
 private:

@@ -2,13 +2,16 @@
 #include "API/HelloBehavior.h"
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
-#include "../Thanos/ThanosMovement.h"
 #include "API/API.h"
+#include "ThanosMeleeDmg.h"
+#include "ThanosLoop.h"
+#include "../Player/PlayerStats.h"
+#include "../Player/PlayerMove.h"
 
 class ThanosAttacks : HelloBehavior
 {
 public:
-	void Start() override; 
+	void Start() override;
 	void Update() override;
 
 	void MeleeAttack();
@@ -16,15 +19,30 @@ public:
 	void DashAttack();
 
 	void Seek(API_GameObject* seeker, API_Vector3 target, float speed);
+	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
 
-	ThanosMovement* Tmovement;
+	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
+	bool dashing = false;
 
 	API_GameObject boss;
 	API_GameObject player;
 
 	API_GameObject melee1;
 	float meleeAttackTime = 0.0f;
+
+	API_GameObject sword;
+	API_GameObject bTarget;
+	bool swordThrown = false;
+	float swordSpeed = 1.0f;
+	API_Vector3 aimPosition;
+	float swordTime = 0.0f;
+
+	float charge = 0.0f;
+
+	API_GameObject defenseSword;
+
+	float distSA = 0.0F;
 
 	enum class THANOS_STATE {
 		IDLE,
@@ -34,10 +52,77 @@ public:
 		HOLDING,
 		SPECIALATTACK,
 		THROWINGATTACK,
+		LASTSWORD,
+		PULSE,
+		BURST,
+		BEAM,
 	};
 
 	THANOS_STATE thanosState;
 
 	API_Vector3 playerPosition;
+
+	ThanosLoop* tLoop;
+	PlayerStats* pStats;
+	PlayerMove* pMove;
+	bool finalSword = false;
+
+	float explosionTime = 0.0f;
+	API_GameObject explosionWave;
+
+	bool explosionWave1HasArrived = false;
+	bool explosionWave2HasArrived = false;
+
+
+	API_GameObject bullet1;
+	API_GameObject bullet2;
+	API_GameObject bullet3;
+
+	API_GameObject bullets[3];
+	float bulletSpeed = 8.0f;
+
+	bool bulletThrown[3] = { false,false,false };
+
+	API_Vector3 playerPositions[3] = { 0,0,0 };
+	float burstTimes[4] = { 0.01f,0.25f,0.5f,1.0f };
+	float busrstTime = 0.0f;
+
+	float attackType = 0.0f;
+
+	API_GameObject beam1;
+	API_GameObject beam2;
+	API_GameObject beam3;
+	API_GameObject beam4;
+
+	API_GameObject beams[4];
+
+	API_GameObject beamTarget1;
+	API_GameObject beamTarget2;
+	API_GameObject beamTarget3;
+	API_GameObject beamTarget4;
+
+	API_GameObject beamTargets[4];
+	API_Vector3 beamPositions[4];
+
+	float beamTime = 0.0f;
+	float beamTimes[5] = { 0.31f,1.1f,1.11f,1.6f,3.5f };
+
+	bool beamThrown[4] = { false,false,false,false };
+
+	float beamSpeed = 0.75f;
+
+	float Rotate(API_Vector3 target, float _angle, API_GameObject* rotator);
+
+	float angle = 0.0f;
+
+	float pulse = false;
+
+	API_GameObject meteorRain;
+	float meteorRainTime = 0.0f;
+	float meteorRainSpeed = 5.0f;
+	API_Vector3 meteorRainPosition = { 0,0,0 };
+	float meteorRainCooldown = 0.0f;
+	bool isRainingMeteors = false;
+	void MeteorAttack();
 };
 

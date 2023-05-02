@@ -21,7 +21,7 @@ HELLO_ENGINE_API_C EnemyMeleeMovement* CreateEnemyMeleeMovement(ScriptToInspecto
     script->AddDragInt("Probaility to dodge %", &classInstance->probDash);
     script->AddDragFloat("Vel dash", &classInstance->velDash);
     script->AddDragFloat("Time Dash", &classInstance->tDash);
-    script->AddDragBoxGameObject("Target", &classInstance->target);
+    //script->AddDragBoxGameObject("Target", &classInstance->target);
     script->AddDragBoxGameObject("Action zone", &classInstance->actionZone);
     script->AddDragBoxGameObject("Attack zone", &classInstance->attackZoneGO);
     //script->AddDragBoxRigidBody("Action Rb zone", &classInstance->zoneRb);
@@ -39,7 +39,7 @@ HELLO_ENGINE_API_C EnemyMeleeMovement* CreateEnemyMeleeMovement(ScriptToInspecto
     script->AddDragBoxAnimationResource("Dash Animation", &classInstance->dashAnim);
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
     script->AddDragBoxAnimationResource("Hit Animation", &classInstance->hitAnim);
-    //script->AddCheckBox("Dashiing", &classInstance->dashing);
+    ///script->AddCheckBox("Dashiing", &classInstance->attacking);
     return classInstance;
 }
 
@@ -59,6 +59,8 @@ void EnemyMeleeMovement::Start()
     animState = AnimationState::NONE;
     zoneRb = actionZone.GetRigidBody();
 
+    Game::FindGameObjectsWithTag("Player",&target, 1);
+
     enemy = (Enemy*)gameObject.GetScript("Enemy");
     attackZone = (EnemyMeleeAttackZone*)attackZoneGO.GetScript("EnemyMeleeAttackZone");
     targStats = (PlayerStats*)target.GetScript("PlayerStats");
@@ -74,6 +76,15 @@ void EnemyMeleeMovement::Update()
     if (enemy != nullptr && attackZone != nullptr && targStats != nullptr)
     {
         if(enemy->dying)enemState = States::DYING;
+
+        if (enemState == States::TARGETING || enemState == States::ATTACKIG)
+        {
+            enemy->targeting = true;
+        }
+        else
+        {
+            enemy->targeting = false;
+        }
 
         if (!enemy->dying)
         {
@@ -157,7 +168,7 @@ void EnemyMeleeMovement::Update()
         {
         case States::WANDERING:
           ///  Console::Log("NumPoint: " + std::to_string(numPoint));
-
+            attacking = false;
             enemy->currentSpeed = enemy->speed * enemy->stunVel * enemy->slowVel /** dt*/;
             
             //if ((gameObject.GetTransform().GetLocalPosition().Distance(actualPoint) < 5))
@@ -181,6 +192,7 @@ void EnemyMeleeMovement::Update()
             break;
 
         case States::TARGETING:
+            attacking = false;
             enemy->currentSpeed = enemy->speed * enemy->acceleration * enemy->stunVel * enemy->slowVel /** dt*/;
 
             
@@ -196,7 +208,7 @@ void EnemyMeleeMovement::Update()
             break;
 
         case States::ATTACKIG:
-
+            attacking = true;
             if (timer < attackCharge)
             {
                 ChargeAttack();
@@ -254,6 +266,7 @@ void EnemyMeleeMovement::Update()
             break;
 
             case States::DASHING:
+                attacking = false;
                 _dashCooldown += dt;
                 if (_dashCooldown < tDash)
                 {
@@ -337,15 +350,13 @@ void EnemyMeleeMovement::Seek(float vel, API_Vector3 tarPos, API_RigidBody enemy
 
 void EnemyMeleeMovement::Wander(float vel, API_Vector3 point, API_RigidBody enemyRb)
 {
-
-    
     if (!enemy->actStun)
     {
         API_Vector3 _bRot = enemy->baseRot;
         API_Vector2 lookDir;
-         lookDir.x = (point.x - gameObject.GetTransform().GetGlobalPosition().x);
-         lookDir.y = (point.z - gameObject.GetTransform().GetGlobalPosition().z);
-       /* lookDir.x = (point.x - gameObject.GetTransform().GetLocalPosition().x);
+        lookDir.x = (point.x - gameObject.GetTransform().GetGlobalPosition().x);
+        lookDir.y = (point.z - gameObject.GetTransform().GetGlobalPosition().z);
+        /*lookDir.x = (point.x - gameObject.GetTransform().GetLocalPosition().x);
         lookDir.y = (point.z - gameObject.GetTransform().GetLocalPosition().z);*/
 
         API_Vector2 normLookDir;
@@ -356,6 +367,7 @@ void EnemyMeleeMovement::Wander(float vel, API_Vector3 point, API_RigidBody enem
         gameObject.GetTransform().SetRotation(0, -_angle, 0);
         //gameObject.GetTransform().SetRotation(0 + _bRot.x, -_angle - _bRot.y, 0 + _bRot.z);
     }
+    Console::Log("000: " + std::to_string(enemyRb.GetVelocity().x) + " " + std::to_string(enemyRb.GetVelocity().y) + " " + std::to_string(enemyRb.GetVelocity().z));
     enemyRb.SetVelocity(gameObject.GetTransform().GetForward() * vel);
     //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * vel);
 }
@@ -382,6 +394,7 @@ void EnemyMeleeMovement::WalkAway()
 }
 void EnemyMeleeMovement::ChargeAttack()
 {
+    enemy->meleeIsAtking = true;
     enemy->currentSpeed = chargeSpeed;
     Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
     targetPosOnAttack = target.GetTransform().GetGlobalPosition();

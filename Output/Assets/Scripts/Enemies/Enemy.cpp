@@ -15,13 +15,15 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     script->AddDragFloat("Current Helath", &classInstance->currentHp);
     script->AddDragFloat("Start Resistance", &classInstance->minResistence);
     script->AddDragFloat("Resistance", &classInstance->maxResistance);
-    script->AddDragFloat("Speed", &classInstance->speed);
+    script->AddDragFloat("Speed", &classInstance->speed); 
     script->AddDragFloat("Acceleration", &classInstance->acceleration);
     script->AddDragFloat("Current speed", &classInstance->currentSpeed);
     script->AddDragBoxGameObject("Enemy Manager", &classInstance->enemyDropManagerGO);
     //script->AddDragBoxRigidBody("Enemy RigidBody", &classInstance->enemyRb);
     script->AddDragBoxParticleSystem("Hit particle system", &classInstance->hitParticles);
     script->AddCheckBox("Has Shield", &classInstance->hasShield);
+    script->AddDragBoxShaderComponent("Color hit", &classInstance->enemyShader);
+    script->AddDragFloat("Time hit color", &classInstance->_tHitColor);
     script->AddDragBoxGameObject("Bomb", &classInstance->bomb);
     script->AddDragBoxTextureResource("Texture Bomb 1", &classInstance->textureBomb[0]);
     script->AddDragBoxTextureResource("Texture Bomb 2", &classInstance->textureBomb[1]);
@@ -29,6 +31,7 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     script->AddDragBoxTextureResource("Texture Bomb 4", &classInstance->textureBomb[3]);
     script->AddDragBoxTextureResource("Texture Bomb 5", &classInstance->textureBomb[4]);
     script->AddDragBoxTextureResource("Texture Bomb 6", &classInstance->textureBomb[5]);
+    script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
     //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
     return classInstance;
 }
@@ -68,7 +71,7 @@ void Enemy::Start()
         _tAnimDie = 1.43f;
     }
 
-    
+    shotgunLevel = API_QuickSave::GetInt("shotgun_level");
 }
 
 void Enemy::Update()
@@ -81,16 +84,16 @@ void Enemy::Update()
     //burn
     if (burnTime > 3.0f)
     {
-        if (resetBurn >= 0.0f)
+        TakeDamage(30.0f * Time::GetDeltaTime(), 0.0f);
+    }
+    if (resetBurn > 0.0f)
+    {
+        resetBurn -= Time::GetDeltaTime();
+        if (resetBurn <= 0.0f)
         {
-            resetBurn -= Time::GetDeltaTime();
-            if (resetBurn <= 0.0f)
-            {
-                resetBurn = 0.0f;
-                burnTime -= Time::GetDeltaTime();
-            }
+            resetBurn = 0.0f;
+            burnTime -= Time::GetDeltaTime();
         }
-        TakeDamage(0.5f, 0.0f);
     }
 
     if (takingDmg && !dying)
@@ -98,7 +101,7 @@ void Enemy::Update()
         TakingDmgState();
     }
 
-    if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
+    /*if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
     {
         EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
         EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
@@ -108,8 +111,25 @@ void Enemy::Update()
          currentHp = 0;
          Die();
         }
-    }
+    }*/
+    if (_hitShader)
+    {
+        _coldHitColor += Time::GetDeltaTime();
+        if(_coldHitColor>=_tHitColor)
+        {
+            _coldHitColor = 0;
+           // enemyShader.SetColor(255, 255, 255, 255);
+            _hitShader = false;
+        }
+        else {
 
+            enemyShader.SetColor(1.1, 0, 0, 0.5);
+        }
+    }
+    else 
+    {
+        enemyShader.SetColor(1, 1, 1, 255);
+    }
 }
 
 void Enemy::TakingDmgState()
@@ -233,13 +253,18 @@ void Enemy::OnCollisionEnter(API::API_RigidBody other)
     std::string detectionTag = other.GetGameObject().GetTag();
     if(detectionTag == "Player")
     {
-        PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-        pStats->TakeDamage(10, 0);
+        EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
+        if (meleeScript)
+        {
+            PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
+           if(meleeScript->enemState== EnemyMeleeMovement::States::ATTACKIG && meleeIsAtking) pStats->TakeDamage(10, 0), meleeIsAtking=false;
+        }
     }
     if (detectionTag == "Projectile")
     {
         isHit = true;
-        
+        enemyShader.SetColor(255,0,0,0.5);
+       if(!_hitShader) _hitShader = true;
     }
 }
 
@@ -319,7 +344,8 @@ void Enemy::CheckBombs()
         else
         {
             stickBomb->triggerActive = true;
-            TakeDamage(5.0f * currentBombNum, 5.0f * currentBombNum);
+            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
+            else stickBomb->damage = 10.0f * currentBombNum;
         }
         currentBombNum = 0;
         bomb.SetActive(false);

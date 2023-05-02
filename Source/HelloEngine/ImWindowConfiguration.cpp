@@ -14,30 +14,30 @@ ImWindowConfiguration::ImWindowConfiguration() : ImWindow()
 
 	isEnabled = true;
 
-	frames = new CArrayF(60, 0.0f);
+	_frames = new CArrayF(60, 0.0f);
 
-	app = Application::Instance();
+	_app = Application::Instance();
 
-	countCPU = SDL_GetCPUCount();
+	_countCPU = SDL_GetCPUCount();
 
-	systemRAM = SDL_GetSystemRAM();
+	_systemRAM = SDL_GetSystemRAM();
 
-	windowWidth = &ModuleWindow::width;
+	_windowWidth = &ModuleWindow::width;
 
-	windowHeight = &ModuleWindow::height;
+	_windowHeight = &ModuleWindow::height;
 
-	windowBrightness = &ModuleWindow::brightness;
+	_windowBrightness = &ModuleWindow::brightness;
 
-	isVSyncOn = app->renderer3D->isVSync;
+	_isVSyncOn = _app->renderer3D->isVSync;
 
-	frameLimit = app->frameCap;
+	_frameLimit = _app->frameCap;
 
-	automaticCompilation = ModuleFiles::S_IsMSBuildOn();
+	_automaticCompilation = ModuleFiles::S_IsMSBuildOn();
 
 	// Init render configurations
-	moduleRenderer = Application::Instance()->renderer3D;
+	_moduleRenderer = Application::Instance()->renderer3D;
 
-	sceneCameraSpeed = &Application::Instance()->camera->sceneCamera->cameraSpeed;
+	_sceneCameraSpeed = &Application::Instance()->camera->sceneCamera->cameraSpeed;
 
 	// Get openGl node with module xml
 	XMLNode openGlNode = Application::Instance()->xml->GetConfigXML().FindChildBreadth("openGL");
@@ -57,7 +57,7 @@ ImWindowConfiguration::ImWindowConfiguration() : ImWindow()
 
 ImWindowConfiguration::~ImWindowConfiguration()
 {
-	RELEASE(frames);
+	RELEASE(_frames);
 
 	// Save values to the xml file
 	XMLNode openGlNode = Application::Instance()->xml->GetConfigXML().FindChildBreadth("openGL");
@@ -72,44 +72,44 @@ void ImWindowConfiguration::Update()
 {
 	std::string framerate = "Framerate: " + std::to_string(ImGui::GetIO().Framerate);
 
-	frames->push_back(ImGui::GetIO().Framerate);
+	_frames->push_back(ImGui::GetIO().Framerate);
 
 	if (ImGui::Begin(windowName.c_str(), &isEnabled, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize))
 	{
 		if (ImGui::CollapsingHeader("Application", ImGuiTreeNodeFlags_DefaultOpen))
 		{
-			ImGui::PlotHistogram("##Framerate", frames->front(), frames->size(), 0, framerate.c_str(), 0.0f, 160.0f, ImVec2(300, 160));
-			if (ImGui::SliderInt("FPS Limit", &frameLimit, 30, 120))
+			ImGui::PlotHistogram("##Framerate", _frames->front(), _frames->size(), 0, framerate.c_str(), 0.0f, 160.0f, ImVec2(300, 160));
+			if (ImGui::SliderInt("FPS Limit", &_frameLimit, 30, 120))
 			{
-				app->SetFPS(frameLimit);
+				_app->SetFPS(_frameLimit);
 			}
 			ImGui::Separator();
 			if (ModuleFiles::S_IsMSBuildOn())
 			{
-				if (ImGui::Checkbox("Automatic Compilation", &automaticCompilation))
-					ModuleFiles::S_SetAutomaticCompilation(automaticCompilation);
+				if (ImGui::Checkbox("Automatic Compilation", &_automaticCompilation))
+					ModuleFiles::S_SetAutomaticCompilation(_automaticCompilation);
 			}
-			ImGui::SliderFloat("Scene camera speed", sceneCameraSpeed, 0.0f, 1000.0f);
+			ImGui::SliderFloat("Scene camera speed", _sceneCameraSpeed, 0.0f, 1000.0f);
 		}
 
 		if (ImGui::CollapsingHeader("Window", ImGuiTreeNodeFlags_DefaultOpen))
 		{
 			ImGui::TextWrapped("Window Size: ");
 			ImGui::TextWrapped("Width:"); ImGui::SameLine();
-			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(*windowWidth).c_str());
+			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(*_windowWidth).c_str());
 
 			ImGui::TextWrapped("Height:"); ImGui::SameLine();
-			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(*windowHeight).c_str()); ImGui::SameLine();
+			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(*_windowHeight).c_str()); ImGui::SameLine();
 
 			ImGui::HelpMarker("Shows Window Width and Height");
 
-			if (ImGui::SliderFloat("Brightness", windowBrightness, 0.2f, 1.0f))
+			if (ImGui::SliderFloat("Brightness", _windowBrightness, 0.2f, 1.0f))
 			{
-				ModuleWindow::S_SetBrightness(*windowBrightness);
+				ModuleWindow::S_SetBrightness(*_windowBrightness);
 			}
 
-			ImGui::Checkbox("VSync", &isVSyncOn);
-			app->renderer3D->ToggleVSync(isVSyncOn);	
+			ImGui::Checkbox("VSync", &_isVSyncOn);
+			_app->renderer3D->ToggleVSync(_isVSyncOn);	
 		}
 
 		if (ImGui::CollapsingHeader("Game Time", ImGuiTreeNodeFlags_DefaultOpen))
@@ -231,20 +231,20 @@ void ImWindowConfiguration::Update()
 			for (auto& iter : renderConfigs)
 			{
 				ImGui::Checkbox(iter.first.c_str(), &iter.second.first);
-				if (iter.first == "wireframe") moduleRenderer->ToggleOpenGLWireframe(iter.second.first);
-				else moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
+				if (iter.first == "wireframe") _moduleRenderer->ToggleOpenGLWireframe(iter.second.first);
+				else _moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
 			}
 		}
 
-		ImGui::Checkbox("Show Colliders", &app->renderer3D->isRenderingColliders);
+		ImGui::Checkbox("Show Colliders", &_app->renderer3D->isRenderingColliders);
 
 		if (ImGui::CollapsingHeader("Hardware", ImGuiTreeNodeFlags_DefaultOpen))
 		{
 			ImGui::TextWrapped("CPU Count: "); ImGui::SameLine();
-			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(countCPU).c_str());
+			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(_countCPU).c_str());
 
 			ImGui::TextWrapped("RAM: "); ImGui::SameLine();
-			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(systemRAM).c_str());
+			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(_systemRAM).c_str());
 
 			ImGui::Separator();
 			ImGui::TextWrapped("Vendor %s", glGetString(GL_VENDOR));
@@ -252,15 +252,6 @@ void ImWindowConfiguration::Update()
 			ImGui::TextWrapped("OpenGL version supported %s", glGetString(GL_VERSION));
 			ImGui::TextWrapped("GLSL: %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
-		}
-
-		if (ImGui::CollapsingHeader("Global Lighting"))
-		{
-			ImGui::DragFloat3("Light Direction" , &Lighting::global.lightDirection.At(0));
-
-			ImGui::ColorPicker3("Light Colour", &Lighting::global.lightColor.At(0), 0 | ImGuiColorEditFlags_NoSidePreview | ImGuiColorEditFlags_NoSmallPreview);
-
-			ImGui::InputFloat("Specular Strength", &Lighting::global.lightStrength);
 		}
 	}
 	ImGui::End();

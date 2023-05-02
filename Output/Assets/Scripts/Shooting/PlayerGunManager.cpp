@@ -41,42 +41,41 @@ void PlayerGunManager::Start()
     guns.push_back(ricochet);
 
     // get start guns
-    //GetGun(1, 0);
+    GetGun(1, 0);
     int equipedNormalGun = API_QuickSave::GetInt("equipedNormalGun");
     if (equipedNormalGun < -1 || equipedNormalGun > 4) equipedNormalGun = -1;
-    //GetGun(2, equipedNormalGun);
-    //GetGun(3, -1);
-    GetGun(1, gunOnHandIndex1);
-    GetGun(2, gunOnHandIndex2);
-    GetGun(3, gunOnHandIndex3);
-
-    //switch (equipedNormalGun)
-    //{
-    //case 1: // semiautomatic
-    //    playerStats->maxLaserAmmo = 200;
-    //    playerStats->laserAmmo = 200;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
-    //    break;
-    //case 2: // automatic
-    //    playerStats->maxLaserAmmo = 200;
-    //    playerStats->laserAmmo = 200;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
-    //    break;
-    //case 3: // burst
-    //    playerStats->maxLaserAmmo = 200;
-    //    playerStats->laserAmmo = 200;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
-    //    break;
-    //case 4: // shotgun
-    //    playerStats->maxLaserAmmo = 200;
-    //    playerStats->laserAmmo = 200;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
-    //    break;
-    //default:
-    //    break;
-    //}
-    playerStats->laserAmmo = 99999;
-    playerStats->specialAmmo = 99999;
+    GetGun(2, equipedNormalGun);
+    GetGun(3, -1);
+    //GetGun(1, gunOnHandIndex1);
+    //GetGun(2, gunOnHandIndex2);
+    //GetGun(3, gunOnHandIndex3);
+    //playerStats->laserAmmo = 99999;
+    //playerStats->specialAmmo = 99999;
+    switch (equipedNormalGun)
+    {
+    case 1: // semiautomatic
+        playerStats->maxLaserAmmo = 150;
+        playerStats->laserAmmo = 150;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
+        break;
+    case 2: // automatic
+        playerStats->maxLaserAmmo = 350;
+        playerStats->laserAmmo = 350;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
+        break;
+    case 3: // burst
+        playerStats->maxLaserAmmo = 100;
+        playerStats->laserAmmo = 100;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
+        break;
+    case 4: // shotgun
+        playerStats->maxLaserAmmo = 70;
+        playerStats->laserAmmo = 70;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+        break;
+    default:
+        break;
+    }
     
     UnequipGun(0); // start with base gun selected
 }
@@ -91,9 +90,9 @@ void PlayerGunManager::Update()
     if (playerStats && playerStats->hittedTime > 0.0f) return; // return if hitted
 
     // Keyboard
-    if (Input::GetKey(KeyCode::KEY_1) == KeyState::KEY_DOWN) { UnequipGun(gunOnHandIndex1); /*if (weaponUI.IsAlive() == true) { ((SwapWeapon*)weaponUI.GetScript("SwapWeapon"))->SwapWeapon1(); }*/  }
-    else if (Input::GetKey(KeyCode::KEY_2) == KeyState::KEY_DOWN) { UnequipGun(gunOnHandIndex2); /*if (weaponUI.IsAlive() == true) { ((SwapWeapon*)weaponUI.GetScript("SwapWeapon"))->SwapWeapon2(); }*/ }
-    else if (Input::GetKey(KeyCode::KEY_3) == KeyState::KEY_DOWN) { UnequipGun(gunOnHandIndex3); /*if (weaponUI.IsAlive() == true) { ((SwapWeapon*)weaponUI.GetScript("SwapWeapon"))->SwapWeapon3(); }*/ }
+    if (Input::GetKey(KeyCode::KEY_1) == KeyState::KEY_DOWN) UnequipGun(gunOnHandIndex1);
+    else if (Input::GetKey(KeyCode::KEY_2) == KeyState::KEY_DOWN) UnequipGun(gunOnHandIndex2);
+    else if (Input::GetKey(KeyCode::KEY_3) == KeyState::KEY_DOWN) UnequipGun(gunOnHandIndex3);
 
     // gamepad
     if (Input::GetGamePadButton(GamePadButton::BUTTON_LEFT_SHOULDER) == KeyState::KEY_DOWN)
@@ -229,12 +228,16 @@ void PlayerGunManager::UnequipGun(int index)
 {
     if (index == -1) return;
 
+    if (playerMove)
+    {
+        if (equipedIndex == 0) playerMove->PlaySwapGunAnim(0);
+        else playerMove->PlaySwapGunAnim(1);
+    }
+
     if (equipedGun != nullptr) equipedGun->EnableGuns(false);
     equipedIndex = index;
 
     if (playerStats && playerStats->armoryTreeLvl > 0) swapDelay = maxFastSwapDelay + 0.001f;
     else swapDelay = maxSwapDelay + 0.001f;
     swapToIndex = index;
-
-    if (playerMove) playerMove->PlaySwapGunAnim();
 }

@@ -34,6 +34,14 @@ void BossMovement::Update()
         }
         if (bossDash == true) {
             Seek(&gameObject, target.GetTransform().GetGlobalPosition(), 10.0f);
+
+            if (bLoop->animState != BossLoop::AnimationState::MOVE)
+            {
+                bLoop->animState = BossLoop::AnimationState::MOVE;
+                bLoop->animationPlayer.ChangeAnimation(bLoop->movingAnim);
+                bLoop->animationPlayer.SetLoop(false);
+                bLoop->animationPlayer.Play();
+            }
         }
     }
    

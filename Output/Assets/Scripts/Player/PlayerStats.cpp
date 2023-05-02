@@ -4,6 +4,7 @@
 #include "../UI Test folder/HpBar.h"
 #include "../UsefulScripts/IndexContainer.h"
 #include "../UI Test folder/HUD_Power_Up_Scrip.h"
+#include "../UI Test folder/UI_Municion.h"
 HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* script)
 {
     PlayerStats* classInstance = new PlayerStats();
@@ -18,11 +19,12 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragFloat("Upgraded Deadline Heal Amount", &classInstance->upgradedDeadlineHeal);
     script->AddDragFloat("Aid Kit Heal Amount", &classInstance->aidKitHeal);
     script->AddDragFloat("Upgraded Aid Kit Heal Amount", &classInstance->upgradedAidKitHeal);
-    script->AddDragBoxParticleSystem("Hit Particles", &classInstance->hitParticles);
+    script->AddDragBoxShaderComponent("Material Component", &classInstance->material);
     script->AddDragBoxParticleSystem("Passive Heal Particles", &classInstance->healParticles);
     script->AddDragBoxParticleSystem("Kid Heal Particles", &classInstance->aidKitParticles);
     script->AddDragBoxGameObject("Player GO", &classInstance->playerGO);
     script->AddDragBoxGameObject("Power Ups Managers (HUD)", &classInstance->hudPowerUpGO);
+    script->AddDragBoxGameObject("Hud Munition GO", &classInstance->ammo_ScriptGO);
     //script->AddDragInt("movement tree lvl", &classInstance->movementTreeLvl); // use it only for playtesting
     //script->AddDragInt("armory tree lvl", &classInstance->armoryTreeLvl);
     //script->AddDragInt("health tree lvl", &classInstance->healthTreeLvl);
@@ -61,6 +63,9 @@ void PlayerStats::Start()
 
     hudPowerUp = (HUD_Power_Up_Scrip*)hudPowerUpGO.GetScript("HUD_Power_Up_Scrip");
     if (!hudPowerUp) Console::Log("HUD_Power_Up_Scrip Missing in PlayerStats. Only needed in levels.");
+    
+    ammo_Script = (UI_Municion*)ammo_ScriptGO.GetScript("UI_Municion");
+    if (!ammo_Script) Console::Log("UI_Municion Missing in PlayerStats. Only needed in levels.");
 }
 
 void PlayerStats::Update()
@@ -68,6 +73,11 @@ void PlayerStats::Update()
     float dt;
     if (slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
+
+    if (Input::GetKey(KeyCode::KEY_K) == KeyState::KEY_DOWN)
+    {
+        TakeDamage(0, 0);
+    }
 
     // deadline healing
     float deathlineHp;
@@ -81,7 +91,7 @@ void PlayerStats::Update()
             if (healthTreeLvl > 3) currentHp += upgradedDeadlineHeal;
             else currentHp += deadlineHeal;
 
-            if (currentHp > deathlineHp)
+            if (currentHp >= deathlineHp)
             {
                 currentHp = deathlineHp;
                 lastHitTime = 0.0f;
@@ -116,7 +126,24 @@ void PlayerStats::Update()
     {
         inmunityTime -= dt;
     }
-
+    if (blinkTime > 0.0f)
+    {
+        blinkTime -= dt;
+        if (blinkTime <= 0.0f)
+        {
+            material.SetColor(1, 1, 1, 1);
+            blinkTime = 0.0f;
+        }
+        else if (blinkTime < 0.15f)
+        {
+            material.SetColor(1, 0, 0, 1);
+        }
+        else if (blinkTime < 0.3f)
+        {
+            material.SetColor(1, 1, 1, 1);
+        }
+    }
+    
     // power ups
     if (speedPowerUp > 0.0f)
     {
@@ -150,7 +177,7 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         switch (enemyDrop->dropIndex)
         {
         case 0: // laser ammo
-            GetAmmo(1, 100);
+            GetAmmo(1, 0.4f * maxLaserAmmo);
             break;
         case 1: // first aid kit
             if (healthTreeLvl > 3) Heal(upgradedAidKitHeal);
@@ -182,6 +209,27 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         {
             Console::Log("Storage missing in PlayerStats Script.");
             return;
+        }
+
+        // check casette amount
+        int casettesPicked = 0;
+        if (storage->casette1Picked) casettesPicked++;
+        if (storage->casette2Picked) casettesPicked++;
+        if (storage->casette3Picked) casettesPicked++;
+
+        switch (casettesPicked)
+        {
+        case 0:
+            Audio::Event(storage->playAudio1.c_str());
+            break;
+        case 1:
+            Audio::Event(storage->playAudio2.c_str());
+            break;
+        case 2:
+            Audio::Event(storage->playAudio3.c_str());
+            break;
+        default:
+            break;
         }
 
         switch (indexContainer->index)
@@ -223,7 +271,7 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
     {
         currentHp += shield;
         shield = 0.0f;
-        if (shieldBefore > 0) hudPowerUp->RemovePowerUp(PowerUp_Type::SHIELD);
+        if (shieldBefore > 0 && hudPowerUp) hudPowerUp->RemovePowerUp(PowerUp_Type::SHIELD);
     }
 
     // hp damage
@@ -233,7 +281,6 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
         {
             secondLife = false;
             currentHp = 1;
-            inmunityTime = 1.0f;
             Audio::Event("starlord_damaged"); // second life audio
         }
         else
@@ -247,9 +294,9 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
     }
     else
     {
-        inmunityTime = 1.0f;
         Audio::Event("starlord_damaged");
-        hitParticles.Play();
+        blinkTime = 0.5f;
+        material.SetColor(1, 0, 0, 1);
     }
 
     // Resistance damage
@@ -290,11 +337,10 @@ int PlayerStats::GetAmmonByType(int type)
         return laserAmmo;
         break;
     case 2:
-    case 3:
         return specialAmmo;
         break;
     default:
-        Console::Log("Invalid type, type can only be 0, 1, 2 or 3.");
+        Console::Log("Invalid type, type can only be 0, 1 or 2.");
         return -1;
         break;
     }
@@ -305,19 +351,17 @@ void PlayerStats::GetAmmo(int type, int amount)
     switch (type)
     {
     case 1:
+        //script Municion
+        if (ammo_Script) ammo_Script->opacity_Active = true;
         laserAmmo += amount;
         if (laserAmmo > maxLaserAmmo) laserAmmo = maxLaserAmmo;
         break;
     case 2:
         specialAmmo += amount;
-        if (specialAmmo > maxFireAmmo) specialAmmo = maxFireAmmo;
-        break;
-    case 3:
-        specialAmmo += amount;
-        if (specialAmmo > maxRicochetAmmo) specialAmmo = maxRicochetAmmo;
+        if (specialAmmo > maxSpecialAmmo) specialAmmo = maxSpecialAmmo;
         break;
     default:
-        Console::Log("Invalid type, can only get ammo of types 1, 2 or 3.");
+        Console::Log("Invalid type, can only get ammo of types 1 or 2.");
         break;
     }
 }
@@ -330,11 +374,10 @@ void PlayerStats::UseAmmo(int type, int amount)
         laserAmmo -= amount;
         break;
     case 2:
-    case 3:
         specialAmmo -= amount;
         break;
     default:
-        Console::Log("Invalid type, can only use ammo of types 1, 2 or 3.");
+        Console::Log("Invalid type, can only use ammo of types 1 or 2.");
         break;
     }
 }
@@ -380,9 +423,8 @@ void PlayerStats::GetPowerUp(int index)
         hudPowerUp->AddPowerUp(PowerUp_Type::SHIELD, 1);
         break;
     case 3:
-        GetAmmo(1, 9999);
-        GetAmmo(2, 9999);
-        GetAmmo(3, 9999);
+        GetAmmo(1, maxLaserAmmo);
+        GetAmmo(2, maxSpecialAmmo);
         break;
     case 4:
         slowTimePowerUp = 5.0f;

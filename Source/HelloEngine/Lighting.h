@@ -1,11 +1,15 @@
 #pragma once
 
-struct GlobalLight
-{
-	float4 lightDirection = float4(0.2f, 1.0f, -0.75f, 0.0f);
-	float3 lightColor = float3(1.0, 1.0f, 1.0f);
+#include "LightComponent.h"
+#include "DirectionalLightComponent.h"
+#include "PointLightComponent.h"
+#include "SpotLightComponent.h"
 
-	float lightStrength = 1.0f;
+struct LightMap
+{
+	DirectionalLight directionalLight;
+	std::map<uint, PointLight> pointLight;
+	std::map<uint, SpotLight> spotLight;
 };
 
 class Lighting
@@ -16,12 +20,21 @@ public:
 
 	void Update();
 
+	//uint AddLight(Light lightData);
+	static uint AddSpotLight(SpotLight lightData);
+	static uint AddPointLight(PointLight lightData);
+	static void SetDirectionalLight(DirectionalLight lightData);
+	
+	static void RemoveLight(Component::Type type, uint _lightID);
+	static void ClearLights();
+
+	static LightMap& GetLightMap() { return _lightMap; }
+
 private:
 	bool _active;
 
 	int ref;
 
-public:
-	static GlobalLight global;
+	static LightMap _lightMap;
 };
 

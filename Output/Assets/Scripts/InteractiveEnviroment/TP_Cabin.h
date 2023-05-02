@@ -5,6 +5,9 @@
 
 #include "API/API.h"
 
+class PlayerStats;
+class PlayerBeingTargeted;
+
 class TP_Cabin : HelloBehavior
 {
 public:
@@ -16,6 +19,11 @@ public:
 	API_Transform destination;
 	API_ParticleSystem smoke;
 	API_ParticleSystem destinationSmoke;
+
+	API_GameObject playerGO;
+	PlayerStats* playerStats;
+
+	PlayerBeingTargeted* playerBeingTarget;
 
 	float timeHoldButton = 0.0f;
 };

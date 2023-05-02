@@ -93,6 +93,16 @@ void API::API_AnimationPlayer::SetLoop(bool loop)
 	_animation->SetLoop(loop);
 }
 
+void API::API_AnimationPlayer::SetStayLast(bool stayLast)
+{
+	if (!_animation)
+	{
+		Engine::Console::S_Log("Trying to acces a NULLPTR AnimationPlayer");
+		return;
+	}
+	_animation->SetStayLast(stayLast);
+}
+
 AnimationComponent* API::API_AnimationPlayer::GetComponent()
 {
     return _animation;

@@ -5,6 +5,7 @@
 
 #include "API/API.h"
 #include "API/API_UIImage.h"
+#include "../UI Test folder/HUD_SHIELD_BROKEN.h"
 
 #include "../Player/PlayerStats.h"
 
@@ -21,7 +22,10 @@ public:
 
     API_GameObject playerStatsGO;
     PlayerStats* playerStats;
-    
+
+    API_GameObject fons_movment_GO;
+    HUD_SHIELD_BROKEN* fons_movment;
+
     uint hp_texture;
     uint hp_regen_texture;
 
@@ -31,5 +35,6 @@ public:
 
     float hp_regen = false;
 
-};
+    bool shield_broked = false;
 
+};

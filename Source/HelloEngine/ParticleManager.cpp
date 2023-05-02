@@ -21,6 +21,14 @@ void ParticleManager::Init()
 {
 }
 
+void ParticleManager::Start()
+{
+	for (Emitter* emitter : EmitterList)
+	{
+		emitter->Start();
+	}
+}
+
 void ParticleManager::Draw()
 {
 

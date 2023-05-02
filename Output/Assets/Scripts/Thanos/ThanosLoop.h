@@ -16,7 +16,7 @@ public:
 
     void TakeDamage(float damage);
 
-    float hp;
+    float hp = 3000.0f;
 
     float meleeDmg = 20.0f;
 
@@ -27,11 +27,13 @@ public:
     int currentBombNum = 0;
     API_GameObject bomb;
     uint textureBomb[6];
+    int shotgunLevel;
 
     // burn
     void AddBurn();
     float burnTime = 0.0f;
     float resetBurn;
 
+    int phase = 1;
 };
 

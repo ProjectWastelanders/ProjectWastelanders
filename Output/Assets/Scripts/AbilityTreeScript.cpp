@@ -41,6 +41,7 @@ void AbilityTreeScript::Update()
 {
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN && mainPanel.IsEnabled())
     {
+        Audio::Event("click");
         if (!interruptor) return;
         // IT'S CORRECT DON'T REMOVE NOTHING
         interruptor->menuPanel.SetActive(true); // can set false if is not true
@@ -54,6 +55,12 @@ void AbilityTreeScript::Update()
 
     if (AbilityList1.OnHovered())
     {
+        if (ability1)
+        {
+            Audio::Event("hover");
+            ability1 = false;
+            ability2 = true;
+        }
         PanelAbility1.SetActive(true);
         PanelAbility2.SetActive(false);
         PanelAbility3.SetActive(false);
@@ -61,6 +68,13 @@ void AbilityTreeScript::Update()
     }
     else if (AbilityList2.OnHovered())
     {
+        if (ability2)
+        {
+            Audio::Event("hover");
+            ability2 = false;
+            ability3 = true;
+            ability1 = true;
+        }
         PanelAbility1.SetActive(false);
         PanelAbility2.SetActive(true);
         PanelAbility3.SetActive(false);
@@ -68,6 +82,13 @@ void AbilityTreeScript::Update()
     }
     else if (AbilityList3.OnHovered())
     {
+        if (ability3)
+        {
+            Audio::Event("hover");
+            ability3 = false;
+            ability2 = true;
+            ability4 = true;
+        }
         PanelAbility1.SetActive(false);
         PanelAbility2.SetActive(false);
         PanelAbility3.SetActive(true);
@@ -75,6 +96,12 @@ void AbilityTreeScript::Update()
     }
     else if (AbilityList4.OnHovered())
     {
+        if (ability4)
+        {
+            Audio::Event("hover");
+            ability4 = false;
+            ability3 = true;
+        }
         PanelAbility1.SetActive(false);
         PanelAbility2.SetActive(false);
         PanelAbility3.SetActive(false);

@@ -8,6 +8,7 @@ HELLO_ENGINE_API_C Jumper* CreateJumper(ScriptToInspectorInterface* script)
 
 	script->AddDragBoxTransform("Connected_Jumper", &classInstance->otherJumper);
 	script->AddDragFloat("Jump Duration", &classInstance->duration);
+	script->AddDragFloat("Jump Height", &classInstance->height);
 
 	return classInstance;
 }
@@ -28,8 +29,11 @@ void Jumper::Update()
 	if (isJumping) {
 		API_Vector3 pos;
 		pos.x = Lerp(initialPos.x, finalPos.x, timeJumping / duration);
-		pos.y = Lerp(initialPos.y, finalPos.y, timeJumping / duration);
 		pos.z = Lerp(initialPos.z, finalPos.z, timeJumping / duration);
+
+
+		float yMult = ((timeJumping / duration) - 0.5) * 2;
+		pos.y = Lerp(initialPos.y, finalPos.y, timeJumping / duration) - (yMult * yMult * height) + height;
 
 		player.GetTransform().SetPosition(pos);
 		timeJumping += Time::GetDeltaTime();

@@ -20,6 +20,7 @@ public:
 	PlayerMove* playerMoveScript;
 	API_Transform otherJumper;
 	float duration = 4.0f;
+	float height = 50.0f;
 	
 	//Jumping & Setup
 	bool isJumping = false;

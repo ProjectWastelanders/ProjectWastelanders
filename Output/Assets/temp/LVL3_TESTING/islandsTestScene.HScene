@@ -8482,7 +8482,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.9888476133346558,
+                "Aspect ratio": 0.741890013217926,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -8644,6 +8644,9 @@
                     },
                     {
                         "Jump Duration": 2.0
+                    },
+                    {
+                        "Jump Height": 50.0
                     }
                 ],
                 "Script Resource": 2619374344,

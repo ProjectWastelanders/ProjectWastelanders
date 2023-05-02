@@ -36,6 +36,8 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 
 	script->AddDragBoxGameObject("Meteor Rain", &classInstance->meteorRain);
 
+	script->AddDragBoxGameObject("AreaDmg", &classInstance->area);
+
 
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
@@ -56,6 +58,7 @@ void ThanosAttacks::Start()
 	bullet1.SetActive(false);
 	bullet2.SetActive(false);
 	bullet3.SetActive(false);
+	area.SetActive(false);
 
 	bullets[0] = bullet1;
 	bullets[1] = bullet2;
@@ -145,18 +148,15 @@ void ThanosAttacks::Update()
 			isAttacking = true;
 
 			charge += Time::GetDeltaTime();
-
 			if (charge > 2.0f) {
 				charge = 0.0f;
-				attackType = 2.0f;
 				if (attackType > 66) thanosState = THANOS_STATE::BURST;
 				if (attackType <= 66 && attackType > 33) thanosState = THANOS_STATE::BEAM;
 				if (attackType < 33) {
-					thanosState = THANOS_STATE::BURST;
-					//thanosState = THANOS_STATE::METEORRAIN;
-					//meteorRainPosition = meteorRain.GetTransform().GetGlobalPosition();
+					playerPosition = player.GetTransform().GetGlobalPosition();
+					thanosPosition = gameObject.GetTransform().GetGlobalPosition();
+					thanosState = THANOS_STATE::DASH2;
 				}
-				 
 			}
 
 			break;
@@ -218,7 +218,22 @@ void ThanosAttacks::Update()
 				}
 
 			}
-			
+			break;
+
+		case THANOS_STATE::DASH2:
+
+			if (areaDmg == false) {
+				Seek2(&gameObject, playerPosition, dashSpeed);
+			}
+			else {
+				charge += Time::GetDeltaTime();
+
+				if (charge > 0.25f) {
+					area.SetActive(false);
+					Seek2(&gameObject, thanosPosition, dashSpeed);
+				}
+			}
+
 			break;
 
 		default:
@@ -324,10 +339,30 @@ void ThanosAttacks::DashAttack() {
 	Seek(&boss, playerPosition, 1.5f);
 }
 
+void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float speed) {
+
+	API_Vector3 direction = target - seeker->GetTransform().GetGlobalPosition();
+	seeker->GetTransform().Translate(direction * speed * Time::GetDeltaTime() * 10);
+
+	if (direction.x < 0.15 && direction.x > -0.15 && direction.y < 0.15 && direction.y && direction.z < 0.15 && direction.z) {
+	
+		if (areaDmg == false) {
+			areaDmg = true;
+			area.SetActive(true);
+		}
+		else {
+			thanosState = THANOS_STATE::IDLE;
+			isAttacking = false;
+			areaDmg = false;
+			charge = 0.0f;
+		}
+	
+	}
+
+}
 void ThanosAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed)
 {
 	API_Vector3 direction = target - seeker->GetTransform().GetGlobalPosition();
-	Console::Log(target);
 	seeker->GetTransform().Translate(direction * speed * Time::GetDeltaTime() * 10);
 
 	if (direction.x < 0.15 && direction.x > -0.15 && direction.y < 0.15 && direction.y && direction.z < 0.15 && direction.z) {

@@ -61,11 +61,77 @@
                 "ShowOBB": false,
                 "ShowVertexNormals": false,
                 "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 240240,
+                "Type": 3
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    113.30000305175781,
+                    2.0,
+                    94.9000015258789
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 0.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Cube",
+        "Name": "Floor",
         "ParentUID": 1010667305,
         "PrefabUID": 0,
         "Tag": "Primitive",
@@ -78,18 +144,18 @@
                 "Enabled": true,
                 "Position": [
                     0.0,
-                    1.4544514417648315,
+                    1.0,
                     0.0
                 ],
                 "Rotation": [
-                    -0.0008879246306605637,
-                    -90.0,
-                    0.0
+                    -180.0,
+                    -89.98020935058594,
+                    -179.99911499023438
                 ],
                 "Scale": [
-                    1.000001072883606,
+                    1.0000011920928955,
                     1.0,
-                    1.000001072883606
+                    1.0000011920928955
                 ],
                 "Type": 1
             },
@@ -245,6 +311,9 @@
                         "Dead Animation": 296001631
                     },
                     {
+                        "Jumper Animation": 3633908167
+                    },
+                    {
                         "Player Stats GO": 2252131494
                     },
                     {
@@ -333,6 +402,9 @@
                     },
                     {
                         "Dead Animation": 296001631
+                    },
+                    {
+                        "Jumper Animation": 3633908167
                     },
                     {
                         "Player Stats GO": 2252131494
@@ -8947,7 +9019,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.7000000476837158,
+                "Aspect ratio": 1.6850829124450684,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -9043,5 +9115,167 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 2888865558
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    6.854870796203613,
+                    1.217894434928894,
+                    -10.765707015991211
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    2.9175522327423096,
+                    1.0,
+                    2.8576910495758057
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 10,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 5.300000190734863,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Connected_Jumper": 3364926849
+                    },
+                    {
+                        "Jump Duration": 4.0
+                    },
+                    {
+                        "Connected_Jumper": 3364926849
+                    },
+                    {
+                        "Jump Duration": 4.0
+                    }
+                ],
+                "Script Resource": 2619374344,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Jumper1",
+        "ParentUID": 1010667305,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 599838978
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -34.53647994995117,
+                    1.0004106760025024,
+                    26.038585662841797
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    0.6897702813148499,
+                    3.2674505710601807,
+                    0.760517954826355
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 10,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Landing1",
+        "ParentUID": 1010667305,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 3364926849
     }
 ]

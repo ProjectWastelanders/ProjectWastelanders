@@ -80,7 +80,21 @@ void ThanosAttacks::Update()
 		if (pulse == false) {
 			pulse = true;
 			sword.SetActive(false);
+			melee1.SetActive(false);
 			thanosState = THANOS_STATE::PULSE;
+		}
+
+		
+
+		if (meteorRainCooldown > 30.0f) {
+			isRainingMeteors = true;
+		}
+		else {
+			meteorRainCooldown += Time::GetDeltaTime();
+		}
+
+		if (isRainingMeteors == true) {
+			MeteorAttack();
 		}
 
 		switch (thanosState)
@@ -138,8 +152,9 @@ void ThanosAttacks::Update()
 				if (attackType > 66) thanosState = THANOS_STATE::BURST;
 				if (attackType <= 66 && attackType > 33) thanosState = THANOS_STATE::BEAM;
 				if (attackType < 33) {
-					thanosState = THANOS_STATE::METEORRAIN;
-					meteorRainPosition = meteorRain.GetTransform().GetGlobalRotation();
+					thanosState = THANOS_STATE::BURST;
+					//thanosState = THANOS_STATE::METEORRAIN;
+					//meteorRainPosition = meteorRain.GetTransform().GetGlobalPosition();
 				}
 				 
 			}
@@ -204,20 +219,6 @@ void ThanosAttacks::Update()
 
 			}
 			
-			break;
-
-		case THANOS_STATE::METEORRAIN:
-
-			meteorRainTime += Time::GetDeltaTime();
-
-			if (meteorRainTime < 30.0f) meteorRain.GetTransform().Translate(0, -meteorRainSpeed * Time::GetDeltaTime(), 0);
-			else {
-				meteorRainTime = 0.0f;
-				meteorRain.GetTransform().SetPosition(meteorRainPosition);
-				thanosState = THANOS_STATE::IDLE;
-			}
-
-
 			break;
 
 		default:
@@ -375,4 +376,19 @@ float ThanosAttacks::Rotate(API_Vector3 target, float _angle, API_GameObject* ro
 	rotator->GetTransform().SetRotation(0, -_angle - 90, 0);
 
 	return _angle;
+}
+
+void ThanosAttacks::MeteorAttack() {
+	meteorRainTime += Time::GetDeltaTime();
+
+	if (meteorRainTime < 30.0f) {
+		meteorRain.GetTransform().Translate(0, -meteorRainSpeed * Time::GetDeltaTime(), 0);
+	}
+	else {
+		meteorRainTime = 0.0f;
+		meteorRain.GetTransform().SetPosition(meteorRainPosition);
+		thanosState = THANOS_STATE::IDLE;
+		isRainingMeteors = false;
+		meteorRainCooldown = 0.0f;
+	}
 }

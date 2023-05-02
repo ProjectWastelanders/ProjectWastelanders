@@ -14,6 +14,16 @@ namespace API
 
 		API_GameObject GetGameObject();
 
+		bool OnPress();
+
+		bool OnHold();
+
+		bool OnHovered();
+
+		bool getIsActive();
+
+		void SetActive(bool);
+
 	private:
 		ComponentUICheckbox* GetComponent();
 		void SetComponent(ComponentUICheckbox* component);

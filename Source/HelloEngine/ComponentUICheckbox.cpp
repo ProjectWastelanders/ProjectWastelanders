@@ -211,7 +211,7 @@ void ComponentUICheckbox::UpdateGamePadInput(bool selected)
 {
 	if (selected)
 	{
-		if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_DOWN && (State != CheckboxState::ONPRESS && State != CheckboxState::ONPRESSACTIVE))
+		if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_REPEAT && (State != CheckboxState::ONPRESS || State != CheckboxState::ONPRESSACTIVE))
 		{
 			ModuleInput::S_HandleGamePadButton(GamePad::BUTTON_A); // Handle A button so no other UI detects it.
 			if (checkActive)
@@ -229,7 +229,7 @@ void ComponentUICheckbox::UpdateGamePadInput(bool selected)
 			// If previous state was hold or press, this frame the button was released
 			if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_UP && (State == CheckboxState::ONPRESS || State == CheckboxState::ONPRESSACTIVE))
 			{
-				//isReleased = true;
+				checkActive = !checkActive;
 			}
 			if (checkActive)
 			{
@@ -239,6 +239,7 @@ void ComponentUICheckbox::UpdateGamePadInput(bool selected)
 			{
 				State = CheckboxState::HOVERED;
 			}
+
 		}
 	}
 	else

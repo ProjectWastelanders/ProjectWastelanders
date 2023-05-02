@@ -6,6 +6,7 @@
 
 VideoPlayerComponent::VideoPlayerComponent(GameObject* go) : ComponentUI(go)
 {
+	_type = Component::Type::UI_VIDEO;
 }
 
 VideoPlayerComponent::~VideoPlayerComponent()
@@ -24,11 +25,11 @@ VideoPlayerComponent::~VideoPlayerComponent()
 
 void VideoPlayerComponent::CreateVideo(uint videoUID)
 {
-	if (ModuleResourceManager::S_IsResourceCreated(videoUID))
-	{
-		resourceUID = videoUID;
-		UID = VideoPlayerManager::AddVideoPlayer(resourceUID);
-	}
+	if (!ModuleResourceManager::S_IsResourceCreated(videoUID))
+		return;
+
+	resourceUID = videoUID;
+	UID = VideoPlayerManager::AddVideoPlayer(resourceUID);
 	this->_material->ChangeTexture(GetVideoPlayer()->video->GetOpenGLTexture());
 	fps = GetVideoPlayer()->video->GetFPS();
 }
@@ -95,10 +96,27 @@ void VideoPlayerComponent::OnEditor()
 
 void VideoPlayerComponent::Serialization(json& j)
 {
+	json _j;
+	_j["Type"] = _type;
+	_j["Enabled"] = _isEnabled;
+	_j["VideoResource"] = resourceUID;
+
+	SaveMeshState(_j);
+
+	j["Components"].push_back(_j);
 }
 
 void VideoPlayerComponent::DeSerialization(json& j)
 {
+	CreateVideo(j["VideoResource"]);
+
+	LoadMeshState(j);
+
+	_gameObject->transform->ForceUpdate();
+
+	bool enabled = j["Enabled"];
+	if (!enabled)
+		Disable();
 }
 
 VideoPlayer* VideoPlayerComponent::GetVideoPlayer()

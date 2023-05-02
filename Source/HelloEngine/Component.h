@@ -29,6 +29,7 @@ public:
 		UI_INPUT,
 		UI_TEXT,
 		MATERIAL,
+		UI_VIDEO,
 		MAX
 	};
 

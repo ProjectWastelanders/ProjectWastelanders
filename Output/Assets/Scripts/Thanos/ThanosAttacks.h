@@ -56,7 +56,6 @@ public:
 		PULSE,
 		BURST,
 		BEAM,
-		METEORRAIN,
 	};
 
 	THANOS_STATE thanosState;
@@ -120,7 +119,10 @@ public:
 
 	API_GameObject meteorRain;
 	float meteorRainTime = 0.0f;
-	float meteorRainSpeed = 1.0f;
+	float meteorRainSpeed = 5.0f;
 	API_Vector3 meteorRainPosition = { 0,0,0 };
+	float meteorRainCooldown = 0.0f;
+	bool isRainingMeteors = false;
+	void MeteorAttack();
 };
 

@@ -29,7 +29,8 @@ void VideoPlayerComponent::CreateVideo(uint videoUID)
 		resourceUID = videoUID;
 		UID = VideoPlayerManager::AddVideoPlayer(resourceUID);
 	}
-	this->_material->ChangeTexture(GetVideoPlayer()->GetOpenGLTexture());
+	this->_material->ChangeTexture(GetVideoPlayer()->video->GetOpenGLTexture());
+	fps = GetVideoPlayer()->video->GetFPS();
 }
 
 void VideoPlayerComponent::OnEditor()
@@ -54,6 +55,36 @@ void VideoPlayerComponent::OnEditor()
 		}
 		else
 		{
+			if (!GetVideoPlayer()->isPlaying)
+			{
+				if (ImGui::Button("Play"))
+				{
+					GetVideoPlayer()->isPlaying = true;
+				}
+			}
+			else
+			{
+				if (ImGui::Button("Pause"))
+				{
+					GetVideoPlayer()->isPlaying = false;
+				}
+				if (ImGui::Button("Stop"))
+				{
+					GetVideoPlayer()->video->ResetVideo();
+					GetVideoPlayer()->isPlaying = false;
+				}
+			}
+		
+			if (ImGui::InputFloat("Frames per second", &fps))
+			{
+				GetVideoPlayer()->video->SetFPS(fps);
+			}
+			if (ImGui::Button("Set to source framerate"))
+			{
+				GetVideoPlayer()->video->SetFPS(GetVideoPlayer()->video->GetFPS());
+				fps = GetVideoPlayer()->video->GetFPS();
+			}
+
 			// Play/Pause/Stop
 			// Change video properties.
 		}
@@ -70,7 +101,7 @@ void VideoPlayerComponent::DeSerialization(json& j)
 {
 }
 
-FfmpegVideoPlayer* VideoPlayerComponent::GetVideoPlayer()
+VideoPlayer* VideoPlayerComponent::GetVideoPlayer()
 {
 	if (UID == 0)
 		return nullptr;

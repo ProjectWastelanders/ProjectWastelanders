@@ -18,9 +18,13 @@ public:
 
 	uint GetOpenGLTexture() { return glTexture; }
 
+	void SetFPS(float newFPS) { frameRate = 1.0f / newFPS; }
+	double GetFPS();
+
+	void ResetVideo();
+
 private:
 	bool LoadVideo(const char* filename);
-	double GetFPS();
 	AVFrame* GetFrame();
 private:
 	// Context should be unique?
@@ -31,6 +35,7 @@ private:
 	AVCodecContext* avCodecCtx = nullptr;
 	AVFrame* avFrame = nullptr;
 	AVPacket* avPacket = nullptr;
+	SwsContext* swsContext = nullptr;
 	double frameRate = 0;
 	double currentTime = 0;
 	int width = 0;

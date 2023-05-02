@@ -7,6 +7,7 @@
 #include "ModuleXML.h"
 #include "ModuleLayers.h"
 #include "MeshRenderComponent.h"
+#include "VideoPlayerManager.h"
 
 #include "Emitter.h"
 #include "ParticleSystemComponent.h"
@@ -111,6 +112,8 @@ void ModuleRenderer3D::DrawGame()
 // PostUpdate present buffer to screen
 UpdateStatus ModuleRenderer3D::PostUpdate()
 {
+	VideoPlayerManager::Update(); // Update videos before drawing.
+
 #ifdef STANDALONE
 	if (_cameras->sceneCamera->active)
 	{

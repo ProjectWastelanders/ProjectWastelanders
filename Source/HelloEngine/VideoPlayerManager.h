@@ -5,6 +5,12 @@
 
 class VideoPlayerComponent;
 
+struct VideoPlayer
+{
+	FfmpegVideoPlayer* video = nullptr;
+	bool isPlaying = false;
+};
+
 class VideoPlayerManager
 {
 public:
@@ -15,12 +21,12 @@ public:
 	static void Update();
 
 	static uint AddVideoPlayer(uint videoResourceUID);
-	static FfmpegVideoPlayer* GetVideoPlayer(uint UID);
+	static VideoPlayer* GetVideoPlayer(uint UID);
 	static void RemoveVideoPlayer(uint UID);
 
 private:
 
-	static std::map<uint, FfmpegVideoPlayer*> videoPlayers;
+	static std::map<uint, VideoPlayer> videoPlayers;
 	static std::map<uint, VideoPlayerComponent*> videoComponents;
 
 };

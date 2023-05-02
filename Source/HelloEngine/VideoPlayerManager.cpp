@@ -3,7 +3,7 @@
 #include "VideoPlayerComponent.h"
 #include "ModuleResourceManager.h"
 
-std::map<uint, FfmpegVideoPlayer*> VideoPlayerManager::videoPlayers;
+std::map<uint, VideoPlayer> VideoPlayerManager::videoPlayers;
 std::map<uint, VideoPlayerComponent*> VideoPlayerManager::videoComponents;
 
 VideoPlayerManager::VideoPlayerManager()
@@ -18,7 +18,8 @@ void VideoPlayerManager::Update()
 {
     for (auto& video : videoPlayers)
     {
-        video.second->Update();
+        if (video.second.isPlaying)
+            video.second.video->Update();
     }
 }
 
@@ -30,16 +31,16 @@ uint VideoPlayerManager::AddVideoPlayer(uint videoResourceUID)
         return 0;
 
     ResourceVideo* videoRes = (ResourceVideo*)ModuleResourceManager::S_LoadResource(videoResourceUID);
-    videoPlayers[UID] = videoRes->video;
+    videoPlayers[UID].video = videoRes->video;
 
     return UID;
 }
 
-FfmpegVideoPlayer* VideoPlayerManager::GetVideoPlayer(uint UID)
+VideoPlayer* VideoPlayerManager::GetVideoPlayer(uint UID)
 {
     if (videoPlayers.count(UID) != 0)
     {
-        return videoPlayers[UID];
+        return &videoPlayers[UID];
     }
     return nullptr;
 }

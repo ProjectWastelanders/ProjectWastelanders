@@ -1,6 +1,6 @@
 #pragma once
 #include "ComponentUI.h"
-#include "FfmpegVideoPlayer.h"
+#include "VideoPlayerManager.h"
 
 class VideoPlayerComponent : public ComponentUI
 {
@@ -16,10 +16,13 @@ public:
 	void Serialization(json& j);
 	void DeSerialization(json& j);
 
-	FfmpegVideoPlayer* GetVideoPlayer();
+	VideoPlayer* GetVideoPlayer();
 
 private:
 	uint UID = 0;
 	uint resourceUID = 0;
+	float fps = 24.0f;
+
+	friend class VideoPlayerManager;
 };
 

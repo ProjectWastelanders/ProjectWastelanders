@@ -19,6 +19,12 @@
 
 #include "ModuleRenderer3D.h"
 
+#include "ModuleNavMesh.h"
+#include "NavMeshBuilder.h"
+
+#include "LayerEditor.h"
+#include "NavAgentComponent.h"
+
 RenderManager::RenderManager()
 {
 }
@@ -301,7 +307,17 @@ void RenderManager::DrawDebug()
 
 		}
 	}
+	
+	if (ModuleRenderer3D::drawNavMesh && ModuleNavMesh::S_GetNavMeshBuilder())
+	{
+		ModuleNavMesh::S_GetNavMeshBuilder()->DebugDraw();
 
+		if (LayerEditor::selectedGameObject && 
+			LayerEditor::selectedGameObject->GetComponent<ComponentAgent>())
+		{
+			ModuleNavMesh::S_GetPathfinding()->RenderPath(LayerEditor::selectedGameObject->GetComponent<ComponentAgent>());
+		}		
+	}
 }
 
 void RenderManager::Draw2D()

@@ -11,6 +11,9 @@
 #include "Emitter.h"
 #include "ParticleSystemComponent.h"
 
+bool ModuleRenderer3D::isVSync = false;
+bool ModuleRenderer3D::drawNavMesh = false;
+
 ModuleRenderer3D::ModuleRenderer3D(bool start_enabled) : Module(start_enabled)
 {
 	
@@ -41,6 +44,7 @@ bool ModuleRenderer3D::Init()
 	//Use Vsync
 	XMLNode renderNode = app->xml->GetConfigXML().FindChildBreadth("renderer");
 	isVSync = renderNode.node.child("vsync").attribute("value").as_bool();
+	drawNavMesh = renderNode.node.child("drawNavMesh").attribute("value").as_bool();
 	ToggleVSync(isVSync);
 
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
@@ -79,6 +83,15 @@ bool ModuleRenderer3D::Init()
 	OnResize(ModuleWindow::width, ModuleWindow::height);
 
 	isRenderingColliders = true;
+
+	return ret;
+}
+
+bool ModuleRenderer3D::Start()
+{
+	bool ret = true;
+
+	particleManager.Start();
 
 	return ret;
 }
@@ -137,7 +150,6 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 
 		particleManager.Draw();
 		renderManager.Draw2D();
-
 	}
 
 	if (_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
@@ -172,9 +184,17 @@ bool ModuleRenderer3D::CleanUp()
 {
 	LOG("Destroying 3D Renderer");
 
-	XMLNode configNode = app->xml->GetConfigXML();
+	XMLNode configNode = app->xml->GetConfigXML().FindChildBreadth("renderer");
 
-	configNode.node.child("renderer").child("vsync").attribute("value").set_value(isVSync);
+	configNode.node.child("vsync").attribute("value").set_value(isVSync);
+
+	if (!configNode.node.child("drawNavMesh"))
+	{
+		configNode.node.append_child("drawNavMesh");
+		configNode.node.child("drawNavMesh").append_attribute("value");
+	}
+
+	configNode.node.child("drawNavMesh").attribute("value").set_value(drawNavMesh);
 
 	configNode.Save();
 

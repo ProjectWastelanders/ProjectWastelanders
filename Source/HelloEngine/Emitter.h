@@ -18,6 +18,8 @@ public:
 
 	//void Draw(Shader* shader, Quat BBrot);
 
+	void Start();
+
 	void Draw();
 
 	void EmitParticles(ParticleProperties& properties);

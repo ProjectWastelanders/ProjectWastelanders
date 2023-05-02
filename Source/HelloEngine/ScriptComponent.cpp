@@ -356,6 +356,16 @@ void ScriptComponent::AddDragBoxUIText(const char* name, API::API_UIText* value)
 	inspectorFields.push_back(dragBoxField);
 }
 
+void ScriptComponent::AddDragBoxUICheckBox(const char* name, API::API_UICheckBox* value)
+{
+	DragBoxUICheckBox* dragBoxField = new DragBoxUICheckBox();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
 void ScriptComponent::AddDragBoxPrefabResource(const char* name, uint* value)
 {
 	DragBoxPrefabResource* dragBoxField = new DragBoxPrefabResource();

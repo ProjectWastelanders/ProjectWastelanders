@@ -71,6 +71,9 @@ private:
     //Play Particles on Game
     bool playOnGame = false;
     bool StopEmittingOnGame = false;
+
+    int size = 100;
+    int sizeCpy = 100;
     
     ResourceMesh* _resource = nullptr;
     ResourceTexture* _resourceText = nullptr;

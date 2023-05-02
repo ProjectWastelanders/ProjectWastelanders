@@ -80,7 +80,7 @@
       <PreprocessorDefinitions>WIN32;_CONSOLE;_DEBUG;STANDALONE;WINDOWS_IGNORE_PACKING_MISMATCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\External\ImGuiColorTextEdit;$(SolutionDir)Source\External\Optick\include;$(SolutionDir)Source\External\freetype\include;$(SolutionDir)Source\HelloEngine;$(SolutionDir)Source\External\Glew\include;$(SolutionDir)Source\External\SDL\include;$(SolutionDir)Source\External\imgui;$(SolutionDir)Source\External\MathGeoLib\include;$(SolutionDir)Source\External\json\include\single_include\nlohmann;$(SolutionDir)Output\HelloAPI\Source;$(SolutionDir)Source\External\PugiXml\src;$(SolutionDir)Source\External\PhysFS\include;%(AdditionalIncludeDirectories);$(SolutionDir)Source\External\Assimp\include;$(SolutionDir)Source\External\DevIL\include;$(SolutionDir)Source\External\mmgr;$(SolutionDir)Source\External\Bullet\include;$(SolutionDir)Source\External\Wwise\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\External\ImGuiColorTextEdit;$(SolutionDir)Source\External\Optick\include;$(SolutionDir)Source\External\freetype\include;$(SolutionDir)Source\HelloEngine;$(SolutionDir)Source\External\Glew\include;$(SolutionDir)Source\External\SDL\include;$(SolutionDir)Source\External\imgui;$(SolutionDir)Source\External\MathGeoLib\include;$(SolutionDir)Source\External\json\include\single_include\nlohmann;$(SolutionDir)Output\HelloAPI\Source;$(SolutionDir)Source\External\PugiXml\src;$(SolutionDir)Source\External\PhysFS\include;%(AdditionalIncludeDirectories);$(SolutionDir)Source\External\Assimp\include;$(SolutionDir)Source\External\DevIL\include;$(SolutionDir)Source\External\mmgr;$(SolutionDir)Source\External\Bullet\include;$(SolutionDir)Source\External\Wwise\include;$(SolutionDir)Source\External\RecastDetour;$(SolutionDir)Source\External</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Headers.h</PrecompiledHeaderFile>
@@ -106,7 +106,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;STANDALONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\External\ImGuiColorTextEdit;$(SolutionDir)Source\External\freetype\include;$(SolutionDir)Source\HelloEngine;$(SolutionDir)Source\External\Glew\include;$(SolutionDir)Source\External\SDL\include;$(SolutionDir)Source\External\imgui;$(SolutionDir)Source\External\MathGeoLib\include;$(SolutionDir)Source\External\json\include\single_include\nlohmann;$(SolutionDir)Output\HelloAPI\Source;$(SolutionDir)Source\External\PugiXml\src;%(AdditionalIncludeDirectories);$(SolutionDir)Source\External\Assimp\include;$(SolutionDir)Source\External\PhysFS\include;$(SolutionDir)Source\External\DevIL\include;$(SolutionDir)Source\External\mmgr;$(SolutionDir)Source\External\Bullet\include;$(SolutionDir)Source\External\Wwise\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\External\ImGuiColorTextEdit;$(SolutionDir)Source\External\freetype\include;$(SolutionDir)Source\HelloEngine;$(SolutionDir)Source\External\Glew\include;$(SolutionDir)Source\External\SDL\include;$(SolutionDir)Source\External\imgui;$(SolutionDir)Source\External\MathGeoLib\include;$(SolutionDir)Source\External\json\include\single_include\nlohmann;$(SolutionDir)Output\HelloAPI\Source;$(SolutionDir)Source\External\PugiXml\src;%(AdditionalIncludeDirectories);$(SolutionDir)Source\External\Assimp\include;$(SolutionDir)Source\External\PhysFS\include;$(SolutionDir)Source\External\DevIL\include;$(SolutionDir)Source\External\mmgr;$(SolutionDir)Source\External\Bullet\include;$(SolutionDir)Source\External\Wwise\include;$(SolutionDir)Source\External\RecastDetour;$(SolutionDir)Source\External</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
     </ClCompile>
@@ -133,7 +133,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;AK_OPTIMIZED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\External\freetype\include;$(SolutionDir)Source\HelloEngine;$(SolutionDir)Source\External\Glew\include;$(SolutionDir)Source\External\SDL\include;$(SolutionDir)Source\External\imgui;$(SolutionDir)Source\External\MathGeoLib\include;$(SolutionDir)Source\External\json\include\single_include\nlohmann;$(SolutionDir)Output\HelloAPI\Source;$(SolutionDir)Source\External\PugiXml\src;%(AdditionalIncludeDirectories);$(SolutionDir)Source\External\Assimp\include;$(SolutionDir)Source\External\PhysFS\include;$(SolutionDir)Source\External\DevIL\include;$(SolutionDir)Source\External\mmgr;$(SolutionDir)Source\External\Bullet\include;$(SolutionDir)Source\External\Wwise\include;$(SolutionDir)Source\External\ImGuiColorTextEdit</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\External\freetype\include;$(SolutionDir)Source\HelloEngine;$(SolutionDir)Source\External\Glew\include;$(SolutionDir)Source\External\SDL\include;$(SolutionDir)Source\External\imgui;$(SolutionDir)Source\External\MathGeoLib\include;$(SolutionDir)Source\External\json\include\single_include\nlohmann;$(SolutionDir)Output\HelloAPI\Source;$(SolutionDir)Source\External\PugiXml\src;%(AdditionalIncludeDirectories);$(SolutionDir)Source\External\Assimp\include;$(SolutionDir)Source\External\PhysFS\include;$(SolutionDir)Source\External\DevIL\include;$(SolutionDir)Source\External\mmgr;$(SolutionDir)Source\External\Bullet\include;$(SolutionDir)Source\External\Wwise\include;$(SolutionDir)Source\External\ImGuiColorTextEdit;$(SolutionDir)Source\External\RecastDetour;$(SolutionDir)Source\External</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>Full</Optimization>
     </ClCompile>
@@ -291,12 +291,109 @@
     <ClCompile Include="..\External\PugiXml\src\pugixml.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\ChunkyTriMesh.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\DebugDraw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\DetourDebugDraw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\RecastDebugDraw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\RecastDump.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DebugUtils\SampleInterfaces.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourCrowd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourLocalBoundary.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourObstacleAvoidance.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourPathCorridor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourPathQueue.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourCrowd\DetourProximityGrid.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourTileCache\DetourTileCache.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\DetourTileCache\DetourTileCacheBuilder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourAlloc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourCommon.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNavMesh.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNavMeshBuilder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNavMeshQuery.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Detour\DetourNode.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\InputGeom.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\NavMeshBuilder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\Recast.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastAlloc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastArea.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastContour.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastFilter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastLayers.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastMesh.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastMeshDetail.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastRasterization.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\External\RecastDetour\Recast\RecastRegion.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkDefaultIOHookBlocking.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkFilePackage.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkFilePackageLUT.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkGeneratedSoundBanksResolver.cpp" />
     <ClCompile Include="..\External\Wwise\include\AK\samples\AkMultipleFileLocation.cpp" />
+    <ClCompile Include="API\API_Agent.cpp" />
     <ClCompile Include="API\API_AnimationPlayer.cpp" />
     <ClCompile Include="API\API_Audio.cpp" />
     <ClCompile Include="API\API_QuickSave.cpp" />
@@ -314,6 +411,7 @@
     <ClCompile Include="API\API_Time.cpp" />
     <ClCompile Include="API\API_Transform.cpp" />
     <ClCompile Include="API\API_Game.cpp" />
+    <ClCompile Include="API\API_UICheckBox.cpp" />
     <ClCompile Include="API\API_UIImage.cpp" />
     <ClCompile Include="API\API_UIInput.cpp" />
     <ClCompile Include="API\API_UIText.cpp" />
@@ -355,6 +453,7 @@
     <ClCompile Include="ImWindowGLSL.cpp" />
     <ClCompile Include="ImWindowHierarchy.cpp" />
     <ClCompile Include="ImWindowInspector.cpp" />
+    <ClCompile Include="ImWindowNavMesh.cpp" />
     <ClCompile Include="ImWindowPerformanceTest.cpp" />
     <ClCompile Include="ImWindowProject.cpp" />
     <ClCompile Include="ImWindowConsole.cpp" />
@@ -376,6 +475,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="MaterialComponent.cpp" />
+    <ClCompile Include="ModuleNavMesh.cpp" />
+    <ClCompile Include="NavAgentComponent.cpp" />
+    <ClCompile Include="NavMeshImporter.cpp" />
     <ClCompile Include="PointLightComponent.cpp" />
     <ClCompile Include="SpotLightComponent.cpp" />
     <ClCompile Include="sha256.cpp">
@@ -505,8 +607,37 @@
     <ClInclude Include="..\External\mmgr\nommgr.h" />
     <ClInclude Include="..\External\PugiXml\src\pugiconfig.hpp" />
     <ClInclude Include="..\External\PugiXml\src\pugixml.hpp" />
+    <ClInclude Include="..\External\RecastDetour\ChunkyTriMesh.h" />
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\DebugDraw.h" />
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\DetourDebugDraw.h" />
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\RecastDebugDraw.h" />
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\RecastDump.h" />
+    <ClInclude Include="..\External\RecastDetour\DebugUtils\SampleInterfaces.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourCrowd.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourLocalBoundary.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourObstacleAvoidance.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourPathCorridor.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourPathQueue.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourCrowd\DetourProximityGrid.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourTileCache\DetourTileCache.h" />
+    <ClInclude Include="..\External\RecastDetour\DetourTileCache\DetourTileCacheBuilder.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourAlloc.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourAssert.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourCommon.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourMath.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNavMesh.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNavMeshBuilder.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNavMeshQuery.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourNode.h" />
+    <ClInclude Include="..\External\RecastDetour\Detour\DetourStatus.h" />
+    <ClInclude Include="..\External\RecastDetour\InputGeom.h" />
+    <ClInclude Include="..\External\RecastDetour\NavMeshBuilder.h" />
+    <ClInclude Include="..\External\RecastDetour\Recast\Recast.h" />
+    <ClInclude Include="..\External\RecastDetour\Recast\RecastAlloc.h" />
+    <ClInclude Include="..\External\RecastDetour\Recast\RecastAssert.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="API\API.h" />
+    <ClInclude Include="API\API_Agent.h" />
     <ClInclude Include="API\API_AnimationPlayer.h" />
     <ClInclude Include="API\API_Audio.h" />
     <ClInclude Include="API\API_QuickSave.h" />
@@ -525,6 +656,7 @@
     <ClInclude Include="API\API_Time.h" />
     <ClInclude Include="API\API_Transform.h" />
     <ClInclude Include="API\API_Game.h" />
+    <ClInclude Include="API\API_UICheckBox.h" />
     <ClInclude Include="API\API_UIImage.h" />
     <ClInclude Include="API\API_UIInput.h" />
     <ClInclude Include="API\API_UIText.h" />
@@ -567,6 +699,7 @@
     <ClInclude Include="ImWindowGLSL.h" />
     <ClInclude Include="ImWindowHierarchy.h" />
     <ClInclude Include="ImWindowInspector.h" />
+    <ClInclude Include="ImWindowNavMesh.h" />
     <ClInclude Include="ImWindowPerformanceTest.h" />
     <ClInclude Include="ImWindowProject.h" />
     <ClInclude Include="ImWindowConsole.h" />
@@ -586,6 +719,9 @@
     <ClInclude Include="Lighting.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="MaterialComponent.h" />
+    <ClInclude Include="ModuleNavMesh.h" />
+    <ClInclude Include="NavAgentComponent.h" />
+    <ClInclude Include="NavMeshImporter.h" />
     <ClInclude Include="PointLightComponent.h" />
     <ClInclude Include="SpotLightComponent.h" />
     <ClInclude Include="sha256.h" />

@@ -15,7 +15,7 @@ Emitter::Emitter()
 
 	loop = true;
 	stop = false;
-	SetParticlePoolSize(100);
+	
 
 	StartDelay = 0.0f;
 	StartDelayCpy = 0.0f;
@@ -95,6 +95,11 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 
 	currentparticle--;
 
+}
+
+void Emitter::Start()
+{
+	SetParticlePoolSize(component->size);
 }
 
 void Emitter::Draw()

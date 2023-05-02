@@ -28,21 +28,26 @@ HELLO_ENGINE_API_C EnemyRanger* CreateEnemyRanger(ScriptToInspectorInterface* sc
     script->AddDragBoxAnimationResource("Hited Animation", &classInstance->hitAnim);
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
     script->AddCheckBox("Dashiing", &classInstance->_canWalk);
+    script->AddCheckBox("Scripted For Quest", &classInstance->scriptedForQuest);
     return classInstance;
 }
 
 void EnemyRanger::Start()
 {
-    Game::FindGameObjectsWithTag("Player", &target, 1);
-    cooldownPoint = 3.0f;
-    actualPoint = listPoints[0].GetTransform().GetGlobalPosition();
-    zoneRb = actionZone.GetRigidBody();
-    _avalPoints = 3;
-    enemState = States::WANDERING;
+    if (!scriptedForQuest)
+    {
+        Game::FindGameObjectsWithTag("Player", &target, 1);
+        cooldownPoint = 3.0f;
+        actualPoint = listPoints[0].GetTransform().GetGlobalPosition();
+        zoneRb = actionZone.GetRigidBody();
+        _avalPoints = 3;
+        enemState = States::WANDERING;
 
-    _movCooldown = 0;
-    _outCooldown = 0;
-    _canWalk = true;
+        _movCooldown = 0;
+        _outCooldown = 0;
+        _canWalk = true;
+    }
+    
     switch (gunType)
     {
         case 0: 
@@ -55,10 +60,13 @@ void EnemyRanger::Start()
         break;
     }
    
-    //zoneRb.GetGameObject().
-    //clock.s
-     enemy = (Enemy*)gameObject.GetScript("Enemy");
-     targStats = (PlayerStats*)target.GetScript("PlayerStats");
+    if (!scriptedForQuest)
+    {
+        //zoneRb.GetGameObject().
+        //clock.s
+        targStats = (PlayerStats*)target.GetScript("PlayerStats");
+    }
+    enemy = (Enemy*)gameObject.GetScript("Enemy");
 }
 void EnemyRanger::Update()
 {
@@ -66,7 +74,7 @@ void EnemyRanger::Update()
 
     Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
     Console::Log("_move coldowb "+std::to_string(_movCooldown));
-    if (enemy != nullptr /*&& targStats != nullptr*/)
+    if (enemy != nullptr /*&& targStats != nullptr*/ && !scriptedForQuest)
     {
             // float dis = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
           //float disZone = gameObject.GetTransform().GetGlobalPosition().Distance(actionZone.GetTransform().GetGlobalPosition());
@@ -254,6 +262,10 @@ void EnemyRanger::Update()
         default:
             break;
         }
+    }
+    else if (enemy && scriptedForQuest)
+    {
+        enemyGun->Shoot();
     }
 }
 

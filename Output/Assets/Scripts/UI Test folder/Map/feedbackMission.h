@@ -33,5 +33,10 @@ public:
 	Mision_Masacre* mision_Masacre = nullptr;
 	Mision_SomethingPersonal* mision_Personal = nullptr;
 	AnimationMove* viusalFeedbackScript = nullptr;
+
+	bool misionCompleted_1_1 = true;
+	bool misionCompleted_2_1 = true;
+	bool misionCompleted_1_2 = true;
+	bool misionCompleted_2_2 = true;
 };
 

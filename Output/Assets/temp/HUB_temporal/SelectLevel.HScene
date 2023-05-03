@@ -364,45 +364,6 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.27000001072883606,
-                    0.5049999952316284,
-                    -0.004999999888241291
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.4000000059604645,
-                    0.3149999976158142,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 240240,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Map",
-        "ParentUID": 582930903,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 3860526589
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
                     0.0,
                     0.0,
                     0.0
@@ -741,181 +702,6 @@
                 "listButtons": [
                     0
                 ]
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Hold Button Time": 1.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    }
-                ],
-                "Script Resource": 4223611270,
-                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
@@ -1106,9 +892,133 @@
                 "Type": 1
             },
             {
+                "Enabled": true,
+                "MaterialResource": 240240,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Map",
+        "ParentUID": 582930903,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 181855838
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.27000001072883606,
+                    0.5049999952316284,
+                    -0.004999999888241291
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3149999976158142,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 240240,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Map Image",
+        "ParentUID": 181855838,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3860526589
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.05000000074505806,
+                    0.7200000286102295,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "PositionX": -0.05000000074505806,
+                "PositionY": 0.7200000286102295,
+                "Scale": 0.20000000298023224,
+                "Text": "0",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Casets",
+        "ParentUID": 181855838,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 4106068590
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.99245285987854,
+                "Aspect ratio": 1.9888476133346558,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -1120,10 +1030,131 @@
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Empty",
+        "Name": "C",
         "ParentUID": 931044216,
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 4144045469
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.0010000000474974513,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    }
+                ],
+                "Script Resource": 4223611270,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Feedback Handler",
+        "ParentUID": 931044216,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1289975046
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 10,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Cube",
+        "ParentUID": 931044216,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 4009129052
     }
 ]

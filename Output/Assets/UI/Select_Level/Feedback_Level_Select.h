@@ -24,6 +24,10 @@ public:
 	API_GameObject checkSecundaryMision1;
 	API_GameObject checkSecundaryMision2;
 
+	API_GameObject mapImage;
+	API_GameObject planetImage;
+	API_GameObject planet_Name;
+
 	API_UIImage chargingBar;
 	API_UIImage isSelected;
 
@@ -53,11 +57,27 @@ public:
 	uint secundaryMision1_4;
 	uint secundaryMision2_4;
 
+	uint map1;
+	uint map2;
+	uint map3;
+	uint map4;
+
+	uint planet1;
+	uint planet2;
+	uint planet3;
+	uint planet4;
+
+	uint planetName1;
+	uint planetName2;
+	uint planetName3;
+	uint planetName4;
+
 	int indexLevles;
 
 	float openSelecTime;
 	float maxOpenSelectTime = 1.0f;
 
 	bool selecting;
+	bool isPress;
 };
 

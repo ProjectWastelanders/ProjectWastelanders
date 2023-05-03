@@ -116,16 +116,18 @@
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\Animation\AnimationMove.cpp" />
     <ClCompile Include="../../Assets/Scripts/Player/PlayerInCombat.cpp" />
     <ClCompile Include="../../Assets/Scripts/UI Test folder/Map/feedbackMission.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Thanos/SwordDmg.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipInLevel.cpp" />
     <ClCompile Include="../../Assets/Scripts/FadeToBlack.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ButtonBarrier.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BarrierWithButton.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Thanos/ThanosBullets.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Thanos/BeamDmg.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.cpp" />
+    <ClCompile Include="../../Assets/temp/NavMesh/testNavAgent.cpp" />
+    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.cpp" />
+    <ClCompile Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.cpp" />
+    <ClCompile Include="../../Assets/Scripts/Quests/ReachTheSpaceship.cpp" />
+    <ClCompile Include="..\..\Assets\temp\LVL3_TESTING\Jumper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -244,15 +246,17 @@
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\Animation\AnimationMove.h" />
     <ClInclude Include="../../Assets/Scripts/Player/PlayerInCombat.h" />
     <ClInclude Include="../../Assets/Scripts/UI Test folder/Map/feedbackMission.h" />
-    <ClInclude Include="../../Assets/Scripts/Thanos/SwordDmg.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipInLevel.h" />
     <ClInclude Include="../../Assets/Scripts/FadeToBlack.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ButtonBarrier.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BarrierWithButton.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.h" />
-    <ClInclude Include="../../Assets/Scripts/Thanos/ThanosBullets.h" />
-    <ClInclude Include="../../Assets/Scripts/Thanos/BeamDmg.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.h" />
+    <ClInclude Include="..\..\Assets\temp\LVL3_TESTING\Jumper.h" />
+    <ClInclude Include="../../Assets/temp/NavMesh/testNavAgent.h" />
+    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.h" />
+    <ClInclude Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.h" />
+    <ClInclude Include="../../Assets/Scripts/Quests/ReachTheSpaceship.h" />
   </ItemGroup>
 </Project>

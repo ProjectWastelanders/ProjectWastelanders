@@ -4,12 +4,16 @@ HELLO_ENGINE_API_C Mision_RageMonster* CreateMision_RageMonster(ScriptToInspecto
 {
     Mision_RageMonster* classInstance = new Mision_RageMonster();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+    script->AddDragBoxGameObject("Player Storage GO", &classInstance->playerStorageGO);
     return classInstance;
 }
 
 void Mision_RageMonster::Start()
 {
-    Game::FindGameObjectsWithTag("Box", boxes, 16);
+    Game::FindGameObjectsWithTag("Box", &boxes[0], 16);
+
+    playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
+    if (playerStorage == nullptr) Console::Log("PlayerStorage missing in GetDiviner Script.");
 }
 
 void Mision_RageMonster::Update()

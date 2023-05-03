@@ -14,7 +14,6 @@ public:
     void Update() override;
 
     void OnCollisionEnter(API_RigidBody other);
-    void OnCollisionStay(API_RigidBody other);
 
     void EnableMision();
 
@@ -27,5 +26,7 @@ public:
     API_GameObject playerStorageGO;
     PlayerStorage* playerStorage;
     API_GameObject finalText;
+
+    API_GameObject enebledEnemies[4];
 };
 

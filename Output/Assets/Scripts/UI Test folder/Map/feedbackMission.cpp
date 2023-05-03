@@ -3,6 +3,7 @@
 #include "..\..\Quests\Secondary_Quests\Mision_Masacre.h"
 #include "..\..\Quests\Secondary_Quests\Mision_SomethingPersonal.h"
 #include "..\..\Quests\Secondary_Quests\Mision_TheRuleOfFive.h"
+#include "..\..\Quests\Secondary_Quests\Mision_RageMonster.h"
 #include "..\..\Player\PlayerStorage.h"
 #include "..\..\UI Test folder\Animation\AnimationMove.h"
 
@@ -30,6 +31,8 @@ void feedbackMission::Start()
 	mision_LikeThe = (Mision_LikeThe80s*)missionsGO.GetScript("Mision_LikeThe80s");
 	mision_Masacre = (Mision_Masacre*)missionsGO.GetScript("Mision_Masacre");
 	mision_Personal = (Mision_SomethingPersonal*)missionsGO.GetScript("Mision_SomethingPersonal");
+	mision_RageMonster = (Mision_RageMonster*)missionsGO.GetScript("Mision_RageMonster");
+	mision_TheRule = (Mision_TheRuleOfFive*)missionsGO.GetScript("Mision_RageMonster");
 
 	viusalFeedbackScript = (AnimationMove*)visualFeedback.GetScript("AnimationMove");
 }
@@ -49,8 +52,17 @@ void feedbackMission::Update()
 			viusalFeedbackScript->PlayAnimationMoveX();
 			missionPostit1.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
 			misionCompleted_1_1 = false;
+			API_QuickSave::SetBool("mision_LikeThe80", true);
 		}
-		//Second mission in revision
+		if (mision_RageMonster->misionCompleted && misionCompleted_2_1)
+		{
+			visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
+			viusalFeedbackScript->ResetAnimationMoveX();
+			viusalFeedbackScript->PlayAnimationMoveX();
+			missionPostit2.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
+			misionCompleted_2_1 = false;
+			API_QuickSave::SetBool("mision_RageMonster", true);
+		}
         break;
     case 2: // level 2
 		if (mision_Masacre->misionCompleted && misionCompleted_1_2)
@@ -60,17 +72,28 @@ void feedbackMission::Update()
 			viusalFeedbackScript->PlayAnimationMoveX();
 			missionPostit1.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
 			misionCompleted_1_2 = false;
+			API_QuickSave::SetBool("mision_Masacre", true);
 		}
 		if (mision_Personal->misionCompleted && misionCompleted_2_2)
 		{
-			visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
+			visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
 			viusalFeedbackScript->ResetAnimationMoveX();
 			viusalFeedbackScript->PlayAnimationMoveX();
 			missionPostit2.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
 			misionCompleted_2_2 = false;
+			API_QuickSave::SetBool("mision_Personal", true);
 		}
         break;
     case 3: // level 3
+		if (mision_TheRule->misionCompleted && misionCompleted_1_3)
+		{
+			visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
+			viusalFeedbackScript->ResetAnimationMoveX();
+			viusalFeedbackScript->PlayAnimationMoveX();
+			missionPostit1.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
+			misionCompleted_1_3 = false;
+			API_QuickSave::SetBool("mision_TheRule", true);
+		}
         break;
     case 4: // level 4
         break;

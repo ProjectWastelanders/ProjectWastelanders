@@ -18,9 +18,18 @@ public:
 
 	void OnCharge();
 	void SetCurrentLevel();
+	void LevelSelect();
+
+	API_GameObject checkMainMision1;
+	API_GameObject checkSecundaryMision1;
+	API_GameObject checkSecundaryMision2;
 
 	API_UIImage chargingBar;
 	API_UIImage isSelected;
+
+	API_UIImage mainMision;
+	API_UIImage secMision1;
+	API_UIImage secMision2;
 
 	API_UIInput chargingConjunt;
 
@@ -29,6 +38,20 @@ public:
 	API_UICheckBox level3;
 	API_UICheckBox level4;
 	API_UICheckBox currentLevel;
+
+	uint mainMision1;
+	uint mainMision2;
+	uint mainMision3;
+	uint mainMision4;
+
+	uint secundaryMision1_1;
+	uint secundaryMision2_1;
+	uint secundaryMision1_2;
+	uint secundaryMision2_2;
+	uint secundaryMision1_3;
+	uint secundaryMision2_3;
+	uint secundaryMision1_4;
+	uint secundaryMision2_4;
 
 	int indexLevles;
 

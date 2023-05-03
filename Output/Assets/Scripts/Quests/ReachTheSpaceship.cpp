@@ -7,7 +7,12 @@ HELLO_ENGINE_API_C ReachTheSpaceship* CreateReachTheSpaceship(ScriptToInspectorI
     script->AddDragBoxGameObject("Player Storage GO", &classInstance->playerStorageGO);
     script->AddDragBoxGameObject("Final Text Panel", &classInstance->finalText);
     script->AddDragFloat("Max HP", &classInstance->maxHp);
+    script->AddDragFloat("Current HP", &classInstance->currentHp);
     script->AddDragFloat("DamagePerProjectile", &classInstance->damagePerProjectile);
+    script->AddDragBoxGameObject("Enemy to Active 0", &classInstance->enebledEnemies[0]);
+    script->AddDragBoxGameObject("Enemy to Active 1", &classInstance->enebledEnemies[1]);
+    script->AddDragBoxGameObject("Enemy to Active 2", &classInstance->enebledEnemies[2]);
+    script->AddDragBoxGameObject("Enemy to Active 3", &classInstance->enebledEnemies[3]);
     return classInstance;
 }
 
@@ -18,7 +23,7 @@ void ReachTheSpaceship::Start()
 
 void ReachTheSpaceship::Update()
 {
-
+    Console::Log(std::to_string(currentHp));
 }
 
 void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
@@ -36,14 +41,7 @@ void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
             Scene::LoadScene("LoseMenu.HScene");
         }
     }
-}
-
-void ReachTheSpaceship::OnCollisionStay(API_RigidBody other)
-{
-    if (!enabled) return;
-
-    std::string detectionTag = other.GetGameObject().GetTag();
-    if (detectionTag == "Player")
+    else if (detectionTag == "Player")
     {
         if (playerStorage)
         {
@@ -63,4 +61,9 @@ void ReachTheSpaceship::OnCollisionStay(API_RigidBody other)
 void ReachTheSpaceship::EnableMision()
 {
     enabled = true;
+
+    for (size_t i = 0; i < 4; i++)
+    {
+        enebledEnemies[i].SetActive(true);
+    }
 }

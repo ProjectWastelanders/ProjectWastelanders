@@ -136,10 +136,14 @@ void ParticleManager::Draw()
 
 			emitter->UpdateParticles();
 
-			/*if (emitter->manager->isParticle && emitter->component->_resourceText && emitter->component->_resourceText->isTransparent)
+			if (emitter->manager->isParticle && emitter->component->_resourceText && emitter->component->_resourceText->isTransparent)
 			{
 				emitter->manager->DrawInstancedSorting();
-			}*/
+			}
+			else if (emitter->manager->isParticle)
+			{
+				emitter->manager->Draw();
+			}
 			
 			// DRAW EACH EMITTER
 			

@@ -63,7 +63,7 @@ void Emitter::SetPlayOnAwake(bool b)
 
 void Emitter::EmitParticles(ParticleProperties& particleProps)
 {
-	if (currentparticle <= 0)
+	if (currentparticle < 0)
 	{
 		currentparticle = ParticleList.size() - 1;
 	}

@@ -260,6 +260,7 @@ void ParticleSystemComponent::OnEditor()
 			{
 				ParticleEmitter.SetParticlePoolSize(size);
 				sizeCpy = size;
+				CreateEmitterMesh(_resourceUID);
 			}
 			else
 			{

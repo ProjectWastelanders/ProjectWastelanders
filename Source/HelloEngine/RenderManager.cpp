@@ -253,7 +253,7 @@ void RenderManager::Draw()
 	// Draw opaque meshes instanced.
 	for (auto& obj : _renderMap)
 	{
-		//if (obj.second.isParticle)continue;
+		if (obj.second.isParticle)continue;
 		obj.second.Draw();
 	}
 	// Delete empty render managers.

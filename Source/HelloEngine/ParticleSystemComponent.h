@@ -79,8 +79,8 @@ private:
     bool playOnGame = false;
     bool StopEmittingOnGame = false;
 
-    int size = 100;
-    int sizeCpy = 100;
+    int size = 1000;
+    int sizeCpy = 1000;
     
     ResourceMesh* _resource = nullptr;
     ResourceTexture* _resourceText = nullptr;

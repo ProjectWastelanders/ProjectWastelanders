@@ -1,0 +1,108 @@
+[
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "Name": "Root",
+        "ParentUID": 0,
+        "PrefabUID": 0,
+        "Tag": "None",
+        "UID": 2302572981
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ParticleModules": {
+                    "ModuleEmission": {
+                        "Enable": false,
+                        "ParticlesPerSecond": 1
+                    },
+                    "ModuleMain": {
+                        "BeginScale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Delay": 0.0,
+                        "Duration": 0.0,
+                        "EndScale": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "LifeTime": 8.0,
+                        "Looping": true,
+                        "PlayOnAwake": false,
+                        "Speed": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "SpeedVariation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "acceleration": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                "ParticleVectorSize": 1000,
+                "ResourceTextUID": 839034386,
+                "Type": 6
+            }
+        ],
+        "FirstOnPrefab": true,
+        "Name": "Empty",
+        "ParentUID": 2302572981,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 762304228
+    }
+]

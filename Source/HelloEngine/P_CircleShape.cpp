@@ -23,9 +23,12 @@ float3 P_CircleShape::GetRandomPos()
 {
 	LCG random;
 
-	float x = random.Float(-radius, radius);
-	float y = random.Float(-radius, radius);
-	float z = 0;
+	float angle = random.Float() * (2 * math::pi);
+	float r = random.Float() * radius;
+
+	float x = r * cos(angle);
+	float y = 0;
+	float z = r * sin(angle);
 
 	return float3(x, y, z);
 }

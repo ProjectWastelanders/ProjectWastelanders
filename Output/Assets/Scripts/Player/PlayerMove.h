@@ -38,6 +38,8 @@ public:
     void Dash();
     bool DashInput();
 
+    void LookAt(API_Vector3 target);
+
     bool usingGamepad;
     float dt;
 

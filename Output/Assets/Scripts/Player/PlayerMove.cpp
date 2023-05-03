@@ -240,7 +240,7 @@ void PlayerMove::DashSetup()
     dashesAvailable--;
     if (playerStats && playerStats->movementTreeLvl > 1) dashCooldown = maxFastDashCooldown + 0.0001f;
     else dashCooldown = maxDashCooldown + 0.0001f;
-
+    
     dashDepartTime = 0.0f;
     float norm = sqrt(pow(lastMovInput.x, 2) + pow(lastMovInput.y, 2));
     API_Vector3 movDir;
@@ -281,6 +281,17 @@ bool PlayerMove::DashInput()
         return Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) > 20000;
 
     return Input::GetKey(KeyCode::KEY_SPACE) == KeyState::KEY_DOWN;
+}
+
+void PlayerMove::LookAt(API_Vector3 target)
+{
+    float norm = sqrt(target.x * target.x + target.y * target.y);
+    API_Vector3 movDir;
+    movDir.x = target.x / norm;
+    movDir.y = 0.0f;
+    movDir.z = target.y / norm;
+
+    transform.SetRotation(0.0f, atan2(movDir.x, movDir.z) * RADTODEG, 0.0f);
 }
 
 void PlayerMove::Aim()

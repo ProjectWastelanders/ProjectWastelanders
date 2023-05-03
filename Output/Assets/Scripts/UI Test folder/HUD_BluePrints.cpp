@@ -37,9 +37,9 @@ HELLO_ENGINE_API_C HUD_BluePrints* CreateHUD_BluePrints(ScriptToInspectorInterfa
 
 void HUD_BluePrints::Start()
 {
-	upgrade_movmentX = {-0.0015,0,0};
-	new_weapon_movmentX = { -0.0015,0,0 };
-	special_weapon_movmentX = { -0.0015,0,0 };
+	upgrade_movmentX = {-0.0032,0,0};
+	new_weapon_movmentX = { -0.0032,0,0 };
+	special_weapon_movmentX = { -0.0032,0,0 };
 
 	upgrade_position_save = material_upgrade.GetGameObject().GetTransform().GetLocalPosition();
 	new_weapon_position_save = material_new_weapon.GetGameObject().GetTransform().GetLocalPosition();

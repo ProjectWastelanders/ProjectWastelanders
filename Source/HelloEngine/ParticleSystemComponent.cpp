@@ -8,6 +8,7 @@
 #include "P_EmissionModule.h"
 #include "P_ShapeModule.h"
 #include "P_CircleShape.h"
+#include "P_RectangleShape.h"
 #include "BillBoardComponent.h"
 
 
@@ -583,10 +584,19 @@ void ParticleSystemComponent::CreateCurrentShape(ShapeType type)
 		return;
 		break;
 	case ShapeType::CIRCLE:
-		P_Module* shapeModule = (P_Module*)new P_CircleShape();
-		shapeModule->component = this;
-		ParticleModules.push_back(shapeModule);
-		break;
+	{
+		P_Module* circleShape = (P_Module*)new P_CircleShape();
+		circleShape->component = this;
+		ParticleModules.push_back(circleShape);
+	}
+	break;
+	case ShapeType::RECTANGLE:
+	{
+		P_Module* rectangleShape = (P_Module*)new P_RectangleShape();
+		rectangleShape->component = this;
+		ParticleModules.push_back(rectangleShape); 
+	}
+	break;
 	}
 }
 

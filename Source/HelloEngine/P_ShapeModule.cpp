@@ -41,6 +41,18 @@ void P_ShapeModule::OnEditor()
                             }
                         }
                         break;
+                    case 2:
+                        if (component->GetCurrentShape() == nullptr) {
+                            component->CreateCurrentShape(ShapeType::RECTANGLE);
+                        }
+                        else {
+                            if (component->GetCurrentShape()->shapeType != ShapeType::RECTANGLE)
+                            {
+                                component->DeleteCurrentShape();
+                                component->CreateCurrentShape(ShapeType::RECTANGLE);
+                            }
+                        }
+                        break;
                     }
                 }
             }

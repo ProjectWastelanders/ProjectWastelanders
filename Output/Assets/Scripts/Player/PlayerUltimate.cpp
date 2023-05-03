@@ -23,7 +23,10 @@ void PlayerUltimate::Update()
     {
         triggerUlt = false;
         endUlt = false;
+        if (playerStats) playerStats->ultPercentage = 0.0f;
     }
+
+    if (playerStats && playerStats->ultPercentage < 100.0f) return;
 
     if (Input::GetKey(KeyCode::KEY_F) == KeyState::KEY_DOWN)
     {
@@ -74,7 +77,7 @@ void PlayerUltimate::OnCollisionStay(API::API_RigidBody other)
     if (detectionTag == "Enemy")
     {
         Enemy* enemyScript = (Enemy*)other.GetGameObject().GetScript("Enemy");
-        if (enemyScript) enemyScript->ActiveStun(3.0f);
+        if (enemyScript) enemyScript->TakeDamage(50.0f, 50.0f);
     }
 
     endUlt = true;

@@ -4,6 +4,7 @@
 #include "ModuleFiles.h"
 #include "Texture.h"
 #include "File_Model.h"
+#include "FfmpegVideoPlayer.h"
 #include "UUID.h"
 #include "glew.h"
 
@@ -245,6 +246,21 @@ public:
     ResourcePrefab() {};
 
     std::string path;
+};
+
+class ResourceVideo : public Resource
+{
+public:
+    ResourceVideo() {};
+
+    void UnLoad() override
+    {
+        if (video == nullptr)
+            return;
+        video->CleanUp();
+    }
+
+    FfmpegVideoPlayer* video = nullptr;
 };
 
 class ModuleResourceManager : public Module

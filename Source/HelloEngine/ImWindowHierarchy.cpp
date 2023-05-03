@@ -239,7 +239,7 @@ void ImWindowHierarchy::DrawOptions()
     int selectedShape = 0;
     int selectedUI = 0;
     std::string shapeNames[5] = { "Cube", "Sphere", "Cylinder", "Plane", "Canvas"};
-    std::string UINames[5] = { "Button", "CheckBox", "Slider", "Image", "Text"};
+    std::string UINames[6] = { "Button", "CheckBox", "Slider", "Image", "Text", "VideoPlayer"};
 
     if (LayerEditor::selectedGameObject != nullptr)
     {
@@ -259,7 +259,7 @@ void ImWindowHierarchy::DrawOptions()
                 GameObject* panel = new GameObject(parent, "Panel", "UI");
                 panel->AddComponent<ComponentUIInput>();
             }
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (ImGui::Selectable(UINames[i].c_str()))
                 {

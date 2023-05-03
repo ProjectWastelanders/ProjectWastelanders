@@ -34,6 +34,7 @@ public:
 		POINT_LIGHT,
 		SPOT_LIGHT,
 		AGENT,
+		UI_VIDEO,
 		MAX
 	};
 

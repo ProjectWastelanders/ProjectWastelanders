@@ -7,6 +7,8 @@
 
 #include "EnemyDropManager.h"
 
+class PlayerStats;
+
 class Enemy : HelloBehavior
 {
 public:
@@ -81,6 +83,10 @@ public:
     void AddBurn();
     float burnTime = 0.0f;
     float resetBurn;
+
+    // player reference
+    PlayerStats* playerStats;
+    float ultGain = 0;
 
 
     float _tAnimDie;

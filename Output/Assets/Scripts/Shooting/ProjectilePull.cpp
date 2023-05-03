@@ -122,7 +122,6 @@ void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectile
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
 
@@ -143,7 +142,6 @@ void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float 
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().Rotate(0, rotateY, 0);
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
 
@@ -163,7 +161,6 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(autoTex);
 
@@ -202,7 +199,6 @@ void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectil
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(burstTex);
 
@@ -222,7 +218,6 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(shotgunTex);
 
@@ -249,7 +244,6 @@ void ProjectilePull::LauchProjectileSHOTGUN_BOMB(float projectileLifetime, API_T
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
 
     float offsetY = rand() % 360;
@@ -285,7 +279,6 @@ void ProjectilePull::LauchProjectileRICOCHET(float projectileSpeed, float projec
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(ricochetTex);
 

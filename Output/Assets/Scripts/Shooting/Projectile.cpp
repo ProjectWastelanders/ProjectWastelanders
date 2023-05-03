@@ -32,7 +32,6 @@ void Projectile::Update()
 
 void Projectile::Destroy()
 {
-    gameObject.GetParticleSystem().Stop();
     gameObject.GetTransform().SetPosition(0, 9999, 0);
     gameObject.SetActive(false);
 }

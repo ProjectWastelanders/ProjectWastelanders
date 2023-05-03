@@ -51,6 +51,7 @@ public:
     int maxLaserAmmo;
     int specialAmmo;
     int maxSpecialAmmo; // index 2
+    float ultPercentage = 0.0f;
      
     bool detected; //if the player is being detected somehow
     bool inCombat = false;

@@ -40,6 +40,8 @@ ModuleFiles::ModuleFiles() :Module()
     _automaticCompilation = res == 0;
     _enabledAutomaticCompilation = _automaticCompilation;
 #endif // STANDALONE
+
+    LayerGame::S_RequestDLLCompile();
 }
 
 ModuleFiles::~ModuleFiles()

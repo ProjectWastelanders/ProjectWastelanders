@@ -43,6 +43,8 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxAnimationResource("Dead Animation", &classInstance->deathAnim);
     script->AddDragBoxAnimationResource("Jumper Animation", &classInstance->jumperAnim);
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
+    script->AddDragBoxParticleSystem("Walk Particles", &classInstance->walkParticles);
+    script->AddDragBoxParticleSystem("Shoot Particles", &classInstance->shootParticles);
     return classInstance;
 }
 
@@ -100,6 +102,7 @@ void PlayerMove::Update()
     if (Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERRIGHT) < 5000 || isSwapingGun)
     {
         isShooting = false;
+        shootParticles.StopEmitting();
     }
 
     if (dashesAvailable > 0)
@@ -164,6 +167,11 @@ void PlayerMove::Update()
         else {
             currentVel = 0.0f;
         }
+        if (playingWalkParticles)
+        {
+            walkParticles.StopEmitting();
+            playingWalkParticles = false;
+        }
     }
     else //MOVEMENT
     {
@@ -181,6 +189,11 @@ void PlayerMove::Update()
         {
             moveSoundCooldown = 0.5f;
             Audio::Event("starlord_walk");
+        }
+        if (!playingWalkParticles)
+        {
+            walkParticles.Play();
+            playingWalkParticles = true;
         }
     }
 
@@ -699,6 +712,7 @@ void PlayerMove::PlayShootAnim(int gunIndex)
     
     if (currentAnim != PlayerAnims::SHOOT)
     {
+        shootParticles.Play();
         playerAnimator.ChangeAnimation(shootAnim[gunIndex]);
         playerAnimator.Play();
         currentAnim = PlayerAnims::SHOOT;

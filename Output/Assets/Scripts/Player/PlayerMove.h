@@ -110,6 +110,11 @@ public:
     void PlayJumperAnim();
     PlayerAnims currentAnim;
 
+    // particles
+    API_ParticleSystem walkParticles;
+    bool playingWalkParticles = false;
+    API_ParticleSystem shootParticles;
+
     // skills
     API_GameObject playerStatsGO;
     PlayerStats* playerStats;

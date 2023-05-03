@@ -54,4 +54,11 @@ public:
     float autoForce = 0.0f;
     float resetAuto;
     int automaticLevel;
+
+    uint dualsTex = 0;
+    uint semiTex = 0;
+    uint autoTex = 0;
+    uint burstTex = 0;
+    uint shotgunTex = 0;
+    uint ricochetTex = 0;
 };

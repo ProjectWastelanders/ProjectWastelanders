@@ -55,7 +55,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 2.2493224143981934,
+                "Aspect ratio": 2.0,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -7089,6 +7089,9 @@
                     },
                     {
                         "Check Ricochet Traget Prefab": 3306111952
+                    },
+                    {
+                        "Duals Projectile Texture": 3663622624
                     }
                 ],
                 "Script Resource": 211675320,
@@ -7358,7 +7361,7 @@
                         "Projectile ScaleY": 0.10000000149011612
                     },
                     {
-                        "Projectile ScaleZ": 0.10000000149011612
+                        "Projectile ScaleZ": 1.5
                     },
                     {
                         "Projectiles per second": 0.0
@@ -8388,289 +8391,5 @@
         "PrefabUID": 3594397937,
         "Tag": "Default",
         "UID": 1323827506
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Enemy Prefab": 3124887091
-                    },
-                    {
-                        "Spawn Entire": 1240838614
-                    },
-                    {
-                        " Parent of the Spawn": 1240838614
-                    },
-                    {
-                        " Parent of the Pool": 1240838614
-                    },
-                    {
-                        "Enemy Pool Size": 6
-                    },
-                    {
-                        "Target": 1475165862
-                    }
-                ],
-                "Script Resource": 1522017073,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Parent",
-        "ParentUID": 2066812041,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1240838614
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -14.063644409179688,
-                    1.1190142631530762,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    3.0,
-                    3.0,
-                    3.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 10,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "ResourceUID": 240240,
-                "Type": 3
-            },
-            {
-                "AngularFactor": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "ColPosition": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "ColRotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "ColScale": [
-                    6.0,
-                    6.0,
-                    6.0
-                ],
-                "CylVerSlices": 16,
-                "CylinderRadiusHeight": [
-                    1.0,
-                    1.0
-                ],
-                "Enabled": true,
-                "Gravity": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "HasPhysBody": true,
-                "IsKinematic": false,
-                "IsRenderingCol": true,
-                "IsShapeCreated": [
-                    true,
-                    false,
-                    false
-                ],
-                "IsShapeSelected": [
-                    true,
-                    false,
-                    false
-                ],
-                "IsStatic": false,
-                "IsTrigger": false,
-                "Mass": 1.0,
-                "RenderColColor": [
-                    0.5,
-                    0.0,
-                    0.5,
-                    1.0
-                ],
-                "ShapeSelected": 0,
-                "SphereHorSlices": 16,
-                "SphereRadius": 1.0,
-                "SphereVerSlices": 16,
-                "Type": 8,
-                "WireframeSize": 1.0
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Player Storage GO": 1475165862
-                    },
-                    {
-                        "Max HP": 100.0
-                    },
-                    {
-                        "Current HP": 0.0
-                    },
-                    {
-                        "DamagePerProjectile": 20.0
-                    }
-                ],
-                "Script Resource": 2281374060,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Cube",
-        "ParentUID": 2066812041,
-        "PrefabUID": 0,
-        "Tag": "Wall",
-        "UID": 1570801373
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 10,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "AngularFactor": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "ColPosition": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "ColRotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "ColScale": [
-                    2.0,
-                    2.0,
-                    2.0
-                ],
-                "CylVerSlices": 16,
-                "CylinderRadiusHeight": [
-                    1.0,
-                    1.0
-                ],
-                "Enabled": true,
-                "Gravity": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "HasPhysBody": true,
-                "IsKinematic": false,
-                "IsRenderingCol": true,
-                "IsShapeCreated": [
-                    true,
-                    false,
-                    false
-                ],
-                "IsShapeSelected": [
-                    true,
-                    false,
-                    false
-                ],
-                "IsStatic": false,
-                "IsTrigger": true,
-                "Mass": 1.0,
-                "RenderColColor": [
-                    0.5,
-                    0.0,
-                    0.5,
-                    1.0
-                ],
-                "ShapeSelected": 0,
-                "SphereHorSlices": 16,
-                "SphereRadius": 1.0,
-                "SphereVerSlices": 16,
-                "Type": 8,
-                "WireframeSize": 1.0
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Bullet",
-        "ParentUID": 2066812041,
-        "PrefabUID": 0,
-        "Tag": "EnemyProjectile",
-        "UID": 758816609
     }
 ]

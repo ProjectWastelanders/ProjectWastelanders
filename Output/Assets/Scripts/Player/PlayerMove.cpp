@@ -41,6 +41,7 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxAnimationResource("Hit Animation", &classInstance->hittedAnim);
     script->AddDragBoxAnimationResource("Open Chest Animation", &classInstance->openChestAnim);
     script->AddDragBoxAnimationResource("Dead Animation", &classInstance->deathAnim);
+    script->AddDragBoxAnimationResource("Jumper Animation", &classInstance->jumperAnim);
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
     return classInstance;
 }
@@ -754,5 +755,15 @@ void PlayerMove::PlayDeathAnim()
         playerAnimator.ChangeAnimation(deathAnim);
         playerAnimator.Play();
         currentAnim = PlayerAnims::DEATH;
+    }
+}
+
+void PlayerMove::PlayJumperAnim()
+{
+    if (currentAnim != PlayerAnims::JUMPER)
+    {
+        playerAnimator.ChangeAnimation(jumperAnim);
+        playerAnimator.Play();
+        currentAnim = PlayerAnims::JUMPER;
     }
 }

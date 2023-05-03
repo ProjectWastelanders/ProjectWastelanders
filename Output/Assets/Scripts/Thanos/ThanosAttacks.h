@@ -19,6 +19,7 @@ public:
 	void DashAttack();
 
 	void Seek(API_GameObject* seeker, API_Vector3 target, float speed);
+	void Seek2(API_GameObject* seeker, API_Vector3 target, float speed);
 	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
 
 	ThanosMeleeDmg* tMeleeDmg;
@@ -56,6 +57,7 @@ public:
 		PULSE,
 		BURST,
 		BEAM,
+		DASH2,
 	};
 
 	THANOS_STATE thanosState;
@@ -124,5 +126,10 @@ public:
 	float meteorRainCooldown = 0.0f;
 	bool isRainingMeteors = false;
 	void MeteorAttack();
+
+	bool areaDmg = false;
+	API_GameObject area;
+	float dashSpeed = 1.0f;
+	API_Vector3 thanosPosition;
 };
 

@@ -23,7 +23,8 @@ class PlayerMove : HelloBehavior
         SWAP_GUN,
         HITTED,
         DEATH,
-        OPEN_CHEST
+        OPEN_CHEST,
+        JUMPER
     };
 
 public:
@@ -105,6 +106,8 @@ public:
     void StopOpenChestAnim();
     uint deathAnim = 0;
     void PlayDeathAnim();
+    uint jumperAnim = 0;
+    void PlayJumperAnim();
     PlayerAnims currentAnim;
 
     // skills

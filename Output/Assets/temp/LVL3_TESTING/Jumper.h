@@ -5,19 +5,22 @@
 
 #include "API/API.h"
 
+class PlayerMove;
+
 class Jumper : HelloBehavior
 {
 public:
 	void Start() override; 
 	void Update() override;
+	void OnCollisionEnter(API_RigidBody other);
 	float Lerp(float a, float b, float t);
 
 	//Config
-	API_GameObject* player;
-	API_GameObject* otherJumper;
+	API_GameObject player;
+	PlayerMove* playerMoveScript;
+	API_Transform otherJumper;
 	float duration = 4.0f;
-	
-	bool validScript = true;
+	float height = 50.0f;
 	
 	//Jumping & Setup
 	bool isJumping = false;

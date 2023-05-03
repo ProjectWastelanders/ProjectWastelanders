@@ -33,6 +33,7 @@ void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
         if (currentHp <= 0.0f)
         {
             //Mision Failed
+            Scene::LoadScene("LoseMenu.HScene");
         }
     }
 }

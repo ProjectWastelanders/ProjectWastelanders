@@ -16,6 +16,7 @@
 #include "Math/float4x4.h"
 #include "LayerEditor.h"
 #include "PhysicsComponent.h"
+#include "VideoPlayerComponent.h"
 
 #include "ModuleRenderer3D.h"
 
@@ -496,47 +497,54 @@ void RenderManager::CreateUI(GameObject* parent, UIType type)
 
 	switch (type)
 	{
-	case UIType::BUTTON:
-	{
-		GameObject* button = new GameObject(parent, "Button", "UI");
-		button->AddComponent<ComponentUIButton>();
-		button->transform->SetScale({ 0.5f,0.5f,0.0f });
-		break;
-	}
-	case UIType::SLIDER:
-	{
-		GameObject* slider = new GameObject(parent, "Slider", "UI");
-		GameObject* sliderButton = new GameObject(slider, "SliderButton", "UIsliderButton");
-		GameObject* sliderBar = new GameObject(slider, "SliderBar", "UIsliderBar");
-		//slider->AddComponent<ComponentUISlider>();
-		sliderBar->AddComponent<ComponentUISlider>();
-		sliderBar->transform->SetScale({ 0.7f,0.1f,0.0f });
-		sliderButton->AddComponent<ComponentUISlider>();
-		sliderButton->transform->SetScale({ 0.2f,0.2f,0.0f });
-		sliderButton->transform->SetPosition({ 0.0f, 0.0f, -0.003f });
-		break;
-	}
-	case UIType::CHECKBOX:
-	{
-		GameObject* checkBox = new GameObject(parent, "CheckBox", "UI");
-		checkBox->AddComponent<ComponentUICheckbox>();
-		checkBox->transform->SetScale({ 0.5f,0.5f,0.5f });
-		break;
-	}
-	case UIType::IMAGE:
-	{
-		GameObject* image = new GameObject(parent, "Image", "UI");
-		image->AddComponent<ComponentUIImage>();
-		image->transform->SetScale({ 0.5f,0.5f,0.5f });
-		break;
-	}
-	case UIType::TEXT:
-	{
-		GameObject* image = new GameObject(parent, "Text", "UI");
-		image->AddComponent<TextRendererComponent>();
-		image->transform->SetScale({ 0.5f,0.5f,0.5f });
-		break;
-	}
+		case UIType::BUTTON:
+		{
+			GameObject* button = new GameObject(parent, "Button", "UI");
+			button->AddComponent<ComponentUIButton>();
+			button->transform->SetScale({ 0.5f,0.5f,0.0f });
+			break;
+		}
+		case UIType::SLIDER:
+		{
+			GameObject* slider = new GameObject(parent, "Slider", "UI");
+			GameObject* sliderButton = new GameObject(slider, "SliderButton", "UIsliderButton");
+			GameObject* sliderBar = new GameObject(slider, "SliderBar", "UIsliderBar");
+			//slider->AddComponent<ComponentUISlider>();
+			sliderBar->AddComponent<ComponentUISlider>();
+			sliderBar->transform->SetScale({ 0.7f,0.1f,0.0f });
+			sliderButton->AddComponent<ComponentUISlider>();
+			sliderButton->transform->SetScale({ 0.2f,0.2f,0.0f });
+			sliderButton->transform->SetPosition({ 0.0f, 0.0f, -0.003f });
+			break;
+		}
+		case UIType::CHECKBOX:
+		{
+			GameObject* checkBox = new GameObject(parent, "CheckBox", "UI");
+			checkBox->AddComponent<ComponentUICheckbox>();
+			checkBox->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::IMAGE:
+		{
+			GameObject* image = new GameObject(parent, "Image", "UI");
+			image->AddComponent<ComponentUIImage>();
+			image->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::TEXT:
+		{
+			GameObject* image = new GameObject(parent, "Text", "UI");
+			image->AddComponent<TextRendererComponent>();
+			image->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::VIDEO	:
+		{
+			GameObject* video = new GameObject(parent, "Text", "UI");
+			video->AddComponent<VideoPlayerComponent>();
+			video->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
 	}
 }
 

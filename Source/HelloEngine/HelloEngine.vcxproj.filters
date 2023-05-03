@@ -393,6 +393,9 @@
     <ClCompile Include="sha256.cpp" />
     <ClCompile Include="API\API_String.cpp" />
     <ClCompile Include="API\API_ShaderComponent.cpp" />
+    <ClCompile Include="VideoPlayerComponent.cpp" />
+    <ClCompile Include="VideoPlayerManager.cpp" />
+    <ClCompile Include="FfmpegVideoPlayer.cpp" />
     <ClCompile Include="ScriptComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
@@ -819,6 +822,9 @@
     <ClInclude Include="sha256.h" />
     <ClInclude Include="API\API_String.h" />
     <ClInclude Include="API\API_ShaderComponent.h" />
+    <ClInclude Include="VideoPlayerComponent.h" />
+    <ClInclude Include="VideoPlayerManager.h" />
+    <ClInclude Include="FfmpegVideoPlayer.h" />
     <ClInclude Include="ScriptComponent.h">
       <Filter>Components</Filter>
     </ClInclude>

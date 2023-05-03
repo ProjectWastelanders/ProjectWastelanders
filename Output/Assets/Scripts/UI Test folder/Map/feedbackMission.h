@@ -9,6 +9,8 @@ class PlayerStorage;
 class Mision_LikeThe80s;
 class Mision_Masacre;
 class Mision_SomethingPersonal;
+class Mision_TheRuleOfFive;
+class Mision_RageMonster;
 class AnimationMove;
 
 class feedbackMission : HelloBehavior

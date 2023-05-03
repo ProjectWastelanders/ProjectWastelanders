@@ -378,6 +378,7 @@
     <ClCompile Include="MaterialComponent.cpp" />
     <ClCompile Include="PointLightComponent.cpp" />
     <ClCompile Include="P_CircleShape.cpp" />
+    <ClCompile Include="P_RectangleShape.cpp" />
     <ClCompile Include="P_ShapeModule.cpp" />
     <ClCompile Include="SpotLightComponent.cpp" />
     <ClCompile Include="sha256.cpp">
@@ -590,6 +591,7 @@
     <ClInclude Include="MaterialComponent.h" />
     <ClInclude Include="PointLightComponent.h" />
     <ClInclude Include="P_CircleShape.h" />
+    <ClInclude Include="P_RectangleShape.h" />
     <ClInclude Include="P_ShapeModule.h" />
     <ClInclude Include="SpotLightComponent.h" />
     <ClInclude Include="sha256.h" />

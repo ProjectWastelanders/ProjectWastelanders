@@ -35,14 +35,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    314.23968505859375,
+                    -1.3359868944462505e-06,
+                    -10.172199249267578
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -57,8 +57,8 @@
                 "ModelUID": 13,
                 "ParticleModules": {
                     "ModuleEmission": {
-                        "Enable": false,
-                        "ParticlesPerSecond": 1
+                        "Enable": true,
+                        "ParticlesPerSecond": 48
                     },
                     "ModuleMain": {
                         "BeginScale": [
@@ -67,7 +67,7 @@
                             1.0
                         ],
                         "Delay": 0.0,
-                        "Duration": 0.0,
+                        "Duration": 86.0,
                         "EndScale": [
                             0.0,
                             0.0,

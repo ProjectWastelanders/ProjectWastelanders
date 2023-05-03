@@ -22,6 +22,7 @@ void P_CircleShape::OnEditor()
 float3 P_CircleShape::GetRandomPos()
 {
 	LCG random;
+	center = component->GetGameObject()->transform->GetGlobalPosition();
 
 	float angle = random.Float() * (2 * math::pi);
 	float r = random.Float() * radius;
@@ -30,6 +31,9 @@ float3 P_CircleShape::GetRandomPos()
 	float y = 0;
 	float z = r * sin(angle);
 
+	x += center.x;
+	z += center.z;
+
 	return float3(x, y, z);
 }
 
@@ -37,7 +41,7 @@ bool P_CircleShape::IsInside(float3 position)
 {
 	center = component->GetGameObject()->transform->GetGlobalPosition();
 
-	float distance = (position - center).Normalize();
+	float distance = (position - component->GetGameObject()->transform->GetGlobalPosition()).Normalize();
 
 	return distance <= radius;
 }

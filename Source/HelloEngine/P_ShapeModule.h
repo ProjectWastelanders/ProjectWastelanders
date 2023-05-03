@@ -1,7 +1,7 @@
 #pragma once
 #include "P_Module.h"
 
-#define SHAPE_NUM 2
+#define SHAPE_NUM 3
 
 class P_ShapeModule :  public P_Module
 {
@@ -15,6 +15,6 @@ public:
 
 	virtual bool IsInside(float3 position);
 
-	std::string _shapeValues[SHAPE_NUM] = { "Default", "Circle"};
+	std::string _shapeValues[SHAPE_NUM] = { "Default", "Circle", "Rectangle"};
 };
 

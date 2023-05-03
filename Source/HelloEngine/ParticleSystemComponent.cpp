@@ -354,6 +354,15 @@ void ParticleSystemComponent::OnEditor()
 		}
 		else
 		{
+			if (_resourceText)
+			{
+				if (ImGui::Checkbox("Transparent", &_resourceText->isTransparent))
+				{
+					std::string popUpmessage = "Texture in the emitter set as transparent";
+					LayerEditor::S_AddPopUpMessage(popUpmessage);
+				}
+			}
+
 			if (ImGui::Button("Delete Emitter Texture"))
 			{
 

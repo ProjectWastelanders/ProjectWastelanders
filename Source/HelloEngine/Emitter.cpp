@@ -178,6 +178,8 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
 
+	manager->isParticle = true;
+
 	Mesh& meshReference = manager->GetMap()[ParticleList[i]._instanceID].mesh;
 
 	meshReference.draw = true;

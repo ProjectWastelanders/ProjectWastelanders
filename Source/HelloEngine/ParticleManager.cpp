@@ -7,6 +7,7 @@
 #include "TransformComponent.h"
 #include "LayerGame.h"
 #include "BillBoardComponent.h"
+#include "InstanceRenderer.h"
 
 ParticleManager::ParticleManager()
 {
@@ -120,6 +121,11 @@ void ParticleManager::Draw()
 
 			emitter->UpdateParticles();
 
+			if (emitter->manager->isParticle && emitter->component->_resourceText && emitter->component->_resourceText->isTransparent)
+			{
+				emitter->manager->DrawInstancedSorting();
+			}
+			
 			// DRAW EACH EMITTER
 			
 			//var->Draw();

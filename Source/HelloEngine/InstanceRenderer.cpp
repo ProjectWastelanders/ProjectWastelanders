@@ -266,6 +266,75 @@ void InstanceRenderer::DrawInstance(Mesh* mesh, bool useBasicShader)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+void InstanceRenderer::DrawInstancedSorting()
+{
+
+    CameraObject* currentCamera = Application::Instance()->camera->currentDrawingCamera;
+
+    std::map<float, RenderEntry> _orderedMeshes;
+
+    glDisable(GL_DEPTH_TEST);
+
+    // Draw transparent objects with a draw call per mesh.
+    for (auto& entry : meshes)
+    {
+        float3 cameraPos = currentCamera->cameraFrustum.pos;
+        float distance = entry.second.mesh.modelMatrix.Transposed().TranslatePart().DistanceSq(currentCamera->cameraFrustum.pos);
+        _orderedMeshes.emplace(std::make_pair(distance, entry.second));
+    }
+
+    for (auto mesh = _orderedMeshes.rbegin(); mesh != _orderedMeshes.rend(); mesh++)
+    {
+        RenderUpdateState state = mesh->second.mesh.Update();
+        if (state == RenderUpdateState::NODRAW)
+            continue;
+
+        if (state == RenderUpdateState::SELECTED)
+        {
+            Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh->second.mesh);
+        }
+
+        modelMatrices.push_back(mesh->second.mesh.modelMatrix); // Insert updated matrices
+        textureIDs.push_back(mesh->second.mesh.OpenGLTextureID);
+        mesh->second.mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+    }
+
+    if (!modelMatrices.empty())
+    {
+        // Update View and Projection matrices
+        instancedShader->shader.Bind();
+
+        instancedShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+        instancedShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+
+        // Draw using Dynamic Geometrys
+        glBindVertexArray(VAO);
+
+        // Update Model matrices
+        glBindBuffer(GL_ARRAY_BUFFER, MBO);
+        void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr, &modelMatrices.front(), modelMatrices.size() * sizeof(float4x4));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        // Update TextureIDs
+        glBindBuffer(GL_ARRAY_BUFFER, TBO);
+        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr2, &textureIDs.front(), textureIDs.size() * sizeof(float));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        for (int i = 0; i < TextureManager::bindedTextures; i++)
+        {
+            instancedShader->shader.SetInt(("textures[" + std::to_string(i) + "]").c_str(), i);
+        }
+
+        // Draw instanced
+        glDrawElementsInstanced(GL_TRIANGLES, totalIndices->size(), GL_UNSIGNED_INT, 0, modelMatrices.size());
+        glBindVertexArray(0);
+    }
+
+    glEnable(GL_DEPTH_TEST);
+}
+
 void InstanceRenderer::SetAs2D()
 {
     is2D = true;

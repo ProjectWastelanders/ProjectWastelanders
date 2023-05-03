@@ -249,9 +249,11 @@ InstanceRenderer* RenderManager::GetRenderManager(uint meshID, uint materialID, 
 
 void RenderManager::Draw()
 {
+	
 	// Draw opaque meshes instanced.
 	for (auto& obj : _renderMap)
 	{
+		if (obj.second.isParticle)continue;
 		obj.second.Draw();
 	}
 	// Delete empty render managers.

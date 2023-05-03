@@ -7,6 +7,8 @@
 
 ImWindowNavMesh::ImWindowNavMesh()
 {
+    windowName = "NavMesh";
+
 	buildSettings = ModuleNavMesh::S_GetBuildSettings();
 }
 

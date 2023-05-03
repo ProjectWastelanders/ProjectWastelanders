@@ -148,9 +148,9 @@
                     0.0
                 ],
                 "Rotation": [
-                    -180.0,
-                    -89.98020935058594,
-                    -179.99911499023438
+                    -0.0,
+                    0.0,
+                    -0.0
                 ],
                 "Scale": [
                     1.0000011920928955,
@@ -8482,7 +8482,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 0.741890013217926,
+                "Aspect ratio": 1.9888476133346558,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -8640,7 +8640,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Connected_Jumper": 3364926849
+                        "Connected_Jumper": 3222658362
                     },
                     {
                         "Jump Duration": 2.0
@@ -8653,11 +8653,11 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Jumper1",
+        "Name": "Jumper",
         "ParentUID": 1010667305,
-        "PrefabUID": 0,
+        "PrefabUID": 3109495015,
         "Tag": "Primitive",
         "UID": 599838978
     },
@@ -8667,9 +8667,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -34.53647994995117,
-                    1.0004106760025024,
-                    26.038585662841797
+                    -1.9134783744812012,
+                    0.0,
+                    0.0
                 ],
                 "Rotation": [
                     -0.0,
@@ -8677,9 +8677,40 @@
                     -0.0
                 ],
                 "Scale": [
-                    0.6897702813148499,
-                    3.2674505710601807,
-                    0.760517954826355
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Landing",
+        "ParentUID": 599838978,
+        "PrefabUID": 3109495015,
+        "Tag": "Default",
+        "UID": 2759962603
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    28.572031021118164,
+                    1.2180876731872559,
+                    19.66718292236328
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    2.9175522327423096,
+                    1.0,
+                    2.8576910495758057
                 ],
                 "Type": 1
             },
@@ -8692,14 +8723,271 @@
                 "ShowOBB": false,
                 "ShowVertexNormals": false,
                 "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 5.300000190734863,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Connected_Jumper": 345556983
+                    },
+                    {
+                        "Jump Duration": 2.0
+                    },
+                    {
+                        "Jump Height": 50.0
+                    }
+                ],
+                "Script Resource": 2619374344,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Landing1",
+        "Name": "Jumper",
         "ParentUID": 1010667305,
-        "PrefabUID": 0,
+        "PrefabUID": 3109495015,
         "Tag": "Primitive",
-        "UID": 3364926849
+        "UID": 2620851730
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Landing",
+        "ParentUID": 2620851730,
+        "PrefabUID": 3109495015,
+        "Tag": "Default",
+        "UID": 3222658362
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -32.4339599609375,
+                    1.2180663347244263,
+                    11.5797119140625
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    2.9175522327423096,
+                    1.0,
+                    2.8576910495758057
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 10,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 5.300000190734863,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Connected_Jumper": 2759962603
+                    },
+                    {
+                        "Jump Duration": 2.0
+                    },
+                    {
+                        "Jump Height": 50.0
+                    }
+                ],
+                "Script Resource": 2619374344,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Jumper",
+        "ParentUID": 1010667305,
+        "PrefabUID": 3109495015,
+        "Tag": "Primitive",
+        "UID": 1380025624
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Landing",
+        "ParentUID": 1380025624,
+        "PrefabUID": 3109495015,
+        "Tag": "Default",
+        "UID": 345556983
     }
 ]

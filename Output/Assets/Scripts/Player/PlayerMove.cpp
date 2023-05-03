@@ -298,13 +298,15 @@ bool PlayerMove::DashInput()
 
 void PlayerMove::LookAt(API_Vector3 target)
 {
-    float norm = sqrt(target.x * target.x + target.y * target.y);
-    API_Vector3 movDir;
-    movDir.x = target.x / norm;
-    movDir.y = 0.0f;
-    movDir.z = target.y / norm;
+    API_Vector2 movDir = {target.x, target.z};
 
-    transform.SetRotation(0.0f, atan2(movDir.x, movDir.z) * RADTODEG, 0.0f);
+    float norm = sqrt(target.x * target.x + target.y * target.y);
+    movDir /= norm;
+
+    transform.SetRotation(0.0f, atan2(movDir.x, movDir.y) * RADTODEG, 0.0f);
+
+    //Maintain Aiming
+    lastAimInput = movDir;
 }
 
 void PlayerMove::Aim()

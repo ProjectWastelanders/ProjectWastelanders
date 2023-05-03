@@ -66,14 +66,15 @@ void Jumper::SetupJump()
 {
 	if (isJumping) return;
 
-	//Stun & Animation
-	if (playerMoveScript != nullptr) {
-		playerMoveScript->openingChest = true;
-		playerMoveScript->PlayJumperAnim();
-	}
-
 	initialPos = player.GetTransform().GetGlobalPosition();
 	finalPos = otherJumper.GetGlobalPosition();
 	timeJumping = 0.0f;
 	isJumping = true;
+
+	//Stun & Animation
+	if (playerMoveScript != nullptr) {
+		playerMoveScript->openingChest = true;
+		playerMoveScript->PlayJumperAnim();
+		playerMoveScript->LookAt(finalPos);
+	}
 }

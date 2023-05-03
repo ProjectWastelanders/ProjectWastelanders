@@ -12,6 +12,7 @@ public:
 	virtual void Update() = 0;
 
 	bool isEnabled = true;
+	bool isActive = false;
 
 	std::string windowName = "DefaultWindow";
 };

@@ -513,6 +513,11 @@ void LayerEditor::S_ReimportAllAssets()
 	proj->RefreshAssets();
 }
 
+bool LayerEditor::S_GetWindowActive(ImWindowID id)
+{
+	return _imWindows[(uint)id]->isActive;
+}
+
 void LayerEditor::DrawMenuBar()
 {
 	if (ImGui::BeginMainMenuBar())

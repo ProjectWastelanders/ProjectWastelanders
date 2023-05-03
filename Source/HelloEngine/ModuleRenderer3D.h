@@ -22,6 +22,7 @@ public:
 	void ToggleVSync(bool isOn);
 
 	void ToggleOpenGLSystem(bool enable, int openGLMacro);
+	void SetShadows(bool value) { hasShadows = value; }
 
 	void ToggleOpenGLWireframe(bool enable);
 
@@ -34,6 +35,10 @@ public:
 	SDL_GLContext context;
 	bool isVSync = false;
 	bool isRenderingColliders;
+	bool hasShadows = false;
+
+private:
+	void ShadowRenderPass();
 
 private:
 	ModuleCamera3D* _cameras = nullptr;

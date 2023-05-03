@@ -27,6 +27,8 @@ void ImWindowScene::Update()
 {
     if (ImGui::Begin(windowName.c_str(), 0, ImGuiWindowFlags_MenuBar))
     {
+        isActive = true;
+
         if (ImGui::IsWindowFocused())
             LayerEditor::detectInput = true;
 
@@ -176,6 +178,7 @@ void ImWindowScene::Update()
     else
     {
         _sceneCamera->active = false;
+        isActive = false;
     }
 
     ImGui::End();

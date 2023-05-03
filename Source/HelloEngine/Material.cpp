@@ -215,7 +215,7 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 		case GL_SAMPLER_2D:
 			if (uni->data.name == "shadowMap")
 			{
-				shader->shader.SetTexture("shadowMap", Lighting::GetLightMap().shadowMap, 1);
+				shader->shader.SetTexture("shadowMap", Lighting::GetLightMap().shadowMap, 31);
 				toReturn = true;
 			}
 	}

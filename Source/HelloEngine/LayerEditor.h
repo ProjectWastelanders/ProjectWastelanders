@@ -68,6 +68,8 @@ public:
 	static void S_OpenShader(uint UID);
 	static void S_ReimportAllAssets();
 
+	static bool S_GetWindowActive(ImWindowID id);
+
 private:
 	void DrawMenuBar();
 

@@ -477,9 +477,10 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleMain"]["LifeTime"] = particleProps.Lifetime;
 		_j["ParticleModules"]["ModuleMain"]["Duration"] = ParticleEmitter.Duration;
 		_j["ParticleModules"]["ModuleMain"]["Delay"] = ParticleEmitter.StartDelay;
-		_j["ParticleModules"]["ModuleMain"]["Looping"] = ParticleEmitter.loop;
-		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
+		_j["ParticleModules"]["ModuleMain"]["Looping"] = ParticleEmitter.loop;	
 		_j["ParticleModules"]["ModuleMain"]["PlayOnAwake"] = ParticleEmitter.playOnAwake;
+		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
+		_j["ParticleModules"]["ModuleEmission"]["Enable"] = ParticleEmitter.enableEmissionModule;
 	}
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
@@ -530,10 +531,11 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	particleProps.Lifetime = j["ParticleModules"]["ModuleMain"]["LifeTime"];
 	ParticleEmitter.Duration = j["ParticleModules"]["ModuleMain"]["Duration"];
 	ParticleEmitter.DurationCpy = ParticleEmitter.Duration;
-	ParticleEmitter.ParticlesPerSecond = j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"];
 	ParticleEmitter.StartDelay = j["ParticleModules"]["ModuleMain"]["Delay"];
 	ParticleEmitter.playOnAwake = j["ParticleModules"]["ModuleMain"]["PlayOnAwake"];
 	ParticleEmitter.loop = j["ParticleModules"]["ModuleMain"]["Looping"];
+	ParticleEmitter.ParticlesPerSecond = j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"];
+	//ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	//size = j["ParticleVectorSize"];
 	//sizeCpy = j["ParticleVectorSize"];
 	bool enabled = j["Enabled"];

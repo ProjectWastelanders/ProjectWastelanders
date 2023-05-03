@@ -5,11 +5,13 @@
 
 #include "API/API.h"
 
-class BeamDmg : HelloBehavior
+class ThanosDmg : HelloBehavior
 {
 public:
 	void Start() override; 
 	void Update() override;
 	void OnCollisionEnter(API::API_RigidBody other);
+
+	float dmg = 0.0f;
 };
 

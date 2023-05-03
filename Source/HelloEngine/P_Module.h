@@ -5,7 +5,14 @@ class ParticleSystemComponent;
 enum class P_ModuleType
 {
 	MAIN,
+	EMISSION,
+	SHAPE,
 	NONE
+};
+
+enum class ShapeType {
+	NONE,
+	CIRCLE
 };
 
 class P_Module
@@ -20,6 +27,8 @@ public:
 	ParticleSystemComponent* component = nullptr;
 
 	P_ModuleType type;
+
+	ShapeType shapeType;
 
 	friend class ParticleSystemComponent;
 };

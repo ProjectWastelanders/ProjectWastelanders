@@ -175,6 +175,7 @@
     <ClCompile Include="API\API_String.cpp" />
     <ClCompile Include="API\API_ShaderComponent.cpp" />
     <ClCompile Include="P_ShapeModule.cpp" />
+    <ClCompile Include="P_CircleShape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -389,6 +390,7 @@
     <ClInclude Include="API\API_String.h" />
     <ClInclude Include="API\API_ShaderComponent.h" />
     <ClInclude Include="P_ShapeModule.h" />
+    <ClInclude Include="P_CircleShape.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

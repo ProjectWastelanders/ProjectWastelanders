@@ -4,6 +4,7 @@
 
 P_EmissionModule::P_EmissionModule()
 {
+	type = P_ModuleType::EMISSION;
 }
 
 P_EmissionModule::~P_EmissionModule()

@@ -8,6 +8,7 @@
 #include "LayerGame.h"
 #include "BillBoardComponent.h"
 #include "InstanceRenderer.h"
+#include "P_ShapeModule.h"
 
 ParticleManager::ParticleManager()
 {
@@ -90,8 +91,15 @@ void ParticleManager::Draw()
 				emitter->stop = true;
 			}
 
-			if (emitter->component != nullptr)
-				emitter->component->particleProps.position = emitter->component->_gameObject->transform->GetGlobalPosition();
+			if (emitter->component != nullptr) {
+				if (emitter->component->GetCurrentShape() == nullptr) {
+					emitter->component->particleProps.position = emitter->component->_gameObject->transform->GetGlobalPosition();
+				}
+				else {
+					emitter->component->particleProps.position = emitter->component->GetCurrentShape()->GetRandomPos();
+				}
+
+			}
 
 			if (emitter->enableEmissionModule)
 			{
@@ -115,16 +123,23 @@ void ParticleManager::Draw()
 			}
 			else{
 				if (!emitter->stop) {
-					emitter->EmitParticles(emitter->component->particleProps);
+					if (emitter->component->GetCurrentShape() != nullptr) {
+						if (emitter->component->GetCurrentShape()->IsInside(emitter->component->particleProps.position)) {
+							emitter->EmitParticles(emitter->component->particleProps);
+						}
+					}
+					else {
+						emitter->EmitParticles(emitter->component->particleProps);
+					}
 				}
 			}
 
 			emitter->UpdateParticles();
 
-			if (emitter->manager->isParticle && emitter->component->_resourceText && emitter->component->_resourceText->isTransparent)
+			/*if (emitter->manager->isParticle && emitter->component->_resourceText && emitter->component->_resourceText->isTransparent)
 			{
 				emitter->manager->DrawInstancedSorting();
-			}
+			}*/
 			
 			// DRAW EACH EMITTER
 			

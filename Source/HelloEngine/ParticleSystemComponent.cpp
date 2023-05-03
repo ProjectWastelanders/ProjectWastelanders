@@ -6,6 +6,8 @@
 #include "LayerEditor.h"
 #include "P_MainModule.h"
 #include "P_EmissionModule.h"
+#include "P_ShapeModule.h"
+#include "P_CircleShape.h"
 #include "BillBoardComponent.h"
 
 
@@ -26,6 +28,10 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 	P_Module* emissionModule = (P_Module*)new P_EmissionModule();
 	emissionModule->component = this;
 	ParticleModules.push_back(emissionModule);
+
+	P_Module* shapeModule = (P_Module*)new P_ShapeModule();
+	shapeModule->component = this;
+	ParticleModules.push_back(shapeModule);
 
 	_gameObject->AddComponentOfType(Type::BILLBOARD);
 
@@ -377,9 +383,7 @@ void ParticleSystemComponent::OnEditor()
 		for (int i = 0; i < ParticleModules.size(); i++)
 		{
 			ParticleModules[i]->OnEditor();
-		}
-		
-		
+		}		
 	}
 }
 
@@ -569,4 +573,48 @@ void ParticleSystemComponent::SetPlayOnScene(bool playonscene)
 void ParticleSystemComponent::SetPauseOnScene(bool pauseonscene)
 {
 	this->pauseOnScene = pauseonscene;
+}
+
+void ParticleSystemComponent::CreateCurrentShape(ShapeType type)
+{
+	switch (type) {
+	case ShapeType::NONE:
+		return;
+		break;
+	case ShapeType::CIRCLE:
+		P_Module* shapeModule = (P_Module*)new P_CircleShape();
+		shapeModule->component = this;
+		ParticleModules.push_back(shapeModule);
+		break;
+	}
+}
+
+P_ShapeModule* ParticleSystemComponent::GetCurrentShape()
+{
+	for (int i = 0; i < ParticleModules.size(); i++)
+	{
+		if (ParticleModules[i]->type == P_ModuleType::SHAPE)
+		{
+			if (ParticleModules[i]->shapeType != ShapeType::NONE) {				
+				return (P_ShapeModule*)ParticleModules[i];
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+void ParticleSystemComponent::DeleteCurrentShape()
+{
+	for (int i = 0; i < ParticleModules.size(); i++)
+	{
+		if (ParticleModules[i]->type == P_ModuleType::SHAPE)
+		{
+			if (ParticleModules[i]->shapeType != ShapeType::NONE) {
+				RELEASE(ParticleModules[i]);
+				ParticleModules.erase(ParticleModules.begin() + i);
+				break;
+			}
+		}
+	}
 }

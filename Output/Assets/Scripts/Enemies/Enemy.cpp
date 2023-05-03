@@ -31,7 +31,7 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     script->AddDragBoxTextureResource("Texture Bomb 4", &classInstance->textureBomb[3]);
     script->AddDragBoxTextureResource("Texture Bomb 5", &classInstance->textureBomb[4]);
     script->AddDragBoxTextureResource("Texture Bomb 6", &classInstance->textureBomb[5]);
-    script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
+   // script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
     //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
     return classInstance;
 }

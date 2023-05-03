@@ -18,19 +18,22 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
 void Chest::Start()
 {
     openChestTime = maxOpenChestTime;
+    openChestTimeBar = 0;
     opening = false;
 }
 
 void Chest::Update()
 {
-    guideButton.FillImage(openChestTime / maxOpenChestTime);
+    guideButton.FillImage(openChestTimeBar / maxOpenChestTime);
     if (opening)
     {
         openChestTime -= Time::GetRealTimeDeltaTime();
+        openChestTimeBar += Time::GetRealTimeDeltaTime();
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_UP)
         {
             if (playerMove) playerMove->StopOpenChestAnim();
             openChestTime = maxOpenChestTime;
+            openChestTimeBar = 0;
             opening = false;
         }
         if (openChestTime <= 0.0f)

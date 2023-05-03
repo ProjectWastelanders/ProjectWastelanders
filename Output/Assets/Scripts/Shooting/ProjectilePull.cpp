@@ -13,6 +13,12 @@ HELLO_ENGINE_API_C ProjectilePull* CreateProjectilePull(ScriptToInspectorInterfa
     script->AddDragInt("Shotgun Bomb Pull Size", &classInstance->shotgunBombPullSize);
     script->AddDragBoxPrefabResource("Shotgun Bomb Prefab", &classInstance->shotgunBombPrefab);
     script->AddDragBoxPrefabResource("Check Ricochet Traget Prefab", &classInstance->checkRicochetTargetsPrefab);
+    script->AddDragBoxTextureResource("Duals Projectile Texture", &classInstance->dualsTex);
+    script->AddDragBoxTextureResource("Semi Projectile Texture", &classInstance->semiTex);
+    script->AddDragBoxTextureResource("Auto Projectile Texture", &classInstance->autoTex);
+    script->AddDragBoxTextureResource("Burst Projectile Texture", &classInstance->burstTex);
+    script->AddDragBoxTextureResource("Shotgun Projectile Texture", &classInstance->shotgunTex);
+    script->AddDragBoxTextureResource("Ricochet Projectile Texture", &classInstance->ricochetTex);
     return classInstance;
 }
 
@@ -97,6 +103,7 @@ void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projecti
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(dualsTex);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -117,6 +124,7 @@ void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectile
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -137,6 +145,7 @@ void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float 
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -156,6 +165,7 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(autoTex);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -194,6 +204,7 @@ void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectil
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(burstTex);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -213,6 +224,7 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(shotgunTex);
 
     if (randomDirectionRange > 0.0f)
     {
@@ -275,6 +287,7 @@ void ProjectilePull::LauchProjectileRICOCHET(float projectileSpeed, float projec
     go.GetTransform().SetScale(projectileScale);
     go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
+    go.GetMaterialCompoennt().ChangeAlbedoTexture(ricochetTex);
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;

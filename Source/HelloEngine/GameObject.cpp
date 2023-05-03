@@ -84,8 +84,9 @@ void GameObject::DestroyComponent(Component* component)
 	{
 		if (_components[i] == component)
 		{
-			RELEASE(_components[i]);
+			Component* comp = _components[i];
 			_components.erase(_components.begin() + i);
+			RELEASE(comp);
 			break;
 		}
 	}

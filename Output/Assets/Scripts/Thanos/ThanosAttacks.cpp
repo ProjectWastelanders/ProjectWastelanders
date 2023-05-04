@@ -468,6 +468,9 @@ void ThanosAttacks::MeteorAttack() {
 	meteorRainTime += Time::GetDeltaTime();
 
 	if (meteorRainTime < 30.0f) {
+		/*for(int i = 0; i < 30; i++){
+			meteors[i].getTransform()Translate(0, -meteorRainSpeed * Time::GetDeltaTime(),0);
+		}*/
 		meteorRain.GetTransform().Translate(0, -meteorRainSpeed * Time::GetDeltaTime(), 0);
 	}
 	else {

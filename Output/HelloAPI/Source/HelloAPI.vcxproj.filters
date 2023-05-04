@@ -128,6 +128,10 @@
     <ClCompile Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.cpp" />
     <ClCompile Include="../../Assets/Scripts/Quests/ReachTheSpaceship.cpp" />
     <ClCompile Include="..\..\Assets\temp\LVL3_TESTING\Jumper.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
+    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.cpp" />
+    <ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
+    <ClCompile Include="..\..\Assets\UI\Select_Level\Weapon_Select.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -258,5 +262,9 @@
     <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.h" />
     <ClInclude Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.h" />
     <ClInclude Include="../../Assets/Scripts/Quests/ReachTheSpaceship.h" />
+    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.h" />
+    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.h" />
+    <ClInclude Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.h" />
+    <ClInclude Include="..\..\Assets\UI\Select_Level\Weapon_Select.h" />
   </ItemGroup>
 </Project>

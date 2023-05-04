@@ -72,7 +72,5 @@ void Weapon_Select::Update()
 	case 0:
 		infoWeapon.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(info4);
 		break;
-	default:
-		break;
 	}
 }

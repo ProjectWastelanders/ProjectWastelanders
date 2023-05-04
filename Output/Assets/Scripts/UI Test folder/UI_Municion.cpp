@@ -86,11 +86,10 @@ void UI_Municion::Update()
         case 2:
         case 3:
         case 4:
-        case 5:
             equipedIndex = 1;
             break;
+        case 5:
         case 6:
-        case 7:
             equipedIndex = 2;
             break;
         default:

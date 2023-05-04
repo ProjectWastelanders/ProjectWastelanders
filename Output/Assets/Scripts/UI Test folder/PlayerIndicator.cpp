@@ -20,7 +20,7 @@ void PlayerIndicator::Start()
         movementReductionY = 122.53;
     }
 
-    gameObject.GetTransform().SetPosition(API_QuickSave::GetFloat("PlayerIndicatorPosX"), API_QuickSave::GetFloat("PlayerIndicatorPosY"), 0);
+    gameObject.GetTransform().SetPosition(API_QuickSave::GetFloat("PlayerIndicatorPosX"), API_QuickSave::GetFloat("PlayerIndicatorPosY"), -0.002);
 
     originIndicatorPos = API_Vector2(gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y);
     originPlayerPos = API_Vector2(player.GetTransform().GetGlobalPosition().x, player.GetTransform().GetGlobalPosition().z);
@@ -32,7 +32,7 @@ void PlayerIndicator::Update()
     API_Vector2 variation = originPlayerPos - API_Vector2(player.GetTransform().GetGlobalPosition().x, player.GetTransform().GetGlobalPosition().z);
     float newPosX = originIndicatorPos.x + (variation.x / movementReductionX);
     float newPosY = originIndicatorPos.y - (variation.y / movementReductionY);
-    gameObject.GetTransform().SetPosition(newPosX, newPosY, 0.0f);
+    gameObject.GetTransform().SetPosition(newPosX, newPosY, -0.002f);
 }
 
 void PlayerIndicator::SavePosition()
@@ -42,7 +42,7 @@ void PlayerIndicator::SavePosition()
     API_Vector2 variation = originPlayerPos - API_Vector2(player.GetTransform().GetGlobalPosition().x, player.GetTransform().GetGlobalPosition().z);
     float newPosX = originIndicatorPos.x + (variation.x / movementReductionX);
     float newPosY = originIndicatorPos.y - (variation.y / movementReductionY);
-    gameObject.GetTransform().SetPosition(newPosX, newPosY, 0.0f);
+    gameObject.GetTransform().SetPosition(newPosX, newPosY, -0.002f);
 
     API_QuickSave::SetFloat("PlayerIndicatorPosX", gameObject.GetTransform().GetGlobalPosition().x);
     API_QuickSave::SetFloat("PlayerIndicatorPosY", gameObject.GetTransform().GetGlobalPosition().y);

@@ -4,6 +4,7 @@
 #include "Macro.h"
 
 #include "API/API.h"
+#include "API/API_UIText.h"
 
 
 class Feedback_Level_Select : HelloBehavior
@@ -42,6 +43,9 @@ public:
 	API_UICheckBox level3;
 	API_UICheckBox level4;
 	API_UICheckBox currentLevel;
+
+	API_UIText casettesNumberText;
+	int casettesNumber;
 
 	uint mainMision1;
 	uint mainMision2;

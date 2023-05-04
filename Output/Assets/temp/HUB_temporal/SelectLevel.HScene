@@ -31,7 +31,7 @@
         "UID": 931044216
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -55,14 +55,14 @@
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Canvas",
+        "Name": "Level Select",
         "ParentUID": 931044216,
         "PrefabUID": 0,
         "Tag": "UI",
         "UID": 582930903
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -101,7 +101,7 @@
         "UID": 1086417859
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -140,7 +140,7 @@
         "UID": 3652499762
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -183,7 +183,7 @@
         "UID": 4017731757
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -227,7 +227,7 @@
         "UID": 1086020048
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -271,7 +271,7 @@
         "UID": 355431247
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -315,7 +315,7 @@
         "UID": 186048598
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -359,7 +359,7 @@
         "UID": 2549467301
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -399,7 +399,7 @@
         "UID": 700667039
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -438,7 +438,7 @@
         "UID": 1649303334
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -477,7 +477,7 @@
         "UID": 1827776769
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -516,7 +516,7 @@
         "UID": 3502272900
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -556,7 +556,7 @@
         "UID": 4079862537
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -595,7 +595,7 @@
         "UID": 1789771596
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -634,7 +634,7 @@
         "UID": 3767393015
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -673,7 +673,7 @@
         "UID": 465424074
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -713,7 +713,7 @@
         "UID": 2547002226
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -752,7 +752,7 @@
         "UID": 3273927335
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -792,7 +792,7 @@
         "UID": 321702245
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -831,7 +831,7 @@
         "UID": 693743968
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -870,7 +870,7 @@
         "UID": 253572886
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -910,7 +910,7 @@
         "UID": 181855838
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -949,7 +949,7 @@
         "UID": 3860526589
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -977,7 +977,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.05000000074505806,
                 "PositionY": 0.7200000286102295,
                 "Scale": 0.20000000298023224,
@@ -1102,6 +1102,342 @@
                     },
                     {
                         "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
                     }
                 ],
                 "Script Resource": 4223611270,
@@ -1156,5 +1492,575 @@
         "PrefabUID": 0,
         "Tag": "Primitive",
         "UID": 4009129052
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon Select",
+        "ParentUID": 931044216,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3841754865
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Main Panel WS",
+        "ParentUID": 3841754865,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3921715493
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1909488878,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BackGround",
+        "ParentUID": 3921715493,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2022065060
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.44999998807907104,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon Info",
+        "ParentUID": 3921715493,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 175283391
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    1198555689,
+                    716121440,
+                    2200218208,
+                    1305442154
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "List Weapons",
+        "ParentUID": 3921715493,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1566525326
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    0.44999998807907104,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon 1",
+        "ParentUID": 1566525326,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1198555689
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon 2",
+        "ParentUID": 1566525326,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 716121440
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    -0.15000000596046448,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon 3",
+        "ParentUID": 1566525326,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2200218208
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    -0.44999998807907104,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon 4",
+        "ParentUID": 1566525326,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1305442154
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Proceed Panel WS",
+        "ParentUID": 3841754865,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2320120455
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1909488878,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background",
+        "ParentUID": 2320120455,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2885814734
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.30000001192092896,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon Selected",
+        "ParentUID": 2320120455,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 902259293
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    1838266583
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Button List",
+        "ParentUID": 2320120455,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3439304181
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    -0.5,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Only Button",
+        "ParentUID": 3439304181,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1838266583
     }
 ]

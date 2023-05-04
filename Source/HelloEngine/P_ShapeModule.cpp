@@ -65,6 +65,30 @@ void P_ShapeModule::OnEditor()
                             }
                         }
                         break;
+                    case 4:
+                        if (component->GetCurrentShape() == nullptr) {
+                            component->CreateCurrentShape(ShapeType::CUBE);
+                        }
+                        else {
+                            if (component->GetCurrentShape()->shapeType != ShapeType::CUBE)
+                            {
+                                component->DeleteCurrentShape();
+                                component->CreateCurrentShape(ShapeType::CUBE);
+                            }
+                        }
+                        break;
+                    case 5:
+                        if (component->GetCurrentShape() == nullptr) {
+                            component->CreateCurrentShape(ShapeType::CONE);
+                        }
+                        else {
+                            if (component->GetCurrentShape()->shapeType != ShapeType::CONE)
+                            {
+                                component->DeleteCurrentShape();
+                                component->CreateCurrentShape(ShapeType::CONE);
+                            }
+                        }
+                        break;
                     }
                 }
             }

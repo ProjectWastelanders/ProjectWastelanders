@@ -14,7 +14,9 @@ enum class ShapeType {
 	NONE,
 	CIRCLE,
 	RECTANGLE,
-	SPHERE
+	SPHERE,
+	CUBE,
+	CONE
 };
 
 class P_Module

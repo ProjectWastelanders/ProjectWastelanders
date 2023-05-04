@@ -24,15 +24,18 @@ void P_SphereShape::OnEditor()
 float3 P_SphereShape::GetRandomPos()
 {
 	LCG random;
+
 	center = component->GetGameObject()->transform->GetGlobalPosition();
 
-	float angle = random.Float() * (2 * math::pi);
-	float r = random.Float() * radius;
-	float p = random.Float() * math::pi;
+	float x, y, z;
 
-	float x = r * sin(p) * cos(angle);
-	float y = r * sin(p) * sin(angle);
-	float z = r * cos(p);
+	while (true) {
+		x = random.Float(-radius, radius);
+		y = random.Float(-radius, radius);
+		z = random.Float(-radius, radius);
+
+		if (sqrt((x * x) + (y * y) + (z * z)) < radius) break;
+	}
 
 	x += center.x;
 	y += center.y;
@@ -43,10 +46,11 @@ float3 P_SphereShape::GetRandomPos()
 
 bool P_SphereShape::IsInside(float3 position)
 {
-	center = component->GetGameObject()->transform->GetGlobalPosition();
+	/*center = component->GetGameObject()->transform->GetGlobalPosition();
 
 	float distance = (position - component->GetGameObject()->transform->GetGlobalPosition()).Normalize();
 
-	return distance <= radius;
+	return distance <= radius;*/
+	return true;
 }
 

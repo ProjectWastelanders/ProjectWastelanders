@@ -178,6 +178,8 @@
     <ClCompile Include="P_CircleShape.cpp" />
     <ClCompile Include="P_RectangleShape.cpp" />
     <ClCompile Include="P_SphereShape.cpp" />
+    <ClCompile Include="P_CubeShape.cpp" />
+    <ClCompile Include="P_ConeShape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -395,6 +397,8 @@
     <ClInclude Include="P_CircleShape.h" />
     <ClInclude Include="P_RectangleShape.h" />
     <ClInclude Include="P_SphereShape.h" />
+    <ClInclude Include="P_CubeShape.h" />
+    <ClInclude Include="P_ConeShape.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

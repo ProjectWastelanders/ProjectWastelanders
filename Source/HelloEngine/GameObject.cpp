@@ -56,13 +56,13 @@ GameObject::~GameObject()
 	{
 		RELEASE(_components[i]);
 	}
-	_components.clear();
+	
 
 	for (int i = 0; i < _children.size(); i++)
 	{
 		RELEASE(_children[i]);
 	}
-	_children.clear();
+	
 }
 
 void GameObject::DestroyComponent(Component::Type type)
@@ -80,6 +80,8 @@ void GameObject::DestroyComponent(Component::Type type)
 
 void GameObject::DestroyComponent(Component* component)
 {
+	if (component == nullptr)
+		return;
 	for (int i = 0; i < _components.size(); i++)
 	{
 		if (_components[i] == component)

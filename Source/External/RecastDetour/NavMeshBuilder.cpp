@@ -74,6 +74,8 @@ NavMeshBuilder::~NavMeshBuilder()
 	CleanUp();
 	dtFreeNavMesh(m_navMesh);
 	m_navMesh = nullptr;
+	dtFreeNavMeshQuery(m_navQuery);
+	m_navQuery = nullptr;
 }
 
 void NavMeshBuilder::CleanUp()

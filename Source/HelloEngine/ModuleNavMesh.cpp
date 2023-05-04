@@ -274,13 +274,17 @@ void ModuleNavMesh::S_Load(std::string navMeshPath)
 
 	S_ResetNavMeshes();
 
-	dtNavMesh* navMesh = dtAllocNavMesh();
+	//dtNavMesh* navMesh = dtAllocNavMesh();
 
-	if (!NavMeshImporter::LoadNavMesh(navMeshPath.c_str(), navMesh, _buildSettings, _geometry))
+	if (!NavMeshImporter::LoadNavMesh(navMeshPath.c_str(), _buildSettings, _geometry))
 	{
 		Console::S_Log("PROBLEM LOADING THE NAVMESH: There isn't a NavMesh baked for this scene!", LogType::WARNING);
 		return;
 	}
+
+	//dtFreeNavMesh(navMesh);
+
+	return;
 
 	_geometry->SetChunkyMesh();
 

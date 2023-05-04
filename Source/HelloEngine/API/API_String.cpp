@@ -2,6 +2,11 @@
 #include "API_String.h"
 
 
+API::API_String::API_String()
+{
+
+}
+
 API::API_String::API_String(const char* s)
 {
     len = strlen(s);
@@ -19,6 +24,8 @@ API::API_String::API_String(const API::API_String& rhs)
 API::API_String::~API_String()
 {
     delete[] str;
+    len = 0;
+    str = nullptr;
 }
 
 int API::API_String::length() const

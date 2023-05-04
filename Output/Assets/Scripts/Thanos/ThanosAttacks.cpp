@@ -36,7 +36,12 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 
 	script->AddDragBoxGameObject("Meteor Rain", &classInstance->meteorRain);
 
-	script->AddDragBoxGameObject("AreaDmg", &classInstance->area);
+	script->AddDragBoxGameObject("Meteor Rain", &classInstance->meteorRain);
+
+	script->AddDragBoxGameObject("Laser Aim Position", &classInstance->laserPosition);
+	script->AddDragBoxParticleSystem("Laser Particle System", &classInstance->laserPS);
+	script->AddDragBoxGameObject("Laser GameObject", &classInstance->laserGO);
+
 
 
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
@@ -59,6 +64,7 @@ void ThanosAttacks::Start()
 	bullet2.SetActive(false);
 	bullet3.SetActive(false);
 	area.SetActive(false);
+	laserGO.SetActive(false);
 
 	bullets[0] = bullet1;
 	bullets[1] = bullet2;
@@ -150,12 +156,17 @@ void ThanosAttacks::Update()
 			charge += Time::GetDeltaTime();
 			if (charge > 2.0f) {
 				charge = 0.0f;
-				if (attackType > 66) thanosState = THANOS_STATE::BURST;
-				if (attackType <= 66 && attackType > 33) thanosState = THANOS_STATE::BEAM;
-				if (attackType < 33) {
+				if (attackType > 75) thanosState = THANOS_STATE::BURST;
+				if (attackType <= 75 && attackType > 50) thanosState = THANOS_STATE::BEAM;
+				if (attackType < 50 && attackType > 25) {
 					playerPosition = player.GetTransform().GetGlobalPosition();
 					thanosPosition = gameObject.GetTransform().GetGlobalPosition();
 					thanosState = THANOS_STATE::DASH2;
+				}
+				if (attackType <= 25) {
+					playerPosition = player.GetTransform().GetGlobalPosition();
+					//laserCilinder.SetActive(true);
+					thanosState = THANOS_STATE::LASER;
 				}
 			}
 
@@ -235,7 +246,29 @@ void ThanosAttacks::Update()
 			}
 
 			break;
+		case THANOS_STATE::LASER:
+			
+			charge += Time::GetDeltaTime();
 
+			Seek2(&laserPosition, player.GetTransform().GetGlobalPosition(), laserSpeed / 6);
+
+			if (charge > 0.5f) {
+				
+				Rotate2(laserPosition.GetTransform().GetGlobalPosition(), 0, &laserGO);
+				laserPS.Play();
+				laserPS.SetInitialSpeed(boss.GetTransform().GetForward() * 40.0f);
+				laserGO.SetActive(true);
+			}
+
+			if (charge > 10.5f) {
+				thanosState = THANOS_STATE::IDLE;
+				laserPS.StopEmitting();
+				charge = 0.0f;
+				laserGO.SetActive(false);
+				isAttacking = false;
+			}
+
+			break;
 		default:
 			break;
 		}
@@ -346,15 +379,17 @@ void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float spee
 
 	if (direction.x < 0.15 && direction.x > -0.15 && direction.y < 0.15 && direction.y && direction.z < 0.15 && direction.z) {
 	
-		if (areaDmg == false) {
-			areaDmg = true;
-			area.SetActive(true);
-		}
-		else {
-			thanosState = THANOS_STATE::IDLE;
-			isAttacking = false;
-			areaDmg = false;
-			charge = 0.0f;
+		if (thanosState == THANOS_STATE::DASH2) {
+			if (areaDmg == false) {
+				areaDmg = true;
+				area.SetActive(true);
+			}
+			else if(thanosState != THANOS_STATE::LASER){
+				thanosState = THANOS_STATE::IDLE;
+				isAttacking = false;
+				areaDmg = false;
+				charge = 0.0f;
+			}
 		}
 	
 	}
@@ -413,6 +448,22 @@ float ThanosAttacks::Rotate(API_Vector3 target, float _angle, API_GameObject* ro
 	return _angle;
 }
 
+float ThanosAttacks::Rotate2(API_Vector3 target, float _angle, API_GameObject* rotator)
+{
+	API_Vector2 lookDir;
+	lookDir.x = (target.z - rotator->GetTransform().GetGlobalPosition().z);
+	lookDir.y = (target.y - rotator->GetTransform().GetGlobalPosition().y);
+
+	API_Vector2 normLookDir;
+	normLookDir.x = lookDir.x / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
+	normLookDir.y = lookDir.y / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
+	_angle = 0;
+	_angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
+	rotator->GetTransform().SetRotation(_angle - 90, 0, 0);
+
+	return _angle;
+}
+
 void ThanosAttacks::MeteorAttack() {
 	meteorRainTime += Time::GetDeltaTime();
 
@@ -426,4 +477,15 @@ void ThanosAttacks::MeteorAttack() {
 		isRainingMeteors = false;
 		meteorRainCooldown = 0.0f;
 	}
+}
+
+void ThanosAttacks::LookAt(API_Vector3 tarPos, API_GameObject* go)
+{
+	float norm = sqrt(tarPos.x * tarPos.x + tarPos.y * tarPos.y);
+	API_Vector3 movDir;
+	movDir.x = tarPos.x / norm;
+	movDir.y = 0.0f;
+	movDir.z = tarPos.y / norm;
+
+	go->GetTransform().SetRotation(0.0f, atan2(movDir.x, movDir.z), 0.0f);
 }

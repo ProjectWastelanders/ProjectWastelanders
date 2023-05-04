@@ -21,6 +21,7 @@ public:
 	void Seek(API_GameObject* seeker, API_Vector3 target, float speed);
 	void Seek2(API_GameObject* seeker, API_Vector3 target, float speed);
 	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
+	void LookAt(API_Vector3 tarPos, API_GameObject* go);
 
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
@@ -58,6 +59,7 @@ public:
 		BURST,
 		BEAM,
 		DASH2,
+		LASER,
 	};
 
 	THANOS_STATE thanosState;
@@ -114,6 +116,7 @@ public:
 	float beamSpeed = 0.75f;
 
 	float Rotate(API_Vector3 target, float _angle, API_GameObject* rotator);
+	float Rotate2(API_Vector3 target, float _angle, API_GameObject* rotator);
 
 	float angle = 0.0f;
 
@@ -131,5 +134,10 @@ public:
 	API_GameObject area;
 	float dashSpeed = 1.0f;
 	API_Vector3 thanosPosition;
+
+	API_GameObject laserPosition;
+	float laserSpeed = 1.5f;
+	API_GameObject laserGO;
+	API_ParticleSystem laserPS;
 };
 

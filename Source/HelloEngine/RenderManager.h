@@ -43,6 +43,7 @@ struct RenderEntry
 	uint resMat = 0;
 	ResourceMaterial* material = nullptr;
 	Mesh mesh;
+	float distance = 0.0f;
 };
 
 /// <summary>

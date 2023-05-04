@@ -258,13 +258,14 @@ void ParticleSystemComponent::OnEditor()
 		{
 			StopEmitter();
 		}
-		if (ImGui::DragInt("Particle Vector Size", &size, 1.0f, 1, 2000))
+		if (ImGui::DragInt("Particle Vector Size", &size, 1.0f, 1, 10000))
 		{
 			if (!LayerGame::S_IsPlaying() && !GetPlayOnScene() && !GetPauseOnScene())
 			{
 				ParticleEmitter.SetParticlePoolSize(size);
 				sizeCpy = size;
 				CreateEmitterMesh(_resourceUID);
+				//ChangeEmitterMeshTexture((ResourceTexture*)ModuleResourceManager::S_LoadResource(_resourceTextUID));
 			}
 			else
 			{

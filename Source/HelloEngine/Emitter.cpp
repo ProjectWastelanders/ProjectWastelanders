@@ -131,6 +131,8 @@ void Emitter::UpdateParticles()
 			meshReference.draw = false;
 
 			ParticleList[i].Active = false;
+			
+			//manager->isParticle = false;
 			continue;
 		}
 

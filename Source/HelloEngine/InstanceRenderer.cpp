@@ -270,33 +270,41 @@ void InstanceRenderer::DrawInstancedSorting()
 {
 
     CameraObject* currentCamera = Application::Instance()->camera->currentDrawingCamera;
+    float3 cameraPos = currentCamera->cameraFrustum.pos;
 
-    std::map<float, RenderEntry> _orderedMeshes;
+    std::vector<RenderEntry> _orderedMeshes;
 
     glDisable(GL_DEPTH_TEST);
 
     // Draw transparent objects with a draw call per mesh.
-    for (auto& entry : meshes)
+    for (const auto& entry : meshes)
     {
-        float3 cameraPos = currentCamera->cameraFrustum.pos;
-        float distance = entry.second.mesh.modelMatrix.Transposed().TranslatePart().DistanceSq(currentCamera->cameraFrustum.pos);
-        _orderedMeshes.emplace(std::make_pair(distance, entry.second));
+        float distance = entry.second.mesh.modelMatrix.Transposed().TranslatePart().DistanceSq(cameraPos);
+        //_orderedMeshes.emplace(std::make_pair(distance, entry.second));
+        _orderedMeshes.emplace_back(entry.second);
+        _orderedMeshes.back().distance = distance;
     }
 
-    for (auto mesh = _orderedMeshes.rbegin(); mesh != _orderedMeshes.rend(); mesh++)
+
+    // Sort the vector by distance, in descending order
+    std::sort(_orderedMeshes.begin(), _orderedMeshes.end(), [](const RenderEntry& a, const RenderEntry& b) {
+        return a.distance > b.distance;
+    });
+
+    for (auto mesh = _orderedMeshes.begin(); mesh != _orderedMeshes.end(); mesh++)
     {
-        RenderUpdateState state = mesh->second.mesh.Update();
+        RenderUpdateState state = mesh->mesh.Update();
         if (state == RenderUpdateState::NODRAW)
             continue;
 
         if (state == RenderUpdateState::SELECTED)
         {
-            Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh->second.mesh);
+            Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh->mesh);
         }
 
-        modelMatrices.push_back(mesh->second.mesh.modelMatrix); // Insert updated matrices
-        textureIDs.push_back(mesh->second.mesh.OpenGLTextureID);
-        mesh->second.mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+        modelMatrices.push_back(mesh->mesh.modelMatrix); // Insert updated matrices
+        textureIDs.push_back(mesh->mesh.OpenGLTextureID);
+        mesh->mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
     }
 
     if (!modelMatrices.empty())
@@ -333,6 +341,11 @@ void InstanceRenderer::DrawInstancedSorting()
     }
 
     glEnable(GL_DEPTH_TEST);
+
+    // Reset model matrices.
+    modelMatrices.clear();
+    textureIDs.clear();
+    TextureManager::UnBindTextures();
 }
 
 void InstanceRenderer::SetAs2D()

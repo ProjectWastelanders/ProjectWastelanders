@@ -23,7 +23,7 @@ void P_CubeShape::OnEditor()
 	{
 		ImGui::DragFloat("Side X", &c1);
 		ImGui::DragFloat("Side Y", &c2);
-		ImGui::DragFloat("Side Z", &c2);
+		ImGui::DragFloat("Side Z", &c3);
 	}
 }
 

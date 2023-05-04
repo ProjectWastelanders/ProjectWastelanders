@@ -13,7 +13,8 @@ enum class P_ModuleType
 enum class ShapeType {
 	NONE,
 	CIRCLE,
-	RECTANGLE
+	RECTANGLE,
+	SPHERE
 };
 
 class P_Module

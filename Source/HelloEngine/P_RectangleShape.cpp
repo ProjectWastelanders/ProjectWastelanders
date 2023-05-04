@@ -7,6 +7,9 @@ P_RectangleShape::P_RectangleShape()
 {
 	type = P_ModuleType::SHAPE;
 	shapeType = ShapeType::RECTANGLE;
+
+	c1 = 10;
+	c2 = 10;
 }
 
 P_RectangleShape::~P_RectangleShape()

@@ -53,6 +53,18 @@ void P_ShapeModule::OnEditor()
                             }
                         }
                         break;
+                    case 3:
+                        if (component->GetCurrentShape() == nullptr) {
+                            component->CreateCurrentShape(ShapeType::SPHERE);
+                        }
+                        else {
+                            if (component->GetCurrentShape()->shapeType != ShapeType::SPHERE)
+                            {
+                                component->DeleteCurrentShape();
+                                component->CreateCurrentShape(ShapeType::SPHERE);
+                            }
+                        }
+                        break;
                     }
                 }
             }

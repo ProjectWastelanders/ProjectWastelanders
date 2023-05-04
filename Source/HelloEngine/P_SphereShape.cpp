@@ -1,45 +1,47 @@
 #include "Headers.h"
-#include "P_CircleShape.h"
+#include "P_SphereShape.h"
 #include "ParticleSystemComponent.h"
 #include "GameObject.h"
 
-P_CircleShape::P_CircleShape()
+P_SphereShape::P_SphereShape()
 {
 	type = P_ModuleType::SHAPE;
-	shapeType = ShapeType::CIRCLE;
+	shapeType = ShapeType::SPHERE;
 
 	radius = 10;
 }
 
-P_CircleShape::~P_CircleShape()
+P_SphereShape::~P_SphereShape()
 {
 }
 
-void P_CircleShape::OnEditor()
+void P_SphereShape::OnEditor()
 {
-	if (ImGui::CollapsingHeader("Circle Shape Emitter"))
-	ImGui::DragFloat("Radius", &radius);
+	if (ImGui::CollapsingHeader("Sphere Shape Emitter"))
+		ImGui::DragFloat("Radius", &radius);
 }
 
-float3 P_CircleShape::GetRandomPos()
+float3 P_SphereShape::GetRandomPos()
 {
 	LCG random;
 	center = component->GetGameObject()->transform->GetGlobalPosition();
 
 	float angle = random.Float() * (2 * math::pi);
 	float r = random.Float() * radius;
+	float p = random.Float() * math::pi;
 
-	float x = r * cos(angle);
-	float y = 0;
-	float z = r * sin(angle);
+	float x = r * sin(p) * cos(angle);
+	float y = r * sin(p) * sin(angle);
+	float z = r * cos(p);
 
 	x += center.x;
+	y += center.y;
 	z += center.z;
 
 	return float3(x, y, z);
 }
 
-bool P_CircleShape::IsInside(float3 position)
+bool P_SphereShape::IsInside(float3 position)
 {
 	center = component->GetGameObject()->transform->GetGlobalPosition();
 
@@ -47,3 +49,4 @@ bool P_CircleShape::IsInside(float3 position)
 
 	return distance <= radius;
 }
+

@@ -9,6 +9,7 @@
 #include "P_ShapeModule.h"
 #include "P_CircleShape.h"
 #include "P_RectangleShape.h"
+#include "P_SphereShape.h"
 #include "BillBoardComponent.h"
 
 
@@ -595,6 +596,13 @@ void ParticleSystemComponent::CreateCurrentShape(ShapeType type)
 		P_Module* rectangleShape = (P_Module*)new P_RectangleShape();
 		rectangleShape->component = this;
 		ParticleModules.push_back(rectangleShape); 
+	}
+	break;
+	case ShapeType::SPHERE:
+	{
+		P_Module* sphereShape = (P_Module*)new P_SphereShape();
+		sphereShape->component = this;
+		ParticleModules.push_back(sphereShape);
 	}
 	break;
 	}

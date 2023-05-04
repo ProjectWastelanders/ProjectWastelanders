@@ -11,6 +11,8 @@ P_ConeShape::P_ConeShape()
 	radius = 10;
 	height = 20;
 	
+	dir = 2;
+	invert = false;
 }
 
 P_ConeShape::~P_ConeShape()
@@ -19,8 +21,23 @@ P_ConeShape::~P_ConeShape()
 
 void P_ConeShape::OnEditor()
 {
-	if (ImGui::CollapsingHeader("Cube Shape Emitter"))
+	if (ImGui::CollapsingHeader("Cone Shape Emitter"))
 	{
+		ImGui::Text("Cone Direction");
+		ImGui::SameLine();
+		ImGui::Spacing();
+		ImGui::Checkbox("Invert", &invert);
+		if (ImGui::Button(" X ")) {
+			dir = 1;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button(" Y ")) {
+				dir = 2;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button(" Z ")) {
+				dir = 3;
+		}
 		ImGui::DragFloat("Radius", &radius);
 		ImGui::DragFloat("Height", &height);
 	}
@@ -38,14 +55,52 @@ float3 P_ConeShape::GetRandomPos()
 
 
 	float x = r * cos(angle);
-	float y = h;
+	float y;
+	if (invert) {
+		y = -h;
+	}
+	else {
+		y = h;
+	}
 	float z = r * sin(angle);
 	
-	x += center.x;
-	y += center.y;
-	z += center.z;
+	//x += center.x;
+	//y += center.y;
+	//z += center.z;
 
-	return float3(x, y, z);
+	switch (dir)
+	{
+	case 1:
+	{
+		x += center.y;
+		y += center.x;
+		z += center.z;
+		
+		return float3(y, x, z);
+		
+	}		
+		break;
+	case 2:
+	{
+		x += center.x;
+		y += center.y;
+		z += center.z;
+		
+		return float3(x, y, z);
+	}		
+		break;
+	case 3:
+	{
+		x += center.x;
+		y += center.z;
+		z += center.y;
+
+		return float3(x, z, y);
+	}		
+		break;
+	}
+
+	//return float3(x, y, z);
 }
 
 bool P_ConeShape::IsInside(float3 position)

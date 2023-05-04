@@ -11,7 +11,9 @@ public:
 	float3 GetRandomPos() override;
 	bool IsInside(float3 position) override;
 
-	float alpha, radius, height;
+	float radius, height;
 	float3 center;
+	bool invert;
+	int dir; //1 = X ; 2 = Y ; 3 = Z
 };
 

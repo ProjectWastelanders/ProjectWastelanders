@@ -124,7 +124,7 @@ bool NavMeshImporter::SaveNavMesh(const char* assets_path, const dtNavMesh* cons
 	return true;
 }
 
-bool NavMeshImporter::LoadNavMesh(const char* assets_path, dtNavMesh* const navMesh, BuildSettings* const buildSettings, InputGeom* const geom)
+bool NavMeshImporter::LoadNavMesh(const char* assets_path, BuildSettings* const buildSettings, InputGeom* const geom)
 {
 	char* buffer = nullptr;
 
@@ -159,8 +159,8 @@ bool NavMeshImporter::LoadNavMesh(const char* assets_path, dtNavMesh* const navM
 		buildSettings->tileSize = data["buildSetting"]["tileSize"];
 	}
 
-	if (!navMesh)
-		return false;
+	//if (!navMesh)
+	//	return false;
 
 	NavMeshSetHeader header;
 	header.numTiles = data["navMeshSetHeader"]["numTiles"];
@@ -172,20 +172,20 @@ bool NavMeshImporter::LoadNavMesh(const char* assets_path, dtNavMesh* const navM
 	header.params.maxTiles = data["navMeshSetHeader"]["params"]["maxTiles"];
 	header.params.maxPolys = data["navMeshSetHeader"]["params"]["maxPolys"];
 
-	dtStatus status = navMesh->init(&header.params);
+	//dtStatus status = navMesh->init(&header.params);
 
-	if (dtStatusFailed(status))
-		return false;
+	/*if (dtStatusFailed(status))
+		return false;*/
 
 	// Load tiles
-	for (int i = 0; i < header.numTiles; ++i)
-	{
-		dtTileRef tr = data["tiles"][i]["tileRef"];
-		int tsize = data["tiles"][i]["dataSize"];
-		std::vector<unsigned char>bytes = data["tiles"][i]["data"];
+	//for (int i = 0; i < header.numTiles; ++i)
+	//{
+	//	dtTileRef tr = data["tiles"][i]["tileRef"];
+	//	int tsize = data["tiles"][i]["dataSize"];
+	//	std::vector<unsigned char>bytes = data["tiles"][i]["data"];
 
-		navMesh->addTile(bytes.data(), tsize, DT_TILE_FREE_DATA, tr, 0);
-	}
+	//	navMesh->addTile(bytes.data(), tsize, DT_TILE_FREE_DATA, tr, 0);
+	//}
 
 	// Load geom
 	if (data.contains("geom"))

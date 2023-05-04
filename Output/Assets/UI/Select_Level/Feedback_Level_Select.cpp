@@ -15,6 +15,8 @@ HELLO_ENGINE_API_C Feedback_Level_Select* CreateFeedback_Level_Select(ScriptToIn
     script->AddDragBoxUICheckBox("Level 3", &classInstance->level3);
     script->AddDragBoxUICheckBox("Level 4", &classInstance->level4);
 
+    script->AddDragBoxUIText("Text Casette", &classInstance->casettesNumberText);
+
     script->AddDragBoxGameObject("Check Main Mision", &classInstance->checkMainMision1);
     script->AddDragBoxGameObject("Check Secundary Mision 1", &classInstance->checkSecundaryMision1);
     script->AddDragBoxGameObject("Check Secundary Mision 2", &classInstance->checkSecundaryMision2);
@@ -64,6 +66,7 @@ void Feedback_Level_Select::Start()
     currentLevel.SetActive(true);
     planet_Name.SetActive(false);
     LevelSelect();
+    SetCurrentLevel();
 }
 void Feedback_Level_Select::Update()
 {
@@ -181,6 +184,8 @@ void Feedback_Level_Select::OnCharge()
 
 void Feedback_Level_Select::SetCurrentLevel()
 {
+    casettesNumber = 0;
+
     switch (indexLevles)
     {
     case 3:
@@ -191,6 +196,21 @@ void Feedback_Level_Select::SetCurrentLevel()
 
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map1);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet1);
+
+        if (API_QuickSave::GetBool("level1_casette1"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level1_casette2"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level1_casette3"))
+        {
+            casettesNumber++;
+        }
 
         if (API_QuickSave::GetBool("mision_LikeThe80", false))
         {
@@ -220,6 +240,21 @@ void Feedback_Level_Select::SetCurrentLevel()
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map2);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet2);
 
+        if (API_QuickSave::GetBool("level2_casette1"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level2_casette2"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level2_casette3"))
+        {
+            casettesNumber++;
+        }
+
         if (API_QuickSave::GetBool("mision_Masacre", false))
         {
             checkSecundaryMision1.SetActive(true);
@@ -248,6 +283,21 @@ void Feedback_Level_Select::SetCurrentLevel()
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map3);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet3);
 
+        if (API_QuickSave::GetBool("level3_casette1"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level3_casette2"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level3_casette3"))
+        {
+            casettesNumber++;
+        }
+
         if (API_QuickSave::GetBool("mision_TheRule", false))
         {
             checkSecundaryMision1.SetActive(true);
@@ -269,6 +319,21 @@ void Feedback_Level_Select::SetCurrentLevel()
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map4);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet4);
 
+        if (API_QuickSave::GetBool("level4_casette1"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level4_casette2"))
+        {
+            casettesNumber++;
+        }
+
+        if (API_QuickSave::GetBool("level4_casette3"))
+        {
+            casettesNumber++;
+        }
+
         checkSecundaryMision1.SetActive(false);
         checkSecundaryMision2.SetActive(false);
 
@@ -276,6 +341,8 @@ void Feedback_Level_Select::SetCurrentLevel()
     default:
         break;
     }
+
+    casettesNumberText.SetText(std::to_string(casettesNumber).c_str());
 }
 
 void Feedback_Level_Select::LevelSelect()

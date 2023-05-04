@@ -123,7 +123,7 @@ void ImWindowHierarchy::DrawGameObjectChildren(GameObject* gameObject, bool only
 
 void ImWindowHierarchy::ProcessGameObject(GameObject* gameObject, int iteration)
 {
-    if (gameObject->_isPendingToDelete) 
+    if (!gameObject || gameObject->_isPendingToDelete) 
         return;
 
     ImGuiTreeNodeFlags node_flags = _base_flags;

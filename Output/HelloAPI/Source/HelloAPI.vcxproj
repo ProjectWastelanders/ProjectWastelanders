@@ -168,6 +168,7 @@
     <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyRanger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Level2EndTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Level2FinalText.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\LevelEndTrigger.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyRanger.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.h" />
+    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.h" />
     <ClInclude Include="..\..\Assets\Scripts\Level2EndTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\Level2FinalText.h" />
     <ClInclude Include="..\..\Assets\Scripts\LevelEndTrigger.h" />

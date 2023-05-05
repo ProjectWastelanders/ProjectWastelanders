@@ -132,6 +132,7 @@
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.cpp" />
     <ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
     <ClCompile Include="..\..\Assets\UI\Select_Level\Weapon_Select.cpp" />
+    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -266,5 +267,6 @@
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.h" />
     <ClInclude Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.h" />
     <ClInclude Include="..\..\Assets\UI\Select_Level\Weapon_Select.h" />
+    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.h" />
   </ItemGroup>
 </Project>

@@ -268,7 +268,7 @@
 		<ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
 		<ClCompile Include="..\..\Assets\UI\Select_Level\Weapon_Select.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.cpp" />
-		<ClCompile Include="../../Assets/UI/Select_Level/SelectWeapon_SelectLevel.cpp" />
+		<ClCompile Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -404,7 +404,7 @@
 		<ClInclude Include="../../Assets/Scripts/Quests/ReachTheSpaceship.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.h" />
-		<ClInclude Include="../../Assets/UI/Select_Level/SelectWeapon_SelectLevel.h" />
+		<ClInclude Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

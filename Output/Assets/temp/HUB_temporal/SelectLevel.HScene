@@ -31,7 +31,7 @@
         "UID": 931044216
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -62,7 +62,7 @@
         "UID": 582930903
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -101,7 +101,7 @@
         "UID": 1086417859
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -140,7 +140,7 @@
         "UID": 3652499762
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -183,7 +183,7 @@
         "UID": 4017731757
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -227,7 +227,7 @@
         "UID": 1086020048
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -271,7 +271,7 @@
         "UID": 355431247
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -315,7 +315,7 @@
         "UID": 186048598
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -359,7 +359,7 @@
         "UID": 2549467301
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -399,7 +399,7 @@
         "UID": 700667039
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -438,7 +438,7 @@
         "UID": 1649303334
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -477,7 +477,7 @@
         "UID": 1827776769
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -516,7 +516,7 @@
         "UID": 3502272900
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -556,7 +556,7 @@
         "UID": 4079862537
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -595,7 +595,7 @@
         "UID": 1789771596
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -634,7 +634,7 @@
         "UID": 3767393015
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -673,7 +673,7 @@
         "UID": 465424074
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -713,7 +713,7 @@
         "UID": 2547002226
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -752,7 +752,7 @@
         "UID": 3273927335
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -792,7 +792,7 @@
         "UID": 321702245
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -831,7 +831,7 @@
         "UID": 693743968
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -870,7 +870,7 @@
         "UID": 253572886
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -910,7 +910,7 @@
         "UID": 181855838
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -949,7 +949,7 @@
         "UID": 3860526589
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -977,7 +977,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": false,
+                "Enabled": true,
                 "PositionX": -0.05000000074505806,
                 "PositionY": 0.7200000286102295,
                 "Scale": 0.20000000298023224,
@@ -1086,46 +1086,7 @@
                         "Level 4": 2549467301
                     },
                     {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
+                        "Text Casette": 4106068590
                     },
                     {
                         "Check Main Mision": 1789771596
@@ -1170,256 +1131,7 @@
                         "Level 4": 2549467301
                     },
                     {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
-                    },
-                    {
-                        "Check Main Mision": 1789771596
-                    },
-                    {
-                        "Check Secundary Mision 1": 3767393015
-                    },
-                    {
-                        "Check Secundary Mision 2": 465424074
-                    },
-                    {
-                        "Map Image": 3860526589
-                    },
-                    {
-                        "Planet Image": 3652499762
-                    },
-                    {
-                        "Feedback Planet Name": 4009129052
-                    },
-                    {
-                        "Hold Button Time": 2.0
-                    },
-                    {
-                        "Hold Bar": 253572886
-                    },
-                    {
-                        "Selected Feedback": 3273927335
-                    },
-                    {
-                        "Hold Conjunt": 321702245
-                    },
-                    {
-                        "Level 1": 1086020048
-                    },
-                    {
-                        "Level 2": 355431247
-                    },
-                    {
-                        "Level 3": 186048598
-                    },
-                    {
-                        "Level 4": 2549467301
+                        "Text Casette": 4106068590
                     },
                     {
                         "Check Main Mision": 1789771596
@@ -1494,7 +1206,7 @@
         "UID": 4009129052
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1514,6 +1226,12 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 225065215,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
@@ -1862,7 +1580,7 @@
         "UID": 1305442154
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1902,7 +1620,7 @@
         "UID": 2320120455
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1941,7 +1659,7 @@
         "UID": 2885814734
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1980,7 +1698,7 @@
         "UID": 902259293
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2020,7 +1738,7 @@
         "UID": 3439304181
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,

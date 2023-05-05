@@ -149,6 +149,10 @@ void Feedback_Level_Select::OnCharge()
         {
         case 3:
             isSelected.GetGameObject().GetTransform().SetPosition(isSelected.GetGameObject().GetTransform().GetGlobalPosition().x, 0.530, isSelected.GetGameObject().GetTransform().GetGlobalPosition().z);
+            API_QuickSave::SetBool("level1Selected", true);
+            API_QuickSave::SetBool("level2Selected", false);
+            API_QuickSave::SetBool("level3Selected", false);
+            API_QuickSave::SetBool("level4Selected", false);
 
             level2.SetActive(false);
             level3.SetActive(false);
@@ -157,6 +161,10 @@ void Feedback_Level_Select::OnCharge()
             break;
         case 2:
             isSelected.GetGameObject().GetTransform().SetPosition(isSelected.GetGameObject().GetTransform().GetGlobalPosition().x, 0.145, isSelected.GetGameObject().GetTransform().GetGlobalPosition().z);
+            API_QuickSave::SetBool("level1Selected", false);
+            API_QuickSave::SetBool("level2Selected", true);
+            API_QuickSave::SetBool("level3Selected", false);
+            API_QuickSave::SetBool("level4Selected", false);
             level1.SetActive(false);
             level3.SetActive(false);
             level4.SetActive(false);
@@ -164,6 +172,10 @@ void Feedback_Level_Select::OnCharge()
             break;
         case 1:
             isSelected.GetGameObject().GetTransform().SetPosition(isSelected.GetGameObject().GetTransform().GetGlobalPosition().x, -0.240, isSelected.GetGameObject().GetTransform().GetGlobalPosition().z);
+            API_QuickSave::SetBool("level1Selected", false);
+            API_QuickSave::SetBool("level2Selected", false);
+            API_QuickSave::SetBool("level3Selected", true);
+            API_QuickSave::SetBool("level4Selected", false);
             level1.SetActive(false);
             level2.SetActive(false);
             level4.SetActive(false);
@@ -171,6 +183,10 @@ void Feedback_Level_Select::OnCharge()
             break;
         case 0:
             isSelected.GetGameObject().GetTransform().SetPosition(isSelected.GetGameObject().GetTransform().GetGlobalPosition().x, -0.625, isSelected.GetGameObject().GetTransform().GetGlobalPosition().z);
+            API_QuickSave::SetBool("level1Selected", false);
+            API_QuickSave::SetBool("level2Selected", false);
+            API_QuickSave::SetBool("level3Selected", false);
+            API_QuickSave::SetBool("level4Selected", true);
             level1.SetActive(false);
             level2.SetActive(false);
             level3.SetActive(false);

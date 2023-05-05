@@ -17,13 +17,22 @@ public:
 	API_UIButton weapon4;
 
 	API_UIImage infoWeapon;
+	API_UIImage weaponImage;
+
+	API_UIInput weaponSelectPanel;
 
 	uint info1;
 	uint info2;
 	uint info3;
 	uint info4;
 
+	uint weaponImage1;
+	uint weaponImage2;
+	uint weaponImage3;
+	uint weaponImage4;
+
 	bool isPress;
+	bool inOpen;
 	int indexLevles;
 
 };

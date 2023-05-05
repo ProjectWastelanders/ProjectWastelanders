@@ -1,1 +1,0 @@
-# Guardians of the galaxy "The Bet"

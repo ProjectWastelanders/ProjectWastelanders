@@ -1,0 +1,160 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+
+  /* font-family: cursive; */
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  /* font-size: large; */
+}
+.containerDE {
+  background: #f0e68c;
+  height: 75%;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{ /* This class is not defines here, it's part of another .css*/
+  /* background-color: #8cd0f0; */
+  text-align: left !important;
+}
+
+.hrList {
+  display: flex;
+  position: relative;
+}
+.hrList__image{
+  margin: 0 30px 0 0;
+  align-self: flex-start;
+  border-radius: 50%;
+}
+.hrList__text{
+  flex: auto;
+}
+
+p{
+  font-size:large;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+    position: absolute;
+    width: 100%;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.vertical-center {
+  /* margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+
+  position: absolute;
+  top: 50%;
+  left: calc(2vh + 5vw);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+
+  position: absolute;
+  top: 50%;
+
+  text-align: start;
+
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  max-width:1280px;
+  width:90%;
+
+}
+.cool-button {
+  background-color: #2196f3;
+  color: white;
+  border: 2px solid rgb(255, 255, 255); /* Green */
+  cursor:pointer;
+  padding: calc(0.8vh + 0.3vw);
+  font-size: calc(0.8vh + 0.6vw);
+  margin-right: 1vw;
+
+
+  line-height: 1.5rem;
+  white-space: nowrap;
+  font-weight: 700;
+}
+.cool-button:hover
+{
+background-image:none;
+background-color: #56adf5;
+}
+
+.cool-button:focus{
+  background-color: black;
+}
+.spacer{
+  margin-top: calc(3vh + 3vw) !important;
+  margin-bottom: calc(3vh + 3vw) !important;
+}
+
+ul > li{
+  display:inline-block;
+}
+
+h2{
+  font-weight: bold;
+}
+h3{
+  font-weight: bold;
+}
+
+
+@media only screen and (min-width: 601px)
+{
+  .vertical-center
+  {
+    width:85%
+  }
+}
+@media only screen and (min-width: 993px)
+{
+  .vertical-center
+  {
+    width:70%
+  }
+}
+
+
+h4:before {
+  content:"• ";
+}

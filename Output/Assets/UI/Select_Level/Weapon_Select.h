@@ -20,6 +20,7 @@ public:
 	API_UIImage weaponImage;
 
 	API_UIInput weaponSelectPanel;
+	API_UIInput proceedPanel;
 
 	uint info1;
 	uint info2;

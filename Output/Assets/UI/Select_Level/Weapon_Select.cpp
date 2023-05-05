@@ -4,6 +4,7 @@ HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface
 	Weapon_Select* classInstance = new Weapon_Select();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	script->AddDragBoxUIInput("Weapon Selected Panel", &classInstance->weaponSelectPanel);
+	script->AddDragBoxUIInput("Proceed Panel", &classInstance->proceedPanel);
 
 	script->AddDragBoxUIButton("Weapon 1", &classInstance->weapon1);
 	script->AddDragBoxUIButton("Weapon 2", &classInstance->weapon2);
@@ -60,8 +61,16 @@ void Weapon_Select::Update()
 
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
-		inOpen = false;
-		weaponSelectPanel.GetGameObject().SetActive(false);
+		if (proceedPanel.GetGameObject().IsActive())
+		{
+			weaponSelectPanel.GetGameObject().SetActive(true);
+			proceedPanel.GetGameObject().SetActive(false);
+		}
+		else
+		{
+			inOpen = false;
+			weaponSelectPanel.GetGameObject().SetActive(false);
+		}
 	}
 
 	if ((Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) > 10000 && isPress) && indexLevles >= 1)
@@ -97,5 +106,11 @@ void Weapon_Select::Update()
 		infoWeapon.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(info4);
 		weaponImage.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(weaponImage4);
 		break;
+	}
+
+	if (weapon1.OnPress() || weapon2.OnPress() || weapon3.OnPress() || weapon4.OnPress())
+	{
+		weaponSelectPanel.GetGameObject().SetActive(false);
+		proceedPanel.GetGameObject().SetActive(true);
 	}
 }

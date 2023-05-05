@@ -72,8 +72,8 @@ void EnemyRanger::Update()
 {
     float dt = Time::GetDeltaTime();
 
-    Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
-    Console::Log("_move coldowb "+std::to_string(_movCooldown));
+    //Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
+    //Console::Log("_move coldowb "+std::to_string(_movCooldown));
     if (enemy != nullptr /*&& targStats != nullptr*/ && !scriptedForQuest)
     {
             // float dis = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());

@@ -138,6 +138,30 @@
                     },
                     {
                         "Rot_Offset_Z": 0.0
+                    },
+                    {
+                        "Target": 2252131494
+                    },
+                    {
+                        "Delay": 0.009999999776482582
+                    },
+                    {
+                        "Offset_X": 189.4442901611328
+                    },
+                    {
+                        "Offset_Y": 33.25746536254883
+                    },
+                    {
+                        "Offset_Z": -73.33590698242188
+                    },
+                    {
+                        "Rot_Offset_X": 58.00088882446289
+                    },
+                    {
+                        "Rot_Offset_Y": 90.0
+                    },
+                    {
+                        "Rot_Offset_Z": 0.0
                     }
                 ],
                 "Script Resource": 1919097789,
@@ -177,7 +201,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.758974313735962,
+                "Aspect ratio": 1.4664311408996582,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -189,6 +213,42 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Target": 2252131494
+                    },
+                    {
+                        "Delay": 0.05999999865889549
+                    },
+                    {
+                        "Offset_X": 0.0
+                    },
+                    {
+                        "Offset_Y": 20.0
+                    },
+                    {
+                        "Offset_Z": -10.0
+                    },
+                    {
+                        "Orbital Offset Multiplier": 2.0
+                    },
+                    {
+                        "Rot_X": 56.0
+                    },
+                    {
+                        "Rot_Y": 0.0
+                    },
+                    {
+                        "Rot_Z": 0.0
+                    },
+                    {
+                        "SafeZone_Distance": 3.0
+                    },
+                    {
+                        "Use safe zone: ": true
+                    },
+                    {
+                        "Orbital": false
+                    },
                     {
                         "Target": 2252131494
                     },
@@ -438,6 +498,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "HP BOSS 1 TEXTURE": 2911723293
+                    },
                     {
                         "HP BOSS 1 TEXTURE": 2911723293
                     },
@@ -719,6 +782,30 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Texture_SPEED_INCREASE": 572968604
+                    },
+                    {
+                        "Texture_FIRERATE_INCREASE": 904723382
+                    },
+                    {
+                        "Texture_SHIELD": 874482960
+                    },
+                    {
+                        "Texture_SLOW_TIME": 3865343995
+                    },
+                    {
+                        "GamesObjects_1": 275846147
+                    },
+                    {
+                        "GamesObjects_2": 1955845492
+                    },
+                    {
+                        "GamesObjects_3": 1885819871
+                    },
+                    {
+                        "GamesObjects_4": 4104934763
+                    },
                     {
                         "Texture_SPEED_INCREASE": 572968604
                     },
@@ -1102,6 +1189,9 @@
                     },
                     {
                         "hp": false
+                    },
+                    {
+                        "hp": false
                     }
                 ],
                 "Script Resource": 3127299926,
@@ -1110,6 +1200,12 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "HP Texture": 2859695454
+                    },
+                    {
+                        "HP Regen Texture": 4119276236
+                    },
                     {
                         "HP Texture": 2859695454
                     },
@@ -1322,6 +1418,90 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "HandgunsWeapons_On": 3076489896
+                    },
+                    {
+                        "HandgunsWeapons_Off": 3986648714
+                    },
+                    {
+                        "Auto_On": 2067694486
+                    },
+                    {
+                        "Burst_On": 1186397666
+                    },
+                    {
+                        "Semi_On": 953282997
+                    },
+                    {
+                        "Shotgun_On": 3011687056
+                    },
+                    {
+                        "Handgun_On": 2485249494
+                    },
+                    {
+                        "Auto_Off": 554082642
+                    },
+                    {
+                        "Burst_Off": 2098528651
+                    },
+                    {
+                        "Semi_Off": 3008937367
+                    },
+                    {
+                        "Shotgun_Off": 1390408833
+                    },
+                    {
+                        "Handgun_Off": 732632770
+                    },
+                    {
+                        "FlameThrower_On 1": 2806950331
+                    },
+                    {
+                        "Ricochet_On 2": 4165763925
+                    },
+                    {
+                        "FlameThrower_Off 1": 2148606541
+                    },
+                    {
+                        "Ricochet_Off 2": 852787717
+                    },
+                    {
+                        "Material Weapon 1 on": 3776990906
+                    },
+                    {
+                        "Material Weapon 1 off": 2806136321
+                    },
+                    {
+                        "Game Bar Weapon 1": 1641239556
+                    },
+                    {
+                        "Material Weapon 2 on": 2532755391
+                    },
+                    {
+                        "Material Weapon 2 off": 3080739531
+                    },
+                    {
+                        "Game Bar Weapon 2": 3321290372
+                    },
+                    {
+                        "Material Weapon 3 on": 3920428013
+                    },
+                    {
+                        "Material Weapon 3 off": 3241999568
+                    },
+                    {
+                        "Game Bar Weapon 3": 2877340158
+                    },
+                    {
+                        "Text_Dash_on": 486085637
+                    },
+                    {
+                        "Text_Dash_off": 3635487892
+                    },
+                    {
+                        "Player Move GO": 2421452379
+                    },
                     {
                         "HandgunsWeapons_On": 3076489896
                     },
@@ -2647,6 +2827,12 @@
                     },
                     {
                         "Infinit munition off": 3914866382
+                    },
+                    {
+                        "Infinit munition on": 210544854
+                    },
+                    {
+                        "Infinit munition off": 3914866382
                     }
                 ],
                 "Script Resource": 392201209,
@@ -2992,6 +3178,9 @@
                     },
                     {
                         "Continue": 347874162
+                    },
+                    {
+                        "Continue": 347874162
                     }
                 ],
                 "Script Resource": 514756029,
@@ -3303,6 +3492,12 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Button": 3241817212
+                    },
+                    {
+                        "Scene": "SpaceshipHUB_Scene.HScene"
+                    },
                     {
                         "Button": 3241817212
                     },
@@ -15807,94 +16002,94 @@
                         "Laser GameObject": 2691383045
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
                         "IsAttacking?": false
@@ -15963,94 +16158,94 @@
                         "Laser GameObject": 2691383045
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
                         "IsAttacking?": false
@@ -16119,94 +16314,250 @@
                         "Laser GameObject": 2691383045
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
                     },
                     {
-                        "Meteor": 2978838801
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "IsAttacking?": false
+                    },
+                    {
+                        "Boss": 256946375
+                    },
+                    {
+                        "Player": 2252131494
+                    },
+                    {
+                        "Melee Attack 1": 1495879326
+                    },
+                    {
+                        "SWORD": 1255164258
+                    },
+                    {
+                        "DeflectProjectiles": 920011401
+                    },
+                    {
+                        "BoomerangTarget": 407581759
+                    },
+                    {
+                        "ExplosionWave": 943160538
+                    },
+                    {
+                        "Bullet1": 2550450836
+                    },
+                    {
+                        "Bullet2": 2399701923
+                    },
+                    {
+                        "Bullet3": 4009701375
+                    },
+                    {
+                        "Beam1": 1117399371
+                    },
+                    {
+                        "Beam2": 1057521638
+                    },
+                    {
+                        "Beam3": 1384571166
+                    },
+                    {
+                        "Beam4": 3278123958
+                    },
+                    {
+                        "BeamTarget1": 1743982176
+                    },
+                    {
+                        "BeamTarget2": 3352584672
+                    },
+                    {
+                        "BeamTarget3": 299748191
+                    },
+                    {
+                        "BeamTarget4": 1743982176
+                    },
+                    {
+                        "Laser Aim Position": 2085053083
+                    },
+                    {
+                        "Laser Particle System": 240753352
+                    },
+                    {
+                        "Laser GameObject": 2691383045
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
+                    },
+                    {
+                        "Meteor": 2360820017
                     }
                 ],
                 "Script Resource": 3789534315,
@@ -16223,6 +16574,9 @@
                     },
                     {
                         "Hp": 2001.0
+                    },
+                    {
+                        "Hp": 2001.0
                     }
                 ],
                 "Script Resource": 84377673,
@@ -16231,6 +16585,12 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Player": 2252131494
+                    },
+                    {
+                        "Boss": 256946375
+                    },
                     {
                         "Player": 2252131494
                     },
@@ -17874,6 +18234,12 @@
                     },
                     {
                         "Player": 2252131494
+                    },
+                    {
+                        "Boss": 256946375
+                    },
+                    {
+                        "Player": 2252131494
                     }
                 ],
                 "Script Resource": 3078314501,
@@ -18170,7 +18536,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 70.0
+                    },
+                    {
+                        "Damage": 70.0
+                    },
+                    {
+                        "Damage": 70.0
+                    },
+                    {
+                        "Damage": 70.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -18399,7 +18774,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -18500,6 +18884,96 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Velocity": 7.5
+                    },
+                    {
+                        "Upgrade Velocity": 9.0
+                    },
+                    {
+                        "SecToMaxVel": 0.20000000298023224
+                    },
+                    {
+                        "SecToZeroVel": 0.20000000298023224
+                    },
+                    {
+                        "Y tp limit": -20.0
+                    },
+                    {
+                        "Rigid Body": 2252131494
+                    },
+                    {
+                        "Dash Time": 0.5
+                    },
+                    {
+                        "Dash Distance": 6.0
+                    },
+                    {
+                        "Upgrade Dash Distance": 8.0
+                    },
+                    {
+                        "Dash Cooldown": 2.0
+                    },
+                    {
+                        "Upgrade Dash Cooldown": 1.0
+                    },
+                    {
+                        "AnimationPlayer": 603016130
+                    },
+                    {
+                        "Dash Animation": 686365920
+                    },
+                    {
+                        "Idle Animation 1": 738149381
+                    },
+                    {
+                        "Idle Animation 2": 2426153329
+                    },
+                    {
+                        "Idle Animation 3": 1590499778
+                    },
+                    {
+                        "Run Forward Animation": 781813718
+                    },
+                    {
+                        "Run Back Animation": 915742792
+                    },
+                    {
+                        "Run Left Animation": 4072259668
+                    },
+                    {
+                        "Run Right Animation": 1813925056
+                    },
+                    {
+                        "Shoot Duals Animation": 2706901869
+                    },
+                    {
+                        "Shoot SemiAuto Animation": 2946562888
+                    },
+                    {
+                        "Shoot Automatic Animation": 3917491268
+                    },
+                    {
+                        "Shoot Burst Animation": 3917491268
+                    },
+                    {
+                        "Shoot Shotgun Animation": 2946562888
+                    },
+                    {
+                        "Swap Gun Animation": 2774027618
+                    },
+                    {
+                        "Hit Animation": 359781210
+                    },
+                    {
+                        "Open Chest Animation": 2410125527
+                    },
+                    {
+                        "Dead Animation": 296001631
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
                     {
                         "Velocity": 7.5
                     },
@@ -18893,6 +19367,45 @@
                     },
                     {
                         "Player GO": 2252131494
+                    },
+                    {
+                        "Max HP": 44800000.0
+                    },
+                    {
+                        "Current HP": 100.0
+                    },
+                    {
+                        "Upgraded Max HP": 125.0
+                    },
+                    {
+                        "Resistance": 100.0
+                    },
+                    {
+                        "Deadline Percentage": 20.0
+                    },
+                    {
+                        "Upgraded Deadline Percentage": 50.0
+                    },
+                    {
+                        "Deadline Heal Amount": 2.5
+                    },
+                    {
+                        "Upgraded Deadline Heal Amount": 5.0
+                    },
+                    {
+                        "Aid Kit Heal Amount": 30.0
+                    },
+                    {
+                        "Upgraded Aid Kit Heal Amount": 60.0
+                    },
+                    {
+                        "Passive Heal Particles": 2974379620
+                    },
+                    {
+                        "Kid Heal Particles": 3023441585
+                    },
+                    {
+                        "Player GO": 2252131494
                     }
                 ],
                 "Script Resource": 486374105,
@@ -19017,6 +19530,45 @@
                     },
                     {
                         "Fast Swap Delay": 0.5
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Base Gun": 0
+                    },
+                    {
+                        "Normal Gun": 0
+                    },
+                    {
+                        "Special Gun": -1
+                    },
+                    {
+                        "Duals": 16982780
+                    },
+                    {
+                        "Semiautomatic": 2763589916
+                    },
+                    {
+                        "Automatic": 1116061254
+                    },
+                    {
+                        "Burst": 932290336
+                    },
+                    {
+                        "Shotgun": 2085107232
+                    },
+                    {
+                        "Flamethrower": 3975447851
+                    },
+                    {
+                        "Ricochet": 1509921013
+                    },
+                    {
+                        "Swap Delay": 1.0
+                    },
+                    {
+                        "Fast Swap Delay": 0.5
                     }
                 ],
                 "Script Resource": 2666385646,
@@ -19025,6 +19577,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Level Index": 0
+                    },
                     {
                         "Level Index": 0
                     },
@@ -25781,6 +26336,15 @@
                     },
                     {
                         "Shotgun Bomb Pull Size": 10
+                    },
+                    {
+                        "Player": 2252131494
+                    },
+                    {
+                        "Pull Size": 40
+                    },
+                    {
+                        "Shotgun Bomb Pull Size": 10
                     }
                 ],
                 "Script Resource": 211675320,
@@ -25881,6 +26445,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Player Stats GO": 2252131494
+                    },
                     {
                         "Player Stats GO": 2252131494
                     },
@@ -26030,6 +26597,9 @@
                     },
                     {
                         "Gun Type": 0
+                    },
+                    {
+                        "Gun Type": 0
                     }
                 ],
                 "Script Resource": 1068662416,
@@ -26038,6 +26608,63 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 30.0
+                    },
+                    {
+                        "Projectile Damage": 5.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 5.0
+                    },
+                    {
+                        "Projectile Lifetime": 1.0
+                    },
+                    {
+                        "Projectile Spawn": 1242119980
+                    },
+                    {
+                        "Second Projectile Spawn": 4211870185
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 1.2000000476837158
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Burst Space": 0.10000000149011612
+                    },
+                    {
+                        "Second Gun GO": 982916517
+                    },
+                    {
+                        "Slow %": 0.0
+                    },
+                    {
+                        "Freeze %": 0.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 0
+                    },
+                    {
+                        "Audio Event String": "w_basic"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -26302,6 +26929,9 @@
                     },
                     {
                         "Gun Type": 1
+                    },
+                    {
+                        "Gun Type": 1
                     }
                 ],
                 "Script Resource": 1068662416,
@@ -26310,6 +26940,48 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 80.0
+                    },
+                    {
+                        "Projectile Damage": 60.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 60.0
+                    },
+                    {
+                        "Projectile Lifetime": 0.5
+                    },
+                    {
+                        "Projectile Spawn": 2243582923
+                    },
+                    {
+                        "Projectile ScaleX": 0.20000000298023224
+                    },
+                    {
+                        "Projectile ScaleY": 0.20000000298023224
+                    },
+                    {
+                        "Projectile ScaleZ": 0.4000000059604645
+                    },
+                    {
+                        "Projectiles per second": 1.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_semi"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -26529,6 +27201,9 @@
                     },
                     {
                         "Gun Type": 2
+                    },
+                    {
+                        "Gun Type": 2
                     }
                 ],
                 "Script Resource": 1068662416,
@@ -26537,6 +27212,48 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 40.0
+                    },
+                    {
+                        "Projectile Damage": 1.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 1.0
+                    },
+                    {
+                        "Projectile Lifetime": 0.30000001192092896
+                    },
+                    {
+                        "Projectile Spawn": 1047212797
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 10.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_automatic"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -26756,6 +27473,9 @@
                     },
                     {
                         "Gun Type": 3
+                    },
+                    {
+                        "Gun Type": 3
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -26764,6 +27484,54 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 35.0
+                    },
+                    {
+                        "Projectile Damage": 0.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 0.0
+                    },
+                    {
+                        "Projectile Lifetime": 1.0
+                    },
+                    {
+                        "Projectile Spawn": 1439705504
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 1.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Burst Space": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per burst": 2
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_burst"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -27001,6 +27769,9 @@
                     },
                     {
                         "Gun Type": 4
+                    },
+                    {
+                        "Gun Type": 4
                     }
                 ],
                 "Script Resource": 1068662416,
@@ -27009,6 +27780,54 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 40.0
+                    },
+                    {
+                        "Projectile Damage": 5.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 5.0
+                    },
+                    {
+                        "Projectile Lifetime": 0.20000000298023224
+                    },
+                    {
+                        "Projectile Spawn": 1650961567
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 1.2999999523162842
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Pellets per shot": 3
+                    },
+                    {
+                        "Pellets Dispersion": 0.20000000298023224
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_shotgun"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -27291,6 +28110,9 @@
                     },
                     {
                         "Gun Type": 5
+                    },
+                    {
+                        "Gun Type": 5
                     }
                 ],
                 "Script Resource": 1068662416,
@@ -27299,6 +28121,51 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 4.0
+                    },
+                    {
+                        "Projectile Damage": 5.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 5.0
+                    },
+                    {
+                        "Projectile Lifetime": 2.0
+                    },
+                    {
+                        "Projectile Spawn": 2667312934
+                    },
+                    {
+                        "Fire Particles": 3787768158
+                    },
+                    {
+                        "Projectile ScaleX": 0.0
+                    },
+                    {
+                        "Projectile ScaleY": 0.0
+                    },
+                    {
+                        "Projectile ScaleZ": 0.0
+                    },
+                    {
+                        "Ticks per second": 20.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 2
+                    },
+                    {
+                        "Audio Event String": "w_basic"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -27603,6 +28470,9 @@
                     },
                     {
                         "Gun Type": 6
+                    },
+                    {
+                        "Gun Type": 6
                     }
                 ],
                 "Script Resource": 1068662416,
@@ -27611,6 +28481,48 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Projectile Pull": 1730314675
+                    },
+                    {
+                        "Projectile Speed": 30.0
+                    },
+                    {
+                        "Projectile Damage": 80.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 80.0
+                    },
+                    {
+                        "Projectile Lifetime": 1.0
+                    },
+                    {
+                        "Projectile Spawn": 2886276473
+                    },
+                    {
+                        "Projectile ScaleX": 0.4000000059604645
+                    },
+                    {
+                        "Projectile ScaleY": 0.05000000074505806
+                    },
+                    {
+                        "Projectile ScaleZ": 0.4000000059604645
+                    },
+                    {
+                        "Projectiles per second": 0.5
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Ammo Type": 2
+                    },
+                    {
+                        "Audio Event String": "w_basic"
+                    },
                     {
                         "Projectile Pull": 1730314675
                     },
@@ -36896,7 +37808,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37008,7 +37929,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37120,7 +38050,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
+                    },
+                    {
+                        "Damage": 20.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37232,7 +38171,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37344,7 +38292,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37456,7 +38413,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37568,7 +38534,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
+                    },
+                    {
+                        "Damage": 40.0
                     }
                 ],
                 "Script Resource": 1660518797,
@@ -37681,6 +38656,15 @@
                 "Inspector Fields": [
                     {
                         "Dmg": 5.0
+                    },
+                    {
+                        "Dmg": 5.0
+                    },
+                    {
+                        "Dmg": 5.0
+                    },
+                    {
+                        "Dmg": 5.0
                     }
                 ],
                 "Script Resource": 1943660839,
@@ -37701,9 +38685,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -195.12966918945313,
-                    43.25752258300781,
-                    40.381500244140625
+                    -168.426025390625,
+                    46.70903015136719,
+                    48.91522979736328
                 ],
                 "Rotation": [
                     -0.0,
@@ -37773,7 +38757,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -37843,20 +38827,29 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito1",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 4093711178
+        "UID": 4272632907
     },
     {
         "Active": true,
@@ -37864,9 +38857,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -203.17645263671875,
-                    50.44084930419922,
-                    53.5809326171875
+                    -182.3736572265625,
+                    52.45718002319336,
+                    37.92149353027344
                 ],
                 "Rotation": [
                     -0.0,
@@ -37936,7 +38929,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -37974,7 +38967,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -37998,28 +38991,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito2",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2159222158
+        "UID": 3453034248
     },
     {
         "Active": true,
@@ -38027,9 +39029,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -194.91453552246094,
-                    55.23922348022461,
-                    32.62334060668945
+                    -193.14108276367188,
+                    64.91026306152344,
+                    17.635093688964844
                 ],
                 "Rotation": [
                     -0.0,
@@ -38099,7 +39101,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -38137,7 +39139,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -38161,28 +39163,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito3",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 1628616554
+        "UID": 1813508037
     },
     {
         "Active": true,
@@ -38190,9 +39201,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -182.04563903808594,
-                    49.52442169189453,
-                    63.36388397216797
+                    -201.79437255859375,
+                    47.72124481201172,
+                    40.62773132324219
                 ],
                 "Rotation": [
                     -0.0,
@@ -38262,7 +39273,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -38300,7 +39311,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -38324,28 +39335,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito4",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 372388845
+        "UID": 2749645759
     },
     {
         "Active": true,
@@ -38353,9 +39373,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -203.91127014160156,
-                    28.78715705871582,
-                    35.71699142456055
+                    -182.44589233398438,
+                    104.20915985107422,
+                    49.4539794921875
                 ],
                 "Rotation": [
                     -0.0,
@@ -38425,7 +39445,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -38463,7 +39483,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -38487,28 +39507,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito5",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 119273160
+        "UID": 3937002175
     },
     {
         "Active": true,
@@ -38516,9 +39545,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -180.19235229492188,
-                    51.06627655029297,
-                    31.821826934814453
+                    -189.581298828125,
+                    76.48522186279297,
+                    30.146743774414063
                 ],
                 "Rotation": [
                     -0.0,
@@ -38588,7 +39617,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -38626,7 +39655,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -38650,28 +39679,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito6",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2651680296
+        "UID": 173003503
     },
     {
         "Active": true,
@@ -38679,9 +39717,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -195.69244384765625,
-                    42.0173225402832,
-                    22.91655921936035
+                    -169.10568237304688,
+                    52.80129623413086,
+                    61.45014190673828
                 ],
                 "Rotation": [
                     -0.0,
@@ -38751,7 +39789,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -38789,7 +39827,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -38821,20 +39859,29 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito7",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3710330254
+        "UID": 2308620237
     },
     {
         "Active": true,
@@ -38842,9 +39889,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -214.1852569580078,
-                    44.939300537109375,
-                    45.42630386352539
+                    -185.6796112060547,
+                    68.81492614746094,
+                    57.85190200805664
                 ],
                 "Rotation": [
                     -0.0,
@@ -38914,7 +39961,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -38952,7 +39999,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -38984,20 +40031,29 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito8",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 1659813436
+        "UID": 3180800959
     },
     {
         "Active": true,
@@ -39005,9 +40061,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -180.81092834472656,
-                    61.21919631958008,
-                    37.537357330322266
+                    -180.65573120117188,
+                    87.53217315673828,
+                    27.13903045654297
                 ],
                 "Rotation": [
                     -0.0,
@@ -39077,7 +40133,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -39115,7 +40171,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -39147,20 +40203,29 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito9",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2680040971
+        "UID": 965800811
     },
     {
         "Active": true,
@@ -39168,9 +40233,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -182.35789489746094,
-                    71.48524475097656,
-                    50.99444580078125
+                    -175.1094970703125,
+                    99.47299194335938,
+                    33.94931411743164
                 ],
                 "Rotation": [
                     -0.0,
@@ -39213,7 +40278,7 @@
                 "ColScale": [
                     2.0,
                     2.0,
-                    2.0
+                    0.8999999761581421
                 ],
                 "CylVerSlices": 16,
                 "CylinderRadiusHeight": [
@@ -39240,7 +40305,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -39278,7 +40343,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -39302,28 +40367,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito10",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2290125910
+        "UID": 348104924
     },
     {
         "Active": true,
@@ -39331,9 +40405,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -209.52191162109375,
-                    69.77863311767578,
-                    45.42629623413086
+                    -202.12608337402344,
+                    103.5267333984375,
+                    24.968517303466797
                 ],
                 "Rotation": [
                     -0.0,
@@ -39403,7 +40477,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -39441,7 +40515,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -39465,28 +40539,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito11",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3816258782
+        "UID": 1022448017
     },
     {
         "Active": true,
@@ -39494,9 +40577,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -199.31553649902344,
-                    78.41064453125,
-                    45.42631530761719
+                    -171.8545684814453,
+                    96.67162322998047,
+                    35.91801071166992
                 ],
                 "Rotation": [
                     -0.0,
@@ -39566,7 +40649,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -39604,7 +40687,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -39628,28 +40711,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito12",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3398351192
+        "UID": 1714380430
     },
     {
         "Active": true,
@@ -39657,9 +40749,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -209.80618286132813,
-                    43.741737365722656,
-                    57.10527420043945
+                    -178.8851776123047,
+                    66.748046875,
+                    36.2451286315918
                 ],
                 "Rotation": [
                     -0.0,
@@ -39729,7 +40821,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -39767,7 +40859,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -39791,28 +40883,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito13",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 1622526850
+        "UID": 1445157772
     },
     {
         "Active": true,
@@ -39820,9 +40921,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -180.19235229492188,
-                    66.02200317382813,
-                    45.42631530761719
+                    -187.46084594726563,
+                    94.74066162109375,
+                    42.662200927734375
                 ],
                 "Rotation": [
                     -0.0,
@@ -39892,7 +40993,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -39930,7 +41031,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -39954,28 +41055,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito14",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 374450849
+        "UID": 3984093121
     },
     {
         "Active": true,
@@ -39983,9 +41093,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -195.08761596679688,
-                    68.30980682373047,
-                    45.42630386352539
+                    -210.5901641845703,
+                    85.4233169555664,
+                    26.08477020263672
                 ],
                 "Rotation": [
                     -0.0,
@@ -40055,7 +41165,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -40093,7 +41203,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -40117,28 +41227,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito15",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3587472632
+        "UID": 206260278
     },
     {
         "Active": true,
@@ -40146,9 +41265,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -182.6492462158203,
-                    40.74281692504883,
-                    21.934200286865234
+                    -195.45481872558594,
+                    69.94159698486328,
+                    33.71733093261719
                 ],
                 "Rotation": [
                     -0.0,
@@ -40218,7 +41337,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -40256,7 +41375,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -40280,28 +41399,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito16",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 775098922
+        "UID": 4153079680
     },
     {
         "Active": true,
@@ -40309,9 +41437,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -166.84750366210938,
-                    41.92795181274414,
-                    37.108795166015625
+                    -179.775146484375,
+                    114.40087890625,
+                    31.69264030456543
                 ],
                 "Rotation": [
                     -0.0,
@@ -40381,7 +41509,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -40419,7 +41547,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -40433,7 +41561,7 @@
                         "acceleration": [
                             0.0,
                             1.0,
-                            0.0
+                            1.0
                         ]
                     }
                 },
@@ -40443,28 +41571,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito17",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2417979298
+        "UID": 2889489869
     },
     {
         "Active": true,
@@ -40472,9 +41609,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -172.99838256835938,
-                    41.23653030395508,
-                    28.959184646606445
+                    -213.3087158203125,
+                    69.78206634521484,
+                    42.602943420410156
                 ],
                 "Rotation": [
                     -0.0,
@@ -40544,7 +41681,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -40582,7 +41719,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -40606,28 +41743,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito18",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3909503052
+        "UID": 2578647074
     },
     {
         "Active": true,
@@ -40635,9 +41781,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -164.56298828125,
-                    40.51496887207031,
-                    53.43923568725586
+                    -167.12271118164063,
+                    80.45149230957031,
+                    37.675437927246094
                 ],
                 "Rotation": [
                     -0.0,
@@ -40707,7 +41853,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -40745,7 +41891,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -40769,28 +41915,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito19",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 325889133
+        "UID": 1729561543
     },
     {
         "Active": true,
@@ -40798,9 +41953,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -176.13027954101563,
-                    88.1912612915039,
-                    63.21541213989258
+                    -210.26531982421875,
+                    116.8011474609375,
+                    37.81755065917969
                 ],
                 "Rotation": [
                     -0.0,
@@ -40870,7 +42025,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -40908,7 +42063,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -40932,28 +42087,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito20",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 1534293320
+        "UID": 2427127813
     },
     {
         "Active": true,
@@ -40961,9 +42125,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -191.568359375,
-                    90.0506820678711,
-                    45.42605972290039
+                    -203.97337341308594,
+                    121.97362518310547,
+                    48.86952209472656
                 ],
                 "Rotation": [
                     -0.0,
@@ -41033,7 +42197,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -41071,7 +42235,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -41103,20 +42267,29 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito21",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 10332850
+        "UID": 1328796137
     },
     {
         "Active": true,
@@ -41124,9 +42297,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -179.8205108642578,
-                    92.3623275756836,
-                    39.4878044128418
+                    -192.74240112304688,
+                    81.31649780273438,
+                    52.189208984375
                 ],
                 "Rotation": [
                     -0.0,
@@ -41196,7 +42369,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -41234,7 +42407,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -41248,7 +42421,7 @@
                         "acceleration": [
                             0.0,
                             1.0,
-                            0.0
+                            1.0
                         ]
                     }
                 },
@@ -41258,28 +42431,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito22",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3041780873
+        "UID": 3369942315
     },
     {
         "Active": true,
@@ -41287,9 +42469,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -203.08843994140625,
-                    91.51470184326172,
-                    52.17109298706055
+                    -212.93341064453125,
+                    52.0010871887207,
+                    63.307613372802734
                 ],
                 "Rotation": [
                     -0.0,
@@ -41359,7 +42541,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -41397,7 +42579,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -41421,28 +42603,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito23",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3526028224
+        "UID": 3793080148
     },
     {
         "Active": true,
@@ -41450,9 +42641,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -168.06785583496094,
-                    103.88706970214844,
-                    45.42631530761719
+                    -207.80911254882813,
+                    56.38707733154297,
+                    45.24715042114258
                 ],
                 "Rotation": [
                     -0.0,
@@ -41522,7 +42713,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -41560,7 +42751,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -41584,28 +42775,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito24",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2009311302
+        "UID": 918363731
     },
     {
         "Active": true,
@@ -41613,9 +42813,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -188.17947387695313,
-                    103.18336486816406,
-                    45.42631530761719
+                    -214.4376678466797,
+                    65.28527069091797,
+                    34.951358795166016
                 ],
                 "Rotation": [
                     -0.0,
@@ -41685,7 +42885,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -41723,7 +42923,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -41747,28 +42947,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito25",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 548482072
+        "UID": 1424388817
     },
     {
         "Active": true,
@@ -41776,9 +42985,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -198.16549682617188,
-                    91.7887954711914,
-                    34.86989974975586
+                    -208.0264434814453,
+                    78.29944610595703,
+                    56.649444580078125
                 ],
                 "Rotation": [
                     -0.0,
@@ -41848,7 +43057,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -41886,7 +43095,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -41910,28 +43119,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito26",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 222244674
+        "UID": 51437726
     },
     {
         "Active": true,
@@ -41939,9 +43157,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -187.4422149658203,
-                    67.26113891601563,
-                    22.766902923583984
+                    -206.97506713867188,
+                    109.7353286743164,
+                    60.60495376586914
                 ],
                 "Rotation": [
                     -0.0,
@@ -42011,7 +43229,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -42049,7 +43267,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -42073,28 +43291,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito27",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 3778849754
+        "UID": 956211239
     },
     {
         "Active": true,
@@ -42102,9 +43329,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -188.71783447265625,
-                    92.2679443359375,
-                    63.397247314453125
+                    -191.8282928466797,
+                    73.59847259521484,
+                    41.66340637207031
                 ],
                 "Rotation": [
                     -0.0,
@@ -42174,7 +43401,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -42212,7 +43439,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -42236,28 +43463,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito28",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2678370596
+        "UID": 819032811
     },
     {
         "Active": true,
@@ -42265,9 +43501,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -204.54164123535156,
-                    102.8097152709961,
-                    45.42631530761719
+                    -175.29000854492188,
+                    55.365386962890625,
+                    27.07755470275879
                 ],
                 "Rotation": [
                     -0.0,
@@ -42337,7 +43573,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -42375,7 +43611,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -42399,28 +43635,37 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito29",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 1455366490
+        "UID": 4219970785
     },
     {
         "Active": true,
@@ -42428,9 +43673,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -198.27975463867188,
-                    68.402587890625,
-                    62.875728607177734
+                    -199.930419921875,
+                    96.57664489746094,
+                    58.86162567138672
                 ],
                 "Rotation": [
                     -0.0,
@@ -42500,7 +43745,7 @@
                     false
                 ],
                 "IsStatic": false,
-                "IsTrigger": false,
+                "IsTrigger": true,
                 "Mass": 0.0,
                 "RenderColColor": [
                     0.5,
@@ -42538,7 +43783,7 @@
                         ],
                         "LifeTime": 3.0,
                         "Looping": true,
-                        "PlayOnAwake": true,
+                        "PlayOnAwake": false,
                         "Speed": [
                             0.0,
                             1.0,
@@ -42562,27 +43807,36 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 941355726,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Damage": 0.0
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
+                    },
+                    {
+                        "Damage": 5.0
                     }
                 ],
                 "Script Resource": 1660518797,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 941355726,
+                "Type": 5
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Meteor",
+        "Name": "Meteorito30",
         "ParentUID": 1957540640,
-        "PrefabUID": 2821331187,
+        "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 2978838801
+        "UID": 2360820017
     }
 ]

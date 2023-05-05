@@ -139,5 +139,8 @@ public:
 	float laserSpeed = 1.5f;
 	API_GameObject laserGO;
 	API_ParticleSystem laserPS;
+
+	API_GameObject meteors[30];
+	API_Vector3 meteorsPosition[30];
 };
 

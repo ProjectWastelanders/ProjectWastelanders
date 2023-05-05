@@ -22,7 +22,8 @@ void Meteor::Update()
 		if (fireCounter > 3.0f) {
 			isFireOn = false;
 			fireCounter = 0.0f;
-
+			gameObject.GetMeshRenderer().SetActive(true);
+			gameObject.GetTransform().Translate(0, -10, 0);
 		}
 	}
 }
@@ -35,7 +36,7 @@ void Meteor::OnCollisionEnter(API::API_RigidBody other) {
 	if (detectionTag == "Floor" && isFireOn == false) {
 		Console::Log("Meteoroooooooooooooooooooooooooo");
 		gameObject.GetMeshRenderer().SetActive(false);
-		position = gameObject.GetTransform().GetLocalPosition();
+		position = gameObject.GetTransform().GetGlobalPosition();
 		isFireOn = true;
 	}
 	if (detectionName == "Player" && isFireOn == true) {

@@ -3,6 +3,11 @@ HELLO_ENGINE_API_C ObjRemarcableColor* CreateObjRemarcableColor(ScriptToInspecto
 {
 	ObjRemarcableColor* classInstance = new ObjRemarcableColor();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+	script->AddDragFloat("R (MIN 1.0F)", &classInstance->r);
+	script->AddDragFloat("G (MIN 1.0F)", &classInstance->g);
+	script->AddDragFloat("B (MIN 1.0F)", &classInstance->b);
+	script->AddDragFloat("Fade In time", &classInstance->fadeInTime);
+	script->AddDragFloat("Fade out Time", &classInstance->fadeOutTime);
 	return classInstance;
 }
 

@@ -201,6 +201,8 @@ void Mesh::UniformDraw(Material material)
 
 		material.UpdateBones(smComp->goBonesArr);
 	}
+
+	material.GetShader()->shader.SetFloat4v("ColourTest", color.ptr());
 }
 
 void Mesh::StencilDraw()

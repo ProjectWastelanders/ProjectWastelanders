@@ -42,7 +42,7 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxParticleSystem("Laser Particle System", &classInstance->laserPS);
 	script->AddDragBoxGameObject("Laser GameObject", &classInstance->laserGO);
 
-	for(int i = 0; i < 30; i++){
+	for(int i = 0; i < 1; i++){
 		script->AddDragBoxGameObject("Meteor", &classInstance->meteors[i]);
 
 	}
@@ -83,7 +83,7 @@ void ThanosAttacks::Start()
 	beamTargets[2] = beamTarget3;
 	beamTargets[3] = beamTarget4;
 
-	for (int i = 0; i < 30; i++) {
+	for (int i = 0; i < 1; i++) {
 		meteorsPosition[i] = meteors[i].GetTransform().GetGlobalPosition();
 	}
 
@@ -474,14 +474,14 @@ void ThanosAttacks::MeteorAttack() {
 	meteorRainTime += Time::GetDeltaTime();
 
 	if (meteorRainTime < 30.0f) {
-		for(int i = 0; i < 30; i++){
+		for(int i = 0; i < 1; i++){
 			meteors[i].GetTransform().Translate(0, -meteorRainSpeed * Time::GetDeltaTime(),0);
 		}
 		//meteorRain.GetTransform().Translate(0, -meteorRainSpeed * Time::GetDeltaTime(), 0);
 	}
 	else {
 		meteorRainTime = 0.0f;
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 1; i++) {
 			meteors[i].GetTransform().SetPosition(meteorsPosition[i]);
 			meteors[i].GetMeshRenderer().SetActive(true);
 		}

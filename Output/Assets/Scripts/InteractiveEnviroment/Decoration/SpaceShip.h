@@ -8,18 +8,21 @@
 class SpaceShip : HelloBehavior
 {
 public:
-	void Start() override; 
-	void Update() override;
+    void Start() override;
+    void Update() override;
 
-	API_MeshRenderer mesh1;
-	API_MeshRenderer mesh2;
+    API_MeshRenderer mesh1;
+    API_MeshRenderer mesh2;
 
-	API_Transform point1;
-	API_Transform point2;
-	float speed = 2.0f;
-	API_Vector3 direction;
+    API_Transform point1;
+    API_Transform point2;
+    float speed = 2.0f;
+    API_Vector3 direction;
 
-	float cd;
-	bool moving = false;
+    float cd;
+    bool moving = false;
+
+    int minTime = 7;
+    int maxTime = 25;
 };
 

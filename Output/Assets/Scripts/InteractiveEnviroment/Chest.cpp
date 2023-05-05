@@ -12,6 +12,9 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
     script->AddDragInt("Item Index", &classInstance->itemIndex);
 
     script->AddDragBoxUIImage("Guide Button", &classInstance->guideButton);
+
+    script->AddDragBoxUIImage("Tutorial_Img", &classInstance->Tutorial_Img);
+
     return classInstance;
 }
 
@@ -20,6 +23,11 @@ void Chest::Start()
     openChestTime = maxOpenChestTime;
     openChestTimeBar = 0;
     opening = false;
+  
+    initalPos = { -1.250, -0.700, 0 };
+    Tutorial_Img.GetGameObject().GetTransform().SetPosition(initalPos);
+  
+    finalPos = { -0.780, -0.700, 0 };
 }
 
 void Chest::Update()
@@ -83,6 +91,12 @@ void Chest::Update()
             chestAnimatorPlayer.Play();
             gameObject.SetActive(false);
         }
+    }
+
+    if (activeTutorial == true)
+    {
+        Tutorial_Img.GetGameObject().GetTransform().Translate(finalPos);
+        Console::Log("GOD");
     }
 }
 
@@ -155,6 +169,9 @@ void Chest::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         guideButton.GetGameObject().SetActive(true);
+        Tutorial_Img.GetGameObject().SetActive(true);
+        activeTutorial = true;
+        Console::Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 }
 

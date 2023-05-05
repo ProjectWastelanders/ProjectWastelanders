@@ -37,6 +37,13 @@ public:
     int chestIndex;
     int itemIndex;
 
+    API_UIImage Tutorial_Img;
+
+    API_Vector3 initalPos;
+    API_Vector3 finalPos;
+    
+    bool activeTutorial = false;
+
     API_UIImage guideButton;
 
     // 0 -> Upgrade Blueprint

@@ -1,0 +1,1 @@
+[{"Active":true,"Components":[{"Enabled":true,"Position":[0.0,0.0,0.0],"Rotation":[0.0,0.0,0.0],"Scale":[0.25,0.25,0.5],"Type":1},{"Enabled":true,"FillImage":1.0,"MaterialResource":435452275,"MeshEnabled":true,"OpacityDirection":0,"Type":15}],"Name":"Tutorial_Chest","ParentUID":0,"PrefabUID":3027671140,"Tag":"UI","UID":1142168503}]

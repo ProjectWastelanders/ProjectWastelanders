@@ -274,37 +274,24 @@ void InstanceRenderer::DrawInstancedSorting()
 
     std::vector<RenderEntry> _orderedMeshes;
 
-    glDisable(GL_DEPTH_TEST);
+    glDepthMask(GL_FALSE);
 
-    // Draw transparent objects with a draw call per mesh.
-    for (const auto& entry : meshes)
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    for (auto& mesh : meshes)
     {
-        float distance = entry.second.mesh.modelMatrix.Transposed().TranslatePart().DistanceSq(cameraPos);
-        //_orderedMeshes.emplace(std::make_pair(distance, entry.second));
-        _orderedMeshes.emplace_back(entry.second);
-        _orderedMeshes.back().distance = distance;
-    }
-
-
-    // Sort the vector by distance, in descending order
-    std::sort(_orderedMeshes.begin(), _orderedMeshes.end(), [](const RenderEntry& a, const RenderEntry& b) {
-        return a.distance > b.distance;
-    });
-
-    for (auto mesh = _orderedMeshes.begin(); mesh != _orderedMeshes.end(); mesh++)
-    {
-        RenderUpdateState state = mesh->mesh.Update();
+        RenderUpdateState state = mesh.second.mesh.Update();
         if (state == RenderUpdateState::NODRAW)
             continue;
 
         if (state == RenderUpdateState::SELECTED)
         {
-            Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh->mesh);
+            Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second.mesh);
         }
 
-        modelMatrices.push_back(mesh->mesh.modelMatrix); // Insert updated matrices
-        textureIDs.push_back(mesh->mesh.OpenGLTextureID);
-        mesh->mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+        modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
+        textureIDs.push_back(mesh.second.mesh.OpenGLTextureID);
+        mesh.second.mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
     }
 
     if (!modelMatrices.empty())
@@ -340,7 +327,8 @@ void InstanceRenderer::DrawInstancedSorting()
         glBindVertexArray(0);
     }
 
-    glEnable(GL_DEPTH_TEST);
+    
+    glDepthMask(GL_TRUE);
 
     // Reset model matrices.
     modelMatrices.clear();

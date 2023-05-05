@@ -101,7 +101,6 @@ void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projecti
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
-    go.GetParticleSystem().Play();
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(dualsTex);
 

@@ -85,7 +85,7 @@
 	
 	uniform vec3 ViewPoint;
 	
-	int steps = 2;
+	int steps = 4;
 	float scaleFactor = 1.0f/steps;
 	
 	in vec2 TextureCoords;
@@ -182,7 +182,7 @@
 		vec3 lightDir = normalize(light.Position - FragPos);
 		float dist = length(light.Position - FragPos);
 		
-		vec4 color = vec4(0.1f);
+		vec4 color = vec4(0.0f);
 		
 		if (light.Distance > dist)
 		{
@@ -190,7 +190,7 @@
 			color = CalculateLight(light.Base, lightDir, normal, shadow);
 		}
 		
-		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist) * (dist * dist);
+		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
 		
 		return (color / attenuation);
 	}
@@ -228,8 +228,7 @@
 	
 	void main()
 	{
-		
-		//Directionalasde
+		//Directional
 		vec4 result = CalculateDirectionalLight(Normal);
 		
 		//Point
@@ -244,18 +243,12 @@
 			result += CalculateSpotLight(Light_Spot[i], Normal);
 		}
 		
+		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 		
-		vec3 texDiffCol = texture2D(albedo_texture, TextureCoords).rgb;
-		if (length(texDiffCol) != 0.0)
-		{
-			FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
-		}
-		else
-		{
-			FragColor = result * vec4(ColourTest, 1.0f);
-		}
 	}
 #endif
+
+
 
 
 

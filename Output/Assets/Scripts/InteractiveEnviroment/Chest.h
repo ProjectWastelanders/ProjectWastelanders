@@ -41,8 +41,10 @@ public:
 
     API_Vector3 initalPos;
     API_Vector3 finalPos;
+    API_Vector3 movingPos;
     
     bool activeTutorial = false;
+    bool endTutorial = false;
 
     API_UIImage guideButton;
 

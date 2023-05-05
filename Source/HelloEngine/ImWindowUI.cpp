@@ -93,9 +93,9 @@ void ImWindowUI::Update()
 					if (auxiliarMatrix.Col(3).xyz() == float3(0,0,0) && auxiliarMatrix.Col(3).w == 1)
 						auxiliarMatrix.Transpose();
 
-					ModuleCommand::S_ChangeTransform(auxiliarMatrix, currentGlobal, _imOperation == ImGuizmo::OPERATION::SCALE,
+					/*ModuleCommand::S_ChangeTransform(auxiliarMatrix, currentGlobal, _imOperation == ImGuizmo::OPERATION::SCALE,
 						std::bind(&TransformComponent::SetLocalFromGlobal, selected->transform, std::placeholders::_1, std::placeholders::_2));
-					firstClick = false;
+					firstClick = false;*/
 				}
 
 			}

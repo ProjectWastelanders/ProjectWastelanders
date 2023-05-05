@@ -152,10 +152,15 @@ void SkinnedMeshRenderComponent::LinkBones(GameObject* goBone, std::map<std::str
 			}
 
 			delta = parentTransform * offset;
+
+			if (goBone->GetBonesUpdate())
+			{
+				goBone->transform->SetLocalFromGlobal(delta, false, true);
+			}
 		}
 		else
 		{
-			delta = _gameObject->GetComponent<TransformComponent>()->GetGlobalMatrix().Inverted() * delta;
+			delta = _gameObject->transform->GetGlobalMatrix().Inverted() * delta;
 
 			delta = delta * offset;
 		}

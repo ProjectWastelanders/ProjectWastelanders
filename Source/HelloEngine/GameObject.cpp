@@ -218,6 +218,8 @@ void GameObject::OnEditor()
 {
     if (_isPendingToDelete) return;
 
+	ImGui::Checkbox("Update with bones", &_updateTransformWithBones);
+
     for (auto* component : _components)
     {
         component->OnEditor();

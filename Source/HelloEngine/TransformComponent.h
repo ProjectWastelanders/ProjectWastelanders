@@ -40,12 +40,12 @@ public:
 
     void SetTransform(float3 pos, float3 scale, float3 rot);
 
-    void SetTransform(float4x4& localTransformMatrix, bool ignoreRotation = false);
+    void SetTransform(float4x4& localTransformMatrix, bool ignoreRotation = false, bool ignoreChildren = false, bool ignoreScale = false);
 
 	void SetTransform(float* matrix);
 
-	void SetLocalFromGlobal(float4x4& globalMatrix, bool ignoreRotation = false);
-
+	void SetLocalFromGlobal(float4x4& globalMatrix, bool ignoreRotation = false, bool ignoreScale = false);
+    void SetLocalFromGlobalIgnoreChildren(float4x4& globalMatrix);
     /// <summary>
     /// Current position is transalted by the given vector
     /// </summary>

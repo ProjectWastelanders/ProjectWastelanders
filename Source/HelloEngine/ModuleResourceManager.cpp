@@ -639,6 +639,8 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		
 		if(sceneFile[i].contains("IsStatic"))
 			g->SetIsStatic(sceneFile[i]["IsStatic"]);
+		if (sceneFile[i].contains("UpdateWithBones"))
+			g->SetUpdateWithBones(sceneFile[i]["UpdateWithBones"]);
 		
 		g->SetPrefabUID(prefabUID);
 		/*if (prefabUID != 0)
@@ -1051,6 +1053,7 @@ void ModuleResourceManager::SerializeSceneRecursive(const GameObject* g, json& j
 	_j["Active"] = g->_isActive;
 	_j["PrefabUID"] = g->_prefabUID;
 	_j["IsStatic"] = g->_isStatic;
+	_j["UpdateWithBones"] = g->_updateTransformWithBones;
 	if (g->_prefabUID != 0)
 		_j["FirstOnPrefab"] = false;
 	else

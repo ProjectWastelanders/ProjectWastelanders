@@ -96,6 +96,9 @@ public:
 	void OnCollisionStay(PhysBody3D* other);
 	void OnCollisionExit(PhysBody3D* other);
 
+	bool GetBonesUpdate() { return _updateTransformWithBones; }
+	void SetUpdateWithBones(bool active) { _updateTransformWithBones = active; }
+
 #ifdef STANDALONE
 	void OnEditor();
 	bool MarkAsDead();
@@ -141,6 +144,8 @@ private:
 
 	uint _prefabUID;
 	bool _updatePrefab;
+
+	bool _updateTransformWithBones = false;
 
 	// On Editor variables
 	std::string _comboValues[COMPONENT_NUM] = { "Mesh Renderer", "Texture", "Camera", 

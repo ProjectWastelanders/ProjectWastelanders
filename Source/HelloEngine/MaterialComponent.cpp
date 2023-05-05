@@ -124,6 +124,10 @@ void MaterialComponent::MarkAsAlive()
 
 
 
+void MaterialComponent::SetColor(float4 color)
+{
+}
+
 void MaterialComponent::MaterialDragNDrop()
 {
 	std::string btnTxt = "EMPTY";

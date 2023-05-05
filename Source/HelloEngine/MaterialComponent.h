@@ -24,6 +24,8 @@ public:
 	int GetResourceUID();
 
 	ResourceMaterial* _resource = nullptr;
+
+	void SetColor(float4 color);
 private:
 	void MaterialDragNDrop();
 	void ShaderSelectCombo();

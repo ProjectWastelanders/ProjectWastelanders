@@ -32,22 +32,7 @@ void API::API_ShaderComponent::SetColor(float r, float g, float b, float a)
 		Engine::Console::S_Log("Trying to acces a NULLPTR API_ShaderComponent");
 		return;
 	}
-	std::vector<Uniform*>& uniforms = _materialComponent->_resource->material.uniforms;
-	for (int i = 0; i < uniforms.size(); ++i)
-	{
-		if (uniforms[i]->data.name == "ColourTest")
-		{
-			float* data = (float*)uniforms[i]->data.value;
-			*data = r;
-			++data;
-			*data = g;
-			++data;
-			*data = b;
-			++data;
-			*data = a;
-			break;
-		}
-	}
+	_materialComponent->SetColor({ r,g,b,a });
 }
 
 MaterialComponent* API::API_ShaderComponent::GetComponent()

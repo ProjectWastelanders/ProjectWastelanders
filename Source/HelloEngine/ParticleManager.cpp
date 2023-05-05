@@ -145,10 +145,6 @@ void ParticleManager::RemoveEmitterInList(Emitter* emitter)
 
 void ParticleManager::RemoveAllEmitters()
 {
-	for (int i = 0; i < EmitterList.size(); ++i)
-	{
-		RELEASE(EmitterList[i]);
-	}
 	EmitterList.clear();
 }
 

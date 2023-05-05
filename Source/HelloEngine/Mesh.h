@@ -109,6 +109,8 @@ public:
 	float opacityLimit = 1.0f;
 	OpacityDirection opacityDir = OpacityDirection::LEFT_TO_RIGHT;
 
+	float4 color = { 1.0f,1.0f,1.0f,1.0f };
+
 private:
 	ResourceMesh* resource = nullptr;
 	MeshRenderComponent* component = nullptr;

@@ -23,6 +23,7 @@ Mesh::Mesh()
 	modelMatrix.SetIdentity();
 	stencilShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/stencil.shader", 109, "Stencil");
 	depthShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMap.shader", 111, "Depth Map (Normal)");
+	depthBoneShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMapBone.shader", 113, "Depth Map (Boned)");
 }
 
 Mesh::~Mesh()
@@ -46,6 +47,11 @@ Mesh::~Mesh()
 	{
 		depthShader->Dereference();
 		depthShader = nullptr;
+	}
+	if (depthBoneShader)
+	{
+		depthBoneShader->Dereference();
+		depthBoneShader = nullptr;
 	}
 	if (drawPerMesh2D)
 	{
@@ -193,10 +199,15 @@ void Mesh::UniformDraw(Material material)
 {
 	if (material.depthDraw)
 	{
+		if (component->_hasBones)
+		{	
+			return;
+		}
 		depthShader->shader.Bind();
 		depthShader->shader.SetMatFloat4v("dirLightSpaceMatrix",
 			&Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
 		depthShader->shader.SetMatFloat4v("model", &modelMatrix.v[0][0]);
+
 		return;
 	}
 	//Update the material uniforms

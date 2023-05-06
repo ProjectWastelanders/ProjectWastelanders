@@ -85,7 +85,7 @@
 	
 	uniform vec3 ViewPoint;
 	
-	int steps = 4;
+	int steps = 2;
 	float scaleFactor = 1.0f/steps;
 	
 	in vec2 TextureCoords;
@@ -141,7 +141,7 @@
 	    float closestDepth = texture(shadowMap, projCoords.xy).r; 
 	    float currentDepth = projCoords.z;
 	    
-	    float bias = 0.0007;
+	    float bias = 0.00032;
 	    float shadow = currentDepth - bias > closestDepth  ? 0.0 : 1.0;
 	
 	    return shadow;
@@ -214,8 +214,7 @@
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
-			float spotLightIntensity = (1.0 - (1.0 - theta) / (1.0 - light.Cutoff));
-			
+		
 			vec4 result = (color / attenuation);
 			result.w = 1.0f;
 			return result;
@@ -247,6 +246,10 @@
 		
 	}
 #endif
+
+
+
+
 
 
 

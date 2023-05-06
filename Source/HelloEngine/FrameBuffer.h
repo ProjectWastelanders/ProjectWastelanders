@@ -31,8 +31,8 @@ private:
 	/*Depth map for shadow mapping*/
 	uint depthMapFBO = 0;
 	uint depthMap = 0;
-	const uint SHADOW_WIDTH = 2048;
-	const uint SHADOW_HEIGHT = 2048;
+	const uint SHADOW_WIDTH = 1024;
+	const uint SHADOW_HEIGHT = 1024;
 
 	friend class CameraObject;
 };

@@ -13,11 +13,11 @@ DirectionalLightComponent::DirectionalLightComponent(GameObject* gameObject) : L
 
 	Lighting::SetDirectionalLight(this->data);
 
-	lightFrustum.type = math::FrustumType::OrthographicFrustum;
-	lightFrustum.nearPlaneDistance = 0.0f;
-	lightFrustum.farPlaneDistance = 75.0f;
-	lightFrustum.orthographicHeight = 32;
-	lightFrustum.orthographicWidth = 32;
+	data.lightFrustum.type = math::FrustumType::OrthographicFrustum;
+	data.lightFrustum.nearPlaneDistance = 0.0f;
+	data.lightFrustum.farPlaneDistance = 185;
+	data.lightFrustum.orthographicHeight = 64;
+	data.lightFrustum.orthographicWidth = 64;
 
 }
 
@@ -37,7 +37,7 @@ void DirectionalLightComponent::OnTransformCallback(float4x4 worldMatrix)
 void DirectionalLightComponent::UpdateToLightMap()
 {
 	UpdateData(this->data);
-	CalculateLightSpaceMatrix();
+	data.CalculateLightSpaceMatrix();
 
 	//Always last
 	Lighting::SetDirectionalLight(this->data);
@@ -62,10 +62,10 @@ void DirectionalLightComponent::DeSerializationUnique(json& j)
 #ifdef STANDALONE
 void DirectionalLightComponent::OnEditorUnique()
 {
-	/*ImGui::DragFloat("Near plane Distance", &lightFrustum.nearPlaneDistance);
-	ImGui::DragFloat("Far plane Distance", &lightFrustum.farPlaneDistance);
-	ImGui::DragFloat("Orthographic Height", &lightFrustum.orthographicHeight);
-	ImGui::DragFloat("Orthographic Width", &lightFrustum.orthographicWidth);*/
+	ImGui::DragFloat("Near plane Distance", &data.lightFrustum.nearPlaneDistance);
+	ImGui::DragFloat("Far plane Distance", &data.lightFrustum.farPlaneDistance);
+	ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
+	ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);
 
 	UpdateToLightMap();
 }
@@ -76,18 +76,11 @@ void DirectionalLightComponent::MarkAsAlive()
 }
 #endif
 
-void DirectionalLightComponent::CalculateLightSpaceMatrix()
+void DirectionalLight::CalculateLightSpaceMatrix()
 {
-	/*lightFrustum.type = math::FrustumType::OrthographicFrustum;
-	lightFrustum.nearPlaneDistance = 0.1f;
-	lightFrustum.farPlaneDistance = 75.0f;
-	lightFrustum.orthographicHeight = 35;
-	lightFrustum.orthographicWidth = 35;*/
-
-	//Look At
-	lightFrustum.front = (lightFrustum.pos - data.direction).Normalized();
+	lightFrustum.front = (-direction).Normalized();
 	float3 X = float3(0, 1, 0).Cross(lightFrustum.front).Normalized();
 	lightFrustum.up = lightFrustum.front.Cross(X);
 
-	data.lightSpaceMatrix = lightFrustum.ViewProjMatrix().Transposed();
+	lightSpaceMatrix = lightFrustum.ViewProjMatrix().Transposed();
 }

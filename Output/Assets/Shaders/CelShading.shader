@@ -9,8 +9,6 @@
 	uniform mat4 model;
 	uniform mat4 lightSpaceMatrix;
 	
-	uniform sampler2D normal_texture;
-	
 	out vec2 TextureCoords;
 	out vec3 Normal;
 	out vec3 FragPos;
@@ -136,15 +134,14 @@
 	{
 		// perform perspective divide
 	    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
-	    // transform to [0,1] range
 	    projCoords = (projCoords * 0.5 + 0.5);
-	    // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+	    if (projCoords.z > 1.0f) projCoords.z = 1.0f; //Capping Z
+	    
 	    float closestDepth = texture(shadowMap, projCoords.xy).r; 
-	    // get depth of current fragment from light's perspective
 	    float currentDepth = projCoords.z;
-	    // check whether current frag pos is in shadow
-	    float bias = 0.0002;
-	    float shadow = currentDepth - bias > closestDepth  ? 0.15 : 1.0;
+	    
+		float bias = 0.00032;
+	    float shadow = currentDepth - bias > closestDepth  ? 0.0 : 1.0;
 	
 	    return shadow;
 	}
@@ -184,7 +181,7 @@
 		vec3 lightDir = normalize(light.Position - FragPos);
 		float dist = length(light.Position - FragPos);
 		
-		vec4 color = vec4(0.1f);
+		vec4 color = vec4(0.0f);
 		
 		if (light.Distance > dist)
 		{
@@ -192,7 +189,7 @@
 			color = CalculateLight(light.Base, lightDir, normal, shadow);
 		}
 		
-		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist) * (dist * dist);
+		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
 		
 		return (color / attenuation);
 	}
@@ -216,8 +213,7 @@
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
-			float spotLightIntensity = (1.0 - (1.0 - theta) / (1.0 - light.Cutoff));
-			
+		
 			vec4 result = (color / attenuation);
 			result.w = 1.0f;
 			return result;
@@ -230,8 +226,7 @@
 	
 	void main()
 	{
-		
-		//Directionalasde
+		//Directional
 		vec4 result = CalculateDirectionalLight(Normal);
 		
 		//Point
@@ -246,16 +241,9 @@
 			result += CalculateSpotLight(Light_Spot[i], Normal);
 		}
 		
-		
-		vec3 texDiffCol = texture2D(albedo_texture, TextureCoords).rgb;
-		if (length(texDiffCol) != 0.0)
-		{
-			FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
-		}
-		else
-		{
-			FragColor = result * vec4(ColourTest, 1.0f);
-		}
+		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 	}
 #endif
+
+
 

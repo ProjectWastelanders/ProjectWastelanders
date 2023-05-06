@@ -7,6 +7,9 @@ struct DirectionalLight : public Light
 
 	float3 direction;
 	float4x4 lightSpaceMatrix;
+	Frustum lightFrustum;
+
+	void CalculateLightSpaceMatrix();
 };
 
 class DirectionalLightComponent : public LightComponent
@@ -37,8 +40,5 @@ public:
 
 private:
 	void CalculateLightSpaceMatrix();
-
-private:
-	Frustum lightFrustum;
 };
 

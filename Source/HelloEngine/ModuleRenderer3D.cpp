@@ -97,11 +97,14 @@ void ModuleRenderer3D::DrawGame()
 {
 	if (_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
 	{
+		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
+
+		ShadowRenderPass();
+
+
 		glBindFramebuffer(GL_FRAMEBUFFER, 0); // Bind to default buffer because a camera buffer is not necessary with only one display.
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
-		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
 
 		renderManager.Draw();
 		particleManager.Draw();
@@ -183,6 +186,8 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 
 void ModuleRenderer3D::ShadowRenderPass()
 {
+	Lighting::GetLightMap().directionalLight.lightFrustum.pos = _cameras->currentDrawingCamera->cameraFrustum.pos;
+	Lighting::GetLightMap().directionalLight.CalculateLightSpaceMatrix();
 	glCullFace(GL_FRONT);
 	//Depth map (Shadow)
 	_cameras->currentDrawingCamera->frameBuffer.BindShadowBuffer();

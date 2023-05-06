@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.733137845993042,
+                "Aspect ratio": 1.9408766031265259,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -149,63 +149,6 @@
                     },
                     {
                         "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Exit": 345729373
                     },
                     {
                         "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1

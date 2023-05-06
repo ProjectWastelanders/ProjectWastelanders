@@ -126,6 +126,10 @@ void PlayerStats::Update()
     {
         inmunityTime -= dt;
     }
+    if (reducedDamageTime > 0.0f)
+    {
+        reducedDamageTime -= dt;
+    }
     if (blinkTime > 0.0f)
     {
         blinkTime -= dt;
@@ -264,6 +268,17 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
 void PlayerStats::TakeDamage(float amount, float resistanceDamage)
 {
     if (inmunityTime > 0.0f || currentHp <= 0) return; // only VS2
+
+    if (reducedDamageTime > 0.0f)
+    {
+        amount *= (1.0f - reducedDamageTime);
+        // 1.0 - 0.5 = 0.5 --> 50% max damage reduction
+        // 0.5 --> reduced damage duration
+    }
+    else
+    {
+        reducedDamageTime = 0.5f;
+    }
 
     float shieldBefore = shield;
     shield -= amount;

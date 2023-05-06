@@ -4,6 +4,9 @@
 #include "ModuleFiles.h"
 #include "Texture.h"
 #include "File_Model.h"
+#include "FfmpegVideoPlayer.h"
+#include "UUID.h"
+#include "glew.h"
 
 class GameObject;
 class FileTree;
@@ -92,7 +95,6 @@ private:
     void UpdateResourceMeshesRecursive(ModelNode& node);
 
     uint currentLoadedMesh = 0;
-
 };
 
 class ResourceMesh : public Resource
@@ -132,6 +134,9 @@ public:
     void CalculateNormalsAndAABB();
 
 public:
+    // Just for InputGeom use
+    MeshInfo GetMeshInfo();
+
     void Destroy() override;
     void ReImport(const std::string& filePath) override;
 
@@ -241,6 +246,21 @@ public:
     ResourcePrefab() {};
 
     std::string path;
+};
+
+class ResourceVideo : public Resource
+{
+public:
+    ResourceVideo() {};
+
+    void UnLoad() override
+    {
+        if (video == nullptr)
+            return;
+        video->CleanUp();
+    }
+
+    FfmpegVideoPlayer* video = nullptr;
 };
 
 class ModuleResourceManager : public Module

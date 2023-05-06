@@ -77,6 +77,58 @@ void API::API_RigidBody::SetTrigger(bool isTrigger)
 	_rigidBody->CallUpdateAllPram();
 }
 
+void API::API_RigidBody::SetBoxScale(API_Vector3 scale)
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return;
+	}
+
+	if (_rigidBody->_shapeSelected == ColliderShape::BOX)
+	{
+		_rigidBody->_physBody->colScl = scale;
+		ModulePhysics::UpdatePhysBodyScaleBox(_rigidBody->_physBody);
+	}
+}
+
+API::API_Vector3 API::API_RigidBody::GetBoxScale()
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return API_Vector3();
+	}
+
+	API_Vector3 scale;
+
+	if (_rigidBody->_shapeSelected == ColliderShape::BOX)
+	{ 
+		scale = _rigidBody->_physBody->colScl;
+	}
+	else
+	{
+		scale = API_Vector3();
+	}
+
+	return scale;
+}
+
+void API::API_RigidBody::SetRadius(float rad)
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return;
+	}
+
+	if (_rigidBody->_shapeSelected == ColliderShape::SPHERE)
+	{
+		_rigidBody->sphereRadius = rad;
+		ModulePhysics::UpdatePhysBodyScaleSphere(_rigidBody->_physBody, rad);
+	}
+}
+
 float API::API_RigidBody::GetRadius()
 {
 	if (!_rigidBody)
@@ -93,6 +145,38 @@ float API::API_RigidBody::GetRadius()
 	}
 
 	return ret;
+}
+
+void API::API_RigidBody::SetCylinderScale(float radius, float height)
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return;
+	}
+
+	if (_rigidBody->_shapeSelected == ColliderShape::CYLINDER)
+	{
+		_rigidBody->cylRadiusHeight.x = radius;
+		_rigidBody->cylRadiusHeight.y = height;
+		ModulePhysics::UpdatePhysBodyScaleCylinder(_rigidBody->_physBody, radius, height);
+	}
+}
+
+API::API_Vector2 API::API_RigidBody::GetCylinderScale()
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return API_Vector2(0,0);
+	}
+
+	API_Vector2 radiusHeight;
+
+	radiusHeight.x = _rigidBody->cylRadiusHeight.x;
+	radiusHeight.y = _rigidBody->cylRadiusHeight.y;
+
+	return radiusHeight;
 }
 
 PhysicsComponent* API::API_RigidBody::GetComponent()

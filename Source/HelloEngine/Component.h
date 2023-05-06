@@ -1,8 +1,8 @@
 #pragma once
 
-class GameObject;
-
 #include "json.hpp"
+
+class GameObject;
 using json = nlohmann::json;
 
 class Component
@@ -33,6 +33,8 @@ public:
 		DIRECTIONAL_LIGHT,
 		POINT_LIGHT,
 		SPOT_LIGHT,
+		AGENT,
+		UI_VIDEO,
 		MAX
 	};
 
@@ -40,6 +42,13 @@ public:
 	virtual ~Component() { std::cout << "Destroy Component" << std::endl; }
 
 	GameObject* GetGameObject() { return _gameObject; }
+
+	//template<class T>
+	//T* GetComponent(uint index = 0);
+
+	//template<class T>
+	//bool TryGetComponent(T* result, uint index = 0);
+
 	Type GetType() { return _type; }
 	bool IsEnabled(){ return _isEnabled; }
 
@@ -79,4 +88,7 @@ protected:
 
 	GameObject* _gameObject = nullptr;
 	Type _type = Type::NONE;
+
+	friend class ModuleNavMesh;
+	friend class Pathfinder;
 };

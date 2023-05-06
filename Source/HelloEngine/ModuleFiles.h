@@ -30,7 +30,8 @@ enum class ResourceType
 	ANIMATION,
     PREFAB,
     SHADER,
-    MATERIAL
+    MATERIAL,
+    VIDEO
 };
 
 struct MetaFile

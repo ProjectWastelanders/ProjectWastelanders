@@ -23,6 +23,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
@@ -53,6 +54,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "WallsColliders",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -144,6 +146,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll1",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -235,6 +238,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll2",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -326,6 +330,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll3",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -417,6 +422,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll6",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -508,6 +514,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll7",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -599,6 +606,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll9",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -690,6 +698,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll11",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -781,6 +790,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll12",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -872,6 +882,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll13",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -963,6 +974,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll14",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -1054,6 +1066,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll15",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -1145,6 +1158,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll16",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -1236,6 +1250,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll17",
         "ParentUID": 358304775,
         "PrefabUID": 0,
@@ -1266,6 +1281,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ColumnsColliders",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -1357,6 +1373,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll4",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1448,6 +1465,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll5",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1539,6 +1557,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll8",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1630,6 +1649,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll10",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1721,6 +1741,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll18",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1812,6 +1833,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll19",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1903,6 +1925,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll20",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -1994,6 +2017,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Coll21",
         "ParentUID": 535157329,
         "PrefabUID": 0,
@@ -2085,6 +2109,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "FloorCollider",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -2115,6 +2140,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "PropsColliders",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -2206,6 +2232,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "SofaColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2297,6 +2324,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "SofaColl2",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2388,6 +2416,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "AbilitiesColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2479,6 +2508,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "AbilitiesColl2",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2570,6 +2600,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "AbChairColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2661,6 +2692,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "CollectionablesColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2752,6 +2784,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BoxesColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2843,6 +2876,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MachineColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -2934,6 +2968,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ArmoryColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3025,6 +3060,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ArmoryColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3116,6 +3152,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MidColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3207,6 +3244,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MidChair1Coll",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3298,6 +3336,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MidChair2Coll",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3389,6 +3428,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MidChair3Coll",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3480,6 +3520,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MidChair4Coll",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3571,6 +3612,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "MidChair5Coll",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3662,6 +3704,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ArChairColl",
         "ParentUID": 2010541562,
         "PrefabUID": 0,
@@ -3692,6 +3735,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Node",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -3738,6 +3782,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 4 plano",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -3784,6 +3829,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -3830,6 +3876,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -3876,6 +3923,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 4 triangulo",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -3922,6 +3970,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -3968,6 +4017,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 4 triangulo",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4014,6 +4064,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4060,6 +4111,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4106,6 +4158,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4152,6 +4205,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 4 triangulo.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4198,6 +4252,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 4 triangulo.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4244,6 +4299,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4290,6 +4346,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4336,6 +4393,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4382,6 +4440,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4428,6 +4487,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4474,6 +4534,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4520,6 +4581,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4566,6 +4628,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4612,6 +4675,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4658,6 +4722,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4704,6 +4769,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4750,6 +4816,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4796,6 +4863,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4842,6 +4910,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4888,6 +4957,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4934,6 +5004,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -4980,6 +5051,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.007",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5026,6 +5098,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.008",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5072,6 +5145,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.009",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5118,6 +5192,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5164,6 +5239,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5210,6 +5286,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.007",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5256,6 +5333,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.008",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5302,6 +5380,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5348,6 +5427,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5394,6 +5474,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5440,6 +5521,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5486,6 +5568,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5532,6 +5615,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5578,6 +5662,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.010",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5624,6 +5709,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.011",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5670,6 +5756,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.012",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5716,6 +5803,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.013",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5762,6 +5850,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.014",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5808,6 +5897,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.015",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5854,6 +5944,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.016",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5900,6 +5991,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.017",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5946,6 +6038,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.018",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -5992,6 +6085,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.019",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6038,6 +6132,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.009",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6084,6 +6179,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 4 triangulo.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6130,6 +6226,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 4 triangulo.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6176,6 +6273,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6222,6 +6320,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.007",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6268,6 +6367,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 4 plano.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6314,6 +6414,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6360,6 +6461,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 4 triangulo.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6406,6 +6508,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 4 triangulo.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6452,6 +6555,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6498,6 +6602,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.020",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6544,6 +6649,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.021",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6590,6 +6696,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.022",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6636,6 +6743,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.023",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6682,6 +6790,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "0 3 plano.024",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6728,6 +6837,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "1 3 plano.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6774,6 +6884,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 3 plano.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6820,6 +6931,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.009",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6866,6 +6978,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.010",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6912,6 +7025,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "4 3 plano.011",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6942,6 +7056,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 4 plano.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -6972,6 +7087,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 4 plano.008",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7018,6 +7134,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Caja  Metalica.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7064,6 +7181,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Caja  Metalica.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7110,6 +7228,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Caja  Metalica.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7156,6 +7275,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "puerta Derecha",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7202,6 +7322,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "puerta Derecha.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7248,6 +7369,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7294,6 +7416,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7340,6 +7463,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7386,6 +7510,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7432,6 +7557,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7478,6 +7604,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7524,6 +7651,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7570,6 +7698,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.007",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7616,6 +7745,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.008",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7662,6 +7792,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.009",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7708,6 +7839,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.010",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7754,6 +7886,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.011",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7800,6 +7933,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.012",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7846,6 +7980,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.013",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7892,6 +8027,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.014",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7938,6 +8074,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.015",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -7984,6 +8121,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.026",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8030,6 +8168,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.027",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8076,6 +8215,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.016",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8122,6 +8262,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.017",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8168,6 +8309,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.019",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8214,6 +8356,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.020",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8260,6 +8403,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.021",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8306,6 +8450,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.022",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8352,6 +8497,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.023",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8398,6 +8544,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.018",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8444,6 +8591,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8490,6 +8638,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8536,6 +8685,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8582,6 +8732,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.003",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8628,6 +8779,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.004",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8674,6 +8826,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.005",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8720,6 +8873,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.006",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8766,6 +8920,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Columna.007",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8812,6 +8967,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "3 3 plano.008",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8858,6 +9014,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "2 4 plano.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8904,6 +9061,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.024",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8950,6 +9108,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cube.025",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -8996,6 +9155,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Estanteria memarte",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9042,6 +9202,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Sticklord",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9088,6 +9249,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Baker House  100% Real",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9134,6 +9296,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Robotic Arm",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9180,6 +9343,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "maseta",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9226,6 +9390,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "seta - concept disc",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9272,6 +9437,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "jukebox onepiece season 2",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9318,6 +9484,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "libro abierto",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9364,6 +9531,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Pantallas.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9410,6 +9578,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Silla armeria.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9456,6 +9625,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Silla armeria.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9502,6 +9672,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Mesa Centro",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9548,6 +9719,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "silla central",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9594,6 +9766,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "silla centro der",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9640,6 +9813,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "silla centro der.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9686,6 +9860,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "silla central.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9732,6 +9907,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "silla central.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9778,6 +9954,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Sofa en L.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9824,6 +10001,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Lampara panel herramientas",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9870,6 +10048,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Panel para herramientas",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9916,6 +10095,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Cable Testing",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -9962,6 +10142,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Mesa Armas",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10008,6 +10189,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Plano para Planos",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10054,6 +10236,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "weapon1",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10100,6 +10283,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Caja Herramientas",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10146,6 +10330,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Mesa Habilidades pocha",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10192,6 +10377,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "box2WithUV",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10238,6 +10424,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "pCube1",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10284,6 +10471,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "pCylinder1",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10330,6 +10518,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "pCylinder1.001",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10376,6 +10565,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "pCylinder1.002",
         "ParentUID": 3337184046,
         "PrefabUID": 0,
@@ -10476,6 +10666,15 @@
                     },
                     {
                         "Scene path and name: ": "LVL1_Blockout.HScene"
+                    },
+                    {
+                        "Is Hub Scene": true
+                    },
+                    {
+                        "(IF NO HUB) Current Level": 1
+                    },
+                    {
+                        "Scene path and name: ": "LVL1_Blockout.HScene"
                     }
                 ],
                 "Script Resource": 2719578167,
@@ -10483,6 +10682,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "GoToLevel1Trigger",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -10561,6 +10761,42 @@
                     },
                     {
                         "Orbital": false
+                    },
+                    {
+                        "Target": 1862169540
+                    },
+                    {
+                        "Delay": 0.10000000149011612
+                    },
+                    {
+                        "Offset_X": 0.0
+                    },
+                    {
+                        "Offset_Y": 10.0
+                    },
+                    {
+                        "Offset_Z": -7.0
+                    },
+                    {
+                        "Orbital Offset Multiplier": 2.0
+                    },
+                    {
+                        "Rot_X": 50.0
+                    },
+                    {
+                        "Rot_Y": 0.0
+                    },
+                    {
+                        "Rot_Z": 0.0
+                    },
+                    {
+                        "SafeZone_Distance": 10.0
+                    },
+                    {
+                        "Use safe zone: ": false
+                    },
+                    {
+                        "Orbital": false
                     }
                 ],
                 "Script Resource": 577361718,
@@ -10568,6 +10804,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Camera",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -10598,6 +10835,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Node",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -10644,6 +10882,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "branch",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10690,6 +10929,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "groot",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10736,6 +10976,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "eye_r",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10782,6 +11023,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "eye_l",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10828,6 +11070,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "teeth_up",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10874,6 +11117,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "teeth_low",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10920,6 +11164,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "armor",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -10966,6 +11211,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "belt",
         "ParentUID": 4176734161,
         "PrefabUID": 0,
@@ -11011,6 +11257,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BlackExetrior",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -11040,7 +11287,8 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "_BlackExteriorGroup",
         "ParentUID": 2830428646,
         "PrefabUID": 54949993,
@@ -11086,6 +11334,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11131,6 +11380,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11176,6 +11426,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11221,6 +11472,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11266,6 +11518,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11311,6 +11564,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11356,6 +11610,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 1054388596,
         "PrefabUID": 54949993,
@@ -11385,7 +11640,8 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "_BlackExteriorGroup",
         "ParentUID": 2830428646,
         "PrefabUID": 54949993,
@@ -11431,6 +11687,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11476,6 +11733,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11521,6 +11779,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11566,6 +11825,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11611,6 +11871,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11656,6 +11917,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11701,6 +11963,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Plane",
         "ParentUID": 3152569213,
         "PrefabUID": 54949993,
@@ -11739,7 +12002,8 @@
                 ]
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Armory",
         "ParentUID": 2830428646,
         "PrefabUID": 2406411174,
@@ -11779,6 +12043,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackGround",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -11817,6 +12082,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackGround (I)",
         "ParentUID": 1831149941,
         "PrefabUID": 2406411174,
@@ -11856,6 +12122,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrints",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -11900,6 +12167,12 @@
                     },
                     {
                         "Gun Index": 4
+                    },
+                    {
+                        "BluePrint Image Component": 2341798902
+                    },
+                    {
+                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 2406654245,
@@ -11907,6 +12180,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrint W2 (I)",
         "ParentUID": 2867293371,
         "PrefabUID": 2406411174,
@@ -11951,6 +12225,12 @@
                     },
                     {
                         "Gun Index": 3
+                    },
+                    {
+                        "BluePrint Image Component": 1422799981
+                    },
+                    {
+                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 2406654245,
@@ -11958,6 +12238,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrint W3 (I)",
         "ParentUID": 2867293371,
         "PrefabUID": 2406411174,
@@ -12002,6 +12283,12 @@
                     },
                     {
                         "Gun Index": 2
+                    },
+                    {
+                        "BluePrint Image Component": 1926729553
+                    },
+                    {
+                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 999461329,
@@ -12009,6 +12296,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrint W4 (I)",
         "ParentUID": 2867293371,
         "PrefabUID": 2406411174,
@@ -12053,6 +12341,12 @@
                     },
                     {
                         "Gun Index": 1
+                    },
+                    {
+                        "BluePrint Image Component": 419620740
+                    },
+                    {
+                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 2406654245,
@@ -12060,6 +12354,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrint W5 (I)",
         "ParentUID": 2867293371,
         "PrefabUID": 2406411174,
@@ -12099,6 +12394,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrint Amount",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -12154,6 +12450,12 @@
                     },
                     {
                         "PlayerStorage GO": 1862169540
+                    },
+                    {
+                        "Text Blueprints": 2108451898
+                    },
+                    {
+                        "PlayerStorage GO": 1862169540
                     }
                 ],
                 "Script Resource": 1296421856,
@@ -12161,6 +12463,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BluePrint Amount (T)",
         "ParentUID": 4071677295,
         "PrefabUID": 2406411174,
@@ -12204,6 +12507,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeaponList",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -12286,6 +12590,45 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Weapon": 2125686633
+                    },
+                    {
+                        "Next Weapon": 740957820
+                    },
+                    {
+                        "Panel Upgrate": 911611964
+                    },
+                    {
+                        "Panel Unlock": 911611964
+                    },
+                    {
+                        "Next Panel Upgrate": 2121029335
+                    },
+                    {
+                        "Next Panel Unlock": 2412948481
+                    },
+                    {
+                        "Material Weapon": 1048084744
+                    },
+                    {
+                        "Material Weapon Locked": 2413304871
+                    },
+                    {
+                        "SelectedWeapon": 1046225449
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 0
+                    },
+                    {
+                        "Open Menu Interruptor": 1766493025
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -12293,6 +12636,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon1 (B)",
         "ParentUID": 3432315266,
         "PrefabUID": 2406411174,
@@ -12378,6 +12722,48 @@
                     },
                     {
                         "Gun Index": 4
+                    },
+                    {
+                        "Weapon": 740957820
+                    },
+                    {
+                        "Next Weapon": 3667161260
+                    },
+                    {
+                        "Prev Weapon": 2125686633
+                    },
+                    {
+                        "Panel Upgrate": 2121029335
+                    },
+                    {
+                        "Panel Unlock": 2412948481
+                    },
+                    {
+                        "Next Panel Upgrate": 1250319448
+                    },
+                    {
+                        "Next Panel Unlock": 1692539270
+                    },
+                    {
+                        "Prev Panel Upgrate": 911611964
+                    },
+                    {
+                        "Prev Panel Unlock": 911611964
+                    },
+                    {
+                        "Material Weapon": 2760442950
+                    },
+                    {
+                        "Material Weapon Locked": 567303012
+                    },
+                    {
+                        "SelectedWeapon": 1046225449
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -12385,6 +12771,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon2 (B)",
         "ParentUID": 3432315266,
         "PrefabUID": 2406411174,
@@ -12470,6 +12857,48 @@
                     },
                     {
                         "Gun Index": 3
+                    },
+                    {
+                        "Weapon": 3667161260
+                    },
+                    {
+                        "Next Weapon": 1398139035
+                    },
+                    {
+                        "Prev Weapon": 740957820
+                    },
+                    {
+                        "Panel Upgrate": 1250319448
+                    },
+                    {
+                        "Panel Unlock": 1692539270
+                    },
+                    {
+                        "Next Panel Upgrate": 385359660
+                    },
+                    {
+                        "Next Panel Unlock": 801303102
+                    },
+                    {
+                        "Prev Panel Upgrate": 2121029335
+                    },
+                    {
+                        "Prev Panel Unlock": 2412948481
+                    },
+                    {
+                        "Material Weapon": 426950729
+                    },
+                    {
+                        "Material Weapon Locked": 673939956
+                    },
+                    {
+                        "SelectedWeapon": 1046225449
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -12477,6 +12906,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon3 (B)",
         "ParentUID": 3432315266,
         "PrefabUID": 2406411174,
@@ -12562,6 +12992,48 @@
                     },
                     {
                         "Gun Index": 2
+                    },
+                    {
+                        "Weapon": 1398139035
+                    },
+                    {
+                        "Next Weapon": 2993926487
+                    },
+                    {
+                        "Prev Weapon": 3667161260
+                    },
+                    {
+                        "Panel Upgrate": 385359660
+                    },
+                    {
+                        "Panel Unlock": 801303102
+                    },
+                    {
+                        "Next Panel Upgrate": 2021939713
+                    },
+                    {
+                        "Next Panel Unlock": 3043641959
+                    },
+                    {
+                        "Prev Panel Upgrate": 1250319448
+                    },
+                    {
+                        "Prev Panel Unlock": 1692539270
+                    },
+                    {
+                        "Material Weapon": 2428347813
+                    },
+                    {
+                        "Material Weapon Locked": 2342560247
+                    },
+                    {
+                        "SelectedWeapon": 1046225449
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -12569,6 +13041,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon4 (B)",
         "ParentUID": 3432315266,
         "PrefabUID": 2406411174,
@@ -12645,6 +13118,39 @@
                     },
                     {
                         "Gun Index": 1
+                    },
+                    {
+                        "Weapon": 2993926487
+                    },
+                    {
+                        "Prev Weapon": 1398139035
+                    },
+                    {
+                        "Panel Upgrate": 2021939713
+                    },
+                    {
+                        "Panel Unlock": 3043641959
+                    },
+                    {
+                        "Prev Panel Upgrate": 385359660
+                    },
+                    {
+                        "Prev Panel Unlock": 801303102
+                    },
+                    {
+                        "Material Weapon": 2984314687
+                    },
+                    {
+                        "Material Weapon Locked": 4116342376
+                    },
+                    {
+                        "SelectedWeapon": 1046225449
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -12652,6 +13158,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon5 (B)",
         "ParentUID": 3432315266,
         "PrefabUID": 2406411174,
@@ -12690,6 +13197,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon Selected (I)",
         "ParentUID": 3432315266,
         "PrefabUID": 2406411174,
@@ -12752,6 +13260,27 @@
                     },
                     {
                         "Gun Index": 0
+                    },
+                    {
+                        "Upgrate 1": 604812651
+                    },
+                    {
+                        "Upgrate 2": 4097172583
+                    },
+                    {
+                        "Upgrate 3": 3294404498
+                    },
+                    {
+                        "Panel Upgrate": 911611964
+                    },
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 0
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -12759,6 +13288,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate W1",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -12802,6 +13332,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 1 (B)",
         "ParentUID": 911611964,
         "PrefabUID": 2406411174,
@@ -12845,6 +13376,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 2 (B)",
         "ParentUID": 911611964,
         "PrefabUID": 2406411174,
@@ -12888,6 +13420,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 3 (B)",
         "ParentUID": 911611964,
         "PrefabUID": 2406411174,
@@ -12926,6 +13459,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W1 (I)",
         "ParentUID": 911611964,
         "PrefabUID": 2406411174,
@@ -12977,6 +13511,18 @@
                     },
                     {
                         "Gun Index": 4
+                    },
+                    {
+                        "Unlock": 2830347253
+                    },
+                    {
+                        "Panel Unlock": 2412948481
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -12984,6 +13530,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock W2",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -13027,6 +13574,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock (B)",
         "ParentUID": 2412948481,
         "PrefabUID": 2406411174,
@@ -13065,6 +13613,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W2 (I)",
         "ParentUID": 2412948481,
         "PrefabUID": 2406411174,
@@ -13127,6 +13676,27 @@
                     },
                     {
                         "Gun Index": 4
+                    },
+                    {
+                        "Upgrate 1": 2912728259
+                    },
+                    {
+                        "Upgrate 2": 173239198
+                    },
+                    {
+                        "Upgrate 3": 818036790
+                    },
+                    {
+                        "Panel Upgrate": 2121029335
+                    },
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -13134,6 +13704,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate W2",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -13177,6 +13748,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 1 (B)",
         "ParentUID": 2121029335,
         "PrefabUID": 2406411174,
@@ -13220,6 +13792,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 2 (B)",
         "ParentUID": 2121029335,
         "PrefabUID": 2406411174,
@@ -13263,6 +13836,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 3 (B)",
         "ParentUID": 2121029335,
         "PrefabUID": 2406411174,
@@ -13301,6 +13875,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W2 (I)",
         "ParentUID": 2121029335,
         "PrefabUID": 2406411174,
@@ -13352,6 +13927,18 @@
                     },
                     {
                         "Gun Index": 3
+                    },
+                    {
+                        "Unlock": 3848750910
+                    },
+                    {
+                        "Panel Unlock": 1692539270
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -13359,6 +13946,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock W3",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -13402,6 +13990,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock (B)",
         "ParentUID": 1692539270,
         "PrefabUID": 2406411174,
@@ -13440,6 +14029,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W3 (I)",
         "ParentUID": 1692539270,
         "PrefabUID": 2406411174,
@@ -13502,6 +14092,27 @@
                     },
                     {
                         "Gun Index": 3
+                    },
+                    {
+                        "Upgrate 1": 2388101176
+                    },
+                    {
+                        "Upgrate 2": 3807946136
+                    },
+                    {
+                        "Upgrate 3": 1866621559
+                    },
+                    {
+                        "Panel Upgrate": 1250319448
+                    },
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -13509,6 +14120,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate W3",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -13552,6 +14164,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 1 (B)",
         "ParentUID": 1250319448,
         "PrefabUID": 2406411174,
@@ -13595,6 +14208,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 2 (B)",
         "ParentUID": 1250319448,
         "PrefabUID": 2406411174,
@@ -13638,6 +14252,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 3 (B)",
         "ParentUID": 1250319448,
         "PrefabUID": 2406411174,
@@ -13676,6 +14291,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W3 (I)",
         "ParentUID": 1250319448,
         "PrefabUID": 2406411174,
@@ -13727,6 +14343,18 @@
                     },
                     {
                         "Gun Index": 2
+                    },
+                    {
+                        "Unlock": 193056597
+                    },
+                    {
+                        "Panel Unlock": 801303102
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -13734,6 +14362,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock W4",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -13777,6 +14406,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock (B)",
         "ParentUID": 801303102,
         "PrefabUID": 2406411174,
@@ -13815,6 +14445,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W4 (I)",
         "ParentUID": 801303102,
         "PrefabUID": 2406411174,
@@ -13877,6 +14508,27 @@
                     },
                     {
                         "Gun Index": 2
+                    },
+                    {
+                        "Upgrate 1": 2759158044
+                    },
+                    {
+                        "Upgrate 2": 2929867724
+                    },
+                    {
+                        "Upgrate 3": 3733990972
+                    },
+                    {
+                        "Panel Upgrate": 385359660
+                    },
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -13884,6 +14536,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate W4",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -13927,6 +14580,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 1 (B)",
         "ParentUID": 385359660,
         "PrefabUID": 2406411174,
@@ -13970,6 +14624,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 2 (B)",
         "ParentUID": 385359660,
         "PrefabUID": 2406411174,
@@ -14013,6 +14668,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 3 (B)",
         "ParentUID": 385359660,
         "PrefabUID": 2406411174,
@@ -14051,6 +14707,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W4 (I)",
         "ParentUID": 385359660,
         "PrefabUID": 2406411174,
@@ -14102,6 +14759,18 @@
                     },
                     {
                         "Gun Index": 1
+                    },
+                    {
+                        "Unlock": 595344786
+                    },
+                    {
+                        "Panel Unlock": 3043641959
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -14109,6 +14778,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock W5",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -14152,6 +14822,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Unlock (B)",
         "ParentUID": 3043641959,
         "PrefabUID": 2406411174,
@@ -14190,6 +14861,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W5 (I)",
         "ParentUID": 3043641959,
         "PrefabUID": 2406411174,
@@ -14252,6 +14924,27 @@
                     },
                     {
                         "Gun Index": 1
+                    },
+                    {
+                        "Upgrate 1": 1911632372
+                    },
+                    {
+                        "Upgrate 2": 1605769859
+                    },
+                    {
+                        "Upgrate 3": 1599605854
+                    },
+                    {
+                        "Panel Upgrate": 2021939713
+                    },
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -14259,6 +14952,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate W5",
         "ParentUID": 2963029982,
         "PrefabUID": 2406411174,
@@ -14302,6 +14996,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 1 (B)",
         "ParentUID": 2021939713,
         "PrefabUID": 2406411174,
@@ -14345,6 +15040,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 2 (B)",
         "ParentUID": 2021939713,
         "PrefabUID": 2406411174,
@@ -14388,6 +15084,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Upgrate 3 (B)",
         "ParentUID": 2021939713,
         "PrefabUID": 2406411174,
@@ -14426,6 +15123,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "WeeaponInfo W5 (I)",
         "ParentUID": 2021939713,
         "PrefabUID": 2406411174,
@@ -14538,6 +15236,27 @@
                     },
                     {
                         "Button Guide": 3437375339
+                    },
+                    {
+                        "Number of menus": 4
+                    },
+                    {
+                        "Menu to Open 1": 1831149941
+                    },
+                    {
+                        "Menu to Open 2": 2867293371
+                    },
+                    {
+                        "Menu to Open 3": 4071677295
+                    },
+                    {
+                        "Menu to Open 4": 3432315266
+                    },
+                    {
+                        "Menu Panel": 2963029982
+                    },
+                    {
+                        "Button Guide": 3437375339
                     }
                 ],
                 "Script Resource": 3847920188,
@@ -14545,6 +15264,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ArmoryPlace",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -14723,6 +15443,93 @@
                     },
                     {
                         "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Velocity": 7.5
+                    },
+                    {
+                        "Upgrade Velocity": 9.0
+                    },
+                    {
+                        "SecToMaxVel": 0.20000000298023224
+                    },
+                    {
+                        "SecToZeroVel": 0.20000000298023224
+                    },
+                    {
+                        "Y tp limit": -20.0
+                    },
+                    {
+                        "Rigid Body": 1862169540
+                    },
+                    {
+                        "Dash Time": 0.5
+                    },
+                    {
+                        "Dash Distance": 6.0
+                    },
+                    {
+                        "Upgrade Dash Distance": 8.0
+                    },
+                    {
+                        "Dash Cooldown": 6.0
+                    },
+                    {
+                        "Upgrade Dash Cooldown": 3.0
+                    },
+                    {
+                        "AnimationPlayer": 1477466868
+                    },
+                    {
+                        "Dash Animation": 3707604139
+                    },
+                    {
+                        "Idle Animation 1": 738149381
+                    },
+                    {
+                        "Idle Animation 2": 2426153329
+                    },
+                    {
+                        "Idle Animation 3": 1590499778
+                    },
+                    {
+                        "Run Forward Animation": 781813718
+                    },
+                    {
+                        "Run Back Animation": 915742792
+                    },
+                    {
+                        "Run Left Animation": 4072259668
+                    },
+                    {
+                        "Run Right Animation": 3628832266
+                    },
+                    {
+                        "Shoot Duals Animation": 2706901869
+                    },
+                    {
+                        "Shoot SemiAuto Animation": 2706901869
+                    },
+                    {
+                        "Shoot Automatic Animation": 2706901869
+                    },
+                    {
+                        "Shoot Burst Animation": 2706901869
+                    },
+                    {
+                        "Shoot Shotgun Animation": 2706901869
+                    },
+                    {
+                        "Hit Animation": 359781210
+                    },
+                    {
+                        "Open Chest Animation": 2410125527
+                    },
+                    {
+                        "Dead Animation": 296001631
+                    },
+                    {
+                        "Player Stats GO": 1862169540
                     }
                 ],
                 "Script Resource": 102275363,
@@ -14731,6 +15538,45 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Max HP": 100.0
+                    },
+                    {
+                        "Current HP": 100.0
+                    },
+                    {
+                        "Upgraded Max HP": 125.0
+                    },
+                    {
+                        "Resistance": 100.0
+                    },
+                    {
+                        "Deadline Percentage": 20.0
+                    },
+                    {
+                        "Upgraded Deadline Percentage": 50.0
+                    },
+                    {
+                        "Deadline Heal Amount": 2.5
+                    },
+                    {
+                        "Upgraded Deadline Heal Amount": 5.0
+                    },
+                    {
+                        "Aid Kit Heal Amount": 30.0
+                    },
+                    {
+                        "Upgraded Aid Kit Heal Amount": 60.0
+                    },
+                    {
+                        "Passive Heal Particles": 913497443
+                    },
+                    {
+                        "Kid Heal Particles": 3316874580
+                    },
+                    {
+                        "Player GO": 1862169540
+                    },
                     {
                         "Max HP": 100.0
                     },
@@ -14809,6 +15655,39 @@
                     },
                     {
                         "Fast Swap Delay": 0.5
+                    },
+                    {
+                        "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Base Gun": 0
+                    },
+                    {
+                        "Normal Gun": -1
+                    },
+                    {
+                        "Special Gun": -1
+                    },
+                    {
+                        "Duals": 3550167112
+                    },
+                    {
+                        "Semiautomatic": 3701521640
+                    },
+                    {
+                        "Automatic": 1305371143
+                    },
+                    {
+                        "Burst": 4031330739
+                    },
+                    {
+                        "Shotgun": 2049488206
+                    },
+                    {
+                        "Swap Delay": 1.0
+                    },
+                    {
+                        "Fast Swap Delay": 0.5
                     }
                 ],
                 "Script Resource": 2666385646,
@@ -14819,13 +15698,17 @@
                 "Inspector Fields": [
                     {
                         "Level Index": 0
+                    },
+                    {
+                        "Level Index": 0
                     }
                 ],
                 "Script Resource": 775870401,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Player",
         "ParentUID": 2830428646,
         "PrefabUID": 2709458494,
@@ -14856,6 +15739,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RootJoint",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -14886,6 +15770,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_Translation",
         "ParentUID": 2517714580,
         "PrefabUID": 2709458494,
@@ -14916,6 +15801,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_PreRotation",
         "ParentUID": 3896457124,
         "PrefabUID": 2709458494,
@@ -14946,6 +15832,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_Rotation",
         "ParentUID": 812047347,
         "PrefabUID": 2709458494,
@@ -14976,6 +15863,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1",
         "ParentUID": 893828239,
         "PrefabUID": 2709458494,
@@ -15006,6 +15894,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee1_$AssimpFbx$_Translation",
         "ParentUID": 3729642971,
         "PrefabUID": 2709458494,
@@ -15036,6 +15925,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee1_$AssimpFbx$_PreRotation",
         "ParentUID": 635469718,
         "PrefabUID": 2709458494,
@@ -15066,6 +15956,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee1",
         "ParentUID": 3874088078,
         "PrefabUID": 2709458494,
@@ -15096,6 +15987,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle1_$AssimpFbx$_Translation",
         "ParentUID": 2529824229,
         "PrefabUID": 2709458494,
@@ -15126,6 +16018,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle1_$AssimpFbx$_PreRotation",
         "ParentUID": 873772840,
         "PrefabUID": 2709458494,
@@ -15156,6 +16049,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle1",
         "ParentUID": 3317080392,
         "PrefabUID": 2709458494,
@@ -15186,6 +16080,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot1_$AssimpFbx$_Translation",
         "ParentUID": 2357432807,
         "PrefabUID": 2709458494,
@@ -15216,6 +16111,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot1_$AssimpFbx$_PreRotation",
         "ParentUID": 3244174099,
         "PrefabUID": 2709458494,
@@ -15246,6 +16142,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot1",
         "ParentUID": 3199751726,
         "PrefabUID": 2709458494,
@@ -15276,6 +16173,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_Translation",
         "ParentUID": 2846174213,
         "PrefabUID": 2709458494,
@@ -15306,6 +16204,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_PreRotation",
         "ParentUID": 883715016,
         "PrefabUID": 2709458494,
@@ -15336,6 +16235,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_Rotation",
         "ParentUID": 4011581032,
         "PrefabUID": 2709458494,
@@ -15366,6 +16266,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1",
         "ParentUID": 1444671879,
         "PrefabUID": 2709458494,
@@ -15396,6 +16297,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackLow_$AssimpFbx$_Translation",
         "ParentUID": 2517714580,
         "PrefabUID": 2709458494,
@@ -15426,6 +16328,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackLow_$AssimpFbx$_PreRotation",
         "ParentUID": 3967912142,
         "PrefabUID": 2709458494,
@@ -15456,6 +16359,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackLow",
         "ParentUID": 2009726757,
         "PrefabUID": 2709458494,
@@ -15486,6 +16390,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackMid_$AssimpFbx$_Translation",
         "ParentUID": 2036947305,
         "PrefabUID": 2709458494,
@@ -15516,6 +16421,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackMid_$AssimpFbx$_PreRotation",
         "ParentUID": 3078142077,
         "PrefabUID": 2709458494,
@@ -15546,6 +16452,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackMid",
         "ParentUID": 1641341600,
         "PrefabUID": 2709458494,
@@ -15576,6 +16483,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackHigh_$AssimpFbx$_Translation",
         "ParentUID": 4238623520,
         "PrefabUID": 2709458494,
@@ -15606,6 +16514,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackHigh_$AssimpFbx$_PreRotation",
         "ParentUID": 2890079647,
         "PrefabUID": 2709458494,
@@ -15636,6 +16545,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackHigh",
         "ParentUID": 3902188075,
         "PrefabUID": 2709458494,
@@ -15666,6 +16576,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftChest_$AssimpFbx$_Translation",
         "ParentUID": 374628390,
         "PrefabUID": 2709458494,
@@ -15696,6 +16607,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftChest_$AssimpFbx$_PreRotation",
         "ParentUID": 2961718878,
         "PrefabUID": 2709458494,
@@ -15726,6 +16638,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftChest",
         "ParentUID": 745091573,
         "PrefabUID": 2709458494,
@@ -15756,6 +16669,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftShoulder_$AssimpFbx$_Translation",
         "ParentUID": 3700370041,
         "PrefabUID": 2709458494,
@@ -15786,6 +16700,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftShoulder_$AssimpFbx$_PreRotation",
         "ParentUID": 2734275788,
         "PrefabUID": 2709458494,
@@ -15816,6 +16731,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftShoulder",
         "ParentUID": 1474143035,
         "PrefabUID": 2709458494,
@@ -15846,6 +16762,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftElbow_$AssimpFbx$_Translation",
         "ParentUID": 3068701815,
         "PrefabUID": 2709458494,
@@ -15876,6 +16793,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftElbow_$AssimpFbx$_PreRotation",
         "ParentUID": 1530857186,
         "PrefabUID": 2709458494,
@@ -15906,6 +16824,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftElbow",
         "ParentUID": 194696265,
         "PrefabUID": 2709458494,
@@ -15936,6 +16855,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_Translation",
         "ParentUID": 31879388,
         "PrefabUID": 2709458494,
@@ -15966,6 +16886,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_PreRotation",
         "ParentUID": 3271747212,
         "PrefabUID": 2709458494,
@@ -15996,6 +16917,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_Rotation",
         "ParentUID": 3017070587,
         "PrefabUID": 2709458494,
@@ -16026,6 +16948,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist",
         "ParentUID": 1800759350,
         "PrefabUID": 2709458494,
@@ -16056,6 +16979,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftHand_$AssimpFbx$_Translation",
         "ParentUID": 571336109,
         "PrefabUID": 2709458494,
@@ -16086,6 +17010,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftHand_$AssimpFbx$_PreRotation",
         "ParentUID": 1299116433,
         "PrefabUID": 2709458494,
@@ -16116,6 +17041,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftHand",
         "ParentUID": 2363862725,
         "PrefabUID": 2709458494,
@@ -16146,6 +17072,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftThumb_$AssimpFbx$_Translation",
         "ParentUID": 4224896393,
         "PrefabUID": 2709458494,
@@ -16176,6 +17103,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 676510492,
         "PrefabUID": 2709458494,
@@ -16206,6 +17134,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftThumb",
         "ParentUID": 725595596,
         "PrefabUID": 2709458494,
@@ -16236,6 +17165,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMIdThumb_$AssimpFbx$_Translation",
         "ParentUID": 3580620860,
         "PrefabUID": 2709458494,
@@ -16266,6 +17196,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMIdThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 2208066923,
         "PrefabUID": 2709458494,
@@ -16296,6 +17227,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMIdThumb",
         "ParentUID": 2357787751,
         "PrefabUID": 2709458494,
@@ -16326,6 +17258,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipThumb_$AssimpFbx$_Translation",
         "ParentUID": 2185926546,
         "PrefabUID": 2709458494,
@@ -16356,6 +17289,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 2815859898,
         "PrefabUID": 2709458494,
@@ -16386,6 +17320,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipThumb",
         "ParentUID": 3494700034,
         "PrefabUID": 2709458494,
@@ -16416,6 +17351,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftLittle_$AssimpFbx$_Translation",
         "ParentUID": 4224896393,
         "PrefabUID": 2709458494,
@@ -16446,6 +17382,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 1688728828,
         "PrefabUID": 2709458494,
@@ -16476,6 +17413,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftLittle",
         "ParentUID": 554973483,
         "PrefabUID": 2709458494,
@@ -16506,6 +17444,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartLittle_$AssimpFbx$_Translation",
         "ParentUID": 283065126,
         "PrefabUID": 2709458494,
@@ -16536,6 +17475,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 1967183198,
         "PrefabUID": 2709458494,
@@ -16566,6 +17506,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartLittle",
         "ParentUID": 3639260406,
         "PrefabUID": 2709458494,
@@ -16596,6 +17537,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidLittle_$AssimpFbx$_Translation",
         "ParentUID": 238000493,
         "PrefabUID": 2709458494,
@@ -16626,6 +17568,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 4143462481,
         "PrefabUID": 2709458494,
@@ -16656,6 +17599,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidLittle",
         "ParentUID": 522953860,
         "PrefabUID": 2709458494,
@@ -16686,6 +17630,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LerftTipLittle_$AssimpFbx$_Translation",
         "ParentUID": 132918867,
         "PrefabUID": 2709458494,
@@ -16716,6 +17661,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LerftTipLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 2584883823,
         "PrefabUID": 2709458494,
@@ -16746,6 +17692,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LerftTipLittle",
         "ParentUID": 3066938683,
         "PrefabUID": 2709458494,
@@ -16776,6 +17723,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftRing_$AssimpFbx$_Translation",
         "ParentUID": 4224896393,
         "PrefabUID": 2709458494,
@@ -16806,6 +17754,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftRing_$AssimpFbx$_PreRotation",
         "ParentUID": 536811746,
         "PrefabUID": 2709458494,
@@ -16836,6 +17785,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftRing",
         "ParentUID": 2860125770,
         "PrefabUID": 2709458494,
@@ -16866,6 +17816,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartRing_$AssimpFbx$_Translation",
         "ParentUID": 1542456017,
         "PrefabUID": 2709458494,
@@ -16896,6 +17847,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartRing_$AssimpFbx$_PreRotation",
         "ParentUID": 263057668,
         "PrefabUID": 2709458494,
@@ -16926,6 +17878,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartRing",
         "ParentUID": 597353684,
         "PrefabUID": 2709458494,
@@ -16956,6 +17909,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidRing_$AssimpFbx$_Translation",
         "ParentUID": 192506595,
         "PrefabUID": 2709458494,
@@ -16986,6 +17940,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidRing_$AssimpFbx$_PreRotation",
         "ParentUID": 2203686975,
         "PrefabUID": 2709458494,
@@ -17016,6 +17971,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidRing",
         "ParentUID": 2364106059,
         "PrefabUID": 2709458494,
@@ -17046,6 +18002,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipRing_$AssimpFbx$_Translation",
         "ParentUID": 3986183623,
         "PrefabUID": 2709458494,
@@ -17076,6 +18033,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipRing_$AssimpFbx$_PreRotation",
         "ParentUID": 2778185842,
         "PrefabUID": 2709458494,
@@ -17106,6 +18064,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipRing",
         "ParentUID": 519297817,
         "PrefabUID": 2709458494,
@@ -17136,6 +18095,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMiddle_$AssimpFbx$_Translation",
         "ParentUID": 4224896393,
         "PrefabUID": 2709458494,
@@ -17166,6 +18126,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 3101306576,
         "PrefabUID": 2709458494,
@@ -17196,6 +18157,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMiddle",
         "ParentUID": 3764190480,
         "PrefabUID": 2709458494,
@@ -17226,6 +18188,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartMIddle_$AssimpFbx$_Translation",
         "ParentUID": 685908047,
         "PrefabUID": 2709458494,
@@ -17256,6 +18219,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartMIddle_$AssimpFbx$_PreRotation",
         "ParentUID": 2157743259,
         "PrefabUID": 2709458494,
@@ -17286,6 +18250,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartMIddle",
         "ParentUID": 3467289943,
         "PrefabUID": 2709458494,
@@ -17316,6 +18281,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidMiddle_$AssimpFbx$_Translation",
         "ParentUID": 1851217218,
         "PrefabUID": 2709458494,
@@ -17346,6 +18312,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 215316009,
         "PrefabUID": 2709458494,
@@ -17376,6 +18343,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidMiddle",
         "ParentUID": 1079999549,
         "PrefabUID": 2709458494,
@@ -17406,6 +18374,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipMiddle_$AssimpFbx$_Translation",
         "ParentUID": 2951117153,
         "PrefabUID": 2709458494,
@@ -17436,6 +18405,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 1376770260,
         "PrefabUID": 2709458494,
@@ -17466,6 +18436,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipMiddle",
         "ParentUID": 1337126627,
         "PrefabUID": 2709458494,
@@ -17496,6 +18467,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftIndex_$AssimpFbx$_Translation",
         "ParentUID": 4224896393,
         "PrefabUID": 2709458494,
@@ -17526,6 +18498,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 1587071306,
         "PrefabUID": 2709458494,
@@ -17556,6 +18529,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftIndex",
         "ParentUID": 1162738129,
         "PrefabUID": 2709458494,
@@ -17586,6 +18560,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartIndex_$AssimpFbx$_Translation",
         "ParentUID": 3742651397,
         "PrefabUID": 2709458494,
@@ -17616,6 +18591,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 56996808,
         "PrefabUID": 2709458494,
@@ -17646,6 +18622,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartIndex",
         "ParentUID": 3919955560,
         "PrefabUID": 2709458494,
@@ -17676,6 +18653,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidIndex_$AssimpFbx$_Translation",
         "ParentUID": 414120327,
         "PrefabUID": 2709458494,
@@ -17706,6 +18684,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 3650795315,
         "PrefabUID": 2709458494,
@@ -17736,6 +18715,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidIndex",
         "ParentUID": 151015630,
         "PrefabUID": 2709458494,
@@ -17766,6 +18746,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipIndex_$AssimpFbx$_Translation",
         "ParentUID": 4074202918,
         "PrefabUID": 2709458494,
@@ -17796,6 +18777,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 1851191645,
         "PrefabUID": 2709458494,
@@ -17826,6 +18808,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipIndex",
         "ParentUID": 2729865473,
         "PrefabUID": 2709458494,
@@ -17856,6 +18839,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Dual Left",
         "ParentUID": 4224896393,
         "PrefabUID": 2709458494,
@@ -17886,6 +18870,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightChest_$AssimpFbx$_Translation",
         "ParentUID": 374628390,
         "PrefabUID": 2709458494,
@@ -17916,6 +18901,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightChest_$AssimpFbx$_PreRotation",
         "ParentUID": 614668247,
         "PrefabUID": 2709458494,
@@ -17946,6 +18932,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightChest",
         "ParentUID": 3058854339,
         "PrefabUID": 2709458494,
@@ -17976,6 +18963,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightShoulder_$AssimpFbx$_Translation",
         "ParentUID": 3134497951,
         "PrefabUID": 2709458494,
@@ -18006,6 +18994,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightShoulder_$AssimpFbx$_PreRotation",
         "ParentUID": 3888504107,
         "PrefabUID": 2709458494,
@@ -18036,6 +19025,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightShoulder",
         "ParentUID": 1165831974,
         "PrefabUID": 2709458494,
@@ -18066,6 +19056,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightElbow_$AssimpFbx$_Translation",
         "ParentUID": 95902045,
         "PrefabUID": 2709458494,
@@ -18096,6 +19087,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightElbow_$AssimpFbx$_PreRotation",
         "ParentUID": 2417096961,
         "PrefabUID": 2709458494,
@@ -18126,6 +19118,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightElbow",
         "ParentUID": 3888864501,
         "PrefabUID": 2709458494,
@@ -18156,6 +19149,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightWrist_$AssimpFbx$_Translation",
         "ParentUID": 487018872,
         "PrefabUID": 2709458494,
@@ -18186,6 +19180,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightWrist_$AssimpFbx$_PreRotation",
         "ParentUID": 2269052888,
         "PrefabUID": 2709458494,
@@ -18216,6 +19211,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightWrist",
         "ParentUID": 539001271,
         "PrefabUID": 2709458494,
@@ -18246,6 +19242,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightHand_$AssimpFbx$_Translation",
         "ParentUID": 678223139,
         "PrefabUID": 2709458494,
@@ -18276,6 +19273,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightHand_$AssimpFbx$_PreRotation",
         "ParentUID": 3997675391,
         "PrefabUID": 2709458494,
@@ -18306,6 +19304,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightHand",
         "ParentUID": 3982648714,
         "PrefabUID": 2709458494,
@@ -18336,6 +19335,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightThumb_$AssimpFbx$_Translation",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -18366,6 +19366,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 4161220165,
         "PrefabUID": 2709458494,
@@ -18396,6 +19397,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightThumb",
         "ParentUID": 4175057673,
         "PrefabUID": 2709458494,
@@ -18426,6 +19428,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMIdThumb_$AssimpFbx$_Translation",
         "ParentUID": 1188560540,
         "PrefabUID": 2709458494,
@@ -18456,6 +19459,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMIdThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 1933430604,
         "PrefabUID": 2709458494,
@@ -18486,6 +19490,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMIdThumb",
         "ParentUID": 3097024444,
         "PrefabUID": 2709458494,
@@ -18516,6 +19521,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipThumb_$AssimpFbx$_Translation",
         "ParentUID": 1990621931,
         "PrefabUID": 2709458494,
@@ -18546,6 +19552,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 3379718119,
         "PrefabUID": 2709458494,
@@ -18576,6 +19583,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipThumb",
         "ParentUID": 3866818835,
         "PrefabUID": 2709458494,
@@ -18606,6 +19614,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLittle_$AssimpFbx$_Translation",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -18636,6 +19645,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 3842148870,
         "PrefabUID": 2709458494,
@@ -18666,6 +19676,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLittle",
         "ParentUID": 3683283389,
         "PrefabUID": 2709458494,
@@ -18696,6 +19707,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartLittle_$AssimpFbx$_Translation",
         "ParentUID": 2850417888,
         "PrefabUID": 2709458494,
@@ -18726,6 +19738,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 4274836064,
         "PrefabUID": 2709458494,
@@ -18756,6 +19769,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartLittle",
         "ParentUID": 2897802719,
         "PrefabUID": 2709458494,
@@ -18786,6 +19800,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidLittle_$AssimpFbx$_Translation",
         "ParentUID": 424304490,
         "PrefabUID": 2709458494,
@@ -18816,6 +19831,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 4012803698,
         "PrefabUID": 2709458494,
@@ -18846,6 +19862,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidLittle",
         "ParentUID": 668555545,
         "PrefabUID": 2709458494,
@@ -18876,6 +19893,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipLittle_$AssimpFbx$_Translation",
         "ParentUID": 945011693,
         "PrefabUID": 2709458494,
@@ -18906,6 +19924,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 2350038225,
         "PrefabUID": 2709458494,
@@ -18936,6 +19955,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipLittle",
         "ParentUID": 3822056197,
         "PrefabUID": 2709458494,
@@ -18966,6 +19986,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightRing_$AssimpFbx$_Translation",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -18996,6 +20017,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightRing_$AssimpFbx$_PreRotation",
         "ParentUID": 2176052584,
         "PrefabUID": 2709458494,
@@ -19026,6 +20048,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightRing",
         "ParentUID": 2575518856,
         "PrefabUID": 2709458494,
@@ -19056,6 +20079,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartRing_$AssimpFbx$_Translation",
         "ParentUID": 3903600168,
         "PrefabUID": 2709458494,
@@ -19086,6 +20110,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartRing_$AssimpFbx$_PreRotation",
         "ParentUID": 4196674632,
         "PrefabUID": 2709458494,
@@ -19116,6 +20141,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartRing",
         "ParentUID": 2944309479,
         "PrefabUID": 2709458494,
@@ -19146,6 +20172,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidRing_$AssimpFbx$_Translation",
         "ParentUID": 4161068563,
         "PrefabUID": 2709458494,
@@ -19176,6 +20203,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidRing_$AssimpFbx$_PreRotation",
         "ParentUID": 2210309422,
         "PrefabUID": 2709458494,
@@ -19206,6 +20234,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidRing",
         "ParentUID": 3863987974,
         "PrefabUID": 2709458494,
@@ -19236,6 +20265,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipRing_$AssimpFbx$_Translation",
         "ParentUID": 3725120189,
         "PrefabUID": 2709458494,
@@ -19266,6 +20296,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipRing_$AssimpFbx$_PreRotation",
         "ParentUID": 3582444000,
         "PrefabUID": 2709458494,
@@ -19296,6 +20327,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipRing",
         "ParentUID": 287877983,
         "PrefabUID": 2709458494,
@@ -19326,6 +20358,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMiddle_$AssimpFbx$_Translation",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -19356,6 +20389,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 3043778535,
         "PrefabUID": 2709458494,
@@ -19386,6 +20420,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMiddle",
         "ParentUID": 1513967890,
         "PrefabUID": 2709458494,
@@ -19416,6 +20451,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartMIddle_$AssimpFbx$_Translation",
         "ParentUID": 1166058553,
         "PrefabUID": 2709458494,
@@ -19446,6 +20482,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartMIddle_$AssimpFbx$_PreRotation",
         "ParentUID": 2985656717,
         "PrefabUID": 2709458494,
@@ -19476,6 +20513,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartMIddle",
         "ParentUID": 874069744,
         "PrefabUID": 2709458494,
@@ -19506,6 +20544,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidMiddle_$AssimpFbx$_Translation",
         "ParentUID": 2512997296,
         "PrefabUID": 2709458494,
@@ -19536,6 +20575,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 1891942255,
         "PrefabUID": 2709458494,
@@ -19566,6 +20606,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidMiddle",
         "ParentUID": 854701626,
         "PrefabUID": 2709458494,
@@ -19596,6 +20637,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipMiddle_$AssimpFbx$_Translation",
         "ParentUID": 2704984962,
         "PrefabUID": 2709458494,
@@ -19626,6 +20668,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 2327011689,
         "PrefabUID": 2709458494,
@@ -19656,6 +20699,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipMiddle",
         "ParentUID": 2714394749,
         "PrefabUID": 2709458494,
@@ -19686,6 +20730,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightIndex_$AssimpFbx$_Translation",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -19716,6 +20761,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 104639263,
         "PrefabUID": 2709458494,
@@ -19746,6 +20792,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightIndex",
         "ParentUID": 825595307,
         "PrefabUID": 2709458494,
@@ -19776,6 +20823,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartIndex_$AssimpFbx$_Translation",
         "ParentUID": 3518513575,
         "PrefabUID": 2709458494,
@@ -19806,6 +20854,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 3268845010,
         "PrefabUID": 2709458494,
@@ -19836,6 +20885,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartIndex",
         "ParentUID": 2826328057,
         "PrefabUID": 2709458494,
@@ -19866,6 +20916,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidIndex_$AssimpFbx$_Translation",
         "ParentUID": 2153957452,
         "PrefabUID": 2709458494,
@@ -19896,6 +20947,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 1888625851,
         "PrefabUID": 2709458494,
@@ -19926,6 +20978,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidIndex",
         "ParentUID": 1891572727,
         "PrefabUID": 2709458494,
@@ -19956,6 +21009,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipIndex_$AssimpFbx$_Translation",
         "ParentUID": 897596514,
         "PrefabUID": 2709458494,
@@ -19986,6 +21040,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 4087711690,
         "PrefabUID": 2709458494,
@@ -20016,6 +21071,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipIndex",
         "ParentUID": 1747569233,
         "PrefabUID": 2709458494,
@@ -20047,6 +21103,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Gun Type": 0
+                    },
                     {
                         "Gun Type": 0
                     }
@@ -20113,6 +21172,63 @@
                     },
                     {
                         "Audio Event String": "w_basic"
+                    },
+                    {
+                        "Projectile Pull": 3024727231
+                    },
+                    {
+                        "Projectile Speed": 30.0
+                    },
+                    {
+                        "Projectile Damage": 5.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 5.0
+                    },
+                    {
+                        "Projectile Lifetime": 1.0
+                    },
+                    {
+                        "Projectile Spawn": 3550167112
+                    },
+                    {
+                        "Second Projectile Spawn": 2009336184
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 1.2000000476837158
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Burst Space": 0.10000000149011612
+                    },
+                    {
+                        "Second Gun GO": 2009336184
+                    },
+                    {
+                        "Slow %": 0.0
+                    },
+                    {
+                        "Freeze %": 0.0
+                    },
+                    {
+                        "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Ammo Type": 0
+                    },
+                    {
+                        "Audio Event String": "w_basic"
                     }
                 ],
                 "Script Resource": 71312120,
@@ -20120,6 +21236,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Dual Right",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -20151,6 +21268,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Gun Type": 1
+                    },
                     {
                         "Gun Type": 1
                     }
@@ -20202,6 +21322,48 @@
                     },
                     {
                         "Audio Event String": "w_semi"
+                    },
+                    {
+                        "Projectile Pull": 3024727231
+                    },
+                    {
+                        "Projectile Speed": 80.0
+                    },
+                    {
+                        "Projectile Damage": 60.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 60.0
+                    },
+                    {
+                        "Projectile Lifetime": 0.5
+                    },
+                    {
+                        "Projectile Spawn": 3701521640
+                    },
+                    {
+                        "Projectile ScaleX": 0.20000000298023224
+                    },
+                    {
+                        "Projectile ScaleY": 0.20000000298023224
+                    },
+                    {
+                        "Projectile ScaleZ": 0.4000000059604645
+                    },
+                    {
+                        "Projectiles per second": 1.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_semi"
                     }
                 ],
                 "Script Resource": 2444997781,
@@ -20209,6 +21371,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Semiauto",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -20240,6 +21403,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Gun Type": 2
+                    },
                     {
                         "Gun Type": 2
                     }
@@ -20291,6 +21457,48 @@
                     },
                     {
                         "Audio Event String": "w_automatic"
+                    },
+                    {
+                        "Projectile Pull": 3024727231
+                    },
+                    {
+                        "Projectile Speed": 40.0
+                    },
+                    {
+                        "Projectile Damage": 1.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 1.0
+                    },
+                    {
+                        "Projectile Lifetime": 1.0
+                    },
+                    {
+                        "Projectile Spawn": 1305371143
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 10.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_automatic"
                     }
                 ],
                 "Script Resource": 643757456,
@@ -20298,6 +21506,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Auto",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -20329,6 +21538,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Gun Type": 3
+                    },
                     {
                         "Gun Type": 3
                     }
@@ -20386,6 +21598,54 @@
                     },
                     {
                         "Audio Event String": "w_burst"
+                    },
+                    {
+                        "Projectile Pull": 3024727231
+                    },
+                    {
+                        "Projectile Speed": 35.0
+                    },
+                    {
+                        "Projectile Damage": 20.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 20.0
+                    },
+                    {
+                        "Projectile Lifetime": 1.0
+                    },
+                    {
+                        "Projectile Spawn": 4031330739
+                    },
+                    {
+                        "Projectile ScaleX": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleY": 0.10000000149011612
+                    },
+                    {
+                        "Projectile ScaleZ": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per second": 1.0
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Burst Space": 0.10000000149011612
+                    },
+                    {
+                        "Projectiles per burst": 3
+                    },
+                    {
+                        "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_burst"
                     }
                 ],
                 "Script Resource": 1023810708,
@@ -20393,6 +21653,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Burst",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -20424,6 +21685,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Gun Type": 4
+                    },
                     {
                         "Gun Type": 4
                     }
@@ -20481,6 +21745,54 @@
                     },
                     {
                         "Audio Event String": "w_shotgun"
+                    },
+                    {
+                        "Projectile Pull": 3024727231
+                    },
+                    {
+                        "Projectile Speed": 40.0
+                    },
+                    {
+                        "Projectile Damage": 5.0
+                    },
+                    {
+                        "Projectile Resistance Damage": 5.0
+                    },
+                    {
+                        "Projectile Lifetime": 0.20000000298023224
+                    },
+                    {
+                        "Projectile Spawn": 2049488206
+                    },
+                    {
+                        "Projectile ScaleX": 0.05000000074505806
+                    },
+                    {
+                        "Projectile ScaleY": 0.05000000074505806
+                    },
+                    {
+                        "Projectile ScaleZ": 0.05000000074505806
+                    },
+                    {
+                        "Projectiles per second": 1.2999999523162842
+                    },
+                    {
+                        "Extra % firerate": 15.0
+                    },
+                    {
+                        "Pellets per shot": 3
+                    },
+                    {
+                        "Pellets Dispersion": 0.20000000298023224
+                    },
+                    {
+                        "Player Stats GO": 1862169540
+                    },
+                    {
+                        "Ammo Type": 1
+                    },
+                    {
+                        "Audio Event String": "w_shotgun"
                     }
                 ],
                 "Script Resource": 4256127069,
@@ -20488,6 +21800,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Shotgun",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -20521,6 +21834,9 @@
                 "Inspector Fields": [
                     {
                         "Gun Type": 5
+                    },
+                    {
+                        "Gun Type": 5
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -20534,6 +21850,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Handgun",
         "ParentUID": 1487422225,
         "PrefabUID": 2709458494,
@@ -20564,6 +21881,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Neck_$AssimpFbx$_Translation",
         "ParentUID": 374628390,
         "PrefabUID": 2709458494,
@@ -20594,6 +21912,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Neck_$AssimpFbx$_PreRotation",
         "ParentUID": 1027432937,
         "PrefabUID": 2709458494,
@@ -20624,6 +21943,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Neck",
         "ParentUID": 2523159293,
         "PrefabUID": 2709458494,
@@ -20654,6 +21974,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Head_$AssimpFbx$_Translation",
         "ParentUID": 710731552,
         "PrefabUID": 2709458494,
@@ -20684,6 +22005,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Head_$AssimpFbx$_PreRotation",
         "ParentUID": 3818131872,
         "PrefabUID": 2709458494,
@@ -20714,6 +22036,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Head",
         "ParentUID": 2338143775,
         "PrefabUID": 2709458494,
@@ -20744,6 +22067,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Hair_$AssimpFbx$_Translation",
         "ParentUID": 352273578,
         "PrefabUID": 2709458494,
@@ -20774,6 +22098,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Hair_$AssimpFbx$_PreRotation",
         "ParentUID": 1375513778,
         "PrefabUID": 2709458494,
@@ -20804,6 +22129,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Hair",
         "ParentUID": 4053906522,
         "PrefabUID": 2709458494,
@@ -20834,6 +22160,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_Translation",
         "ParentUID": 2517714580,
         "PrefabUID": 2709458494,
@@ -20864,6 +22191,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_PreRotation",
         "ParentUID": 4155862677,
         "PrefabUID": 2709458494,
@@ -20894,6 +22222,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_Rotation",
         "ParentUID": 548573080,
         "PrefabUID": 2709458494,
@@ -20924,6 +22253,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg",
         "ParentUID": 1357206648,
         "PrefabUID": 2709458494,
@@ -20954,6 +22284,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_Translation",
         "ParentUID": 803528407,
         "PrefabUID": 2709458494,
@@ -20984,6 +22315,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_PreRotation",
         "ParentUID": 502193346,
         "PrefabUID": 2709458494,
@@ -21014,6 +22346,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_Rotation",
         "ParentUID": 2169152426,
         "PrefabUID": 2709458494,
@@ -21044,6 +22377,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee",
         "ParentUID": 3215955890,
         "PrefabUID": 2709458494,
@@ -21074,6 +22408,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle_$AssimpFbx$_Translation",
         "ParentUID": 1419877209,
         "PrefabUID": 2709458494,
@@ -21104,6 +22439,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle_$AssimpFbx$_PreRotation",
         "ParentUID": 303883052,
         "PrefabUID": 2709458494,
@@ -21134,6 +22470,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle",
         "ParentUID": 3928030492,
         "PrefabUID": 2709458494,
@@ -21164,6 +22501,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot_$AssimpFbx$_Translation",
         "ParentUID": 4253212620,
         "PrefabUID": 2709458494,
@@ -21194,6 +22532,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot_$AssimpFbx$_PreRotation",
         "ParentUID": 690561595,
         "PrefabUID": 2709458494,
@@ -21224,6 +22563,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot",
         "ParentUID": 4019861367,
         "PrefabUID": 2709458494,
@@ -21254,6 +22594,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip_$AssimpFbx$_Translation",
         "ParentUID": 2404257250,
         "PrefabUID": 2709458494,
@@ -21284,6 +22625,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip_$AssimpFbx$_PreRotation",
         "ParentUID": 3328542538,
         "PrefabUID": 2709458494,
@@ -21314,6 +22656,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip",
         "ParentUID": 1499582417,
         "PrefabUID": 2709458494,
@@ -21344,6 +22687,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_Translation",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -21374,6 +22718,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_RotationPivot",
         "ParentUID": 3599026644,
         "PrefabUID": 2709458494,
@@ -21404,6 +22749,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_RotationPivotInverse",
         "ParentUID": 3736900580,
         "PrefabUID": 2709458494,
@@ -21434,6 +22780,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_ScalingPivot",
         "ParentUID": 3406292275,
         "PrefabUID": 2709458494,
@@ -21464,6 +22811,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_Scaling",
         "ParentUID": 2855229134,
         "PrefabUID": 2709458494,
@@ -21494,6 +22842,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_ScalingPivotInverse",
         "ParentUID": 4231144742,
         "PrefabUID": 2709458494,
@@ -21524,6 +22873,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6",
         "ParentUID": 1901119325,
         "PrefabUID": 2709458494,
@@ -21578,6 +22928,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Node",
         "ParentUID": 4116332289,
         "PrefabUID": 2709458494,
@@ -21647,11 +22998,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 839034386,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ParticleHit",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -21721,11 +23074,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3747444347,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ParticleHealKid",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -21795,11 +23150,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3747444347,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ParticleHealPassive",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -21869,12 +23226,25 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "Pull Size": 20
+                    },
+                    {
+                        "Projectile Prefab": 633942339
+                    },
+                    {
+                        "Shotgun Bomb Pull Size": 0
+                    },
                     {
                         "Player": 1862169540
                     },
@@ -21893,6 +23263,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ProjectilePull",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -21990,6 +23361,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ultimate",
         "ParentUID": 1862169540,
         "PrefabUID": 2709458494,
@@ -22093,6 +23465,18 @@
                     },
                     {
                         "Button Guide": 2225710694
+                    },
+                    {
+                        "Number of menus": 1
+                    },
+                    {
+                        "Menu to Open 1": 2937841997
+                    },
+                    {
+                        "Menu Panel": 1310414073
+                    },
+                    {
+                        "Button Guide": 2225710694
                     }
                 ],
                 "Script Resource": 2222166954,
@@ -22100,6 +23484,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "SkilltreePlace",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -22129,7 +23514,8 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Skill Tree",
         "ParentUID": 2830428646,
         "PrefabUID": 3943484743,
@@ -22205,6 +23591,39 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Movement": 1137202544
+                    },
+                    {
+                        "Armory": 4046148656
+                    },
+                    {
+                        "Health": 2895536623
+                    },
+                    {
+                        "Special": 1570224826
+                    },
+                    {
+                        "PanelMovement": 726755960
+                    },
+                    {
+                        "PanelAbility2": 3616324842
+                    },
+                    {
+                        "PanelAbility3": 2934290476
+                    },
+                    {
+                        "PanelAbility4": 2546321765
+                    },
+                    {
+                        "Open Menu Interruptor": 971135935
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1486068309,
@@ -22212,6 +23631,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Main Panel",
         "ParentUID": 1310414073,
         "PrefabUID": 3943484743,
@@ -22250,6 +23670,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Background",
         "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
@@ -22314,6 +23735,27 @@
                     },
                     {
                         "Description 4": 197488503
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 726755960
+                    },
+                    {
+                        "AbilityButton": 1137202544
+                    },
+                    {
+                        "Description 1": 6080464
+                    },
+                    {
+                        "Description 2": 3286644510
+                    },
+                    {
+                        "Description 3": 762428728
+                    },
+                    {
+                        "Description 4": 197488503
                     }
                 ],
                 "Script Resource": 792501851,
@@ -22321,6 +23763,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Movement Tree",
         "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
@@ -22385,6 +23828,27 @@
                     },
                     {
                         "Description 4": 2653277242
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 3616324842
+                    },
+                    {
+                        "AbilityButton": 4046148656
+                    },
+                    {
+                        "Description 1": 886436084
+                    },
+                    {
+                        "Description 2": 2362856287
+                    },
+                    {
+                        "Description 3": 4085303271
+                    },
+                    {
+                        "Description 4": 2653277242
                     }
                 ],
                 "Script Resource": 792501851,
@@ -22392,6 +23856,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Armory Tree",
         "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
@@ -22459,6 +23924,30 @@
                     },
                     {
                         "Description 5": 3732501824
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 2934290476
+                    },
+                    {
+                        "AbilityButton": 2895536623
+                    },
+                    {
+                        "Description 1": 3020994421
+                    },
+                    {
+                        "Description 2": 1888929368
+                    },
+                    {
+                        "Description 3": 855224226
+                    },
+                    {
+                        "Description 4": 2425893789
+                    },
+                    {
+                        "Description 5": 3732501824
                     }
                 ],
                 "Script Resource": 792501851,
@@ -22466,6 +23955,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Health Tree",
         "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
@@ -22527,6 +24017,24 @@
                     },
                     {
                         "Description 3": 2861744828
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 2546321765
+                    },
+                    {
+                        "AbilityButton": 1570224826
+                    },
+                    {
+                        "Description 1": 1387223882
+                    },
+                    {
+                        "Description 2": 2835375609
+                    },
+                    {
+                        "Description 3": 2861744828
                     }
                 ],
                 "Script Resource": 792501851,
@@ -22534,6 +24042,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special Tree",
         "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
@@ -22573,6 +24082,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "SkillPoints Amount",
         "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
@@ -22628,6 +24138,12 @@
                     },
                     {
                         "PlayerStorage GO": 1862169540
+                    },
+                    {
+                        "Text Blueprints": 2314891765
+                    },
+                    {
+                        "PlayerStorage GO": 1862169540
                     }
                 ],
                 "Script Resource": 1179420765,
@@ -22635,6 +24151,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "SkillPoints Amount (T)",
         "ParentUID": 820025857,
         "PrefabUID": 3943484743,
@@ -22673,6 +24190,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Exp_icon",
         "ParentUID": 2937841997,
         "PrefabUID": 0,
@@ -22757,6 +24275,48 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Upgrate 1": 2761944280
+                    },
+                    {
+                        "Skillpoints needed LvL 1": 1
+                    },
+                    {
+                        "Upgrate 2": 3636875960
+                    },
+                    {
+                        "Skillpoints needed LvL 2": 2
+                    },
+                    {
+                        "Upgrate 3": 1734210071
+                    },
+                    {
+                        "Skillpoints needed LvL 3": 2
+                    },
+                    {
+                        "Upgrate 4": 1613695234
+                    },
+                    {
+                        "Skillpoints needed LvL 4": 3
+                    },
+                    {
+                        "Skillpoints needed LvL 5": 0
+                    },
+                    {
+                        "Upgrade Number": 4
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 726755960
+                    },
+                    {
+                        "Tree Index": 0
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 477126565,
@@ -22764,6 +24324,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Movement Panel",
         "ParentUID": 1310414073,
         "PrefabUID": 3943484743,
@@ -22822,6 +24383,21 @@
                     },
                     {
                         "Button": 2761944280
+                    },
+                    {
+                        "Current Description": 6080464
+                    },
+                    {
+                        "Next Description": 3286644510
+                    },
+                    {
+                        "Description 4": 762428728
+                    },
+                    {
+                        "Description 5": 197488503
+                    },
+                    {
+                        "Button": 2761944280
                     }
                 ],
                 "Script Resource": 911506408,
@@ -22829,6 +24405,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 726755960,
         "PrefabUID": 3943484743,
@@ -22887,6 +24464,21 @@
                     },
                     {
                         "Button": 3636875960
+                    },
+                    {
+                        "Current Description": 3286644510
+                    },
+                    {
+                        "Next Description": 762428728
+                    },
+                    {
+                        "Previous Description": 6080464
+                    },
+                    {
+                        "Description 4": 197488503
+                    },
+                    {
+                        "Button": 3636875960
                     }
                 ],
                 "Script Resource": 911506408,
@@ -22894,6 +24486,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 726755960,
         "PrefabUID": 3943484743,
@@ -22952,6 +24545,21 @@
                     },
                     {
                         "Button": 1734210071
+                    },
+                    {
+                        "Current Description": 762428728
+                    },
+                    {
+                        "Next Description": 197488503
+                    },
+                    {
+                        "Previous Description": 3286644510
+                    },
+                    {
+                        "Description 4": 6080464
+                    },
+                    {
+                        "Button": 1734210071
                     }
                 ],
                 "Script Resource": 911506408,
@@ -22959,6 +24567,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 726755960,
         "PrefabUID": 3943484743,
@@ -23017,6 +24626,21 @@
                     },
                     {
                         "Button": 1613695234
+                    },
+                    {
+                        "Current Description": 197488503
+                    },
+                    {
+                        "Previous Description": 762428728
+                    },
+                    {
+                        "Description 4": 6080464
+                    },
+                    {
+                        "Description 5": 3286644510
+                    },
+                    {
+                        "Button": 1613695234
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23024,6 +24648,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 4",
         "ParentUID": 726755960,
         "PrefabUID": 3943484743,
@@ -23062,6 +24687,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_1",
         "ParentUID": 726755960,
         "PrefabUID": 3568942337,
@@ -23100,6 +24726,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_2",
         "ParentUID": 726755960,
         "PrefabUID": 1511050084,
@@ -23138,6 +24765,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_3",
         "ParentUID": 726755960,
         "PrefabUID": 1511050084,
@@ -23176,6 +24804,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_4",
         "ParentUID": 726755960,
         "PrefabUID": 1511050084,
@@ -23260,6 +24889,48 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Upgrate 1": 1168933361
+                    },
+                    {
+                        "Skillpoints needed LvL 1": 1
+                    },
+                    {
+                        "Upgrate 2": 1269201573
+                    },
+                    {
+                        "Skillpoints needed LvL 2": 2
+                    },
+                    {
+                        "Upgrate 3": 2720533225
+                    },
+                    {
+                        "Skillpoints needed LvL 3": 2
+                    },
+                    {
+                        "Upgrate 4": 2480871420
+                    },
+                    {
+                        "Skillpoints needed LvL 4": 3
+                    },
+                    {
+                        "Skillpoints needed LvL 5": 0
+                    },
+                    {
+                        "Upgrade Number": 4
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 3616324842
+                    },
+                    {
+                        "Tree Index": 1
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 477126565,
@@ -23267,6 +24938,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Armory Panel",
         "ParentUID": 1310414073,
         "PrefabUID": 3943484743,
@@ -23325,6 +24997,21 @@
                     },
                     {
                         "Button": 1168933361
+                    },
+                    {
+                        "Current Description": 886436084
+                    },
+                    {
+                        "Next Description": 2362856287
+                    },
+                    {
+                        "Description 4": 4085303271
+                    },
+                    {
+                        "Description 5": 2653277242
+                    },
+                    {
+                        "Button": 1168933361
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23332,6 +25019,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 3616324842,
         "PrefabUID": 3943484743,
@@ -23387,6 +25075,18 @@
                     },
                     {
                         "Button": 1269201573
+                    },
+                    {
+                        "Current Description": 2362856287
+                    },
+                    {
+                        "Next Description": 4085303271
+                    },
+                    {
+                        "Previous Description": 886436084
+                    },
+                    {
+                        "Button": 1269201573
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23394,6 +25094,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 3616324842,
         "PrefabUID": 3943484743,
@@ -23449,6 +25150,18 @@
                     },
                     {
                         "Button": 2720533225
+                    },
+                    {
+                        "Current Description": 4085303271
+                    },
+                    {
+                        "Next Description": 2653277242
+                    },
+                    {
+                        "Previous Description": 2362856287
+                    },
+                    {
+                        "Button": 2720533225
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23456,6 +25169,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 3616324842,
         "PrefabUID": 3943484743,
@@ -23508,6 +25222,15 @@
                     },
                     {
                         "Button": 2480871420
+                    },
+                    {
+                        "Current Description": 2653277242
+                    },
+                    {
+                        "Previous Description": 4085303271
+                    },
+                    {
+                        "Button": 2480871420
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23515,6 +25238,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 4",
         "ParentUID": 3616324842,
         "PrefabUID": 3943484743,
@@ -23553,6 +25277,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_1",
         "ParentUID": 3616324842,
         "PrefabUID": 3568942337,
@@ -23591,6 +25316,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_2",
         "ParentUID": 3616324842,
         "PrefabUID": 3568942337,
@@ -23629,6 +25355,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_3",
         "ParentUID": 3616324842,
         "PrefabUID": 3568942337,
@@ -23667,6 +25394,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_4",
         "ParentUID": 3616324842,
         "PrefabUID": 3568942337,
@@ -23755,6 +25483,51 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Upgrate 1": 2412762651
+                    },
+                    {
+                        "Skillpoints needed LvL 1": 1
+                    },
+                    {
+                        "Upgrate 2": 2777578711
+                    },
+                    {
+                        "Skillpoints needed LvL 2": 2
+                    },
+                    {
+                        "Upgrate 3": 1199903426
+                    },
+                    {
+                        "Skillpoints needed LvL 3": 2
+                    },
+                    {
+                        "Upgrate 4": 1362514346
+                    },
+                    {
+                        "Skillpoints needed LvL 4": 2
+                    },
+                    {
+                        "Upgrate 5": 963583409
+                    },
+                    {
+                        "Skillpoints needed LvL 5": 3
+                    },
+                    {
+                        "Upgrade Number": 5
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 2934290476
+                    },
+                    {
+                        "Tree Index": 2
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 477126565,
@@ -23762,6 +25535,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Health Panel",
         "ParentUID": 1310414073,
         "PrefabUID": 3943484743,
@@ -23823,6 +25597,24 @@
                     },
                     {
                         "Button": 2412762651
+                    },
+                    {
+                        "Current Description": 3020994421
+                    },
+                    {
+                        "Next Description": 1888929368
+                    },
+                    {
+                        "Previous Description": 855224226
+                    },
+                    {
+                        "Description 4": 2425893789
+                    },
+                    {
+                        "Description 5": 3732501824
+                    },
+                    {
+                        "Button": 2412762651
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23830,6 +25622,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 2934290476,
         "PrefabUID": 3943484743,
@@ -23891,6 +25684,24 @@
                     },
                     {
                         "Button": 2777578711
+                    },
+                    {
+                        "Current Description": 1888929368
+                    },
+                    {
+                        "Next Description": 855224226
+                    },
+                    {
+                        "Previous Description": 3020994421
+                    },
+                    {
+                        "Description 4": 2425893789
+                    },
+                    {
+                        "Description 5": 3732501824
+                    },
+                    {
+                        "Button": 2777578711
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23898,6 +25709,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 2934290476,
         "PrefabUID": 3943484743,
@@ -23959,6 +25771,24 @@
                     },
                     {
                         "Button": 1199903426
+                    },
+                    {
+                        "Current Description": 855224226
+                    },
+                    {
+                        "Next Description": 2425893789
+                    },
+                    {
+                        "Previous Description": 1888929368
+                    },
+                    {
+                        "Description 4": 3020994421
+                    },
+                    {
+                        "Description 5": 3732501824
+                    },
+                    {
+                        "Button": 1199903426
                     }
                 ],
                 "Script Resource": 911506408,
@@ -23966,6 +25796,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 2934290476,
         "PrefabUID": 3943484743,
@@ -24027,6 +25858,24 @@
                     },
                     {
                         "Button": 1362514346
+                    },
+                    {
+                        "Current Description": 2425893789
+                    },
+                    {
+                        "Next Description": 3732501824
+                    },
+                    {
+                        "Previous Description": 855224226
+                    },
+                    {
+                        "Description 4": 1888929368
+                    },
+                    {
+                        "Description 5": 3020994421
+                    },
+                    {
+                        "Button": 1362514346
                     }
                 ],
                 "Script Resource": 911506408,
@@ -24034,6 +25883,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 4",
         "ParentUID": 2934290476,
         "PrefabUID": 3943484743,
@@ -24095,6 +25945,24 @@
                     },
                     {
                         "Button": 963583409
+                    },
+                    {
+                        "Current Description": 3732501824
+                    },
+                    {
+                        "Next Description": 3020994421
+                    },
+                    {
+                        "Previous Description": 2425893789
+                    },
+                    {
+                        "Description 4": 1888929368
+                    },
+                    {
+                        "Description 5": 855224226
+                    },
+                    {
+                        "Button": 963583409
                     }
                 ],
                 "Script Resource": 911506408,
@@ -24102,6 +25970,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 5",
         "ParentUID": 2934290476,
         "PrefabUID": 3943484743,
@@ -24140,6 +26009,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_1",
         "ParentUID": 2934290476,
         "PrefabUID": 3568942337,
@@ -24178,6 +26048,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_2",
         "ParentUID": 2934290476,
         "PrefabUID": 3568942337,
@@ -24216,6 +26087,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_3",
         "ParentUID": 2934290476,
         "PrefabUID": 3568942337,
@@ -24254,6 +26126,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_4",
         "ParentUID": 2934290476,
         "PrefabUID": 3568942337,
@@ -24292,6 +26165,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_5",
         "ParentUID": 2934290476,
         "PrefabUID": 3568942337,
@@ -24372,6 +26246,45 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Upgrate 1": 2692458665
+                    },
+                    {
+                        "Skillpoints needed LvL 1": 3
+                    },
+                    {
+                        "Upgrate 2": 2112049340
+                    },
+                    {
+                        "Skillpoints needed LvL 2": 3
+                    },
+                    {
+                        "Upgrate 3": 486754283
+                    },
+                    {
+                        "Skillpoints needed LvL 3": 4
+                    },
+                    {
+                        "Skillpoints needed LvL 4": 0
+                    },
+                    {
+                        "Skillpoints needed LvL 5": 0
+                    },
+                    {
+                        "Upgrade Number": 3
+                    },
+                    {
+                        "Main Panel": 2937841997
+                    },
+                    {
+                        "Current Panel": 2546321765
+                    },
+                    {
+                        "Tree Index": 3
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 477126565,
@@ -24379,6 +26292,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special Panel",
         "ParentUID": 1310414073,
         "PrefabUID": 3943484743,
@@ -24434,6 +26348,18 @@
                     },
                     {
                         "Button": 2692458665
+                    },
+                    {
+                        "Current Description": 1387223882
+                    },
+                    {
+                        "Next Description": 2835375609
+                    },
+                    {
+                        "Description 4": 2861744828
+                    },
+                    {
+                        "Button": 2692458665
                     }
                 ],
                 "Script Resource": 911506408,
@@ -24441,6 +26367,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 2546321765,
         "PrefabUID": 3943484743,
@@ -24496,6 +26423,18 @@
                     },
                     {
                         "Button": 2112049340
+                    },
+                    {
+                        "Current Description": 2835375609
+                    },
+                    {
+                        "Next Description": 2861744828
+                    },
+                    {
+                        "Previous Description": 1387223882
+                    },
+                    {
+                        "Button": 2112049340
                     }
                 ],
                 "Script Resource": 911506408,
@@ -24503,6 +26442,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 2546321765,
         "PrefabUID": 3943484743,
@@ -24558,6 +26498,18 @@
                     },
                     {
                         "Button": 486754283
+                    },
+                    {
+                        "Current Description": 2861744828
+                    },
+                    {
+                        "Previous Description": 2835375609
+                    },
+                    {
+                        "Description 4": 1387223882
+                    },
+                    {
+                        "Button": 486754283
                     }
                 ],
                 "Script Resource": 911506408,
@@ -24565,6 +26517,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 2546321765,
         "PrefabUID": 3943484743,
@@ -24603,6 +26556,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_1",
         "ParentUID": 2546321765,
         "PrefabUID": 3568942337,
@@ -24641,6 +26595,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_2",
         "ParentUID": 2546321765,
         "PrefabUID": 3568942337,
@@ -24679,6 +26634,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image_3",
         "ParentUID": 2546321765,
         "PrefabUID": 3568942337,
@@ -24709,6 +26665,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Canvas",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -24751,13 +26708,17 @@
                 "Inspector Fields": [
                     {
                         "Continue": 3612029568
+                    },
+                    {
+                        "Continue": 3612029568
                     }
                 ],
                 "Script Resource": 514756029,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "FromLevel1Text",
         "ParentUID": 3502382728,
         "PrefabUID": 3216381953,
@@ -24801,6 +26762,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Button",
         "ParentUID": 3845602525,
         "PrefabUID": 3216381953,
@@ -24845,6 +26807,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 3845602525,
         "PrefabUID": 795375894,
@@ -24889,6 +26852,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 3845602525,
         "PrefabUID": 3216381953,
@@ -24927,6 +26891,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image",
         "ParentUID": 3845602525,
         "PrefabUID": 3216381953,
@@ -24971,6 +26936,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 3845602525,
         "PrefabUID": 795375894,
@@ -25015,6 +26981,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 3845602525,
         "PrefabUID": 795375894,
@@ -25059,6 +27026,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 3845602525,
         "PrefabUID": 795375894,
@@ -25101,13 +27069,17 @@
                 "Inspector Fields": [
                     {
                         "Continue": 3171051626
+                    },
+                    {
+                        "Continue": 3171051626
                     }
                 ],
                 "Script Resource": 514756029,
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "FromLevel2Text",
         "ParentUID": 3502382728,
         "PrefabUID": 3216381953,
@@ -25151,6 +27123,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Button",
         "ParentUID": 925652610,
         "PrefabUID": 3216381953,
@@ -25195,6 +27168,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 925652610,
         "PrefabUID": 3216381953,
@@ -25239,6 +27213,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Text",
         "ParentUID": 925652610,
         "PrefabUID": 3216381953,
@@ -25277,6 +27252,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Image",
         "ParentUID": 925652610,
         "PrefabUID": 3216381953,
@@ -25313,6 +27289,12 @@
                     },
                     {
                         "Panel text 2": 925652610
+                    },
+                    {
+                        "Panel text 1": 3845602525
+                    },
+                    {
+                        "Panel text 2": 925652610
                     }
                 ],
                 "Script Resource": 4045647853,
@@ -25320,6 +27302,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "TextManager -- TEMPORAL FOR ALPHA",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -25460,6 +27443,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -25476,7 +27460,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -25617,6 +27602,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -25633,7 +27619,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -25774,6 +27761,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -25790,7 +27778,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -25931,6 +27920,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -25947,7 +27937,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -26088,6 +28079,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -26104,7 +28096,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -26245,6 +28238,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -26261,7 +28255,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -26402,6 +28397,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -26418,7 +28414,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -26559,6 +28556,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -26575,7 +28573,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -26716,6 +28715,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -26732,7 +28732,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -26873,6 +28874,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -26889,7 +28891,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27030,6 +29033,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27046,7 +29050,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27187,6 +29192,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27203,7 +29209,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27344,6 +29351,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27360,7 +29368,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27501,6 +29510,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27517,7 +29527,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27658,6 +29669,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27674,7 +29686,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27815,6 +29828,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27831,7 +29845,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -27972,6 +29987,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -27988,7 +30004,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -28129,6 +30146,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -28145,7 +30163,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -28286,6 +30305,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -28302,7 +30322,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -28443,6 +30464,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -28459,7 +30481,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PlayerProjectile",
         "ParentUID": 2830428646,
         "PrefabUID": 633942339,
@@ -28489,7 +30512,8 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Buttons Guide",
         "ParentUID": 2830428646,
         "PrefabUID": 924864671,
@@ -28585,6 +30609,63 @@
                     },
                     {
                         "Speed Rotation": 0.0
+                    },
+                    {
+                        "Button Guide": 3437375339
+                    },
+                    {
+                        "Move X animation repeat": 0
+                    },
+                    {
+                        "Move Y animation repeat": 0
+                    },
+                    {
+                        "Move animation in loop": true
+                    },
+                    {
+                        "Move animation active": true
+                    },
+                    {
+                        "Distance move X": 0.0
+                    },
+                    {
+                        "Speed move X": 0.0
+                    },
+                    {
+                        "Distance move Y": 0.019999999552965164
+                    },
+                    {
+                        "Speed move Y": 1.5
+                    },
+                    {
+                        "Scale animation repeat": 0
+                    },
+                    {
+                        "Scale animation in loop": false
+                    },
+                    {
+                        "Scale animation active": false
+                    },
+                    {
+                        "Scale max": 0.0
+                    },
+                    {
+                        "Speed Scale": 0.0
+                    },
+                    {
+                        "Rotate animation repeat": 0
+                    },
+                    {
+                        "Rotate animation in loop": false
+                    },
+                    {
+                        "Rotate animation active": false
+                    },
+                    {
+                        "Rotate distance": 0.0
+                    },
+                    {
+                        "Speed Rotation": 0.0
                     }
                 ],
                 "Script Resource": 148961927,
@@ -28592,6 +30673,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Armory_Button",
         "ParentUID": 270501343,
         "PrefabUID": 924864671,
@@ -28687,6 +30769,63 @@
                     },
                     {
                         "Speed Rotation": 0.0
+                    },
+                    {
+                        "Button Guide": 2225710694
+                    },
+                    {
+                        "Move X animation repeat": 0
+                    },
+                    {
+                        "Move Y animation repeat": 0
+                    },
+                    {
+                        "Move animation in loop": true
+                    },
+                    {
+                        "Move animation active": true
+                    },
+                    {
+                        "Distance move X": 0.0
+                    },
+                    {
+                        "Speed move X": 0.0
+                    },
+                    {
+                        "Distance move Y": 0.019999999552965164
+                    },
+                    {
+                        "Speed move Y": 1.5
+                    },
+                    {
+                        "Scale animation repeat": 0
+                    },
+                    {
+                        "Scale animation in loop": false
+                    },
+                    {
+                        "Scale animation active": false
+                    },
+                    {
+                        "Scale max": 0.0
+                    },
+                    {
+                        "Speed Scale": 0.0
+                    },
+                    {
+                        "Rotate animation repeat": 0
+                    },
+                    {
+                        "Rotate animation in loop": false
+                    },
+                    {
+                        "Rotate animation active": false
+                    },
+                    {
+                        "Rotate distance": 0.0
+                    },
+                    {
+                        "Speed Rotation": 0.0
                     }
                 ],
                 "Script Resource": 148961927,
@@ -28694,6 +30833,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Abilities_Button",
         "ParentUID": 270501343,
         "PrefabUID": 924864671,
@@ -28724,6 +30864,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "_Lights",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
@@ -28759,7 +30900,6 @@
                     0.738188624382019,
                     1.0
                 ],
-                "Constant": 1.0,
                 "Diffuse Intensity": 6.0,
                 "Distance": 18.0,
                 "Enabled": true,
@@ -28769,6 +30909,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ArmoryLight",
         "ParentUID": 220144736,
         "PrefabUID": 0,
@@ -28804,7 +30945,6 @@
                     1.0,
                     0.499406635761261
                 ],
-                "Constant": 1.0,
                 "Diffuse Intensity": 6.0,
                 "Distance": 28.0,
                 "Enabled": true,
@@ -28814,6 +30954,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "AbilitiesLight",
         "ParentUID": 220144736,
         "PrefabUID": 0,
@@ -28849,7 +30990,6 @@
                     0.5678392052650452,
                     1.0
                 ],
-                "Constant": 1.0,
                 "Diffuse Intensity": 1.0,
                 "Distance": 68.0,
                 "Enabled": true,
@@ -28859,6 +30999,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "JukeBoxLight",
         "ParentUID": 220144736,
         "PrefabUID": 0,
@@ -28894,7 +31035,6 @@
                     0.6086462736129761,
                     1.0
                 ],
-                "Constant": 1.0,
                 "Diffuse Intensity": 0.75,
                 "Distance": 18.0,
                 "Enabled": true,
@@ -28904,6 +31044,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "CenterTableLight",
         "ParentUID": 220144736,
         "PrefabUID": 0,
@@ -28939,7 +31080,6 @@
                     1.0,
                     1.0
                 ],
-                "Constant": 1.0,
                 "Diffuse Intensity": 3.5,
                 "Distance": 12.5,
                 "Enabled": true,
@@ -28949,6 +31089,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "GeneralLight",
         "ParentUID": 220144736,
         "PrefabUID": 0,
@@ -28984,7 +31125,6 @@
                     0.5789247751235962,
                     0.2713567614555359
                 ],
-                "Constant": 1.0,
                 "Diffuse Intensity": 1.0,
                 "Distance": 67.0,
                 "Enabled": true,
@@ -28994,10 +31134,56 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "ScreenLight",
         "ParentUID": 220144736,
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 2274464804
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.13745135068893433
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Ambient Intensity": 17.75,
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Diffuse Intensity": 5.75,
+                "Distance": 44.0,
+                "Enabled": true,
+                "Exp": 0.6000000238418579,
+                "Linear": 0.15000000596046448,
+                "Type": 21
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "ExitLight",
+        "ParentUID": 220144736,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 373099556
     }
 ]

@@ -18,11 +18,14 @@ namespace API
     class API_ParticleSystem;
     class API_Material;
 	class API_UIButton;
+    class API_UICheckBox;
 	class API_UIImage;
 	class API_UIInput;
 	class API_UIText;
     class API_SkinnedMeshRenderer;
     class API_ShaderComponent;
+    class API_Agent;
+
     class TO_API API_GameObject
     {
     public:
@@ -62,6 +65,8 @@ namespace API
 
         API_SkinnedMeshRenderer GetSkinnedMeshRender();
 
+        API_Agent GetAgent();
+
         uint GetUID();
 
         void SetActive(bool active);
@@ -95,10 +100,12 @@ namespace API
         friend class LayerGame;
         friend class API_ParticleSystem;
         friend class API_UIButton;
+        friend class API_UICheckBox;
 		friend class API_UIImage;
 		friend class API_UIInput;
 		friend class API_UIText;
         friend class API_SkinnedMeshRenderer;
         friend class API_ShaderComponent;
+        friend class API_Agent;
     };
 }

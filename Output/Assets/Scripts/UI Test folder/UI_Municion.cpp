@@ -63,12 +63,14 @@ void UI_Municion::Update()
             if (opacity_Munition <= 0)
             {
                 opacity_Active = false;
+                Console::Log("SI?");
+                
             }
         }
-        else
-        {
-            opacity_Reset = true;
-        }
+    }
+    else
+    {
+        opacity_Reset = true;
     }
 
     int equipedIndex = 0;
@@ -84,11 +86,10 @@ void UI_Municion::Update()
         case 2:
         case 3:
         case 4:
-        case 5:
             equipedIndex = 1;
             break;
+        case 5:
         case 6:
-        case 7:
             equipedIndex = 2;
             break;
         default:

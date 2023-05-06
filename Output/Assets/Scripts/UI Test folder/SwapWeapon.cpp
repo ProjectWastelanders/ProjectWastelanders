@@ -108,11 +108,10 @@ void SwapWeapon::Update()
         case 2:
         case 3:
         case 4:
-        case 5:
             equipedIndex = 1;
             break;
+        case 5:
         case 6:
-        case 7:
             equipedIndex = 2;
             break;
         default:
@@ -122,6 +121,7 @@ void SwapWeapon::Update()
 
     if (equipedIndex == 0)
     {
+        Console::Log("0");
         //weapons on
         material_Infinite_Weapon_on.GetGameObject().SetActive(true);
         material_Normal_Weapon_on.GetGameObject().SetActive(false);
@@ -139,6 +139,7 @@ void SwapWeapon::Update()
     }
     else if (equipedIndex == 1)
     {
+        Console::Log("1");
         //weapons on
         material_Infinite_Weapon_on.GetGameObject().SetActive(false);
         material_Normal_Weapon_on.GetGameObject().SetActive(true);
@@ -156,6 +157,7 @@ void SwapWeapon::Update()
     }
     else
     {
+        Console::Log("2");
         //weapons on
         material_Infinite_Weapon_on.GetGameObject().SetActive(false);
         material_Normal_Weapon_on.GetGameObject().SetActive(false);
@@ -168,7 +170,7 @@ void SwapWeapon::Update()
 
         //bars
         active_Bar_1.SetActive(false);
-        active_Bar_2.SetActive(true);
+        active_Bar_2.SetActive(false);
         active_Bar_3.SetActive(true);
     }
 
@@ -275,11 +277,13 @@ void SwapWeapon::SwapWeapon3(specialWeapon_Type specialWeapon)
         material_Special_Weapon_on.ChangeAlbedoTexture(specialsWeaponsOn[1]);
         material_Special_Weapon_off.ChangeAlbedoTexture(specialsWeaponsOff[1]);
         special_NONE = false;
+        Console::Log("Hola2");
         break;
     case specialWeapon_Type::RICOCHET:
         material_Special_Weapon_on.ChangeAlbedoTexture(specialsWeaponsOn[2]);
         material_Special_Weapon_off.ChangeAlbedoTexture(specialsWeaponsOff[2]);
         special_NONE = false;
+        Console::Log("Hola2");
         break;
     default:
         break;

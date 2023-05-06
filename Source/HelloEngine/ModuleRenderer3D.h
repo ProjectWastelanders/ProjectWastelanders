@@ -33,7 +33,8 @@ public:
 	RenderManager renderManager;
 	ParticleManager particleManager;
 	SDL_GLContext context;
-	bool isVSync = false;
+	static bool isVSync;
+	static bool drawNavMesh;
 	bool isRenderingColliders;
 
 private:

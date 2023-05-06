@@ -22,14 +22,14 @@ void GetDiviner::Update()
 
 void GetDiviner::OnCollisionStay(API_RigidBody other)
 {
-    std::string detectionName = other.GetGameObject().GetName();
-    if (detectionName == "Player")
+    std::string detectionTag = other.GetGameObject().GetTag();
+    if (detectionTag == "Player")
     {
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN)
         {
             if (playerStorage)
             {
-                playerStorage->skillPoints += 5;
+                playerStorage->skillPoints += 3;
                 playerStorage->SaveData();
             }
             API_QuickSave::SetBool("level1_completed", true);

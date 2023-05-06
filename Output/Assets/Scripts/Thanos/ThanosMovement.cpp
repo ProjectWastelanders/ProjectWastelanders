@@ -29,13 +29,16 @@ void ThanosMovement::Update()
         dashCooldown += Time::GetDeltaTime();
     }
     else {
-        angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
-        if (distBP > 15.0f) {
-            Seek2(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed);
-        }
-        else if (distBP < 10.0f) {
-            Hide(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed * 1.5f);
-        }
+        if(Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER)  angle = Rotate(Tattack->laserPosition.GetTransform().GetGlobalPosition(), angle);
+        else angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
+      
+            if (distBP > 15.0f) {
+                Seek2(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed);
+            }
+            else if (distBP < 10.0f) {
+                Hide(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed * 1.5f);
+            }
+       
     }
 
 }

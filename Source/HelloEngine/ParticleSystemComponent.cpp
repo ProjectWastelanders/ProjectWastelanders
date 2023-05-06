@@ -115,6 +115,9 @@ ParticleSystemComponent::~ParticleSystemComponent()
 
 	if (_resourceText != nullptr)
 		_resourceText->Dereference();
+
+	BillBoardComponent* billBoard = _gameObject->GetComponent<BillBoardComponent>();
+	_gameObject->DestroyComponent(billBoard);
 }
 
 void ParticleSystemComponent::CreateEmitterMesh(uint resourceUID)
@@ -220,7 +223,6 @@ void ParticleSystemComponent::ChangeEmitterMeshTexture(ResourceTexture* resource
 
 void ParticleSystemComponent::OnEditor()
 {
-
 	bool created = true;
 	if (ImGui::CollapsingHeader("Particle System", &created, ImGuiTreeNodeFlags_DefaultOpen))
 	{
@@ -302,8 +304,6 @@ void ParticleSystemComponent::OnEditor()
 			{
 				CreateEmitterMesh(app->renderer3D->renderManager.planeUID);
 			}
-
-			return;
 		}
 		else
 		{
@@ -391,6 +391,8 @@ void ParticleSystemComponent::OnEditor()
 			ParticleModules[i]->OnEditor();
 		}		
 	}
+	if (!created)
+		this->_gameObject->DestroyComponent(this);
 }
 
 void ParticleSystemComponent::MarkAsDead()

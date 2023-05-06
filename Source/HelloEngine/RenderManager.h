@@ -27,6 +27,7 @@ enum class UIType
 	SLIDER,
 	IMAGE,
 	TEXT,
+	VIDEO,
 };
 
 enum class PrimitiveModelsUID

@@ -12,6 +12,12 @@ public:
 	void Update() override;
 	void OnCollisionEnter(API::API_RigidBody other);
 
-	float meteorDmg = 15.0f;
+	API_Vector3 position;
+	API_ParticleSystem fire;
+	bool isFireOn = false;
+	float fireCounter = 0.0f;
+
+	float dmg = 5.0f;
+	bool hasCollided = false;
 };
 

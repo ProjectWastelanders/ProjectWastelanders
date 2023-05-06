@@ -10,6 +10,7 @@
 #include "API/API_Material.h"
 #include "API/API_ParticleSystem.h"
 #include "API/API_AnimationPlayer.h"
+#include "API/API_Agent.h"
 #include "PhysicsComponent.h"
 #include "TextureComponent.h"
 #include "ParticleSystemComponent.h"
@@ -17,6 +18,7 @@
 #include "API/API_SkinnedMeshRenderer.h"
 #include "SkinnedMeshRenderComponent.h"
 #include "AnimationComponent.h"
+#include "NavAgentComponent.h"
 
 API::API_GameObject::API_GameObject()
 {
@@ -317,6 +319,18 @@ API::API_SkinnedMeshRenderer API::API_GameObject::GetSkinnedMeshRender()
     }
     API_SkinnedMeshRenderer ret;
     ret.SetComponent(_gameObject->GetComponent<SkinnedMeshRenderComponent>());
+    return ret;
+}
+
+API::API_Agent API::API_GameObject::GetAgent()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! CreateRigidBody()");
+        return API_Agent();
+    }
+    API_Agent ret;
+    ret.SetComponent(_gameObject->GetComponent<ComponentAgent>());
     return ret;
 }
 

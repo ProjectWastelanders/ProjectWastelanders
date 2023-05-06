@@ -66,6 +66,7 @@ private:
 	
 	friend class API::API_GameObject;
 	friend class API::API_RigidBody;
+	friend class Pathfinder;
 
 public:
 	float sphereRadius = 0;

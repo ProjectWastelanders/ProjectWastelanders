@@ -27,12 +27,17 @@ void Projectile::Update()
         return;
     }
 
+    if (type == PROJECTILE_TYPE::FLAMETHROWER)
+    {
+        float scaleMultiply = 2.0f - lifeTime;
+        gameObject.GetRigidBody().SetBoxScale({ 0.1f + scaleMultiply, 0.1f + scaleMultiply, 0.1f + scaleMultiply });
+    }
+
     gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 
 void Projectile::Destroy()
 {
-    gameObject.GetParticleSystem().Stop();
     gameObject.GetTransform().SetPosition(0, 9999, 0);
     gameObject.SetActive(false);
 }

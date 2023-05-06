@@ -23,6 +23,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
@@ -54,7 +55,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 2.2493224143981934,
+                "Aspect ratio": 1.9408766031265259,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -65,6 +66,7 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Camera",
         "ParentUID": 2066812041,
         "PrefabUID": 0,
@@ -696,7 +698,8 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Player",
         "ParentUID": 2066812041,
         "PrefabUID": 3594397937,
@@ -727,6 +730,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RootJoint",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -757,6 +761,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_Translation",
         "ParentUID": 1264496349,
         "PrefabUID": 3594397937,
@@ -787,6 +792,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_PreRotation",
         "ParentUID": 1555647617,
         "PrefabUID": 3594397937,
@@ -817,6 +823,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_Rotation",
         "ParentUID": 3847407221,
         "PrefabUID": 3594397937,
@@ -847,6 +854,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg1",
         "ParentUID": 407750904,
         "PrefabUID": 3594397937,
@@ -877,6 +885,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee1_$AssimpFbx$_Translation",
         "ParentUID": 2586828120,
         "PrefabUID": 3594397937,
@@ -907,6 +916,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee1_$AssimpFbx$_PreRotation",
         "ParentUID": 991886647,
         "PrefabUID": 3594397937,
@@ -937,6 +947,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee1",
         "ParentUID": 1656065699,
         "PrefabUID": 3594397937,
@@ -967,6 +978,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle1_$AssimpFbx$_Translation",
         "ParentUID": 2847936255,
         "PrefabUID": 3594397937,
@@ -997,6 +1009,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle1_$AssimpFbx$_PreRotation",
         "ParentUID": 3299756811,
         "PrefabUID": 3594397937,
@@ -1027,6 +1040,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle1",
         "ParentUID": 3158210182,
         "PrefabUID": 3594397937,
@@ -1057,6 +1071,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot1_$AssimpFbx$_Translation",
         "ParentUID": 1195329597,
         "PrefabUID": 3594397937,
@@ -1087,6 +1102,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot1_$AssimpFbx$_PreRotation",
         "ParentUID": 755545440,
         "PrefabUID": 3594397937,
@@ -1117,6 +1133,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot1",
         "ParentUID": 1364604128,
         "PrefabUID": 3594397937,
@@ -1147,6 +1164,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_Translation",
         "ParentUID": 427407967,
         "PrefabUID": 3594397937,
@@ -1177,6 +1195,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_PreRotation",
         "ParentUID": 1036643819,
         "PrefabUID": 3594397937,
@@ -1207,6 +1226,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_Rotation",
         "ParentUID": 3843847911,
         "PrefabUID": 3594397937,
@@ -1237,6 +1257,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip1",
         "ParentUID": 1713132562,
         "PrefabUID": 3594397937,
@@ -1267,6 +1288,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackLow_$AssimpFbx$_Translation",
         "ParentUID": 1264496349,
         "PrefabUID": 3594397937,
@@ -1297,6 +1319,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackLow_$AssimpFbx$_PreRotation",
         "ParentUID": 1748958337,
         "PrefabUID": 3594397937,
@@ -1327,6 +1350,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackLow",
         "ParentUID": 1905538677,
         "PrefabUID": 3594397937,
@@ -1357,6 +1381,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackMid_$AssimpFbx$_Translation",
         "ParentUID": 2558392569,
         "PrefabUID": 3594397937,
@@ -1387,6 +1412,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackMid_$AssimpFbx$_PreRotation",
         "ParentUID": 1260313932,
         "PrefabUID": 3594397937,
@@ -1417,6 +1443,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackMid",
         "ParentUID": 2429369788,
         "PrefabUID": 3594397937,
@@ -1447,6 +1474,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackHigh_$AssimpFbx$_Translation",
         "ParentUID": 3636861164,
         "PrefabUID": 3594397937,
@@ -1477,6 +1505,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackHigh_$AssimpFbx$_PreRotation",
         "ParentUID": 704097755,
         "PrefabUID": 3594397937,
@@ -1507,6 +1536,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "BackHigh",
         "ParentUID": 1528051607,
         "PrefabUID": 3594397937,
@@ -1537,6 +1567,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftChest_$AssimpFbx$_Translation",
         "ParentUID": 2435976323,
         "PrefabUID": 3594397937,
@@ -1567,6 +1598,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftChest_$AssimpFbx$_PreRotation",
         "ParentUID": 4028933727,
         "PrefabUID": 3594397937,
@@ -1597,6 +1629,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftChest",
         "ParentUID": 2670840298,
         "PrefabUID": 3594397937,
@@ -1627,6 +1660,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftShoulder_$AssimpFbx$_Translation",
         "ParentUID": 258274033,
         "PrefabUID": 3594397937,
@@ -1657,6 +1691,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftShoulder_$AssimpFbx$_PreRotation",
         "ParentUID": 2563350437,
         "PrefabUID": 3594397937,
@@ -1687,6 +1722,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftShoulder",
         "ParentUID": 2834658281,
         "PrefabUID": 3594397937,
@@ -1717,6 +1753,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftElbow_$AssimpFbx$_Translation",
         "ParentUID": 2291897596,
         "PrefabUID": 3594397937,
@@ -1747,6 +1784,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftElbow_$AssimpFbx$_PreRotation",
         "ParentUID": 1872517419,
         "PrefabUID": 3594397937,
@@ -1777,6 +1815,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftElbow",
         "ParentUID": 1392892710,
         "PrefabUID": 3594397937,
@@ -1807,6 +1846,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_Translation",
         "ParentUID": 2811753822,
         "PrefabUID": 3594397937,
@@ -1837,6 +1877,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_PreRotation",
         "ParentUID": 1093424373,
         "PrefabUID": 3594397937,
@@ -1867,6 +1908,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_Rotation",
         "ParentUID": 1297918329,
         "PrefabUID": 3594397937,
@@ -1897,6 +1939,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftWrist",
         "ParentUID": 555042764,
         "PrefabUID": 3594397937,
@@ -1927,6 +1970,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftHand_$AssimpFbx$_Translation",
         "ParentUID": 811510332,
         "PrefabUID": 3594397937,
@@ -1957,6 +2001,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftHand_$AssimpFbx$_PreRotation",
         "ParentUID": 2161012588,
         "PrefabUID": 3594397937,
@@ -1987,6 +2032,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftHand",
         "ParentUID": 3447977564,
         "PrefabUID": 3594397937,
@@ -2017,6 +2063,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftThumb_$AssimpFbx$_Translation",
         "ParentUID": 1628842507,
         "PrefabUID": 3594397937,
@@ -2047,6 +2094,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 1622663558,
         "PrefabUID": 3594397937,
@@ -2077,6 +2125,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftThumb",
         "ParentUID": 934784829,
         "PrefabUID": 3594397937,
@@ -2107,6 +2156,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMIdThumb_$AssimpFbx$_Translation",
         "ParentUID": 3310110817,
         "PrefabUID": 3594397937,
@@ -2137,6 +2187,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMIdThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 2459956180,
         "PrefabUID": 3594397937,
@@ -2167,6 +2218,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMIdThumb",
         "ParentUID": 2788279780,
         "PrefabUID": 3594397937,
@@ -2197,6 +2249,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipThumb_$AssimpFbx$_Translation",
         "ParentUID": 3189686068,
         "PrefabUID": 3594397937,
@@ -2227,6 +2280,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 2144667843,
         "PrefabUID": 3594397937,
@@ -2257,6 +2311,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipThumb",
         "ParentUID": 3676819359,
         "PrefabUID": 3594397937,
@@ -2287,6 +2342,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftLittle_$AssimpFbx$_Translation",
         "ParentUID": 1628842507,
         "PrefabUID": 3594397937,
@@ -2317,6 +2373,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 2142011942,
         "PrefabUID": 3594397937,
@@ -2347,6 +2404,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftLittle",
         "ParentUID": 3453929566,
         "PrefabUID": 3594397937,
@@ -2377,6 +2435,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartLittle_$AssimpFbx$_Translation",
         "ParentUID": 3696313334,
         "PrefabUID": 3594397937,
@@ -2407,6 +2466,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 3770119278,
         "PrefabUID": 3594397937,
@@ -2437,6 +2497,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartLittle",
         "ParentUID": 1137893189,
         "PrefabUID": 3594397937,
@@ -2467,6 +2528,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidLittle_$AssimpFbx$_Translation",
         "ParentUID": 589936648,
         "PrefabUID": 3594397937,
@@ -2497,6 +2559,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 3502086056,
         "PrefabUID": 3594397937,
@@ -2527,6 +2590,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidLittle",
         "ParentUID": 2029845447,
         "PrefabUID": 3594397937,
@@ -2557,6 +2621,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LerftTipLittle_$AssimpFbx$_Translation",
         "ParentUID": 2560925299,
         "PrefabUID": 3594397937,
@@ -2587,6 +2652,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LerftTipLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 1497850126,
         "PrefabUID": 3594397937,
@@ -2617,6 +2683,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LerftTipLittle",
         "ParentUID": 17675365,
         "PrefabUID": 3594397937,
@@ -2647,6 +2714,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftRing_$AssimpFbx$_Translation",
         "ParentUID": 1628842507,
         "PrefabUID": 3594397937,
@@ -2677,6 +2745,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftRing_$AssimpFbx$_PreRotation",
         "ParentUID": 734094268,
         "PrefabUID": 3594397937,
@@ -2707,6 +2776,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftRing",
         "ParentUID": 2561177324,
         "PrefabUID": 3594397937,
@@ -2737,6 +2807,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartRing_$AssimpFbx$_Translation",
         "ParentUID": 1864213467,
         "PrefabUID": 3594397937,
@@ -2767,6 +2838,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartRing_$AssimpFbx$_PreRotation",
         "ParentUID": 3084035479,
         "PrefabUID": 3594397937,
@@ -2797,6 +2869,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartRing",
         "ParentUID": 3923989123,
         "PrefabUID": 3594397937,
@@ -2827,6 +2900,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidRing_$AssimpFbx$_Translation",
         "ParentUID": 2061935710,
         "PrefabUID": 3594397937,
@@ -2857,6 +2931,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidRing_$AssimpFbx$_PreRotation",
         "ParentUID": 3334131702,
         "PrefabUID": 3594397937,
@@ -2887,6 +2962,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidRing",
         "ParentUID": 4075712622,
         "PrefabUID": 3594397937,
@@ -2917,6 +2993,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipRing_$AssimpFbx$_Translation",
         "ParentUID": 3879078725,
         "PrefabUID": 3594397937,
@@ -2947,6 +3024,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipRing_$AssimpFbx$_PreRotation",
         "ParentUID": 2091308040,
         "PrefabUID": 3594397937,
@@ -2977,6 +3055,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipRing",
         "ParentUID": 3860685736,
         "PrefabUID": 3594397937,
@@ -3007,6 +3086,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMiddle_$AssimpFbx$_Translation",
         "ParentUID": 1628842507,
         "PrefabUID": 3594397937,
@@ -3037,6 +3117,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 1919683187,
         "PrefabUID": 3594397937,
@@ -3067,6 +3148,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMiddle",
         "ParentUID": 3765812495,
         "PrefabUID": 3594397937,
@@ -3097,6 +3179,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartMIddle_$AssimpFbx$_Translation",
         "ParentUID": 1943064666,
         "PrefabUID": 3594397937,
@@ -3127,6 +3210,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartMIddle_$AssimpFbx$_PreRotation",
         "ParentUID": 3815156770,
         "PrefabUID": 3594397937,
@@ -3157,6 +3241,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartMIddle",
         "ParentUID": 1366997641,
         "PrefabUID": 3594397937,
@@ -3187,6 +3272,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidMiddle_$AssimpFbx$_Translation",
         "ParentUID": 3857419293,
         "PrefabUID": 3594397937,
@@ -3217,6 +3303,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 1673513664,
         "PrefabUID": 3594397937,
@@ -3247,6 +3334,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidMiddle",
         "ParentUID": 2116962752,
         "PrefabUID": 3594397937,
@@ -3277,6 +3365,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipMiddle_$AssimpFbx$_Translation",
         "ParentUID": 3260994752,
         "PrefabUID": 3594397937,
@@ -3307,6 +3396,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 1744362431,
         "PrefabUID": 3594397937,
@@ -3337,6 +3427,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipMiddle",
         "ParentUID": 4056514251,
         "PrefabUID": 3594397937,
@@ -3367,6 +3458,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftIndex_$AssimpFbx$_Translation",
         "ParentUID": 1628842507,
         "PrefabUID": 3594397937,
@@ -3397,6 +3489,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 2138226173,
         "PrefabUID": 3594397937,
@@ -3427,6 +3520,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftIndex",
         "ParentUID": 1877911072,
         "PrefabUID": 3594397937,
@@ -3457,6 +3551,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartIndex_$AssimpFbx$_Translation",
         "ParentUID": 3242253472,
         "PrefabUID": 3594397937,
@@ -3487,6 +3582,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 2627765535,
         "PrefabUID": 3594397937,
@@ -3517,6 +3613,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftStartIndex",
         "ParentUID": 3532339115,
         "PrefabUID": 3594397937,
@@ -3547,6 +3644,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidIndex_$AssimpFbx$_Translation",
         "ParentUID": 3744091047,
         "PrefabUID": 3594397937,
@@ -3577,6 +3675,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 1502621650,
         "PrefabUID": 3594397937,
@@ -3607,6 +3706,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftMidIndex",
         "ParentUID": 1503465978,
         "PrefabUID": 3594397937,
@@ -3637,6 +3737,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipIndex_$AssimpFbx$_Translation",
         "ParentUID": 156883521,
         "PrefabUID": 3594397937,
@@ -3667,6 +3768,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 285781813,
         "PrefabUID": 3594397937,
@@ -3697,6 +3799,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "LeftTipIndex",
         "ParentUID": 2127087801,
         "PrefabUID": 3594397937,
@@ -3727,6 +3830,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightChest_$AssimpFbx$_Translation",
         "ParentUID": 2435976323,
         "PrefabUID": 3594397937,
@@ -3757,6 +3861,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightChest_$AssimpFbx$_PreRotation",
         "ParentUID": 3242952240,
         "PrefabUID": 3594397937,
@@ -3787,6 +3892,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightChest",
         "ParentUID": 4032052208,
         "PrefabUID": 3594397937,
@@ -3817,6 +3923,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightShoulder_$AssimpFbx$_Translation",
         "ParentUID": 739273903,
         "PrefabUID": 3594397937,
@@ -3847,6 +3954,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightShoulder_$AssimpFbx$_PreRotation",
         "ParentUID": 2395292795,
         "PrefabUID": 3594397937,
@@ -3877,6 +3985,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightShoulder",
         "ParentUID": 1984478902,
         "PrefabUID": 3594397937,
@@ -3907,6 +4016,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightElbow_$AssimpFbx$_Translation",
         "ParentUID": 897658413,
         "PrefabUID": 3594397937,
@@ -3937,6 +4047,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightElbow_$AssimpFbx$_PreRotation",
         "ParentUID": 4102214673,
         "PrefabUID": 3594397937,
@@ -3967,6 +4078,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightElbow",
         "ParentUID": 2142434116,
         "PrefabUID": 3594397937,
@@ -3997,6 +4109,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightWrist_$AssimpFbx$_Translation",
         "ParentUID": 2781334548,
         "PrefabUID": 3594397937,
@@ -4027,6 +4140,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightWrist_$AssimpFbx$_PreRotation",
         "ParentUID": 692026147,
         "PrefabUID": 3594397937,
@@ -4057,6 +4171,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightWrist",
         "ParentUID": 2904221055,
         "PrefabUID": 3594397937,
@@ -4087,6 +4202,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightHand_$AssimpFbx$_Translation",
         "ParentUID": 598676362,
         "PrefabUID": 3594397937,
@@ -4117,6 +4233,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightHand_$AssimpFbx$_PreRotation",
         "ParentUID": 2084358418,
         "PrefabUID": 3594397937,
@@ -4147,6 +4264,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightHand",
         "ParentUID": 1057389625,
         "PrefabUID": 3594397937,
@@ -4177,6 +4295,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightThumb_$AssimpFbx$_Translation",
         "ParentUID": 783628684,
         "PrefabUID": 3594397937,
@@ -4207,6 +4326,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 2338014972,
         "PrefabUID": 3594397937,
@@ -4237,6 +4357,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightThumb",
         "ParentUID": 4269781804,
         "PrefabUID": 3594397937,
@@ -4267,6 +4388,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMIdThumb_$AssimpFbx$_Translation",
         "ParentUID": 3202485531,
         "PrefabUID": 3594397937,
@@ -4297,6 +4419,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMIdThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 4197851095,
         "PrefabUID": 3594397937,
@@ -4327,6 +4450,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMIdThumb",
         "ParentUID": 3246461378,
         "PrefabUID": 3594397937,
@@ -4357,6 +4481,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipThumb_$AssimpFbx$_Translation",
         "ParentUID": 3528613034,
         "PrefabUID": 3594397937,
@@ -4387,6 +4512,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipThumb_$AssimpFbx$_PreRotation",
         "ParentUID": 2028643505,
         "PrefabUID": 3594397937,
@@ -4417,6 +4543,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipThumb",
         "ParentUID": 484899940,
         "PrefabUID": 3594397937,
@@ -4447,6 +4574,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLittle_$AssimpFbx$_Translation",
         "ParentUID": 783628684,
         "PrefabUID": 3594397937,
@@ -4477,6 +4605,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 1099680580,
         "PrefabUID": 3594397937,
@@ -4507,6 +4636,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLittle",
         "ParentUID": 3069608980,
         "PrefabUID": 3594397937,
@@ -4537,6 +4667,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartLittle_$AssimpFbx$_Translation",
         "ParentUID": 264082211,
         "PrefabUID": 3594397937,
@@ -4567,6 +4698,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 3207585151,
         "PrefabUID": 3594397937,
@@ -4597,6 +4729,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartLittle",
         "ParentUID": 2756209546,
         "PrefabUID": 3594397937,
@@ -4627,6 +4760,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidLittle_$AssimpFbx$_Translation",
         "ParentUID": 3810918674,
         "PrefabUID": 3594397937,
@@ -4657,6 +4791,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 2659259449,
         "PrefabUID": 3594397937,
@@ -4687,6 +4822,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidLittle",
         "ParentUID": 1441837452,
         "PrefabUID": 3594397937,
@@ -4717,6 +4853,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipLittle_$AssimpFbx$_Translation",
         "ParentUID": 189603579,
         "PrefabUID": 3594397937,
@@ -4747,6 +4884,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipLittle_$AssimpFbx$_PreRotation",
         "ParentUID": 1956272951,
         "PrefabUID": 3594397937,
@@ -4777,6 +4915,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipLittle",
         "ParentUID": 4266165411,
         "PrefabUID": 3594397937,
@@ -4807,6 +4946,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightRing_$AssimpFbx$_Translation",
         "ParentUID": 783628684,
         "PrefabUID": 3594397937,
@@ -4837,6 +4977,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightRing_$AssimpFbx$_PreRotation",
         "ParentUID": 384008469,
         "PrefabUID": 3594397937,
@@ -4867,6 +5008,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightRing",
         "ParentUID": 3177169945,
         "PrefabUID": 3594397937,
@@ -4897,6 +5039,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartRing_$AssimpFbx$_Translation",
         "ParentUID": 2638029548,
         "PrefabUID": 3594397937,
@@ -4927,6 +5070,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartRing_$AssimpFbx$_PreRotation",
         "ParentUID": 863649755,
         "PrefabUID": 3594397937,
@@ -4957,6 +5101,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartRing",
         "ParentUID": 2912416151,
         "PrefabUID": 3594397937,
@@ -4987,6 +5132,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidRing_$AssimpFbx$_Translation",
         "ParentUID": 4213771907,
         "PrefabUID": 3594397937,
@@ -5017,6 +5163,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidRing_$AssimpFbx$_PreRotation",
         "ParentUID": 3567751262,
         "PrefabUID": 3594397937,
@@ -5047,6 +5194,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidRing",
         "ParentUID": 3861949430,
         "PrefabUID": 3594397937,
@@ -5077,6 +5225,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipRing_$AssimpFbx$_Translation",
         "ParentUID": 3533569133,
         "PrefabUID": 3594397937,
@@ -5107,6 +5256,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipRing_$AssimpFbx$_PreRotation",
         "ParentUID": 3479828304,
         "PrefabUID": 3594397937,
@@ -5137,6 +5287,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipRing",
         "ParentUID": 2906087311,
         "PrefabUID": 3594397937,
@@ -5167,6 +5318,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMiddle_$AssimpFbx$_Translation",
         "ParentUID": 783628684,
         "PrefabUID": 3594397937,
@@ -5197,6 +5349,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 4101798562,
         "PrefabUID": 3594397937,
@@ -5227,6 +5380,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMiddle",
         "ParentUID": 3237141257,
         "PrefabUID": 3594397937,
@@ -5257,6 +5411,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartMIddle_$AssimpFbx$_Translation",
         "ParentUID": 3192530588,
         "PrefabUID": 3594397937,
@@ -5287,6 +5442,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartMIddle_$AssimpFbx$_PreRotation",
         "ParentUID": 2614499147,
         "PrefabUID": 3594397937,
@@ -5317,6 +5473,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartMIddle",
         "ParentUID": 3331108807,
         "PrefabUID": 3594397937,
@@ -5347,6 +5504,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidMiddle_$AssimpFbx$_Translation",
         "ParentUID": 4072137331,
         "PrefabUID": 3594397937,
@@ -5377,6 +5535,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 4071847182,
         "PrefabUID": 3594397937,
@@ -5407,6 +5566,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidMiddle",
         "ParentUID": 1051252837,
         "PrefabUID": 3594397937,
@@ -5437,6 +5597,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipMiddle_$AssimpFbx$_Translation",
         "ParentUID": 3031040937,
         "PrefabUID": 3594397937,
@@ -5467,6 +5628,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipMiddle_$AssimpFbx$_PreRotation",
         "ParentUID": 3767887805,
         "PrefabUID": 3594397937,
@@ -5497,6 +5659,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipMiddle",
         "ParentUID": 399334112,
         "PrefabUID": 3594397937,
@@ -5527,6 +5690,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightIndex_$AssimpFbx$_Translation",
         "ParentUID": 783628684,
         "PrefabUID": 3594397937,
@@ -5557,6 +5721,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 4091278304,
         "PrefabUID": 3594397937,
@@ -5587,6 +5752,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightIndex",
         "ParentUID": 950699359,
         "PrefabUID": 3594397937,
@@ -5617,6 +5783,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartIndex_$AssimpFbx$_Translation",
         "ParentUID": 3194041579,
         "PrefabUID": 3594397937,
@@ -5647,6 +5814,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 437021158,
         "PrefabUID": 3594397937,
@@ -5677,6 +5845,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightStartIndex",
         "ParentUID": 301716253,
         "PrefabUID": 3594397937,
@@ -5707,6 +5876,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidIndex_$AssimpFbx$_Translation",
         "ParentUID": 3397172673,
         "PrefabUID": 3594397937,
@@ -5737,6 +5907,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 3594578101,
         "PrefabUID": 3594397937,
@@ -5767,6 +5938,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightMidIndex",
         "ParentUID": 3262533688,
         "PrefabUID": 3594397937,
@@ -5797,6 +5969,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipIndex_$AssimpFbx$_Translation",
         "ParentUID": 1512443287,
         "PrefabUID": 3594397937,
@@ -5827,6 +6000,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipIndex_$AssimpFbx$_PreRotation",
         "ParentUID": 2395855491,
         "PrefabUID": 3594397937,
@@ -5857,6 +6031,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightTipIndex",
         "ParentUID": 2505231455,
         "PrefabUID": 3594397937,
@@ -5887,6 +6062,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Neck_$AssimpFbx$_Translation",
         "ParentUID": 2435976323,
         "PrefabUID": 3594397937,
@@ -5917,6 +6093,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Neck_$AssimpFbx$_PreRotation",
         "ParentUID": 1964584307,
         "PrefabUID": 3594397937,
@@ -5947,6 +6124,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Neck",
         "ParentUID": 3090496527,
         "PrefabUID": 3594397937,
@@ -5977,6 +6155,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Head_$AssimpFbx$_Translation",
         "ParentUID": 2777045850,
         "PrefabUID": 3594397937,
@@ -6007,6 +6186,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Head_$AssimpFbx$_PreRotation",
         "ParentUID": 2756293409,
         "PrefabUID": 3594397937,
@@ -6037,6 +6217,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Head",
         "ParentUID": 1059610004,
         "PrefabUID": 3594397937,
@@ -6067,6 +6248,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Hair_$AssimpFbx$_Translation",
         "ParentUID": 749812387,
         "PrefabUID": 3594397937,
@@ -6097,6 +6279,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Hair_$AssimpFbx$_PreRotation",
         "ParentUID": 1655679743,
         "PrefabUID": 3594397937,
@@ -6127,6 +6310,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Hair",
         "ParentUID": 1747097355,
         "PrefabUID": 3594397937,
@@ -6157,6 +6341,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_Translation",
         "ParentUID": 1264496349,
         "PrefabUID": 3594397937,
@@ -6187,6 +6372,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_PreRotation",
         "ParentUID": 414659645,
         "PrefabUID": 3594397937,
@@ -6217,6 +6403,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_Rotation",
         "ParentUID": 2543948129,
         "PrefabUID": 3594397937,
@@ -6247,6 +6434,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightLeg",
         "ParentUID": 646303956,
         "PrefabUID": 3594397937,
@@ -6277,6 +6465,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_Translation",
         "ParentUID": 2250327780,
         "PrefabUID": 3594397937,
@@ -6307,6 +6496,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_PreRotation",
         "ParentUID": 2548315188,
         "PrefabUID": 3594397937,
@@ -6337,6 +6527,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_Rotation",
         "ParentUID": 4037607876,
         "PrefabUID": 3594397937,
@@ -6367,6 +6558,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightKnee",
         "ParentUID": 983379091,
         "PrefabUID": 3594397937,
@@ -6397,6 +6589,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle_$AssimpFbx$_Translation",
         "ParentUID": 2056996271,
         "PrefabUID": 3594397937,
@@ -6427,6 +6620,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle_$AssimpFbx$_PreRotation",
         "ParentUID": 3042832763,
         "PrefabUID": 3594397937,
@@ -6457,6 +6651,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightAnkle",
         "ParentUID": 92884918,
         "PrefabUID": 3594397937,
@@ -6487,6 +6682,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot_$AssimpFbx$_Translation",
         "ParentUID": 2815095598,
         "PrefabUID": 3594397937,
@@ -6517,6 +6713,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot_$AssimpFbx$_PreRotation",
         "ParentUID": 1822977285,
         "PrefabUID": 3594397937,
@@ -6547,6 +6744,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFoot",
         "ParentUID": 1217962184,
         "PrefabUID": 3594397937,
@@ -6577,6 +6775,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip_$AssimpFbx$_Translation",
         "ParentUID": 205887335,
         "PrefabUID": 3594397937,
@@ -6607,6 +6806,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip_$AssimpFbx$_PreRotation",
         "ParentUID": 1776283283,
         "PrefabUID": 3594397937,
@@ -6637,6 +6837,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "RightFootTip",
         "ParentUID": 1625092014,
         "PrefabUID": 3594397937,
@@ -6667,6 +6868,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_Translation",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -6697,6 +6899,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_RotationPivot",
         "ParentUID": 3555330366,
         "PrefabUID": 3594397937,
@@ -6727,6 +6930,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_RotationPivotInverse",
         "ParentUID": 2395175509,
         "PrefabUID": 3594397937,
@@ -6757,6 +6961,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_ScalingPivot",
         "ParentUID": 2408844889,
         "PrefabUID": 3594397937,
@@ -6787,6 +6992,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_Scaling",
         "ParentUID": 602010156,
         "PrefabUID": 3594397937,
@@ -6817,6 +7023,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_ScalingPivotInverse",
         "ParentUID": 2258196508,
         "PrefabUID": 3594397937,
@@ -6847,6 +7054,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "pCube6",
         "ParentUID": 621213387,
         "PrefabUID": 3594397937,
@@ -6901,6 +7109,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Node",
         "ParentUID": 3471512903,
         "PrefabUID": 3594397937,
@@ -6970,11 +7179,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 839034386,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ParticleHit",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7044,11 +7255,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3747444347,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ParticleHealKid",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7118,11 +7331,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3747444347,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ParticleHealPassive",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7192,6 +7407,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3431661267,
                 "Type": 6
             },
@@ -7217,22 +7433,7 @@
                         "Check Ricochet Traget Prefab": 3306111952
                     },
                     {
-                        "Player": 1475165862
-                    },
-                    {
-                        "Pull Size": 40
-                    },
-                    {
-                        "Projectile Prefab": 633942339
-                    },
-                    {
-                        "Shotgun Bomb Pull Size": 10
-                    },
-                    {
-                        "Shotgun Bomb Prefab": 884876432
-                    },
-                    {
-                        "Check Ricochet Traget Prefab": 3306111952
+                        "Duals Projectile Texture": 3663622624
                     },
                     {
                         "Player": 1475165862
@@ -7251,6 +7452,30 @@
                     },
                     {
                         "Check Ricochet Traget Prefab": 3306111952
+                    },
+                    {
+                        "Duals Projectile Texture": 3663622624
+                    },
+                    {
+                        "Player": 1475165862
+                    },
+                    {
+                        "Pull Size": 40
+                    },
+                    {
+                        "Projectile Prefab": 633942339
+                    },
+                    {
+                        "Shotgun Bomb Pull Size": 10
+                    },
+                    {
+                        "Shotgun Bomb Prefab": 884876432
+                    },
+                    {
+                        "Check Ricochet Traget Prefab": 3306111952
+                    },
+                    {
+                        "Duals Projectile Texture": 3663622624
                     }
                 ],
                 "Script Resource": 211675320,
@@ -7258,6 +7483,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "ProjectilePull",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7355,6 +7581,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ultimate",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7401,6 +7628,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Dual Left",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7431,6 +7659,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Dual Left",
         "ParentUID": 419460321,
         "PrefabUID": 3594397937,
@@ -7522,7 +7751,7 @@
                         "Projectile ScaleY": 0.10000000149011612
                     },
                     {
-                        "Projectile ScaleZ": 0.10000000149011612
+                        "Projectile ScaleZ": 1.5
                     },
                     {
                         "Projectiles per second": 0.0
@@ -7579,7 +7808,7 @@
                         "Projectile ScaleY": 0.10000000149011612
                     },
                     {
-                        "Projectile ScaleZ": 0.10000000149011612
+                        "Projectile ScaleZ": 1.5
                     },
                     {
                         "Projectiles per second": 0.0
@@ -7636,7 +7865,7 @@
                         "Projectile ScaleY": 0.10000000149011612
                     },
                     {
-                        "Projectile ScaleZ": 0.10000000149011612
+                        "Projectile ScaleZ": 1.5
                     },
                     {
                         "Projectiles per second": 0.0
@@ -7671,6 +7900,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Dual Right",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7701,6 +7931,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Dual Right",
         "ParentUID": 1764362837,
         "PrefabUID": 3594397937,
@@ -7896,6 +8127,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Semiauto",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -7926,6 +8158,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Semiauto",
         "ParentUID": 640409176,
         "PrefabUID": 3594397937,
@@ -8121,6 +8354,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Automatic",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -8151,6 +8385,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Automatic",
         "ParentUID": 4166709816,
         "PrefabUID": 3594397937,
@@ -8364,6 +8599,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Burst",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -8394,6 +8630,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Burst",
         "ParentUID": 4117960599,
         "PrefabUID": 3594397937,
@@ -8607,6 +8844,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Shotgun",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -8637,6 +8875,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Shotgun",
         "ParentUID": 3172887682,
         "PrefabUID": 3594397937,
@@ -8706,6 +8945,7 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3334419489,
                 "Type": 6
             },
@@ -8885,6 +9125,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Flamethrower",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -8915,6 +9156,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Flamethrower",
         "ParentUID": 3579561625,
         "PrefabUID": 3594397937,
@@ -8984,11 +9226,13 @@
                         ]
                     }
                 },
+                "ParticleVectorSize": 100,
                 "ResourceTextUID": 3334419489,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Fire Origin",
         "ParentUID": 3579561625,
         "PrefabUID": 3594397937,
@@ -9184,6 +9428,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Ricochet",
         "ParentUID": 1475165862,
         "PrefabUID": 3594397937,
@@ -9214,6 +9459,7 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "(O) Ricochet",
         "ParentUID": 2767080449,
         "PrefabUID": 3594397937,
@@ -9241,74 +9487,309 @@
                     1.0
                 ],
                 "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Meteorite",
+        "ParentUID": 2066812041,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 749618750
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    40.11640167236328,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "StartPoint",
+        "ParentUID": 749618750,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1059380054
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "EndPoint",
+        "ParentUID": 749618750,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1920332622
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    7777.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 3935105939,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 240240,
+                "Type": 3
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 5.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             },
             {
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Enemy Prefab": 3124887091
+                        "Initial Center Point": 1059380054
                     },
                     {
-                        "Spawn Entire": 1240838614
+                        "Initial Radius": 3
                     },
                     {
-                        " Parent of the Spawn": 1240838614
+                        "Final Center Point": 1920332622
                     },
                     {
-                        " Parent of the Pool": 1240838614
+                        "Final Radius": 3
                     },
                     {
-                        "Enemy Pool Size": 6
+                        "Speed": 2.0
                     },
                     {
-                        "Target": 1475165862
+                        "Falling Time": 3.0
                     },
                     {
-                        "Enemy Prefab": 3124887091
+                        "Min Time": 7
                     },
                     {
-                        "Spawn Entire": 1240838614
+                        "Max Time": 25
                     },
                     {
-                        " Parent of the Spawn": 1240838614
+                        "Initial Center Point": 1059380054
                     },
                     {
-                        " Parent of the Pool": 1240838614
+                        "Initial Radius": 3
                     },
                     {
-                        "Enemy Pool Size": 6
+                        "Final Center Point": 1920332622
                     },
                     {
-                        "Target": 1475165862
+                        "Final Radius": 3
                     },
                     {
-                        "Enemy Prefab": 3124887091
+                        "Speed": 2.0
                     },
                     {
-                        "Spawn Entire": 1240838614
+                        "Falling Time": 3.0
                     },
                     {
-                        " Parent of the Spawn": 1240838614
+                        "Min Time": 5
                     },
                     {
-                        " Parent of the Pool": 1240838614
+                        "Max Time": 10
                     },
                     {
-                        "Enemy Pool Size": 6
+                        "Indicator": 259600388
                     },
                     {
-                        "Target": 1475165862
+                        "Initial Center Point": 1059380054
+                    },
+                    {
+                        "Initial Radius": 3
+                    },
+                    {
+                        "Final Center Point": 1920332622
+                    },
+                    {
+                        "Final Radius": 3
+                    },
+                    {
+                        "Speed": 2.0
+                    },
+                    {
+                        "Falling Time": 3.0
+                    },
+                    {
+                        "Min Time": 5
+                    },
+                    {
+                        "Max Time": 10
+                    },
+                    {
+                        "Indicator": 259600388
                     }
                 ],
-                "Script Resource": 1522017073,
+                "Script Resource": 3284358092,
                 "Type": 5
             }
         ],
         "FirstOnPrefab": true,
-        "Name": "Parent",
-        "ParentUID": 2066812041,
+        "IsStatic": false,
+        "Name": "Rock",
+        "ParentUID": 749618750,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1240838614
+        "UID": 276803560
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -90.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Indicator",
+        "ParentUID": 749618750,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 259600388
     }
 ]

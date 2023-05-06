@@ -145,6 +145,10 @@ void SkinnedMeshRenderComponent::LinkBones(GameObject* goBone, std::map<std::str
 			if (animBone = animation->FindBone(goBone->name))
 			{
 				parentTransform = parentTransform * animBone->GetTransform(animationTime);
+				if (goBone->GetBonesUpdate())
+				{
+					goBone->transform->SetLocalFromGlobal(parentTransform, false, true);
+				}
 			}
 			else
 			{
@@ -153,10 +157,7 @@ void SkinnedMeshRenderComponent::LinkBones(GameObject* goBone, std::map<std::str
 
 			delta = parentTransform * offset;
 
-			if (goBone->GetBonesUpdate())
-			{
-				goBone->transform->SetLocalFromGlobal(delta, false, true);
-			}
+			
 		}
 		else
 		{

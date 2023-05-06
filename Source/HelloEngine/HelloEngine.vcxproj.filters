@@ -393,6 +393,12 @@
     <ClCompile Include="sha256.cpp" />
     <ClCompile Include="API\API_String.cpp" />
     <ClCompile Include="API\API_ShaderComponent.cpp" />
+    <ClCompile Include="P_ShapeModule.cpp" />
+    <ClCompile Include="P_CircleShape.cpp" />
+    <ClCompile Include="P_RectangleShape.cpp" />
+    <ClCompile Include="P_SphereShape.cpp" />
+    <ClCompile Include="P_CubeShape.cpp" />
+    <ClCompile Include="P_ConeShape.cpp" />
     <ClCompile Include="VideoPlayerComponent.cpp" />
     <ClCompile Include="VideoPlayerManager.cpp" />
     <ClCompile Include="FfmpegVideoPlayer.cpp" />
@@ -822,6 +828,12 @@
     <ClInclude Include="sha256.h" />
     <ClInclude Include="API\API_String.h" />
     <ClInclude Include="API\API_ShaderComponent.h" />
+    <ClInclude Include="P_ShapeModule.h" />
+    <ClInclude Include="P_CircleShape.h" />
+    <ClInclude Include="P_RectangleShape.h" />
+    <ClInclude Include="P_SphereShape.h" />
+    <ClInclude Include="P_CubeShape.h" />
+    <ClInclude Include="P_ConeShape.h" />
     <ClInclude Include="VideoPlayerComponent.h" />
     <ClInclude Include="VideoPlayerManager.h" />
     <ClInclude Include="FfmpegVideoPlayer.h" />

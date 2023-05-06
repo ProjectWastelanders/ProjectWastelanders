@@ -6,6 +6,12 @@
 #include "LayerEditor.h"
 #include "P_MainModule.h"
 #include "P_EmissionModule.h"
+#include "P_ShapeModule.h"
+#include "P_CircleShape.h"
+#include "P_RectangleShape.h"
+#include "P_SphereShape.h"
+#include "P_CubeShape.h"
+#include "P_ConeShape.h"
 #include "BillBoardComponent.h"
 
 
@@ -26,6 +32,10 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 	P_Module* emissionModule = (P_Module*)new P_EmissionModule();
 	emissionModule->component = this;
 	ParticleModules.push_back(emissionModule);
+
+	P_Module* shapeModule = (P_Module*)new P_ShapeModule();
+	shapeModule->component = this;
+	ParticleModules.push_back(shapeModule);
 
 	_gameObject->AddComponentOfType(Type::BILLBOARD);
 
@@ -250,12 +260,14 @@ void ParticleSystemComponent::OnEditor()
 		{
 			StopEmitter();
 		}
-		if (ImGui::DragInt("Particle Vector Size", &size, 1.0f, 1, 2000))
+		if (ImGui::DragInt("Particle Vector Size", &size, 1.0f, 1, 10000))
 		{
 			if (!LayerGame::S_IsPlaying() && !GetPlayOnScene() && !GetPauseOnScene())
 			{
 				ParticleEmitter.SetParticlePoolSize(size);
 				sizeCpy = size;
+				CreateEmitterMesh(_resourceUID);
+				//ChangeEmitterMeshTexture((ResourceTexture*)ModuleResourceManager::S_LoadResource(_resourceTextUID));
 			}
 			else
 			{
@@ -354,6 +366,15 @@ void ParticleSystemComponent::OnEditor()
 		}
 		else
 		{
+			if (_resourceText)
+			{
+				if (ImGui::Checkbox("Transparent", &_resourceText->isTransparent))
+				{
+					std::string popUpmessage = "Texture in the emitter set as transparent";
+					LayerEditor::S_AddPopUpMessage(popUpmessage);
+				}
+			}
+
 			if (ImGui::Button("Delete Emitter Texture"))
 			{
 
@@ -368,7 +389,7 @@ void ParticleSystemComponent::OnEditor()
 		for (int i = 0; i < ParticleModules.size(); i++)
 		{
 			ParticleModules[i]->OnEditor();
-		}
+		}		
 	}
 	if (!created)
 		this->_gameObject->DestroyComponent(this);
@@ -477,9 +498,10 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleMain"]["LifeTime"] = particleProps.Lifetime;
 		_j["ParticleModules"]["ModuleMain"]["Duration"] = ParticleEmitter.Duration;
 		_j["ParticleModules"]["ModuleMain"]["Delay"] = ParticleEmitter.StartDelay;
-		_j["ParticleModules"]["ModuleMain"]["Looping"] = ParticleEmitter.loop;
-		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
+		_j["ParticleModules"]["ModuleMain"]["Looping"] = ParticleEmitter.loop;	
 		_j["ParticleModules"]["ModuleMain"]["PlayOnAwake"] = ParticleEmitter.playOnAwake;
+		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
+		_j["ParticleModules"]["ModuleEmission"]["Enable"] = ParticleEmitter.enableEmissionModule;
 	}
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
@@ -530,10 +552,11 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	particleProps.Lifetime = j["ParticleModules"]["ModuleMain"]["LifeTime"];
 	ParticleEmitter.Duration = j["ParticleModules"]["ModuleMain"]["Duration"];
 	ParticleEmitter.DurationCpy = ParticleEmitter.Duration;
-	ParticleEmitter.ParticlesPerSecond = j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"];
 	ParticleEmitter.StartDelay = j["ParticleModules"]["ModuleMain"]["Delay"];
 	ParticleEmitter.playOnAwake = j["ParticleModules"]["ModuleMain"]["PlayOnAwake"];
 	ParticleEmitter.loop = j["ParticleModules"]["ModuleMain"]["Looping"];
+	ParticleEmitter.ParticlesPerSecond = j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"];
+	//ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	//size = j["ParticleVectorSize"];
 	//sizeCpy = j["ParticleVectorSize"];
 	bool enabled = j["Enabled"];
@@ -558,4 +581,78 @@ void ParticleSystemComponent::SetPlayOnScene(bool playonscene)
 void ParticleSystemComponent::SetPauseOnScene(bool pauseonscene)
 {
 	this->pauseOnScene = pauseonscene;
+}
+
+void ParticleSystemComponent::CreateCurrentShape(ShapeType type)
+{
+	switch (type) {
+	case ShapeType::NONE:
+		return;
+		break;
+	case ShapeType::CIRCLE:
+	{
+		P_Module* circleShape = (P_Module*)new P_CircleShape();
+		circleShape->component = this;
+		ParticleModules.push_back(circleShape);
+	}
+	break;
+	case ShapeType::RECTANGLE:
+	{
+		P_Module* rectangleShape = (P_Module*)new P_RectangleShape();
+		rectangleShape->component = this;
+		ParticleModules.push_back(rectangleShape); 
+	}
+	break;
+	case ShapeType::SPHERE:
+	{
+		P_Module* sphereShape = (P_Module*)new P_SphereShape();
+		sphereShape->component = this;
+		ParticleModules.push_back(sphereShape);
+	}
+	break;
+	case ShapeType::CUBE:
+	{
+		P_Module* cubeShape = (P_Module*)new P_CubeShape();
+		cubeShape->component = this;
+		ParticleModules.push_back(cubeShape);
+	}
+	break;
+	case ShapeType::CONE:
+	{
+		P_Module* coneShape = (P_Module*)new P_ConeShape();
+		coneShape->component = this;
+		ParticleModules.push_back(coneShape);
+	}
+	break;
+	}
+}
+
+P_ShapeModule* ParticleSystemComponent::GetCurrentShape()
+{
+	for (int i = 0; i < ParticleModules.size(); i++)
+	{
+		if (ParticleModules[i]->type == P_ModuleType::SHAPE)
+		{
+			if (ParticleModules[i]->shapeType != ShapeType::NONE) {				
+				return (P_ShapeModule*)ParticleModules[i];
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+void ParticleSystemComponent::DeleteCurrentShape()
+{
+	for (int i = 0; i < ParticleModules.size(); i++)
+	{
+		if (ParticleModules[i]->type == P_ModuleType::SHAPE)
+		{
+			if (ParticleModules[i]->shapeType != ShapeType::NONE) {
+				RELEASE(ParticleModules[i]);
+				ParticleModules.erase(ParticleModules.begin() + i);
+				break;
+			}
+		}
+	}
 }

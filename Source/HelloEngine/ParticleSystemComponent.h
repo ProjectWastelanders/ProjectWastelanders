@@ -8,6 +8,7 @@
 class Application;
 class ResourceMesh;
 class ResourceTexture;
+class P_ShapeModule;
 
 class ParticleSystemComponent : public Component
 {
@@ -57,6 +58,12 @@ public:
 
     void SetStopEmitting(bool stopemitting);
 
+    void CreateCurrentShape(ShapeType type);
+
+    P_ShapeModule* GetCurrentShape();
+
+    void DeleteCurrentShape();
+
     ParticleProperties particleProps;
 
 private:
@@ -72,8 +79,8 @@ private:
     bool playOnGame = false;
     bool StopEmittingOnGame = false;
 
-    int size = 100;
-    int sizeCpy = 100;
+    int size = 60;
+    int sizeCpy = 60;
     
     ResourceMesh* _resource = nullptr;
     ResourceTexture* _resourceText = nullptr;
@@ -81,7 +88,7 @@ private:
     uint _resourceUID;
     uint _resourceTextUID;
     Application* app;
-    Emitter ParticleEmitter; 
+    Emitter ParticleEmitter;
 
     //Particle System Modules
     std::vector<P_Module*> ParticleModules;
@@ -91,6 +98,8 @@ private:
     friend class P_Module;
     friend class P_MainModule;
     friend class P_EmissionModule;
+    friend class P_ShapeModule;
+    friend class P_CirlceShape;
     friend class ModuleRenderer3D;
 };
 

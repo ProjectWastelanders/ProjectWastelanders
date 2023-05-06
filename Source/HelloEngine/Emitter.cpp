@@ -63,7 +63,7 @@ void Emitter::SetPlayOnAwake(bool b)
 
 void Emitter::EmitParticles(ParticleProperties& particleProps)
 {
-	if (currentparticle <= 0)
+	if (currentparticle < 0)
 	{
 		currentparticle = ParticleList.size() - 1;
 	}
@@ -131,6 +131,8 @@ void Emitter::UpdateParticles()
 			meshReference.draw = false;
 
 			ParticleList[i].Active = false;
+			
+			//manager->isParticle = false;
 			continue;
 		}
 
@@ -177,6 +179,8 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 	ParticleList[i].SetTransformMatrix(rotation);
 
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
+
+	manager->isParticle = true;
 
 	Mesh& meshReference = manager->GetMap()[ParticleList[i]._instanceID].mesh;
 

@@ -22,6 +22,7 @@
 #include "Component.h"
 #include "LayerEditor.h"
 #include "Lighting.h"
+#include "ModuleAudio.h"
 
 // In create resource mesh method save my index and model UID.
 // Save ResourceModel UID and index.
@@ -623,6 +624,8 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 									   // If we let it happen afterwards, the old meshes will destroy the new Instance Renderers.
 	LayerGame::RemoveAllScripts();
 	Lighting::ClearLights();
+	ModuleAudio::StopAllAudioEvents();
+
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)
 		ModuleLayers::rootGameObject->Destroy();

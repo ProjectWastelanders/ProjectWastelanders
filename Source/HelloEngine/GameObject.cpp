@@ -27,6 +27,7 @@
 #include "PointLightComponent.h"
 #include "SpotLightComponent.h"
 #include "NavAgentComponent.h"
+#include "AudioSourceComponent.h"
 
 GameObject::GameObject(GameObject* parent, std::string name, std::string tag, uint ID) : name(name), tag(tag)
 {
@@ -287,6 +288,10 @@ void GameObject::OnEditor()
 				case 12:
 					if (!HasComponent<ComponentAgent>())
 						AddComponent<ComponentAgent>();
+					break;
+				case 13:
+					if (!HasComponent<AudioSourceComponent>())
+						AddComponent<AudioSourceComponent>();
 					break;
                 }
             }
@@ -555,7 +560,12 @@ Component* GameObject::AddComponentOfType(Component::Type type)
 		newComponent = new ComponentAgent(this);
 		_components.push_back(newComponent);
 		break;
+	case Component::Type::AUDIO_SOURCE:
+		newComponent = new AudioSourceComponent(this);
+		_components.push_back(newComponent);
+		break;
 	}
+
 
 	return newComponent;
 }

@@ -103,6 +103,7 @@ void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projecti
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(dualsTex);
+    go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -123,6 +124,7 @@ void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectile
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
+    go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -143,6 +145,7 @@ void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float 
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
+    go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -162,6 +165,7 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(autoTex);
+    go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -200,6 +204,7 @@ void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectil
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(burstTex);
+    go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -219,6 +224,7 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(shotgunTex);
+    go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
     if (randomDirectionRange > 0.0f)
     {
@@ -261,6 +267,7 @@ void ProjectilePull::LauchProjectileFLAMETHROWER(float projectileSpeed, float pr
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetMeshRenderer().SetActive(false);
+    go.GetRigidBody().SetBoxScale({ 0.1f, 0.1f, 0.1f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -280,6 +287,7 @@ void ProjectilePull::LauchProjectileRICOCHET(float projectileSpeed, float projec
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(ricochetTex);
+    go.GetRigidBody().SetBoxScale({ 0.5f, 0.5f, 0.5f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;

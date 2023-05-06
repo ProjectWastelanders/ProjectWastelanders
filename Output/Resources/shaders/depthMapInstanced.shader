@@ -11,9 +11,7 @@
 	} 
 #endif
 #ifdef FRAGMENT_PROGRAM
-	
 	void main()
 	{
-		//FragColor = vec4(vec3(depthValue), 1.0f);
 	}
 #endif

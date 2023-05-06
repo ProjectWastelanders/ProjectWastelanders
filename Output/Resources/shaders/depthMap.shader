@@ -11,9 +11,7 @@
 	} 
 #endif
 #ifdef FRAGMENT_PROGRAM
-
 	void main()
 	{
-		//FragColor = gl_FragCoord.z;
 	}
 #endif

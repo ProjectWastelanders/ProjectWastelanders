@@ -406,6 +406,7 @@
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="API\API_UICheckBox.cpp" />
+    <ClCompile Include="AudioSourceComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -841,6 +842,7 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="API\API_UICheckBox.h" />
+    <ClInclude Include="AudioSourceComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

@@ -190,10 +190,15 @@ void PlayerMove::Update()
             moveSoundCooldown = 0.5f;
             Audio::Event("starlord_walk");
         }
-        if (!playingWalkParticles)
+        if (!playingWalkParticles && !isShooting)
         {
             walkParticles.Play();
             playingWalkParticles = true;
+        }
+        else if (playingWalkParticles && isShooting)
+        {
+            walkParticles.StopEmitting();
+            playingWalkParticles = false;
         }
     }
 

@@ -232,6 +232,7 @@ void ImWindowConfiguration::Update()
 			{
 				ImGui::Checkbox(iter.first.c_str(), &iter.second.first);
 				if (iter.first == "wireframe") _moduleRenderer->ToggleOpenGLWireframe(iter.second.first);
+				else if (iter.first == "shadows") _moduleRenderer->SetShadows(iter.second.first);
 				else _moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
 			}
 		}

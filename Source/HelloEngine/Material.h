@@ -39,6 +39,8 @@ private:
 public:
 	std::vector<Uniform*> uniforms;
 
+	bool depthDraw = false;
+
 private:
 	ResourceShader* shader = nullptr;
 

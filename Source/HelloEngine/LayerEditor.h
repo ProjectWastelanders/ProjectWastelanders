@@ -70,6 +70,8 @@ public:
 
 	static void S_ReimportAllAssets();
 
+	static bool S_GetWindowActive(ImWindowID id);
+	
 	static std::string S_GetCurrentSceneName();
 
 private:

@@ -7,17 +7,19 @@
 #include "ModuleXML.h"
 #include "ModuleLayers.h"
 #include "MeshRenderComponent.h"
+#include "LayerEditor.h"
 #include "VideoPlayerManager.h"
 
 #include "Emitter.h"
 #include "ParticleSystemComponent.h"
+#include "Lighting.h"
 
 bool ModuleRenderer3D::isVSync = false;
 bool ModuleRenderer3D::drawNavMesh = false;
 
 ModuleRenderer3D::ModuleRenderer3D(bool start_enabled) : Module(start_enabled)
 {
-	
+
 }
 
 // Destructor
@@ -110,11 +112,14 @@ void ModuleRenderer3D::DrawGame()
 {
 	if (_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
 	{
+		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
+
+		ShadowRenderPass();
+
+
 		glBindFramebuffer(GL_FRAMEBUFFER, 0); // Bind to default buffer because a camera buffer is not necessary with only one display.
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
-		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
 
 		renderManager.Draw();
 		particleManager.Draw();
@@ -130,22 +135,30 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	VideoPlayerManager::Update(); // Update videos before drawing.
 
 #ifdef STANDALONE
-	if (_cameras->sceneCamera->active)
+
+	//SCENE RENDERING
+	if (app->layers->editor->S_GetWindowActive(ImWindowID::SCENE) &&
+		_cameras->sceneCamera->active)
 	{
+		_cameras->currentDrawingCamera = _cameras->sceneCamera;
+		
+		ShadowRenderPass();
+
+		//Normal Rendering of scene
 		_cameras->sceneCamera->frameBuffer.Bind();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
-		_cameras->currentDrawingCamera = _cameras->sceneCamera;
-
-		ModuleLayers::S_DrawLayers();
-		renderManager.Draw();
-		particleManager.Draw();
-		renderManager.DrawDebug();
-		_cameras->DrawCameraFrustums();
+			//RENDER SCENE
+			ModuleLayers::S_DrawLayers();
+			renderManager.Draw();
+			particleManager.Draw();
+			renderManager.DrawDebug();
+			_cameras->DrawCameraFrustums();
 	}
 
-	if (_cameras->UICamera->active)
+	//CANVAS RENDERING
+	if (app->layers->editor->S_GetWindowActive(ImWindowID::UI) &&
+		_cameras->UICamera->active)
 	{
 		_cameras->UICamera->frameBuffer.Bind();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
@@ -156,13 +169,17 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		renderManager.Draw2D();
 	}
 
-	if (_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
+	//ImWin GAME RENDERING
+	if (app->layers->editor->S_GetWindowActive(ImWindowID::GAME) && 
+		_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
 	{
+		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
+
+		ShadowRenderPass();
+
 		_cameras->activeGameCamera->frameBuffer.Bind();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
-		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
 
 		renderManager.Draw();
 		particleManager.Draw();
@@ -180,6 +197,29 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	SDL_GL_SwapWindow(ModuleWindow::window);
 
 	return UpdateStatus::UPDATE_CONTINUE;
+}
+
+void ModuleRenderer3D::ShadowRenderPass()
+{
+	Lighting::GetLightMap().directionalLight.lightFrustum.pos = _cameras->currentDrawingCamera->cameraFrustum.pos;
+	Lighting::GetLightMap().directionalLight.CalculateLightSpaceMatrix();
+	glCullFace(GL_FRONT);
+	//Depth map (Shadow)
+	_cameras->currentDrawingCamera->frameBuffer.BindShadowBuffer();
+	//RENDER SCENE
+	renderManager.Draw();
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glCullFace(GL_BACK);
+
+	glViewport(0, 0, ModuleWindow::width, ModuleWindow::height);
+	/*if (hasShadows)
+	{*/
+		Lighting::GetLightMap().shadowMap = _cameras->currentDrawingCamera->frameBuffer.GetDepthTexture();
+	/*}
+	else
+	{
+		Lighting::GetLightMap().shadowMap = 1;
+	}*/
 }
 
 // Called before quitting

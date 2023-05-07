@@ -10,6 +10,8 @@ struct LightMap
 	DirectionalLight directionalLight;
 	std::map<uint, PointLight> pointLight;
 	std::map<uint, SpotLight> spotLight;
+
+	uint shadowMap = 0;
 };
 
 class Lighting

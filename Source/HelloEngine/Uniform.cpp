@@ -2,6 +2,7 @@
 #include "Uniform.h"
 
 #include "ModuleResourceManager.h"
+#include "TextureImporter.h"
 
 /*Constructors and Deconstructors*/
 
@@ -161,7 +162,10 @@ void UniSampler2D::Update(Shader& shader)
 	if (texture)
 		shader.SetTexture(data.name, texture->OpenGLID, layer);
 	else
-		shader.SetTexture(data.name, 0, layer);
+	{
+		texture = TextureImporter::WhiteImage();
+		shader.SetTexture(data.name, texture->OpenGLID, layer);
+	}	
 }
 
 void UniFloat4x4::Update(Shader& shader)

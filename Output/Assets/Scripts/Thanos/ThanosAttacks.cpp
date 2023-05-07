@@ -38,9 +38,36 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxParticleSystem("Laser Particle System", &classInstance->laserPS);
 	script->AddDragBoxGameObject("Laser GameObject", &classInstance->laserGO);
 
-	for(int i = 0; i < 30; i++){
-		script->AddDragBoxGameObject("Meteor", &classInstance->meteors[i]);
-	}
+	script->AddDragBoxGameObject("Meteor 0", &classInstance->meteors[0]);
+	script->AddDragBoxGameObject("Meteor 1", &classInstance->meteors[1]);
+	script->AddDragBoxGameObject("Meteor 2", &classInstance->meteors[2]);
+	script->AddDragBoxGameObject("Meteor 3", &classInstance->meteors[3]);
+	script->AddDragBoxGameObject("Meteor 4", &classInstance->meteors[4]);
+	script->AddDragBoxGameObject("Meteor 5", &classInstance->meteors[5]);
+	script->AddDragBoxGameObject("Meteor 6", &classInstance->meteors[6]);
+	script->AddDragBoxGameObject("Meteor 7", &classInstance->meteors[7]);
+	script->AddDragBoxGameObject("Meteor 8", &classInstance->meteors[8]);
+	script->AddDragBoxGameObject("Meteor 9", &classInstance->meteors[9]);
+	script->AddDragBoxGameObject("Meteor 10", &classInstance->meteors[10]);
+	script->AddDragBoxGameObject("Meteor 11", &classInstance->meteors[11]);
+	script->AddDragBoxGameObject("Meteor 12", &classInstance->meteors[12]);
+	script->AddDragBoxGameObject("Meteor 13", &classInstance->meteors[13]);
+	script->AddDragBoxGameObject("Meteor 14", &classInstance->meteors[14]);
+	script->AddDragBoxGameObject("Meteor 15", &classInstance->meteors[15]);
+	script->AddDragBoxGameObject("Meteor 16", &classInstance->meteors[16]);
+	script->AddDragBoxGameObject("Meteor 17", &classInstance->meteors[17]);
+	script->AddDragBoxGameObject("Meteor 18", &classInstance->meteors[18]);
+	script->AddDragBoxGameObject("Meteor 19", &classInstance->meteors[19]);
+	script->AddDragBoxGameObject("Meteor 20", &classInstance->meteors[20]);
+	script->AddDragBoxGameObject("Meteor 21", &classInstance->meteors[21]);
+	script->AddDragBoxGameObject("Meteor 22", &classInstance->meteors[22]);
+	script->AddDragBoxGameObject("Meteor 23", &classInstance->meteors[23]);
+	script->AddDragBoxGameObject("Meteor 24", &classInstance->meteors[24]);
+	script->AddDragBoxGameObject("Meteor 25", &classInstance->meteors[25]);
+	script->AddDragBoxGameObject("Meteor 26", &classInstance->meteors[26]);
+	script->AddDragBoxGameObject("Meteor 27", &classInstance->meteors[27]);
+	script->AddDragBoxGameObject("Meteor 28", &classInstance->meteors[28]);
+	script->AddDragBoxGameObject("Meteor 29", &classInstance->meteors[29]);
 
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
@@ -478,7 +505,7 @@ void ThanosAttacks::MeteorAttack() {
 		meteorRainTime = 0.0f;
 		for (int i = 0; i < 30; i++) {
 			meteors[i].GetTransform().SetPosition(meteorsPosition[i]);
-			meteors[i].GetMeshRenderer().SetActive(true);
+			//meteors[i].GetMeshRenderer().SetActive(true);
 		}
 		thanosState = THANOS_STATE::IDLE;
 		isRainingMeteors = false;

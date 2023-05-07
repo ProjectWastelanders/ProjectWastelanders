@@ -26,6 +26,7 @@ void ImWindowUI::Update()
 {
 	if (ImGui::Begin(windowName.c_str(), 0, ImGuiWindowFlags_MenuBar))
 	{
+		isActive = true;
 		if (ImGui::BeginMenuBar())
 		{
 			std::string option = "Change to ";
@@ -152,6 +153,7 @@ void ImWindowUI::Update()
 	else
 	{
 		_UICamera->active = false;
+		isActive = false;
 	}
 	
 	ImGui::End();

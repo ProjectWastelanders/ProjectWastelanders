@@ -3,6 +3,7 @@
 class ResourceTexture;
 
 #define CHECKERS_RESOURCE_UID 240240
+#define WHITE_RESOURCE_UID 241241
 
 class TextureImporter
 {
@@ -16,6 +17,7 @@ public:
 	static void Load(char* buffer, int size, ResourceTexture* resource);
 
 	static ResourceTexture* CheckerImage();
+	static ResourceTexture* WhiteImage();
 
 	static uint LoadEditorDDS(char* buffer, int size);
 };

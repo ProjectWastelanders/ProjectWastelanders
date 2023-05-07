@@ -1201,7 +1201,10 @@ void RenderManager::DrawIndependentMeshes()
 		if (renderState == RenderUpdateState::DRAW)
 		{
 			if (mesh.second.material != nullptr && mesh.second.material->material.GetShader() != nullptr)
+			{
+				mesh.second.material->material.depthDraw = drawDepthIndependent;
 				mesh.second.mesh.Draw(mesh.second.material->material);
+			}
 			else
 				mesh.second.mesh.Draw(Material(), false);
 		}
@@ -1213,7 +1216,7 @@ void RenderManager::DrawIndependentMeshes()
 				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second.mesh); //Selected without Mat
 		}
 	}
-
+	drawDepthIndependent = !drawDepthIndependent;
 }
 
 void RenderManager::DrawTextObjects()

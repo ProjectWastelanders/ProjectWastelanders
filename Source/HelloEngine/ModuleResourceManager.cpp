@@ -62,6 +62,9 @@ bool ModuleResourceManager::Init()
 {
 	// Create checkers texture resource
 	S_CreateResourceText("Null", CHECKERS_RESOURCE_UID, "Checkers", false);
+
+	// Create white texture resource
+	S_CreateResourceText("Null", WHITE_RESOURCE_UID, "White", false);
 	return true;
 }
 

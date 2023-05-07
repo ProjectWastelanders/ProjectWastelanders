@@ -67,7 +67,7 @@ void DirectionalLightComponent::OnEditorUnique()
 	//ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
 	//ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);
 
-	//UpdateToLightMap();
+	UpdateToLightMap();
 }
 
 void DirectionalLightComponent::MarkAsAlive()

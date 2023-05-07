@@ -15,12 +15,15 @@ public:
 	API_UIButton weapon2;
 	API_UIButton weapon3;
 	API_UIButton weapon4;
+	API_UIButton proceedButton;
 
 	API_UIImage infoWeapon;
 	API_UIImage weaponImage;
 
 	API_UIInput weaponSelectPanel;
 	API_UIInput proceedPanel;
+
+	API_String scene;
 
 	uint info1;
 	uint info2;

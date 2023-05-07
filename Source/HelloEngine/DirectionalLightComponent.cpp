@@ -62,12 +62,12 @@ void DirectionalLightComponent::DeSerializationUnique(json& j)
 #ifdef STANDALONE
 void DirectionalLightComponent::OnEditorUnique()
 {
-	ImGui::DragFloat("Near plane Distance", &data.lightFrustum.nearPlaneDistance);
-	ImGui::DragFloat("Far plane Distance", &data.lightFrustum.farPlaneDistance);
-	ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
-	ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);
+	//ImGui::DragFloat("Near plane Distance", &data.lightFrustum.nearPlaneDistance);
+	//ImGui::DragFloat("Far plane Distance", &data.lightFrustum.farPlaneDistance);
+	//ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
+	//ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);
 
-	UpdateToLightMap();
+	//UpdateToLightMap();
 }
 
 void DirectionalLightComponent::MarkAsAlive()

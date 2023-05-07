@@ -31,6 +31,12 @@
 #include "json.hpp"
 #include "physfs.h"
 
+#ifdef STANDALONE
+#include "optick.h"
+#else
+#define OPTICK_EVENT()
+#endif
+
 // ----------------------------- Engine -----------------------------
 #include "Globals.h"
 #include "Application.h"

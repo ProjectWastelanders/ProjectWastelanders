@@ -18,14 +18,14 @@ void ObjRemarcableColor::Start()
 {
 	_fadeInCooldown = _fadeOutCooldown = 0;
 	fading = false;
-
+	
 }
 void ObjRemarcableColor::Update()
 {
-
+	
 	fading ? FadeIn() : FadeOut();
 	//recolor.SetColor(r, g, b, 255);
-	recolor.SetColor(_r, _g, _b, 255);
+	gameObject.GetTag()=="Chest" && !gameObject.IsActive() ? recolor.SetColor(1, 1, 1, 255):recolor.SetColor(_r, _g, _b, 255) ;
 }
 
 void ObjRemarcableColor::FadeIn()

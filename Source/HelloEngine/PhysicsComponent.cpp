@@ -212,7 +212,10 @@ void PhysicsComponent::DeSerialization(json& j)
 		}
 
 		_physBody->isRenderingCol = j["IsRenderingCol"];
-		//_physBody->isRenderingRayCast = j["IsRenderingRayCast"];
+		if (j.contains("IsRenderingRayCast"))
+		{
+			_physBody->isRenderingRayCast = j["IsRenderingRayCast"];
+		}
 
 		std::vector<float> colPosTemp = j["ColPosition"];
 		_physBody->colPos = { colPosTemp[0], colPosTemp[1], colPosTemp[2] };
@@ -235,12 +238,18 @@ void PhysicsComponent::DeSerialization(json& j)
 		renderColColor[2] = RenderColColorTemp[2];
 		renderColColor[3] = RenderColColorTemp[3];
 
-		//raycastSize = j["RayCastSize"];
-		/*std::vector<float> RenderRayColorTemp = j["RayCastColor"];
-		raycastColor[0] = RenderRayColorTemp[0];
-		raycastColor[1] = RenderRayColorTemp[1];
-		raycastColor[2] = RenderRayColorTemp[2];
-		raycastColor[3] = RenderRayColorTemp[3];*/
+		if (j.contains("RayCastSize"))
+		{
+			raycastSize = j["RayCastSize"];
+		}
+		if (j.contains("RayCastColor"))
+		{
+			std::vector<float> RenderRayColorTemp = j["RayCastColor"];
+			raycastColor[0] = RenderRayColorTemp[0];
+			raycastColor[1] = RenderRayColorTemp[1];
+			raycastColor[2] = RenderRayColorTemp[2];
+			raycastColor[3] = RenderRayColorTemp[3];
+		}
 
 		CallUpdateAllPram();
 	}

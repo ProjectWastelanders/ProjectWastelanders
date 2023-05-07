@@ -61,7 +61,7 @@ void SmokeExtractorTrap::Update()
         fireTimer = 0.0f;
 
         fire.StopEmitting();
-        smoke.SetInitialSpeed(gameObject.GetTransform().GetForward() * 5);
+        smoke.SetInitialSpeed(gameObject.GetTransform().GetForward() * 2.5f);
         smoke.Play();
         hitPlayer = true;
         throwFire = false;

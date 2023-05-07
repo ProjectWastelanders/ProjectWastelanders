@@ -28,7 +28,8 @@
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 931044216
+        "UID": 931044216,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -59,7 +60,8 @@
         "ParentUID": 931044216,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 582930903
+        "UID": 582930903,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -98,7 +100,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1086417859
+        "UID": 1086417859,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -137,7 +140,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3652499762
+        "UID": 3652499762,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -180,7 +184,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 4017731757
+        "UID": 4017731757,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -224,7 +229,8 @@
         "ParentUID": 4017731757,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1086020048
+        "UID": 1086020048,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -268,7 +274,8 @@
         "ParentUID": 4017731757,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 355431247
+        "UID": 355431247,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -312,7 +319,8 @@
         "ParentUID": 4017731757,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 186048598
+        "UID": 186048598,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -356,7 +364,8 @@
         "ParentUID": 4017731757,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2549467301
+        "UID": 2549467301,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -396,7 +405,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 700667039
+        "UID": 700667039,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -435,7 +445,8 @@
         "ParentUID": 700667039,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1649303334
+        "UID": 1649303334,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -474,7 +485,8 @@
         "ParentUID": 700667039,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1827776769
+        "UID": 1827776769,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -513,7 +525,8 @@
         "ParentUID": 700667039,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3502272900
+        "UID": 3502272900,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -553,7 +566,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 4079862537
+        "UID": 4079862537,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -592,7 +606,8 @@
         "ParentUID": 4079862537,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1789771596
+        "UID": 1789771596,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -631,7 +646,8 @@
         "ParentUID": 4079862537,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3767393015
+        "UID": 3767393015,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -670,7 +686,8 @@
         "ParentUID": 4079862537,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 465424074
+        "UID": 465424074,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -710,7 +727,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2547002226
+        "UID": 2547002226,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -749,7 +767,8 @@
         "ParentUID": 2547002226,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3273927335
+        "UID": 3273927335,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -789,7 +808,8 @@
         "ParentUID": 2547002226,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 321702245
+        "UID": 321702245,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -828,7 +848,8 @@
         "ParentUID": 321702245,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 693743968
+        "UID": 693743968,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -867,7 +888,8 @@
         "ParentUID": 321702245,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 253572886
+        "UID": 253572886,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -907,7 +929,8 @@
         "ParentUID": 582930903,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 181855838
+        "UID": 181855838,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -946,7 +969,8 @@
         "ParentUID": 181855838,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3860526589
+        "UID": 3860526589,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -991,50 +1015,8 @@
         "ParentUID": 181855838,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 4106068590
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Active camera": true,
-                "Active culling": true,
-                "Aspect ratio": 1.9888476133346558,
-                "Enabled": true,
-                "FOV": 60.0,
-                "Far plane": 1000.0,
-                "Frustum type": 2,
-                "Near plane": 0.009999999776482582,
-                "Orthographic size": 10.0,
-                "Type": 4
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "C",
-        "ParentUID": 931044216,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 4144045469
+        "UID": 4106068590,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1150,6 +1132,96 @@
                     },
                     {
                         "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Text Casette": 4106068590
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Bar": 253572886
+                    },
+                    {
+                        "Selected Feedback": 3273927335
+                    },
+                    {
+                        "Hold Conjunt": 321702245
+                    },
+                    {
+                        "Level 1": 1086020048
+                    },
+                    {
+                        "Level 2": 355431247
+                    },
+                    {
+                        "Level 3": 186048598
+                    },
+                    {
+                        "Level 4": 2549467301
+                    },
+                    {
+                        "Text Casette": 4106068590
+                    },
+                    {
+                        "Check Main Mision": 1789771596
+                    },
+                    {
+                        "Check Secundary Mision 1": 3767393015
+                    },
+                    {
+                        "Check Secundary Mision 2": 465424074
+                    },
+                    {
+                        "Map Image": 3860526589
+                    },
+                    {
+                        "Planet Image": 3652499762
+                    },
+                    {
+                        "Feedback Planet Name": 4009129052
                     }
                 ],
                 "Script Resource": 4223611270,
@@ -1159,10 +1231,55 @@
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "Feedback Handler",
+        "ParentUID": 582930903,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1289975046,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 1.9888476133346558,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "C",
         "ParentUID": 931044216,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1289975046
+        "UID": 4144045469,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1203,7 +1320,8 @@
         "ParentUID": 931044216,
         "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 4009129052
+        "UID": 4009129052,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1229,7 +1347,164 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
+                "Inspector Fields": [
+                    {
+                        "Weapon Selected Panel": 3921715493
+                    },
+                    {
+                        "Proceed Panel": 2320120455
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Weapon Info": 175283391
+                    },
+                    {
+                        "Weapon Image": 902259293
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Proceed Button": 1838266583
+                    },
+                    {
+                        "Weapon Selected Panel": 3921715493
+                    },
+                    {
+                        "Proceed Panel": 2320120455
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Weapon Info": 175283391
+                    },
+                    {
+                        "Weapon Image": 902259293
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Proceed Button": 1838266583
+                    },
+                    {
+                        "Weapon Selected Panel": 3921715493
+                    },
+                    {
+                        "Proceed Panel": 2320120455
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Weapon Info": 175283391
+                    },
+                    {
+                        "Weapon Image": 902259293
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Proceed Button": 1838266583
+                    },
+                    {
+                        "Weapon Selected Panel": 3921715493
+                    },
+                    {
+                        "Proceed Panel": 2320120455
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Weapon Info": 175283391
+                    },
+                    {
+                        "Weapon Image": 902259293
+                    },
+                    {
+                        "Weapon 1": 1198555689
+                    },
+                    {
+                        "Weapon 2": 716121440
+                    },
+                    {
+                        "Weapon 3": 2200218208
+                    },
+                    {
+                        "Weapon 4": 1305442154
+                    },
+                    {
+                        "Proceed Button": 1838266583
+                    }
+                ],
                 "Script Resource": 225065215,
                 "Type": 5
             }
@@ -1240,7 +1515,8 @@
         "ParentUID": 931044216,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3841754865
+        "UID": 3841754865,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1280,7 +1556,8 @@
         "ParentUID": 3841754865,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3921715493
+        "UID": 3921715493,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1319,7 +1596,8 @@
         "ParentUID": 3921715493,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2022065060
+        "UID": 2022065060,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1358,7 +1636,8 @@
         "ParentUID": 3921715493,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 175283391
+        "UID": 175283391,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1401,7 +1680,8 @@
         "ParentUID": 3921715493,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1566525326
+        "UID": 1566525326,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1445,7 +1725,8 @@
         "ParentUID": 1566525326,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1198555689
+        "UID": 1198555689,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1489,7 +1770,8 @@
         "ParentUID": 1566525326,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 716121440
+        "UID": 716121440,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1533,7 +1815,8 @@
         "ParentUID": 1566525326,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2200218208
+        "UID": 2200218208,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1577,7 +1860,8 @@
         "ParentUID": 1566525326,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1305442154
+        "UID": 1305442154,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1617,7 +1901,8 @@
         "ParentUID": 3841754865,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2320120455
+        "UID": 2320120455,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1656,7 +1941,8 @@
         "ParentUID": 2320120455,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2885814734
+        "UID": 2885814734,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1695,7 +1981,8 @@
         "ParentUID": 2320120455,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 902259293
+        "UID": 902259293,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1735,7 +2022,8 @@
         "ParentUID": 2320120455,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3439304181
+        "UID": 3439304181,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1779,6 +2067,7 @@
         "ParentUID": 3439304181,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1838266583
+        "UID": 1838266583,
+        "UpdateWithBones": false
     }
 ]

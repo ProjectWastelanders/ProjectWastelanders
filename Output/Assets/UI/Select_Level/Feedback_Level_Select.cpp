@@ -213,6 +213,15 @@ void Feedback_Level_Select::SetCurrentLevel()
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map1);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet1);
 
+        if (API_QuickSave::GetBool("level1_completed"))
+        {
+            checkMainMision1.SetActive(true);
+        }
+        else
+        {
+            checkMainMision1.SetActive(false);
+        }
+
         if (API_QuickSave::GetBool("level1_casette1"))
         {
             casettesNumber++;
@@ -256,6 +265,15 @@ void Feedback_Level_Select::SetCurrentLevel()
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map2);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet2);
 
+        if (API_QuickSave::GetBool("level2_completed"))
+        {
+            checkMainMision1.SetActive(true);
+        }
+        else
+        {
+            checkMainMision1.SetActive(false);
+        }
+
         if (API_QuickSave::GetBool("level2_casette1"))
         {
             casettesNumber++;
@@ -298,6 +316,15 @@ void Feedback_Level_Select::SetCurrentLevel()
 
         mapImage.GetMaterialCompoennt().ChangeAlbedoTexture(map3);
         planetImage.GetMaterialCompoennt().ChangeAlbedoTexture(planet3);
+
+        if (API_QuickSave::GetBool("level3_completed"))
+        {
+            checkMainMision1.SetActive(true);
+        }
+        else
+        {
+            checkMainMision1.SetActive(false);
+        }
 
         if (API_QuickSave::GetBool("level3_casette1"))
         {

@@ -24,6 +24,9 @@ HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface
 	script->AddDragBoxTextureResource("Weapon 2", &classInstance->weaponImage2);
 	script->AddDragBoxTextureResource("Weapon 3", &classInstance->weaponImage3);
 	script->AddDragBoxTextureResource("Weapon 4", &classInstance->weaponImage4);
+	
+	script->AddDragBoxUIButton("Proceed Button", &classInstance->proceedButton);
+
 	return classInstance;
 }
 
@@ -112,5 +115,30 @@ void Weapon_Select::Update()
 	{
 		weaponSelectPanel.GetGameObject().SetActive(false);
 		proceedPanel.GetGameObject().SetActive(true);
+	}
+
+	if (proceedButton.OnPress())
+	{
+		if (API_QuickSave::GetBool("level1Selected"))
+		{
+			Console::Log("Go To LVELV");
+			scene = std::string("Level1.HScene");
+			Scene::LoadScene(scene.c_str());
+		}
+		else if (API_QuickSave::GetBool("level2Selected"))
+		{
+			scene = std::string("Level2.HScene");
+			Scene::LoadScene(scene.c_str());
+		}
+		else if (API_QuickSave::GetBool("level3Selected"))
+		{
+			scene = std::string("Level3.HScene");
+			Scene::LoadScene(scene.c_str());
+		}
+		else if (API_QuickSave::GetBool("level4Selected"))
+		{
+			scene = std::string("Level4.HScene");
+			Scene::LoadScene(scene.c_str());
+		}
 	}
 }

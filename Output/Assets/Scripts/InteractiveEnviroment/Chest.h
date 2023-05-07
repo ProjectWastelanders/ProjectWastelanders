@@ -45,6 +45,10 @@ public:
     
     bool activeTutorial = false;
     bool endTutorial = false;
+    bool timerTutorial = false;
+    bool hideChest = false;
+
+    float showTutorial = 0;
 
     API_UIImage guideButton;
 

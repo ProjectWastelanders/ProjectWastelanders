@@ -9,6 +9,8 @@ class PlayerStorage;
 class Mision_LikeThe80s;
 class Mision_Masacre;
 class Mision_SomethingPersonal;
+class Mision_TheRuleOfFive;
+class Mision_RageMonster;
 class AnimationMove;
 
 class feedbackMission : HelloBehavior
@@ -32,6 +34,14 @@ public:
 	Mision_LikeThe80s* mision_LikeThe = nullptr;
 	Mision_Masacre* mision_Masacre = nullptr;
 	Mision_SomethingPersonal* mision_Personal = nullptr;
+	Mision_RageMonster* mision_RageMonster = nullptr;
+	Mision_TheRuleOfFive* mision_TheRule = nullptr;
 	AnimationMove* viusalFeedbackScript = nullptr;
+
+	bool misionCompleted_1_1 = true;
+	bool misionCompleted_2_1 = true;
+	bool misionCompleted_1_2 = true;
+	bool misionCompleted_2_2 = true;
+	bool misionCompleted_1_3 = true;
 };
 

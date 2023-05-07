@@ -29,13 +29,16 @@ void ThanosMovement::Update()
         dashCooldown += Time::GetDeltaTime();
     }
     else {
-        angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
-        if (distBP > 15.0f) {
-            Seek2(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed);
-        }
-        else if (distBP < 10.0f) {
-            Hide(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed * 1.5f);
-        }
+        if(Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER)  angle = Rotate(Tattack->laserPosition.GetTransform().GetGlobalPosition(), angle);
+        else angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
+      
+            if (distBP > 15.0f) {
+                Seek2(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed);
+            }
+            else if (distBP < 10.0f) {
+                Hide(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed * 1.5f);
+            }
+       
     }
 
 }
@@ -63,13 +66,14 @@ void ThanosMovement::Seek(API_GameObject* seeker, API_Vector3 target, float spee
     seeker->GetTransform().Translate(direction * speed * Time::GetDeltaTime());
 
     float distTP = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
-
+    Tattack->defenseSword.SetActive(true);
     //Console::Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     if (distTP > 3 && dashCooldown > 5.0f && Tattack->isAttacking == false) {
 
             Tattack->isAttacking = true;
             dashCooldown = 0.0f;
             Tattack->thanosState = ThanosAttacks::THANOS_STATE::IDLE;
+            Tattack->defenseSword.SetActive(false);
 
     }
     else if (distTP < 2 && dashCooldown < 5.0f && Tattack->isAttacking == false) {
@@ -77,6 +81,8 @@ void ThanosMovement::Seek(API_GameObject* seeker, API_Vector3 target, float spee
             Tattack->thanosState = ThanosAttacks::THANOS_STATE::MELEEATTACK;
             Tattack->isAttacking = true;
             dashCooldown = 0.0f;
+            Tattack->defenseSword.SetActive(false);
+
     }
     
 }

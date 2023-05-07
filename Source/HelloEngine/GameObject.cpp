@@ -22,134 +22,169 @@
 #include "PhysicsComponent.h"
 #include "ComponentUIInput.h"
 #include "TextRendererComponent.h"
+#include "VideoPlayerComponent.h"
 #include "DirectionalLightComponent.h"
 #include "PointLightComponent.h"
 #include "SpotLightComponent.h"
-
+#include "NavAgentComponent.h"
+#include "AudioSourceComponent.h"
 
 GameObject::GameObject(GameObject* parent, std::string name, std::string tag, uint ID) : name(name), tag(tag)
 {
-    _ID = ModuleLayers::S_AddGameObject(this, ID);
-    transform = AddComponent<TransformComponent>();
-    if (parent != nullptr)
-        parent->AddChild(this);
+	_ID = ModuleLayers::S_AddGameObject(this, ID);
+	transform = AddComponent<TransformComponent>();
+	if (parent != nullptr)
+		parent->AddChild(this);
 
-    _prefabUID = 0;
-    _updatePrefab = true;
+	_prefabUID = 0;
+	_updatePrefab = true;
 }
 
 GameObject::GameObject(GameObject* parent, std::string& name, std::string& tag, uint ID) : name(name), tag(tag)
 {
-    _ID = ModuleLayers::S_AddGameObject(this, ID);
-    transform = AddComponent<TransformComponent>();
-    if (parent != nullptr)
-        parent->AddChild(this);
+	_ID = ModuleLayers::S_AddGameObject(this, ID);
+	transform = AddComponent<TransformComponent>();
+	if (parent != nullptr)
+		parent->AddChild(this);
 
-    _prefabUID = 0;
-    _updatePrefab = true;
+	_prefabUID = 0;
+	_updatePrefab = true;
 }
 
 GameObject::~GameObject()
 {
-    for (int i = 0; i < _components.size(); i++)
-    {
-        RELEASE(_components[i]);
-    }
-    _components.clear();
+	for (int i = 0; i < _components.size(); i++)
+	{
+		RELEASE(_components[i]);
+	}
+	
 
-    for (int i = 0; i < _children.size(); i++)
-    {
-        RELEASE(_children[i]);
-    }
-    _children.clear();
+	for (int i = 0; i < _children.size(); i++)
+	{
+		RELEASE(_children[i]);
+	}
+	
 }
 
 void GameObject::DestroyComponent(Component::Type type)
 {
-    for (int i = 0; i < _components.size(); i++)
-    {
-        if (_components[i]->_type == type)
-        {
-            RELEASE(_components[i]);
-            _components.erase(_components.begin() + i);
-            break;
-        }
-    }
+	for (int i = 0; i < _components.size(); i++)
+	{
+		if (_components[i]->_type == type)
+		{
+			RELEASE(_components[i]);
+			_components.erase(_components.begin() + i);
+			break;
+		}
+	}
 }
 
 void GameObject::DestroyComponent(Component* component)
 {
-    for (int i = 0; i < _components.size(); i++)
-    {
-        if (_components[i] == component)
-        {
-            RELEASE(_components[i]);
-            _components.erase(_components.begin() + i);
-            break;
-        }
-    }
+	if (component == nullptr)
+		return;
+	for (int i = 0; i < _components.size(); i++)
+	{
+		if (_components[i] == component)
+		{
+			Component* comp = _components[i];
+			_components.erase(_components.begin() + i);
+			RELEASE(comp);
+			break;
+		}
+	}
 }
 
 bool GameObject::AddChild(GameObject* child)
 {
-    if (!child) return false;
-    if (child->_parent == this) return false;
+	if (!child) return false;
+	if (child->_parent == this) return false;
 
-    GameObject* p = _parent;
+	GameObject* p = _parent;
 
-    while (p)
-    {
-        if (p == child) return false;
+	while (p)
+	{
+		if (p == child) return false;
 
-        p = p->_parent;
-    }
+		p = p->_parent;
+	}
 
-    _children.push_back(child);
+	_children.push_back(child);
 
-    if (child->_parent)
-        child->_parent->RemoveChild(child);
+	if (child->_parent)
+		child->_parent->RemoveChild(child);
 
-    child->_parent = this;
+	child->_parent = this;
 
-    transform->ForceUpdate();
+	transform->ForceUpdate();
 
-    return true;
+	return true;
 }
 
 bool GameObject::SetParent(GameObject* parent)
 {
-    return parent->AddChild(this);
+	return parent->AddChild(this);
 }
 
 void GameObject::SetActive(bool active)
 {
-    if (_isActive == active)
-        return;
-    _isActive = active;
+	if (_isActive == active)
+		return;
+	_isActive = active;
 
-    for (auto* component : _components)
-    {
-        _isActive ? component->EnableFromGameObject() : component->DisableFromGameObject();
-    }
+	for (auto* component : _components)
+	{
+		_isActive ? component->EnableFromGameObject() : component->DisableFromGameObject();
+	}
 
-    for (auto* child : _children)
-    {
-        child->SetActive(active);
-    }
+	for (auto* child : _children)
+	{
+		child->SetActive(active);
+	}
 
+}
+
+void GameObject::SetIsStatic(bool _isStatic)
+{
+	this->_isStatic = _isStatic;
+}
+
+void GameObject::SetChildrenStatic(bool childStatic)
+{
+	for (int i = 0; i < _children.size(); ++i)
+	{
+		_children[i]->SetIsStatic(childStatic);
+		_children[i]->SetChildrenStatic(childStatic);
+	}
+}
+
+std::vector<GameObject*>* GameObject::GetAllChildren()
+{
+	std::vector<GameObject*>* res = new std::vector<GameObject*>;
+
+	res->insert(res->end(), _children.begin(), _children.end());
+
+	for (int i = 0; i < _children.size(); i++)
+	{
+		std::vector<GameObject*>* ret = _children[i]->GetAllChildren();
+
+		res->insert(res->end(), ret->begin(), ret->end());
+	}
+
+	return res;
 }
 
 void GameObject::OnCollisionEnter(PhysBody3D* other)
 {
-    for (int i = 0; i < _components.size(); ++i)
-    {
-        if (_components[i]->_type == Component::Type::SCRIPT)
-        {
-            // Callback to Scripting
-            ScriptComponent* script = (ScriptComponent*)_components[i];
-            script->OnCollisionEnter(other);
-        }
-    }
+	for (int i = 0; i < _components.size(); ++i)
+	{
+		if (_components[i]->_type == Component::Type::SCRIPT)
+		{
+			// Callback to Scripting
+			ScriptComponent* script = (ScriptComponent*)_components[i];
+			script->OnCollisionEnter(other);
+		}
+	}
 }
 
 void GameObject::OnCollisionStay(PhysBody3D* other)
@@ -167,15 +202,15 @@ void GameObject::OnCollisionStay(PhysBody3D* other)
 
 void GameObject::OnCollisionExit(PhysBody3D* other)
 {
-    for (int i = 0; i < _components.size(); ++i)
-    {
-        if (_components[i]->_type == Component::Type::SCRIPT)
-        {
-            // Callback to Scripting
-            ScriptComponent* script = (ScriptComponent*)_components[i];
-            script->OnCollisionExit(other);
-        }
-    }
+	for (int i = 0; i < _components.size(); ++i)
+	{
+		if (_components[i]->_type == Component::Type::SCRIPT)
+		{
+			// Callback to Scripting
+			ScriptComponent* script = (ScriptComponent*)_components[i];
+			script->OnCollisionExit(other);
+		}
+	}
 }
 
 #ifdef STANDALONE
@@ -183,6 +218,8 @@ void GameObject::OnCollisionExit(PhysBody3D* other)
 void GameObject::OnEditor()
 {
     if (_isPendingToDelete) return;
+
+	ImGui::Checkbox("Update with bones", &_updateTransformWithBones);
 
     for (auto* component : _components)
     {
@@ -247,7 +284,16 @@ void GameObject::OnEditor()
                 case 11:
                     if (!HasComponent<SpotLightComponent>())
                         AddComponent<SpotLightComponent>();
-                }   
+					break;
+				case 12:
+					if (!HasComponent<ComponentAgent>())
+						AddComponent<ComponentAgent>();
+					break;
+				case 13:
+					if (!HasComponent<AudioSourceComponent>())
+						AddComponent<AudioSourceComponent>();
+					break;
+                }
             }
         }
         ImGui::EndCombo();
@@ -294,128 +340,128 @@ void GameObject::OnEditor()
 
 bool GameObject::MarkAsDead()
 {
-    if (!_isPendingToDelete)
-    {
-        if (LayerEditor::selectedGameObject == this)
-        {
-            LayerEditor::S_SetSelectGameObject(nullptr);
-            ImGuizmo::Enable(false);
-        }
+	if (!_isPendingToDelete)
+	{
+		if (LayerEditor::selectedGameObject == this)
+		{
+			LayerEditor::S_SetSelectGameObject(nullptr);
+			ImGuizmo::Enable(false);
+		}
 
-        _isPendingToDelete = true;
+		_isPendingToDelete = true;
 
-        for (int i = 0; i < _children.size(); i++)
-        {
-            if (_children[i]->MarkAsDead())
-            {
-                _childrenDeletedIndex.push_back(i);
-            }
-        }
+		for (int i = 0; i < _children.size(); i++)
+		{
+			if (_children[i]->MarkAsDead())
+			{
+				_childrenDeletedIndex.push_back(i);
+			}
+		}
 
-        for (int i = 0; i < _components.size(); i++)
-        {
-            _components[i]->MarkAsDead();
-        }
+		for (int i = 0; i < _components.size(); i++)
+		{
+			_components[i]->MarkAsDead();
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    return false;
+	return false;
 }
 
 bool GameObject::MarkAsAlive()
 {
-    if (_isPendingToDelete)
-    {
-        _isPendingToDelete = false;
+	if (_isPendingToDelete)
+	{
+		_isPendingToDelete = false;
 
-        for (int i = 0; i < _childrenDeletedIndex.size(); i++)
-        {
-            _children[_childrenDeletedIndex[i]]->MarkAsAlive();
-        }
+		for (int i = 0; i < _childrenDeletedIndex.size(); i++)
+		{
+			_children[_childrenDeletedIndex[i]]->MarkAsAlive();
+		}
 
-        for (int i = 0; i < _components.size(); i++)
-        {
-            _components[i]->MarkAsAlive();
-        }
+		for (int i = 0; i < _components.size(); i++)
+		{
+			_components[i]->MarkAsAlive();
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    return false;
+	return false;
 }
 
-#endif  
+#endif
 void GameObject::SetAllChildsPrefabUID(uint prefabUID)
 {
-    for (auto& go : _children)
-    {
-        go->SetPrefabUID(prefabUID);
-        go->SetAllChildsPrefabUID(prefabUID);
-    }
+	for (auto& go : _children)
+	{
+		go->SetPrefabUID(prefabUID);
+		go->SetAllChildsPrefabUID(prefabUID);
+	}
 }
 
 void GameObject::Destroy()
 {
-    if (_isDestroyed)
-        return;
+	if (_isDestroyed)
+		return;
 
-    if (LayerEditor::selectedGameObject == this)
-    {
-        LayerEditor::S_SetSelectGameObject(nullptr);
-        ImGuizmo::Enable(false);
-    }
+	if (LayerEditor::selectedGameObject == this)
+	{
+		LayerEditor::S_SetSelectGameObject(nullptr);
+		ImGuizmo::Enable(false);
+	}
 
-    _isPendingToDelete = true;
-    _isDestroyed = true;
+	_isPendingToDelete = true;
+	_isDestroyed = true;
 
-    ModuleLayers::S_RemoveGameObject(_ID);
+	ModuleLayers::S_RemoveGameObject(_ID);
 
-    ModuleLayers::_deletedGameObjects.push_back(this);
+	ModuleLayers::_deletedGameObjects.push_back(this);
 
-    if (_parent != nullptr)
-        _parent->RemoveChild(this);
+	if (_parent != nullptr)
+		_parent->RemoveChild(this);
 
-    while (!_children.empty())
-    {
-        _children[0]->Destroy();
-    }
+	while (!_children.empty())
+	{
+		_children[0]->Destroy();
+	}
 
-    // A bit of hardcoding. This is necessary so the reimport system form models (changing resources, saving and loading) works properly.
-    // Basically, we need to nlink the meshRender resource from the component before destroying it, because when the components is deleted, the new scene has already been loaded,
-    // and that produces the old component to unlink from the new resource, except from the old one.
-    // TODO: Could fix this by searching for references at the moment of reimport. 
-    MeshRenderComponent* meshRender = GetComponent<MeshRenderComponent>();
+	// A bit of hardcoding. This is necessary so the reimport system form models (changing resources, saving and loading) works properly.
+	// Basically, we need to nlink the meshRender resource from the component before destroying it, because when the components is deleted, the new scene has already been loaded,
+	// and that produces the old component to unlink from the new resource, except from the old one.
+	// TODO: Could fix this by searching for references at the moment of reimport.
+	MeshRenderComponent* meshRender = GetComponent<MeshRenderComponent>();
 
-    if (meshRender != nullptr)
-        meshRender->UnlinkResource();
+	if (meshRender != nullptr)
+		meshRender->UnlinkResource();
 
-    _children.clear();
+	_children.clear();
 }
 
 bool GameObject::HasComponent(Component::Type type)
 {
-    for (const auto& component : _components)
-    {
-        if (component == nullptr)
-            continue;
-        if (component->_type == type)
-            return true;
-    }
-    return false;
+	for (const auto& component : _components)
+	{
+		if (component == nullptr)
+			continue;
+		if (component->_type == type)
+			return true;
+	}
+	return false;
 }
 
 void GameObject::RemoveChild(GameObject* child)
 {
-    if (!child)
-        return;
+	if (!child)
+		return;
 
-    for (int i = 0; i < _children.size(); ++i)
-    {
-        if (_children[i] == child)
-            _children.erase(_children.begin() + i);
-    }
-    child->_parent = nullptr;
+	for (int i = 0; i < _children.size(); ++i)
+	{
+		if (_children[i] == child)
+			_children.erase(_children.begin() + i);
+	}
+	child->_parent = nullptr;
 }
 
 Component* GameObject::AddComponentOfType(Component::Type type)
@@ -472,13 +518,13 @@ Component* GameObject::AddComponentOfType(Component::Type type)
 		break;
 	case Component::Type::BILLBOARD:
 		newComponent = new BillBoardComponent(this);
-        _components.push_back(newComponent);
-        break;
+		_components.push_back(newComponent);
+		break;
 	case Component::Type::PHYSICS:
 		newComponent = new PhysicsComponent(this);
 		_components.push_back(newComponent);
 		break;
-    case Component::Type::ANIMATION_PLAYER:
+	case Component::Type::ANIMATION_PLAYER:
 		newComponent = new AnimationComponent(this);
 		_components.push_back(newComponent);
         break;
@@ -494,6 +540,10 @@ Component* GameObject::AddComponentOfType(Component::Type type)
         newComponent = new TextRendererComponent(this);
         _components.push_back(newComponent);
         break;
+    case Component::Type::UI_VIDEO:
+        newComponent = new VideoPlayerComponent(this);
+        _components.push_back(newComponent);
+        break;
     case Component::Type::DIRECTIONAL_LIGHT:
         newComponent = new DirectionalLightComponent(this);
         _components.push_back(newComponent);
@@ -506,7 +556,16 @@ Component* GameObject::AddComponentOfType(Component::Type type)
         newComponent = new SpotLightComponent(this);
         _components.push_back(newComponent);
         break;
+	case Component::Type::AGENT:
+		newComponent = new ComponentAgent(this);
+		_components.push_back(newComponent);
+		break;
+	case Component::Type::AUDIO_SOURCE:
+		newComponent = new AudioSourceComponent(this);
+		_components.push_back(newComponent);
+		break;
 	}
+
 
 	return newComponent;
 }
@@ -524,7 +583,7 @@ Component* GameObject::AddComponentOfType(Component::Type type, const Component&
 		_components.push_back(newComponent);
 		break;
 	case Component::Type::SKINNING:
-		newComponent = new SkinnedMeshRenderComponent(this, *(SkinnedMeshRenderComponent*) &copy);
+		newComponent = new SkinnedMeshRenderComponent(this, *(SkinnedMeshRenderComponent*)&copy);
 		_components.push_back(newComponent);
 		break;
 	case Component::Type::TEXTURE:
@@ -545,7 +604,7 @@ Component* GameObject::AddComponentOfType(Component::Type type, const Component&
 		break;
 	case Component::Type::BILLBOARD:
 		newComponent = new BillBoardComponent(this);
-        break;
+		break;
 	case Component::Type::PHYSICS:
 		newComponent = new PhysicsComponent(this);
 		_components.push_back(newComponent);
@@ -572,6 +631,6 @@ Component* GameObject::AddComponentOfType(Component::Type type, const Component&
 
 void GameObject::AddComponentSerialized(Component::Type type, json& jsonFile)
 {
-    Component* newComponent = AddComponentOfType(type);
-    newComponent->DeSerialization(jsonFile);
+	Component* newComponent = AddComponentOfType(type);
+	newComponent->DeSerialization(jsonFile);
 }

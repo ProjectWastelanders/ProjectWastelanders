@@ -7,6 +7,7 @@
 #include "ModuleXML.h"
 #include "Mesh.h"
 #include "json.hpp"
+#include "UUID.h"
 
 using json = nlohmann::json;
 
@@ -148,7 +149,6 @@ struct MeshInfo
 	std::vector<uint> indices;
 	uint hasTexture = 0; // For now, this only implies a diffuse texture.
 	std::map<std::string, BoneData> boneDataMap;
-
 
 	void Clear()
 	{

@@ -8,11 +8,13 @@ namespace API
     class TO_API API_String
     {
     private:
-        char* str;
-        int len;
+        char* str = nullptr;
+        int len = 0;
 
     public:
-        API_String(const char* s = "");
+        API_String();
+
+        API_String(const char* s);
 
         API_String(const API_String& rhs);
 

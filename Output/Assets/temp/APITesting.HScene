@@ -23,11 +23,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 3050111611
+        "UID": 3050111611,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -53,11 +55,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Node",
         "ParentUID": 3050111611,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 205290378
+        "UID": 3933946117,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -66,28 +70,30 @@
                 "Enabled": true,
                 "Position": [
                     -0.0009670000290498137,
-                    0.6293410062789917,
-                    -0.0005970000056549907
+                    0.6995779871940613,
+                    -0.0006890000076964498
                 ],
                 "Rotation": [
-                    79.69837951660156,
+                    83.35224914550781,
                     0.0,
                     -0.0
                 ],
                 "Scale": [
                     1.0,
-                    1.0,
-                    1.0
+                    1.0000003576278687,
+                    1.0000003576278687
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RootJoint",
-        "ParentUID": 205290378,
+        "ParentUID": 3933946117,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3165212946
+        "UID": 3788080328,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -100,24 +106,26 @@
                     0.0
                 ],
                 "Rotation": [
-                    -89.93888854980469,
-                    -8.367021560668945,
-                    -1.3359845876693726
+                    -59.34218978881836,
+                    -4.848537445068359,
+                    -2.187304973602295
                 ],
                 "Scale": [
-                    0.9999996423721313,
-                    1.0,
-                    1.0000003576278687
+                    1.0000003576278687,
+                    0.9999997019767761,
+                    1.000000238418579
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightLeg1",
-        "ParentUID": 3165212946,
+        "ParentUID": 3788080328,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3403457594
+        "UID": 1768672103,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -130,24 +138,26 @@
                     0.12757599353790283
                 ],
                 "Rotation": [
-                    -24.492937088012695,
-                    -4.302761077880859,
-                    3.253920316696167
+                    -79.12703704833984,
+                    -16.50446891784668,
+                    -5.239063262939453
                 ],
                 "Scale": [
-                    1.0000001192092896,
-                    1.000000238418579,
-                    1.0000005960464478
+                    0.9999998807907104,
+                    1.0,
+                    0.9999998807907104
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightKnee1",
-        "ParentUID": 3403457594,
+        "ParentUID": 1768672103,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3070398849
+        "UID": 8106642,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -160,24 +170,26 @@
                     -0.1120000034570694
                 ],
                 "Rotation": [
-                    14.55678653717041,
-                    1.5099748373031616,
-                    -0.5788554549217224
+                    46.90200424194336,
+                    3.111650228500366,
+                    -4.166217803955078
                 ],
                 "Scale": [
-                    1.000000238418579,
-                    0.9999995231628418,
-                    1.0
+                    0.9999999403953552,
+                    0.9999996423721313,
+                    1.0000003576278687
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightAnkle1",
-        "ParentUID": 3070398849,
+        "ParentUID": 8106642,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3715944309
+        "UID": 1751806906,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -190,24 +202,26 @@
                     -0.02387000061571598
                 ],
                 "Rotation": [
-                    24.785018920898438,
-                    8.002299308776855,
-                    -5.339794635772705
+                    12.018632888793945,
+                    13.972306251525879,
+                    -3.5380117893218994
                 ],
                 "Scale": [
                     0.9999999403953552,
-                    0.9999995827674866,
-                    1.0000005960464478
+                    0.9999995231628418,
+                    1.0
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFoot1",
-        "ParentUID": 3715944309,
+        "ParentUID": 1751806906,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 403662328
+        "UID": 2657265410,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -233,11 +247,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip1",
-        "ParentUID": 403662328,
+        "ParentUID": 2657265410,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1403919960
+        "UID": 53801705,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -245,29 +261,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.008743000216782093,
-                    -0.007658999878913164,
-                    0.11770299822092056
+                    0.0,
+                    0.0,
+                    0.0
                 ],
                 "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
+                    -6.721524550812319e-05,
+                    9.439646930786694e-08,
+                    8.4471521404339e-06
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    0.8478819727897644,
+                    0.8478435277938843,
+                    0.847884476184845
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip2",
-        "ParentUID": 1403919960,
+        "ParentUID": 53801705,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1740780088
+        "UID": 517021693,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -293,11 +311,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip3",
-        "ParentUID": 403662328,
+        "ParentUID": 2657265410,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3758315416
+        "UID": 3741347873,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -323,11 +343,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip4",
-        "ParentUID": 3758315416,
+        "ParentUID": 3741347873,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3974937720
+        "UID": 3793632917,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -353,11 +375,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BackLow",
-        "ParentUID": 3165212946,
+        "ParentUID": 3788080328,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1511220951
+        "UID": 1798414232,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -383,11 +407,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BackHigh",
-        "ParentUID": 1511220951,
+        "ParentUID": 1798414232,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3194946755
+        "UID": 510633079,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -396,28 +422,30 @@
                 "Enabled": true,
                 "Position": [
                     0.12319499999284744,
-                    0.0802450031042099,
-                    -0.003834000090137124
+                    0.07881499826908112,
+                    0.014353999868035316
                 ],
                 "Rotation": [
-                    -3.614379644393921,
+                    9.447391510009766,
                     0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
-                    1.0,
-                    1.0
+                    1.000000238418579,
+                    1.000000238418579
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftChest",
-        "ParentUID": 3194946755,
+        "ParentUID": 510633079,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3326737311
+        "UID": 1341284067,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -443,11 +471,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftShoulder",
-        "ParentUID": 3326737311,
+        "ParentUID": 1341284067,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 371925034
+        "UID": 359078974,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -473,11 +503,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftElbow",
-        "ParentUID": 371925034,
+        "ParentUID": 359078974,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3729931826
+        "UID": 2727586134,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -503,11 +535,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftWrist",
-        "ParentUID": 3729931826,
+        "ParentUID": 2727586134,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3565974489
+        "UID": 3885177166,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -515,29 +549,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.09460099786520004,
-                    0.0110470000654459,
-                    0.017461000010371208
+                    -8.940696716308594e-08,
+                    -1.1175870895385742e-08,
+                    -1.1920928955078125e-07
                 ],
                 "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
+                    7.631728493606715e-08,
+                    -1.2878497273050016e-06,
+                    7.631691545384456e-08
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    0.08740004152059555,
+                    0.08740007132291794,
+                    0.08739987760782242
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftHand",
-        "ParentUID": 3565974489,
+        "ParentUID": 3885177166,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 420320684
+        "UID": 1469106597,
+        "UpdateWithBones": true
     },
     {
         "Active": true,
@@ -563,11 +599,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftThumb",
-        "ParentUID": 420320684,
+        "ParentUID": 1469106597,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1534153116
+        "UID": 319202792,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -593,11 +631,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMIdThumb",
-        "ParentUID": 1534153116,
+        "ParentUID": 319202792,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2027372108
+        "UID": 1056792328,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -623,11 +663,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftTipThumb",
-        "ParentUID": 2027372108,
+        "ParentUID": 1056792328,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2163282620
+        "UID": 2148887208,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -653,11 +695,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftLittle",
-        "ParentUID": 420320684,
+        "ParentUID": 1469106597,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2576085484
+        "UID": 1080486599,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -683,11 +727,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartLittle",
-        "ParentUID": 2576085484,
+        "ParentUID": 1080486599,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 403135195
+        "UID": 2500286835,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -713,11 +759,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidLittle",
-        "ParentUID": 403135195,
+        "ParentUID": 2500286835,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3359099031
+        "UID": 1740199950,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -743,11 +791,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMiddle",
-        "ParentUID": 420320684,
+        "ParentUID": 1469106597,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2864370050
+        "UID": 2023233382,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -773,11 +823,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartMIddle",
-        "ParentUID": 2864370050,
+        "ParentUID": 2023233382,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 680730473
+        "UID": 1783848605,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -803,11 +855,55 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidMiddle",
-        "ParentUID": 680730473,
+        "ParentUID": 1783848605,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2467116669
+        "UID": 49397568,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    13.566774368286133,
+                    30.066165924072266,
+                    15.890334129333496
+                ],
+                "Rotation": [
+                    -9.818398211791646e-06,
+                    -1.1739388128262362e-06,
+                    -1.3873820989829255e-06
+                ],
+                "Scale": [
+                    1.0,
+                    1.0000001192092896,
+                    0.9999996423721313
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 10,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Cube",
+        "ParentUID": 1469106597,
+        "PrefabUID": 0,
+        "Tag": "Primitive",
+        "UID": 3862723835,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -816,13 +912,45 @@
                 "Enabled": true,
                 "Position": [
                     0.0011630000080913305,
-                    0.22383199632167816,
-                    -0.014127999544143677
+                    0.22101399302482605,
+                    0.03677700087428093
                 ],
                 "Rotation": [
-                    -3.614379644393921,
+                    9.447391510009766,
                     0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.000000238418579,
+                    1.000000238418579
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "joint1",
+        "ParentUID": 510633079,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3134244928,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.0010339999571442604,
+                    0.21354100108146667,
                     0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -833,41 +961,13 @@
             }
         ],
         "FirstOnPrefab": true,
-        "Name": "joint1",
-        "ParentUID": 3194946755,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 3092478113
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.0009009999921545386,
-                    0.21354100108146667,
-                    -4.3000000005122274e-05
-                ],
-                "Rotation": [
-                    -0.0,
-                    7.933170318603516,
-                    -0.0
-                ],
-                "Scale": [
-                    1.000000238418579,
-                    1.0,
-                    1.000000238418579
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint2",
-        "ParentUID": 3092478113,
+        "ParentUID": 3134244928,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3298091285
+        "UID": 3452659008,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -893,11 +993,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint3",
-        "ParentUID": 3298091285,
+        "ParentUID": 3452659008,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3166741528
+        "UID": 1138140735,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -923,11 +1025,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint4",
-        "ParentUID": 3166741528,
+        "ParentUID": 1138140735,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2450682615
+        "UID": 644467530,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -935,29 +1039,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.044179998338222504,
+                    -8.900000102585182e-05,
                     0.1340869963169098,
-                    0.10906100273132324
+                    0.12266399711370468
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    -34.271976470947266,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
-                    1.0000001192092896,
                     1.0,
-                    1.0000001192092896
+                    1.0,
+                    1.0
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint5",
-        "ParentUID": 2450682615,
+        "ParentUID": 644467530,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1398505314
+        "UID": 3245532114,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -983,11 +1089,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint6",
-        "ParentUID": 1398505314,
+        "ParentUID": 3245532114,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2724832970
+        "UID": 3256833530,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1013,11 +1121,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint7",
-        "ParentUID": 2724832970,
+        "ParentUID": 3256833530,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1185707345
+        "UID": 4093701698,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1043,11 +1153,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint9",
-        "ParentUID": 1398505314,
+        "ParentUID": 3245532114,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 859637124
+        "UID": 2166088489,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1073,11 +1185,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint8",
-        "ParentUID": 859637124,
+        "ParentUID": 2166088489,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2721907540
+        "UID": 354995516,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1085,59 +1199,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.29569000005722046,
-                    0.15941199660301208,
-                    -0.0002640000020619482
+                    0.2958869934082031,
+                    0.1610870063304901,
+                    0.0011030000168830156
                 ],
                 "Rotation": [
-                    63.12812805175781,
-                    -21.499658584594727,
-                    1.4681951142847538e-05
+                    0.0,
+                    -15.999977111816406,
+                    0.0
                 ],
                 "Scale": [
                     1.0000001192092896,
-                    1.0000004768371582,
-                    1.0000004768371582
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
-        "Name": "LeftChest1",
-        "ParentUID": 3298091285,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 3672775524
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.1872279942035675,
-                    0.051249999552965164,
-                    -0.06069299951195717
-                ],
-                "Rotation": [
-                    0.0,
-                    -83.80770111083984,
-                    0.0
-                ],
-                "Scale": [
-                    0.9999995231628418,
                     1.0,
-                    0.9999995231628418
+                    1.0000001192092896
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
-        "Name": "LeftShoulder_ncl1_1",
-        "ParentUID": 3672775524,
+        "IsStatic": false,
+        "Name": "LeftChest1",
+        "ParentUID": 3452659008,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1426789043
+        "UID": 1900998252,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1145,29 +1231,63 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3929559886455536,
-                    -0.07194899767637253,
+                    0.17776599526405334,
+                    0.051249999552965164,
+                    -0.04914800077676773
+                ],
+                "Rotation": [
+                    0.0,
+                    -64.66981506347656,
+                    0.0
+                ],
+                "Scale": [
+                    0.9999997019767761,
+                    1.0,
+                    0.9999997019767761
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftShoulder_ncl1_1",
+        "ParentUID": 1900998252,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4277043548,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.3737339973449707,
+                    -0.03375000134110451,
                     0.0
                 ],
                 "Rotation": [
-                    -0.0,
                     0.0,
-                    45.38237380981445
+                    0.0,
+                    -13.314729690551758
                 ],
                 "Scale": [
-                    0.9999999403953552,
-                    0.9999999403953552,
+                    1.000000238418579,
+                    1.000000238418579,
                     1.0
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftElbow_ncl1_1",
-        "ParentUID": 1426789043,
+        "ParentUID": 4277043548,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 476340814
+        "UID": 1966223627,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1175,29 +1295,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.44480299949645996,
-                    0.013438999652862549,
-                    0.02758900076150894
+                    0.4454439878463745,
+                    0.013021999970078468,
+                    0.027650000527501106
                 ],
                 "Rotation": [
-                    -0.8044801354408264,
-                    0.14186565577983856,
-                    80.00096130371094
+                    -8.812846183776855,
+                    -15.922623634338379,
+                    106.16825866699219
                 ],
                 "Scale": [
+                    0.9999995827674866,
                     1.0000003576278687,
-                    1.0000003576278687,
-                    0.9999996423721313
+                    0.9999998807907104
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftWrist_ncl1_1",
-        "ParentUID": 476340814,
+        "ParentUID": 1966223627,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1881319078
+        "UID": 1257477254,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1223,11 +1345,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftHand_ncl1_1",
-        "ParentUID": 1881319078,
+        "ParentUID": 1257477254,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4287837918
+        "UID": 2505506366,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1253,11 +1377,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftThumb_ncl1_1",
-        "ParentUID": 4287837918,
+        "ParentUID": 2505506366,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1861780597
+        "UID": 56947541,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1283,11 +1409,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMIdThumb_ncl1_1",
-        "ParentUID": 1861780597,
+        "ParentUID": 56947541,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1208917752
+        "UID": 489937753,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1313,11 +1441,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftTipThumb_ncl1_1",
-        "ParentUID": 1208917752,
+        "ParentUID": 489937753,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1883679576
+        "UID": 3621004077,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1343,11 +1473,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftLittle_ncl1_1",
-        "ParentUID": 4287837918,
+        "ParentUID": 2505506366,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1124344631
+        "UID": 524438800,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1373,11 +1505,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartLittle_ncl1_1",
-        "ParentUID": 1124344631,
+        "ParentUID": 524438800,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2218585251
+        "UID": 436711503,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1403,11 +1537,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidLittle_ncl1_1",
-        "ParentUID": 2218585251,
+        "ParentUID": 436711503,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 214893822
+        "UID": 218061978,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1433,11 +1569,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMiddle_ncl1_1",
-        "ParentUID": 4287837918,
+        "ParentUID": 2505506366,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1751689494
+        "UID": 3278546274,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1463,11 +1601,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartMIddle_ncl1_1",
-        "ParentUID": 1751689494,
+        "ParentUID": 3278546274,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3072859150
+        "UID": 3928163530,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1493,11 +1633,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidMiddle_ncl1_1",
-        "ParentUID": 3072859150,
+        "ParentUID": 3928163530,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3205868390
+        "UID": 630549329,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1505,29 +1647,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.29705101251602173,
-                    0.16108399629592896,
-                    0.0007880000048317015
+                    -0.29686400294303894,
+                    0.16075199842453003,
+                    0.0010260000126436353
                 ],
                 "Rotation": [
-                    0.0,
-                    -16.029008865356445,
-                    0.0
+                    8.65375804901123,
+                    -9.89266300201416,
+                    1.4409688711166382
                 ],
                 "Scale": [
-                    0.9999999403953552,
-                    1.0,
-                    0.9999999403953552
+                    1.0000001192092896,
+                    0.9999998807907104,
+                    0.9999997615814209
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftChest2",
-        "ParentUID": 3298091285,
+        "ParentUID": 3452659008,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3492676254
+        "UID": 614101892,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1553,11 +1697,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftShoulder1",
-        "ParentUID": 3492676254,
+        "ParentUID": 614101892,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4040016694
+        "UID": 2283358548,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1565,29 +1711,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.374442994594574,
-                    -0.04383999854326248,
+                    -0.3784340023994446,
+                    -0.04605599865317345,
                     0.0
                 ],
                 "Rotation": [
-                    -0.0,
                     0.0,
-                    -0.0
+                    0.0,
+                    -12.999177932739258
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
+                    0.9999996423721313,
+                    0.9999996423721313,
                     1.0
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftElbow1",
-        "ParentUID": 4040016694,
+        "ParentUID": 2283358548,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1183972525
+        "UID": 80943459,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1595,29 +1743,31 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.444676011800766,
-                    0.014259000308811665,
-                    0.027583999559283257
+                    -0.44469600915908813,
+                    0.014229999855160713,
+                    0.02757599949836731
                 ],
                 "Rotation": [
-                    0.0,
-                    0.0,
-                    -80.00001525878906
+                    -1.3458794355392456,
+                    3.086454153060913,
+                    -86.75761413574219
                 ],
                 "Scale": [
-                    1.000000238418579,
-                    1.000000238418579,
-                    1.0
+                    0.9999997019767761,
+                    1.0,
+                    1.0000001192092896
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftWrist1",
-        "ParentUID": 1183972525,
+        "ParentUID": 80943459,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 338818192
+        "UID": 367466687,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1643,11 +1793,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftHand1",
-        "ParentUID": 338818192,
+        "ParentUID": 367466687,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 900955600
+        "UID": 2573000651,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1673,11 +1825,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftThumb1",
-        "ParentUID": 900955600,
+        "ParentUID": 2573000651,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1727436816
+        "UID": 382341702,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1703,11 +1857,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMIdThumb1",
-        "ParentUID": 1727436816,
+        "ParentUID": 382341702,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2499311440
+        "UID": 3099301630,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1733,11 +1889,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftTipThumb1",
-        "ParentUID": 2499311440,
+        "ParentUID": 3099301630,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2551701392
+        "UID": 1616798485,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1763,11 +1921,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftLittle1",
-        "ParentUID": 900955600,
+        "ParentUID": 2573000651,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3565315280
+        "UID": 624430616,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1793,11 +1953,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartLittle1",
-        "ParentUID": 3565315280,
+        "ParentUID": 624430616,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1770171151
+        "UID": 4119913720,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1823,11 +1985,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidLittle1",
-        "ParentUID": 1770171151,
+        "ParentUID": 4119913720,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1294112346
+        "UID": 1712171351,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1853,11 +2017,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMiddle1",
-        "ParentUID": 900955600,
+        "ParentUID": 2573000651,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1866672674
+        "UID": 559294786,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1883,11 +2049,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartMIddle1",
-        "ParentUID": 1866672674,
+        "ParentUID": 559294786,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2497794186
+        "UID": 488790569,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1913,11 +2081,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidMiddle1",
-        "ParentUID": 2497794186,
+        "ParentUID": 488790569,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4293143058
+        "UID": 1062318141,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1943,11 +2113,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint19",
-        "ParentUID": 3298091285,
+        "ParentUID": 3452659008,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1843745081
+        "UID": 314457440,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1973,11 +2145,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint20",
-        "ParentUID": 1843745081,
+        "ParentUID": 314457440,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3983676045
+        "UID": 1393122528,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -1986,28 +2160,30 @@
                 "Enabled": true,
                 "Position": [
                     -0.12319499999284744,
-                    0.0802450031042099,
-                    -0.003834000090137124
+                    0.07881499826908112,
+                    0.014353999868035316
                 ],
                 "Rotation": [
-                    -3.614379644393921,
+                    9.447391510009766,
                     0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
-                    1.0,
-                    1.0
+                    1.000000238418579,
+                    1.000000238418579
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftChest3",
-        "ParentUID": 3194946755,
+        "ParentUID": 510633079,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4291757041
+        "UID": 1632043616,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2033,11 +2209,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftShoulder2",
-        "ParentUID": 4291757041,
+        "ParentUID": 1632043616,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4132103332
+        "UID": 1148773855,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2063,11 +2241,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftElbow2",
-        "ParentUID": 4132103332,
+        "ParentUID": 1148773855,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4256591092
+        "UID": 2198540139,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2093,11 +2273,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftWrist2",
-        "ParentUID": 4256591092,
+        "ParentUID": 2198540139,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3974926723
+        "UID": 518522470,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2123,11 +2305,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftHand2",
-        "ParentUID": 3974926723,
+        "ParentUID": 518522470,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 745598814
+        "UID": 852760990,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2153,11 +2337,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftThumb2",
-        "ParentUID": 745598814,
+        "ParentUID": 852760990,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 360290037
+        "UID": 739952181,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2183,11 +2369,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMIdThumb2",
-        "ParentUID": 360290037,
+        "ParentUID": 739952181,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1143657337
+        "UID": 2373045177,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2213,11 +2401,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftTipThumb2",
-        "ParentUID": 1143657337,
+        "ParentUID": 2373045177,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2463726029
+        "UID": 3566259981,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2243,11 +2433,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftLittle2",
-        "ParentUID": 745598814,
+        "ParentUID": 852760990,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3255931953
+        "UID": 3116690032,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2273,11 +2465,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartLittle2",
-        "ParentUID": 3255931953,
+        "ParentUID": 3116690032,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1454551524
+        "UID": 1033956655,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2303,11 +2497,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidLittle2",
-        "ParentUID": 1454551524,
+        "ParentUID": 1033956655,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 592747315
+        "UID": 1444396795,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2333,11 +2529,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMiddle2",
-        "ParentUID": 745598814,
+        "ParentUID": 852760990,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1615037647
+        "UID": 2279963447,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2363,11 +2561,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftStartMIddle2",
-        "ParentUID": 1615037647,
+        "ParentUID": 2279963447,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2587179803
+        "UID": 4228785315,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2393,11 +2593,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "LeftMidMiddle2",
-        "ParentUID": 2587179803,
+        "ParentUID": 4228785315,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 4001572311
+        "UID": 844209406,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2410,24 +2612,26 @@
                     0.0
                 ],
                 "Rotation": [
-                    -57.711917877197266,
-                    4.572469711303711,
-                    0.3867642283439636
+                    -61.99790954589844,
+                    5.143875598907471,
+                    2.076779365539551
                 ],
                 "Scale": [
-                    1.0000003576278687,
-                    0.9999996423721313,
-                    0.999999463558197
+                    1.0000004768371582,
+                    0.9999998807907104,
+                    1.0000003576278687
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightLeg2",
-        "ParentUID": 3165212946,
+        "ParentUID": 3788080328,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 412209090
+        "UID": 2370576662,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2440,24 +2644,26 @@
                     0.12757599353790283
                 ],
                 "Rotation": [
-                    -4.316964149475098,
-                    0.5105604529380798,
-                    -0.7950968146324158
+                    -79.13629150390625,
+                    16.523637771606445,
+                    5.272342205047607
                 ],
                 "Scale": [
-                    0.9999999403953552,
+                    0.9999995827674866,
                     1.0000003576278687,
-                    0.9999997019767761
+                    1.0000001192092896
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightKnee2",
-        "ParentUID": 412209090,
+        "ParentUID": 2370576662,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3732550314
+        "UID": 3504469006,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2470,24 +2676,26 @@
                     -0.11202900111675262
                 ],
                 "Rotation": [
-                    2.5707271099090576,
-                    -0.2807953655719757,
-                    0.04261576384305954
+                    47.39113235473633,
+                    -3.1160292625427246,
+                    4.1909074783325195
                 ],
                 "Scale": [
-                    1.000000238418579,
-                    0.999999463558197,
-                    1.0000003576278687
+                    1.0000004768371582,
+                    0.9999997019767761,
+                    0.9999998807907104
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightAnkle2",
-        "ParentUID": 3732550314,
+        "ParentUID": 3504469006,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1184133809
+        "UID": 429482853,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2500,24 +2708,26 @@
                     -0.022648999467492104
                 ],
                 "Rotation": [
-                    -3.6878929138183594,
-                    -3.50962233543396,
-                    1.6978411674499512
+                    11.193527221679688,
+                    -13.904491424560547,
+                    3.116184711456299
                 ],
                 "Scale": [
                     0.9999997019767761,
-                    0.9999995231628418,
-                    1.0000003576278687
+                    0.9999995827674866,
+                    0.9999997615814209
                 ],
                 "Type": 1
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFoot2",
-        "ParentUID": 1184133809,
+        "ParentUID": 429482853,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2977636965
+        "UID": 3758361257,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2543,11 +2753,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip5",
-        "ParentUID": 2977636965,
+        "ParentUID": 3758361257,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 876664232
+        "UID": 2871466684,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2573,11 +2785,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip6",
-        "ParentUID": 876664232,
+        "ParentUID": 2871466684,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2755219912
+        "UID": 834247147,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2603,11 +2817,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip7",
-        "ParentUID": 2977636965,
+        "ParentUID": 3758361257,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3631086696
+        "UID": 277877478,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2633,11 +2849,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "RightFootTip8",
-        "ParentUID": 3631086696,
+        "ParentUID": 277877478,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2406786951
+        "UID": 1575194654,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2663,11 +2881,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint10",
-        "ParentUID": 3165212946,
+        "ParentUID": 3788080328,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3355196723
+        "UID": 3227037366,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2693,11 +2913,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint11",
-        "ParentUID": 3355196723,
+        "ParentUID": 3227037366,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1764724430
+        "UID": 4124171822,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2723,11 +2945,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint12",
-        "ParentUID": 1764724430,
+        "ParentUID": 4124171822,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 45071653
+        "UID": 1812747269,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2753,11 +2977,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint13",
-        "ParentUID": 45071653,
+        "ParentUID": 1812747269,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2607427433
+        "UID": 1958589385,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2783,11 +3009,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint14",
-        "ParentUID": 2607427433,
+        "ParentUID": 1958589385,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 617580156
+        "UID": 2329859677,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2813,11 +3041,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint15",
-        "ParentUID": 617580156,
+        "ParentUID": 2329859677,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3925407916
+        "UID": 3425671681,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2843,11 +3073,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint16",
-        "ParentUID": 3925407916,
+        "ParentUID": 3425671681,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2055475355
+        "UID": 3449123317,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2873,11 +3105,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint17",
-        "ParentUID": 2055475355,
+        "ParentUID": 3449123317,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 234355030
+        "UID": 4087900793,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2903,11 +3137,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "joint18",
-        "ParentUID": 234355030,
+        "ParentUID": 4087900793,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3745753422
+        "UID": 2028207308,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -2934,8 +3170,8 @@
             {
                 "Enabled": true,
                 "Index inside model": 0,
-                "ModelUID": 285779652,
-                "RootBoneUuid": 3165212946,
+                "ModelUID": 4199571872,
+                "RootBoneUuid": 3788080328,
                 "ShowAABB": false,
                 "ShowFaceNormals": false,
                 "ShowOBB": false,
@@ -2943,103 +3179,20 @@
                 "Type": 9
             },
             {
+                "AnimationUID": 824552305,
                 "Enabled": true,
-                "IsInstanced": false,
-                "MaterialUID": 215811356,
-                "Type": 18
+                "Type": 10,
+                "isLoop": true,
+                "isStayLast": false
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "enemy_melee_fixed",
-        "ParentUID": 205290378,
+        "ParentUID": 3933946117,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1274714533
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    1.8008034229278564,
-                    0.257295161485672
-                ],
-                "Rotation": [
-                    171.80718994140625,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0000218152999878,
-                    1.0000218152999878
-                ],
-                "Type": 1
-            },
-            {
-                "Ambient Intensity": 1.0,
-                "Color": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Diffuse Intensity": 1.0,
-                "Enabled": true,
-                "Type": 20
-            }
-        ],
-        "FirstOnPrefab": true,
-        "Name": "Empty",
-        "ParentUID": 3050111611,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1554141616
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    3.1506686210632324
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Ambient Intensity": 0.75,
-                "Color": [
-                    1.0,
-                    0.733668327331543,
-                    0.733668327331543
-                ],
-                "Constant": 1.0,
-                "Diffuse Intensity": 1.25,
-                "Distance": 16.0,
-                "Enabled": true,
-                "Exp": 0.0,
-                "Linear": 1.0,
-                "Type": 21
-            }
-        ],
-        "FirstOnPrefab": true,
-        "Name": "Empty",
-        "ParentUID": 3050111611,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 2077326704
+        "UID": 181199675,
+        "UpdateWithBones": false
     }
 ]

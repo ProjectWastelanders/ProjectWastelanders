@@ -63,7 +63,7 @@ UpdateStatus ModuleAudio::PostUpdate()
     return UpdateStatus::UPDATE_CONTINUE;
 }
 
-void ModuleAudio::S_ProduceEvent(const char* eventName)
+void ModuleAudio::S_ProduceEvent(const char* eventName, AkGameObjectID gameObjectID)
 {
     AkPlayingID playing = AK::SoundEngine::PostEvent(eventName, defaultSource);
     if (playing == 0) 
@@ -73,7 +73,7 @@ void ModuleAudio::S_ProduceEvent(const char* eventName)
     }
 }
 
-void ModuleAudio::S_ProduceEvent(AkUniqueID eventID)
+void ModuleAudio::S_ProduceEvent(AkUniqueID eventID, AkGameObjectID gameObjectID)
 {
     AkPlayingID playing = AK::SoundEngine::PostEvent(eventID, defaultSource);
     if (playing == 0)
@@ -96,6 +96,11 @@ void ModuleAudio::SetDefaultListener(const AkGameObjectID id)
     AK::SpatialAudio::RegisterListener(id);
     AK::SoundEngine::SetDefaultListeners(&id, 1);
 
+}
+
+void ModuleAudio::StopAllAudioEvents()
+{
+    AK::SoundEngine::StopAll();
 }
 
 bool ModuleAudio::InitSoundEngine()

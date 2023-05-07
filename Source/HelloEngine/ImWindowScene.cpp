@@ -100,7 +100,7 @@ void ImWindowScene::Update()
                         auxiliarMatrix.Transpose();
 
                     ModuleCommand::S_ChangeTransform(auxiliarMatrix, currentGlobal, _imOperation == ImGuizmo::OPERATION::SCALE,
-                        std::bind(&TransformComponent::SetLocalFromGlobal, selected->transform, std::placeholders::_1, std::placeholders::_2));
+                        std::bind(&TransformComponent::SetLocalFromGlobal, selected->transform, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
                     firstClick = false;
                 }
 

@@ -34,11 +34,14 @@ public:
 	/// Draws an instance with an individual draw call.
 	void DrawInstance(Mesh* mesh, bool useBasicShader = true);
 
+	void DrawInstancedSorting();
+
 	void SetAs2D();
 	uint GetRenderID();
 
 public:
 	bool initialized = false;
+	bool isParticle = false;
 	ResourceMesh* resource = nullptr;
 	ResourceMaterial* resMat = nullptr;
 	uint deletedResourceUID = 0;

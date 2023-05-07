@@ -14,6 +14,7 @@ public:
 	~ModuleRenderer3D();
 
 	bool Init();
+	bool Start();
 	UpdateStatus PreUpdate();
 	UpdateStatus PostUpdate();
 	bool CleanUp();
@@ -33,7 +34,8 @@ public:
 	RenderManager renderManager;
 	ParticleManager particleManager;
 	SDL_GLContext context;
-	bool isVSync = false;
+	static bool isVSync;
+	static bool drawNavMesh;
 	bool isRenderingColliders;
 	bool hasShadows = false;
 

@@ -4,6 +4,7 @@
 
 P_MainModule::P_MainModule()
 {
+	type = P_ModuleType::MAIN;
 }
 
 P_MainModule::~P_MainModule()

@@ -8,10 +8,14 @@
 #include "ModuleLayers.h"
 #include "MeshRenderComponent.h"
 #include "LayerEditor.h"
+#include "VideoPlayerManager.h"
 
 #include "Emitter.h"
 #include "ParticleSystemComponent.h"
 #include "Lighting.h"
+
+bool ModuleRenderer3D::isVSync = false;
+bool ModuleRenderer3D::drawNavMesh = false;
 
 ModuleRenderer3D::ModuleRenderer3D(bool start_enabled) : Module(start_enabled)
 {
@@ -43,6 +47,7 @@ bool ModuleRenderer3D::Init()
 	//Use Vsync
 	XMLNode renderNode = app->xml->GetConfigXML().FindChildBreadth("renderer");
 	isVSync = renderNode.node.child("vsync").attribute("value").as_bool();
+	drawNavMesh = renderNode.node.child("drawNavMesh").attribute("value").as_bool();
 	ToggleVSync(isVSync);
 
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
@@ -65,6 +70,7 @@ bool ModuleRenderer3D::Init()
 	glEnable(GL_LIGHTING);
 	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_MULTISAMPLE);
 
 	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 	glEnable(GL_LINE_SMOOTH);
@@ -81,6 +87,15 @@ bool ModuleRenderer3D::Init()
 	OnResize(ModuleWindow::width, ModuleWindow::height);
 
 	isRenderingColliders = true;
+
+	return ret;
+}
+
+bool ModuleRenderer3D::Start()
+{
+	bool ret = true;
+
+	particleManager.Start();
 
 	return ret;
 }
@@ -116,6 +131,9 @@ void ModuleRenderer3D::DrawGame()
 // PostUpdate present buffer to screen
 UpdateStatus ModuleRenderer3D::PostUpdate()
 {
+	OPTICK_EVENT();
+	VideoPlayerManager::Update(); // Update videos before drawing.
+
 #ifdef STANDALONE
 
 	//SCENE RENDERING
@@ -132,8 +150,8 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 			//RENDER SCENE
 			ModuleLayers::S_DrawLayers();
-			particleManager.Draw();
 			renderManager.Draw();
+			particleManager.Draw();
 			renderManager.DrawDebug();
 			_cameras->DrawCameraFrustums();
 	}
@@ -148,9 +166,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 
 		_cameras->currentDrawingCamera = _cameras->UICamera;
 
-		particleManager.Draw();
 		renderManager.Draw2D();
-
 	}
 
 	//ImWin GAME RENDERING
@@ -165,9 +181,8 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
-		particleManager.Draw();
 		renderManager.Draw();
-
+		particleManager.Draw();
 		// Draw all 2D meshes.
 		renderManager.Draw2D();
 	}
@@ -212,9 +227,17 @@ bool ModuleRenderer3D::CleanUp()
 {
 	LOG("Destroying 3D Renderer");
 
-	XMLNode configNode = app->xml->GetConfigXML();
+	XMLNode configNode = app->xml->GetConfigXML().FindChildBreadth("renderer");
 
-	configNode.node.child("renderer").child("vsync").attribute("value").set_value(isVSync);
+	configNode.node.child("vsync").attribute("value").set_value(isVSync);
+
+	if (!configNode.node.child("drawNavMesh"))
+	{
+		configNode.node.append_child("drawNavMesh");
+		configNode.node.child("drawNavMesh").append_attribute("value");
+	}
+
+	configNode.node.child("drawNavMesh").attribute("value").set_value(drawNavMesh);
 
 	configNode.Save();
 

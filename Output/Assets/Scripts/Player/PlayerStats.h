@@ -33,6 +33,7 @@ public:
     float currentResistance;
     float inmunityTime = 2.0f;
     float hittedTime = 0.0f;
+    float reducedDamageTime = 0.0f;
     bool secondLife;
     float lastHitTime;
     float deathTime = 0.0f;
@@ -51,6 +52,7 @@ public:
     int maxLaserAmmo;
     int specialAmmo;
     int maxSpecialAmmo; // index 2
+    float ultPercentage = 0.0f;
      
     bool detected; //if the player is being detected somehow
     bool inCombat = false;

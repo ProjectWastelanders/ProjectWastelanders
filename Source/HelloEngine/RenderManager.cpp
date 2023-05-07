@@ -16,8 +16,15 @@
 #include "Math/float4x4.h"
 #include "LayerEditor.h"
 #include "PhysicsComponent.h"
+#include "VideoPlayerComponent.h"
 
 #include "ModuleRenderer3D.h"
+
+#include "ModuleNavMesh.h"
+#include "NavMeshBuilder.h"
+
+#include "LayerEditor.h"
+#include "NavAgentComponent.h"
 
 RenderManager::RenderManager()
 {
@@ -169,6 +176,27 @@ void RenderManager::Init()
 	CalculateCylinderIndices(&cylinderIndicesMax, MAX_VERTICAL_SLICES_CYLINDER);
 	CalculateCylinderBuffer(&cylinderIndicesMax, MAX_VERTICAL_SLICES_CYLINDER);
 
+	// RayCast Line
+	rayCastLineIndices.push_back(0);    // 1
+	rayCastLineIndices.push_back(1);    // 2
+
+	 // Set up buffer for Raycast line.
+	glGenVertexArrays(1, &RAYVAO);
+	glBindVertexArray(RAYVAO);
+
+	glGenBuffers(1, &RAYIBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, RAYIBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint)* rayCastLineIndices.size(), &rayCastLineIndices[0], GL_STATIC_DRAW);
+
+	glGenBuffers(1, &RAYVBO);
+	glBindBuffer(GL_ARRAY_BUFFER, RAYVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float3) * 2, nullptr, GL_DYNAMIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
+
+	glBindVertexArray(0);
+
 }
 
 void RenderManager::OnEditor()
@@ -249,9 +277,11 @@ InstanceRenderer* RenderManager::GetRenderManager(uint meshID, uint materialID, 
 
 void RenderManager::Draw()
 {
+	
 	// Draw opaque meshes instanced.
 	for (auto& obj : _renderMap)
 	{
+		if (obj.second.isParticle)continue;
 		obj.second.Draw();
 	}
 	// Delete empty render managers.
@@ -277,6 +307,7 @@ void RenderManager::DrawDebug()
 		for (int i = 0; i < ModulePhysics::physBodies.size(); i++)
 		{
 			ModulePhysics::physBodies[i]->RenderCollider();
+			ModulePhysics::physBodies[i]->RenderRayCast();
 		}
 	}
 	else
@@ -294,6 +325,7 @@ void RenderManager::DrawDebug()
 						if (go == LayerEditor::selectedGameObject)
 						{
 							ModulePhysics::physBodies[i]->RenderCollider();
+							ModulePhysics::physBodies[i]->RenderRayCast();
 						}
 					}
 				}
@@ -301,7 +333,17 @@ void RenderManager::DrawDebug()
 
 		}
 	}
+	
+	if (ModuleRenderer3D::drawNavMesh && ModuleNavMesh::S_GetNavMeshBuilder())
+	{
+		ModuleNavMesh::S_GetNavMeshBuilder()->DebugDraw();
 
+		if (LayerEditor::selectedGameObject && 
+			LayerEditor::selectedGameObject->GetComponent<ComponentAgent>())
+		{
+			ModuleNavMesh::S_GetPathfinding()->RenderPath(LayerEditor::selectedGameObject->GetComponent<ComponentAgent>());
+		}		
+	}
 }
 
 void RenderManager::Draw2D()
@@ -480,47 +522,54 @@ void RenderManager::CreateUI(GameObject* parent, UIType type)
 
 	switch (type)
 	{
-	case UIType::BUTTON:
-	{
-		GameObject* button = new GameObject(parent, "Button", "UI");
-		button->AddComponent<ComponentUIButton>();
-		button->transform->SetScale({ 0.5f,0.5f,0.0f });
-		break;
-	}
-	case UIType::SLIDER:
-	{
-		GameObject* slider = new GameObject(parent, "Slider", "UI");
-		GameObject* sliderButton = new GameObject(slider, "SliderButton", "UIsliderButton");
-		GameObject* sliderBar = new GameObject(slider, "SliderBar", "UIsliderBar");
-		//slider->AddComponent<ComponentUISlider>();
-		sliderBar->AddComponent<ComponentUISlider>();
-		sliderBar->transform->SetScale({ 0.7f,0.1f,0.0f });
-		sliderButton->AddComponent<ComponentUISlider>();
-		sliderButton->transform->SetScale({ 0.2f,0.2f,0.0f });
-		sliderButton->transform->SetPosition({ 0.0f, 0.0f, -0.003f });
-		break;
-	}
-	case UIType::CHECKBOX:
-	{
-		GameObject* checkBox = new GameObject(parent, "CheckBox", "UI");
-		checkBox->AddComponent<ComponentUICheckbox>();
-		checkBox->transform->SetScale({ 0.5f,0.5f,0.5f });
-		break;
-	}
-	case UIType::IMAGE:
-	{
-		GameObject* image = new GameObject(parent, "Image", "UI");
-		image->AddComponent<ComponentUIImage>();
-		image->transform->SetScale({ 0.5f,0.5f,0.5f });
-		break;
-	}
-	case UIType::TEXT:
-	{
-		GameObject* image = new GameObject(parent, "Text", "UI");
-		image->AddComponent<TextRendererComponent>();
-		image->transform->SetScale({ 0.5f,0.5f,0.5f });
-		break;
-	}
+		case UIType::BUTTON:
+		{
+			GameObject* button = new GameObject(parent, "Button", "UI");
+			button->AddComponent<ComponentUIButton>();
+			button->transform->SetScale({ 0.5f,0.5f,0.0f });
+			break;
+		}
+		case UIType::SLIDER:
+		{
+			GameObject* slider = new GameObject(parent, "Slider", "UI");
+			GameObject* sliderButton = new GameObject(slider, "SliderButton", "UIsliderButton");
+			GameObject* sliderBar = new GameObject(slider, "SliderBar", "UIsliderBar");
+			//slider->AddComponent<ComponentUISlider>();
+			sliderBar->AddComponent<ComponentUISlider>();
+			sliderBar->transform->SetScale({ 0.7f,0.1f,0.0f });
+			sliderButton->AddComponent<ComponentUISlider>();
+			sliderButton->transform->SetScale({ 0.2f,0.2f,0.0f });
+			sliderButton->transform->SetPosition({ 0.0f, 0.0f, -0.003f });
+			break;
+		}
+		case UIType::CHECKBOX:
+		{
+			GameObject* checkBox = new GameObject(parent, "CheckBox", "UI");
+			checkBox->AddComponent<ComponentUICheckbox>();
+			checkBox->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::IMAGE:
+		{
+			GameObject* image = new GameObject(parent, "Image", "UI");
+			image->AddComponent<ComponentUIImage>();
+			image->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::TEXT:
+		{
+			GameObject* image = new GameObject(parent, "Text", "UI");
+			image->AddComponent<TextRendererComponent>();
+			image->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
+		case UIType::VIDEO	:
+		{
+			GameObject* video = new GameObject(parent, "Text", "UI");
+			video->AddComponent<VideoPlayerComponent>();
+			video->transform->SetScale({ 0.5f,0.5f,0.5f });
+			break;
+		}
 	}
 }
 
@@ -1034,6 +1083,32 @@ void RenderManager::CalculateCylinderPoints(PhysBody3D* physBody, std::vector<fl
 
 		cylinderPointsComp->push_back(rotatedPoint);
 	}
+}
+
+void RenderManager::DrawRayCastLine(float3 pos1, float3 pos2, float4 color, float wireSize)
+{
+
+	float3 RaycastPoints[2] = { pos1, pos2 };
+
+	glBindVertexArray(RAYVAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, RAYVBO);
+	void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+	memcpy(ptr, &RaycastPoints[0], 2 * sizeof(float3));
+	glUnmapBuffer(GL_ARRAY_BUFFER);
+
+	localLineShader->shader.Bind();
+	localLineShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+	localLineShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+
+	localLineShader->shader.SetFloat4("lineColor", color[0], color[1], color[2], color[3]);
+
+	glLineWidth(wireSize);
+	glDrawElements(GL_LINES, rayCastLineIndices.size(), GL_UNSIGNED_INT, 0);
+	glLineWidth(1.0f);
+
+	glBindVertexArray(0);
+
 }
 
 void RenderManager::DestroyInstanceRenderers()

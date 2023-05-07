@@ -66,12 +66,17 @@ private:
 	
 	friend class API::API_GameObject;
 	friend class API::API_RigidBody;
+	friend class Pathfinder;
 
 public:
 	float sphereRadius = 0;
 	float2 cylRadiusHeight;
 	float renderColColor[4];
 	float wireframeSize = 0;
+
+	//Raycast
+	float raycastColor[4];
+	float raycastSize = 0;
 
 	int sphereHorSlices = 0;
 	int sphereVerSlices = 0;

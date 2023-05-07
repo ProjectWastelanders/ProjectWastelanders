@@ -511,6 +511,10 @@ void ImWindowProject::DrawTreeNodePanelRight(Directory*& newDir)
                 _dragUID = _fileTree->_currentDir->files[i].metaFile.UID;
                 ImGui::SetDragDropPayload("Material", &_dragUID, sizeof(uint));
                 break;
+			case ResourceType::VIDEO:
+				_dragUID = _fileTree->_currentDir->files[i].metaFile.UID;
+				ImGui::SetDragDropPayload("Video", &_dragUID, sizeof(uint));
+				break;
 			}
 			ImGui::EndDragDropSource();
 		}

@@ -6,59 +6,59 @@
 #include "API/API.h"
 
 class Enemy;
+class SpawnerArea;
 
 class EnemyMeleeSpawner : HelloBehavior
 {
 public:
-	void Start() override; 
-	void Update() override;
+    void Start() override;
+    void Update() override;
 
-	void OnCollisionEnter(API_RigidBody other);
+    void OnCollisionEnter(API_RigidBody other);
 
-	//Spawn Related
-	int GetEnemyIndexInactive();
-	void SpawnEnemy(int i);
-	void ShootSpawn(float damage);
-	void DestroySpawn();
+    //Spawn Related
+    int GetEnemyIndexInactive();
+    void SpawnEnemy(int i);
+    void ShootSpawn(float damage);
+    void DestroySpawn();
 
 public:
 
-	//Enemy Related
-	API_GameObject enemy;
-	API_GameObject target;
-	API_GameObject actionZone;
-	API_GameObject parent;
+    //Enemy Related
+    API_GameObject enemy;
+    API_GameObject target;
+    API_GameObject actionZone;
+    SpawnerArea* spawnerArea;
+    API_GameObject parent;
 
-	API_GameObject childs[60];
+    API_GameObject childs[60];
 
-	std::vector<API_GameObject> enemiesInSpawn;
+    std::vector<API_GameObject> enemiesInSpawn;
 
-	API_RigidBody zoneRb;
+    API_RigidBody zoneRb;
 
-	API_AnimationPlayer animationPlayer;
+    API_GameObject listPoints[5];
 
-	API_GameObject listPoints[5];
+    uint enemyPrefabRes;
 
-	uint enemyPrefabRes;
+    API_ParticleSystem enemySpawnParticle;
 
-	API_ParticleSystem enemySpawnParticle;
+    //Spawn Related
 
-	//Spawn Related
+    int maxHp = 200;
+    int currentHp;
+    int spawnPoolSize;
 
-	int maxHp = 200;
-	int currentHp;
-	int spawnPoolSize;
+    uint spawnDestroyedRes;
 
-	uint spawnDestroyedRes;
+    API_GameObject spawnEntireRef;
+    API_GameObject spawnDestroyedRef;
+    API_GameObject parentOfSpawn;
+    API_ParticleSystem spawnerDestroyedParticle;
 
-	API_GameObject spawnEntireRef;
-	API_GameObject spawnDestroyedRef;
-	API_GameObject parentOfSpawn;
-	API_ParticleSystem spawnerDestroyedParticle;
+    float spawnTimer = 0.0f;
 
-	float spawnTimer = 0.0f;
-
-	bool destroyed = false;
+    bool destroyed = false;
 
 };
 

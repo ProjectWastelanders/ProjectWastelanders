@@ -22,6 +22,7 @@
 #include "ImWindowGame.h"
 #include "ImWindowPerformanceTest.h"
 #include "ImWindowResources.h"
+#include "ImWindowNavMesh.h"
 #include "ImWindowGLSL.h"
 
 #include "ModuleLayers.h"
@@ -122,6 +123,7 @@ void LayerEditor::Start()
 		_imWindows[(uint)ImWindowID::GAME] = new ImWindowGame();
 		_imWindows[(uint)ImWindowID::PERFORMANCE] = new ImWindowPerformanceTest();
 		_imWindows[(uint)ImWindowID::RESOURCES] = new ImWindowResources();
+		_imWindows[(uint)ImWindowID::NAVMESH] = new ImWindowNavMesh();
 		_imWindows[(uint)ImWindowID::GLSL] = new ImWindowGLSL();
 	}
 
@@ -171,7 +173,6 @@ void LayerEditor::PreUpdate()
 	}
 
 	//Update Engine Time
-
 	EngineTime::UpdateEngineTime();
 }
 
@@ -516,6 +517,15 @@ void LayerEditor::S_ReimportAllAssets()
 bool LayerEditor::S_GetWindowActive(ImWindowID id)
 {
 	return _imWindows[(uint)id]->isActive;
+}
+
+std::string LayerEditor::S_GetCurrentSceneName()
+{
+	XMLNode sceneXML = Application::Instance()->xml->GetConfigXML();
+
+	std::string configScene = sceneXML.FindChildBreadth("currentScene").node.attribute("value").as_string();
+
+	return ModuleFiles::S_GetFileName(configScene, false);
 }
 
 void LayerEditor::DrawMenuBar()

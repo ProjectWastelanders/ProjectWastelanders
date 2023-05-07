@@ -20,13 +20,15 @@ public:
 
 	UpdateStatus PostUpdate() override;
 
-	static void S_ProduceEvent(const char* eventName);
-	static void S_ProduceEvent(AkUniqueID eventID);
+	static void S_ProduceEvent(const char* eventName, AkGameObjectID gameObjectID = 0);
+	static void S_ProduceEvent(AkUniqueID eventID, AkGameObjectID gameObjectID = 0);
 
 	bool CleanUp() override;
 
-	AkGameObjectID RegisterGameObject(AkGameObjectID id);
+	static AkGameObjectID RegisterGameObject(AkGameObjectID id);
 	void SetDefaultListener(const AkGameObjectID id);
+
+	static void StopAllAudioEvents();
 
 
 private:

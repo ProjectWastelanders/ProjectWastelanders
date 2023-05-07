@@ -1,6 +1,5 @@
 #include "SmokeExtractorTrap.h"
-#include "../Player/PlayerStats.h"
-#include "../Enemies/Enemy.h"
+#include "SmokeTrapProjectile.h"
 HELLO_ENGINE_API_C SmokeExtractorTrap* CreateSmokeExtractorTrap(ScriptToInspectorInterface* script)
 {
     SmokeExtractorTrap* classInstance = new SmokeExtractorTrap();
@@ -11,6 +10,11 @@ HELLO_ENGINE_API_C SmokeExtractorTrap* CreateSmokeExtractorTrap(ScriptToInspecto
     //Cuanto tarda a empezar a escupir fuego
     script->AddDragFloat("Delay on Hit", &classInstance->delay);
     script->AddDragFloat("Seconds emits fire", &classInstance->fireSeconds);
+    script->AddDragInt("Pull Size", &classInstance->pullSize);
+    script->AddDragBoxPrefabResource("Projectile Prefab", &classInstance->projectilePrefab);
+    script->AddDragFloat("Projectile Delay", &classInstance->maxProjectileDelay);
+    script->AddDragFloat("Projectile Lifetime", &classInstance->lifeTime);
+    script->AddDragFloat("Projectile Speed", &classInstance->speed);
 
     return classInstance;
 }
@@ -22,6 +26,12 @@ void SmokeExtractorTrap::Start()
     currentDelay = delay;
 
     fireTimer = 0.0f;
+
+    for (size_t i = 0; i < pullSize; i++)
+    {
+        API_GameObject newProjectile = Game::InstancePrefab(projectilePrefab, API_GameObject());
+        pull.push_back(newProjectile);
+    }
 }
 void SmokeExtractorTrap::Update()
 {
@@ -32,6 +42,7 @@ void SmokeExtractorTrap::Update()
         fireTimer += Time::GetDeltaTime();
 
         smoke.StopEmitting();
+        fire.SetInitialSpeed(gameObject.GetTransform().GetForward() * 5);
         fire.Play();
 
         throwFire = true;
@@ -50,6 +61,7 @@ void SmokeExtractorTrap::Update()
         fireTimer = 0.0f;
 
         fire.StopEmitting();
+        smoke.SetInitialSpeed(gameObject.GetTransform().GetForward() * 2.5f);
         smoke.Play();
         hitPlayer = true;
         throwFire = false;
@@ -57,31 +69,53 @@ void SmokeExtractorTrap::Update()
         //Audio::Event("trap_smoke");
 
     }
+
+    if (projectileDelay > 0.0f)
+    {
+        projectileDelay -= Time::GetDeltaTime();
+    }
+
+    if (throwFire && playerOnRange && projectileDelay <= 0.0f)
+    {
+        API_GameObject go = GetFirstInactiveProjectile();
+        go.SetActive(true);
+        go.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+        go.GetTransform().SetRotation(gameObject.GetTransform().GetGlobalRotation());
+
+        SmokeTrapProjectile* projectile = (SmokeTrapProjectile*)go.GetScript("SmokeTrapProjectile");
+        projectile->lifeTime = lifeTime;
+        projectile->speed = speed;
+
+        projectileDelay = maxProjectileDelay;
+    }
 }
 
-void SmokeExtractorTrap::OnCollisionStay(API_RigidBody other)
+void SmokeExtractorTrap::OnCollisionEnter(API_RigidBody other)
 {
-
     std::string detectionTag = other.GetGameObject().GetTag();
 
     if (detectionTag == "Player")
     {
-        if (throwFire && hitPlayer)
-        {
-            PlayerStats* playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-
-            playerStats->TakeDamage(10.0f, 0);
-            hitPlayer = false;
-        }
+        playerOnRange = true;
     }
-    else if (detectionTag == "Enemy")
+}
+
+void SmokeExtractorTrap::OnCollisionExit(API_RigidBody other)
+{
+    std::string detectionTag = other.GetGameObject().GetTag();
+
+    if (detectionTag == "Player")
     {
-        if (throwFire)
-        {
-            Enemy* enemyScript = (Enemy*)other.GetGameObject().GetScript("Enemy");
+        playerOnRange = false;
+    }
+}
 
-            enemyScript->TakeDamage(10.0f, 0);
-        }
+API_GameObject SmokeExtractorTrap::GetFirstInactiveProjectile()
+{
+    for (size_t i = 0; i < pullSize; i++)
+    {
+        if (!pull[i].IsActive()) return pull[i];
     }
 
+    return pull[0];
 }

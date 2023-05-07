@@ -28,6 +28,7 @@ public:
 
 	void SetShape(ColliderShape shape);
 	void RenderCollider();
+	void RenderRayCast();
 
 public:
 	btRigidBody* body = nullptr;
@@ -36,6 +37,11 @@ public:
 	bool isRenderingCol;
 	uint gameObjectUID = 0;
 	float mass = 0;
+
+	//Raycast
+	float3 raycastPos1;
+	float3 raycastPos2;
+	bool isRenderingRayCast;
 
 	bool isStatic;
 	bool isKinematic;

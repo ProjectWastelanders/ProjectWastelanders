@@ -23,7 +23,8 @@ class PlayerMove : HelloBehavior
         SWAP_GUN,
         HITTED,
         DEATH,
-        OPEN_CHEST
+        OPEN_CHEST,
+        JUMPER
     };
 
 public:
@@ -36,6 +37,8 @@ public:
     void DashSetup();
     void Dash();
     bool DashInput();
+
+    void LookAt(API_Vector3 target);
 
     bool usingGamepad;
     float dt;
@@ -105,7 +108,14 @@ public:
     void StopOpenChestAnim();
     uint deathAnim = 0;
     void PlayDeathAnim();
+    uint jumperAnim = 0;
+    void PlayJumperAnim();
     PlayerAnims currentAnim;
+
+    // particles
+    API_ParticleSystem walkParticles;
+    bool playingWalkParticles = false;
+    API_ParticleSystem shootParticles;
 
     // skills
     API_GameObject playerStatsGO;

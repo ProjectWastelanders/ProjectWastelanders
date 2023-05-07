@@ -31,6 +31,8 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     script->AddDragBoxTextureResource("Texture Bomb 4", &classInstance->textureBomb[3]);
     script->AddDragBoxTextureResource("Texture Bomb 5", &classInstance->textureBomb[4]);
     script->AddDragBoxTextureResource("Texture Bomb 6", &classInstance->textureBomb[5]);
+    script->AddDragFloat("Ult Gain", &classInstance->ultGain);
+   // script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
     //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
     return classInstance;
 }
@@ -42,6 +44,10 @@ void Enemy::Start()
     EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
     EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
     EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+
+    API_GameObject player;
+    Game::FindGameObjectsWithTag("Player", &player, 1);
+    playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     currentHp = maxHp;
     currentResistance = minResistence;
@@ -243,6 +249,13 @@ void Enemy::Die()
     }
 
     EnemyDieEvent::enemyDead();
+
+    // add player ult
+    if (playerStats && playerStats->specialTreeLvl > 2 && playerStats->ultPercentage < 100.0f)
+    {
+        playerStats->ultPercentage += ultGain;
+        if (playerStats->ultPercentage > 100.0f) playerStats->ultPercentage = 100.0f;
+    }
 
     //gameObject.SetActive(false);
 }

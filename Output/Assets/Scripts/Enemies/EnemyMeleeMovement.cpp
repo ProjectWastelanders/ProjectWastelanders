@@ -350,15 +350,13 @@ void EnemyMeleeMovement::Seek(float vel, API_Vector3 tarPos, API_RigidBody enemy
 
 void EnemyMeleeMovement::Wander(float vel, API_Vector3 point, API_RigidBody enemyRb)
 {
-
-    
     if (!enemy->actStun)
     {
         API_Vector3 _bRot = enemy->baseRot;
         API_Vector2 lookDir;
-         lookDir.x = (point.x - gameObject.GetTransform().GetGlobalPosition().x);
-         lookDir.y = (point.z - gameObject.GetTransform().GetGlobalPosition().z);
-       /* lookDir.x = (point.x - gameObject.GetTransform().GetLocalPosition().x);
+        lookDir.x = (point.x - gameObject.GetTransform().GetGlobalPosition().x);
+        lookDir.y = (point.z - gameObject.GetTransform().GetGlobalPosition().z);
+        /*lookDir.x = (point.x - gameObject.GetTransform().GetLocalPosition().x);
         lookDir.y = (point.z - gameObject.GetTransform().GetLocalPosition().z);*/
 
         API_Vector2 normLookDir;
@@ -369,6 +367,7 @@ void EnemyMeleeMovement::Wander(float vel, API_Vector3 point, API_RigidBody enem
         gameObject.GetTransform().SetRotation(0, -_angle, 0);
         //gameObject.GetTransform().SetRotation(0 + _bRot.x, -_angle - _bRot.y, 0 + _bRot.z);
     }
+    Console::Log("000: " + std::to_string(enemyRb.GetVelocity().x) + " " + std::to_string(enemyRb.GetVelocity().y) + " " + std::to_string(enemyRb.GetVelocity().z));
     enemyRb.SetVelocity(gameObject.GetTransform().GetForward() * vel);
     //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * vel);
 }

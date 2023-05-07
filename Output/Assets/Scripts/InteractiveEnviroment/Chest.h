@@ -24,6 +24,7 @@ public:
     API_AnimationPlayer chestAnimatorPlayer;
 
     float openChestTime;
+    float openChestTimeBar;
     float maxOpenChestTime = 1.0f;
     bool opening;
     PlayerGunManager* playerGunManager;
@@ -35,6 +36,15 @@ public:
 
     int chestIndex;
     int itemIndex;
+
+    API_UIImage Tutorial_Img;
+
+    API_Vector3 initalPos;
+    API_Vector3 finalPos;
+    API_Vector3 movingPos;
+    
+    bool activeTutorial = false;
+    bool endTutorial = false;
 
     API_UIImage guideButton;
 

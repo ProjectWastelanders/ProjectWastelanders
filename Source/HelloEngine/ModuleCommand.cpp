@@ -48,7 +48,7 @@ UpdateStatus ModuleCommand::Update()
 	return UpdateStatus::UPDATE_CONTINUE;
 }
 
-void ModuleCommand::S_ChangeTransform(float4x4& newGlobalMatrix, float4x4& currentGlobalMatrix, bool ignoreRotation, std::function<void(float4x4&, bool)> function)
+void ModuleCommand::S_ChangeTransform(float4x4& newGlobalMatrix, float4x4& currentGlobalMatrix, bool ignoreRotation, std::function<void(float4x4&, bool, bool)> function)
 {
 	std::cout << "Added transform change" << std::endl;
 	_commands->push(new CommandChangeTransform(newGlobalMatrix, currentGlobalMatrix, ignoreRotation, function));

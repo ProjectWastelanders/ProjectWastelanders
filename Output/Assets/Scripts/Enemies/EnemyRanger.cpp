@@ -27,22 +27,27 @@ HELLO_ENGINE_API_C EnemyRanger* CreateEnemyRanger(ScriptToInspectorInterface* sc
     script->AddDragBoxAnimationResource("Aim Animation", &classInstance->aimAnim);
     script->AddDragBoxAnimationResource("Hited Animation", &classInstance->hitAnim);
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
-    script->AddCheckBox("Dashiing", &classInstance->_canWalk);
+    //script->AddCheckBox("Dashiing", &classInstance->_canWalk);
+    script->AddCheckBox("Scripted For Quest", &classInstance->scriptedForQuest);
     return classInstance;
 }
 
 void EnemyRanger::Start()
 {
-    Game::FindGameObjectsWithTag("Player", &target, 1);
-    cooldownPoint = 3.0f;
-    actualPoint = listPoints[0].GetTransform().GetGlobalPosition();
-    zoneRb = actionZone.GetRigidBody();
-    _avalPoints = 3;
-    enemState = States::WANDERING;
+    if (!scriptedForQuest)
+    {
+        Game::FindGameObjectsWithTag("Player", &target, 1);
+        //cooldownPoint = 3.0f;
+        actualPoint = listPoints[0].GetTransform().GetGlobalPosition();
+        zoneRb = actionZone.GetRigidBody();
+        _avalPoints = 3;
+        enemState = States::WANDERING;
 
-    _movCooldown = 0;
-    _outCooldown = 0;
-    _canWalk = true;
+        _movCooldown = 0;
+        _outCooldown = 0;
+        _canWalk = true;
+    }
+    
     switch (gunType)
     {
         case 0: 
@@ -55,18 +60,21 @@ void EnemyRanger::Start()
         break;
     }
    
-    //zoneRb.GetGameObject().
-    //clock.s
-     enemy = (Enemy*)gameObject.GetScript("Enemy");
-     targStats = (PlayerStats*)target.GetScript("PlayerStats");
+    if (!scriptedForQuest)
+    {
+        //zoneRb.GetGameObject().
+        //clock.s
+        targStats = (PlayerStats*)target.GetScript("PlayerStats");
+    }
+    enemy = (Enemy*)gameObject.GetScript("Enemy");
 }
 void EnemyRanger::Update()
 {
     float dt = Time::GetDeltaTime();
 
-    Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
-    Console::Log("_move coldowb "+std::to_string(_movCooldown));
-    if (enemy != nullptr /*&& targStats != nullptr*/)
+    //Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
+    //Console::Log("_move coldowb "+std::to_string(_movCooldown));
+    if (enemy != nullptr /*&& targStats != nullptr*/ && !scriptedForQuest)
     {
             // float dis = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
           //float disZone = gameObject.GetTransform().GetGlobalPosition().Distance(actionZone.GetTransform().GetGlobalPosition());
@@ -150,13 +158,25 @@ void EnemyRanger::Update()
             
 
                 //if ((gameObject.GetTransform().GetLocalPosition().Distance(actualPoint) < 5))
-                if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 2))
+                if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 4))
                 {
                     numPoint++;
                     if (numPoint >= _avalPoints)numPoint = 0;
                     _canWalk = false;
                 }
-                if (!_canWalk)_movCooldown += Time::GetDeltaTime();
+                if (!_canWalk)
+                {
+                    _movCooldown += Time::GetDeltaTime();
+                    if (animState != AnimationState::IDLE && !enemy->takingDmg )
+                    {
+                        animState = AnimationState::IDLE;
+                        animationPlayer.ChangeAnimation(idleAnim);
+                        animationPlayer.Play();
+                        //Console::Log("Walk");
+                    }
+                }
+                else Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
+
                 if (_movCooldown > cooldownPoint)
                 {
                     _movCooldown = 0;
@@ -165,16 +185,17 @@ void EnemyRanger::Update()
 
                 actualPoint = listPoints[numPoint].GetTransform().GetGlobalPosition();
 
-                if (_canWalk)Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
-                if (!_canWalk)Wander(0, actualPoint, enemy->enemyRb);
+               // if (!_canWalk)Wander(0, actualPoint, enemy->enemyRb);
 
-                if (animState != AnimationState::WALK && !enemy->takingDmg)
+                if (animState != AnimationState::WALK && !enemy->takingDmg && _canWalk)
                 {
                     animState = AnimationState::WALK;
                     animationPlayer.ChangeAnimation(walkAnim);
                     animationPlayer.Play();
                     //Console::Log("Walk");
                 }
+                
+               
             
             break;
 
@@ -254,6 +275,10 @@ void EnemyRanger::Update()
         default:
             break;
         }
+    }
+    else if (enemy && scriptedForQuest)
+    {
+        enemyGun->Shoot();
     }
 }
 

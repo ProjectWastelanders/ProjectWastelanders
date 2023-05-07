@@ -29,5 +29,6 @@
 #include "API_UIInput.h"
 #include "API_ShaderComponent.h"
 #include "API_UIImage.h"
+#include "API_UICheckBox.h"
 
 using namespace API;

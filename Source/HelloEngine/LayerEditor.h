@@ -24,6 +24,7 @@ enum class ImWindowID
 	UI,
 	RESOURCES,
 	GLSL,
+	NAVMESH,
 	MAX,
 };
 
@@ -66,9 +67,12 @@ public:
 	static void S_ShowCompilationError() { _showCompilationError = true; }
 
 	static void S_OpenShader(uint UID);
+
 	static void S_ReimportAllAssets();
 
 	static bool S_GetWindowActive(ImWindowID id);
+	
+	static std::string S_GetCurrentSceneName();
 
 private:
 	void DrawMenuBar();

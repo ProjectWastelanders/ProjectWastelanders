@@ -11,7 +11,10 @@ public:
     void Start() override;
     void Update() override;
 
-    void OnCollisionStay(API_RigidBody other);
+    void OnCollisionEnter(API_RigidBody other);
+    void OnCollisionExit(API_RigidBody other);
+
+    API_GameObject GetFirstInactiveProjectile();
 
     API_ParticleSystem smoke;
     API_ParticleSystem fire;
@@ -28,5 +31,15 @@ public:
 
     bool throwFire = false;
     bool hitPlayer = true;
+    bool playerOnRange = false;
+
+    int pullSize;
+    std::vector<API_GameObject> pull;
+    uint projectilePrefab;
+    float lifeTime = 0;
+    float speed = 0;
+
+    float maxProjectileDelay = 0.2f;
+    float projectileDelay = 0;
 };
 

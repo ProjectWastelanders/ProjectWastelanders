@@ -13,7 +13,9 @@ public:
 	void Update() override;
 
 	void SetOrbital(bool orbital);
-	void Vibrate(float time);
+	void Shake(float time = 0.1f);
+	void Zoom(float time);
+	void Earthquake(float time);
 
 	API_GameObject target;
 	API_Vector3 realPos;
@@ -31,6 +33,7 @@ public:
 	float tempDelay = 0.0f;
 	bool safeZone = true;
 
-	float vibrationTime = 0.0f;
+	float shakingTime = 0.0f;
+	float zoomTime = 0.0f;
 	float earthquakeMult = 0.2f;
 };

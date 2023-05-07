@@ -9,16 +9,16 @@ HELLO_ENGINE_API_C CamMov* CreateCamMov(ScriptToInspectorInterface* script)
 	script->AddDragFloat("Offset_X", &classInstance->camPos.x);
 	script->AddDragFloat("Offset_Y", &classInstance->camPos.y);
 	script->AddDragFloat("Offset_Z", &classInstance->camPos.z);
-	script->AddDragFloat("Orbital Multiplier", &classInstance->orbitalMult);
-	script->AddDragFloat("Earthquake Multiplier", &classInstance->earthquakeMult);
+
 	script->AddDragFloat("Rot_X", &classInstance->camRot.x);
 	script->AddDragFloat("Rot_Y", &classInstance->camRot.y);
 	script->AddDragFloat("Rot_Z", &classInstance->camRot.z);
-	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+
+	script->AddDragFloat("Orbital Multiplier", &classInstance->orbitalMult);
+	script->AddDragFloat("Earthquake Multiplier", &classInstance->earthquakeMult);
+
 	script->AddDragFloat("SafeZone_Distance", &classInstance->safeZoneDistance);
-	script->AddCheckBox("Use safe zone: ", &classInstance->safeZone);
-	script->AddCheckBox("Test_Orbital", &classInstance->orbital);
-	script->AddDragFloat("Test_VibrationTime", &classInstance->vibrationTime);
+	script->AddCheckBox("Use safe zone", &classInstance->safeZone);
 	return classInstance;
 }
 
@@ -41,10 +41,10 @@ void CamMov::Update()
 	desiredPosition = target.GetTransform().GetGlobalPosition();
 	
 	//Zoom & Offset
-	if (vibrationTime > 0.0f)
+	if (zoomTime > 0.0f)
 	{
 		desiredPosition += camPos * earthquakeMult;
-		vibrationTime -= Time::GetDeltaTime();
+		zoomTime -= Time::GetDeltaTime();
 	}
 	else if (orbital)
 	{
@@ -59,11 +59,11 @@ void CamMov::Update()
 	if (safeZone)
 	{
 		if (desiredPosition.Distance(realPos) > safeZoneDistance) {
-			tempDelay += 0.01;
+			tempDelay += 0.01f;
 		}
 		else {
 			if (tempDelay > delay) {
-				tempDelay -= 0.01;
+				tempDelay -= 0.01f;
 			}
 		}
 	}
@@ -74,10 +74,11 @@ void CamMov::Update()
 	realPos = smoothedPosition;
 
 	//Vibration
-	if (vibrationTime > 0.0f)
+	if (shakingTime > 0.0f)
 	{
 		smoothedPosition.x += (float(rand() % 20)/10.0f - 1.0f);
 		smoothedPosition.z += (float(rand() % 20)/10.0f - 1.0f);
+		shakingTime -= Time::GetDeltaTime();
 	}
 
 	gameObject.GetTransform().SetPosition(smoothedPosition.x, smoothedPosition.y, smoothedPosition.z);
@@ -88,7 +89,18 @@ void CamMov::SetOrbital(bool orbital)
 	this->orbital = orbital;
 }
 
-void CamMov::Vibrate(float time)
+void CamMov::Shake(float time)
 {
-	vibrationTime = time;
+	shakingTime = time;
+}
+
+void CamMov::Zoom(float time)
+{
+	zoomTime = time;
+}
+
+void CamMov::Earthquake(float time)
+{
+	Zoom(time);
+	Shake(time);
 }

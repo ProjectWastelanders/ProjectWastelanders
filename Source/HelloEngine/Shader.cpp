@@ -240,6 +240,12 @@ void Shader::UniformParser(std::vector<Uniform*>& vec)
 			case GL_FLOAT_VEC4: vec.push_back((Uniform*) new UniFloat4(uni)); break;
 			case GL_DOUBLE: vec.push_back((Uniform*) new UniDouble(uni)); break;
 			case GL_SAMPLER_2D: 
+				if (uni.name.find("shadowMap") != std::string::npos)
+				{
+					vec.push_back((Uniform*) new UniSampler2D(uni, 31));
+					break;
+				}
+
 				vec.push_back((Uniform*) new UniSampler2D(uni, layerCount));
 				layerCount++;
 				break;

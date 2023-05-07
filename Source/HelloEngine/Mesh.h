@@ -126,6 +126,8 @@ private:
 	ResourceShader* boneMeshShader = nullptr;
 
 	ResourceShader* stencilShader = nullptr;
+	ResourceShader* depthShader = nullptr;
+	ResourceShader* depthBoneShader = nullptr;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;

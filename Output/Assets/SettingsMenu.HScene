@@ -1,0 +1,593 @@
+[
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Root",
+        "ParentUID": 0,
+        "PrefabUID": 0,
+        "Tag": "None",
+        "UID": 1283856117,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 1.7000000476837158,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Camera",
+        "ParentUID": 1283856117,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2117458001,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Canvas",
+        "ParentUID": 1283856117,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3380987013,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Panel",
+        "ParentUID": 3380987013,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2014174792,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0499999523162842,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2373411443,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BackGround",
+        "ParentUID": 2014174792,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3669692424,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.4000000059604645,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.699999988079071,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Music",
+        "ParentUID": 2014174792,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1112322542,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.003000000026077032
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 2123098180,
+                "MaxValue": 1.0,
+                "MeshEnabled": true,
+                "MinValue": 0.0,
+                "SliderPerCent": 0.0,
+                "StateButton": 0,
+                "Type": 13
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "SliderButton",
+        "ParentUID": 1112322542,
+        "PrefabUID": 0,
+        "Tag": "UIsliderButton",
+        "UID": 2747349702,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 1943036561,
+                "MaxValue": 1.0,
+                "MeshEnabled": true,
+                "MinValue": 0.0,
+                "SliderPerCent": 0.0,
+                "StateButton": 0,
+                "Type": 13
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "SliderBar",
+        "ParentUID": 1112322542,
+        "PrefabUID": 0,
+        "Tag": "UIsliderBar",
+        "UID": 1160042877,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.699999988079071,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Slider",
+        "ParentUID": 2014174792,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 235113119,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.003000000026077032
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 2123098180,
+                "MaxValue": 1.0,
+                "MeshEnabled": true,
+                "MinValue": 0.0,
+                "SliderPerCent": 0.0,
+                "StateButton": 0,
+                "Type": 13
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "SliderButton",
+        "ParentUID": 235113119,
+        "PrefabUID": 0,
+        "Tag": "UIsliderButton",
+        "UID": 690092843,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 1943036561,
+                "MaxValue": 1.0,
+                "MeshEnabled": true,
+                "MinValue": 0.0,
+                "SliderPerCent": 0.0,
+                "StateButton": 0,
+                "Type": 13
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "SliderBar",
+        "ParentUID": 235113119,
+        "PrefabUID": 0,
+        "Tag": "UIsliderBar",
+        "UID": 1449649447,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.20000000298023224,
+                    -0.6000000238418579,
+                    -0.0020000000949949026
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 334007211,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 0,
+                "hoverImage": 0,
+                "idleActiveImage": 0,
+                "idleImage": 334007211,
+                "pressActiveImage": 0,
+                "pressImage": 1544303032
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "CheckBox",
+        "ParentUID": 2014174792,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1332180768,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.5,
+                    -0.6000000238418579,
+                    -0.0020000000949949026
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 334007211,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 0,
+                "hoverImage": 0,
+                "idleActiveImage": 0,
+                "idleImage": 334007211,
+                "pressActiveImage": 0,
+                "pressImage": 1544303032
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "CheckBox",
+        "ParentUID": 2014174792,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1460882599,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    -0.6000000238418579,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.15000000596046448,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1974143661,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "CheckBox_BackGround",
+        "ParentUID": 2014174792,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2405407470,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.30000001192092896,
+                    -0.6000000238418579,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.15000000596046448,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1974143661,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "CheckBox_BackGround",
+        "ParentUID": 3380987013,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 660295199,
+        "UpdateWithBones": false
+    }
+]

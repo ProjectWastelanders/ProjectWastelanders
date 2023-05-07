@@ -206,7 +206,18 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 			{
 				toReturn = true;
 			}
+			if (uni->data.name == "lightSpaceMatrix")
+			{
+				shader->shader.SetMatFloat4v("lightSpaceMatrix", &Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+				toReturn = true;
+			}
 			break;
+		case GL_SAMPLER_2D:
+			if (uni->data.name == "shadowMap")
+			{
+				shader->shader.SetTexture("shadowMap", Lighting::GetLightMap().shadowMap, 31);
+				toReturn = true;
+			}
 	}
 
 	return toReturn;

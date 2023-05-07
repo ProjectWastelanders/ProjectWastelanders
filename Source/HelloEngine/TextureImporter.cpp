@@ -86,11 +86,52 @@ void TextureImporter::Load(char* buffer, int size, ResourceTexture* resource)
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+ResourceTexture* TextureImporter::WhiteImage()
+{
+	if (ModuleResourceManager::resources[WHITE_RESOURCE_UID]->referenceCount != 0)
+	{
+		ModuleResourceManager::resources[WHITE_RESOURCE_UID]->referenceCount++;
+		return (ResourceTexture*)ModuleResourceManager::resources[WHITE_RESOURCE_UID];
+	}
+
+	GLubyte whiteImage[240][240][4];
+	for (int i = 0; i < 240; i++) {
+		for (int j = 0; j < 240; j++) {
+			int c = ((((i & 0x8) == 0) ^ (((j & 0x8)) == 0))) * 255;
+			whiteImage[i][j][0] = (GLubyte)255;
+			whiteImage[i][j][1] = (GLubyte)255;
+			whiteImage[i][j][2] = (GLubyte)255;
+			whiteImage[i][j][3] = (GLubyte)255;
+		}
+	}
+
+	uint textureID = 0;
+
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 240, 240,
+		0, GL_RGBA, GL_UNSIGNED_BYTE, whiteImage);
+
+	ResourceTexture* checkersResource = (ResourceTexture*)ModuleResourceManager::resources[WHITE_RESOURCE_UID];
+	checkersResource->OpenGLID = textureID;
+	checkersResource->name = "White";
+	checkersResource->width = checkersResource->height = 240;
+
+	ModuleResourceManager::resources[WHITE_RESOURCE_UID]->referenceCount++;
+
+	return (ResourceTexture*)ModuleResourceManager::resources[WHITE_RESOURCE_UID];
+}
+
 ResourceTexture* TextureImporter::CheckerImage()
 {
 	if (ModuleResourceManager::resources[CHECKERS_RESOURCE_UID]->referenceCount != 0)
 	{
-		ModuleResourceManager::resources[CHECKERS_RESOURCE_UID]->referenceCount++;
+		//Doesn't need reference count
 		return (ResourceTexture*)ModuleResourceManager::resources[CHECKERS_RESOURCE_UID];
 	}
 

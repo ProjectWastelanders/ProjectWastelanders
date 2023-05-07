@@ -126,6 +126,7 @@ void ModuleRenderer3D::DrawGame()
 // PostUpdate present buffer to screen
 UpdateStatus ModuleRenderer3D::PostUpdate()
 {
+	OPTICK_EVENT();
 	VideoPlayerManager::Update(); // Update videos before drawing.
 
 #ifdef STANDALONE

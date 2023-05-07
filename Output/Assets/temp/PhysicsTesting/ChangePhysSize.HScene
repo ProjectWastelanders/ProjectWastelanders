@@ -103,6 +103,7 @@
                 "HasPhysBody": true,
                 "IsKinematic": false,
                 "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
                 "IsShapeCreated": [
                     true,
                     false,
@@ -116,6 +117,13 @@
                 "IsStatic": false,
                 "IsTrigger": false,
                 "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
                 "RenderColColor": [
                     0.5,
                     0.0,
@@ -206,6 +214,7 @@
                 "HasPhysBody": true,
                 "IsKinematic": false,
                 "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
                 "IsShapeCreated": [
                     false,
                     true,
@@ -219,6 +228,13 @@
                 "IsStatic": false,
                 "IsTrigger": false,
                 "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
                 "RenderColColor": [
                     0.1767442226409912,
                     0.5,
@@ -254,9 +270,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -1.116755723953247,
-                    12.622014999389648,
-                    0.0
+                    0.0,
+                    16.647621154785156,
+                    -28.956966400146484
                 ],
                 "Rotation": [
                     -0.0,
@@ -315,6 +331,7 @@
                 "HasPhysBody": true,
                 "IsKinematic": false,
                 "IsRenderingCol": true,
+                "IsRenderingRayCast": true,
                 "IsShapeCreated": [
                     true,
                     false,
@@ -328,6 +345,13 @@
                 "IsStatic": false,
                 "IsTrigger": false,
                 "Mass": 0.0,
+                "RayCastColor": [
+                    0.7953488230705261,
+                    0.14057326316833496,
+                    0.25021010637283325,
+                    1.0
+                ],
+                "RayCastSize": 34.400001525878906,
                 "RenderColColor": [
                     0.37393516302108765,
                     0.6837209463119507,
@@ -345,6 +369,12 @@
                 "Enabled": true,
                 "Inspector Fields": null,
                 "Script Resource": 2877122057,
+                "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 1964429390,
                 "Type": 5
             }
         ],
@@ -424,6 +454,7 @@
                 "HasPhysBody": true,
                 "IsKinematic": false,
                 "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
                 "IsShapeCreated": [
                     false,
                     false,
@@ -437,6 +468,13 @@
                 "IsStatic": false,
                 "IsTrigger": false,
                 "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
                 "RenderColColor": [
                     0.22826679050922394,
                     0.5906976461410522,

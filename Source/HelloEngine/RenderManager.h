@@ -102,6 +102,8 @@ public:
 
 	void CalculateCylinderIndices(std::vector<uint>* sphereIndicesComp, uint verSlices);
 	void CalculateCylinderPoints(PhysBody3D* physBody, std::vector<float3>* cylinderPointsComp, float2 radiusHeight, uint verSlices);
+	
+	void DrawRayCastLine(float3 pos1, float3 pos2, float4 color, float lineSize);
 
 	void DestroyInstanceRenderers();
 
@@ -128,6 +130,7 @@ private:
 	/*std::vector<uint> cylinderIndices;*/
 	std::vector<uint> sphereIndicesMax;
 	std::vector<uint> cylinderIndicesMax;
+	std::vector<uint> rayCastLineIndices;
 
 	// ModelResources for primitives
 	ResourceModel* primitiveModels[5];
@@ -149,10 +152,14 @@ private:
 	uint CYVAO = 0;
 	uint CYVBO = 0;
 
+	uint RAYVAO = 0;
+	uint RAYVBO = 0;
+
 	uint AABBIBO = 0; // index buffer object shared by both OBB and ABB buffers above.
 	uint OBBIBO = 0;
 	uint SPIBO = 0;
 	uint CYIBO = 0;
+	uint RAYIBO = 0;
 
 	// Primitives
 	uint cubeUID = 0;

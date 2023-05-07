@@ -179,6 +179,80 @@ API::API_Vector2 API::API_RigidBody::GetCylinderScale()
 	return radiusHeight;
 }
 
+void API::API_RigidBody::RayCastLineGlobal(float length, API_Vector3 origin, API_Vector3 dir)
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return;
+	}
+
+	/*float originNorm = sqrt(pow(origin.x, 2) + pow(origin.y, 2) + pow(origin.z, 2));
+	API_Vector3 normOrigin = { origin.x / originNorm, origin.y / originNorm, origin.z / originNorm };*/
+
+	float dirNorm = sqrt(pow(dir.x, 2) + pow(dir.y, 2) + pow(dir.z, 2));
+	API_Vector3 normDir = { dir.x / dirNorm, dir.y / dirNorm, dir.z / dirNorm };
+
+	API_Vector3 lengthDir = normDir * length;
+	API_Vector3 finalPoint = origin + lengthDir;
+
+	_rigidBody->_physBody->raycastPos1 = origin;
+	_rigidBody->_physBody->raycastPos1 = finalPoint;
+
+}
+
+void API::API_RigidBody::RayCastLineLocal(float length, API_Vector3 localOrigin, API_Vector3 localDir)
+{
+	if (!_rigidBody)
+	{
+		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
+		return;
+	}
+
+	//Get global body transform
+	float globalMatFloat[16] = { 0.0f };
+	_rigidBody->_physBody->body->getWorldTransform().getOpenGLMatrix(globalMatFloat);
+	
+	float4x4 globalMat4x4 = float4x4::identity;
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			globalMat4x4[i][j] = globalMatFloat[i*4 + j];
+		}
+	}
+	globalMat4x4.Transpose();
+
+	//Calculate the global origin
+	float4 localOri4x1 = { localOrigin.x, localOrigin.y, localOrigin.z, 1 };
+	float4 globalOri4x1 = globalMat4x4 * localOri4x1;
+	API_Vector3 globalOrigin = { globalOri4x1.x, globalOri4x1.y, globalOri4x1.z };
+
+	//Calculate the global origin
+	float4 localDir4x1 = { localDir.x, localDir.y, localDir.z, 1 };
+	float4 globalDir4x1 = globalMat4x4 * localDir4x1;
+	API_Vector3 globalDir = { globalDir4x1.x, globalDir4x1.y, globalDir4x1.z };
+
+	//////Calculate the global direction
+	////float4 localDir4x1 = { localDir.x, localDir.y, localDir.z, 1 };
+	////float4 globalDir4x1 = localDir4x1 * globalMat4x4;
+	////API_Vector3 globalDir = { globalDir4x1.x, globalDir4x1.y, globalDir4x1.z};
+	//////API_Vector3 globalDir = { localDir.x, localDir.y, localDir.z };
+
+	////float dirNorm = sqrt(pow(globalDir.x, 2) + pow(globalDir.y, 2) + pow(globalDir.z, 2));
+	////API_Vector3 normDir = { globalDir.x / dirNorm, globalDir.y / dirNorm, globalDir.z / dirNorm };
+
+	///	API_Vector3 lengthDir = normDir * length;
+	///*API_Vector3 finalPoint = globalOrigin + lengthDir;*/
+	 API_Vector3 finalPoint = globalDir;
+
+	_rigidBody->_physBody->raycastPos1 = globalOrigin;
+	_rigidBody->_physBody->raycastPos2 = finalPoint;
+
+}
+
+
 PhysicsComponent* API::API_RigidBody::GetComponent()
 {
 	if (!_rigidBody) 

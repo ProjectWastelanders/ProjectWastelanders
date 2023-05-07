@@ -29,8 +29,6 @@ namespace API
 		void SetBoxScale(API_Vector3 scale);
 		API_Vector3 GetBoxScale();
 
-		
-
 		/// <summary>
 		/// If the rigidbody is not a Sphere, there will return 0
 		/// </summary>
@@ -40,6 +38,12 @@ namespace API
 
 		void SetCylinderScale(float radius, float height);
 		API_Vector2 GetCylinderScale();
+
+		//Put global parameters
+		void RayCastLineGlobal(float length, API_Vector3 origin, API_Vector3 direction);
+
+		//Put local parameters
+		void RayCastLineLocal(float length, API_Vector3 origin, API_Vector3 direction);
 
 	private:
 		PhysicsComponent* GetComponent();

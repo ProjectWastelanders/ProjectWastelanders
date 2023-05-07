@@ -142,5 +142,29 @@ public:
 
 	API_GameObject meteors[30];
 	API_Vector3 meteorsPosition[30];
+
+	//ThanosAnimations
+	API_AnimationPlayer thanosAnimationPlayer;
+	uint thanosOutOfCombat;
+	uint thanosWakeUp;
+	uint thanosAimAnimation;
+	uint thanosMeleeAnimation;
+	uint thanosChargeAttackAnimation;
+	uint thanosChargeOnlyAnimation;
+	uint thanosGuantletRecoilAnimation;
+	uint thanosIdleAnimation;
+	uint thanosIdle2Animation;
+	uint thanosMeteorAnimation;
+	uint thanosPulseAnimation;
+	uint thanosRunAnimation;
+	uint thanosShootAnimation;
+	uint thanosSpinAnimation;
+	uint thanosStartSpinAnimation;
+	uint thanosStopSpinAnimation;
+	uint thanosStartSwordThrownAnimation;
+	uint thanosStopSwordThrownAnimation;
+	uint thanosSwordThrownAnimation;
+	uint thanosWalkAnimation;
+	uint thanosWalk2Animation;
 };
 

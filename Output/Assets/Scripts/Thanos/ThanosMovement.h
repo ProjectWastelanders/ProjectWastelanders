@@ -36,5 +36,7 @@ public:
 	ThanosLoop* Tloop;
 
 	float justOnce = false;
+
+	bool isActive = false;
 };
 

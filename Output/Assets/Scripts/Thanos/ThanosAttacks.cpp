@@ -69,6 +69,28 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxGameObject("Meteor 28", &classInstance->meteors[28]);
 	script->AddDragBoxGameObject("Meteor 29", &classInstance->meteors[29]);
 
+	script->AddDragBoxAnimationPlayer("Thanos Animation Player", &classInstance->thanosAnimationPlayer);
+	script->AddDragBoxAnimationResource("Thanos Aim Animation", &classInstance->thanosAimAnimation);
+	script->AddDragBoxAnimationResource("Thanos Melee Animation", &classInstance->thanosMeleeAnimation);
+	script->AddDragBoxAnimationResource("Thanos Charge Attack Animation", &classInstance->thanosChargeAttackAnimation);
+	script->AddDragBoxAnimationResource("Thanos Charge Only Animation", &classInstance->thanosChargeOnlyAnimation);
+	script->AddDragBoxAnimationResource("Thanos Gauntlet Recoil Animation", &classInstance->thanosGuantletRecoilAnimation);
+	script->AddDragBoxAnimationResource("Thanos Idle Animation (With Sword)", &classInstance->thanosIdleAnimation);
+	script->AddDragBoxAnimationResource("Thanos Idle Animation (With No Sword)", &classInstance->thanosIdle2Animation);
+	script->AddDragBoxAnimationResource("Thanos Meteor Animation", &classInstance->thanosMeteorAnimation);
+	script->AddDragBoxAnimationResource("Thanos Pulse Animation", &classInstance->thanosPulseAnimation);
+	script->AddDragBoxAnimationResource("Thanos Run Animation", &classInstance->thanosRunAnimation);
+	script->AddDragBoxAnimationResource("Thanos Shoot Animation", &classInstance->thanosShootAnimation);
+	script->AddDragBoxAnimationResource("Thanos Spin Animation", &classInstance->thanosSpinAnimation);
+	script->AddDragBoxAnimationResource("Thanos Start Spin Animation", &classInstance->thanosStartSpinAnimation);
+	script->AddDragBoxAnimationResource("Thanos Stop Spin Animation", &classInstance->thanosStopSpinAnimation);
+	script->AddDragBoxAnimationResource("Thanos Start Sword Thrown Animation", &classInstance->thanosStartSwordThrownAnimation);
+	script->AddDragBoxAnimationResource("Thanos Stop Sword Thrown Animation", &classInstance->thanosStopSwordThrownAnimation);
+	script->AddDragBoxAnimationResource("Thanos Sword Thrown Animation", &classInstance->thanosSwordThrownAnimation);
+	script->AddDragBoxAnimationResource("Thanos Walk Animation (No sword)", &classInstance->thanosWalkAnimation);
+	script->AddDragBoxAnimationResource("Thanos Walk Animation (With sword)", &classInstance->thanosWalk2Animation);
+	script->AddDragBoxAnimationResource("Thanos Getting On Combat", &classInstance->thanosWakeUp);
+	script->AddDragBoxAnimationResource("Thanos Out Of Combat", &classInstance->thanosOutOfCombat);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }

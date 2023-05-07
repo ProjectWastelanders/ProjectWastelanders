@@ -20,6 +20,19 @@ void ThanosMovement::Start()
 void ThanosMovement::Update()
 {
     distBP = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
+
+    if (distBP < 10 && Tloop->phase == 0) {
+        Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosWakeUp);
+        Tattack->thanosAnimationPlayer.SetLoop(false);
+        Tattack->thanosAnimationPlayer.Play();
+        //Tloop->phase = 1;
+    }
+    else if (Tloop->phase == 0) {
+        Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosOutOfCombat);
+        Tattack->thanosAnimationPlayer.SetLoop(true);
+        Tattack->thanosAnimationPlayer.Play();
+    }
+
     if(Tloop->phase == 1){
         if (Tattack->isAttacking == false) {
             angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
@@ -28,7 +41,7 @@ void ThanosMovement::Update()
         }
         dashCooldown += Time::GetDeltaTime();
     }
-    else {
+    else if(Tloop->phase == 2){
         if(Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER)  angle = Rotate(Tattack->laserPosition.GetTransform().GetGlobalPosition(), angle);
         else angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
       

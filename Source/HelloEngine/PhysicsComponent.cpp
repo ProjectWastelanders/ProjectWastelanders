@@ -437,7 +437,6 @@ void PhysicsComponent::OnEditor()
 				}
 			}
 
-
 			switch (_shapeSelected)
 			{
 			case ColliderShape::BOX:

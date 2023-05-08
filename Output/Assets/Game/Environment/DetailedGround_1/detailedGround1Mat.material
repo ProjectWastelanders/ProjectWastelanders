@@ -3,30 +3,50 @@
     "Uniforms": [
         {
             "Index": 0,
-            "Name": "LightPosition",
-            "Read": 13,
+            "Name": "lightSpaceMatrix",
+            "Read": 16,
             "Size": 1,
-            "String Type": "vec4",
-            "Type": 35666,
+            "String Type": "mat4",
+            "Type": 35676,
             "Value": [
+                1.0,
                 0.0,
                 0.0,
                 0.0,
-                0.0
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
             ]
         },
         {
-            "Index": 1,
-            "Layer": 0,
-            "Name": "normal_texture",
-            "Read": 14,
+            "Index": 3,
+            "Name": "Actual_Point",
+            "Read": 12,
             "Size": 1,
-            "String Type": "sampler2D",
-            "Type": 35678,
-            "Value": -1
+            "String Type": "int",
+            "Type": 5124,
+            "Value": 0
         },
         {
             "Index": 4,
+            "Name": "Actual_Spot",
+            "Read": 11,
+            "Size": 1,
+            "String Type": "int",
+            "Type": 5124,
+            "Value": 0
+        },
+        {
+            "Index": 5,
             "Name": "ColourTest",
             "Read": 10,
             "Size": 1,
@@ -39,34 +59,8 @@
             ]
         },
         {
-            "Index": 5,
-            "Name": "LightColor",
-            "Read": 10,
-            "Size": 1,
-            "String Type": "vec3",
-            "Type": 35665,
-            "Value": [
-                -1.5816464369601856e+38,
-                -1.5816464369601856e+38,
-                -1.5816464369601856e+38
-            ]
-        },
-        {
-            "Index": 6,
-            "Name": "ViewPoint",
-            "Read": 9,
-            "Size": 1,
-            "String Type": "vec3",
-            "Type": 35665,
-            "Value": [
-                -1.5816464369601856e+38,
-                -1.5816464369601856e+38,
-                -1.5816464369601856e+38
-            ]
-        },
-        {
-            "Index": 7,
-            "Layer": 1,
+            "Index": 554,
+            "Layer": 0,
             "Name": "albedo_texture",
             "Read": 14,
             "Size": 1,
@@ -75,45 +69,14 @@
             "Value": 2228601179
         },
         {
-            "Index": 8,
-            "Layer": 2,
-            "Name": "metallic_texture",
-            "Read": 16,
+            "Index": 555,
+            "Layer": 31,
+            "Name": "shadowMap",
+            "Read": 9,
             "Size": 1,
             "String Type": "sampler2D",
             "Type": 35678,
             "Value": -1
-        },
-        {
-            "Index": 9,
-            "Name": "shininess",
-            "Read": 9,
-            "Size": 1,
-            "String Type": "float",
-            "Type": 5126,
-            "Value": 1.0
-        },
-        {
-            "Index": 10,
-            "Name": "specularIntensity",
-            "Read": 17,
-            "Size": 1,
-            "String Type": "float",
-            "Type": 5126,
-            "Value": 1.0
-        },
-        {
-            "Index": 11,
-            "Name": "specularLightColor",
-            "Read": 18,
-            "Size": 1,
-            "String Type": "vec3",
-            "Type": 35665,
-            "Value": [
-                1.0,
-                1.0,
-                1.0
-            ]
         }
     ]
 }

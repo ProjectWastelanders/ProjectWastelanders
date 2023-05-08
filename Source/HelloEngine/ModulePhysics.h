@@ -75,5 +75,5 @@ private:
 	std::vector <btDefaultMotionState*> motions;
 	std::vector <btTypedConstraint*> constraints;
 
-	bool hasToSetRenderBuffers;
+	bool hasToSetRenderBuffers = false;
 };

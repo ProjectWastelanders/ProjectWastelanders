@@ -270,6 +270,7 @@
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.cpp" />
 		<ClCompile Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.cpp" />
 		<ClCompile Include="../../Assets/temp/PhysicsTesting/RayCastTest.cpp" />
+		<ClCompile Include="../../Assets/temp/BugPhysic/PhysicTest.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -407,6 +408,7 @@
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.h" />
 		<ClInclude Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.h" />
 		<ClInclude Include="../../Assets/temp/PhysicsTesting/RayCastTest.h" />
+		<ClInclude Include="../../Assets/temp/BugPhysic/PhysicTest.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

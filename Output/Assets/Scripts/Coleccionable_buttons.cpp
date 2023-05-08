@@ -3,6 +3,11 @@ HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToIn
 {
 	Coleccionable_buttons* classInstance = new Coleccionable_buttons();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+	script->AddDragBoxUIButton("Button 1", &classInstance->button1);
+	script->AddDragBoxUIButton("Button 2", &classInstance->button2);
+	script->AddDragBoxUIButton("Button 3", &classInstance->button3);
+	
+
 	return classInstance;
 }
 

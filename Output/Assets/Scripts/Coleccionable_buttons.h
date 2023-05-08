@@ -10,5 +10,10 @@ class Coleccionable_buttons : HelloBehavior
 public:
 	void Start() override; 
 	void Update() override;
+
+	API_UIButton button1;
+	API_UIButton button2;
+	API_UIButton button3;
+
 };
 

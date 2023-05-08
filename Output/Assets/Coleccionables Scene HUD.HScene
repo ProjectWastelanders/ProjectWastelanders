@@ -211,16 +211,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 2477737623,
+                "MaterialResource": 2148210497,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 14,
                 "hoverActiveImage": 3202234979,
-                "hoverImage": 2789273564,
-                "idleActiveImage": 1468536626,
-                "idleImage": 2477737623,
-                "pressActiveImage": 1468536626,
-                "pressImage": 1468536626
+                "hoverImage": 680300656,
+                "idleActiveImage": 337283063,
+                "idleImage": 2148210497,
+                "pressActiveImage": 337283063,
+                "pressImage": 337283063
             }
         ],
         "FirstOnPrefab": true,
@@ -256,16 +256,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 2477737623,
+                "MaterialResource": 2148210497,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 14,
                 "hoverActiveImage": 3202234979,
-                "hoverImage": 2789273564,
-                "idleActiveImage": 1468536626,
-                "idleImage": 2477737623,
-                "pressActiveImage": 1468536626,
-                "pressImage": 1468536626
+                "hoverImage": 680300656,
+                "idleActiveImage": 337283063,
+                "idleImage": 2148210497,
+                "pressActiveImage": 337283063,
+                "pressImage": 337283063
             }
         ],
         "FirstOnPrefab": true,
@@ -301,16 +301,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 2477737623,
+                "MaterialResource": 2148210497,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 14,
                 "hoverActiveImage": 3202234979,
-                "hoverImage": 2789273564,
-                "idleActiveImage": 1468536626,
-                "idleImage": 2477737623,
-                "pressActiveImage": 1468536626,
-                "pressImage": 1468536626
+                "hoverImage": 680300656,
+                "idleActiveImage": 337283063,
+                "idleImage": 2148210497,
+                "pressActiveImage": 337283063,
+                "pressImage": 337283063
             }
         ],
         "FirstOnPrefab": true,

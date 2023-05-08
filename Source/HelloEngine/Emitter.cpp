@@ -188,7 +188,7 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	meshReference.modelMatrix = ParticleList[i].transformMat;
 
-	meshReference.textureID = _textureID;
+	meshReference.textureID = emitterTexture._textureID;
 
 	meshReference.CalculateBoundingBoxes();
 }

@@ -72,6 +72,10 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, Particl
 	emissionModule->component = this;
 	ParticleModules.push_back(emissionModule);
 
+	P_Module* shapeModule = (P_Module*)new P_ShapeModule();
+	shapeModule->component = this;
+	ParticleModules.push_back(shapeModule);
+
 	BillBoardComponent* billboard = (BillBoardComponent*)_gameObject->AddComponentOfType(Type::BILLBOARD);
 	BillBoardComponent* copyBB = copy._gameObject->GetComponent<BillBoardComponent>();
 	if (copyBB != nullptr)
@@ -201,18 +205,23 @@ void ParticleSystemComponent::ChangeEmitterMeshTexture(ResourceTexture* resource
 {
 	if (resource == nullptr)
 	{
-		ParticleEmitter._textureID = -1.0f;
+		ParticleEmitter.emitterTexture._textureID = -1.0f;
 		_resourceText = nullptr;
 
 		return;
 	}
 
-	ParticleEmitter._textureID = resource->OpenGLID;
+	ParticleEmitter.emitterTexture._textureID = resource->OpenGLID;
 
 	if (_resourceText != nullptr)
 		_resourceText->Dereference();
 
 	_resourceText = resource;
+
+	for (Particle& var : ParticleEmitter.ParticleList)
+	{
+		var.texture = ParticleEmitter.emitterTexture;
+	}
 
 	//if (resource->isTransparent && !isUI)
 	//	meshRenderer->ChangeMeshRenderType(MeshRenderType::TRANSPARENCY);
@@ -326,9 +335,9 @@ void ParticleSystemComponent::OnEditor()
 		std::string imageName;
 		int width = 0;
 		int height = 0;
-		if (ParticleEmitter._textureID != -1.0f && _resourceText != nullptr)
+		if (ParticleEmitter.emitterTexture._textureID != -1.0f && _resourceText != nullptr)
 		{
-			ImGui::Image((ImTextureID)(uint)ParticleEmitter._textureID, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+			ImGui::Image((ImTextureID)(uint)ParticleEmitter.emitterTexture._textureID, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 
 			imageName = _resourceText->debugName;
 			width = _resourceText->width;
@@ -340,7 +349,7 @@ void ParticleSystemComponent::OnEditor()
 			imageName = "None";
 		}
 
-		if (ParticleEmitter._textureID == -1)
+		if (ParticleEmitter.emitterTexture._textureID == -1)
 		{
 			ImGui::TextWrapped("No texture loaded! Drag an .htext file below to load a texture ");
 
@@ -437,8 +446,13 @@ void ParticleSystemComponent::DestroyEmitterMeshTexture()
 {
 	if (_resourceText != nullptr)
 	{
-		ParticleEmitter._textureID = -1.0f;
+		ParticleEmitter.emitterTexture._textureID = -1.0f;
 		_resourceText = nullptr;
+
+		for (Particle& var : ParticleEmitter.ParticleList)
+		{
+			var.texture = ParticleEmitter.emitterTexture;
+		}
 
 	}
 }

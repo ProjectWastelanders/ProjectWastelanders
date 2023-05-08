@@ -16,6 +16,16 @@ struct ParticleProperties
 	float Lifetime = 1.0f;
 };
 
+struct ParticleTexture
+{
+
+	//Texture id
+	uint _textureID;
+	//Number of Rows
+	int numOfRows;
+
+};
+
 
 struct Particle
 {
@@ -52,12 +62,21 @@ struct Particle
 	uint _instanceID;
 	
 	bool Active = false;
-	
+
+	//Particle Texture
+	ParticleTexture texture;
+	//Texture Offsets;
+	float2 textureOffset1;
+	float2 textureOffset2;
+	float blendFactor = 0.0f;
+
 	//Angular velocity of the particle
 	//float rotationSpeed;
 
 	//Calculate the Transform Matrix of the particle
 	void SetTransformMatrix(Quat rot);
+
+	void UpdateTextureCoords();
 
 };
 

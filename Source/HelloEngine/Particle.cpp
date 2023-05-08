@@ -45,3 +45,26 @@ void Particle::SetTransformMatrix(Quat rot = Quat::identity)
 	transformMat = float4x4::FromTRS(position, q, scale).Transposed();
 }
 
+void Particle::UpdateTextureCoords()
+{
+	float elapsedTime = 0.0f;
+	elapsedTime += EngineTime::GameDeltaTime();
+	float particleLife = elapsedTime / Lifetime;
+	int numOfText = texture.numOfRows * texture.numOfRows;
+	float atlasProgression = particleLife * numOfText;
+	int index1 = (int) math::Floor(atlasProgression);
+	int index2 = index1 < numOfText - 1 ? index1 + 1 : index1;
+	int x = (int)atlasProgression * 1000;
+	int y = x % 1000;
+	this->blendFactor = y / 1000;
+
+	int column = index1 % texture.numOfRows;
+	int row = index1 / texture.numOfRows;
+	textureOffset1.x = column / texture.numOfRows;
+	textureOffset1.y = row / texture.numOfRows;
+	column = index2 % texture.numOfRows;
+	row = index2 / texture.numOfRows;
+	textureOffset2.x = column / texture.numOfRows;
+	textureOffset2.y = row / texture.numOfRows;
+}
+

@@ -43,7 +43,6 @@ public:
 public:
 
 	int64_t _meshID = -1;
-	int _textureID = -1;
 
 private:
 	//Position Emitter
@@ -58,6 +57,8 @@ private:
 	ParticleSystemComponent* component = nullptr;
 
 	InstanceRenderer* manager;
+
+	ParticleTexture emitterTexture;
 
 	int currentparticle;
 	bool loop;//

@@ -11275,7 +11275,10 @@
                         "Menu to Open 1": 4119569708
                     },
                     {
-                        "Menu Panel": 339357948
+                        "Menu Panel": 4119569708
+                    },
+                    {
+                        "Button Guide": 3437375339
                     }
                 ],
                 "Script Resource": 3847920188,
@@ -32683,6 +32686,9 @@
                     },
                     {
                         "Menu Panel": 2279618498
+                    },
+                    {
+                        "Button Guide": 3437375339
                     }
                 ],
                 "Script Resource": 3847920188,

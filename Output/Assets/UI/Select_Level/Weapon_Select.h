@@ -40,6 +40,7 @@ public:
 
 	bool isPress;
 	bool inOpen;
+	bool onProceed;
 	int indexLevles;
 
 	API_GameObject interruptorGO;

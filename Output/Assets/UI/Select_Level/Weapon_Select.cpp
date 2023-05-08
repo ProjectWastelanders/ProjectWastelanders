@@ -38,6 +38,7 @@ void Weapon_Select::Start()
 {
 	indexLevles = 3;
 	inOpen = true;
+	//onProceed = false;
 
 	interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
 	if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
@@ -71,19 +72,27 @@ void Weapon_Select::Update()
 		inOpen = false;
 	}
 
+	if (onProceed)
+	{
+		Console::Log("true");
+	}
+	else
+	{
+		Console::Log("false");
+	}
+
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
-		if (proceedPanel.GetGameObject().IsActive())
+		if (onProceed)
 		{
-			Console::Log("Proceed");
+			onProceed = false;
+			Console::Log("JUAN TE MATO");
 			weaponSelectPanel.GetGameObject().SetActive(true);
 			proceedPanel.GetGameObject().SetActive(false);
 		}
 		else
 		{
-			Console::Log("1 Don Juan");
 			if (!interruptor) return;
-			Console::Log("2 Don Juan");
 			Input::HandleGamePadButton(GamePadButton::BUTTON_B);
 			// IT'S CORRECT DON'T REMOVE NOTHING
 			interruptor->menuPanel.SetActive(true); // can set false if is not true
@@ -132,6 +141,7 @@ void Weapon_Select::Update()
 	{
 		weaponSelectPanel.GetGameObject().SetActive(false);
 		proceedPanel.GetGameObject().SetActive(true);
+		onProceed = true;
 	}
 
 	if (proceedButton.OnPress())

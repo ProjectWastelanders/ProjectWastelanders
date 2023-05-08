@@ -25,8 +25,6 @@ HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToIn
 
 void Coleccionable_buttons::Start()
 {
-	level_selected.GetGameObject().SetActive(false);
-
 	for (int i = 0; i < 3; i++)
 	{
 		Casetes[i].SetActive(false);
@@ -41,42 +39,66 @@ void Coleccionable_buttons::Update()
 	for (int i = 0; i < 3; i++)
 	{
 		//buttons[i].SetBlocked(true);
-		if (CheckBox[i].OnPress())
+		if (CheckBox[i].OnHovered())
 		{
-			level_selected.GetGameObject().SetActive(true);
 			switch (i)
 			{
 			case 0:
 				level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[0]);
-				Level1selected(levels[0], true, true, true/*playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked*/);
+				Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
 				break;
 			case 1:
 				level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[1]);
-				Level1selected(levels[1], true, true, true/*playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked*/);
+				Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
 				break;
 			case 2:
 				level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[2]);
-				Level1selected(levels[2], true, true, true/*playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked */);
+				Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
 				break;
 			default:
 				break;
 			}
 
 		}
+		if (playerStorage->casette1Picked == true &&  playerStorage->casette2Picked == true && playerStorage->casette3Picked == true)
+		{
+			if (CheckBox[i].OnPress())
+			{
+				switch (i)
+				{
+				case 0:
+					Audio::Event("L1_collectable3");
+					CheckBox[1].SetActive(false);
+					CheckBox[2].SetActive(false);
+					break;
+				case 1:
+					Audio::Event("L2_collectable3");
+					CheckBox[0].SetActive(false);
+					CheckBox[2].SetActive(false);
+					break;
+				case 2:
+					CheckBox[0].SetActive(false);
+					CheckBox[2].SetActive(false);
+					Audio::Event("L3_collectable3");
+					break;
+				default:
+					break;
+				}
+			}
+		}
+
 
 	}
 }
 
-void Coleccionable_buttons::Level1selected(int level1, bool casete1, bool casete2, bool casete3)
+void Coleccionable_buttons::Level1selected( bool casete1, bool casete2, bool casete3)
 {
 	
-	CheckBox[1].SetActive(false);
-	CheckBox[2].SetActive(false);
+
 
 	if (casete1 == true)
 	{
 		Casetes[0].SetActive(true);
-		Audio::Event("L1_collectable1");
 	}
 	else
 	{
@@ -86,7 +108,6 @@ void Coleccionable_buttons::Level1selected(int level1, bool casete1, bool casete
 	if (casete2 == true)
 	{
 		Casetes[1].SetActive(true);
-		Audio::Event("L1_collectable2");
 	}
 	else
 	{
@@ -96,23 +117,21 @@ void Coleccionable_buttons::Level1selected(int level1, bool casete1, bool casete
 	if (casete3 == true)
 	{
 		Casetes[2].SetActive(true);
-		Audio::Event("L1_collectable3");
 	}
 	else
 	{
 		Casetes[2].SetActive(false);
 	}
+
 }
 
-void Coleccionable_buttons::Level2selected(int level2, bool casete1, bool casete2, bool casete3)
+void Coleccionable_buttons::Level2selected( bool casete1, bool casete2, bool casete3)
 {
-	CheckBox[0].SetActive(false);
-	CheckBox[2].SetActive(false);
 
 	if (casete1 == true)
 	{
 		Casetes[0].SetActive(true);
-		Audio::Event("L2_collectable1");
+
 	}
 	else
 	{
@@ -122,7 +141,6 @@ void Coleccionable_buttons::Level2selected(int level2, bool casete1, bool casete
 	if (casete2 == true)
 	{
 		Casetes[1].SetActive(true);
-		Audio::Event("L2_collectable2");
 	}
 	else
 	{
@@ -132,23 +150,22 @@ void Coleccionable_buttons::Level2selected(int level2, bool casete1, bool casete
 	if (casete3 == true)
 	{
 		Casetes[2].SetActive(true);
-		Audio::Event("L2_collectable3");
 	}
 	else
 	{
 		Casetes[2].SetActive(false);
 	}
+
+
 }
 
-void Coleccionable_buttons::Level3selected(int level3, bool casete1, bool casete2, bool casete3)
+void Coleccionable_buttons::Level3selected( bool casete1, bool casete2, bool casete3)
 {
-	CheckBox[0].SetActive(false);
-	CheckBox[2].SetActive(false);
+
 
 	if (casete1 == true)
 	{
 		Casetes[0].SetActive(true);
-		Audio::Event("L3_collectable1");
 	}
 	else
 	{
@@ -158,7 +175,6 @@ void Coleccionable_buttons::Level3selected(int level3, bool casete1, bool casete
 	if (casete2 == true)
 	{
 		Casetes[1].SetActive(true);
-		Audio::Event("L3_collectable2");
 	}
 	else
 	{
@@ -168,10 +184,10 @@ void Coleccionable_buttons::Level3selected(int level3, bool casete1, bool casete
 	if (casete3 == true)
 	{
 		Casetes[2].SetActive(true);
-		Audio::Event("L3_collectable3");
 	}
 	else
 	{
 		Casetes[2].SetActive(false);
 	}
 }
+

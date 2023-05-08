@@ -11,9 +11,9 @@ public:
 	void Start() override; 
 	void Update() override;
 
-	void Level1selected(int level1, bool casete1, bool casete2,bool casete3);
-	void Level2selected(int level2, bool casete1, bool casete2,bool casete3);
-	void Level3selected(int level3, bool casete1, bool casete2,bool casete3);
+	void Level1selected( bool casete1, bool casete2,bool casete3);
+	void Level2selected( bool casete1, bool casete2,bool casete3);
+	void Level3selected( bool casete1, bool casete2,bool casete3);
 
 	API_UICheckBox CheckBox[3];
 

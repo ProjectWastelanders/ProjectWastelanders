@@ -15,6 +15,7 @@ public:
 
     void ShootWall(float projectileDamage);
     void DestroyWall();
+    void PopUpTutorial(bool active);
 
     API_ParticleSystem wallDestroyed;
 
@@ -23,7 +24,18 @@ public:
 
     API_RigidBody fenceRigidbody;
 
+    API_UIImage Tutorial_Img;
+
+    API_Vector3 initalPos;
+    API_Vector3 finalPos;
+    API_Vector3 movingPos;
+
     int maxHp;
     int currentHp;
+
+    bool tutorial_active = false;
+    bool timerTutorial = false;
+    bool hideChest = false;
+    float showTutorial = 0;
 };
 

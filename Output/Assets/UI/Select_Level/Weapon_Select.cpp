@@ -20,10 +20,10 @@ HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface
 
 	script->AddDragBoxUIImage("Weapon Image", &classInstance->weaponImage);
 
-	script->AddDragBoxTextureResource("Weapon 1", &classInstance->weaponImage1);
-	script->AddDragBoxTextureResource("Weapon 2", &classInstance->weaponImage2);
-	script->AddDragBoxTextureResource("Weapon 3", &classInstance->weaponImage3);
-	script->AddDragBoxTextureResource("Weapon 4", &classInstance->weaponImage4);
+	script->AddDragBoxTextureResource("Weapon Image 1", &classInstance->weaponImage1);
+	script->AddDragBoxTextureResource("Weapon Image 2", &classInstance->weaponImage2);
+	script->AddDragBoxTextureResource("Weapon Image 3", &classInstance->weaponImage3);
+	script->AddDragBoxTextureResource("Weapon Image 4", &classInstance->weaponImage4);
 	
 	script->AddDragBoxUIButton("Proceed Button", &classInstance->proceedButton);
 

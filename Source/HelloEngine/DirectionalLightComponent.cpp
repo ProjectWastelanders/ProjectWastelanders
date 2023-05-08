@@ -12,6 +12,13 @@ DirectionalLightComponent::DirectionalLightComponent(GameObject* gameObject) : L
 	data = DirectionalLight();
 
 	Lighting::SetDirectionalLight(this->data);
+
+	data.lightFrustum.type = math::FrustumType::OrthographicFrustum;
+	data.lightFrustum.nearPlaneDistance = 0.0f;
+	data.lightFrustum.farPlaneDistance = 185;
+	data.lightFrustum.orthographicHeight = 64;
+	data.lightFrustum.orthographicWidth = 64;
+
 }
 
 DirectionalLightComponent::~DirectionalLightComponent()
@@ -30,6 +37,9 @@ void DirectionalLightComponent::OnTransformCallback(float4x4 worldMatrix)
 void DirectionalLightComponent::UpdateToLightMap()
 {
 	UpdateData(this->data);
+	data.CalculateLightSpaceMatrix();
+
+	//Always last
 	Lighting::SetDirectionalLight(this->data);
 }
 
@@ -52,8 +62,12 @@ void DirectionalLightComponent::DeSerializationUnique(json& j)
 #ifdef STANDALONE
 void DirectionalLightComponent::OnEditorUnique()
 {
+	//ImGui::DragFloat("Near plane Distance", &data.lightFrustum.nearPlaneDistance);
+	//ImGui::DragFloat("Far plane Distance", &data.lightFrustum.farPlaneDistance);
+	//ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
+	//ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);
+
 	UpdateToLightMap();
-	//ImGui::DragFloat3("Direction", &data.direction.At(0), 0.05f, -1.0f, 1.0f);
 }
 
 void DirectionalLightComponent::MarkAsAlive()
@@ -61,3 +75,12 @@ void DirectionalLightComponent::MarkAsAlive()
 	UpdateToLightMap();
 }
 #endif
+
+void DirectionalLight::CalculateLightSpaceMatrix()
+{
+	lightFrustum.front = (-direction).Normalized();
+	float3 X = float3(0, 1, 0).Cross(lightFrustum.front).Normalized();
+	lightFrustum.up = lightFrustum.front.Cross(X);
+
+	lightSpaceMatrix = lightFrustum.ViewProjMatrix().Transposed();
+}

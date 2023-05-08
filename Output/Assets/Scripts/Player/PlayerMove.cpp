@@ -143,7 +143,7 @@ void PlayerMove::Update()
         return; //NO MORE MOVEMENT
     }
 
-    Aim();
+    bool aiming = Aim();
 
     API_Vector2 input = GetMoveInput();
     //currentInput = input.Distance(API_Vector2::S_Zero());   //TEST
@@ -199,6 +199,11 @@ void PlayerMove::Update()
         {
             walkParticles.StopEmitting();
             playingWalkParticles = false;
+        }
+
+        if (!aiming)
+        {
+            transform.SetRotation(0.0f, atan2(input.x, input.y)* RADTODEG, 0.0f);
         }
     }
 
@@ -314,7 +319,8 @@ void PlayerMove::LookAt(API_Vector3 target)
     lastAimInput = movDir;
 }
 
-void PlayerMove::Aim()
+
+bool PlayerMove::Aim()
 {
     API_Vector2 normalizedInput;
 
@@ -324,7 +330,7 @@ void PlayerMove::Aim()
         input.x = Input::GetGamePadAxis(GamePadAxis::AXIS_RIGHTX);
         input.y = -Input::GetGamePadAxis(GamePadAxis::AXIS_RIGHTY);
 
-        if (abs(input.x) < 10000 && abs(input.y) < 10000) return;
+        if (abs(input.x) < 10000 && abs(input.y) < 10000) return false;
 
         float norm = sqrt(pow(input.x, 2) + pow(input.y, 2));
         normalizedInput.x = input.x / norm;
@@ -343,15 +349,22 @@ void PlayerMove::Aim()
             normalizedInput.y *= 0.71f;
         }
     }
-
+    
+    bool aiming = false;
     //Get last input to keep Aim angle
     if (normalizedInput.x == 0.0f && normalizedInput.y == 0.0f)
+    {
         normalizedInput = lastAimInput;
+    }
     else
+    {
         lastAimInput = normalizedInput;
+        aiming = true;
+    }
 
     aimAngle = atan2(normalizedInput.y, normalizedInput.x) * RADTODEG - 90.0f;
     gameObject.GetTransform().SetRotation(0, aimAngle, 0);
+    return aiming;
 }
 
 API_Vector2 PlayerMove::GetMoveInput()

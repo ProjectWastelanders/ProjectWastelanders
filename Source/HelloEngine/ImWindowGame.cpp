@@ -19,6 +19,7 @@ void ImWindowGame::Update()
 	static bool isFocused = ImGui::IsWindowFocused();
 	if(ImGui::Begin(windowName.c_str()))
 	{
+		isActive = true;
 		if (Application::Instance()->camera->activeGameCamera != nullptr) 
 		{
 			ImVec2 gameDimensions = ImGui::GetContentRegionAvail();
@@ -38,6 +39,10 @@ void ImWindowGame::Update()
 				ImGui::Image((ImTextureID)Application::Instance()->camera->activeGameCamera->frameBuffer.GetTexture(), ImGui::GetContentRegionAvail(), ImVec2(0, 1), ImVec2(1, 0));
 			}
 		}
+	}
+	else
+	{
+		isActive = false;
 	}
 
 	LayerGame::detectInput = isFocused;

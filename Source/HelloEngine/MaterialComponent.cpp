@@ -73,7 +73,9 @@ void MaterialComponent::OnEditor()
 					_resource->material.uniforms[i]->data.name == "ViewPoint" ||
 					_resource->material.uniforms[i]->data.name == "finalBonesMatrices[0]" ||
 					_resource->material.uniforms[i]->data.name == "Actual_Spot" ||
-					_resource->material.uniforms[i]->data.name == "Actual_Point")
+					_resource->material.uniforms[i]->data.name == "Actual_Point" ||
+					_resource->material.uniforms[i]->data.name == "shadowMap" || 
+					_resource->material.uniforms[i]->data.name == "lightSpaceMatrix")
 				{
 					continue;
 				}
@@ -126,6 +128,17 @@ void MaterialComponent::MarkAsAlive()
 
 void MaterialComponent::SetColor(float4 color)
 {
+	SkinnedMeshRenderComponent* comp = _gameObject->GetComponent<SkinnedMeshRenderComponent>();
+	if (comp != nullptr)
+	{
+		comp->GetMesh().color = color;
+	}
+	else
+	{
+		MeshRenderComponent* mehsComp = _gameObject->GetComponent<MeshRenderComponent>();
+		if (mehsComp != nullptr)
+			mehsComp->GetMesh().color = color;
+	}
 }
 
 void MaterialComponent::MaterialDragNDrop()

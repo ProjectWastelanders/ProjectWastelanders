@@ -15,6 +15,8 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
 
     script->AddDragBoxUIImage("Tutorial_Img", &classInstance->Tutorial_Img);
 
+    script->AddCheckBox("Blueprint_Tutorial", &classInstance->bluprintTutorial);
+
     return classInstance;
 }
 
@@ -90,20 +92,53 @@ void Chest::Update()
             Audio::Event("open_chest");
             playerMove->StopOpenChestAnim();
             chestAnimatorPlayer.Play();
-            gameObject.SetActive(false);
+            if (endTutorial == true || bluprintTutorial == false)
+            {
+                Tutorial_Img.GetGameObject().SetActive(false);
+                gameObject.SetActive(false);
+                Console::Log("HOLAAAA");
+            }
+            activeTutorial = true;
+
         }
     }
 
-    if (activeTutorial == true && endTutorial == false)
+    if (activeTutorial == true && endTutorial == false && hideChest == false)
     {
         Tutorial_Img.GetGameObject().SetActive(true);
         if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < finalPos.x)
         {
-            movingPos.x += 0.0032;
+            movingPos.x += 0.32 * Time::GetDeltaTime();
+            timerTutorial = true;
+           
         }
-        Tutorial_Img.GetGameObject().GetTransform().SetPosition(movingPos);
-        Console::Log("GOD");
+        if (timerTutorial == true)
+        {
+            showTutorial += 1.0f * Time::GetDeltaTime();
+            
+        }
+        
     }
+
+    if (showTutorial >=  8.0f) 
+    {
+       
+        if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x > initalPos.x)
+        {
+            movingPos.x -= 0.32 * Time::GetDeltaTime();
+            timerTutorial = false;
+            hideChest = true;
+            Console::Log("ADEUUUU");
+        }
+
+        else if(Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < initalPos.x) {
+            endTutorial = true;
+        }
+
+        
+
+    }
+    Tutorial_Img.GetGameObject().GetTransform().SetPosition(movingPos);
 }
 
 void Chest::OnCollisionStay(API::API_RigidBody other)
@@ -175,8 +210,6 @@ void Chest::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         guideButton.GetGameObject().SetActive(true);
-        activeTutorial = true;
-        Console::Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 }
 
@@ -186,8 +219,6 @@ void Chest::OnCollisionExit(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         guideButton.GetGameObject().SetActive(false);
-        Tutorial_Img.GetGameObject().SetActive(false);
-        activeTutorial = false;
-        endTutorial = true;
+       
     }
 }

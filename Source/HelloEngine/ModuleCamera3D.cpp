@@ -24,6 +24,7 @@ ModuleCamera3D::~ModuleCamera3D()
 bool ModuleCamera3D::Start()
 {
 	sceneCamera = new SceneCameraObject(); // Needs to be allocated manually to avoid initializtion order issues.
+	sceneCamera->frameBuffer.SetDepthMapInfo(); //Initialize depth map for shadow mapping
 	sceneCamera->frameBuffer.SetBufferInfo();
 	sceneCamera->frameBuffer.SetDimensions(ModuleWindow::width, ModuleWindow::height);
 	sceneCamera->isCullingActive = false;

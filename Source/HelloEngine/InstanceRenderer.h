@@ -55,6 +55,8 @@ private:
 
 private:
 
+	ResourceShader* instancedDepthShader = nullptr;
+
 	ResourceShader* instancedShader = nullptr;
 	ResourceShader* perMeshShader = nullptr;
 	ResourceShader* mesh2DShader = nullptr;
@@ -88,6 +90,8 @@ private:
 	// 2D drawing
 
 	bool is2D = false;
+
+	bool depthDraw = true;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;

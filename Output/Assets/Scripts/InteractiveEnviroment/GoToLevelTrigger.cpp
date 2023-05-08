@@ -52,6 +52,7 @@ void GoToLevelTrigger::OnCollisionEnter(API_RigidBody other)
     std::string detectionName = other.GetGameObject().GetName();
     if (detectionName == "Player")
     {
+        Console::Log("QUE PASA?");
         panel.SetActive(true);
 
         /*if (isHub)

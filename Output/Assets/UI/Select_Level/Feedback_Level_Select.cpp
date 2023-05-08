@@ -1,9 +1,12 @@
 #include "Feedback_Level_Select.h"
+#include "../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.h"
+#include "../../Assets/Scripts/Player/PlayerMove.h"
 
 HELLO_ENGINE_API_C Feedback_Level_Select* CreateFeedback_Level_Select(ScriptToInspectorInterface* script)
 {
 	Feedback_Level_Select* classInstance = new Feedback_Level_Select();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+    script->AddDragBoxGameObject("Level Select Panel", &classInstance->panel);
     script->AddDragFloat("Hold Button Time", &classInstance->maxOpenSelectTime);
     script->AddDragBoxUIImage("Hold Bar", &classInstance->chargingBar);
     script->AddDragBoxUIImage("Selected Feedback", &classInstance->isSelected);
@@ -55,7 +58,10 @@ HELLO_ENGINE_API_C Feedback_Level_Select* CreateFeedback_Level_Select(ScriptToIn
     script->AddDragBoxTextureResource("Material Planet Name 2", &classInstance->planetName2);
     script->AddDragBoxTextureResource("Material Planet Name 3", &classInstance->planetName3);
     script->AddDragBoxTextureResource("Material Planet Name 4", &classInstance->planetName4);
-	return classInstance;
+
+    script->AddDragBoxGameObject("Open Menu Interruptor", &classInstance->interruptorGO);
+    script->AddDragBoxGameObject("Player", &classInstance->playerGO);
+    return classInstance;
 }
 
 void Feedback_Level_Select::Start()
@@ -67,9 +73,25 @@ void Feedback_Level_Select::Start()
     planet_Name.SetActive(false);
     LevelSelect();
     SetCurrentLevel();
+
+    interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
+    if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
+    playerMove = (PlayerMove*)playerGO.GetScript("PlayerMove");
+    if (playerMove == nullptr) Console::Log("PlayerMove missing in ArmoryWeaponSelect Script with gunIndex 0.");
 }
 void Feedback_Level_Select::Update()
 {
+    if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
+    {
+        if (!interruptor) return;
+        Input::HandleGamePadButton(GamePadButton::BUTTON_B);
+        // IT'S CORRECT DON'T REMOVE NOTHING
+        interruptor->menuPanel.SetActive(true); // can set false if is not true
+        interruptor->menuPanel.SetActive(false);
+        if (playerMove) playerMove->openingChest = false;
+        interruptor->open = false;
+    }
+
     if ((Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) > 10000 && isPress) && indexLevles >= 1)
     {
         isPress = false;

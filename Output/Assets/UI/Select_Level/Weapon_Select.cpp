@@ -1,4 +1,6 @@
-	#include "Weapon_Select.h"
+#include "Weapon_Select.h"
+#include "../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.h"
+#include "../../Assets/Scripts/Player/PlayerMove.h"
 HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface* script)
 {
 	Weapon_Select* classInstance = new Weapon_Select();
@@ -27,6 +29,8 @@ HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface
 	
 	script->AddDragBoxUIButton("Proceed Button", &classInstance->proceedButton);
 
+	script->AddDragBoxGameObject("Open Menu Interruptor", &classInstance->interruptorGO);
+	script->AddDragBoxGameObject("Player", &classInstance->playerGO);
 	return classInstance;
 }
 
@@ -34,6 +38,11 @@ void Weapon_Select::Start()
 {
 	indexLevles = 3;
 	inOpen = true;
+
+	interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
+	if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
+	playerMove = (PlayerMove*)playerGO.GetScript("PlayerMove");
+	if (playerMove == nullptr) Console::Log("PlayerMove missing in ArmoryWeaponSelect Script with gunIndex 0.");
 }
 void Weapon_Select::Update()
 {
@@ -66,13 +75,21 @@ void Weapon_Select::Update()
 	{
 		if (proceedPanel.GetGameObject().IsActive())
 		{
+			Console::Log("Proceed");
 			weaponSelectPanel.GetGameObject().SetActive(true);
 			proceedPanel.GetGameObject().SetActive(false);
 		}
 		else
 		{
-			inOpen = false;
-			weaponSelectPanel.GetGameObject().SetActive(false);
+			Console::Log("1 Don Juan");
+			if (!interruptor) return;
+			Console::Log("2 Don Juan");
+			Input::HandleGamePadButton(GamePadButton::BUTTON_B);
+			// IT'S CORRECT DON'T REMOVE NOTHING
+			interruptor->menuPanel.SetActive(true); // can set false if is not true
+			interruptor->menuPanel.SetActive(false);
+			if (playerMove) playerMove->openingChest = false;
+			interruptor->open = false;
 		}
 	}
 

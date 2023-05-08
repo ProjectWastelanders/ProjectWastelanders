@@ -5,6 +5,9 @@
 
 #include "API/API.h"
 
+class OpenMenuInterruptor;
+class PlayerMove;
+
 class Weapon_Select : HelloBehavior
 {
 public:
@@ -39,5 +42,10 @@ public:
 	bool inOpen;
 	int indexLevles;
 
+	API_GameObject interruptorGO;
+	OpenMenuInterruptor* interruptor;
+
+	API_GameObject playerGO;
+	PlayerMove* playerMove;
 };
 

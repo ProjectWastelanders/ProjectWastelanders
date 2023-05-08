@@ -15,6 +15,8 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
 
     script->AddDragBoxUIImage("Tutorial_Img", &classInstance->Tutorial_Img);
 
+    script->AddCheckBox("Blueprint_Tutorial", &classInstance->bluprintTutorial);
+
     return classInstance;
 }
 
@@ -90,7 +92,7 @@ void Chest::Update()
             Audio::Event("open_chest");
             playerMove->StopOpenChestAnim();
             chestAnimatorPlayer.Play();
-            if (endTutorial == true)
+            if (endTutorial == true || bluprintTutorial == false)
             {
                 Tutorial_Img.GetGameObject().SetActive(false);
                 gameObject.SetActive(false);
@@ -112,13 +114,13 @@ void Chest::Update()
         }
         if (timerTutorial == true)
         {
-            showTutorial += 0.1f;
+            showTutorial += 1.0f * Time::GetDeltaTime();
             
         }
         
     }
 
-    if (showTutorial >=  10.0f) 
+    if (showTutorial >=  8.0f) 
     {
        
         if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x > initalPos.x)
@@ -126,6 +128,7 @@ void Chest::Update()
             movingPos.x -= 0.32 * Time::GetDeltaTime();
             timerTutorial = false;
             hideChest = true;
+            Console::Log("ADEUUUU");
         }
 
         else if(Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < initalPos.x) {

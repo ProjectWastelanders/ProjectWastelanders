@@ -9950,24 +9950,6 @@
                     },
                     {
                         "Fade out Time": 1.5
-                    },
-                    {
-                        "Material componentt": 1312048393
-                    },
-                    {
-                        "R (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "G (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "B (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "Fade In time": 1.5
-                    },
-                    {
-                        "Fade out Time": 1.5
                     }
                 ],
                 "Script Resource": 3127607323,
@@ -10216,24 +10198,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Material componentt": 1291575782
-                    },
-                    {
-                        "R (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "G (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "B (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "Fade In time": 1.5
-                    },
-                    {
-                        "Fade out Time": 1.5
-                    },
                     {
                         "Material componentt": 1291575782
                     },
@@ -10792,24 +10756,6 @@
                     },
                     {
                         "Fade out Time": 1.5
-                    },
-                    {
-                        "Material componentt": 3010741293
-                    },
-                    {
-                        "R (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "G (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "B (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "Fade In time": 1.5
-                    },
-                    {
-                        "Fade out Time": 1.5
                     }
                 ],
                 "Script Resource": 3127607323,
@@ -11010,24 +10956,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Material componentt": 622084520
-                    },
-                    {
-                        "R (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "G (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "B (MIN 1.0F)": 1.5
-                    },
-                    {
-                        "Fade In time": 1.5
-                    },
-                    {
-                        "Fade out Time": 1.5
-                    },
                     {
                         "Material componentt": 622084520
                     },
@@ -11413,31 +11341,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Is Hub Scene": true
+                        "Active Panel": 4119569708
                     },
                     {
-                        "(IF NO HUB) Current Level": 1
-                    },
-                    {
-                        "Scene path and name: ": "LVL1_Blockout.HScene"
-                    },
-                    {
-                        "Is Hub Scene": true
-                    },
-                    {
-                        "(IF NO HUB) Current Level": 1
-                    },
-                    {
-                        "Scene path and name: ": "LVL1_Blockout.HScene"
-                    },
-                    {
-                        "Is Hub Scene": true
-                    },
-                    {
-                        "(IF NO HUB) Current Level": 1
-                    },
-                    {
-                        "Scene path and name: ": "LVL1_Blockout.HScene"
+                        "Active Panel": 4119569708
                     }
                 ],
                 "Script Resource": 2719578167,
@@ -11506,12 +11413,6 @@
                         "Offset_Z": -7.0
                     },
                     {
-                        "Orbital Multiplier": 2.0
-                    },
-                    {
-                        "Earthquake Multiplier": 0.20000000298023224
-                    },
-                    {
                         "Rot_X": 50.0
                     },
                     {
@@ -11521,16 +11422,16 @@
                         "Rot_Z": 0.0
                     },
                     {
+                        "Orbital Multiplier": 2.0
+                    },
+                    {
+                        "Earthquake Multiplier": 0.20000000298023224
+                    },
+                    {
                         "SafeZone_Distance": 10.0
                     },
                     {
-                        "Use safe zone: ": false
-                    },
-                    {
-                        "Test_Orbital": false
-                    },
-                    {
-                        "Test_VibrationTime": 0.0
+                        "Use safe zone": true
                     },
                     {
                         "Target": 1862169540
@@ -11548,12 +11449,6 @@
                         "Offset_Z": -7.0
                     },
                     {
-                        "Orbital Multiplier": 2.0
-                    },
-                    {
-                        "Earthquake Multiplier": 0.20000000298023224
-                    },
-                    {
                         "Rot_X": 50.0
                     },
                     {
@@ -11563,58 +11458,16 @@
                         "Rot_Z": 0.0
                     },
                     {
-                        "SafeZone_Distance": 10.0
-                    },
-                    {
-                        "Use safe zone: ": false
-                    },
-                    {
-                        "Test_Orbital": false
-                    },
-                    {
-                        "Test_VibrationTime": 0.0
-                    },
-                    {
-                        "Target": 1862169540
-                    },
-                    {
-                        "Delay": 0.10000000149011612
-                    },
-                    {
-                        "Offset_X": 0.0
-                    },
-                    {
-                        "Offset_Y": 10.0
-                    },
-                    {
-                        "Offset_Z": -7.0
-                    },
-                    {
                         "Orbital Multiplier": 2.0
                     },
                     {
                         "Earthquake Multiplier": 0.20000000298023224
                     },
                     {
-                        "Rot_X": 50.0
-                    },
-                    {
-                        "Rot_Y": 0.0
-                    },
-                    {
-                        "Rot_Z": 0.0
-                    },
-                    {
                         "SafeZone_Distance": 10.0
                     },
                     {
-                        "Use safe zone: ": false
-                    },
-                    {
-                        "Test_Orbital": false
-                    },
-                    {
-                        "Test_VibrationTime": 0.0
+                        "Use safe zone": true
                     }
                 ],
                 "Script Resource": 577361718,
@@ -13022,12 +12875,6 @@
                     },
                     {
                         "Gun Index": 4
-                    },
-                    {
-                        "BluePrint Image Component": 2341798902
-                    },
-                    {
-                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 2406654245,
@@ -13076,12 +12923,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "BluePrint Image Component": 1422799981
-                    },
-                    {
-                        "Gun Index": 3
-                    },
                     {
                         "BluePrint Image Component": 1422799981
                     },
@@ -13152,12 +12993,6 @@
                     },
                     {
                         "Gun Index": 2
-                    },
-                    {
-                        "BluePrint Image Component": 1926729553
-                    },
-                    {
-                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 999461329,
@@ -13206,12 +13041,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "BluePrint Image Component": 419620740
-                    },
-                    {
-                        "Gun Index": 1
-                    },
                     {
                         "BluePrint Image Component": 419620740
                     },
@@ -13323,12 +13152,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Text Blueprints": 2108451898
-                    },
-                    {
-                        "PlayerStorage GO": 1862169540
-                    },
                     {
                         "Text Blueprints": 2108451898
                     },
@@ -13515,45 +13338,6 @@
                     },
                     {
                         "Player": 1862169540
-                    },
-                    {
-                        "Weapon": 2125686633
-                    },
-                    {
-                        "Next Weapon": 740957820
-                    },
-                    {
-                        "Panel Upgrate": 911611964
-                    },
-                    {
-                        "Panel Unlock": 911611964
-                    },
-                    {
-                        "Next Panel Upgrate": 2121029335
-                    },
-                    {
-                        "Next Panel Unlock": 2412948481
-                    },
-                    {
-                        "Material Weapon": 1048084744
-                    },
-                    {
-                        "Material Weapon Locked": 2413304871
-                    },
-                    {
-                        "SelectedWeapon": 1046225449
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 0
-                    },
-                    {
-                        "Open Menu Interruptor": 1766493025
-                    },
-                    {
-                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -13607,48 +13391,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Weapon": 740957820
-                    },
-                    {
-                        "Next Weapon": 3667161260
-                    },
-                    {
-                        "Prev Weapon": 2125686633
-                    },
-                    {
-                        "Panel Upgrate": 2121029335
-                    },
-                    {
-                        "Panel Unlock": 2412948481
-                    },
-                    {
-                        "Next Panel Upgrate": 1250319448
-                    },
-                    {
-                        "Next Panel Unlock": 1692539270
-                    },
-                    {
-                        "Prev Panel Upgrate": 911611964
-                    },
-                    {
-                        "Prev Panel Unlock": 911611964
-                    },
-                    {
-                        "Material Weapon": 2760442950
-                    },
-                    {
-                        "Material Weapon Locked": 567303012
-                    },
-                    {
-                        "SelectedWeapon": 1046225449
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 4
-                    },
                     {
                         "Weapon": 740957820
                     },
@@ -13868,48 +13610,6 @@
                     },
                     {
                         "Gun Index": 3
-                    },
-                    {
-                        "Weapon": 3667161260
-                    },
-                    {
-                        "Next Weapon": 1398139035
-                    },
-                    {
-                        "Prev Weapon": 740957820
-                    },
-                    {
-                        "Panel Upgrate": 1250319448
-                    },
-                    {
-                        "Panel Unlock": 1692539270
-                    },
-                    {
-                        "Next Panel Upgrate": 385359660
-                    },
-                    {
-                        "Next Panel Unlock": 801303102
-                    },
-                    {
-                        "Prev Panel Upgrate": 2121029335
-                    },
-                    {
-                        "Prev Panel Unlock": 2412948481
-                    },
-                    {
-                        "Material Weapon": 426950729
-                    },
-                    {
-                        "Material Weapon Locked": 673939956
-                    },
-                    {
-                        "SelectedWeapon": 1046225449
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -13963,48 +13663,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Weapon": 1398139035
-                    },
-                    {
-                        "Next Weapon": 2993926487
-                    },
-                    {
-                        "Prev Weapon": 3667161260
-                    },
-                    {
-                        "Panel Upgrate": 385359660
-                    },
-                    {
-                        "Panel Unlock": 801303102
-                    },
-                    {
-                        "Next Panel Upgrate": 2021939713
-                    },
-                    {
-                        "Next Panel Unlock": 3043641959
-                    },
-                    {
-                        "Prev Panel Upgrate": 1250319448
-                    },
-                    {
-                        "Prev Panel Unlock": 1692539270
-                    },
-                    {
-                        "Material Weapon": 2428347813
-                    },
-                    {
-                        "Material Weapon Locked": 2342560247
-                    },
-                    {
-                        "SelectedWeapon": 1046225449
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 2
-                    },
                     {
                         "Weapon": 1398139035
                     },
@@ -14206,39 +13864,6 @@
                     },
                     {
                         "Gun Index": 1
-                    },
-                    {
-                        "Weapon": 2993926487
-                    },
-                    {
-                        "Prev Weapon": 1398139035
-                    },
-                    {
-                        "Panel Upgrate": 2021939713
-                    },
-                    {
-                        "Panel Unlock": 3043641959
-                    },
-                    {
-                        "Prev Panel Upgrate": 385359660
-                    },
-                    {
-                        "Prev Panel Unlock": 801303102
-                    },
-                    {
-                        "Material Weapon": 2984314687
-                    },
-                    {
-                        "Material Weapon Locked": 4116342376
-                    },
-                    {
-                        "SelectedWeapon": 1046225449
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -14295,7 +13920,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14371,27 +13996,6 @@
                     },
                     {
                         "Gun Index": 0
-                    },
-                    {
-                        "Upgrate 1": 604812651
-                    },
-                    {
-                        "Upgrate 2": 4097172583
-                    },
-                    {
-                        "Upgrate 3": 3294404498
-                    },
-                    {
-                        "Panel Upgrate": 911611964
-                    },
-                    {
-                        "Player": 1862169540
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 0
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -14408,7 +14012,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14453,7 +14057,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14498,7 +14102,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14543,7 +14147,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14583,7 +14187,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14639,18 +14243,6 @@
                     },
                     {
                         "Gun Index": 4
-                    },
-                    {
-                        "Unlock": 2830347253
-                    },
-                    {
-                        "Panel Unlock": 2412948481
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -14667,7 +14259,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14712,7 +14304,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14752,7 +14344,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14828,27 +14420,6 @@
                     },
                     {
                         "Gun Index": 4
-                    },
-                    {
-                        "Upgrate 1": 2912728259
-                    },
-                    {
-                        "Upgrate 2": 173239198
-                    },
-                    {
-                        "Upgrate 3": 818036790
-                    },
-                    {
-                        "Panel Upgrate": 2121029335
-                    },
-                    {
-                        "Player": 1862169540
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 4
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -14865,7 +14436,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14910,7 +14481,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -14955,7 +14526,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15000,7 +14571,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15040,7 +14611,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15096,18 +14667,6 @@
                     },
                     {
                         "Gun Index": 3
-                    },
-                    {
-                        "Unlock": 3848750910
-                    },
-                    {
-                        "Panel Unlock": 1692539270
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -15124,7 +14683,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15169,7 +14728,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15209,7 +14768,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15285,27 +14844,6 @@
                     },
                     {
                         "Gun Index": 3
-                    },
-                    {
-                        "Upgrate 1": 2388101176
-                    },
-                    {
-                        "Upgrate 2": 3807946136
-                    },
-                    {
-                        "Upgrate 3": 1866621559
-                    },
-                    {
-                        "Panel Upgrate": 1250319448
-                    },
-                    {
-                        "Player": 1862169540
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 3
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -15322,7 +14860,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15367,7 +14905,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15412,7 +14950,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15457,7 +14995,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15497,7 +15035,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15553,18 +15091,6 @@
                     },
                     {
                         "Gun Index": 2
-                    },
-                    {
-                        "Unlock": 193056597
-                    },
-                    {
-                        "Panel Unlock": 801303102
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -15581,7 +15107,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15626,7 +15152,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15666,7 +15192,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15742,27 +15268,6 @@
                     },
                     {
                         "Gun Index": 2
-                    },
-                    {
-                        "Upgrate 1": 2759158044
-                    },
-                    {
-                        "Upgrate 2": 2929867724
-                    },
-                    {
-                        "Upgrate 3": 3733990972
-                    },
-                    {
-                        "Panel Upgrate": 385359660
-                    },
-                    {
-                        "Player": 1862169540
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 2
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -15779,7 +15284,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15824,7 +15329,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15869,7 +15374,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15914,7 +15419,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -15954,7 +15459,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16010,18 +15515,6 @@
                     },
                     {
                         "Gun Index": 1
-                    },
-                    {
-                        "Unlock": 595344786
-                    },
-                    {
-                        "Panel Unlock": 3043641959
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 1200723108,
@@ -16038,7 +15531,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16083,7 +15576,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16123,7 +15616,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16199,27 +15692,6 @@
                     },
                     {
                         "Gun Index": 1
-                    },
-                    {
-                        "Upgrate 1": 1911632372
-                    },
-                    {
-                        "Upgrate 2": 1605769859
-                    },
-                    {
-                        "Upgrate 3": 1599605854
-                    },
-                    {
-                        "Panel Upgrate": 2021939713
-                    },
-                    {
-                        "Player": 1862169540
-                    },
-                    {
-                        "List Weapons": 3432315266
-                    },
-                    {
-                        "Gun Index": 1
                     }
                 ],
                 "Script Resource": 1414171341,
@@ -16236,7 +15708,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16281,7 +15753,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16326,7 +15798,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16371,7 +15843,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -16504,27 +15976,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Number of menus": 4
-                    },
-                    {
-                        "Menu to Open 1": 1831149941
-                    },
-                    {
-                        "Menu to Open 2": 2867293371
-                    },
-                    {
-                        "Menu to Open 3": 4071677295
-                    },
-                    {
-                        "Menu to Open 4": 3432315266
-                    },
-                    {
-                        "Menu Panel": 2963029982
-                    },
-                    {
-                        "Button Guide": 3437375339
-                    },
                     {
                         "Number of menus": 4
                     },
@@ -16848,93 +16299,6 @@
                     },
                     {
                         "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Velocity": 7.5
-                    },
-                    {
-                        "Upgrade Velocity": 9.0
-                    },
-                    {
-                        "SecToMaxVel": 0.20000000298023224
-                    },
-                    {
-                        "SecToZeroVel": 0.20000000298023224
-                    },
-                    {
-                        "Y tp limit": -20.0
-                    },
-                    {
-                        "Rigid Body": 1862169540
-                    },
-                    {
-                        "Dash Time": 0.5
-                    },
-                    {
-                        "Dash Distance": 6.0
-                    },
-                    {
-                        "Upgrade Dash Distance": 8.0
-                    },
-                    {
-                        "Dash Cooldown": 6.0
-                    },
-                    {
-                        "Upgrade Dash Cooldown": 3.0
-                    },
-                    {
-                        "AnimationPlayer": 1477466868
-                    },
-                    {
-                        "Dash Animation": 3707604139
-                    },
-                    {
-                        "Idle Animation 1": 738149381
-                    },
-                    {
-                        "Idle Animation 2": 2426153329
-                    },
-                    {
-                        "Idle Animation 3": 1590499778
-                    },
-                    {
-                        "Run Forward Animation": 781813718
-                    },
-                    {
-                        "Run Back Animation": 915742792
-                    },
-                    {
-                        "Run Left Animation": 4072259668
-                    },
-                    {
-                        "Run Right Animation": 3628832266
-                    },
-                    {
-                        "Shoot Duals Animation": 2706901869
-                    },
-                    {
-                        "Shoot SemiAuto Animation": 2706901869
-                    },
-                    {
-                        "Shoot Automatic Animation": 2706901869
-                    },
-                    {
-                        "Shoot Burst Animation": 2706901869
-                    },
-                    {
-                        "Shoot Shotgun Animation": 2706901869
-                    },
-                    {
-                        "Hit Animation": 359781210
-                    },
-                    {
-                        "Open Chest Animation": 2410125527
-                    },
-                    {
-                        "Dead Animation": 296001631
-                    },
-                    {
-                        "Player Stats GO": 1862169540
                     }
                 ],
                 "Script Resource": 102275363,
@@ -16943,45 +16307,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Max HP": 100.0
-                    },
-                    {
-                        "Current HP": 100.0
-                    },
-                    {
-                        "Upgraded Max HP": 125.0
-                    },
-                    {
-                        "Resistance": 100.0
-                    },
-                    {
-                        "Deadline Percentage": 20.0
-                    },
-                    {
-                        "Upgraded Deadline Percentage": 50.0
-                    },
-                    {
-                        "Deadline Heal Amount": 2.5
-                    },
-                    {
-                        "Upgraded Deadline Heal Amount": 5.0
-                    },
-                    {
-                        "Aid Kit Heal Amount": 30.0
-                    },
-                    {
-                        "Upgraded Aid Kit Heal Amount": 60.0
-                    },
-                    {
-                        "Passive Heal Particles": 913497443
-                    },
-                    {
-                        "Kid Heal Particles": 3316874580
-                    },
-                    {
-                        "Player GO": 1862169540
-                    },
                     {
                         "Max HP": 100.0
                     },
@@ -17132,39 +16457,6 @@
                     },
                     {
                         "Fast Swap Delay": 0.5
-                    },
-                    {
-                        "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Base Gun": 0
-                    },
-                    {
-                        "Normal Gun": -1
-                    },
-                    {
-                        "Special Gun": -1
-                    },
-                    {
-                        "Duals": 3550167112
-                    },
-                    {
-                        "Semiautomatic": 3701521640
-                    },
-                    {
-                        "Automatic": 1305371143
-                    },
-                    {
-                        "Burst": 4031330739
-                    },
-                    {
-                        "Shotgun": 2049488206
-                    },
-                    {
-                        "Swap Delay": 1.0
-                    },
-                    {
-                        "Fast Swap Delay": 0.5
                     }
                 ],
                 "Script Resource": 2666385646,
@@ -17173,9 +16465,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Level Index": 0
-                    },
                     {
                         "Level Index": 0
                     },
@@ -22762,9 +22051,6 @@
                     },
                     {
                         "Gun Type": 0
-                    },
-                    {
-                        "Gun Type": 0
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -22773,63 +22059,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3024727231
-                    },
-                    {
-                        "Projectile Speed": 30.0
-                    },
-                    {
-                        "Projectile Damage": 5.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 5.0
-                    },
-                    {
-                        "Projectile Lifetime": 1.0
-                    },
-                    {
-                        "Projectile Spawn": 3550167112
-                    },
-                    {
-                        "Second Projectile Spawn": 2009336184
-                    },
-                    {
-                        "Projectile ScaleX": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleY": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleZ": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per second": 1.2000000476837158
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Burst Space": 0.10000000149011612
-                    },
-                    {
-                        "Second Gun GO": 2009336184
-                    },
-                    {
-                        "Slow %": 0.0
-                    },
-                    {
-                        "Freeze %": 0.0
-                    },
-                    {
-                        "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Ammo Type": 0
-                    },
-                    {
-                        "Audio Event String": "w_basic"
-                    },
                     {
                         "Projectile Pull": 3024727231
                     },
@@ -22988,9 +22217,6 @@
                     },
                     {
                         "Gun Type": 1
-                    },
-                    {
-                        "Gun Type": 1
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -22999,48 +22225,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3024727231
-                    },
-                    {
-                        "Projectile Speed": 80.0
-                    },
-                    {
-                        "Projectile Damage": 60.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 60.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.5
-                    },
-                    {
-                        "Projectile Spawn": 3701521640
-                    },
-                    {
-                        "Projectile ScaleX": 0.20000000298023224
-                    },
-                    {
-                        "Projectile ScaleY": 0.20000000298023224
-                    },
-                    {
-                        "Projectile ScaleZ": 0.4000000059604645
-                    },
-                    {
-                        "Projectiles per second": 1.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_semi"
-                    },
                     {
                         "Projectile Pull": 3024727231
                     },
@@ -23169,9 +22353,6 @@
                     },
                     {
                         "Gun Type": 2
-                    },
-                    {
-                        "Gun Type": 2
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -23180,48 +22361,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3024727231
-                    },
-                    {
-                        "Projectile Speed": 40.0
-                    },
-                    {
-                        "Projectile Damage": 1.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 1.0
-                    },
-                    {
-                        "Projectile Lifetime": 1.0
-                    },
-                    {
-                        "Projectile Spawn": 1305371143
-                    },
-                    {
-                        "Projectile ScaleX": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleY": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleZ": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per second": 10.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_automatic"
-                    },
                     {
                         "Projectile Pull": 3024727231
                     },
@@ -23350,9 +22489,6 @@
                     },
                     {
                         "Gun Type": 3
-                    },
-                    {
-                        "Gun Type": 3
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -23361,54 +22497,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3024727231
-                    },
-                    {
-                        "Projectile Speed": 35.0
-                    },
-                    {
-                        "Projectile Damage": 20.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 20.0
-                    },
-                    {
-                        "Projectile Lifetime": 1.0
-                    },
-                    {
-                        "Projectile Spawn": 4031330739
-                    },
-                    {
-                        "Projectile ScaleX": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleY": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleZ": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per second": 1.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Burst Space": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per burst": 3
-                    },
-                    {
-                        "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_burst"
-                    },
                     {
                         "Projectile Pull": 3024727231
                     },
@@ -23549,9 +22637,6 @@
                     },
                     {
                         "Gun Type": 4
-                    },
-                    {
-                        "Gun Type": 4
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -23560,54 +22645,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3024727231
-                    },
-                    {
-                        "Projectile Speed": 40.0
-                    },
-                    {
-                        "Projectile Damage": 5.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 5.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.20000000298023224
-                    },
-                    {
-                        "Projectile Spawn": 2049488206
-                    },
-                    {
-                        "Projectile ScaleX": 0.05000000074505806
-                    },
-                    {
-                        "Projectile ScaleY": 0.05000000074505806
-                    },
-                    {
-                        "Projectile ScaleZ": 0.05000000074505806
-                    },
-                    {
-                        "Projectiles per second": 1.2999999523162842
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Pellets per shot": 3
-                    },
-                    {
-                        "Pellets Dispersion": 0.20000000298023224
-                    },
-                    {
-                        "Player Stats GO": 1862169540
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_shotgun"
-                    },
                     {
                         "Projectile Pull": 3024727231
                     },
@@ -23743,9 +22780,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Gun Type": 5
-                    },
                     {
                         "Gun Type": 5
                     },
@@ -25212,18 +24246,6 @@
                     },
                     {
                         "Shotgun Bomb Pull Size": 0
-                    },
-                    {
-                        "Player": 1862169540
-                    },
-                    {
-                        "Pull Size": 20
-                    },
-                    {
-                        "Projectile Prefab": 633942339
-                    },
-                    {
-                        "Shotgun Bomb Pull Size": 0
                     }
                 ],
                 "Script Resource": 211675320,
@@ -25447,6 +24469,18 @@
                         "Menu to Open 1": 2937841997
                     },
                     {
+                        "Menu to Open 2": 726755960
+                    },
+                    {
+                        "Menu to Open 3": 3616324842
+                    },
+                    {
+                        "Menu to Open 4": 2934290476
+                    },
+                    {
+                        "Menu to Open 5": 2546321765
+                    },
+                    {
                         "Menu Panel": 1310414073
                     },
                     {
@@ -25459,16 +24493,16 @@
                         "Menu to Open 1": 2937841997
                     },
                     {
-                        "Menu Panel": 1310414073
+                        "Menu to Open 2": 726755960
                     },
                     {
-                        "Button Guide": 2225710694
+                        "Menu to Open 3": 3616324842
                     },
                     {
-                        "Number of menus": 1
+                        "Menu to Open 4": 2934290476
                     },
                     {
-                        "Menu to Open 1": 2937841997
+                        "Menu to Open 5": 2546321765
                     },
                     {
                         "Menu Panel": 1310414073
@@ -25491,7 +24525,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -25523,7 +24557,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -25624,39 +24658,6 @@
                     },
                     {
                         "Player": 1862169540
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Movement": 1137202544
-                    },
-                    {
-                        "Armory": 4046148656
-                    },
-                    {
-                        "Health": 2895536623
-                    },
-                    {
-                        "Special": 1570224826
-                    },
-                    {
-                        "PanelMovement": 726755960
-                    },
-                    {
-                        "PanelAbility2": 3616324842
-                    },
-                    {
-                        "PanelAbility3": 2934290476
-                    },
-                    {
-                        "PanelAbility4": 2546321765
-                    },
-                    {
-                        "Open Menu Interruptor": 971135935
-                    },
-                    {
-                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1486068309,
@@ -25673,7 +24674,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -25713,7 +24714,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -25791,27 +24792,6 @@
                     },
                     {
                         "Description 4": 197488503
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 726755960
-                    },
-                    {
-                        "AbilityButton": 1137202544
-                    },
-                    {
-                        "Description 1": 6080464
-                    },
-                    {
-                        "Description 2": 3286644510
-                    },
-                    {
-                        "Description 3": 762428728
-                    },
-                    {
-                        "Description 4": 197488503
                     }
                 ],
                 "Script Resource": 792501851,
@@ -25828,7 +24808,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -25906,27 +24886,6 @@
                     },
                     {
                         "Description 4": 2653277242
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 3616324842
-                    },
-                    {
-                        "AbilityButton": 4046148656
-                    },
-                    {
-                        "Description 1": 886436084
-                    },
-                    {
-                        "Description 2": 2362856287
-                    },
-                    {
-                        "Description 3": 4085303271
-                    },
-                    {
-                        "Description 4": 2653277242
                     }
                 ],
                 "Script Resource": 792501851,
@@ -25943,7 +24902,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -26027,30 +24986,6 @@
                     },
                     {
                         "Description 5": 3732501824
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 2934290476
-                    },
-                    {
-                        "AbilityButton": 2895536623
-                    },
-                    {
-                        "Description 1": 3020994421
-                    },
-                    {
-                        "Description 2": 1888929368
-                    },
-                    {
-                        "Description 3": 855224226
-                    },
-                    {
-                        "Description 4": 2425893789
-                    },
-                    {
-                        "Description 5": 3732501824
                     }
                 ],
                 "Script Resource": 792501851,
@@ -26067,7 +25002,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -26139,24 +25074,6 @@
                     },
                     {
                         "Description 3": 2861744828
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 2546321765
-                    },
-                    {
-                        "AbilityButton": 1570224826
-                    },
-                    {
-                        "Description 1": 1387223882
-                    },
-                    {
-                        "Description 2": 2835375609
-                    },
-                    {
-                        "Description 3": 2861744828
                     }
                 ],
                 "Script Resource": 792501851,
@@ -26173,7 +25090,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -26214,7 +25131,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -26242,7 +25159,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 0.699999988079071,
                 "PositionY": 0.6100000143051147,
                 "Scale": 0.5,
@@ -26257,12 +25174,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Text Blueprints": 2314891765
-                    },
-                    {
-                        "PlayerStorage GO": 1862169540
-                    },
                     {
                         "Text Blueprints": 2314891765
                     },
@@ -26290,7 +25201,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -26330,7 +25241,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -26366,48 +25277,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Upgrate 1": 2761944280
-                    },
-                    {
-                        "Skillpoints needed LvL 1": 1
-                    },
-                    {
-                        "Upgrate 2": 3636875960
-                    },
-                    {
-                        "Skillpoints needed LvL 2": 2
-                    },
-                    {
-                        "Upgrate 3": 1734210071
-                    },
-                    {
-                        "Skillpoints needed LvL 3": 2
-                    },
-                    {
-                        "Upgrate 4": 1613695234
-                    },
-                    {
-                        "Skillpoints needed LvL 4": 3
-                    },
-                    {
-                        "Skillpoints needed LvL 5": 0
-                    },
-                    {
-                        "Upgrade Number": 4
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 726755960
-                    },
-                    {
-                        "Tree Index": 0
-                    },
-                    {
-                        "Player": 1862169540
-                    },
                     {
                         "Upgrate 1": 2761944280
                     },
@@ -26573,21 +25442,6 @@
                     },
                     {
                         "Button": 2761944280
-                    },
-                    {
-                        "Current Description": 6080464
-                    },
-                    {
-                        "Next Description": 3286644510
-                    },
-                    {
-                        "Description 4": 762428728
-                    },
-                    {
-                        "Description 5": 197488503
-                    },
-                    {
-                        "Button": 2761944280
                     }
                 ],
                 "Script Resource": 911506408,
@@ -26641,21 +25495,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 3286644510
-                    },
-                    {
-                        "Next Description": 762428728
-                    },
-                    {
-                        "Previous Description": 6080464
-                    },
-                    {
-                        "Description 4": 197488503
-                    },
-                    {
-                        "Button": 3636875960
-                    },
                     {
                         "Current Description": 3286644510
                     },
@@ -26767,21 +25606,6 @@
                     },
                     {
                         "Button": 1734210071
-                    },
-                    {
-                        "Current Description": 762428728
-                    },
-                    {
-                        "Next Description": 197488503
-                    },
-                    {
-                        "Previous Description": 3286644510
-                    },
-                    {
-                        "Description 4": 6080464
-                    },
-                    {
-                        "Button": 1734210071
                     }
                 ],
                 "Script Resource": 911506408,
@@ -26835,21 +25659,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 197488503
-                    },
-                    {
-                        "Previous Description": 762428728
-                    },
-                    {
-                        "Description 4": 6080464
-                    },
-                    {
-                        "Description 5": 3286644510
-                    },
-                    {
-                        "Button": 1613695234
-                    },
                     {
                         "Current Description": 197488503
                     },
@@ -27055,7 +25864,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -27091,48 +25900,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Upgrate 1": 1168933361
-                    },
-                    {
-                        "Skillpoints needed LvL 1": 1
-                    },
-                    {
-                        "Upgrate 2": 1269201573
-                    },
-                    {
-                        "Skillpoints needed LvL 2": 2
-                    },
-                    {
-                        "Upgrate 3": 2720533225
-                    },
-                    {
-                        "Skillpoints needed LvL 3": 2
-                    },
-                    {
-                        "Upgrate 4": 2480871420
-                    },
-                    {
-                        "Skillpoints needed LvL 4": 3
-                    },
-                    {
-                        "Skillpoints needed LvL 5": 0
-                    },
-                    {
-                        "Upgrade Number": 4
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 3616324842
-                    },
-                    {
-                        "Tree Index": 1
-                    },
-                    {
-                        "Player": 1862169540
-                    },
                     {
                         "Upgrate 1": 1168933361
                     },
@@ -27298,21 +26065,6 @@
                     },
                     {
                         "Button": 1168933361
-                    },
-                    {
-                        "Current Description": 886436084
-                    },
-                    {
-                        "Next Description": 2362856287
-                    },
-                    {
-                        "Description 4": 4085303271
-                    },
-                    {
-                        "Description 5": 2653277242
-                    },
-                    {
-                        "Button": 1168933361
                     }
                 ],
                 "Script Resource": 911506408,
@@ -27366,18 +26118,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 2362856287
-                    },
-                    {
-                        "Next Description": 4085303271
-                    },
-                    {
-                        "Previous Description": 886436084
-                    },
-                    {
-                        "Button": 1269201573
-                    },
                     {
                         "Current Description": 2362856287
                     },
@@ -27477,18 +26217,6 @@
                     },
                     {
                         "Button": 2720533225
-                    },
-                    {
-                        "Current Description": 4085303271
-                    },
-                    {
-                        "Next Description": 2653277242
-                    },
-                    {
-                        "Previous Description": 2362856287
-                    },
-                    {
-                        "Button": 2720533225
                     }
                 ],
                 "Script Resource": 911506408,
@@ -27542,15 +26270,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 2653277242
-                    },
-                    {
-                        "Previous Description": 4085303271
-                    },
-                    {
-                        "Button": 2480871420
-                    },
                     {
                         "Current Description": 2653277242
                     },
@@ -27744,7 +26463,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -27781,51 +26500,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Upgrate 1": 2412762651
-                    },
-                    {
-                        "Skillpoints needed LvL 1": 1
-                    },
-                    {
-                        "Upgrate 2": 2777578711
-                    },
-                    {
-                        "Skillpoints needed LvL 2": 2
-                    },
-                    {
-                        "Upgrate 3": 1199903426
-                    },
-                    {
-                        "Skillpoints needed LvL 3": 2
-                    },
-                    {
-                        "Upgrate 4": 1362514346
-                    },
-                    {
-                        "Skillpoints needed LvL 4": 2
-                    },
-                    {
-                        "Upgrate 5": 963583409
-                    },
-                    {
-                        "Skillpoints needed LvL 5": 3
-                    },
-                    {
-                        "Upgrade Number": 5
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 2934290476
-                    },
-                    {
-                        "Tree Index": 2
-                    },
-                    {
-                        "Player": 1862169540
-                    },
                     {
                         "Upgrate 1": 2412762651
                     },
@@ -28003,24 +26677,6 @@
                     },
                     {
                         "Button": 2412762651
-                    },
-                    {
-                        "Current Description": 3020994421
-                    },
-                    {
-                        "Next Description": 1888929368
-                    },
-                    {
-                        "Previous Description": 855224226
-                    },
-                    {
-                        "Description 4": 2425893789
-                    },
-                    {
-                        "Description 5": 3732501824
-                    },
-                    {
-                        "Button": 2412762651
                     }
                 ],
                 "Script Resource": 911506408,
@@ -28074,24 +26730,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 1888929368
-                    },
-                    {
-                        "Next Description": 855224226
-                    },
-                    {
-                        "Previous Description": 3020994421
-                    },
-                    {
-                        "Description 4": 2425893789
-                    },
-                    {
-                        "Description 5": 3732501824
-                    },
-                    {
-                        "Button": 2777578711
-                    },
                     {
                         "Current Description": 1888929368
                     },
@@ -28215,24 +26853,6 @@
                     },
                     {
                         "Button": 1199903426
-                    },
-                    {
-                        "Current Description": 855224226
-                    },
-                    {
-                        "Next Description": 2425893789
-                    },
-                    {
-                        "Previous Description": 1888929368
-                    },
-                    {
-                        "Description 4": 3020994421
-                    },
-                    {
-                        "Description 5": 3732501824
-                    },
-                    {
-                        "Button": 1199903426
                     }
                 ],
                 "Script Resource": 911506408,
@@ -28321,24 +26941,6 @@
                     },
                     {
                         "Button": 1362514346
-                    },
-                    {
-                        "Current Description": 2425893789
-                    },
-                    {
-                        "Next Description": 3732501824
-                    },
-                    {
-                        "Previous Description": 855224226
-                    },
-                    {
-                        "Description 4": 1888929368
-                    },
-                    {
-                        "Description 5": 3020994421
-                    },
-                    {
-                        "Button": 1362514346
                     }
                 ],
                 "Script Resource": 911506408,
@@ -28392,24 +26994,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 3732501824
-                    },
-                    {
-                        "Next Description": 3020994421
-                    },
-                    {
-                        "Previous Description": 2425893789
-                    },
-                    {
-                        "Description 4": 1888929368
-                    },
-                    {
-                        "Description 5": 855224226
-                    },
-                    {
-                        "Button": 963583409
-                    },
                     {
                         "Current Description": 3732501824
                     },
@@ -28661,7 +27245,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -28696,45 +27280,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Upgrate 1": 2692458665
-                    },
-                    {
-                        "Skillpoints needed LvL 1": 3
-                    },
-                    {
-                        "Upgrate 2": 2112049340
-                    },
-                    {
-                        "Skillpoints needed LvL 2": 3
-                    },
-                    {
-                        "Upgrate 3": 486754283
-                    },
-                    {
-                        "Skillpoints needed LvL 3": 4
-                    },
-                    {
-                        "Skillpoints needed LvL 4": 0
-                    },
-                    {
-                        "Skillpoints needed LvL 5": 0
-                    },
-                    {
-                        "Upgrade Number": 3
-                    },
-                    {
-                        "Main Panel": 2937841997
-                    },
-                    {
-                        "Current Panel": 2546321765
-                    },
-                    {
-                        "Tree Index": 3
-                    },
-                    {
-                        "Player": 1862169540
-                    },
                     {
                         "Upgrate 1": 2692458665
                     },
@@ -28888,18 +27433,6 @@
                     },
                     {
                         "Button": 2692458665
-                    },
-                    {
-                        "Current Description": 1387223882
-                    },
-                    {
-                        "Next Description": 2835375609
-                    },
-                    {
-                        "Description 4": 2861744828
-                    },
-                    {
-                        "Button": 2692458665
                     }
                 ],
                 "Script Resource": 911506408,
@@ -28976,18 +27509,6 @@
                     },
                     {
                         "Button": 2112049340
-                    },
-                    {
-                        "Current Description": 2835375609
-                    },
-                    {
-                        "Next Description": 2861744828
-                    },
-                    {
-                        "Previous Description": 1387223882
-                    },
-                    {
-                        "Button": 2112049340
                     }
                 ],
                 "Script Resource": 911506408,
@@ -29041,18 +27562,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 2861744828
-                    },
-                    {
-                        "Previous Description": 2835375609
-                    },
-                    {
-                        "Description 4": 1387223882
-                    },
-                    {
-                        "Button": 486754283
-                    },
                     {
                         "Current Description": 2861744828
                     },
@@ -29277,9 +27786,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Continue": 3612029568
-                    },
                     {
                         "Continue": 3612029568
                     },
@@ -29654,9 +28160,6 @@
                     },
                     {
                         "Continue": 3171051626
-                    },
-                    {
-                        "Continue": 3171051626
                     }
                 ],
                 "Script Resource": 514756029,
@@ -29874,12 +28377,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Panel text 1": 3845602525
-                    },
-                    {
-                        "Panel text 2": 925652610
-                    },
                     {
                         "Panel text 1": 3845602525
                     },
@@ -33464,63 +31961,6 @@
                     },
                     {
                         "Speed Rotation": 0.0
-                    },
-                    {
-                        "Button Guide": 3437375339
-                    },
-                    {
-                        "Move X animation repeat": 0
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": true
-                    },
-                    {
-                        "Move animation active": true
-                    },
-                    {
-                        "Distance move X": 0.0
-                    },
-                    {
-                        "Speed move X": 0.0
-                    },
-                    {
-                        "Distance move Y": 0.019999999552965164
-                    },
-                    {
-                        "Speed move Y": 1.5
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.0
-                    },
-                    {
-                        "Speed Scale": 0.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0
-                    },
-                    {
-                        "Speed Rotation": 0.0
                     }
                 ],
                 "Script Resource": 148961927,
@@ -33569,63 +32009,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Button Guide": 2225710694
-                    },
-                    {
-                        "Move X animation repeat": 0
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": true
-                    },
-                    {
-                        "Move animation active": true
-                    },
-                    {
-                        "Distance move X": 0.0
-                    },
-                    {
-                        "Speed move X": 0.0
-                    },
-                    {
-                        "Distance move Y": 0.019999999552965164
-                    },
-                    {
-                        "Speed move Y": 1.5
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.0
-                    },
-                    {
-                        "Speed Scale": 0.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0
-                    },
-                    {
-                        "Speed Rotation": 0.0
-                    },
                     {
                         "Button Guide": 2225710694
                     },
@@ -34106,6 +32489,1791 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 373099556,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Level Select",
+        "ParentUID": 2830428646,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 2279618498,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3460452994,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "BackGround",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1687927465,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.7699999809265137,
+                    0.10999999940395355,
+                    -0.09000000357627869
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.23000000417232513,
+                    0.7200000286102295,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "PlanetDestination",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 597854908,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Levels",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 728484332,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6000000238418579,
+                    0.6700000166893005,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.28999999165534973,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 2413304871,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 2450359488,
+                "hoverImage": 1048084744,
+                "idleActiveImage": 2984314687,
+                "idleImage": 2413304871,
+                "pressActiveImage": 3703264764,
+                "pressImage": 567303012
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Level_1",
+        "ParentUID": 728484332,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 2833847004,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6000000238418579,
+                    0.30000001192092896,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.28999999165534973,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 0,
+                "hoverImage": 0,
+                "idleActiveImage": 0,
+                "idleImage": 0,
+                "pressActiveImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Level_2",
+        "ParentUID": 728484332,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1644556427,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6000000238418579,
+                    -0.009999999776482582,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.28999999165534973,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 0,
+                "hoverImage": 0,
+                "idleActiveImage": 0,
+                "idleImage": 0,
+                "pressActiveImage": 3460452994,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Level_3",
+        "ParentUID": 728484332,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 424827398,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6000000238418579,
+                    -0.3199999928474426,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.28999999165534973,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 0,
+                "hoverImage": 0,
+                "idleActiveImage": 0,
+                "idleImage": 0,
+                "pressActiveImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Level_4",
+        "ParentUID": 728484332,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1763475902,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Misions",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 3315616982,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.13199999928474426,
+                    -0.009999999776482582,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.25999999046325684,
+                    0.0949999988079071,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Main",
+        "ParentUID": 3315616982,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 3552580302,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0860000029206276,
+                    -0.2329999953508377,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.2150000035762787,
+                    0.09000000357627869,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Secundary_1",
+        "ParentUID": 3315616982,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 4206498086,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0860000029206276,
+                    -0.4519999921321869,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.2150000035762787,
+                    0.09000000357627869,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Secundary_2",
+        "ParentUID": 3315616982,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 3963200349,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "CheckCompleted",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 387500800,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.3880000114440918,
+                    0.07999999821186066,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 240240,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_Main",
+        "ParentUID": 387500800,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1503610624,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.1899999976158142,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 240240,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S1",
+        "ParentUID": 387500800,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1637348096,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.4099999964237213,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 240240,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S2",
+        "ParentUID": 387500800,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1084788479,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Select",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1353763595,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.800000011920929,
+                    0.5299999713897705,
+                    -0.05999999865889549
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.10000000149011612,
+                    0.05999999865889549,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3703264764,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Selected",
+        "ParentUID": 1353763595,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 1612904071,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldingBar",
+        "ParentUID": 1353763595,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 74373170,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6069999933242798,
+                    0.5600000023841858,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.2800000011920929,
+                    0.06499999761581421,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "BackgroundBar",
+        "ParentUID": 74373170,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 2498876890,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6079999804496765,
+                    0.5299999713897705,
+                    -0.05000000074505806
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.25699999928474426,
+                    0.019999999552965164,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 0.0,
+                "MaterialResource": 4194253043,
+                "MeshEnabled": true,
+                "OpacityDirection": 1,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "ChargedBar",
+        "ParentUID": 74373170,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 2362666913,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 240240,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Map",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 2575647765,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.27000001072883606,
+                    0.5049999952316284,
+                    -0.004999999888241291
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3149999976158142,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 240240,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Map Image",
+        "ParentUID": 2575647765,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 4288439065,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.05000000074505806,
+                    0.7200000286102295,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": -0.05000000074505806,
+                "PositionY": 0.7200000286102295,
+                "Scale": 0.20000000298023224,
+                "Text": "0",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Casets",
+        "ParentUID": 2575647765,
+        "PrefabUID": 2862542295,
+        "Tag": "UI",
+        "UID": 764562924,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.0010000000474974513,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Hold Button Time": 2.0
+                    },
+                    {
+                        "Hold Button Time": 2.0
+                    }
+                ],
+                "Script Resource": 4223611270,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Feedback Handler",
+        "ParentUID": 2279618498,
+        "PrefabUID": 2862542295,
+        "Tag": "Default",
+        "UID": 2105632476,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Weapon Selected Panel": 4119569708
+                    },
+                    {
+                        "Proceed Panel": 3515385126
+                    },
+                    {
+                        "Weapon 1": 4262792753
+                    },
+                    {
+                        "Weapon 2": 1949070308
+                    },
+                    {
+                        "Weapon 3": 1027163443
+                    },
+                    {
+                        "Weapon 4": 940586702
+                    },
+                    {
+                        "Weapon Info": 2249949654
+                    },
+                    {
+                        "Weapon Image": 3341655809
+                    },
+                    {
+                        "Proceed Button": 3772303224
+                    },
+                    {
+                        "Weapon Selected Panel": 4119569708
+                    },
+                    {
+                        "Proceed Panel": 3515385126
+                    },
+                    {
+                        "Weapon 1": 4262792753
+                    },
+                    {
+                        "Weapon 2": 1949070308
+                    },
+                    {
+                        "Weapon 3": 1027163443
+                    },
+                    {
+                        "Weapon 4": 940586702
+                    },
+                    {
+                        "Weapon Info": 2249949654
+                    },
+                    {
+                        "Weapon Image": 3341655809
+                    },
+                    {
+                        "Proceed Button": 3772303224
+                    }
+                ],
+                "Script Resource": 225065215,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon Select",
+        "ParentUID": 2830428646,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 339357948,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Main Panel WS",
+        "ParentUID": 339357948,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 4119569708,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1909488878,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "BackGround",
+        "ParentUID": 4119569708,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 3531515675,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.44999998807907104,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon Info",
+        "ParentUID": 4119569708,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 2249949654,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "List Weapons",
+        "ParentUID": 4119569708,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 1992608717,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    0.44999998807907104,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon 1",
+        "ParentUID": 1992608717,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 4262792753,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon 2",
+        "ParentUID": 1992608717,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 1949070308,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    -0.15000000596046448,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon 3",
+        "ParentUID": 1992608717,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 1027163443,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.4000000059604645,
+                    -0.44999998807907104,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon 4",
+        "ParentUID": 1992608717,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 940586702,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Proceed Panel WS",
+        "ParentUID": 339357948,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 3515385126,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1909488878,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Background",
+        "ParentUID": 3515385126,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 211461981,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.30000001192092896,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon Selected",
+        "ParentUID": 3515385126,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 3341655809,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Button List",
+        "ParentUID": 3515385126,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 3925555957,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    -0.5,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 0,
+                "idleBlockImage": 0,
+                "idleImage": 0,
+                "pressBlockImage": 0,
+                "pressImage": 0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Only Button",
+        "ParentUID": 3925555957,
+        "PrefabUID": 3632537577,
+        "Tag": "UI",
+        "UID": 3772303224,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    9.545616149902344
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    1.100000023841858,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    90.0,
+                    0.0
+                ],
+                "ColScale": [
+                    5.0,
+                    2.799999952316284,
+                    5.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 3.0
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Active Panel": 2279618498
+                    },
+                    {
+                        "Active Panel": 2279618498
+                    }
+                ],
+                "Script Resource": 2719578167,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Select Level",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1587662216,
         "UpdateWithBones": false
     }
 ]

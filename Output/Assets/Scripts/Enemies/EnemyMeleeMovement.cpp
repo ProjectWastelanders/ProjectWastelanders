@@ -367,7 +367,7 @@ void EnemyMeleeMovement::Wander(float vel, API_Vector3 point, API_RigidBody enem
         gameObject.GetTransform().SetRotation(0, -_angle, 0);
         //gameObject.GetTransform().SetRotation(0 + _bRot.x, -_angle - _bRot.y, 0 + _bRot.z);
     }
-    Console::Log("000: " + std::to_string(enemyRb.GetVelocity().x) + " " + std::to_string(enemyRb.GetVelocity().y) + " " + std::to_string(enemyRb.GetVelocity().z));
+    //Console::Log("000: " + std::to_string(enemyRb.GetVelocity().x) + " " + std::to_string(enemyRb.GetVelocity().y) + " " + std::to_string(enemyRb.GetVelocity().z));
     enemyRb.SetVelocity(gameObject.GetTransform().GetForward() * vel);
     //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * vel);
 }

@@ -56,5 +56,4 @@ public:
 
 	std::map<uint, PhysBody3D*> lastFrameCollidingBodies;
 	std::map<uint, PhysBody3D*> thisFrameCollidingBodies;
-
 };

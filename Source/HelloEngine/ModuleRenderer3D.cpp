@@ -134,6 +134,14 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	OPTICK_EVENT();
 	VideoPlayerManager::Update(); // Update videos before drawing.
 
+	std::vector<Resource*> shaders = ModuleResourceManager::S_GetResourcePool(ResourceType::SHADER);
+
+	for (int i = 0; i < shaders.size(); ++i)
+	{
+		ResourceShader* shader = (ResourceShader*)shaders[i];
+		shader->shader.data.hasUpdatedLights = false;
+	}
+
 #ifdef STANDALONE
 
 	//SCENE RENDERING
@@ -167,6 +175,12 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		_cameras->currentDrawingCamera = _cameras->UICamera;
 
 		renderManager.Draw2D();
+	}
+
+	for (int i = 0; i < shaders.size(); ++i)
+	{
+		ResourceShader* shader = (ResourceShader*)shaders[i];
+		shader->shader.data.hasUpdatedLights = false;
 	}
 
 	//ImWin GAME RENDERING

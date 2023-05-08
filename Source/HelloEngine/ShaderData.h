@@ -14,6 +14,7 @@ public:
 	bool isIstanced = false;
 	bool isBoned = false;
 	bool hasEngineLight = false;
+	bool hasUpdatedLights = false;
 
 	uint _maxPointLights = 32;
 	uint _maxSpotLights = 32;

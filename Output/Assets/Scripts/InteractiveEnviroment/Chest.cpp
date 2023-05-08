@@ -96,7 +96,6 @@ void Chest::Update()
             {
                 Tutorial_Img.GetGameObject().SetActive(false);
                 gameObject.SetActive(false);
-                Console::Log("HOLAAAA");
             }
             activeTutorial = true;
 
@@ -128,7 +127,6 @@ void Chest::Update()
             movingPos.x -= 0.32 * Time::GetDeltaTime();
             timerTutorial = false;
             hideChest = true;
-            Console::Log("ADEUUUU");
         }
 
         else if(Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < initalPos.x) {

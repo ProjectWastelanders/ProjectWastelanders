@@ -129,7 +129,6 @@ float3 PhysBody3D::GetVelocity()
 
 void PhysBody3D::Update()
 {
-
 	//btTransform worldTransform = body->getWorldTransform();
 	//btScalar matrix;
 	//worldTransform.getOpenGLMatrix(&matrix);
@@ -168,12 +167,6 @@ void PhysBody3D::Update()
 		//go->transform->SetScale(goScl); //This line provokes that the collider does not rotate for some reason
 		//go->transform->SetRotation(goRot); //This line provokes that the collider does not rotate for some reason
 		//go->transform->Translate(-colPos); //This line provokes that the collider does not rotate for some reason
-
-		
-
-
-
-
 
 		// Commented out because it affects bodies that are rotated by script. 
 		/*go->transform->_ignorePhysBody = true;

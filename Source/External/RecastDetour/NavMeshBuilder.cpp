@@ -359,9 +359,9 @@ unsigned char* NavMeshBuilder::BuildTile(const int tx, const int ty, const float
 	}
 
 	// (Optional) Mark areas.
-	const ConvexVolume* vols = m_geom->getConvexVolumes();
-	for (int i = 0; i < m_geom->getConvexVolumeCount(); ++i)
-		rcMarkConvexPolyArea(&m_ctx, vols[i].verts, vols[i].nverts, vols[i].hmin, vols[i].hmax, (unsigned char)vols[i].area, *m_chf);
+	//const ConvexVolume* vols = m_geom->getConvexVolumes();
+	//for (int i = 0; i < m_geom->getConvexVolumeCount(); ++i)
+	//	rcMarkConvexPolyArea(&m_ctx, vols[i].verts, vols[i].nverts, vols[i].hmin, vols[i].hmax, (unsigned char)vols[i].area, *m_chf);
 
 
 	// Partition the heightfield so that we can use simple algorithm later to triangulate the walkable areas.

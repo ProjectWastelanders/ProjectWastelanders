@@ -33,6 +33,7 @@ public:
 
     bool tutorialSpecialWeapon;
     bool tutorialWeaponBlueprint;
+    bool bluprintTutorial;
 
     int chestIndex;
     int itemIndex;

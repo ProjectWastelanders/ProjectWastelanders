@@ -42,6 +42,7 @@ public:
 	bool inOpen;
 	bool onProceed;
 	bool firstTime;
+	bool firstTimeLevel;
 	int indexLevles;
 
 	API_GameObject interruptorGO;

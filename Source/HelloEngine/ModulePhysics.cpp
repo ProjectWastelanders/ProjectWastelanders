@@ -123,7 +123,6 @@ UpdateStatus ModulePhysics::PreUpdate()
 	// Luego, actualiza los mapas de los objetos que colisionan.
 	// Finalmente, actualiza los mapas de los objetos que no han colisionado y que en el anterior frame si lo hacian)
 
-
 	//if (LayerGame::S_IsPlaying()) {
 	//	for (int i = 0; i < physBodies.size(); i++)
 	//	{
@@ -140,7 +139,6 @@ UpdateStatus ModulePhysics::PreUpdate()
 	//		btPersistentManifold* contactManifold = world->getDispatcher()->getManifoldByIndexInternal(i);
 	//		btCollisionObject* obA = (btCollisionObject*)(contactManifold->getBody0());
 	//		btCollisionObject* obB = (btCollisionObject*)(contactManifold->getBody1());
-
 
 	//		int numContacts = contactManifold->getNumContacts();
 	//		if (numContacts > 0)
@@ -224,8 +222,8 @@ UpdateStatus ModulePhysics::PreUpdate()
 
 	////OPCION 1.5 (Adaptacion de la 1 que quiza esta un poco mas optimizado)
 	
-
-	if (LayerGame::S_IsPlaying()) {
+	if (LayerGame::S_IsPlaying()) 
+	{
 		for (int i = 0; i < physBodies.size(); i++)
 		{
 			PhysBody3D* pbody = physBodies.at(i);
@@ -241,7 +239,6 @@ UpdateStatus ModulePhysics::PreUpdate()
 			btPersistentManifold* contactManifold = world->getDispatcher()->getManifoldByIndexInternal(i);
 			btCollisionObject* obA = (btCollisionObject*)(contactManifold->getBody0());
 			btCollisionObject* obB = (btCollisionObject*)(contactManifold->getBody1());
-
 
 			int numContacts = contactManifold->getNumContacts();
 			if (numContacts > 0)
@@ -312,7 +309,7 @@ UpdateStatus ModulePhysics::PreUpdate()
 
 	///////////OPCION 2 
 	// (Itera cada gameobject con colisiones. Por cada uno, itera otra vez para encontrar posibles colisiones.
-	// Luego, itera todas las colisiones que se están produciendo.
+	// Luego, itera todas las colisiones que se esta produciendo.
 	// Si una de esas colisiones coincide con los gameobject que se estan iterando, actualiza su mapa.
 	// Si ninguna colision coincide con los gameobject que se estan iterando, actualiza su mapa.
 
@@ -579,6 +576,7 @@ void ModulePhysics::UpdatePhysBodyPos(PhysBody3D* physBody)
 	if (ModuleLayers::gameObjects.count(physBody->gameObjectUID) == 0)
 		return;
 	float3 currentTransformPos = ModuleLayers::gameObjects[physBody->gameObjectUID]->transform->GetGlobalPosition();
+	//float3 currentTransformPos = ModuleLayers::gameObjects[physBody->gameObjectUID]->transform->GetLocalPosition();
 	physBody->SetPos(physBody->colPos.x + currentTransformPos.x, physBody->colPos.y + currentTransformPos.y, physBody->colPos.z + currentTransformPos.z);
 }
 

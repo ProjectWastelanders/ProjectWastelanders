@@ -31,7 +31,7 @@ public:
     void Start() override;
     void Update() override;
 
-    void Aim();
+    bool Aim();
     API_Vector2 GetMoveInput();
     float Lerp(float a, float b, float time);
     void DashSetup();

@@ -85,6 +85,7 @@ void Material::UpdateLights()
 
 	shader->shader.SetInt("Actual_Spot", actualSpot);
 	shader->shader.SetInt("Actual_Point", actualPoint);
+	shader->shader.data.hasUpdatedLights = true;
 }
 
 void Material::Update(const float* view, const float* projection, const float* model)
@@ -124,7 +125,7 @@ void Material::UpdateInstanced(const float* view, const float* projection)
 	}
 
 	//Update Engine lights if the shader uses them
-	if (shader->shader.data.hasEngineLight) UpdateLights();
+	if (shader->shader.data.hasEngineLight && !shader->shader.data.hasUpdatedLights) UpdateLights();
 }
 
 void Material::UnbindAllTextures()

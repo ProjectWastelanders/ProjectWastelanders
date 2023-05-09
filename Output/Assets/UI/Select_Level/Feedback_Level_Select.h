@@ -6,6 +6,8 @@
 #include "API/API.h"
 #include "API/API_UIText.h"
 
+class OpenMenuInterruptor;
+class PlayerMove;
 
 class Feedback_Level_Select : HelloBehavior
 {
@@ -24,6 +26,7 @@ public:
 	API_GameObject checkMainMision1;
 	API_GameObject checkSecundaryMision1;
 	API_GameObject checkSecundaryMision2;
+	API_GameObject interruptorGO;
 
 	API_GameObject mapImage;
 	API_GameObject planetImage;
@@ -36,6 +39,7 @@ public:
 	API_UIImage secMision1;
 	API_UIImage secMision2;
 
+	API_GameObject panel;
 	API_UIInput chargingConjunt;
 
 	API_UICheckBox level1;
@@ -43,6 +47,11 @@ public:
 	API_UICheckBox level3;
 	API_UICheckBox level4;
 	API_UICheckBox currentLevel;
+
+	OpenMenuInterruptor* interruptor;
+
+	API_GameObject playerGO;
+	PlayerMove* playerMove;
 
 	API_UIText casettesNumberText;
 	int casettesNumber;

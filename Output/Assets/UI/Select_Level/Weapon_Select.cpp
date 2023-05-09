@@ -1,4 +1,6 @@
-	#include "Weapon_Select.h"
+#include "Weapon_Select.h"
+#include "../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.h"
+#include "../../Assets/Scripts/Player/PlayerMove.h"
 HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface* script)
 {
 	Weapon_Select* classInstance = new Weapon_Select();
@@ -20,13 +22,15 @@ HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface
 
 	script->AddDragBoxUIImage("Weapon Image", &classInstance->weaponImage);
 
-	script->AddDragBoxTextureResource("Weapon 1", &classInstance->weaponImage1);
-	script->AddDragBoxTextureResource("Weapon 2", &classInstance->weaponImage2);
-	script->AddDragBoxTextureResource("Weapon 3", &classInstance->weaponImage3);
-	script->AddDragBoxTextureResource("Weapon 4", &classInstance->weaponImage4);
+	script->AddDragBoxTextureResource("Weapon Image 1", &classInstance->weaponImage1);
+	script->AddDragBoxTextureResource("Weapon Image 2", &classInstance->weaponImage2);
+	script->AddDragBoxTextureResource("Weapon Image 3", &classInstance->weaponImage3);
+	script->AddDragBoxTextureResource("Weapon Image 4", &classInstance->weaponImage4);
 	
 	script->AddDragBoxUIButton("Proceed Button", &classInstance->proceedButton);
 
+	script->AddDragBoxGameObject("Open Menu Interruptor", &classInstance->interruptorGO);
+	script->AddDragBoxGameObject("Player", &classInstance->playerGO);
 	return classInstance;
 }
 
@@ -34,6 +38,12 @@ void Weapon_Select::Start()
 {
 	indexLevles = 3;
 	inOpen = true;
+	//onProceed = false;
+
+	interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
+	if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
+	playerMove = (PlayerMove*)playerGO.GetScript("PlayerMove");
+	if (playerMove == nullptr) Console::Log("PlayerMove missing in ArmoryWeaponSelect Script with gunIndex 0.");
 }
 void Weapon_Select::Update()
 {
@@ -62,17 +72,33 @@ void Weapon_Select::Update()
 		inOpen = false;
 	}
 
+	if (onProceed)
+	{
+		Console::Log("true");
+	}
+	else
+	{
+		Console::Log("false");
+	}
+
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
-		if (proceedPanel.GetGameObject().IsActive())
+		if (onProceed)
 		{
+			onProceed = false;
+			Console::Log("JUAN TE MATO");
 			weaponSelectPanel.GetGameObject().SetActive(true);
 			proceedPanel.GetGameObject().SetActive(false);
 		}
 		else
 		{
-			inOpen = false;
-			weaponSelectPanel.GetGameObject().SetActive(false);
+			if (!interruptor) return;
+			Input::HandleGamePadButton(GamePadButton::BUTTON_B);
+			// IT'S CORRECT DON'T REMOVE NOTHING
+			interruptor->menuPanel.SetActive(true); // can set false if is not true
+			interruptor->menuPanel.SetActive(false);
+			if (playerMove) playerMove->openingChest = false;
+			interruptor->open = false;
 		}
 	}
 
@@ -115,6 +141,7 @@ void Weapon_Select::Update()
 	{
 		weaponSelectPanel.GetGameObject().SetActive(false);
 		proceedPanel.GetGameObject().SetActive(true);
+		onProceed = true;
 	}
 
 	if (proceedButton.OnPress())

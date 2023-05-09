@@ -106,7 +106,8 @@ void Material::Update(const float* view, const float* projection, const float* m
 	}
 
 	//Update Engine lights if the shader uses them
-	if (shader->shader.data.hasEngineLight) UpdateLights();
+	if (shader->shader.data.hasEngineLight && !shader->shader.data.hasUpdatedLights)
+		UpdateLights();
 }
 
 void Material::UpdateInstanced(const float* view, const float* projection)
@@ -126,7 +127,8 @@ void Material::UpdateInstanced(const float* view, const float* projection)
 	}
 
 	//Update Engine lights if the shader uses them
-	if (shader->shader.data.hasEngineLight && !shader->shader.data.hasUpdatedLights) UpdateLights();
+	if (shader->shader.data.hasEngineLight && !shader->shader.data.hasUpdatedLights) 
+		UpdateLights();
 }
 
 void Material::UnbindAllTextures()
@@ -197,7 +199,7 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 		case GL_FLOAT_VEC4:
 			
 			break;
-		case GL_FLOAT:
+		case GL_INT:
 			if (uni->data.name == "Actual_Spot" || uni->data.name == "Actual_Point")
 			{
 				toReturn = true;

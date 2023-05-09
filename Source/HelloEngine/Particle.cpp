@@ -66,5 +66,9 @@ void Particle::UpdateTextureCoords()
 	row = index2 / texture.numOfRows;
 	textureOffset2.x = column / texture.numOfRows;
 	textureOffset2.y = row / texture.numOfRows;
+
+	textureInfo.x = texture.numOfRows;
+	textureInfo.y = blendFactor;
+
 }
 

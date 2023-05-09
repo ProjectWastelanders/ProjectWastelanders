@@ -182,6 +182,12 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	manager->isParticle = true;
 
+	//manager->particleShader->shader.Bind();
+
+	/*manager->particleShader->shader.SetFloat2v("texOffset1", ParticleList[i].textureOffset1.ptr());
+	manager->particleShader->shader.SetFloat2v("texOffset2", ParticleList[i].textureOffset2.ptr());
+	manager->particleShader->shader.SetFloat2v("texInfo", ParticleList[i].textureInfo.ptr());*/
+
 	Mesh& meshReference = manager->GetMap()[ParticleList[i]._instanceID].mesh;
 
 	meshReference.draw = true;

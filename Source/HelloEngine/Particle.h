@@ -68,6 +68,7 @@ struct Particle
 	//Texture Offsets;
 	float2 textureOffset1;
 	float2 textureOffset2;
+	float2 textureInfo;
 	float blendFactor = 0.0f;
 
 	//Angular velocity of the particle

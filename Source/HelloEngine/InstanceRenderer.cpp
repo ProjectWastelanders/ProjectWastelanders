@@ -11,6 +11,7 @@ InstanceRenderer::InstanceRenderer()
     instancedShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced.shader", 102, "Instanced");
     perMeshShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/basic.shader", 103, "Basic");
     mesh2DShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced2D.shader", 104, "Instanced 2D");
+    particleShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/Particles.shader", 114, "Particles");
 }
 
 InstanceRenderer::~InstanceRenderer()
@@ -297,10 +298,10 @@ void InstanceRenderer::DrawInstancedSorting()
     if (!modelMatrices.empty())
     {
         // Update View and Projection matrices
-        instancedShader->shader.Bind();
+        particleShader->shader.Bind();
 
-        instancedShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
-        instancedShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+        particleShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+        particleShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
 
         // Draw using Dynamic Geometrys
         glBindVertexArray(VAO);

@@ -58,6 +58,7 @@ private:
 	ResourceShader* instancedShader = nullptr;
 	ResourceShader* perMeshShader = nullptr;
 	ResourceShader* mesh2DShader = nullptr;
+	ResourceShader* particleShader = nullptr;
 
 	std::map<uint, std::pair<uint, RenderEntry>> matMesh;
 	std::map<uint, RenderEntry> meshes;
@@ -91,5 +92,6 @@ private:
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;
+	friend class Emitter;
 };
 

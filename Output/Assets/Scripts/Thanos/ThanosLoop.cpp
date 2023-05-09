@@ -37,7 +37,7 @@ void ThanosLoop::Update()
     }
 
     if (hp < 0) {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     if(hp < 2000) {
         phase = 2;

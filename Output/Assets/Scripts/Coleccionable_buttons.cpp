@@ -40,11 +40,15 @@ void Coleccionable_buttons::Start()
 
 void Coleccionable_buttons::Update()
 {
-	if (Input::GetKey(KeyCode::KEY_V) == KeyState::KEY_DOWN /*Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN*/ && coleccionable_panel.IsActive() == true)
+
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
-		coleccionable_panel.SetActive(false);
-		Console::Log("MARICOS");
+		if (coleccionable_panel.IsActive() == true)
+		{
+			coleccionable_panel.SetActive(false);
+		}
 	}
+
 
 	if (playerStorage)
 	{

@@ -196,6 +196,8 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 void Emitter::UpdateParticlesOnScene(int i)
 {
 	
+	//ParticleList[i].UpdateTextureCoords();
+
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt
@@ -214,6 +216,7 @@ void Emitter::UpdateParticlesOnScene(int i)
 void Emitter::UpdateParticlesOnGame(int i)
 {
 	
+	//ParticleList[i].UpdateTextureCoords();
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt

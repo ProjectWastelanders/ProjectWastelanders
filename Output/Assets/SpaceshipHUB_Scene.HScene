@@ -11403,7 +11403,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.9888476133346558,
+                "Aspect ratio": 1.9408766031265259,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -24561,7 +24561,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -24593,7 +24593,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -24710,7 +24710,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -24750,7 +24750,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -24844,7 +24844,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -24938,7 +24938,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25038,7 +25038,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25126,7 +25126,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25167,7 +25167,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25195,7 +25195,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": false,
+                "Enabled": true,
                 "PositionX": 0.699999988079071,
                 "PositionY": 0.6100000143051147,
                 "Scale": 0.5,
@@ -25237,7 +25237,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25277,7 +25277,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25412,7 +25412,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25494,7 +25494,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25576,7 +25576,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25658,7 +25658,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25740,7 +25740,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25780,7 +25780,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25820,7 +25820,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25860,7 +25860,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -25900,7 +25900,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26035,7 +26035,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26117,7 +26117,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26193,7 +26193,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26269,7 +26269,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26339,7 +26339,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26379,7 +26379,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26419,7 +26419,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26459,7 +26459,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26499,7 +26499,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26641,7 +26641,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26729,7 +26729,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26817,7 +26817,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26905,7 +26905,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -26993,7 +26993,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27081,7 +27081,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27121,7 +27121,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27161,7 +27161,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27201,7 +27201,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27241,7 +27241,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27281,7 +27281,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27409,7 +27409,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27485,7 +27485,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27561,7 +27561,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27637,7 +27637,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27677,7 +27677,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27717,7 +27717,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -27757,7 +27757,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -28433,9 +28433,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Colleccionable Panel": 164906117
-                    },
-                    {
                         "CheckBox 1": 145720028
                     },
                     {
@@ -28467,9 +28464,6 @@
                     },
                     {
                         "Player": 1862169540
-                    },
-                    {
-                        "Colleccionable Panel": 164906117
                     },
                     {
                         "CheckBox 1": 145720028
@@ -28753,7 +28747,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 541810789,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -28793,7 +28787,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 1822770307,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -28833,7 +28827,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 4213129316,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -28913,7 +28907,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 2102445078,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -29068,7 +29062,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 2083724339,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -36815,10 +36809,70 @@
                         "Check Secundary Mision 2": 1084788479
                     },
                     {
+                        "Main Mision Image": 3552580302
+                    },
+                    {
+                        "Secundary Mision 1 Image": 4206498086
+                    },
+                    {
+                        "Secundary Mision 2 Image": 3963200349
+                    },
+                    {
+                        "Material Main mision 1": 1945907977
+                    },
+                    {
+                        "Material Main mision 2": 1718379224
+                    },
+                    {
+                        "Material Main mision 3": 2858844724
+                    },
+                    {
+                        "Material Secundary mision 1_1": 1760879198
+                    },
+                    {
+                        "Material Secundary mision 2_1": 413390393
+                    },
+                    {
+                        "Material Secundary mision 1_2": 2271220209
+                    },
+                    {
+                        "Material Secundary mision 2_2": 521260460
+                    },
+                    {
+                        "Material Secundary mision 1_3": 357638973
+                    },
+                    {
+                        "Material Secundary mision 2_3": 2860786203
+                    },
+                    {
                         "Map Image": 4288439065
                     },
                     {
+                        "Material Map 1": 3323622217
+                    },
+                    {
+                        "Material Map 2": 3323622217
+                    },
+                    {
+                        "Material Map 3": 3323622217
+                    },
+                    {
+                        "Material Map 4": 3323622217
+                    },
+                    {
                         "Planet Image": 597854908
+                    },
+                    {
+                        "Material Planet 1": 1668597886
+                    },
+                    {
+                        "Material Planet 2": 1668597886
+                    },
+                    {
+                        "Material Planet 3": 1668597886
+                    },
+                    {
+                        "Material Planet 4": 1668597886
                     },
                     {
                         "Open Menu Interruptor": 1587662216
@@ -36866,10 +36920,70 @@
                         "Check Secundary Mision 2": 1084788479
                     },
                     {
+                        "Main Mision Image": 3552580302
+                    },
+                    {
+                        "Secundary Mision 1 Image": 4206498086
+                    },
+                    {
+                        "Secundary Mision 2 Image": 3963200349
+                    },
+                    {
+                        "Material Main mision 1": 1945907977
+                    },
+                    {
+                        "Material Main mision 2": 1718379224
+                    },
+                    {
+                        "Material Main mision 3": 2858844724
+                    },
+                    {
+                        "Material Secundary mision 1_1": 1760879198
+                    },
+                    {
+                        "Material Secundary mision 2_1": 413390393
+                    },
+                    {
+                        "Material Secundary mision 1_2": 2271220209
+                    },
+                    {
+                        "Material Secundary mision 2_2": 521260460
+                    },
+                    {
+                        "Material Secundary mision 1_3": 357638973
+                    },
+                    {
+                        "Material Secundary mision 2_3": 2860786203
+                    },
+                    {
                         "Map Image": 4288439065
                     },
                     {
+                        "Material Map 1": 3323622217
+                    },
+                    {
+                        "Material Map 2": 3323622217
+                    },
+                    {
+                        "Material Map 3": 3323622217
+                    },
+                    {
+                        "Material Map 4": 3323622217
+                    },
+                    {
                         "Planet Image": 597854908
+                    },
+                    {
+                        "Material Planet 1": 1668597886
+                    },
+                    {
+                        "Material Planet 2": 1668597886
+                    },
+                    {
+                        "Material Planet 3": 1668597886
+                    },
+                    {
+                        "Material Planet 4": 1668597886
                     },
                     {
                         "Open Menu Interruptor": 1587662216
@@ -36938,7 +37052,31 @@
                         "Weapon Info": 2249949654
                     },
                     {
+                        "Info Weapon 1": 2821475755
+                    },
+                    {
+                        "Info Weapon 2": 2821475755
+                    },
+                    {
+                        "Info Weapon 3": 2821475755
+                    },
+                    {
+                        "Info Weapon 4": 2821475755
+                    },
+                    {
                         "Weapon Image": 3341655809
+                    },
+                    {
+                        "Weapon Image 1": 1701093720
+                    },
+                    {
+                        "Weapon Image 2": 848934655
+                    },
+                    {
+                        "Weapon Image 3": 1286651376
+                    },
+                    {
+                        "Weapon Image 4": 1855458553
                     },
                     {
                         "Proceed Button": 3772303224
@@ -36971,7 +37109,31 @@
                         "Weapon Info": 2249949654
                     },
                     {
+                        "Info Weapon 1": 2821475755
+                    },
+                    {
+                        "Info Weapon 2": 2821475755
+                    },
+                    {
+                        "Info Weapon 3": 2821475755
+                    },
+                    {
+                        "Info Weapon 4": 2821475755
+                    },
+                    {
                         "Weapon Image": 3341655809
+                    },
+                    {
+                        "Weapon Image 1": 1701093720
+                    },
+                    {
+                        "Weapon Image 2": 848934655
+                    },
+                    {
+                        "Weapon Image 3": 1286651376
+                    },
+                    {
+                        "Weapon Image 4": 1855458553
                     },
                     {
                         "Proceed Button": 3772303224
@@ -37527,16 +37689,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 0,
+                "MaterialResource": 1272529237,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
-                "hoverBlockImage": 0,
-                "hoverImage": 0,
-                "idleBlockImage": 0,
-                "idleImage": 0,
-                "pressBlockImage": 0,
-                "pressImage": 0
+                "hoverBlockImage": 1272529237,
+                "hoverImage": 1272529237,
+                "idleBlockImage": 1272529237,
+                "idleImage": 1272529237,
+                "pressBlockImage": 1272529237,
+                "pressImage": 1272529237
             }
         ],
         "FirstOnPrefab": false,

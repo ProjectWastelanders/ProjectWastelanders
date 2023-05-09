@@ -400,6 +400,7 @@
     <ClCompile Include="API\API_AnimationPlayer.cpp" />
     <ClCompile Include="API\API_Audio.cpp" />
     <ClCompile Include="API\API_QuickSave.cpp" />
+    <ClCompile Include="API\API_RayCast.cpp" />
     <ClCompile Include="API\API_ShaderComponent.cpp" />
     <ClCompile Include="API\API_SkinnedMeshRenderer.cpp" />
     <ClCompile Include="API\API_String.cpp" />
@@ -654,6 +655,7 @@
     <ClInclude Include="API\API_AnimationPlayer.h" />
     <ClInclude Include="API\API_Audio.h" />
     <ClInclude Include="API\API_QuickSave.h" />
+    <ClInclude Include="API\API_RayCast.h" />
     <ClInclude Include="API\API_ShaderComponent.h" />
     <ClInclude Include="API\API_SkinnedMeshRenderer.h" />
     <ClInclude Include="API\API_String.h" />

@@ -413,6 +413,7 @@
     <ClCompile Include="PhysBody3D.cpp">
       <Filter>Modules\Physic</Filter>
     </ClCompile>
+    <ClCompile Include="API\API_RayCast.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -855,6 +856,7 @@
     <ClInclude Include="PhysBody3D.h">
       <Filter>Modules\Physic</Filter>
     </ClInclude>
+    <ClInclude Include="API\API_RayCast.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

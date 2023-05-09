@@ -630,3 +630,14 @@ void ModulePhysics::PrepareNewGravityAtLast(float3 grav)
 	hasToChangeGravity = true;
 	gravityToChange = grav;
 }
+
+btCollisionWorld::AllHitsRayResultCallback ModulePhysics::RayCastLine(const float3 start, const float3 end)
+{
+	btVector3 startV = { start.x, start.y, start.z };
+	btVector3 endV = { end.x, end.y, end.z };
+	btCollisionWorld::AllHitsRayResultCallback RayCallback(startV, endV);
+
+	world->rayTest(startV, endV, RayCallback);
+
+	return RayCallback;
+}

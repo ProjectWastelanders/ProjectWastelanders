@@ -179,16 +179,13 @@ API::API_Vector2 API::API_RigidBody::GetCylinderScale()
 	return radiusHeight;
 }
 
-void API::API_RigidBody::RayCastLineGlobal(float length, API_Vector3 origin, API_Vector3 dir)
+API::API_RayCast API::API_RigidBody::RayCastLineGlobal(float length, API_Vector3 origin, API_Vector3 dir)
 {
 	if (!_rigidBody)
 	{
 		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
-		return;
+		return API_RayCast();
 	}
-
-	/*float originNorm = sqrt(pow(origin.x, 2) + pow(origin.y, 2) + pow(origin.z, 2));
-	API_Vector3 normOrigin = { origin.x / originNorm, origin.y / originNorm, origin.z / originNorm };*/
 
 	float dirNorm = sqrt(pow(dir.x, 2) + pow(dir.y, 2) + pow(dir.z, 2));
 	API_Vector3 normDir = { dir.x / dirNorm, dir.y / dirNorm, dir.z / dirNorm };
@@ -197,16 +194,22 @@ void API::API_RigidBody::RayCastLineGlobal(float length, API_Vector3 origin, API
 	API_Vector3 finalPoint = origin + lengthDir;
 
 	_rigidBody->_physBody->raycastPos1 = origin;
-	_rigidBody->_physBody->raycastPos1 = finalPoint;
+	_rigidBody->_physBody->raycastPos2 = finalPoint;
+	
+	//Do the raycast
+	btCollisionWorld::AllHitsRayResultCallback btRaycast = ModulePhysics::RayCastLine((float3)origin, (float3)finalPoint);
+	RayCast newRaycast = RayCast(btRaycast);
+	API_RayCast raycast(btRaycast);
 
+	return raycast;
 }
 
-void API::API_RigidBody::RayCastLineLocal(float length, API_Vector3 localOrigin, API_Vector3 localDir)
+API::API_RayCast API::API_RigidBody::RayCastLineLocal(float length, API_Vector3 localOrigin, API_Vector3 localDir)
 {
 	if (!_rigidBody)
 	{
 		Engine::Console::S_Log("Trying to get a NULLPTR Rigidbody");
-		return;
+		return API_RayCast();
 	}
 
 	//Get global body transform
@@ -225,31 +228,31 @@ void API::API_RigidBody::RayCastLineLocal(float length, API_Vector3 localOrigin,
 	globalMat4x4.Transpose();
 
 	//Calculate the global origin
+
 	float4 localOri4x1 = { localOrigin.x, localOrigin.y, localOrigin.z, 1 };
 	float4 globalOri4x1 = globalMat4x4 * localOri4x1;
 	API_Vector3 globalOrigin = { globalOri4x1.x, globalOri4x1.y, globalOri4x1.z };
 
-	//Calculate the global origin
-	float4 localDir4x1 = { localDir.x, localDir.y, localDir.z, 1 };
+	//Calculate the global direction
+
+	float dirNorm = sqrt(pow(localDir.x, 2) + pow(localDir.y, 2) + pow(localDir.z, 2));
+	API_Vector3 normDir = { localDir.x / dirNorm, localDir.y / dirNorm, localDir.z / dirNorm };
+	API_Vector3 lengthDir = normDir * length;
+
+	float4 localDir4x1 = { localOrigin.x + lengthDir.x, localOrigin.y + lengthDir.y, localOrigin.z + lengthDir.z, 1 };
 	float4 globalDir4x1 = globalMat4x4 * localDir4x1;
 	API_Vector3 globalDir = { globalDir4x1.x, globalDir4x1.y, globalDir4x1.z };
 
-	//////Calculate the global direction
-	////float4 localDir4x1 = { localDir.x, localDir.y, localDir.z, 1 };
-	////float4 globalDir4x1 = localDir4x1 * globalMat4x4;
-	////API_Vector3 globalDir = { globalDir4x1.x, globalDir4x1.y, globalDir4x1.z};
-	//////API_Vector3 globalDir = { localDir.x, localDir.y, localDir.z };
-
-	////float dirNorm = sqrt(pow(globalDir.x, 2) + pow(globalDir.y, 2) + pow(globalDir.z, 2));
-	////API_Vector3 normDir = { globalDir.x / dirNorm, globalDir.y / dirNorm, globalDir.z / dirNorm };
-
-	///	API_Vector3 lengthDir = normDir * length;
-	///*API_Vector3 finalPoint = globalOrigin + lengthDir;*/
-	 API_Vector3 finalPoint = globalDir;
-
 	_rigidBody->_physBody->raycastPos1 = globalOrigin;
-	_rigidBody->_physBody->raycastPos2 = finalPoint;
+	_rigidBody->_physBody->raycastPos2 = globalDir;
 
+	//Do the raycast
+	btCollisionWorld::AllHitsRayResultCallback btRaycast = ModulePhysics::RayCastLine((float3)globalOrigin, (float3)globalDir);
+	RayCast newRaycast = RayCast(btRaycast);
+
+	API_RayCast raycast(newRaycast);
+
+	return raycast;
 }
 
 

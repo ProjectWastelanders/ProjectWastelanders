@@ -4,6 +4,8 @@
 #include "Macro.h"
 
 #include "API/API.h"
+#include "API/API_RayCast.h"
+#include <vector>
 
 class RayCastTest : HelloBehavior
 {

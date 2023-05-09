@@ -4,6 +4,7 @@
 #include "API/API_GameObject.h"
 #include "API/API_Vector3.h"
 #include "API/API_Vector2.h"
+#include "API/API_RayCast.h"
 
 class PhysicsComponent;
 class ScriptComponent;
@@ -40,10 +41,10 @@ namespace API
 		API_Vector2 GetCylinderScale();
 
 		//Put global parameters
-		void RayCastLineGlobal(float length, API_Vector3 origin, API_Vector3 direction);
+		API_RayCast RayCastLineGlobal(float length, API_Vector3 origin, API_Vector3 direction);
 
 		//Put local parameters
-		void RayCastLineLocal(float length, API_Vector3 origin, API_Vector3 direction);
+		API_RayCast RayCastLineLocal(float length, API_Vector3 origin, API_Vector3 direction);
 
 	private:
 		PhysicsComponent* GetComponent();

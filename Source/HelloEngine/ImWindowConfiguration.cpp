@@ -53,6 +53,39 @@ ImWindowConfiguration::ImWindowConfiguration() : ImWindow()
 					n.attribute("value").as_bool(false),	// config value
 					n.attribute("tag").as_int(0))));	// config tag
 	}
+
+	XMLNode inputNode = Application::Instance()->xml->GetConfigXML().FindChildBreadth("input");
+
+	std::string nodeName = inputNode.node.name();
+
+	if(nodeName == "input")
+	{
+		_mouseWheel = inputNode.node.child("mouseWheel").attribute("value").as_float(1.0f);
+
+		_sceneCamera = Application::Instance()->camera->sceneCamera;
+
+		_sceneCamera->SetWheelSpeed(_mouseWheel);
+
+		_mouseWheelDecimal = _mouseWheel - std::floor(_mouseWheel);
+
+		_mouseWheelInteger = std::floor(_mouseWheel);
+	}
+	else
+	{
+		_mouseWheelInteger = 0;
+
+		_mouseWheelDecimal = 0.5f;
+
+		_mouseWheel = 0.5f;
+
+		XMLNode config = Application::Instance()->xml->GetConfigXML();
+
+		pugi::xml_node node =  config.node.append_child("input").append_child("mouseWheel");
+
+		node.append_attribute("value").set_value(0.5f);
+
+		config.Save();
+	}
 }
 
 ImWindowConfiguration::~ImWindowConfiguration()
@@ -66,6 +99,13 @@ ImWindowConfiguration::~ImWindowConfiguration()
 		n.attribute("value").set_value(renderConfigs[n.name()].first);
 
 	openGlNode.Save();
+
+	// Save input setting
+	XMLNode inputNode = Application::Instance()->xml->GetConfigXML().FindChildBreadth("input");
+
+	inputNode.node.child("mouseWheel").attribute("value").set_value(_mouseWheel);
+
+	inputNode.Save();
 }
 
 void ImWindowConfiguration::Update()
@@ -94,7 +134,7 @@ void ImWindowConfiguration::Update()
 
 		if (ImGui::CollapsingHeader("Window", ImGuiTreeNodeFlags_DefaultOpen))
 		{
-			ImGui::TextWrapped("Window Size: ");
+			ImGui::TextWrapped("<---Window Size--->");
 			ImGui::TextWrapped("Width:"); ImGui::SameLine();
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), std::to_string(*_windowWidth).c_str());
 
@@ -114,13 +154,12 @@ void ImWindowConfiguration::Update()
 
 		if (ImGui::CollapsingHeader("Game Time", ImGuiTreeNodeFlags_DefaultOpen))
 		{
-			ImGui::TextWrapped("\Time variables\t");
+			ImGui::TextWrapped("<---Time variables--->");
 
 			ImGui::TextWrapped("Real time delta time: "); ImGui::SameLine();
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), "%.4f", EngineTime::RealTimeDeltaTime()); 
 			ImGui::TextWrapped("Real time total time: "); ImGui::SameLine();
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), "%.4f", EngineTime::GameTimeInRealTimeCount());
-
 
 			ImGui::TextWrapped("Game delta time: "); ImGui::SameLine();
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), "%.4f", EngineTime::GameDeltaTime());
@@ -136,12 +175,32 @@ void ImWindowConfiguration::Update()
 
 		if (ImGui::CollapsingHeader("Input", ImGuiTreeNodeFlags_DefaultOpen))
 		{
-			ImGui::TextWrapped("\tMouse Input\t");
+			ImGui::TextWrapped("<---Mouse Input--->");
 
 			ImGui::TextWrapped("Mouse Position: x = "); ImGui::SameLine();
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), "%d", ModuleInput::S_GetMouseX()); ImGui::SameLine();
 			ImGui::TextWrapped(" y = "); ImGui::SameLine();
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), "%d", ModuleInput::S_GetMouseY());
+
+			ImGui::Separator();
+
+			ImGui::TextWrapped("Mouse Wheel Speed: "); ImGui::SameLine();
+			ImGui::TextColored(ImVec4(255, 255, 0, 255), "%.4f", _mouseWheel);
+
+			if (ImGui::SliderInt("Mouse Wheel Speed Int", &_mouseWheelInteger, 0, 20))
+			{
+				_mouseWheel = _mouseWheelInteger + _mouseWheelDecimal;
+
+				if (_sceneCamera)
+					_sceneCamera->SetWheelSpeed(_mouseWheel);
+			}
+			if (ImGui::SliderFloat("Mouse Wheel Speed Float", &_mouseWheelDecimal, 0, 1))
+			{
+				_mouseWheel = _mouseWheelInteger + _mouseWheelDecimal;
+
+				if (_sceneCamera)
+					_sceneCamera->SetWheelSpeed(_mouseWheel);
+			}
 
 			if (ImGui::CollapsingHeader("GamePad Input"))
 			{
@@ -223,7 +282,6 @@ void ImWindowConfiguration::Update()
 				ImGui::TextWrapped("Right Trigger Axis: "); ImGui::SameLine();
 				ImGui::TextColored(ImVec4(255, 255, 0, 255), "%d", ModuleInput::S_GetGamePadAxis(SDL_GameControllerAxis::SDL_CONTROLLER_AXIS_TRIGGERRIGHT));
 			}
-
 		}
 
 		if(ImGui::CollapsingHeader("Render", ImGuiTreeNodeFlags_DefaultOpen))
@@ -231,13 +289,16 @@ void ImWindowConfiguration::Update()
 			for (auto& iter : renderConfigs)
 			{
 				ImGui::Checkbox(iter.first.c_str(), &iter.second.first);
-				if (iter.first == "wireframe") _moduleRenderer->ToggleOpenGLWireframe(iter.second.first);
-				else if (iter.first == "shadows") _moduleRenderer->SetShadows(iter.second.first);
-				else _moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
+				if (iter.first == "wireframe") 
+					_moduleRenderer->ToggleOpenGLWireframe(iter.second.first);
+				else if (iter.first == "shadows") 
+					_moduleRenderer->SetShadows(iter.second.first);
+				else 
+					_moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
 			}
-		}
 
-		ImGui::Checkbox("Show Colliders", &_app->renderer3D->isRenderingColliders);
+			ImGui::Checkbox("Show Colliders", &_app->renderer3D->isRenderingColliders);
+		}
 
 		if (ImGui::CollapsingHeader("Hardware", ImGuiTreeNodeFlags_DefaultOpen))
 		{

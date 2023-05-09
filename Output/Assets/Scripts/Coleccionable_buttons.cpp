@@ -36,58 +36,62 @@ void Coleccionable_buttons::Start()
 
 void Coleccionable_buttons::Update()
 {
-	for (int i = 0; i < 3; i++)
-	{
-		//buttons[i].SetBlocked(true);
-		if (CheckBox[i].OnHovered())
-		{
-			switch (i)
-			{
-			case 0:
-				level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[0]);
-				Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
-				break;
-			case 1:
-				level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[1]);
-				Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
-				break;
-			case 2:
-				level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[2]);
-				Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
-				break;
-			default:
-				break;
-			}
 
-		}
-		if (playerStorage->casette1Picked == true &&  playerStorage->casette2Picked == true && playerStorage->casette3Picked == true)
+	if (playerStorage)
+	{
+		for (int i = 0; i < 3; i++)
 		{
-			if (CheckBox[i].OnPress())
+			//buttons[i].SetBlocked(true);
+			if (CheckBox[i].OnHovered())
 			{
 				switch (i)
 				{
 				case 0:
-					Audio::Event("L1_collectable3");
-					CheckBox[1].SetActive(false);
-					CheckBox[2].SetActive(false);
+					level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[0]);
+					Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
 					break;
 				case 1:
-					Audio::Event("L2_collectable3");
-					CheckBox[0].SetActive(false);
-					CheckBox[2].SetActive(false);
+					level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[1]);
+					Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
 					break;
 				case 2:
-					CheckBox[0].SetActive(false);
-					CheckBox[2].SetActive(false);
-					Audio::Event("L3_collectable3");
+					level_selected.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(levels[2]);
+					Level1selected(playerStorage->casette1Picked, playerStorage->casette2Picked, playerStorage->casette3Picked);
 					break;
 				default:
 					break;
 				}
+
 			}
+			if (playerStorage->casette1Picked == true && playerStorage->casette2Picked == true && playerStorage->casette3Picked == true)
+			{
+				if (CheckBox[i].OnPress())
+				{
+					switch (i)
+					{
+					case 0:
+						Audio::Event("L1_collectable3");
+						CheckBox[1].SetActive(false);
+						CheckBox[2].SetActive(false);
+						break;
+					case 1:
+						Audio::Event("L2_collectable3");
+						CheckBox[0].SetActive(false);
+						CheckBox[2].SetActive(false);
+						break;
+					case 2:
+						CheckBox[0].SetActive(false);
+						CheckBox[2].SetActive(false);
+						Audio::Event("L3_collectable3");
+						break;
+					default:
+						break;
+					}
+				}
+			}
+
+
 		}
-
-
 	}
 }
 

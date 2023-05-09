@@ -3,17 +3,18 @@ HELLO_ENGINE_API_C GoToLevelTrigger* CreateGoToLevelTrigger(ScriptToInspectorInt
 {
     GoToLevelTrigger* classInstance = new GoToLevelTrigger();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
-    script->AddCheckBox("Is Hub Scene", &classInstance->isHub);
+   /*script->AddCheckBox("Is Hub Scene", &classInstance->isHub);
     script->AddDragInt("(IF NO HUB) Current Level", &classInstance->nextLevel);
-    script->AddInputBox("Scene path and name: ", &classInstance->scene);
+    script->AddInputBox("Scene path and name: ", &classInstance->scene);*/
+    script->AddDragBoxGameObject("Active Panel", &classInstance->panel);
     return classInstance;
 }
 
 void GoToLevelTrigger::Start()
 {
-    if (isHub)
+    /*if (isHub)
     {
-        /*if (API_QuickSave::GetBool("level4_completed"))
+        if (API_QuickSave::GetBool("level4_completed"))
         {
             scene = std::string("LVL5_Blockout");
             nextLevel = 5;
@@ -23,7 +24,7 @@ void GoToLevelTrigger::Start()
             scene = std::string("LVL4_Blockout.HScene");
             nextLevel = 4;
         }
-        else */if (API_QuickSave::GetBool("level2_completed"))
+        if (API_QuickSave::GetBool("level2_completed"))
         {
             scene = std::string("LVL5_Blockout.HScene");
             nextLevel = 3;
@@ -38,7 +39,7 @@ void GoToLevelTrigger::Start()
             scene = std::string("LVL1_Blockout.HScene");
             nextLevel = 1;
         } 
-    }
+    }*/
 }
 
 void GoToLevelTrigger::Update()
@@ -51,7 +52,10 @@ void GoToLevelTrigger::OnCollisionEnter(API_RigidBody other)
     std::string detectionName = other.GetGameObject().GetName();
     if (detectionName == "Player")
     {
-        if (isHub)
+        Console::Log("QUE PASA?");
+        panel.SetActive(true);
+
+        /*if (isHub)
         {
             if (API_QuickSave::GetBool("IsInMiddleOfLevel") == false)
             {
@@ -94,6 +98,6 @@ void GoToLevelTrigger::OnCollisionEnter(API_RigidBody other)
             API_QuickSave::SetBool("level" + std::to_string(nextLevel) + "_completed", true);
         }
         API_QuickSave::SetBool("ComesFromHub", true);
-        Scene::LoadScene(scene.c_str());
+        Scene::LoadScene(scene.c_str());*/
     }
 }

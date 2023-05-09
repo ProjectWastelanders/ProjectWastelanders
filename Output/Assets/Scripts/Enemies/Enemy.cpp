@@ -77,6 +77,10 @@ void Enemy::Start()
     }
 
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
+
+    initialPos.x = gameObject.GetTransform().GetGlobalPosition().x;
+    initialPos.z = gameObject.GetTransform().GetGlobalPosition().z;
+    
 }
 
 void Enemy::Update()

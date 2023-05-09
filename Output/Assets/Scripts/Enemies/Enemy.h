@@ -93,6 +93,9 @@ public:
     float _coldAnimDie;
 
     float _tHitColor = 0.35f;
+    API_Vector3 initialPos;
+
+   
 private:
 
     float _coldStun;
@@ -108,5 +111,6 @@ private:
     float _coldHitColor;
 
     bool _hitShader;
+    
 };
 

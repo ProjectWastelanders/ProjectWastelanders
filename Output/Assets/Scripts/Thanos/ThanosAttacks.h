@@ -25,6 +25,7 @@ public:
 
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
+	bool hasPulsed = false;
 	bool dashing = false;
 
 	API_GameObject boss;
@@ -41,6 +42,7 @@ public:
 	float swordTime = 0.0f;
 
 	float charge = 0.0f;
+	float selectAttack = 0.0f;
 
 	API_GameObject defenseSword;
 
@@ -60,6 +62,7 @@ public:
 		BEAM,
 		DASH2,
 		LASER,
+		DEAD,
 	};
 
 	THANOS_STATE thanosState;
@@ -166,5 +169,16 @@ public:
 	uint thanosSwordThrownAnimation;
 	uint thanosWalkAnimation;
 	uint thanosWalk2Animation;
+	uint thanosWalkBackwardsAnimation;
+
+	bool justRandOnce = false;
+	float meteorAnimationCooldown = 0.0f;
+	bool isMeteorAnimationReady = false;
+	bool meteorQueue = false;
+	bool isDead = false;
+	float deathTimer = 0.0f;
+
+	bool anotherTimer = 0.0f;
+
 };
 

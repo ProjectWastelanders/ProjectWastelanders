@@ -87,8 +87,9 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxAnimationResource("Thanos Start Sword Thrown Animation", &classInstance->thanosStartSwordThrownAnimation);
 	script->AddDragBoxAnimationResource("Thanos Stop Sword Thrown Animation", &classInstance->thanosStopSwordThrownAnimation);
 	script->AddDragBoxAnimationResource("Thanos Sword Thrown Animation", &classInstance->thanosSwordThrownAnimation);
-	script->AddDragBoxAnimationResource("Thanos Walk Animation (No sword)", &classInstance->thanosWalkAnimation);
-	script->AddDragBoxAnimationResource("Thanos Walk Animation (With sword)", &classInstance->thanosWalk2Animation);
+	script->AddDragBoxAnimationResource("Thanos Walk Animation (No sword)", &classInstance->thanosWalk2Animation);
+	script->AddDragBoxAnimationResource("Thanos Walk Animation (With sword)", &classInstance->thanosWalkAnimation);
+	script->AddDragBoxAnimationResource("Thanos Walk Backwards Animation (Without sword)", &classInstance->thanosWalkBackwardsAnimation);
 	script->AddDragBoxAnimationResource("Thanos Getting On Combat", &classInstance->thanosWakeUp);
 	script->AddDragBoxAnimationResource("Thanos Out Of Combat", &classInstance->thanosOutOfCombat);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
@@ -134,6 +135,9 @@ void ThanosAttacks::Start()
 }
 void ThanosAttacks::Update()
 {
+
+	
+
 	//defenseSword.GetTransform().SetPosition(boss.GetTransform().GetGlobalPosition());
 	if (tLoop->phase == 2) {
 		//2ND phase!!!
@@ -142,11 +146,21 @@ void ThanosAttacks::Update()
 			sword.SetActive(false);
 			melee1.SetActive(false);
 			thanosState = THANOS_STATE::PULSE;
+			thanosAnimationPlayer.ChangeAnimation(thanosPulseAnimation);
+			thanosAnimationPlayer.SetLoop(false);
+			thanosAnimationPlayer.Play();
 		}
 
 		
 
-		if (meteorRainCooldown > 30.0f) {
+		if (meteorRainCooldown > 30.0f && isRainingMeteors == false) {
+			meteorQueue = true;
+			//thanosState = THANOS_STATE::IDLE;
+			//isAttacking = false;
+			//thanosAnimationPlayer.ChangeAnimation(thanosMeteorAnimation);
+			//thanosAnimationPlayer.SetLoop(false);
+			//thanosAnimationPlayer.Play();
+			isMeteorAnimationReady = true;
 			isRainingMeteors = true;
 		}
 		else {
@@ -154,6 +168,13 @@ void ThanosAttacks::Update()
 		}
 
 		if (isRainingMeteors == true) {
+			meteorAnimationCooldown += Time::GetDeltaTime();
+			if(meteorAnimationCooldown > 2.75f && isMeteorAnimationReady == true){
+				isMeteorAnimationReady = false;
+				thanosAnimationPlayer.ChangeAnimation(thanosIdle2Animation);
+				thanosAnimationPlayer.SetLoop(true);
+				thanosAnimationPlayer.Play();
+			}
 			MeteorAttack();
 		}
 
@@ -169,11 +190,11 @@ void ThanosAttacks::Update()
 			explosionTime += Time::GetDeltaTime();
 			explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
-			if (explosionTime < 0.5 && distSA < 30.0 && explosionWave1HasArrived == false) {
+			if (explosionTime < 2.9f && distSA < 30.0 && explosionWave1HasArrived == false) {
 				pStats->TakeDamage(50, 0);
 				explosionWave1HasArrived = true;
 			}
-			if (explosionTime >= 0.5 && distSA > 30.0 && distSA < 60.0 && explosionWave2HasArrived == false) {
+			if (explosionTime >= 2.9f && distSA > 30.0 && distSA < 60.0 && explosionWave2HasArrived == false) {
 
 				//pStats->TakeDamage(1, 0);
 
@@ -188,17 +209,32 @@ void ThanosAttacks::Update()
 				//KnockBack
 				explosionWave2HasArrived = true;
 			}
-			if (explosionTime > 0.6) {
+			if (explosionTime > 4.0f) {
 				explosionWave.SetActive(false);
+				hasPulsed = true;
 				isAttacking = false;
+
+				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
+				thanosAnimationPlayer.SetLoop(false);
+				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
 			}
 			break;
 		case THANOS_STATE::IDLE:
 
+			//laserPS.Stop();
+
 			for (int i = 0; i < 4; i++) {
 				beams[i].SetActive(false);
 			}
+
+			if (meteorQueue == true) {
+				meteorQueue = false;
+				thanosAnimationPlayer.ChangeAnimation(thanosMeteorAnimation);
+				thanosAnimationPlayer.SetLoop(false);
+				thanosAnimationPlayer.Play();
+			}
+
 
 			attackType = rand() % 100 + 1;
 
@@ -207,15 +243,32 @@ void ThanosAttacks::Update()
 			charge += Time::GetDeltaTime();
 			if (charge > 2.0f) {
 				charge = 0.0f;
-				if (attackType > 75) thanosState = THANOS_STATE::BURST;
-				if (attackType <= 75 && attackType > 50) thanosState = THANOS_STATE::BEAM;
-				if (attackType < 50 && attackType > 25) {
+				if (attackType > 75) {
+					thanosState = THANOS_STATE::BURST;
+				
+					thanosAnimationPlayer.ChangeAnimation(thanosShootAnimation);
+					thanosAnimationPlayer.SetLoop(true);
+					thanosAnimationPlayer.Play();
+				
+				}
+				if (attackType <= 75 && attackType > 50) {
+
+					thanosState = THANOS_STATE::BEAM;
+					thanosAnimationPlayer.ChangeAnimation(thanosGuantletRecoilAnimation);
+					thanosAnimationPlayer.SetLoop(true);
+					thanosAnimationPlayer.Play();
+				}
+					if (attackType < 50 && attackType > 25) {
 					playerPosition = player.GetTransform().GetGlobalPosition();
 					thanosPosition = gameObject.GetTransform().GetGlobalPosition();
 					thanosState = THANOS_STATE::DASH2;
 				}
 				if (attackType <= 25) {
 					playerPosition = player.GetTransform().GetGlobalPosition();
+
+					thanosAnimationPlayer.ChangeAnimation(thanosAimAnimation);
+					thanosAnimationPlayer.SetLoop(false);
+					thanosAnimationPlayer.Play();
 					//laserCilinder.SetActive(true);
 					thanosState = THANOS_STATE::LASER;
 				}
@@ -240,6 +293,9 @@ void ThanosAttacks::Update()
 			}
 			
 			if (busrstTime > burstTimes[3]) {
+				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
+				thanosAnimationPlayer.SetLoop(true);
+				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
 				isAttacking = false;
 				busrstTime = 0.0f;
@@ -272,6 +328,9 @@ void ThanosAttacks::Update()
 			}
 
 			if (beamTime > beamTimes[4]) {
+				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
+				thanosAnimationPlayer.SetLoop(true);
+				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
 				isAttacking = false;
 				beamTime = 0.0f;
@@ -283,7 +342,14 @@ void ThanosAttacks::Update()
 			break;
 
 		case THANOS_STATE::DASH2:
-
+			anotherTimer += Time::GetDeltaTime();
+			if (anotherTimer > 2.0f) {
+				anotherTimer = 0.0f;
+				thanosState = THANOS_STATE::IDLE;
+				isAttacking = false;
+				areaDmg = false;
+				charge = 0.0f;
+			}
 			if (areaDmg == false) {
 				Seek2(&gameObject, playerPosition, dashSpeed);
 			}
@@ -304,16 +370,24 @@ void ThanosAttacks::Update()
 			Seek2(&laserPosition, player.GetTransform().GetGlobalPosition(), laserSpeed / 6);
 
 			if (charge > 0.5f) {
-				
-				Rotate2(laserPosition.GetTransform().GetGlobalPosition(), 0, &laserGO);
+
+				//Rotate2(laserPosition.GetTransform().GetGlobalPosition(), 0, &laserGO);
 				laserPS.Play();
 				laserPS.SetInitialSpeed(boss.GetTransform().GetForward() * 40.0f);
 				laserGO.SetActive(true);
 			}
+			if (charge > 0.75f) {
+				thanosAnimationPlayer.Pause();
 
+			}
 			if (charge > 10.5f) {
+				thanosAnimationPlayer.Resume();
+				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
+				thanosAnimationPlayer.SetLoop(true);
+				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
 				laserPS.StopEmitting();
+				laserPS.Stop();
 				charge = 0.0f;
 				laserGO.SetActive(false);
 				isAttacking = false;
@@ -325,28 +399,47 @@ void ThanosAttacks::Update()
 		}
 
 	}
-	else {
+	else if(tLoop->phase == 1){
 		if (isAttacking) {
 			//defenseSword.GetTransform().SetPosition(0, 100000000, 0);
 			switch (thanosState)
 			{
 			case THANOS_STATE::IDLE:
 			{
-				float selectAttack = rand() % 10 + 1;
+				if (justRandOnce == false) {
+					selectAttack = rand() % 10 + 1;
+					justRandOnce = true; 
+					if (selectAttack < 6 || tLoop->phase == 2) {
+						thanosAnimationPlayer.ChangeAnimation(thanosStopSwordThrownAnimation);
+						thanosAnimationPlayer.SetLoop(false);
+						thanosAnimationPlayer.Play();
+					}
+					else {
+						thanosAnimationPlayer.ChangeAnimation(thanosChargeOnlyAnimation);
+						thanosAnimationPlayer.SetLoop(false);
+						thanosAnimationPlayer.Play();
+					}
+				}
+				
 
 				charge += Time::GetDeltaTime();
 
+				
 				if (charge > 0.25f) {
+					justRandOnce = false;
+
 					charge = 0.0f;
 					if (selectAttack < 6 || tLoop->phase == 2) {
 						playerPosition = player.GetTransform().GetGlobalPosition();
-
+						thanosAnimationPlayer.Pause();
 						thanosState = THANOS_STATE::THROWINGATTACK;
 						sword.SetActive(true);
 					}
 					else {
 						playerPosition = player.GetTransform().GetGlobalPosition();
-
+						thanosAnimationPlayer.ChangeAnimation(thanosChargeAttackAnimation);
+						thanosAnimationPlayer.SetLoop(false);
+						thanosAnimationPlayer.Play();
 						thanosState = THANOS_STATE::DASHATTACK;
 					}
 				}
@@ -379,10 +472,13 @@ void ThanosAttacks::Update()
 
 				Seek(&sword, aimPosition, swordSpeed);
 				swordTime += Time::GetDeltaTime();
-
+				sword.GetTransform().Rotate(0, 0, 3000 * Time::GetDeltaTime());
 				if (swordTime > 1.75f) {
 					swordThrown = false;
 					isAttacking = false;
+					thanosAnimationPlayer.ChangeAnimation(thanosRunAnimation);
+					thanosAnimationPlayer.SetLoop(true);
+					thanosAnimationPlayer.Play();
 					thanosState = THANOS_STATE::SEEKING;
 					sword.SetActive(false);
 					swordTime = 0.0f;
@@ -400,7 +496,23 @@ void ThanosAttacks::Update()
 			//defenseSword.SetActive(true);
 		}
 	}
-	
+	if (tLoop->hp <= 0) {
+		laserPS.Stop();
+		thanosState = THANOS_STATE::DEAD;
+		tLoop->phase = 3;
+		isAttacking = false;
+		deathTimer += Time::GetDeltaTime();
+		if (isDead == false) {
+			thanosAnimationPlayer.ChangeAnimation(thanosOutOfCombat);
+			thanosAnimationPlayer.SetLoop(false);
+			thanosAnimationPlayer.Play();
+			isDead = true;
+		}
+		
+		if (deathTimer > 2.0f) {
+			thanosAnimationPlayer.Pause();
+		}
+	}
 }
 
 void ThanosAttacks::MeleeAttack() {
@@ -412,6 +524,9 @@ void ThanosAttacks::MeleeAttack() {
 		isAttacking = false;
 		thanosState = THANOS_STATE::SEEKING;
 		dashing = false;
+		thanosAnimationPlayer.ChangeAnimation(thanosRunAnimation);
+		thanosAnimationPlayer.SetLoop(true);
+		thanosAnimationPlayer.Play();
 	}
 	else if (meleeAttackTime > 0.05f) {
 		melee1.SetActive(true);
@@ -419,7 +534,7 @@ void ThanosAttacks::MeleeAttack() {
 }
 
 void ThanosAttacks::DashAttack() {
-	Seek(&boss, playerPosition, 1.5f);
+	Seek(&boss, playerPosition, 0.5f);
 }
 
 void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float speed) {
@@ -435,6 +550,7 @@ void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float spee
 				area.SetActive(true);
 			}
 			else if(thanosState != THANOS_STATE::LASER){
+				anotherTimer = 0.0f;
 				thanosState = THANOS_STATE::IDLE;
 				isAttacking = false;
 				areaDmg = false;
@@ -459,15 +575,30 @@ void ThanosAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed
 			//defenseSword.SetActive(false);
 		}
 		if (thanosState == THANOS_STATE::THROWINGATTACK) {
+
+			thanosAnimationPlayer.ChangeAnimation(thanosSwordThrownAnimation);
+			thanosAnimationPlayer.SetLoop(true);
+			thanosAnimationPlayer.Play();
 			if (aimPosition == boss.GetTransform().GetGlobalPosition()) {
 				swordThrown = false;
 				isAttacking = false;
+				swordTime = 0.0f;
 				thanosState = THANOS_STATE::SEEKING;
+
+				thanosAnimationPlayer.ChangeAnimation(thanosRunAnimation);
+				thanosAnimationPlayer.SetLoop(true);
+				thanosAnimationPlayer.Play();
+
 				sword.SetActive(false);
 			}
 			aimPosition = boss.GetTransform().GetGlobalPosition();
 		}
-		else if(thanosState != THANOS_STATE::PULSE) thanosState = THANOS_STATE::MELEEATTACK;
+		else if (thanosState != THANOS_STATE::PULSE) {
+			thanosAnimationPlayer.ChangeAnimation(thanosMeleeAnimation);
+			thanosAnimationPlayer.SetLoop(false);
+			thanosAnimationPlayer.Play();
+			thanosState = THANOS_STATE::MELEEATTACK;
+		}
 	}
 }
 
@@ -530,6 +661,7 @@ void ThanosAttacks::MeteorAttack() {
 			//meteors[i].GetMeshRenderer().SetActive(true);
 		}
 		thanosState = THANOS_STATE::IDLE;
+		meteorAnimationCooldown = 0.0f;
 		isRainingMeteors = false;
 		meteorRainCooldown = 0.0f;
 	}

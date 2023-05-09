@@ -2,10 +2,14 @@
 HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToInspectorInterface* script)
 {
 	Coleccionable_buttons* classInstance = new Coleccionable_buttons();
+
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
-	script->AddDragBoxUICheckBox("CheckBox 1", &classInstance->CheckBox[0]);
-	script->AddDragBoxUICheckBox("CheckBox 2", &classInstance->CheckBox[1]);
-	script->AddDragBoxUICheckBox("CheckBox 3", &classInstance->CheckBox[2]);
+
+	script->AddDragBoxGameObject("Colleccionable Panel", &classInstance->coleccionable_panel);
+
+	script->AddDragBoxUICheckBox("CheckBox 1", &classInstance->checkBox[0]);
+	script->AddDragBoxUICheckBox("CheckBox 2", &classInstance->checkBox[1]);
+	script->AddDragBoxUICheckBox("CheckBox 3", &classInstance->checkBox[2]);
 
 	script->AddDragBoxUIImage("level", &classInstance->level_selected);
 
@@ -13,9 +17,9 @@ HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToIn
 	script->AddDragBoxTextureResource("Song 2 texture", &classInstance->levels[1]);
 	script->AddDragBoxTextureResource("Song 3 texture", &classInstance->levels[2]);
 	
-	script->AddDragBoxGameObject("Casete 1 GO", &classInstance->Casetes[0]);
-	script->AddDragBoxGameObject("Casete 2 GO", &classInstance->Casetes[1]);
-	script->AddDragBoxGameObject("Casete 3 GO", &classInstance->Casetes[2]);
+	script->AddDragBoxGameObject("Casete 1 GO", &classInstance->casetes[0]);
+	script->AddDragBoxGameObject("Casete 2 GO", &classInstance->casetes[1]);
+	script->AddDragBoxGameObject("Casete 3 GO", &classInstance->casetes[2]);
 
 	
 	
@@ -27,7 +31,7 @@ void Coleccionable_buttons::Start()
 {
 	for (int i = 0; i < 3; i++)
 	{
-		Casetes[i].SetActive(false);
+		casetes[i].SetActive(false);
 	}
 
 	playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
@@ -36,13 +40,18 @@ void Coleccionable_buttons::Start()
 
 void Coleccionable_buttons::Update()
 {
+	if (Input::GetKey(KeyCode::KEY_V) == KeyState::KEY_DOWN /*Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN*/ && coleccionable_panel.IsActive() == true)
+	{
+		coleccionable_panel.SetActive(false);
+		Console::Log("MARICOS");
+	}
 
 	if (playerStorage)
 	{
 		for (int i = 0; i < 3; i++)
 		{
 			//buttons[i].SetBlocked(true);
-			if (CheckBox[i].OnHovered())
+			if (checkBox[i].OnHovered())
 			{
 				switch (i)
 				{
@@ -65,33 +74,53 @@ void Coleccionable_buttons::Update()
 			}
 			if (playerStorage->casette1Picked == true && playerStorage->casette2Picked == true && playerStorage->casette3Picked == true)
 			{
-				if (CheckBox[i].OnPress())
+				if (checkBox[i].OnPress())
 				{
 					switch (i)
 					{
 					case 0:
 						Audio::Event("L1_collectable3");
-						CheckBox[1].SetActive(false);
-						CheckBox[2].SetActive(false);
 						break;
 					case 1:
 						Audio::Event("L2_collectable3");
-						CheckBox[0].SetActive(false);
-						CheckBox[2].SetActive(false);
 						break;
 					case 2:
-						CheckBox[0].SetActive(false);
-						CheckBox[2].SetActive(false);
 						Audio::Event("L3_collectable3");
 						break;
 					default:
 						break;
 					}
 				}
+
 			}
 
-
+			if (checkBox[i].OnPress())
+			{
+				switch (i)
+				{
+				case 0:
+					checkBox[1].SetActive(false);
+					checkBox[2].SetActive(false);
+					break;
+				case 1:
+					checkBox[0].SetActive(false);
+					checkBox[2].SetActive(false);
+					break;
+				case 2:
+					checkBox[0].SetActive(false);
+					checkBox[1].SetActive(false);
+					break;
+				default:
+					break;
+				}
+			}
 		}
+	
+	}
+
+	if (true)
+	{
+
 	}
 }
 
@@ -102,29 +131,29 @@ void Coleccionable_buttons::Level1selected( bool casete1, bool casete2, bool cas
 
 	if (casete1 == true)
 	{
-		Casetes[0].SetActive(true);
+		casetes[0].SetActive(true);
 	}
 	else
 	{
-		Casetes[0].SetActive(false);
+		casetes[0].SetActive(false);
 	}
 	
 	if (casete2 == true)
 	{
-		Casetes[1].SetActive(true);
+		casetes[1].SetActive(true);
 	}
 	else
 	{
-		Casetes[1].SetActive(false);
+		casetes[1].SetActive(false);
 	}
 	
 	if (casete3 == true)
 	{
-		Casetes[2].SetActive(true);
+		casetes[2].SetActive(true);
 	}
 	else
 	{
-		Casetes[2].SetActive(false);
+		casetes[2].SetActive(false);
 	}
 
 }
@@ -134,30 +163,30 @@ void Coleccionable_buttons::Level2selected( bool casete1, bool casete2, bool cas
 
 	if (casete1 == true)
 	{
-		Casetes[0].SetActive(true);
+		casetes[0].SetActive(true);
 
 	}
 	else
 	{
-		Casetes[0].SetActive(false);
+		casetes[0].SetActive(false);
 	}
 
 	if (casete2 == true)
 	{
-		Casetes[1].SetActive(true);
+		casetes[1].SetActive(true);
 	}
 	else
 	{
-		Casetes[1].SetActive(false);
+		casetes[1].SetActive(false);
 	}
 
 	if (casete3 == true)
 	{
-		Casetes[2].SetActive(true);
+		casetes[2].SetActive(true);
 	}
 	else
 	{
-		Casetes[2].SetActive(false);
+		casetes[2].SetActive(false);
 	}
 
 
@@ -169,29 +198,29 @@ void Coleccionable_buttons::Level3selected( bool casete1, bool casete2, bool cas
 
 	if (casete1 == true)
 	{
-		Casetes[0].SetActive(true);
+		casetes[0].SetActive(true);
 	}
 	else
 	{
-		Casetes[0].SetActive(false);
+		casetes[0].SetActive(false);
 	}
 
 	if (casete2 == true)
 	{
-		Casetes[1].SetActive(true);
+		casetes[1].SetActive(true);
 	}
 	else
 	{
-		Casetes[1].SetActive(false);
+		casetes[1].SetActive(false);
 	}
 
 	if (casete3 == true)
 	{
-		Casetes[2].SetActive(true);
+		casetes[2].SetActive(true);
 	}
 	else
 	{
-		Casetes[2].SetActive(false);
+		casetes[2].SetActive(false);
 	}
 }
 

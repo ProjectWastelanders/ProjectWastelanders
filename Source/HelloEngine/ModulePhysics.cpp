@@ -76,6 +76,7 @@ bool ModulePhysics::Start()
 
 UpdateStatus ModulePhysics::PreUpdate()
 {
+	OPTICK_EVENT();
 	/*if (hasToSetRenderBuffers == true) 
 	{
 		for (int i = 0; i < physBodies.size(); i++) 

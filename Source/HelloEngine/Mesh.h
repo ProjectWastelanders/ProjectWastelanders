@@ -80,6 +80,8 @@ public:
 
 	void CalculateBoundingBoxes();
 
+	void BonesStep(Material& material);
+
 public:
 
 	std::vector<Vertex>* _vertices = nullptr;

@@ -215,18 +215,7 @@ void Mesh::UniformDraw(Material material)
 		Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix(),
 		&modelMatrix.v[0][0]);
 
-	//Update only the bones
-	if (component->_hasBones)
-	{
-		SkinnedMeshRenderComponent* smComp = (SkinnedMeshRenderComponent*)component;
-
-		if (!smComp->hasAnim)
-		{
-			smComp->UpdateBones();
-		}
-
-		material.UpdateBones(smComp->goBonesArr);
-	}
+	BonesStep(material);
 
 	material.GetShader()->shader.SetFloat4v("ColourTest", color.ptr());
 }
@@ -395,4 +384,21 @@ void Mesh::CalculateBoundingBoxes()
 
 	globalAABB.SetNegativeInfinity();
 	globalAABB.Enclose(globalOBB);
+}
+
+void Mesh::BonesStep(Material& material)
+{
+	OPTICK_EVENT();
+	//Update only the bones
+	if (component->_hasBones)
+	{
+		SkinnedMeshRenderComponent* smComp = (SkinnedMeshRenderComponent*)component;
+
+		if (!smComp->hasAnim)
+		{
+			/*smComp->UpdateBones();*/
+		}
+
+		material.UpdateBones(smComp->goBonesArr);
+	}
 }

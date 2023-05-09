@@ -319,42 +319,6 @@
                     },
                     {
                         "Use safe zone": true
-                    },
-                    {
-                        "Target": 373022943
-                    },
-                    {
-                        "Delay": 0.05999999865889549
-                    },
-                    {
-                        "Offset_X": 0.0
-                    },
-                    {
-                        "Offset_Y": 15.0
-                    },
-                    {
-                        "Offset_Z": -10.0
-                    },
-                    {
-                        "Rot_X": 56.0
-                    },
-                    {
-                        "Rot_Y": 0.0
-                    },
-                    {
-                        "Rot_Z": 0.0
-                    },
-                    {
-                        "Orbital Multiplier": 2.0
-                    },
-                    {
-                        "Earthquake Multiplier": 0.20000000298023224
-                    },
-                    {
-                        "SafeZone_Distance": 3.0
-                    },
-                    {
-                        "Use safe zone": true
                     }
                 ],
                 "Script Resource": 3628776915,
@@ -464,93 +428,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Velocity": 7.5
-                    },
-                    {
-                        "Upgrade Velocity": 9.0
-                    },
-                    {
-                        "SecToMaxVel": 0.20000000298023224
-                    },
-                    {
-                        "SecToZeroVel": 0.20000000298023224
-                    },
-                    {
-                        "Y tp limit": -20.0
-                    },
-                    {
-                        "Rigid Body": 373022943
-                    },
-                    {
-                        "Dash Time": 0.5
-                    },
-                    {
-                        "Dash Distance": 9.0
-                    },
-                    {
-                        "Upgrade Dash Distance": 11.0
-                    },
-                    {
-                        "Dash Cooldown": 2.0
-                    },
-                    {
-                        "Upgrade Dash Cooldown": 1.0
-                    },
-                    {
-                        "AnimationPlayer": 985693684
-                    },
-                    {
-                        "Dash Animation": 3707604139
-                    },
-                    {
-                        "Idle Animation 1": 738149381
-                    },
-                    {
-                        "Idle Animation 2": 2426153329
-                    },
-                    {
-                        "Idle Animation 3": 1590499778
-                    },
-                    {
-                        "Run Forward Animation": 781813718
-                    },
-                    {
-                        "Run Back Animation": 915742792
-                    },
-                    {
-                        "Run Left Animation": 4072259668
-                    },
-                    {
-                        "Run Right Animation": 3628832266
-                    },
-                    {
-                        "Shoot Duals Animation": 2706901869
-                    },
-                    {
-                        "Shoot SemiAuto Animation": 2706901869
-                    },
-                    {
-                        "Shoot Automatic Animation": 2706901869
-                    },
-                    {
-                        "Shoot Burst Animation": 2706901869
-                    },
-                    {
-                        "Shoot Shotgun Animation": 2706901869
-                    },
-                    {
-                        "Hit Animation": 359781210
-                    },
-                    {
-                        "Open Chest Animation": 2410125527
-                    },
-                    {
-                        "Dead Animation": 296001631
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
                     {
                         "Velocity": 7.5
                     },
@@ -1460,48 +1337,6 @@
                     },
                     {
                         "Hud Munition GO": 3275906756
-                    },
-                    {
-                        "Max HP": 100.0
-                    },
-                    {
-                        "Current HP": 100.0
-                    },
-                    {
-                        "Upgraded Max HP": 125.0
-                    },
-                    {
-                        "Resistance": 100.0
-                    },
-                    {
-                        "Deadline Percentage": 20.0
-                    },
-                    {
-                        "Upgraded Deadline Percentage": 50.0
-                    },
-                    {
-                        "Deadline Heal Amount": 2.5
-                    },
-                    {
-                        "Upgraded Deadline Heal Amount": 5.0
-                    },
-                    {
-                        "Aid Kit Heal Amount": 30.0
-                    },
-                    {
-                        "Upgraded Aid Kit Heal Amount": 60.0
-                    },
-                    {
-                        "Passive Heal Particles": 1471927406
-                    },
-                    {
-                        "Kid Heal Particles": 3100903507
-                    },
-                    {
-                        "Player GO": 373022943
-                    },
-                    {
-                        "Hud Munition GO": 3275906756
                     }
                 ],
                 "Script Resource": 486374105,
@@ -1761,42 +1596,6 @@
                     },
                     {
                         "Swap Weapon GO (HUD)": 4136750099
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Base Gun": 0
-                    },
-                    {
-                        "Normal Gun": 1
-                    },
-                    {
-                        "Special Gun": 2
-                    },
-                    {
-                        "Duals": 851574187
-                    },
-                    {
-                        "Semiautomatic": 4012886439
-                    },
-                    {
-                        "Automatic": 2134099410
-                    },
-                    {
-                        "Burst": 2331353082
-                    },
-                    {
-                        "Shotgun": 23838785
-                    },
-                    {
-                        "Swap Delay": 1.0
-                    },
-                    {
-                        "Fast Swap Delay": 0.5
-                    },
-                    {
-                        "Swap Weapon GO (HUD)": 4136750099
                     }
                 ],
                 "Script Resource": 2666385646,
@@ -1805,15 +1604,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Level Index": 0
-                    },
-                    {
-                        "Map Indicator": 2190692727
-                    },
-                    {
-                        "Hud BluePrint Indicator GO": 587585499
-                    },
                     {
                         "Level Index": 0
                     },
@@ -7472,9 +7262,6 @@
                     },
                     {
                         "Gun Type": 0
-                    },
-                    {
-                        "Gun Type": 0
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -7483,60 +7270,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3433217862
-                    },
-                    {
-                        "Projectile Speed": 0.0
-                    },
-                    {
-                        "Projectile Damage": 0.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 0.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.0
-                    },
-                    {
-                        "Projectile Spawn": 851574187
-                    },
-                    {
-                        "Second Projectile Spawn": 701275422
-                    },
-                    {
-                        "Projectile ScaleX": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleY": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleZ": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per second": 0.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Burst Space": 0.0
-                    },
-                    {
-                        "Slow %": 0.0
-                    },
-                    {
-                        "Freeze %": 0.0
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Ammo Type": 0
-                    },
-                    {
-                        "Audio Event String": "w_basic"
-                    },
                     {
                         "Projectile Pull": 3433217862
                     },
@@ -7974,9 +7707,6 @@
                     },
                     {
                         "Gun Type": 1
-                    },
-                    {
-                        "Gun Type": 1
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -7985,48 +7715,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3433217862
-                    },
-                    {
-                        "Projectile Speed": 0.0
-                    },
-                    {
-                        "Projectile Damage": 0.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 0.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.0
-                    },
-                    {
-                        "Projectile Spawn": 4012886439
-                    },
-                    {
-                        "Projectile ScaleX": 0.20000000298023224
-                    },
-                    {
-                        "Projectile ScaleY": 0.20000000298023224
-                    },
-                    {
-                        "Projectile ScaleZ": 0.4000000059604645
-                    },
-                    {
-                        "Projectiles per second": 0.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_semi"
-                    },
                     {
                         "Projectile Pull": 3433217862
                     },
@@ -8380,9 +8068,6 @@
                     },
                     {
                         "Gun Type": 2
-                    },
-                    {
-                        "Gun Type": 2
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -8391,48 +8076,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3433217862
-                    },
-                    {
-                        "Projectile Speed": 0.0
-                    },
-                    {
-                        "Projectile Damage": 0.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 0.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.0
-                    },
-                    {
-                        "Projectile Spawn": 2134099410
-                    },
-                    {
-                        "Projectile ScaleX": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleY": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleZ": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per second": 0.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_automatic"
-                    },
                     {
                         "Projectile Pull": 3433217862
                     },
@@ -8786,9 +8429,6 @@
                     },
                     {
                         "Gun Type": 3
-                    },
-                    {
-                        "Gun Type": 3
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -8797,54 +8437,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3433217862
-                    },
-                    {
-                        "Projectile Speed": 0.0
-                    },
-                    {
-                        "Projectile Damage": 0.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 0.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.0
-                    },
-                    {
-                        "Projectile Spawn": 2331353082
-                    },
-                    {
-                        "Projectile ScaleX": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleY": 0.10000000149011612
-                    },
-                    {
-                        "Projectile ScaleZ": 0.10000000149011612
-                    },
-                    {
-                        "Projectiles per second": 0.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Burst Space": 0.0
-                    },
-                    {
-                        "Projectiles per burst": 0
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_burst"
-                    },
                     {
                         "Projectile Pull": 3433217862
                     },
@@ -9240,9 +8832,6 @@
                     },
                     {
                         "Gun Type": 4
-                    },
-                    {
-                        "Gun Type": 4
                     }
                 ],
                 "Script Resource": 4015574954,
@@ -9251,54 +8840,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Projectile Pull": 3433217862
-                    },
-                    {
-                        "Projectile Speed": 0.0
-                    },
-                    {
-                        "Projectile Damage": 0.0
-                    },
-                    {
-                        "Projectile Resistance Damage": 0.0
-                    },
-                    {
-                        "Projectile Lifetime": 0.0
-                    },
-                    {
-                        "Projectile Spawn": 23838785
-                    },
-                    {
-                        "Projectile ScaleX": 0.05000000074505806
-                    },
-                    {
-                        "Projectile ScaleY": 0.05000000074505806
-                    },
-                    {
-                        "Projectile ScaleZ": 0.05000000074505806
-                    },
-                    {
-                        "Projectiles per second": 0.0
-                    },
-                    {
-                        "Extra % firerate": 15.0
-                    },
-                    {
-                        "Pellets per shot": 0
-                    },
-                    {
-                        "Pellets Dispersion": 0.0
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Ammo Type": 1
-                    },
-                    {
-                        "Audio Event String": "w_shotgun"
-                    },
                     {
                         "Projectile Pull": 3433217862
                     },
@@ -9674,9 +9215,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Gun Type": 5
-                    },
                     {
                         "Gun Type": 5
                     },
@@ -11259,24 +10797,6 @@
                     },
                     {
                         "Check Ricochet Traget Prefab": 3306111952
-                    },
-                    {
-                        "Player": 373022943
-                    },
-                    {
-                        "Pull Size": 20
-                    },
-                    {
-                        "Projectile Prefab": 633942339
-                    },
-                    {
-                        "Shotgun Bomb Pull Size": 0
-                    },
-                    {
-                        "Shotgun Bomb Prefab": 884876432
-                    },
-                    {
-                        "Check Ricochet Traget Prefab": 3306111952
                     }
                 ],
                 "Script Resource": 211675320,
@@ -11406,9 +10926,6 @@
                     },
                     {
                         "Player Stats GO": 373022943
-                    },
-                    {
-                        "Player Stats GO": 373022943
                     }
                 ],
                 "Script Resource": 1943578344,
@@ -11497,50 +11014,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Enemy Drop Rate": 20.0
-                    },
-                    {
-                        "Upgraded Enemy Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Ammo Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Aid Kit Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Power Ups Drop Rate": 30.0
-                    },
-                    {
-                        "Box Drop Rate": 35.0
-                    },
-                    {
-                        "Box Ammo Drop Rate": 50.0
-                    },
-                    {
-                        "Box Aid Kit Drop Rate": 50.0
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Pull Size per Drop Type": 2
-                    },
-                    {
-                        "Lase Ammo Drop MeshIndexInsideModel": 0,
-                        "Lase Ammo Drop MeshModelUID": 1697595829
-                    },
-                    {
-                        "First Aid Kit Drop MeshIndexInsideModel": 0,
-                        "First Aid Kit Drop MeshModelUID": 2874499955
-                    },
-                    {
-                        "Lase Ammo Drop Material": 2330959624
-                    },
-                    {
-                        "First Aid Kit Drop Material": 2491720131
-                    },
                     {
                         "Enemy Drop Rate": 20.0
                     },
@@ -42241,27 +41714,6 @@
                     },
                     {
                         "Continute button Final text": 3535348323
-                    },
-                    {
-                        "Pause Panel": 2561551180
-                    },
-                    {
-                        "Map Panel": 2140472850
-                    },
-                    {
-                        "HUD Panel": 170669645
-                    },
-                    {
-                        "Initial text Panel": 686180700
-                    },
-                    {
-                        "Final text Panel": 1564649975
-                    },
-                    {
-                        "Continute button Initial text": 3960248588
-                    },
-                    {
-                        "Continute button Final text": 3535348323
                     }
                 ],
                 "Script Resource": 3735874758,
@@ -42313,18 +41765,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "UI Manager: ": 1721330332
-                    },
-                    {
-                        "Continue: ": 2627502946
-                    },
-                    {
-                        "Settings: ": 2122638267
-                    },
-                    {
-                        "Main Menu: ": 3259033335
-                    },
                     {
                         "UI Manager: ": 1721330332
                     },
@@ -43021,24 +42461,6 @@
                     },
                     {
                         "Map GO": 3674987834
-                    },
-                    {
-                        "Player Storage": 373022943
-                    },
-                    {
-                        "Casette1": 766052184
-                    },
-                    {
-                        "Casette2": 2710187832
-                    },
-                    {
-                        "Casette3": 3778771096
-                    },
-                    {
-                        "Level Index": 1
-                    },
-                    {
-                        "Map GO": 3674987834
                     }
                 ],
                 "Script Resource": 2344407423,
@@ -43430,15 +42852,6 @@
                     },
                     {
                         "Movement Reduction Y": 1000.0
-                    },
-                    {
-                        "Level Index": 1
-                    },
-                    {
-                        "Movement Reduction X": 1000.0
-                    },
-                    {
-                        "Movement Reduction Y": 1000.0
                     }
                 ],
                 "Script Resource": 3185844118,
@@ -43692,24 +43105,6 @@
                     },
                     {
                         "Object visual feedback": 2970038870
-                    },
-                    {
-                        "Player": 373022943
-                    },
-                    {
-                        "Mission 1": 3929665507
-                    },
-                    {
-                        "Mission 2": 2120474942
-                    },
-                    {
-                        "Material mission 1 Finished": 1561918590
-                    },
-                    {
-                        "Material mission 2 Finished": 3990715488
-                    },
-                    {
-                        "Object visual feedback": 2970038870
                     }
                 ],
                 "Script Resource": 2730713786,
@@ -43718,63 +43113,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Button Guide": 2970038870
-                    },
-                    {
-                        "Move X animation repeat": 1
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": false
-                    },
-                    {
-                        "Move animation active": false
-                    },
-                    {
-                        "Distance move X": 0.20000000298023224
-                    },
-                    {
-                        "Speed move X": 2.0
-                    },
-                    {
-                        "Distance move Y": 0.0
-                    },
-                    {
-                        "Speed move Y": 0.0
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.0
-                    },
-                    {
-                        "Speed Scale": 0.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0
-                    },
-                    {
-                        "Speed Rotation": 0.0
-                    },
                     {
                         "Button Guide": 2970038870
                     },
@@ -44465,33 +43803,6 @@
                     },
                     {
                         "GamesObjects_4": 1361410579
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "Texture_SPEED_INCREASE": 572968604
-                    },
-                    {
-                        "Texture_FIRERATE_INCREASE": 904723382
-                    },
-                    {
-                        "Texture_SHIELD": 874482960
-                    },
-                    {
-                        "Texture_SLOW_TIME": 3865343995
-                    },
-                    {
-                        "GamesObjects_1": 3359281915
-                    },
-                    {
-                        "GamesObjects_2": 2655161780
-                    },
-                    {
-                        "GamesObjects_3": 3920832836
-                    },
-                    {
-                        "GamesObjects_4": 1361410579
                     }
                 ],
                 "Script Resource": 3847216677,
@@ -44889,24 +44200,6 @@
                     },
                     {
                         "HP Regen Texture": 4119276236
-                    },
-                    {
-                        "Player Stats GO": 373022943
-                    },
-                    {
-                        "HUD fons": 648613607
-                    },
-                    {
-                        "HP_BAR": 1739131464
-                    },
-                    {
-                        "SHIELD_BAR": 2548431162
-                    },
-                    {
-                        "HP Texture": 2859695454
-                    },
-                    {
-                        "HP Regen Texture": 4119276236
                     }
                 ],
                 "Script Resource": 3952342186,
@@ -44915,9 +44208,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Bar": 1739131464
-                    },
                     {
                         "Bar": 1739131464
                     },
@@ -45149,18 +44439,6 @@
                     },
                     {
                         "Movment Speed": 0.009999999776482582
-                    },
-                    {
-                        "Struggle Game Object": 648613607
-                    },
-                    {
-                        "Movment on X": 0.029999999329447746
-                    },
-                    {
-                        "Movment Repetitions": 10.0
-                    },
-                    {
-                        "Movment Speed": 0.009999999776482582
                     }
                 ],
                 "Script Resource": 272862626,
@@ -45201,87 +44479,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "HandgunsWeapons_On": 3076489896
-                    },
-                    {
-                        "HandgunsWeapons_Off": 3986648714
-                    },
-                    {
-                        "Auto_On": 2067694486
-                    },
-                    {
-                        "Burst_On": 1186397666
-                    },
-                    {
-                        "Semi_On": 953282997
-                    },
-                    {
-                        "Shotgun_On": 3011687056
-                    },
-                    {
-                        "Auto_Off": 554082642
-                    },
-                    {
-                        "Burst_Off": 2098528651
-                    },
-                    {
-                        "Semi_Off": 3008937367
-                    },
-                    {
-                        "Shotgun_Off": 1390408833
-                    },
-                    {
-                        "FlameThrower_On 1": 2806950331
-                    },
-                    {
-                        "Ricochet_On 2": 4165763925
-                    },
-                    {
-                        "FlameThrower_Off 1": 2148606541
-                    },
-                    {
-                        "Ricochet_Off 2": 852787717
-                    },
-                    {
-                        "Material Weapon 1 on": 367436116
-                    },
-                    {
-                        "Material Weapon 1 off": 444617060
-                    },
-                    {
-                        "Game Bar Weapon 1": 4222371078
-                    },
-                    {
-                        "Material Weapon 2 on": 1876121082
-                    },
-                    {
-                        "Material Weapon 2 off": 3175411266
-                    },
-                    {
-                        "Game Bar Weapon 2": 4230281284
-                    },
-                    {
-                        "Material Weapon 3 on": 663215064
-                    },
-                    {
-                        "Material Weapon 3 off": 2797538744
-                    },
-                    {
-                        "Game Bar Weapon 3": 3058486589
-                    },
-                    {
-                        "Text_Dash_on": 486085637
-                    },
-                    {
-                        "Text_Dash_off": 3635487892
-                    },
-                    {
-                        "Material_Dash": 2812312567
-                    },
-                    {
-                        "Player Move GO": 373022943
-                    },
                     {
                         "HandgunsWeapons_On": 3076489896
                     },
@@ -46882,9 +46079,6 @@
                     },
                     {
                         "Bar": 2548431162
-                    },
-                    {
-                        "Bar": 2548431162
                     }
                 ],
                 "Script Resource": 2563255136,
@@ -47048,18 +46242,6 @@
                     },
                     {
                         "SHIELD BOSS 3 TEXTURE": 3349762469
-                    },
-                    {
-                        "HP BOSS 1 TEXTURE": 2911723293
-                    },
-                    {
-                        "SHIELD BOSS 1 TEXTURE": 3349762469
-                    },
-                    {
-                        "SHIELD BOSS 2 TEXTURE": 3349762469
-                    },
-                    {
-                        "SHIELD BOSS 3 TEXTURE": 3349762469
                     }
                 ],
                 "Script Resource": 2970796296,
@@ -47074,15 +46256,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Movment on X": 0.029999999329447746
-                    },
-                    {
-                        "Movment Repetitions": 10.0
-                    },
-                    {
-                        "Movment Speed": 0.009999999776482582
-                    },
                     {
                         "Movment on X": 0.029999999329447746
                     },
@@ -47643,27 +46816,6 @@
                     },
                     {
                         "Special munition off": 434517948
-                    },
-                    {
-                        "Infinit munition on": 550907283
-                    },
-                    {
-                        "Infinit munition off": 657996463
-                    },
-                    {
-                        "More munition Image": 2119391980
-                    },
-                    {
-                        "Normal munition on": 250571386
-                    },
-                    {
-                        "Normal munition off": 3168275650
-                    },
-                    {
-                        "Special munition on": 1883607977
-                    },
-                    {
-                        "Special munition off": 434517948
                     }
                 ],
                 "Script Resource": 392201209,
@@ -48008,54 +47160,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Image_Upgrade": 2363139637
-                    },
-                    {
-                        "Image_New_Weapon": 857990786
-                    },
-                    {
-                        "Image_Special_Weapon": 506912883
-                    },
-                    {
-                        "Material_Background_Upgrade": 2067832600
-                    },
-                    {
-                        "Material_Background_New_Weapon": 3252237169
-                    },
-                    {
-                        "Material_Background_Special_Weapon": 1550771814
-                    },
-                    {
-                        "Text_Upgrade": 1127427000
-                    },
-                    {
-                        "Text_New_Weapon": 4066326634
-                    },
-                    {
-                        "Text_Special_Weapon": 35556110
-                    },
-                    {
-                        "Texture_Upgrade": 1486232972
-                    },
-                    {
-                        "Texture_blueprint_Semiautomatic": 3149460017
-                    },
-                    {
-                        "Texture_blueprint_Automatic": 1832907480
-                    },
-                    {
-                        "Texture_blueprint_Burst": 4043280563
-                    },
-                    {
-                        "Texture_blueprint_Shotgun": 2823435623
-                    },
-                    {
-                        "Texture_Lanzallamas": 1715090730
-                    },
-                    {
-                        "Texture_Ricochet": 3944352303
-                    },
                     {
                         "Image_Upgrade": 2363139637
                     },
@@ -48914,12 +48018,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Button": 3535348323
-                    },
-                    {
-                        "Scene": "SpaceshipHUB_Scene.HScene"
-                    },
                     {
                         "Button": 3535348323
                     },
@@ -53428,7 +52526,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -58228,7 +57326,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -70675,7 +69773,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -71779,7 +70877,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -72883,7 +71981,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -73987,7 +73085,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -75091,7 +74189,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 639460007,
+                "MaterialUID": 3049325328,
                 "Type": 18
             }
         ],
@@ -75102,6 +74200,2864 @@
         "PrefabUID": 2896198603,
         "Tag": "Default",
         "UID": 442049070,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Isle15Walls",
+        "ParentUID": 2462894403,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2581600829,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -77.9813003540039,
+                    94.17650604248047,
+                    34.37862777709961
+                ],
+                "Rotation": [
+                    -90.0139389038086,
+                    0.02719610556960106,
+                    -67.3720703125
+                ],
+                "Scale": [
+                    0.9007334113121033,
+                    1.0004719495773315,
+                    1.0113465785980225
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3612733838,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -76.5421142578125,
+                    94.17631530761719,
+                    29.748085021972656
+                ],
+                "Rotation": [
+                    -90.02957916259766,
+                    0.006116434000432491,
+                    -15.789950370788574
+                ],
+                "Scale": [
+                    0.9007317423820496,
+                    1.000467300415039,
+                    1.0113431215286255
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1348012763,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -76.28324890136719,
+                    94.17632293701172,
+                    24.662824630737305
+                ],
+                "Rotation": [
+                    -90.03013610839844,
+                    -0.000720264739356935,
+                    -2.726443290710449
+                ],
+                "Scale": [
+                    0.9007317423820496,
+                    1.0004664659500122,
+                    1.0113431215286255
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2259691289,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -76.82145690917969,
+                    94.17607116699219,
+                    19.505613327026367
+                ],
+                "Rotation": [
+                    -90.029541015625,
+                    -0.005441312678158283,
+                    6.2816667556762695
+                ],
+                "Scale": [
+                    0.9007321000099182,
+                    1.0004481077194214,
+                    1.0113312005996704
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3332913150,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -78.03838348388672,
+                    94.17607116699219,
+                    14.651906967163086
+                ],
+                "Rotation": [
+                    -90.02838897705078,
+                    -0.009404316544532776,
+                    14.072332382202148
+                ],
+                "Scale": [
+                    0.9007317423820496,
+                    1.0004441738128662,
+                    1.0113317966461182
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 186934382,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -79.35931396484375,
+                    94.17581176757813,
+                    9.920537948608398
+                ],
+                "Rotation": [
+                    -90.02791595458984,
+                    -0.01019576471298933,
+                    15.688758850097656
+                ],
+                "Scale": [
+                    0.9007306098937988,
+                    1.0004388093948364,
+                    1.0113310813903809
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 189465127,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -80.38316345214844,
+                    94.17581176757813,
+                    5.010073184967041
+                ],
+                "Rotation": [
+                    -90.02825164794922,
+                    -0.00831148587167263,
+                    11.589225769042969
+                ],
+                "Scale": [
+                    0.9007285237312317,
+                    1.0004346370697021,
+                    1.0113298892974854
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 42867048,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -81.39239501953125,
+                    94.1762924194336,
+                    0.05948713421821594
+                ],
+                "Rotation": [
+                    -90.02825927734375,
+                    -0.008316181600093842,
+                    11.589227676391602
+                ],
+                "Scale": [
+                    0.9007288217544556,
+                    1.0004327297210693,
+                    1.0113303661346436
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 447767665,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -85.01355743408203,
+                    94.17655944824219,
+                    -3.330333709716797
+                ],
+                "Rotation": [
+                    -90.01736450195313,
+                    -0.02333533950150013,
+                    48.27195358276367
+                ],
+                "Scale": [
+                    0.9007288217544556,
+                    1.000422477722168,
+                    1.0113255977630615
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2264810463,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -90.11766815185547,
+                    94.17655944824219,
+                    -3.92864990234375
+                ],
+                "Rotation": [
+                    -90.00009155273438,
+                    -0.028319669887423515,
+                    83.36099243164063
+                ],
+                "Scale": [
+                    0.9007216095924377,
+                    1.0004119873046875,
+                    1.011317253112793
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2123246304,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -94.79031372070313,
+                    94.17652893066406,
+                    -1.8524837493896484
+                ],
+                "Rotation": [
+                    -89.98564147949219,
+                    -0.02416691556572914,
+                    114.02439880371094
+                ],
+                "Scale": [
+                    0.9007182717323303,
+                    1.0004091262817383,
+                    1.0113155841827393
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 895308713,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -96.61068725585938,
+                    94.1765365600586,
+                    2.661219358444214
+                ],
+                "Rotation": [
+                    -89.97283172607422,
+                    -0.006814820691943169,
+                    159.7323455810547
+                ],
+                "Scale": [
+                    0.9007098078727722,
+                    1.0004029273986816,
+                    1.0113086700439453
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3108848910,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -98.37128448486328,
+                    94.1760482788086,
+                    7.417355537414551
+                ],
+                "Rotation": [
+                    -89.97283172607422,
+                    -0.006814820691943169,
+                    159.7323455810547
+                ],
+                "Scale": [
+                    0.9007098078727722,
+                    1.0004029273986816,
+                    1.0113086700439453
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 4003011163,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -101.91178131103516,
+                    94.17583465576172,
+                    10.62143611907959
+                ],
+                "Rotation": [
+                    -89.97956848144531,
+                    -0.018950358033180237,
+                    131.2664337158203
+                ],
+                "Scale": [
+                    0.9007019400596619,
+                    1.000398874282837,
+                    1.0113060474395752
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1506288755,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -106.67742919921875,
+                    94.17583465576172,
+                    11.651805877685547
+                ],
+                "Rotation": [
+                    -89.99198150634766,
+                    -0.02662578597664833,
+                    101.18110656738281
+                ],
+                "Scale": [
+                    0.9006962180137634,
+                    1.000396490097046,
+                    1.0113149881362915
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2262807316,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -111.64436340332031,
+                    94.17583465576172,
+                    12.75058364868164
+                ],
+                "Rotation": [
+                    -89.99147033691406,
+                    -0.026395266875624657,
+                    102.62975311279297
+                ],
+                "Scale": [
+                    0.9006915092468262,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3474586842,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -116.65766906738281,
+                    94.17583465576172,
+                    13.875431060791016
+                ],
+                "Rotation": [
+                    -89.99147033691406,
+                    -0.026395266875624657,
+                    102.62975311279297
+                ],
+                "Scale": [
+                    0.9006915092468262,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 273709811,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -121.53373718261719,
+                    94.17558288574219,
+                    14.963336944580078
+                ],
+                "Rotation": [
+                    -89.99147033691406,
+                    -0.026395266875624657,
+                    102.62975311279297
+                ],
+                "Scale": [
+                    0.9006915092468262,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3653370353,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -126.49006652832031,
+                    94.17582702636719,
+                    16.046422958374023
+                ],
+                "Rotation": [
+                    -89.99147033691406,
+                    -0.026395266875624657,
+                    102.62975311279297
+                ],
+                "Scale": [
+                    0.9006915092468262,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1897709369,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -131.382568359375,
+                    94.17607116699219,
+                    17.140296936035156
+                ],
+                "Rotation": [
+                    -89.99147033691406,
+                    -0.026395266875624657,
+                    102.62975311279297
+                ],
+                "Scale": [
+                    0.9006915092468262,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 180661898,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -136.39080810546875,
+                    94.17630767822266,
+                    18.267444610595703
+                ],
+                "Rotation": [
+                    -89.99147033691406,
+                    -0.026395266875624657,
+                    102.62975311279297
+                ],
+                "Scale": [
+                    0.9006915092468262,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 820588067,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -141.3717041015625,
+                    94.17655944824219,
+                    19.404767990112305
+                ],
+                "Rotation": [
+                    -89.99149322509766,
+                    -0.026400389149785042,
+                    102.6297607421875
+                ],
+                "Scale": [
+                    0.9006909728050232,
+                    1.000393033027649,
+                    1.0113118886947632
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 712736324,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -146.28659057617188,
+                    94.17655944824219,
+                    20.45566749572754
+                ],
+                "Rotation": [
+                    -89.9920654296875,
+                    -0.026484059169888496,
+                    102.05567932128906
+                ],
+                "Scale": [
+                    0.900687575340271,
+                    1.0003917217254639,
+                    1.011310338973999
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 857297197,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -151.12887573242188,
+                    94.17655944824219,
+                    20.929250717163086
+                ],
+                "Rotation": [
+                    -89.99524688720703,
+                    -0.027201227843761444,
+                    95.2889404296875
+                ],
+                "Scale": [
+                    0.9006837010383606,
+                    1.0003894567489624,
+                    1.0113071203231812
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1028119326,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -155.8958282470703,
+                    94.17633819580078,
+                    19.669179916381836
+                ],
+                "Rotation": [
+                    -90.00528717041016,
+                    -0.026986077427864075,
+                    74.28874969482422
+                ],
+                "Scale": [
+                    0.9006807208061218,
+                    1.0003868341445923,
+                    1.0113095045089722
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 40067671,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -160.0393524169922,
+                    94.17634582519531,
+                    16.958375930786133
+                ],
+                "Rotation": [
+                    -90.01321411132813,
+                    -0.023927858099341393,
+                    55.99697494506836
+                ],
+                "Scale": [
+                    0.9006792306900024,
+                    1.0003844499588013,
+                    1.0113095045089722
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1122048952,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -163.35655212402344,
+                    94.17684173583984,
+                    13.144590377807617
+                ],
+                "Rotation": [
+                    -90.01915740966797,
+                    -0.019582150503993034,
+                    40.604373931884766
+                ],
+                "Scale": [
+                    0.9006779193878174,
+                    1.0003865957260132,
+                    1.0113096237182617
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    1.7000000476837158,
+                    0.0,
+                    2.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    -48.0,
+                    0.0
+                ],
+                "ColScale": [
+                    5.199999809265137,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": false,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.9581395387649536,
+                    0.11141157150268555,
+                    0.11141157150268555,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2831865397,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -167.97103881835938,
+                    94.17684936523438,
+                    14.361477851867676
+                ],
+                "Rotation": [
+                    -89.99044799804688,
+                    -0.025440746918320656,
+                    105.00462341308594
+                ],
+                "Scale": [
+                    0.9006773233413696,
+                    1.0003825426101685,
+                    1.011306643486023
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    2.5,
+                    0.0,
+                    -0.699999988079071
+                ],
+                "ColRotation": [
+                    0.0,
+                    15.100000381469727,
+                    0.0
+                ],
+                "ColScale": [
+                    5.199999809265137,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": false,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.9581395387649536,
+                    0.11141157150268555,
+                    0.11141157150268555,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2485515743,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -172.1093292236328,
+                    94.17684936523438,
+                    17.323413848876953
+                ],
+                "Rotation": [
+                    -89.98181915283203,
+                    -0.020089292898774147,
+                    126.49553680419922
+                ],
+                "Scale": [
+                    0.9006659984588623,
+                    1.0003807544708252,
+                    1.0112956762313843
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 4168288116,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -170.7733917236328,
+                    94.17660522460938,
+                    21.82122039794922
+                ],
+                "Rotation": [
+                    -89.97534942626953,
+                    0.010287118144333363,
+                    -162.51123046875
+                ],
+                "Scale": [
+                    0.9006407856941223,
+                    1.000370740890503,
+                    1.0112804174423218
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3669152369,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -169.64356994628906,
+                    94.17709350585938,
+                    26.839933395385742
+                ],
+                "Rotation": [
+                    -89.97459411621094,
+                    0.008298252709209919,
+                    -167.13424682617188
+                ],
+                "Scale": [
+                    0.9006361961364746,
+                    1.0003703832626343,
+                    1.0112801790237427
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1801778105,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -168.8314971923828,
+                    94.1766128540039,
+                    31.880538940429688
+                ],
+                "Rotation": [
+                    -89.97412109375,
+                    0.006637662649154663,
+                    -170.84271240234375
+                ],
+                "Scale": [
+                    0.9006360769271851,
+                    1.0003705024719238,
+                    1.0112800598144531
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1412327178,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -168.0172882080078,
+                    94.1766128540039,
+                    36.86449432373047
+                ],
+                "Rotation": [
+                    -89.97412109375,
+                    0.006637662649154663,
+                    -170.84271240234375
+                ],
+                "Scale": [
+                    0.9006360769271851,
+                    1.0003705024719238,
+                    1.0112800598144531
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 119627811,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -82.59471893310547,
+                    94.17601776123047,
+                    36.190250396728516
+                ],
+                "Rotation": [
+                    -90.00118255615234,
+                    0.03072560392320156,
+                    -92.23258209228516
+                ],
+                "Scale": [
+                    0.9007402658462524,
+                    1.000481367111206,
+                    1.0113511085510254
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 658955305,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -87.6069564819336,
+                    94.17601776123047,
+                    35.89554214477539
+                ],
+                "Rotation": [
+                    -89.98563385009766,
+                    0.027276361361145973,
+                    -122.07102966308594
+                ],
+                "Scale": [
+                    0.9007478356361389,
+                    1.0004897117614746,
+                    1.0113555192947388
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3786724459,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -91.69959259033203,
+                    94.17649841308594,
+                    33.179283142089844
+                ],
+                "Rotation": [
+                    -89.97129821777344,
+                    0.011310792528092861,
+                    -162.60128784179688
+                ],
+                "Scale": [
+                    0.9007581472396851,
+                    1.0004934072494507,
+                    1.0113565921783447
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2486318750,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -93.28889465332031,
+                    94.17649841308594,
+                    28.448698043823242
+                ],
+                "Rotation": [
+                    -89.97478485107422,
+                    0.017903631553053856,
+                    -148.36520385742188
+                ],
+                "Scale": [
+                    0.9007708430290222,
+                    1.0004944801330566,
+                    1.011352777481079
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2903412909,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -95.85848999023438,
+                    94.17649841308594,
+                    24.387422561645508
+                ],
+                "Rotation": [
+                    -89.98175048828125,
+                    0.024972878396511078,
+                    -129.56080627441406
+                ],
+                "Scale": [
+                    0.9007754921913147,
+                    1.0004963874816895,
+                    1.0113518238067627
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2736091600,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -99.67581176757813,
+                    94.17649841308594,
+                    21.428821563720703
+                ],
+                "Rotation": [
+                    -90.00813293457031,
+                    0.0304728876799345,
+                    -78.97972106933594
+                ],
+                "Scale": [
+                    0.9007841944694519,
+                    1.000503659248352,
+                    1.0113565921783447
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2697251663,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -104.6802749633789,
+                    94.17625427246094,
+                    22.419809341430664
+                ],
+                "Rotation": [
+                    -90.00881958007813,
+                    0.031055161729454994,
+                    -78.9801254272461
+                ],
+                "Scale": [
+                    0.9007905721664429,
+                    1.000509262084961,
+                    1.0113625526428223
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 464283745,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -109.76062774658203,
+                    94.17920684814453,
+                    23.409147262573242
+                ],
+                "Rotation": [
+                    -90.00897979736328,
+                    0.03113200142979622,
+                    -78.98015594482422
+                ],
+                "Scale": [
+                    0.9007916450500488,
+                    1.0005100965499878,
+                    1.0113632678985596
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2376201688,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -114.85343933105469,
+                    94.18217468261719,
+                    24.400920867919922
+                ],
+                "Rotation": [
+                    -90.00897216796875,
+                    0.0311217550188303,
+                    -78.98016357421875
+                ],
+                "Scale": [
+                    0.900791585445404,
+                    1.0005099773406982,
+                    1.01136314868927
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 4143198999,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -119.95064544677734,
+                    94.1850814819336,
+                    25.393545150756836
+                ],
+                "Rotation": [
+                    -90.00897216796875,
+                    0.0311217550188303,
+                    -78.98016357421875
+                ],
+                "Scale": [
+                    0.900791585445404,
+                    1.0005099773406982,
+                    1.01136314868927
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2251388393,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -124.95182800292969,
+                    94.18778991699219,
+                    26.399824142456055
+                ],
+                "Rotation": [
+                    -90.01396179199219,
+                    0.02948080189526081,
+                    -69.9704818725586
+                ],
+                "Scale": [
+                    0.9007928371429443,
+                    1.0005110502243042,
+                    1.0113643407821655
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1379556128,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -129.76812744140625,
+                    94.18802642822266,
+                    28.138879776000977
+                ],
+                "Rotation": [
+                    -90.01153564453125,
+                    0.03098856657743454,
+                    -75.51919555664063
+                ],
+                "Scale": [
+                    0.9007956981658936,
+                    1.000514268875122,
+                    1.0113626718521118
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 3951628832,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -134.68258666992188,
+                    94.18754577636719,
+                    29.404085159301758
+                ],
+                "Rotation": [
+                    -90.0109634399414,
+                    0.03136593475937843,
+                    -76.79297637939453
+                ],
+                "Scale": [
+                    0.9007967710494995,
+                    1.0005154609680176,
+                    1.0113624334335327
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2220767391,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -139.69595336914063,
+                    94.18730163574219,
+                    30.58466148376465
+                ],
+                "Rotation": [
+                    -90.0109634399414,
+                    0.03136422857642174,
+                    -76.79297637939453
+                ],
+                "Scale": [
+                    0.9007967710494995,
+                    1.0005154609680176,
+                    1.0113624334335327
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2751664946,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -144.57623291015625,
+                    94.18754577636719,
+                    31.76994514465332
+                ],
+                "Rotation": [
+                    -90.01827239990234,
+                    0.027932059019804,
+                    -63.18096923828125
+                ],
+                "Scale": [
+                    0.9007980227470398,
+                    1.00051748752594,
+                    1.0113624334335327
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 381829804,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -148.86441040039063,
+                    94.18731689453125,
+                    34.02750778198242
+                ],
+                "Rotation": [
+                    -90.0318832397461,
+                    0.011248467490077019,
+                    -26.13784408569336
+                ],
+                "Scale": [
+                    0.9007990956306458,
+                    1.0005266666412354,
+                    1.0113624334335327
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 391971659,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -150.99200439453125,
+                    94.18731689453125,
+                    38.50529861450195
+                ],
+                "Rotation": [
+                    -90.03402709960938,
+                    -0.0004471639113035053,
+                    -5.9892401695251465
+                ],
+                "Scale": [
+                    0.9007995128631592,
+                    1.0005404949188232,
+                    1.0113624334335327
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2298310258,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -151.5384521484375,
+                    94.18730926513672,
+                    43.628761291503906
+                ],
+                "Rotation": [
+                    -90.03402709960938,
+                    -0.0004471639113035053,
+                    -5.9892401695251465
+                ],
+                "Scale": [
+                    0.9007995128631592,
+                    1.0005404949188232,
+                    1.0113624334335327
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2082431981,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -152.17880249023438,
+                    94.18754577636719,
+                    48.40961837768555
+                ],
+                "Rotation": [
+                    -90.01887512207031,
+                    0.029308339580893517,
+                    -64.8591079711914
+                ],
+                "Scale": [
+                    0.9008027911186218,
+                    1.0005519390106201,
+                    1.0113660097122192
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2014399248,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -156.80023193359375,
+                    94.18753814697266,
+                    50.58615493774414
+                ],
+                "Rotation": [
+                    -90.01887512207031,
+                    0.029308339580893517,
+                    -64.8591079711914
+                ],
+                "Scale": [
+                    0.9008027911186218,
+                    1.0005689859390259,
+                    1.011367678642273
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2509597339,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -161.02880859375,
+                    94.18753814697266,
+                    52.35981369018555
+                ],
+                "Rotation": [
+                    -89.9717788696289,
+                    0.02088244818150997,
+                    -150.8922119140625
+                ],
+                "Scale": [
+                    0.9008132815361023,
+                    1.000581979751587,
+                    1.011367678642273
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 313996109,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -163.4624786376953,
+                    94.18753814697266,
+                    48.00131607055664
+                ],
+                "Rotation": [
+                    -89.9693603515625,
+                    0.017253056168556213,
+                    -157.9429473876953
+                ],
+                "Scale": [
+                    0.9008141756057739,
+                    1.0005831718444824,
+                    1.011367678642273
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 1987010404,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -165.4164276123047,
+                    94.18753814697266,
+                    43.26240539550781
+                ],
+                "Rotation": [
+                    -89.96941375732422,
+                    0.017576636746525764,
+                    -157.24246215820313
+                ],
+                "Scale": [
+                    0.9008268117904663,
+                    1.4010061025619507,
+                    1.011367678642273
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1702554880,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2614789991,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WallX",
+        "ParentUID": 2581600829,
+        "PrefabUID": 3084473117,
+        "Tag": "Default",
+        "UID": 2296481359,
         "UpdateWithBones": false
     }
 ]

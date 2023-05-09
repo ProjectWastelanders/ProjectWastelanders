@@ -41,6 +41,7 @@ public:
 	bool isPress;
 	bool inOpen;
 	bool onProceed;
+	bool firstTime;
 	int indexLevles;
 
 	API_GameObject interruptorGO;

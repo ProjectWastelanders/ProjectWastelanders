@@ -28433,6 +28433,9 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
+                        "Colleccionable Panel": 164906117
+                    },
+                    {
                         "CheckBox 1": 145720028
                     },
                     {
@@ -28445,13 +28448,13 @@
                         "level": 4189256898
                     },
                     {
-                        "Song 1 texture": 327255597
+                        "Song 1 texture": 2567139457
                     },
                     {
-                        "Song 2 texture": 2363840146
+                        "Song 2 texture": 2897026285
                     },
                     {
-                        "Song 3 texture": 3892646585
+                        "Song 3 texture": 2650772861
                     },
                     {
                         "Casete 1 GO": 2016975482
@@ -28466,6 +28469,9 @@
                         "Player": 1862169540
                     },
                     {
+                        "Colleccionable Panel": 164906117
+                    },
+                    {
                         "CheckBox 1": 145720028
                     },
                     {
@@ -28478,13 +28484,13 @@
                         "level": 4189256898
                     },
                     {
-                        "Song 1 texture": 327255597
+                        "Song 1 texture": 2567139457
                     },
                     {
-                        "Song 2 texture": 2363840146
+                        "Song 2 texture": 2897026285
                     },
                     {
-                        "Song 3 texture": 3892646585
+                        "Song 3 texture": 2650772861
                     },
                     {
                         "Casete 1 GO": 2016975482
@@ -28907,7 +28913,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 3109240396,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -29062,7 +29068,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 436178991,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -36809,15 +36815,6 @@
                         "Check Secundary Mision 2": 1084788479
                     },
                     {
-                        "Main Mision Image": 3552580302
-                    },
-                    {
-                        "Secundary Mision 1 Image": 4206498086
-                    },
-                    {
-                        "Secundary Mision 2 Image": 3963200349
-                    },
-                    {
                         "Material Main mision 1": 1945907977
                     },
                     {
@@ -36833,16 +36830,22 @@
                         "Material Secundary mision 2_1": 413390393
                     },
                     {
-                        "Material Secundary mision 1_2": 2271220209
+                        "Material Secundary mision 1_1": 1760879198
                     },
                     {
-                        "Material Secundary mision 2_2": 521260460
+                        "Material Secundary mision 2_1": 413390393
                     },
                     {
-                        "Material Secundary mision 1_3": 357638973
+                        "Material Secundary mision 1_1": 1760879198
                     },
                     {
-                        "Material Secundary mision 2_3": 2860786203
+                        "Material Secundary mision 2_1": 413390393
+                    },
+                    {
+                        "Material Secundary mision 1_1": 1760879198
+                    },
+                    {
+                        "Material Secundary mision 2_1": 413390393
                     },
                     {
                         "Map Image": 4288439065
@@ -36920,15 +36923,6 @@
                         "Check Secundary Mision 2": 1084788479
                     },
                     {
-                        "Main Mision Image": 3552580302
-                    },
-                    {
-                        "Secundary Mision 1 Image": 4206498086
-                    },
-                    {
-                        "Secundary Mision 2 Image": 3963200349
-                    },
-                    {
                         "Material Main mision 1": 1945907977
                     },
                     {
@@ -36944,16 +36938,22 @@
                         "Material Secundary mision 2_1": 413390393
                     },
                     {
-                        "Material Secundary mision 1_2": 2271220209
+                        "Material Secundary mision 1_1": 1760879198
                     },
                     {
-                        "Material Secundary mision 2_2": 521260460
+                        "Material Secundary mision 2_1": 413390393
                     },
                     {
-                        "Material Secundary mision 1_3": 357638973
+                        "Material Secundary mision 1_1": 1760879198
                     },
                     {
-                        "Material Secundary mision 2_3": 2860786203
+                        "Material Secundary mision 2_1": 413390393
+                    },
+                    {
+                        "Material Secundary mision 1_1": 1760879198
+                    },
+                    {
+                        "Material Secundary mision 2_1": 413390393
                     },
                     {
                         "Map Image": 4288439065

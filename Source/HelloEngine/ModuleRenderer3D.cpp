@@ -177,12 +177,6 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		renderManager.Draw2D();
 	}
 
-	for (int i = 0; i < shaders.size(); ++i)
-	{
-		ResourceShader* shader = (ResourceShader*)shaders[i];
-		shader->shader.data.hasUpdatedLights = false;
-	}
-
 	//ImWin GAME RENDERING
 	if (app->layers->editor->S_GetWindowActive(ImWindowID::GAME) && 
 		_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)

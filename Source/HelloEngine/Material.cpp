@@ -32,6 +32,7 @@ void Material::UpdateBones(std::vector<float4x4>& bones)
 
 void Material::UpdateLights()
 {
+	OPTICK_EVENT();
 	LightMap& lightMap = Lighting::GetLightMap();
 
 	uint actualSpot = 0;

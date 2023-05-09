@@ -167,6 +167,7 @@
     <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyRanger.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
@@ -286,6 +287,7 @@
     <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.h" />
     <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.h" />
     <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyRanger.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.h" />

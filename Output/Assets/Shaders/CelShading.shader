@@ -130,24 +130,8 @@
 	
 	//SHADOW METHODS
 	
-	float CalculateShadow(vec4 fragPosLightSpace)
-	{
-		// perform perspective divide
-	    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
-	    projCoords = (projCoords * 0.5 + 0.5);
-	    if (projCoords.z > 1.0f) projCoords.z = 1.0f; //Capping Z
-	    
-	    float closestDepth = texture(shadowMap, projCoords.xy).r; 
-	    float currentDepth = projCoords.z;
-	    
-		float bias = 0.00032;
-	    float shadow = currentDepth - bias > closestDepth  ? 0.0 : 1.0;
-	
-	    return shadow;
-	}
-	
-	//LIGHT METHODS
-	vec4 CalculateLight(Light light, vec3 direction, vec3 normal, float shadowFactor)
+	//LIGHT METHOD
+	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
 	{
 		//Ambient
 		vec4 Ambient = vec4(light.Color, 1.0f) * light.AmbientIntensity;
@@ -160,7 +144,7 @@
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0);
 	
-		vec4 result = (Ambient + shadowFactor) * Diffuse;
+		vec4 result = Ambient * Diffuse;
 		//vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
 		return result;
@@ -171,9 +155,7 @@
 	{
 		vec3 dir = normalize(CalculateDirection(Light_Directional.Direction));
 		
-		float shadow = CalculateShadow(FragPosLightSpace); 
-		
-		return CalculateLight(Light_Directional.Base, dir, normal, shadow);
+		return CalculateLight(Light_Directional.Base, dir, normal);
 	}
 	
 	vec4 CalculatePointLight(PointLight light, vec3 normal)
@@ -185,8 +167,7 @@
 		
 		if (light.Distance > dist)
 		{
-			float shadow = 1.0f;
-			color = CalculateLight(light.Base, lightDir, normal, shadow);
+			color = CalculateLight(light.Base, lightDir, normal);
 		}
 		
 		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -208,8 +189,7 @@
 		
 			if (light.Distance > dist)
 			{
-				float shadow = 1.0f;
-				color = CalculateLight(light.Base, lightDir, normal, shadow);
+				color = CalculateLight(light.Base, lightDir, normal);
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -222,7 +202,7 @@
 		return color;
 	}
 	
-	uniform vec3 ColourTest;
+	uniform vec3 ColourTest; 
 	
 	void main()
 	{
@@ -244,6 +224,7 @@
 		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 	}
 #endif
+
 
 
 

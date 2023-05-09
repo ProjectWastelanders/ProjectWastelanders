@@ -159,6 +159,7 @@ void AnimationComponent::ResumeAnimation()
 
 void AnimationComponent::UpdateAnimation()
 {
+	OPTICK_EVENT();
 	if (_resource == nullptr) return;
 	if (!isPlaying) return;
 

@@ -88,6 +88,7 @@ void InstanceRenderer::Draw()
 
 void InstanceRenderer::DrawMaterial()
 {
+    OPTICK_EVENT();
     for (auto& mesh : meshes)
     {
         RenderUpdateState state = mesh.second.mesh.Update();
@@ -134,7 +135,7 @@ void InstanceRenderer::DrawMaterial()
         glBindVertexArray(0);
     }
 
-    depthDraw = !depthDraw;
+    //depthDraw = !depthDraw;
 
     resMat->material.UnbindAllTextures();
     // Reset model matrices.
@@ -143,6 +144,7 @@ void InstanceRenderer::DrawMaterial()
 
 void InstanceRenderer::DrawRaw()
 {
+    OPTICK_EVENT();
     CameraObject* currentCamera = Application::Instance()->camera->currentDrawingCamera;
 
     if (is2D && currentCamera->type != CameraType::GAME)

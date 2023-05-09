@@ -136,6 +136,8 @@
     <ClCompile Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.cpp" />
     <ClCompile Include="../../Assets/temp/PhysicsTesting/RayCastTest.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Coleccionable_buttons.cpp" />
+    <ClCompile Include="../../Assets/temp/BugPhysic/PhysicTest.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -274,5 +276,7 @@
     <ClInclude Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.h" />
     <ClInclude Include="../../Assets/temp/PhysicsTesting/RayCastTest.h" />
     <ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
+    <ClInclude Include="../../Assets/temp/BugPhysic/PhysicTest.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
   </ItemGroup>
 </Project>

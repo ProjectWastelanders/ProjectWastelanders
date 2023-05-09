@@ -277,7 +277,7 @@ InstanceRenderer* RenderManager::GetRenderManager(uint meshID, uint materialID, 
 
 void RenderManager::Draw()
 {
-	
+	OPTICK_EVENT();
 	// Draw opaque meshes instanced.
 	for (auto& obj : _renderMap)
 	{
@@ -1119,6 +1119,7 @@ void RenderManager::DestroyInstanceRenderers()
 
 void RenderManager::DrawTransparentMeshes()
 {
+	OPTICK_EVENT();
 	if (_transparencyMeshes.empty())
 		return;
 
@@ -1174,6 +1175,7 @@ void RenderManager::DrawTransparentMeshes()
 
 void RenderManager::DrawIndependentMeshes()
 {
+	OPTICK_EVENT();
 	if (_independentMeshes.empty())
 		return;
 
@@ -1216,7 +1218,7 @@ void RenderManager::DrawIndependentMeshes()
 				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second.mesh); //Selected without Mat
 		}
 	}
-	drawDepthIndependent = !drawDepthIndependent;
+	//drawDepthIndependent = !drawDepthIndependent;
 }
 
 void RenderManager::DrawTextObjects()

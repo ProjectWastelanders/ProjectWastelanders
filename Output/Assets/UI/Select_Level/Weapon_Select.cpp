@@ -38,7 +38,8 @@ void Weapon_Select::Start()
 {
 	indexLevles = 3;
 	inOpen = true;
-	//onProceed = false;
+	onProceed = false;
+	firstTime = true;
 
 	interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
 	if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
@@ -72,21 +73,11 @@ void Weapon_Select::Update()
 		inOpen = false;
 	}
 
-	if (onProceed)
-	{
-		Console::Log("true");
-	}
-	else
-	{
-		Console::Log("false");
-	}
-
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
 		if (onProceed)
 		{
 			onProceed = false;
-			Console::Log("JUAN TE MATO");
 			weaponSelectPanel.GetGameObject().SetActive(true);
 			proceedPanel.GetGameObject().SetActive(false);
 		}
@@ -99,6 +90,7 @@ void Weapon_Select::Update()
 			interruptor->menuPanel.SetActive(false);
 			if (playerMove) playerMove->openingChest = false;
 			interruptor->open = false;
+			firstTime = true;
 		}
 	}
 
@@ -137,18 +129,22 @@ void Weapon_Select::Update()
 		break;
 	}
 
-	if (weapon1.OnPress() || weapon2.OnPress() || weapon3.OnPress() || weapon4.OnPress())
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN && weaponSelectPanel.GetGameObject().IsActive())
 	{
-		weaponSelectPanel.GetGameObject().SetActive(false);
-		proceedPanel.GetGameObject().SetActive(true);
-		onProceed = true;
+		if (!firstTime)
+		{
+			weaponSelectPanel.GetGameObject().SetActive(false);
+			proceedPanel.GetGameObject().SetActive(true);
+			onProceed = true;
+		}
+		
+		firstTime = false;
 	}
 
 	if (proceedButton.OnPress())
 	{
 		if (API_QuickSave::GetBool("level1Selected"))
 		{
-			Console::Log("Go To LVELV");
 			scene = std::string("Level1.HScene");
 			Scene::LoadScene(scene.c_str());
 		}

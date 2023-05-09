@@ -46464,7 +46464,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 0,
+                "MaterialUID": 3005098822,
                 "Type": 18
             }
         ],
@@ -48192,7 +48192,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 0,
+                "MaterialUID": 2614789991,
                 "Type": 18
             }
         ],

@@ -40,6 +40,7 @@ void Weapon_Select::Start()
 	inOpen = true;
 	onProceed = false;
 	firstTime = true;
+	firstTimeLevel = true;
 
 	interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
 	if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
@@ -80,6 +81,7 @@ void Weapon_Select::Update()
 			onProceed = false;
 			weaponSelectPanel.GetGameObject().SetActive(true);
 			proceedPanel.GetGameObject().SetActive(false);
+			firstTimeLevel = true;
 		}
 		else
 		{
@@ -141,27 +143,50 @@ void Weapon_Select::Update()
 		firstTime = false;
 	}
 
-	if (proceedButton.OnPress())
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN && proceedPanel.GetGameObject().IsActive())
 	{
-		if (API_QuickSave::GetBool("level1Selected"))
+		if (!firstTimeLevel)
 		{
-			scene = std::string("Level1.HScene");
-			Scene::LoadScene(scene.c_str());
+			if (API_QuickSave::GetBool("level1Selected"))
+			{
+				API_QuickSave::SetFloat("PlayerPosX", 110.5f);
+				API_QuickSave::SetFloat("PlayerPosY", 0.0f);
+				API_QuickSave::SetFloat("PlayerPosZ", -29.2f);
+				API_QuickSave::SetFloat("PlayerIndicatorPosX", -0.7f);
+				API_QuickSave::SetFloat("PlayerIndicatorPosY", -0.39f);
+				API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+				scene = std::string("Level1.HScene");
+				Scene::LoadScene(scene.c_str());
+			}
+			else if (API_QuickSave::GetBool("level2Selected"))
+			{
+				API_QuickSave::SetFloat("PlayerPosX", 147.6f);
+				API_QuickSave::SetFloat("PlayerPosY", 2.115f);
+				API_QuickSave::SetFloat("PlayerPosZ", 14.54f);
+				API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
+				API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
+				API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+				scene = std::string("Level2.HScene");
+				Scene::LoadScene(scene.c_str());
+			}
+			else if (API_QuickSave::GetBool("level3Selected"))
+			{
+				API_QuickSave::SetFloat("PlayerPosX", -61.7f);
+				API_QuickSave::SetFloat("PlayerPosY", 92.5f);
+				API_QuickSave::SetFloat("PlayerPosZ", 47.3f);
+				API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
+				API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
+				API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+				scene = std::string("Level3.HScene");
+				Scene::LoadScene(scene.c_str());
+			}
+			else if (API_QuickSave::GetBool("level4Selected"))
+			{
+				scene = std::string("Level4.HScene");
+				Scene::LoadScene(scene.c_str());
+			}
 		}
-		else if (API_QuickSave::GetBool("level2Selected"))
-		{
-			scene = std::string("Level2.HScene");
-			Scene::LoadScene(scene.c_str());
-		}
-		else if (API_QuickSave::GetBool("level3Selected"))
-		{
-			scene = std::string("Level3.HScene");
-			Scene::LoadScene(scene.c_str());
-		}
-		else if (API_QuickSave::GetBool("level4Selected"))
-		{
-			scene = std::string("Level4.HScene");
-			Scene::LoadScene(scene.c_str());
-		}
+
+		firstTimeLevel = false;
 	}
 }

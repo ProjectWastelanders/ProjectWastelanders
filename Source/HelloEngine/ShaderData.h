@@ -15,6 +15,7 @@ public:
 	bool isBoned = false;
 	bool hasEngineLight = false;
 	bool hasUpdatedLights = false;
+	bool hasUpdatedCamera = false;
 
 	uint _maxPointLights = 32;
 	uint _maxSpotLights = 32;

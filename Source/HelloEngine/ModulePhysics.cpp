@@ -108,7 +108,7 @@ UpdateStatus ModulePhysics::PreUpdate()
 #elif STANDALONE
 	if (LayerGame::S_IsPlaying() && !LayerGame::S_IsPause())
 	{
-		world->stepSimulation(EngineTime::GameDeltaTime(), 15);
+		world->stepSimulation(EngineTime::GameDeltaTime(), 4);
 }
 	else
 	{

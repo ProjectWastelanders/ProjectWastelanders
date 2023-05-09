@@ -91,12 +91,17 @@ void Material::UpdateLights()
 
 void Material::Update(const float* view, const float* projection, const float* model)
 {
+	OPTICK_EVENT();
 	shader->shader.Bind();
 
-	shader->shader.SetMatFloat4v("view", view);
-	shader->shader.SetMatFloat4v("projection", projection);
-	shader->shader.SetMatFloat4v("model", model);
+	if (!shader->shader.data.hasUpdatedCamera)
+	{
+		shader->shader.SetMatFloat4v("view", view);
+		shader->shader.SetMatFloat4v("projection", projection);
+		shader->shader.data.hasUpdatedCamera = true;
+	}
 
+	shader->shader.SetMatFloat4v("model", model);
 	for (uint i = 0; i < uniforms.size(); ++i)
 	{
 		//If true, the uniform was Key and has already been Handled (Given Data)
@@ -112,10 +117,16 @@ void Material::Update(const float* view, const float* projection, const float* m
 
 void Material::UpdateInstanced(const float* view, const float* projection)
 {
+	OPTICK_EVENT();
+
 	shader->shader.Bind();
 
-	shader->shader.SetMatFloat4v("view", view);
-	shader->shader.SetMatFloat4v("projection", projection);
+	if (!shader->shader.data.hasUpdatedCamera)
+	{
+		shader->shader.SetMatFloat4v("view", view);
+		shader->shader.SetMatFloat4v("projection", projection);
+		shader->shader.data.hasUpdatedCamera = true;
+	}
 
 	for (uint i = 0; i < uniforms.size(); ++i)
 	{

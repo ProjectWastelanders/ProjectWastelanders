@@ -140,6 +140,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	{
 		ResourceShader* shader = (ResourceShader*)shaders[i];
 		shader->shader.data.hasUpdatedLights = false;
+		shader->shader.data.hasUpdatedCamera = false;
 	}
 
 #ifdef STANDALONE
@@ -175,6 +176,12 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 		_cameras->currentDrawingCamera = _cameras->UICamera;
 
 		renderManager.Draw2D();
+	}
+
+	for (int i = 0; i < shaders.size(); ++i)
+	{
+		ResourceShader* shader = (ResourceShader*)shaders[i];
+		shader->shader.data.hasUpdatedCamera = false;
 	}
 
 	//ImWin GAME RENDERING

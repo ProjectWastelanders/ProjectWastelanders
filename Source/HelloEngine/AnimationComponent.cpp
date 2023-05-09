@@ -190,6 +190,9 @@ void AnimationComponent::UpdateAnimation()
 			currentTime = fmod(currentTime, animDuration);
 		}
 
+		if (skin->GetMesh().outOfFrustum)
+			return;
+
 		skin->UpdateBones(&_resource->animation, currentTime);
 	}
 }

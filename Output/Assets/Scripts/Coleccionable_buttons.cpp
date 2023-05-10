@@ -47,8 +47,6 @@ void Coleccionable_buttons::Start()
 
 	playermovment = (PlayerMove*)playerStorageGO.GetScript("PlayerMove");
 	if (playermovment == nullptr) Console::Log("PlayerMove missing in Coleccionable_buttons Script");
-
-
 }
 
 void Coleccionable_buttons::Update()
@@ -102,12 +100,18 @@ void Coleccionable_buttons::Update()
 					{
 					case 0:
 						Audio::Event("L1_collectable3");
+						Audio::StopEvent(song2);
+						Audio::StopEvent(song3);
 						break;
 					case 1:
 						Audio::Event("L2_collectable3");
+						Audio::StopEvent(song1);
+						Audio::StopEvent(song3);
 						break;
 					case 2:
 						Audio::Event("L3_collectable3");
+						Audio::StopEvent(song2);
+						Audio::StopEvent(song1);
 						break;
 					default:
 						break;
@@ -140,10 +144,6 @@ void Coleccionable_buttons::Update()
 	
 	}
 
-	if (true)
-	{
-
-	}
 }
 
 void Coleccionable_buttons::Level1selected( bool casete1, bool casete2, bool casete3)

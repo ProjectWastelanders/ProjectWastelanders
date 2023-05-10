@@ -23,11 +23,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 1204658081
+        "UID": 1204658081,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -54,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 2.064631938934326,
+                "Aspect ratio": 1.9408766031265259,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -65,11 +67,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Camera",
         "ParentUID": 1204658081,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1202977617
+        "UID": 1202977617,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -95,11 +99,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Canvas",
         "ParentUID": 1204658081,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1170745027
+        "UID": 1170745027,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -138,11 +144,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Panel",
         "ParentUID": 1170745027,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2377698017
+        "UID": 2377698017,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -176,11 +184,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "BackGround",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1997239396
+        "UID": 1997239396,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -234,21 +244,6 @@
                     },
                     {
                         "Collectibles": 1057867941
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
                     }
                 ],
                 "Script Resource": 2459103775,
@@ -268,18 +263,6 @@
                     },
                     {
                         "Vel": 0.0010000000474974513
-                    },
-                    {
-                        "Button": 1741124431
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.019999999552965164
-                    },
-                    {
-                        "Vel": 0.0010000000474974513
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -287,11 +270,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "New Game",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1741124431
+        "UID": 1741124431,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -345,21 +330,6 @@
                     },
                     {
                         "Collectibles": 1057867941
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
                     }
                 ],
                 "Script Resource": 2459103775,
@@ -379,18 +349,6 @@
                     },
                     {
                         "Vel": 0.0010000000474974513
-                    },
-                    {
-                        "Button": 351199318
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.019999999552965164
-                    },
-                    {
-                        "Vel": 0.0010000000474974513
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -398,11 +356,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Continue",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 351199318
+        "UID": 351199318,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -456,21 +416,6 @@
                     },
                     {
                         "Collectibles": 1057867941
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
                     }
                 ],
                 "Script Resource": 2459103775,
@@ -490,18 +435,6 @@
                     },
                     {
                         "Vel": 0.0010000000474974513
-                    },
-                    {
-                        "Button": 1057867941
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.019999999552965164
-                    },
-                    {
-                        "Vel": 0.0010000000474974513
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -509,11 +442,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Collectibles",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1057867941
+        "UID": 1057867941,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -567,21 +502,6 @@
                     },
                     {
                         "Collectibles": 1057867941
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
                     }
                 ],
                 "Script Resource": 2459103775,
@@ -601,18 +521,6 @@
                     },
                     {
                         "Vel": 0.0010000000474974513
-                    },
-                    {
-                        "Button": 3765630460
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.019999999552965164
-                    },
-                    {
-                        "Vel": 0.0010000000474974513
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -620,11 +528,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Settings",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3765630460
+        "UID": 3765630460,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -678,21 +588,6 @@
                     },
                     {
                         "Collectibles": 1057867941
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
                     }
                 ],
                 "Script Resource": 2459103775,
@@ -712,18 +607,6 @@
                     },
                     {
                         "Vel": 0.0010000000474974513
-                    },
-                    {
-                        "Button": 1551021094
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.019999999552965164
-                    },
-                    {
-                        "Vel": 0.0010000000474974513
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -731,11 +614,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Exit",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1551021094
+        "UID": 1551021094,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -769,11 +654,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Image",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 4218626937
+        "UID": 4218626937,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -810,9 +697,6 @@
                 "Inspector Fields": [
                     {
                         "Velocity": 0.5
-                    },
-                    {
-                        "Velocity": 0.5
                     }
                 ],
                 "Script Resource": 3877120418,
@@ -820,11 +704,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Barritas",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 356406331
+        "UID": 356406331,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -915,63 +801,6 @@
                     },
                     {
                         "Speed Rotation": 1.0
-                    },
-                    {
-                        "Button Guide": 3959061821
-                    },
-                    {
-                        "Move X animation repeat": 0
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": true
-                    },
-                    {
-                        "Move animation active": true
-                    },
-                    {
-                        "Distance move X": 0.0
-                    },
-                    {
-                        "Speed move X": 0.0
-                    },
-                    {
-                        "Distance move Y": 0.019999999552965164
-                    },
-                    {
-                        "Speed move Y": 0.20000000298023224
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.10000000149011612
-                    },
-                    {
-                        "Speed Scale": 1.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0010000000474974513
-                    },
-                    {
-                        "Speed Rotation": 1.0
                     }
                 ],
                 "Script Resource": 148961927,
@@ -979,11 +808,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Title",
         "ParentUID": 2377698017,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3959061821
+        "UID": 3959061821,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -1010,17 +841,57 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 1782830273,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Image",
         "ParentUID": 1170745027,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1035546526
+        "UID": 1035546526,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 317712296,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "UIAudioManager",
+        "ParentUID": 1204658081,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1487208357,
+        "UpdateWithBones": false
     }
 ]

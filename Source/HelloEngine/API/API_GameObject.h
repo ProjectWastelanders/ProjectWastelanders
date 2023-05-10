@@ -67,6 +67,8 @@ namespace API
 
         API_Agent GetAgent();
 
+        API_UIButton GetUIButton();
+
         uint GetUID();
 
         void SetActive(bool active);

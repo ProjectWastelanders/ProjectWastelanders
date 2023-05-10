@@ -25,6 +25,8 @@ public:
 
 	static void S_StopEvent(uint playingID);
 
+	static void SetGameParameter(const char* paramName, float value);
+
 	bool CleanUp() override;
 
 	static AkGameObjectID RegisterGameObject(AkGameObjectID id);

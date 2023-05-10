@@ -17,6 +17,8 @@ public:
 	void PlayEvent();
 	void StopEvent();
 
+	void SetGameParameter(const char* paramName, float value);
+
 private:
 	std::string audioEvent = "";
 	AkGameObjectID akID = 0;

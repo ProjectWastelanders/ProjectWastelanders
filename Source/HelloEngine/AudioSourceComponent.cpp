@@ -67,3 +67,8 @@ void AudioSourceComponent::StopEvent()
 {
 	AK::SoundEngine::StopPlayingID(playingID);
 }
+
+void AudioSourceComponent::SetGameParameter(const char* paramName, float value)
+{
+	AK::SoundEngine::SetRTPCValue(paramName, value, this->akID);
+}

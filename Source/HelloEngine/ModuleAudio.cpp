@@ -87,6 +87,11 @@ void ModuleAudio::S_StopEvent(uint playingID)
     AK::SoundEngine::StopPlayingID(playingID);
 }
 
+void ModuleAudio::SetGameParameter(const char* paramName, float value)
+{
+    AK::SoundEngine::SetRTPCValue(paramName, value);
+}
+
 bool ModuleAudio::CleanUp()
 {
     return true;

@@ -29,12 +29,14 @@ class ComponentUIButton : public ComponentUI
 	ButtonState ChangeState(ButtonState State);
 
 	ButtonState State;
+	ButtonState lastState;
 	bool IsHold = false;
 
 	bool isBlocked = false;
 
 	bool isPress = true;
 	bool isReleased = false;
+	bool isHoveredFirstFrame = false;
 private:
 	double gameTimeCopy = 0;
 	float colors[4] = { 0,0,0,0 };

@@ -16,3 +16,8 @@ void API::Audio::StopEvent(uint playID)
 {
 	ModuleAudio::S_StopEvent(playID);
 }
+
+void API::Audio::SetGlobalGameParameter(const char* parameterName, float value)
+{
+	ModuleAudio::SetGameParameter(parameterName, value);
+}

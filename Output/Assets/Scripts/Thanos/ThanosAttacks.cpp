@@ -222,7 +222,7 @@ void ThanosAttacks::Update()
 			break;
 		case THANOS_STATE::IDLE:
 
-			//laserPS.Stop();
+			laserPS.Stop();
 
 			for (int i = 0; i < 4; i++) {
 				beams[i].SetActive(false);

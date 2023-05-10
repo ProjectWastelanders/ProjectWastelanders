@@ -96,12 +96,12 @@ void Weapon_Select::Update()
 		}
 	}
 
-	if ((Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) > 10000 && isPress) && indexLevles >= 1)
+	if ((Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) > 10000 && isPress) && indexLevles >= 1 && weaponSelectPanel.GetGameObject().IsActive())
 	{
 		isPress = false;
 		indexLevles--;
 	}
-	else if ((Input::GetGamePadButton(GamePadButton::BUTTON_UP) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) < -10000 && isPress) && indexLevles <= 2)
+	else if ((Input::GetGamePadButton(GamePadButton::BUTTON_UP) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) < -10000 && isPress) && indexLevles <= 2 && weaponSelectPanel.GetGameObject().IsActive())
 	{
 		isPress = false;
 		indexLevles++;
@@ -138,6 +138,7 @@ void Weapon_Select::Update()
 			weaponSelectPanel.GetGameObject().SetActive(false);
 			proceedPanel.GetGameObject().SetActive(true);
 			onProceed = true;
+			API_QuickSave::SetInt("equipedNormalGun", indexLevles + 1);
 		}
 		
 		firstTime = false;

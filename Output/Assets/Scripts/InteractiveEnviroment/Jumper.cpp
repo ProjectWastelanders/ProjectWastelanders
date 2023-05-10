@@ -1,5 +1,5 @@
 #include "Jumper.h"
-#include "../../Scripts/Player/PlayerMove.h"
+#include "../Player/PlayerMove.h"
 
 HELLO_ENGINE_API_C Jumper* CreateJumper(ScriptToInspectorInterface* script)
 {

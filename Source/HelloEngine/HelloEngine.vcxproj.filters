@@ -414,6 +414,7 @@
       <Filter>Modules\Physic</Filter>
     </ClCompile>
     <ClCompile Include="API\API_RayCast.cpp" />
+    <ClCompile Include="API\API_RayCastCollision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -857,6 +858,7 @@
       <Filter>Modules\Physic</Filter>
     </ClInclude>
     <ClInclude Include="API\API_RayCast.h" />
+    <ClInclude Include="API\API_RayCastCollision.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

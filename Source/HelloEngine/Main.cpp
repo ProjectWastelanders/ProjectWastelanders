@@ -62,7 +62,7 @@ int main(int argc, char** argv)
 
 		case MAIN_UPDATE:
 		{
-#ifdef DEVELOPMENT
+#ifdef STANDALONE
 			OPTICK_FRAME("MainThread");
 #endif // DEVELOPMENT
 

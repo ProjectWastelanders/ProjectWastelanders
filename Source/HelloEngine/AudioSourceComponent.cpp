@@ -14,6 +14,7 @@ AudioSourceComponent::~AudioSourceComponent()
 {
 }
 
+#ifdef STANDALONE
 void AudioSourceComponent::OnEditor()
 {
 	bool created = true;
@@ -33,7 +34,7 @@ void AudioSourceComponent::OnEditor()
 		this->_gameObject->DestroyComponent(this);
 
 }
-
+#endif
 void AudioSourceComponent::Serialization(json& j)
 {
 	json _j;

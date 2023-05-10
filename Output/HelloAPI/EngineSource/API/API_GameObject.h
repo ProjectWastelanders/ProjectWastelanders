@@ -107,5 +107,6 @@ namespace API
         friend class API_SkinnedMeshRenderer;
         friend class API_ShaderComponent;
         friend class API_Agent;
+        friend class API_RayCast;
     };
 }

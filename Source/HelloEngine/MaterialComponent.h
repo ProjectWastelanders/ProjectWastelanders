@@ -13,6 +13,7 @@ public:
 	void Serialization(json& j) override;
 	void DeSerialization(json& j) override;
 
+	void SetColor(float4 color);
 #ifdef STANDALONE
 	void OnEditor() override;
 
@@ -25,7 +26,6 @@ public:
 
 	ResourceMaterial* _resource = nullptr;
 
-	void SetColor(float4 color);
 private:
 	void MaterialDragNDrop();
 	void ShaderSelectCombo();

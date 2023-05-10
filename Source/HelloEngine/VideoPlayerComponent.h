@@ -10,9 +10,9 @@ public:
 	~VideoPlayerComponent();
 
 	void CreateVideo(uint videoUID);
-
+#ifdef STANDALONE
 	void OnEditor() override;
-
+#endif
 	void Serialization(json& j);
 	void DeSerialization(json& j);
 

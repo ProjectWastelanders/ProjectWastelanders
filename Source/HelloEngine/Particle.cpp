@@ -1,5 +1,6 @@
 #include "Headers.h"
 #include "Particle.h"
+#include "LayerGame.h"
 
 Particle::Particle():startColor(0.0f, 1.0f, 0.0f, 1.0f), endColor(0.0f,1.0f,0.0f,0.0f)
 {
@@ -48,27 +49,58 @@ void Particle::SetTransformMatrix(Quat rot = Quat::identity)
 void Particle::UpdateTextureCoords()
 {
 	
-	elapsedTime += EngineTime::GameDeltaTime();
+	if (LayerGame::S_IsPlaying())
+	{
+		elapsedTime += EngineTime::GameDeltaTime();
+	}
+	else
+	{
+		elapsedTime += EngineTime::EngineTimeDeltaTime();
+	}
+	
 	float particleLife = elapsedTime / Lifetime;
 	int numOfText = texture.numOfRows * texture.numOfRows;
 	float atlasProgression = particleLife * numOfText;
 	int index1 = (int) math::Floor(atlasProgression);
 	int index2 = index1 < numOfText - 1 ? index1 + 1 : index1;
-	int x = (int)atlasProgression * 1000;
-	int y = x % 1000;
-	this->blendFactor = y / 1000;
+	this->blendFactor = FindModule(atlasProgression,1);
 
 	int column = index1 % texture.numOfRows;
 	int row = index1 / texture.numOfRows;
-	textureOffset1.x = column / texture.numOfRows;
-	textureOffset1.y = row / texture.numOfRows;
-	column = index2 % texture.numOfRows;
-	row = index2 / texture.numOfRows;
-	textureOffset2.x = column / texture.numOfRows;
-	textureOffset2.y = row / texture.numOfRows;
+	
+	particleAnim.textOffsets.x = (float)column / texture.numOfRows;
+	particleAnim.textOffsets.y = (float)row / texture.numOfRows;
+	int column2 = index2 % texture.numOfRows;
+	int row2 = index2 / texture.numOfRows;
+	particleAnim.textOffsets.z = (float)column2 / texture.numOfRows;
+	particleAnim.textOffsets.w = (float)row2 / texture.numOfRows;
 
-	textureInfo.x = texture.numOfRows;
-	textureInfo.y = blendFactor;
+	particleAnim.texInfo.x = texture.numOfRows;
+	particleAnim.texInfo.y = blendFactor;
 
+}
+
+float Particle::FindModule(float a, float b)
+{
+	double mod;
+	// Handling negative values
+	if (a < 0)
+		mod = -a;
+	else
+		mod = a;
+	if (b < 0)
+		b = -b;
+
+	// Finding mod by repeated subtraction
+
+	while (mod >= b)
+		mod = mod - b;
+
+	// Sign of result typically depends
+	// on sign of a.
+	if (a < 0)
+		return -mod;
+
+	return mod;
 }
 

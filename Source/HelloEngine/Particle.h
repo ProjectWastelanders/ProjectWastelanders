@@ -1,4 +1,5 @@
 #pragma once
+#include "InstanceRenderer.h"
 
 struct ParticleProperties
 {
@@ -68,9 +69,8 @@ struct Particle
 	//Particle Texture
 	ParticleTexture texture;
 	//Texture Offsets;
-	float2 textureOffset1;
-	float2 textureOffset2;
-	float2 textureInfo;
+	ParticleAnimInfo particleAnim;
+
 	float blendFactor = 100.0f;
 
 	//Angular velocity of the particle
@@ -80,6 +80,8 @@ struct Particle
 	void SetTransformMatrix(Quat rot);
 
 	void UpdateTextureCoords();
+
+	float FindModule(float a, float b);
 
 };
 

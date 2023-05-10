@@ -9,7 +9,6 @@
 	
 	uniform mat4 view;
 	uniform mat4 projection;
-	uniform mat4 model;
 	
 	out vec2 TextureCoords1;
 	out vec2 TextureCoords2;
@@ -18,10 +17,10 @@
 	void main()
 	{
 	
-		vec2 textcoords = textCoords;
+		vec2 textcoords = texCoords;
 		textcoords /= texInfo.x;
-		TextureCoords1 = textcoords + texOffset1;
-		TextureCoords2 = textcoords + texOffset2;
+		TextureCoords1 = textcoords + texOffsets.xy;
+		TextureCoords2 = textcoords + texOffsets.zw;
 		blend = texInfo.y;
 		gl_Position = projection * view * model * vec4(aPos.x, aPos.y, aPos.z, 1.0f);
 		
@@ -41,3 +40,6 @@
 		FragColor = mix(texture1,texture2,blend);
 	} 
 #endif
+
+
+

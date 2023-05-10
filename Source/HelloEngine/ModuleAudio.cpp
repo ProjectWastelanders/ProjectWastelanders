@@ -82,6 +82,11 @@ uint ModuleAudio::S_ProduceEvent(AkUniqueID eventID, AkGameObjectID gameObjectID
     return playing;
 }
 
+void ModuleAudio::S_StopEvent(uint playingID)
+{
+    AK::SoundEngine::StopPlayingID(playingID);
+}
+
 bool ModuleAudio::CleanUp()
 {
     return true;

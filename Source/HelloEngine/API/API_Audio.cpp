@@ -14,5 +14,5 @@ uint API::Audio::Event(uint eventID)
 
 void API::Audio::StopEvent(uint playID)
 {
-	AK::SoundEngine::StopPlayingID(playID);
+	ModuleAudio::S_StopEvent(playID);
 }

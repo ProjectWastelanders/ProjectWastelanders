@@ -76,6 +76,7 @@ private:
 	std::vector<uint>* totalIndices = nullptr;
 	std::vector<float4x4> modelMatrices;
 	std::vector<float> textureIDs;
+	std::vector<ParticleAnimInfo> particleAnimInfos;
 	std::multimap<float, Mesh*> orderedMeshes;
 
 	uint VAO = 0; // Vertex Array
@@ -103,6 +104,6 @@ private:
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;
-	friend class Emitter;
+	friend class ParticleSystemComponent;
 };
 

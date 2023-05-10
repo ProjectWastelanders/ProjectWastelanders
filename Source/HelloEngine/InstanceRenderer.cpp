@@ -291,7 +291,7 @@ void InstanceRenderer::DrawInstancedSorting()
         }
 
         modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
-        textureIDs.push_back(mesh.second.mesh.OpenGLTextureID);
+        //textureIDs.push_back(mesh.second.mesh.OpenGLTextureID);
         mesh.second.mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
     }
 
@@ -312,16 +312,16 @@ void InstanceRenderer::DrawInstancedSorting()
         memcpy(ptr, &modelMatrices.front(), modelMatrices.size() * sizeof(float4x4));
         glUnmapBuffer(GL_ARRAY_BUFFER);
 
-        // Update TextureIDs
-        glBindBuffer(GL_ARRAY_BUFFER, TBO);
+        // Update PARTICLE Buffer
+        glBindBuffer(GL_ARRAY_BUFFER, PBO);
         void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-        memcpy(ptr2, &textureIDs.front(), textureIDs.size() * sizeof(float));
+        memcpy(ptr2, &particleAnimInfos.front(), particleAnimInfos.size() * sizeof(ParticleAnimInfo));
         glUnmapBuffer(GL_ARRAY_BUFFER);
 
-        for (int i = 0; i < TextureManager::bindedTextures; i++)
+        /*for (int i = 0; i < TextureManager::bindedTextures; i++)
         {
             instancedShader->shader.SetInt(("textures[" + std::to_string(i) + "]").c_str(), i);
-        }
+        }*/
 
         // Draw instanced
         glDrawElementsInstanced(GL_TRIANGLES, totalIndices->size(), GL_UNSIGNED_INT, 0, modelMatrices.size());

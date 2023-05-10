@@ -33,7 +33,7 @@ void VideoPlayerComponent::CreateVideo(uint videoUID)
 	this->_material->ChangeTexture(GetVideoPlayer()->video->GetOpenGLTexture());
 	fps = GetVideoPlayer()->video->GetFPS();
 }
-
+#ifdef STANDALONE
 void VideoPlayerComponent::OnEditor()
 {
 	bool created = true;
@@ -93,7 +93,7 @@ void VideoPlayerComponent::OnEditor()
 	if (!created)
 		this->_gameObject->DestroyComponent(this);
 }
-
+#endif
 void VideoPlayerComponent::Serialization(json& j)
 {
 	json _j;

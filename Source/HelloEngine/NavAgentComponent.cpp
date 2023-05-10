@@ -21,6 +21,7 @@ ComponentAgent::~ComponentAgent()
 	RELEASE(agentProperties);
 }
 
+#ifdef STANDALONE
 void ComponentAgent::OnEditor()
 {
 	bool created = true;
@@ -80,7 +81,7 @@ void ComponentAgent::OnEditor()
 	if (!created)
 		this->_gameObject->DestroyComponent(this);
 }
-
+#endif
 void ComponentAgent::Serialization(json& j)
 {
 	json _j;

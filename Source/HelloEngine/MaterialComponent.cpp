@@ -124,7 +124,7 @@ void MaterialComponent::MarkAsAlive()
 	}
 }
 
-
+#endif
 
 void MaterialComponent::SetColor(float4 color)
 {
@@ -215,7 +215,7 @@ void MaterialComponent::ShaderSelectCombo()
 		ImGui::EndCombo();
 	}
 }
-#endif
+
 int MaterialComponent::GetResourceUID()
 {
 	if (_resource == nullptr) return 0;

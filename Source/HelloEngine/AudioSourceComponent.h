@@ -8,8 +8,9 @@ public:
 	AudioSourceComponent(GameObject* go);
 	~AudioSourceComponent();
 
+#ifdef STANDALONE
 	void OnEditor() override;
-
+#endif
 	void Serialization(json& j) override;
 	void DeSerialization(json& j) override;
 

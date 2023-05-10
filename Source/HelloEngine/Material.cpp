@@ -24,10 +24,7 @@ Material::~Material()
 
 void Material::UpdateBones(std::vector<float4x4>& bones)
 {
-	for (int i = 0; i < bones.size(); ++i)
-	{
-		shader->shader.SetMatFloat4v("finalBonesMatrices[" + std::to_string(i) + "]", &bones[i].Transposed().v[0][0]);
-	}
+	shader->shader.SetMatFloat4v("finalBonesMatrices", bones[0].ptr(), bones.size(), true);
 }
 
 void Material::UpdateLights()

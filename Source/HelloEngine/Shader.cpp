@@ -299,9 +299,9 @@ void Shader::SetFloat4v(const std::string& name, const float* value) const
 	glUniform4fv(glGetUniformLocation(data.ID, name.c_str()), 1, value);
 }
 
-void Shader::SetMatFloat4v(const std::string& name, const float* value) const
+void Shader::SetMatFloat4v(const std::string& name, const float* value, int num, bool transpose) const
 {
-	glUniformMatrix4fv(glGetUniformLocation(data.ID, name.c_str()), 1, GL_FALSE, value);
+	glUniformMatrix4fv(glGetUniformLocation(data.ID, name.c_str()), num, transpose, value);
 }
 
 void Shader::SetTexture(const std::string& name, uint id, int layer)

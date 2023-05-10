@@ -20,8 +20,8 @@ public:
 
 	UpdateStatus PostUpdate() override;
 
-	static void S_ProduceEvent(const char* eventName, AkGameObjectID gameObjectID = 0);
-	static void S_ProduceEvent(AkUniqueID eventID, AkGameObjectID gameObjectID = 0);
+	static uint S_ProduceEvent(const char* eventName, AkGameObjectID gameObjectID = 0);
+	static uint S_ProduceEvent(AkUniqueID eventID, AkGameObjectID gameObjectID = 0);
 
 	bool CleanUp() override;
 

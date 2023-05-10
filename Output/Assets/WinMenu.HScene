@@ -152,6 +152,18 @@
                     },
                     {
                         "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
+                    },
+                    {
+                        "Continue": 351199318
+                    },
+                    {
+                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
+                    },
+                    {
+                        "Continue": 351199318
+                    },
+                    {
+                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
                     }
                 ],
                 "Script Resource": 2840601128,
@@ -192,7 +204,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 4194253043,
+                "MaterialResource": 2263942494,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -213,8 +225,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    -0.6600000262260437,
+                    0.10000000149011612,
+                    -0.7599999904632568,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -231,16 +243,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 258549829,
+                "MaterialResource": 1455706934,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
                 "hoverBlockImage": 0,
-                "hoverImage": 2113770562,
+                "hoverImage": 1455706934,
                 "idleBlockImage": 0,
-                "idleImage": 258549829,
+                "idleImage": 1455706934,
                 "pressBlockImage": 0,
-                "pressImage": 516501109
+                "pressImage": 446792187
             }
         ],
         "FirstOnPrefab": true,
@@ -258,213 +270,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.4000000059604645,
-                    0.20000000298023224,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.05000000074505806,
-                    0.05000000074505806,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "+3 Skillpoints",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 1056606414,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.5,
-                    0.5,
-                    0.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "State": 0,
-                "Type": 12,
-                "hoverBlockImage": 0,
-                "hoverImage": 0,
-                "idleBlockImage": 0,
-                "idleImage": 0,
-                "pressBlockImage": 0,
-                "pressImage": 0
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Borrar",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 345729373,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.5,
-                    -0.10000000149011612,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.05000000074505806,
-                    0.05000000074505806,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "+2 Skillpoint",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 4220972277,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.5,
-                    -0.3499999940395355,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.05000000074505806,
-                    0.05000000074505806,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "+2 Skillpoints",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 2624983000,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.10000000149011612,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
                     0.07000000029802322,
-                    0.05000000074505806,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Cassetes Total",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 427064599,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.07000000029802322,
+                    0.1899999976158142,
                     0.0
                 ],
                 "Rotation": [
@@ -486,9 +293,9 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": false,
-                "PositionX": 0.0,
-                "PositionY": 0.07000000029802322,
+                "Enabled": true,
+                "PositionX": 0.07000000029802322,
+                "PositionY": 0.1899999976158142,
                 "Scale": 0.4000000059604645,
                 "Text": "1",
                 "Type": 17
@@ -509,48 +316,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.6000000238418579,
-                    0.20000000298023224,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
+                    0.7699999809265137,
                     0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.07000000029802322,
-                    0.05000000074505806,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Upgrade Blu. Total",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 1131738212,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.6000000238418579,
-                    0.17000000178813934,
                     0.0
                 ],
                 "Rotation": [
@@ -572,9 +339,9 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": false,
-                "PositionX": 0.6000000238418579,
-                "PositionY": 0.17000000178813934,
+                "Enabled": true,
+                "PositionX": 0.7699999809265137,
+                "PositionY": 0.0,
                 "Scale": 0.4000000059604645,
                 "Text": "2",
                 "Type": 17
@@ -595,48 +362,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.6000000238418579,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.07000000029802322,
-                    0.05000000074505806,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 0,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Unlock Blu. Total",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 3700445848,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.6000000238418579,
-                    -0.03999999910593033,
+                    0.7699999809265137,
+                    -0.4399999976158142,
                     0.0
                 ],
                 "Rotation": [
@@ -658,9 +385,9 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": false,
-                "PositionX": 0.6000000238418579,
-                "PositionY": -0.03999999910593033,
+                "Enabled": true,
+                "PositionX": 0.7699999809265137,
+                "PositionY": -0.4399999976158142,
                 "Scale": 0.4000000059604645,
                 "Text": "1",
                 "Type": 17
@@ -713,259 +440,18 @@
         "ParentUID": 1170745027,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 989545145,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.699999988079071,
-                    0.20000000298023224,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.25,
-                    0.15000000596046448,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3008833959,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Main Completed",
-        "ParentUID": 989545145,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 2183014769,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.75,
-                    -0.10000000149011612,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3125095146,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Secondary 1",
-        "ParentUID": 989545145,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 143599219,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.75,
-                    -0.3499999940395355,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2817701143,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Secondary 2",
-        "ParentUID": 989545145,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 3152612443,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.75,
-                    -0.10000000149011612,
-                    -0.30000001192092896
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 1561918590,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Secondary 1 Done",
-        "ParentUID": 989545145,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 190228237,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.75,
-                    -0.3499999940395355,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3990715488,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Completed 2 Done",
-        "ParentUID": 989545145,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 2284131620,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "MaterialResource": 0,
-                "MeshEnabled": false,
-                "Type": 16,
-                "listButtons": [
-                    0
-                ]
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Missions Level 2",
-        "ParentUID": 1170745027,
-        "PrefabUID": 0,
-        "Tag": "UI",
         "UID": 794656259,
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
                     -0.699999988079071,
-                    0.20000000298023224,
-                    0.0
+                    0.10000000149011612,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -973,8 +459,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.25,
-                    0.15000000596046448,
+                    0.2750000059604645,
+                    0.17499999701976776,
                     0.5
                 ],
                 "Type": 1
@@ -982,7 +468,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 2911088625,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -998,13 +484,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.75,
-                    -0.10000000149011612,
+                    -0.6499999761581421,
+                    -0.25,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -1013,8 +499,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
+                    0.25,
+                    0.15000000596046448,
                     0.5
                 ],
                 "Type": 1
@@ -1022,7 +508,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 2983458685,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -1038,13 +524,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.75,
-                    -0.3499999940395355,
+                    -0.6330000162124634,
+                    -0.6000000238418579,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -1053,8 +539,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
+                    0.25,
+                    0.15000000596046448,
                     0.5
                 ],
                 "Type": 1
@@ -1062,7 +548,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 3473304141,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -1078,13 +564,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.75,
-                    -0.10000000149011612,
+                    -0.6499999761581421,
+                    -0.25,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -1093,8 +579,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
+                    0.25,
+                    0.15000000596046448,
                     0.5
                 ],
                 "Type": 1
@@ -1102,7 +588,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 1422447554,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -1118,13 +604,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.75,
-                    -0.3499999940395355,
+                    -0.6330000162124634,
+                    -0.6000000238418579,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -1133,8 +619,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.20000000298023224,
-                    0.10000000149011612,
+                    0.25,
+                    0.15000000596046448,
                     0.5
                 ],
                 "Type": 1
@@ -1142,7 +628,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 49063439,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -1191,7 +677,7 @@
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Missions Level 3",
+        "Name": "Missions Level 2",
         "ParentUID": 1170745027,
         "PrefabUID": 0,
         "Tag": "UI",
@@ -1432,7 +918,7 @@
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Missions Level 4",
+        "Name": "Missions Level 3",
         "ParentUID": 1170745027,
         "PrefabUID": 0,
         "Tag": "UI",
@@ -1477,6 +963,87 @@
         "PrefabUID": 0,
         "Tag": "UI",
         "UID": 487918619,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Missions Level 4",
+        "ParentUID": 1170745027,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2774366257,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.699999988079071,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.2750000059604645,
+                    0.17499999701976776,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Main Completed",
+        "ParentUID": 2774366257,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2696109876,
         "UpdateWithBones": false
     }
 ]

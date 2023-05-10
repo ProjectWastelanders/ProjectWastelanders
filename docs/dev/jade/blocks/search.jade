@@ -1,8 +1,0 @@
-//- Site search
-mixin search()
-	+b('form').search.js-search(target='_blank' id='cse-search-box' action='http://google.com/cse')
-		+e('input').hidden(type='hidden' name='cx' value='{{ site.custom-search-engine_id }}')
-		+e('input').hidden(type='hidden' name='ie' value='UTF-8')
-		+e('label').label(for='q') {{ site.data.locales.search.label }}
-		+e('input').field(value='' name='q' id='q' type='text' placeholder='{{ site.data.locales.search.placeholder }}')
-		+e('button').submit(type='submit' name='sa') {{ site.data.locales.search.submit }}

@@ -6,7 +6,8 @@ namespace API
 	static class TO_API Audio
 	{
 	public:
-		static void Event(const char* eventName);
-		static void Event(uint eventID);
+		static uint Event(const char* eventName);
+		static uint Event(uint eventID);
+		static void StopEvent(uint playID);
 	};
 }

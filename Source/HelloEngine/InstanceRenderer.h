@@ -4,6 +4,13 @@
 #include "Shader.h"
 #include "ModuleResourceManager.h"
 
+
+struct ParticleAnimInfo
+{
+	float4 textOffsets;
+	float2 texInfo;
+};
+
 struct RenderEntry;
 /// <summary>
 /// This class manages the rendering process o a single MeshObject.
@@ -53,6 +60,9 @@ private:
 	void DestroyDynamicBuffers();
 	void CreateDynamicBuffers();
 
+	void CreateDynamicBuffersParticles();
+	void DestroyDynamicBuffersParticles();
+
 private:
 
 	ResourceShader* instancedShader = nullptr;
@@ -73,6 +83,7 @@ private:
 	uint IBO = 0; // Elements buffer object
 	uint MBO = 0; // ModelMatrix buffer object
 	uint TBO = 0; // TextureID buffer object 
+	uint PBO = 0; // Particle Buffer object
 
 	// Buffers to be able to draw a single instance with an individual draw call.
 	uint BasicVAO = 0;

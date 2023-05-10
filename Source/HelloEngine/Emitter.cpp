@@ -25,6 +25,7 @@ Emitter::Emitter()
 	playOnAwake = false;
 	enableEmissionModule = true;
 	ParticlesPerSecond = 1;
+	emitterTexture.numOfRows = 4;
 }
 
 Emitter::~Emitter()
@@ -92,6 +93,8 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 	particle.remainingLifetime = particleProps.Lifetime;
 
 	particle.SetTransformMatrix(BBRotAroundZ);
+
+	particle.elapsedTime = 0.0f;
 
 	currentparticle--;
 
@@ -180,14 +183,6 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
 
-	manager->isParticle = true;
-
-	//manager->particleShader->shader.Bind();
-
-	/*manager->particleShader->shader.SetFloat2v("texOffset1", ParticleList[i].textureOffset1.ptr());
-	manager->particleShader->shader.SetFloat2v("texOffset2", ParticleList[i].textureOffset2.ptr());
-	manager->particleShader->shader.SetFloat2v("texInfo", ParticleList[i].textureInfo.ptr());*/
-
 	Mesh& meshReference = manager->GetMap()[ParticleList[i]._instanceID].mesh;
 
 	meshReference.draw = true;
@@ -202,7 +197,7 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 void Emitter::UpdateParticlesOnScene(int i)
 {
 	
-	//ParticleList[i].UpdateTextureCoords();
+	ParticleList[i].UpdateTextureCoords();
 
 	// Compute all the calculus needed to move the particles
 
@@ -222,7 +217,7 @@ void Emitter::UpdateParticlesOnScene(int i)
 void Emitter::UpdateParticlesOnGame(int i)
 {
 	
-	//ParticleList[i].UpdateTextureCoords();
+	ParticleList[i].UpdateTextureCoords();
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt

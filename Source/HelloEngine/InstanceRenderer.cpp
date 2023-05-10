@@ -380,7 +380,15 @@ void InstanceRenderer::CreateBuffers()
     glBindVertexArray(0);
 
     // Create dynamic buffers based on current instanceNum.
-    CreateDynamicBuffers();
+    if (!isParticle)
+    {
+        CreateDynamicBuffers();
+    }
+    else 
+    {
+        CreateDynamicBuffersParticles();
+    }
+    
 }
 
 void InstanceRenderer::CreateBasicBuffers()
@@ -419,8 +427,17 @@ void InstanceRenderer::ReallocateMoreMemory()
     // Add instance num
     instanceNum += (int)(instanceNum * 0.5f);
 
-    DestroyDynamicBuffers();
-    CreateDynamicBuffers();
+    if (this->isParticle == false)
+    {
+        DestroyDynamicBuffers();
+        CreateDynamicBuffers();
+    }
+    else
+    {
+        DestroyDynamicBuffersParticles();
+        CreateDynamicBuffersParticles();
+    }
+    
 }
 
 void InstanceRenderer::DestroyDynamicBuffers()
@@ -474,5 +491,61 @@ void InstanceRenderer::CreateDynamicBuffers()
     glVertexAttribDivisor(7, 1);
 
     glBindVertexArray(0);
+}
+
+void InstanceRenderer::CreateDynamicBuffersParticles()
+{
+    // Create Model Matrix buffer object
+    glGenBuffers(1, &MBO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, MBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float4x4) * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
+
+    glBindVertexArray(VAO);
+
+    // You can't pass an entire matrix, so we go row by row.
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(float4x4), (void*)0);
+
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(float4x4), (void*)sizeof(float4));
+
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(float4x4), (void*)(sizeof(float4) * 2));
+
+    glEnableVertexAttribArray(4);
+    glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(float4x4), (void*)(sizeof(float4) * 3));
+
+    
+
+    // Set instancing interval
+    glVertexAttribDivisor(1, 1);
+    glVertexAttribDivisor(2, 1);
+    glVertexAttribDivisor(3, 1);
+    glVertexAttribDivisor(4, 1);
+    
+
+    // Create Particle buffer object
+    glGenBuffers(1, &PBO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, PBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float4) * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
+
+    glEnableVertexAttribArray(7);
+    glVertexAttribPointer(7, 4, GL_FLOAT, GL_FALSE, sizeof(float4), (void*)offsetof(ParticleAnimInfo, textOffsets));
+
+    glEnableVertexAttribArray(8);
+    glVertexAttribPointer(8, 2, GL_FLOAT, GL_FALSE, sizeof(float2), (void*)offsetof(ParticleAnimInfo, texInfo));
+
+    glVertexAttribDivisor(7, 1);
+    glVertexAttribDivisor(8, 1);
+
+    glBindVertexArray(0);
+}
+
+void InstanceRenderer::DestroyDynamicBuffersParticles()
+{
+    glDeleteBuffers(1, &MBO);
+    glDeleteBuffers(1, &PBO);
 }
 

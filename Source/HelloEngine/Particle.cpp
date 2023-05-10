@@ -47,7 +47,7 @@ void Particle::SetTransformMatrix(Quat rot = Quat::identity)
 
 void Particle::UpdateTextureCoords()
 {
-	float elapsedTime = 0.0f;
+	
 	elapsedTime += EngineTime::GameDeltaTime();
 	float particleLife = elapsedTime / Lifetime;
 	int numOfText = texture.numOfRows * texture.numOfRows;

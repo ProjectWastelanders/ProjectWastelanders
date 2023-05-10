@@ -1,16 +1,15 @@
 #version 410 core
 #ifdef VERTEX_PROGRAM
-	layout (location = 0) in vec3 aPos; 
-	layout (location = 1) in vec3 normals;
-	layout (location = 2) in vec2 textCoords;
+	layout (location = 0) in vec3 aPos;
+	layout (location = 1) in mat4 model;
+	layout (location = 5) in vec3 normals;
+	layout (location = 6) in vec2 texCoords;
+	layout (location = 7) in vec4 texOffsets;
+	layout (location = 8) in vec2 texInfo;
 	
 	uniform mat4 view;
 	uniform mat4 projection;
 	uniform mat4 model;
-	
-	uniform vec2 texOffset1;
-	uniform vec2 texOffset2;
-	uniform vec2 texInfo;
 	
 	out vec2 TextureCoords1;
 	out vec2 TextureCoords2;

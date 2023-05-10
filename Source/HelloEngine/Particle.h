@@ -58,6 +58,8 @@ struct Particle
 	//End size of the particle
 	float3 endSize;
 
+	//Elapsed Time
+	float elapsedTime = 0.0f;
 	//ID of the instance
 	uint _instanceID;
 	
@@ -69,7 +71,7 @@ struct Particle
 	float2 textureOffset1;
 	float2 textureOffset2;
 	float2 textureInfo;
-	float blendFactor = 0.0f;
+	float blendFactor = 100.0f;
 
 	//Angular velocity of the particle
 	//float rotationSpeed;

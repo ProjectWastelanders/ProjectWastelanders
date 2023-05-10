@@ -69,6 +69,7 @@ public:
 	void Draw2D();
 
 	uint AddMesh(ResourceMesh* resource, uint resMat, MeshRenderType type);
+	uint AddMeshParticle(ResourceMesh* resource);
 
 	uint AddTransparentMesh(ResourceMesh* resource, uint resMat);
 	uint AddIndependentMesh(ResourceMesh* resource, uint resMat);

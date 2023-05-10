@@ -4,7 +4,7 @@
 #include "Macro.h"
 
 #include "API/API.h"
-
+#include "API/API_Agent.h"
 #include "EnemyDropManager.h"
 
 class PlayerStats;
@@ -95,7 +95,7 @@ public:
     float _tHitColor = 0.35f;
     API_Vector3 initialPos;
 
-   
+    API_Agent enemyAgent;
 private:
 
     float _coldStun;

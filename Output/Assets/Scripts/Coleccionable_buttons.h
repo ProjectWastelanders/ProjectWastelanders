@@ -35,5 +35,9 @@ public:
 	API_GameObject interruptor_Colec_GO;
 	OpenMenuInterruptor* interruptor_Colec;
 
+	uint song1 = 1;
+	uint song2 = 2;
+	uint song3 = 3;
+
 };
 

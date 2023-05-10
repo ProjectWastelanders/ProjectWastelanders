@@ -5,6 +5,7 @@
 #include "API/API_Vector2.h"
 #include <vector>
 #include "API/API_GameObject.h"
+#include "API/API_RayCastCollision.h"
 class RayCast;
 
 using namespace std;
@@ -18,12 +19,13 @@ namespace API
 		API_RayCast(RayCast raycast);
 		~API_RayCast();
 
-		void GetObjectsInRaycast(API_GameObject* buffer);
-		uint GetObjectsSize();
+		void GetCollisionsInRaycast(API_RayCastCollision* buffer);
+		API_RayCastCollision GetClosestCollision();
+		uint GetCollisionsSize();
 
 	private:
-		vector<API_GameObject> gameObjectsInRaycast;
-	};
-
 	
+		vector<API_RayCastCollision> collisionsInRaycast;
+
+	};
 }

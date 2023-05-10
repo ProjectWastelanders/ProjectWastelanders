@@ -1,0 +1,27 @@
+// Languages bar
+.languages
+	display: block
+	float: left
+	margin: 0 20px
+	list-style-type: none
+
+	&__item
+		margin-right: 5px
+		display: inline-block
+		text-align: center
+
+	&__link
+		font-family: $f-language_general
+		font-size: 30px
+		line-height: 1
+		color: $c-language-link
+		text-decoration: none
+		border-bottom: 1px dotted $c-language-link_bd
+		transition: all .3s
+		&:hover
+			color: $c-language-link_hover
+			border-color: $c-language-link_bd_hover
+		&.is-selected
+			border: none
+			cursor: default
+			color: $c-language-link_selected

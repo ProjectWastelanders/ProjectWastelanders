@@ -1,0 +1,72 @@
+# Site settings
+
+# General settings
+lang: en
+title: Inclusion jekyll theme
+email: mail@orlovmax.com
+author: Maxim Orlov
+description: "Responsive blog theme for jekyll website generator"
+keywords: "jekyll theme, jekyll template, responsive jekyll theme"
+
+# URL settings
+baseurl: "/jekyll-inclusion" # the subpath of your site, e.g. /blog/
+url: "http://website-templates.github.io" # the base hostname & protocol for your site
+home-repo: "https://github.com/website-templates/jekyll-inclusion"
+
+# Social services
+twitter_username: orlovmax_im
+github_username:  orlovmax
+# fb_username:
+# vk_username:
+gplus_username: 104202961668156466871
+# skype_username:
+bitbucket_username: orlovmax
+# linkedin_username:
+
+# Multilanguage blog settings: names, base url and current lang
+# langs:
+#   "en": "http://blog.orlovmax.com"
+#   "ru": "http://rublog.orlovmax.com"
+#   "ua": "http://uablog.orlovmax.com"
+# lang_current: "ua"
+
+# Default src
+start_img: "static/images/bg/start.jpg"
+end_img: "static/images/bg/end.jpg"
+thumb_img: "img/pic.jpg"
+
+disqus-code: "jekyll-inclusion"
+
+#Custom search engine ID
+custom-search-engine_id: "007847994425388688875:2onbkc4tu2y"
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+paginate: 3
+paginate_path: "page/:num/"
+exclude: []
+incremental: true
+
+source: build
+destination: deploy
+
+# Category pages settings
+categories:
+  # category pages url
+  url: /category/
+  # category pages slug, ex. page-1 or page2. Number by default
+  slug: ''
+  # category name word delimiter, '_' by defult
+  delimiter: '_'
+  layout: category.html
+
+# Tag pages settings
+tags:
+  # tag pages url
+  url: /tag/
+  # tag pages slug, ex. page-1 or page2. Number by default
+  slug: ''
+  # tag name word delimiter, '_' by defult
+  delimiter: '_'
+  layout: tag.html

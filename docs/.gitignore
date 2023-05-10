@@ -1,0 +1,5 @@
+deploy
+.sass-cache
+
+/bower_components/
+/node_modules/

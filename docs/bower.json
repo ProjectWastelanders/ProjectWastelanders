@@ -1,0 +1,12 @@
+{
+  "name": "jekyll-inclusion",
+  "description": "Jekyll inclusion theme",
+  "homepage": "https://github.com/website-templates/jekyll-inclusion",
+  "author": "Maxim Orlov mail@orlovmax.com",
+  "dependencies": {
+    "jquery": "1.11.1",
+    "respond": "~1.4.2",
+    "html5shiv": "~3.7.2"
+  },
+  "license": "MIT"
+}

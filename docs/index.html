@@ -1,388 +1,381 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <!-- Font Owesome icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
-    <!-- Default main Css -->
-    <link rel="stylesheet" href="style.css">
-
-    <title>Colorib Dream Theme | Web Design Lab</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penguin - Fashion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Header section -->
-    <div class="container-fluid header">
-        <div class="row">
-            <div class="col-3 bg-warning logoSection p-2">
-                <img src="img/logo.webp" class="imgLogo p-4" alt="logo">
-            </div>
-            <div class="col-9">
-                <div class="row">
-                    <div class="col-6 menu">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Courses</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 social-icon">
-                        <div class="row">
-                            <div class="col-5 icon">
-                                <a href=""><i class="fas fa-search"></i></a>
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-dribbble"></i></a>
-                            </div>
-                            <div class="col-4 header-btn">
-                                <a href="#" class="btn btn-warning">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+      <div class="container-fluid px-5">
+        <a class="penguin-logo" href="#">
+          <img src="logo/Group 33071.png" class="img-fluid " alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class=" navbar-collapse col-lg-4 col-md-6 col-sm-12" id="navbarScroll">
+
+          <div class="input-group px-5 penguin-search">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">All</button>
+            <ul class="dropdown-menu overflow-auto mx-5  dropdown-menu-own">
+              <li><a class="dropdown-item" href="#">All Department</a></li>
+              <li><a class="dropdown-item" href="#">Audio</a></li>
+              <li><a class="dropdown-item" href="#">Books</a></li>
+              <li><a class="dropdown-item" href="#">Baby</a></li>
+              <li><a class="dropdown-item" href="#">Beauty</a></li>
+              <li><a class="dropdown-item" href="#">Computer</a></li>
+              <li><a class="dropdown-item" href="#">Digital Music</a></li>
+              <li><a class="dropdown-item" href="#">Prime Video</a></li>
+              <li><a class="dropdown-item" href="#">Men's Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Girl's Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Deals</a></li>
+              <li><a class="dropdown-item" href="#">Luggage</a></li>
+              <li><a class="dropdown-item" href="#">Electronics</a></li>
+              <li><a class="dropdown-item" href="#">Bottles</a></li>
+
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons">
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                class="fas fa-search"></i></button>
+          </div>
+
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-center hide-nav"
+            style="--bs-scroll-height: 100px;">
+            <li class="nav-item dropdown px-2">
+              <a class="nav-link dropdown-toggle" style="width: 45px;" href="#" id="navbarScrollingDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/flag.webp" class="img-fluid " alt="">
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="#"><input type="radio" name="language"> United States (Default)</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#"><input type="radio" name="language"> Bangla</a></li>
+                <li><a class="dropdown-item" href="#"><input type="radio" name="language"> Spanish</a></li>
+                <li><a class="dropdown-item" href="#"><input type="radio" name="language"> Chinese</a></li>
+                <li><a class="dropdown-item" href="#"><input type="radio" name="language"> Pubjabi</a></li>
+              </ul>
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="#">Orders</a>
+            </li>
+            <li class="nav-item" style="font-size:30px; color:#fff">
+              <a class="nav-link" href="#" style=" color:#fff"><i class="fas fa-cart-plus"></i></a>
+            </li>
+          </ul>
+
         </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Slider Option -->
+  <section class="slider  panda-slider-box">
+    <div id="carouselExampleIndicators" class="carousel slide panda-slide container" data-bs-ride="carousel">
+      <div class="carousel-indicators slider-button-color">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="row d-flex align-items-center p-5">
+            <div class="col-md-7 slider-header">
+              <h1>BE THE PENGUINS <span>OF WINTER</span></h1>
+              <p>This is the best tv in the world for people who just want to waste time in front of tv.</p>
+              <button class="btn btn-warning"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+            </div>
+            <div class="col-md-5 slider-img">
+              <img src="images/banner-images/6.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row d-flex align-items-center p-5">
+            <div class="col-md-7 slider-header">
+              <h1>BE THE PENGUINS <span>OF WINTER</span></h1>
+              <p>This is the best tv in the world for people who just want to waste time in front of tv.</p>
+              <button class="btn btn-warning"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+            </div>
+            <div class="col-md-5 slider-img">
+              <img src="images/banner-images/Mask Group.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row d-flex align-items-center p-5">
+            <div class="col-md-7 slider-header">
+              <h1>BE THE PENGUINS <span>OF WINTER</span></h1>
+              <p>This is the best tv in the world for people who just want to waste time in front of tv.</p>
+              <button class="btn btn-warning"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+            </div>
+            <div class="col-md-5 slider-img">
+              <img src="images/banner-images/2.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev slider-button-color" type="button"
+        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon slider-button-color" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon slider-button-color" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
-    <section class="slider-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 slider-content">
-                    <h3>Best Options for you</h3>
-                    <h1>Drive safe & get lichence</h1>
-                    <div class="slider-btn">
-                        <a href="#" class="btn btn-warning px-4">Contact Us</a>
-                        <a href="#" class="btn btn-primary px-4">See Courses</a>
-                    </div>
-                </div>
+  </section>
+
+  <!-- Shopping Option -->
+
+  <main class="container">
+
+    <section>
+      <div class="shopping-cart">
+        <h1>Woment Jacket</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="shadow container px-2 py-4 shop-box">
+              <div class="card-img card">
+              <img src="images/SeekPng 1.png" class="card-img-top" alt="...">
             </div>
-        </div>
-    </section>
-
-    <!-- Feature Section started -->
-    <section class="feature">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="content content-center">
-                        <span>Why choose us ?</span>
-                        <h2>Our feature</h2>
-                        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua viverra maecenas facilisis. </p>
-                        <a href="#" class="btn btn-own">See Courses</a>
+              <div class="card-body">
+                <h2 class="card-title">Ladies Jacket</h2>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="row  align-items-center">
+                    <div class="col-6">
+                      <h1 class=" buy-now">$234</h1>
+                    </div>
+                    <div class="col-6">
+                      <h2 class="btn btn-success buy-now"><i class="fas fa-shopping-cart"></i> Buy Now</h2>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="single-icon">
-                        <img src="icon/feature-1.webp" alt="">
-                        <h3>Unlimited car support</h3>
-                    </div>
-                    <div class="single-icon">
-                        <img src="icon/feature-2.webp" alt="">
-                        <h3>Driving School Insures</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="single-icon content-center">
-                        <img src="icon/feature-3.webp" alt="">
-                        <h3>Any Time Any Location</h3>
-                    </div>
-                </div>
-
-
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="shadow container px-2 py-4 shop-box">
+              <div class="card-img card">
+              <img src="images/PngItem_2597366 1.png" class="card-img-top" alt="...">
+            </div>
+              <div class="card-body">
+                <h2 class="card-title">Woment Leather Jacket</h2>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="row  align-items-center">
+                    <div class="col-6">
+                      <h1 class=" buy-now">$234</h1>
+                    </div>
+                    <div class="col-6">
+                      <h2 class="btn btn-success buy-now"><i class="fas fa-shopping-cart"></i> Buy Now</h2>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="shadow container px-2 py-4 shop-box">
+              <div class="card-img card">
+              <img src="images/image 15.png" class="card-img-top" alt="...">
+            </div>
+              <div class="card-body">
+                <h2 class="card-title">Snowboard Jacket Mens</h2>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <h1 class=" buy-now  align-items-center">$234</h1>
+                    </div>
+                    <div class="col-6">
+                      <h2 class="btn btn-success buy-now"><i class="fas fa-shopping-cart"></i> Buy Now</h2>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Welcome section  started -->
-    <section class="container welcome">
+          
+        </div>
+      </div>
+
+      <div class="shopping-cart">
+        <h1>Men Jacket</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 ">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="shadow container px-2 py-4 shop-box">
+              <div class="card-img card">
+              <img src="images/image 11.png" class="card-img-top" alt="...">
+            </div>
+              <div class="card-body">
+                <h2 class="card-title">Men Leather Jacket</h2>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="row  align-items-center">
+                    <div class="col-6">
+                      <h1 class=" buy-now align-items-center">$234</h1>
+                    </div>
+                    <div class="col-6">
+                      <h2 class="btn btn-success buy-now"><i class="fas fa-shopping-cart"></i> Buy Now</h2>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="shadow container px-2 py-4 shop-box">
+              <div class="card-img card">
+              <img src="images/toppng 1.png" class="card-img-top" alt="...">
+            </div>
+              <div class="card-body">
+                <h2 class="card-title">Men Casual Jacket</h2>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <h1 class=" buy-now">$234</h1>
+                    </div>
+                    <div class="col-6">
+                      <h2 class="btn btn-success buy-now"><i class="fas fa-shopping-cart"></i> Buy Now</h2>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="shadow container px-2 py-4 shop-box">
+              <div class="card-img card">
+              <img src="images/vippng 1.png" class="card-img-top" alt="...">
+            </div>
+              <div class="card-body">
+                <h2 class="card-title">Yellow Coat Jacket</h2>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <h1 class=" buy-now">$234</h1>
+                    </div>
+                    <div class="col-6">
+                      <h2 class="btn btn-success buy-now"><i class="fas fa-shopping-cart"></i> Buy Now</h2>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact and other Section -->
+
+  <section class="contact-section">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12 ">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 welcome-img">
-                <img src="img/video-bg.jpg" alt="">
+          <div class="col-12 d-flex justify-content-center align-items-center contact-box shadow">
+            <img src="logo/image 12.png" alt="" class="img-fluid">
+            <div class="img-details">
+              <h3>Find The Perfect Fit</h3>
+            <p>Everybody is different is different, which is why we offer styles for every body</p>
             </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 shadow-wrap">
-                <div class="content content-center">
-                    <span>Welcome to Online trafic school</span>
-                    <h2>looking for lessons?</h2>
-                    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Quis ipsum vidnas accumsan lacus vel facilisis.
-                    </p>
-                    <a href="#" class="btn btn-own">Learn More</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Form Started -->
-    <section class="application-form">
-        <div class="container">
-            <div class="content text-center">
-                <span>Giving Best Options For You</span>
-                <h2 class="p-3">Application Form</h2>
+        <div class="row my-5">
+          <div class="col-12 d-flex justify-content-center align-items-center contact-box shadow">
+            <img src="logo/image 13.png" alt="" class="img-fluid">
+            <div class="img-details">
+              <h3>Find The Perfect Fit</h3>
+            <p>Everybody is different is different, which is why we offer styles for every body</p>
             </div>
-            <form class="row form">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <input type="text" placeholder="Your Name">
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <input type="text" placeholder="Your Name">
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <input type="text" placeholder="Your Name">
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <input type="text" placeholder="Your Name">
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <select name="" id="course">
-                        <option value="">Course Type</option>
-                        <option value="">Safe Driving Course</option>
-                        <option value="">Motorhome Drivers</option>
-                    </select>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <select name="" id="car">
-                        <option value="">Car Type</option>
-                        <option value="">Hatchback</option>
-                        <option value="">Sedan</option>
-                    </select>
-                </div>
-            </form>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center p-4">
-                <input type="submit" value="Submit" class="btn btn-own ">
+        <div class="row my-5">
+          <div class="col-12 d-flex justify-content-center align-items-center contact-box shadow">
+            <img src="logo/image 14.png" alt="" class="img-fluid">
+            <div class="img-details">
+              <h3>Find The Perfect Fit</h3>
+            <p>Everybody is different is different, which is why we offer styles for every body</p>
             </div>
+          </div>
         </div>
-        </div>
-    </section>
+      </div>
+      <div class="col-lg-6 col-md-12 ">
+        <img src="logo/XMLID 1.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Pricing section started here -->
-    <section class="pricing">
-        <div class="container">
-            <div class="content text-center">
-                <span>Get Special Offer</span>
-                <h2 class="p-3">Our Pricing</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="box">
-                        <div class="box-heading">
-                            <span>20% off</spna>
-                                <h1>$ 199</h1>
-                                <h5>Personal Driving</h5>
-                        </div>
-                        <div class="box-list-item">
-                            <p>Full course theoty</p>
-                            <p>Full driving course</p>
-                            <p>Training in first aid</p>
-                            <p>Practical sessions</p>
-                            <p>Psychological support</p>
-                        </div>
-                        <div class="box-btn btn-own">
-                            <a href="#">Get Started</a>
-                        </div>
+</main>
 
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="box">
-                        <div class="box-heading">
-                            <span>20% off</spna>
-                                <h1>$ 199</h1>
-                                <h5>Personal Driving</h5>
-                        </div>
-                        <div class="box-list-item">
-                            <p>Full course theoty</p>
-                            <p>Full driving course</p>
-                            <p>Training in first aid</p>
-                            <p>Practical sessions</p>
-                            <p>Psychological support</p>
-                        </div>
-                        <div class="box-btn btn-own">
-                            <a href="#">Get Started</a>
-                        </div>
+<!-- Footer Section started -->
 
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="box">
-                        <div class="box-heading">
-                            <span>20% off</spna>
-                                <h1>$ 199</h1>
-                                <h5>Personal Driving</h5>
-                        </div>
-                        <div class="box-list-item">
-                            <p>Full course theoty</p>
-                            <p>Full driving course</p>
-                            <p>Training in first aid</p>
-                            <p>Practical sessions</p>
-                            <p>Psychological support</p>
-                        </div>
-                        <div class="box-btn btn-own">
-                            <a href="#">Get Started</a>
-                        </div>
+<footer>
+  <h4 class="back-top"><a href="#header">Back to Top</a></h4>
+  <div class="footer">
+    <div class="row container footer-box d-flex justify-content-evenly">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h4>Get to Know Us</h4>
+        <ul>
+          <li> <a href="#">Careers</a></li>
+          <li> <a href="#">Blog</a></li>
+          <li> <a href="#">About Penguin</a></li>
+          <li> <a href="#">Sustainability</a></li>
+          <li> <a href="#">Investor Relations</a></li>
+          <li> <a href="#">Penguin Device</a></li>
+          <li> <a href="#">Penguin Tours</a></li>
+        </ul>
+      </div>
 
-                    </div>
-                </div>
-            </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h4>Penguin Payment Products</h4>
+        <ul>
+          <li> <a href="#">Penguin Business Card</a></li>
+          <li> <a href="#">Shop with Points</a></li>
+          <li> <a href="#">Reload Your Balance</a></li>
+          <li> <a href="#">Penguin Currency Converter</a></li>
 
-        </div>
-    </section>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h4>Make Money with Us</h4>
+        <ul>
+          <li> <a href="#">Sell products on Penguin</a></li>
+          <li> <a href="#">Sell apps on Penguin</a></li>
+          <li> <a href="#">Become an Affiliate</a></li>
+          <li> <a href="#">Advertise Your Products</a></li>
+          <li> <a href="#">Self-Publish with Us</a></li>
+          <li> <a href="#">Host an Penguin Hub</a></li>
+          <li> <a href="#">See More Make Money with Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <!-- Instructor section -->
-    <section class="instructor-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-md-10 col-sm-12">
-                    <div class="content text-left">
-                        <span>Our Great Team</span>
-                        <h2>Our Instructors</h2>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 my-4">
-                    <a href="#" class="btn btn-own">View All</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 instructor-box">
-                    <div class="row instructor-wrap">
-                        <div class="col-5 instructor-img">
-                            <img src="img/team-1.webp" alt="">
-                        </div>
-                        <div class="col-7 instructor-details">
-                            <h3>DAVID WARNER</h3>
-                            <span>Instructor</span>
-                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                            <div class="instructor-social">
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 instructor-box">
-                    <div class="row instructor-wrap">
-                        <div class="col-5 instructor-img">
-                            <img src="img/team-2.webp" alt="">
-                        </div>
-                        <div class="col-7 instructor-details">
-                            <h3>DAVID WARNER</h3>
-                            <span>Instructor</span>
-                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                            <div class="instructor-social">
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 instructor-box">
-                    <div class="row instructor-wrap">
-                        <div class="col-5 instructor-img">
-                            <img src="img/team-3.webp" alt="">
-                        </div>
-                        <div class="col-7 instructor-details">
-                            <h3>DAVID WARNER</h3>
-                            <span>Instructor</span>
-                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                            <div class="instructor-social">
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 instructor-box">
-                    <div class="row instructor-wrap">
-                        <div class="col-5 instructor-img">
-                            <img src="img/team-4.webp" alt="">
-                        </div>
-                        <div class="col-7 instructor-details">
-                            <h3>DAVID WARNER</h3>
-                            <span>Instructor</span>
-                            <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                            <div class="instructor-social">
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row footer-wrap">
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-details">
-                    <h3>Company</h3>
-                    <a href="#">About Us</a>
-                    <a href="#">Company</a>
-                    <a href="#">Press & Blog</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Faq</a>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-details">
-                    <h3>Courses</h3>
-                    <a href="#">Winter driving</a>
-                    <a href="#">Program for seniors</a>
-                    <a href="#">Adult in car lesons</a>
-                    <a href="#">Defensive driving</a>
-                    <a href="#">Stick shit lessons</a>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-details">
-                    <h3>USEFUL LINKS</h3>
-                    <a href="#">Home</a>
-                    <a href="#">Drupal Themes</a>
-                    <a href="#">WordPress Themes</a>
-                    <a href="#">Support</a>
-                    <a href="#">Services</a>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-details">
-                    <img src="img/footer-logo.webp">
-                    <a href="#">Address : 15 Division Street, New York, NY 12032, United States of America</a>
-                    <a href="#">Phone : +0 (123) 456789</a>
-                    <a href="#">Email : Kaseo@gmail.com</a>
-                    <a href="#">Fax : +8 (123) 456 789</a>
-                </div>
-
-            </div>
-            <div class="footer-copyright">
-                <span>Copyright &copy 2021 All rights reserveed By Al Siam</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
-
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

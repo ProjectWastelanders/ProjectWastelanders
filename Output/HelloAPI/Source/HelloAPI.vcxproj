@@ -170,6 +170,8 @@
     <ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Level2EndTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Level2FinalText.cpp" />
@@ -184,8 +186,12 @@
     <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerRicochet.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerSemiAuto.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerShotgun.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\LaserDmg.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\Meteor.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\SpinSword.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosAttacks.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Shooting\StickBomb.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosDmg.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosLoop.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosMeleeDmg.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosMovement.cpp" />
@@ -265,7 +271,6 @@
     <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.cpp" />
     <ClCompile Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.cpp" />
     <ClCompile Include="../../Assets/Scripts/Quests/ReachTheSpaceship.cpp" />
-    <ClCompile Include="..\..\Assets\temp\LVL3_TESTING\Jumper.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.cpp" />
     <ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
     <ClCompile Include="..\..\Assets\UI\Select_Level\Weapon_Select.cpp" />
@@ -290,6 +295,8 @@
     <ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.h" />
+    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.h" />
+    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.h" />
     <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.h" />
     <ClInclude Include="..\..\Assets\Scripts\Level2EndTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\Level2FinalText.h" />
@@ -304,8 +311,12 @@
     <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerRicochet.h" />
     <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerSemiAuto.h" />
     <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerShotgun.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\LaserDmg.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\Meteor.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\SpinSword.h" />
     <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosAttacks.h" />
     <ClInclude Include="..\..\Assets\Scripts\Shooting\StickBomb.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosDmg.h" />
     <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosLoop.h" />
     <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosMeleeDmg.h" />
     <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosMovement.h" />
@@ -318,7 +329,6 @@
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\UIManager.h" />
     <ClInclude Include="..\..\Assets\Scripts\UsefulScripts\IndexContainer.h" />
-    <ClInclude Include="..\..\Assets\temp\LVL3_TESTING\Jumper.h" />
     <ClInclude Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.h" />
     <ClInclude Include="..\..\Assets\UI\Select_Level\Weapon_Select.h" />
     <ClInclude Include="Macro.h" />

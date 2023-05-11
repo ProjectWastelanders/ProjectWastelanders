@@ -1,6 +1,7 @@
 #include "Headers.h"
 #include "AudioSourceComponent.h"
 #include "GameObject.h"
+#include "ModuleLayers.h"
 
 AudioSourceComponent::AudioSourceComponent(GameObject* go) : Component(go)
 {
@@ -56,19 +57,40 @@ void AudioSourceComponent::DeSerialization(json& j)
 
 void AudioSourceComponent::PlayEvent()
 {
-	playingID = AK::SoundEngine::PostEvent(audioEvent.c_str(), akID);
+	AkCallbackFunc callbakc = &FinishedEvent;
+	playingID = AK::SoundEngine::PostEvent(audioEvent.c_str(), akID, 0U, &FinishedEvent);
 	if (playingID == 0)
 	{
 		Console::S_Log("Error at reproducing audio event: " + audioEvent);
 	}
+	else
+		isPlaying = true;
 }
 
 void AudioSourceComponent::StopEvent()
 {
 	AK::SoundEngine::StopPlayingID(playingID);
+	isPlaying = false;
 }
 
 void AudioSourceComponent::SetGameParameter(const char* paramName, float value)
 {
 	AK::SoundEngine::SetRTPCValue(paramName, value, this->akID);
+	
+}
+
+void AudioSourceComponent::FinishedEvent(AkCallbackType in_eType, AkCallbackInfo* in_pCallbackInfo)
+{
+	if (in_eType == AkCallbackType::AK_EndOfEvent)
+	{
+		if (ModuleLayers::gameObjects.count(in_pCallbackInfo->gameObjID) != 0)
+		{
+			GameObject* go = ModuleLayers::gameObjects[in_pCallbackInfo->gameObjID];
+			AudioSourceComponent* audio = go->GetComponent<AudioSourceComponent>();
+			if (audio != nullptr)
+			{
+				audio->isPlaying = false;
+			}
+		}
+	}
 }

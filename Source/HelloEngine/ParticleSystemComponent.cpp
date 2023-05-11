@@ -155,8 +155,6 @@ void ParticleSystemComponent::CreateEmitterMesh(uint resourceUID)
 		//This line is needed because when you add mesh into the rendermanager it will be drawn,
 		//when we are at this point we don't want to draw the mesh of the particle till the engine is playing
 		Application::Instance()->renderer3D->renderManager.GetRenderManager(resourceUID, 0)->GetMap()[var._instanceID].mesh.draw = false;
-		InstanceRenderer* renderer = app->renderer3D->renderManager.GetRenderManager(resourceUID, 0);
-		renderer->particleAnimInfos.emplace_back(var.particleAnim);
 			
 	}
 

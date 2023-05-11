@@ -104,6 +104,6 @@ private:
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;
-	friend class ParticleSystemComponent;
+	friend class Emitter;
 };
 

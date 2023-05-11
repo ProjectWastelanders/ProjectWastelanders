@@ -333,8 +333,8 @@ void InstanceRenderer::DrawInstancedSorting()
 
     // Reset model matrices.
     modelMatrices.clear();
-    textureIDs.clear();
-    TextureManager::UnBindTextures();
+    particleAnimInfos.clear();
+    //TextureManager::UnBindTextures();
 }
 
 void InstanceRenderer::SetAs2D()

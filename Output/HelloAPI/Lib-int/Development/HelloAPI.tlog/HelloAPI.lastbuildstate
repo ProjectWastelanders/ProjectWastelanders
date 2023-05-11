@@ -1,2 +1,2 @@
-PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.18362.0:VcpkgTriplet=x86-windows:
-Development|Win32|D:\GitHub\ProjectWastelanders\Output\HelloAPI\|
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.22000.0:
+Development|Win32|E:\GitHub\ProjectWastelanders\Output\HelloAPI\|

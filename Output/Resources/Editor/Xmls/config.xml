@@ -11,11 +11,14 @@
 		<drawNavMesh value="true" />
 	</renderer>
 	<scene>
-		<currentScene value="Assets/temp/NavMesh/testScene.HScene" />
+		<currentScene value="Assets/Level3.HScene" />
 	</scene>
 	<openGL>
 		<blend value="true" tag="0x0BE2" />
 		<cullFace value="true" tag="0x0B44" />
 		<wireframe value="false" />
 	</openGL>
+	<input>
+		<mouseWheel value="0.5" />
+	</input>
 </config>

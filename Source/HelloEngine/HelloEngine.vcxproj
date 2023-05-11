@@ -399,6 +399,7 @@
     <ClCompile Include="API\API_Agent.cpp" />
     <ClCompile Include="API\API_AnimationPlayer.cpp" />
     <ClCompile Include="API\API_Audio.cpp" />
+    <ClCompile Include="API\API_AudioSource.cpp" />
     <ClCompile Include="API\API_QuickSave.cpp" />
     <ClCompile Include="API\API_RayCast.cpp" />
     <ClCompile Include="API\API_RayCastCollision.cpp" />
@@ -655,6 +656,7 @@
     <ClInclude Include="API\API_Agent.h" />
     <ClInclude Include="API\API_AnimationPlayer.h" />
     <ClInclude Include="API\API_Audio.h" />
+    <ClInclude Include="API\API_AudioSource.h" />
     <ClInclude Include="API\API_QuickSave.h" />
     <ClInclude Include="API\API_RayCast.h" />
     <ClInclude Include="API\API_RayCastCollision.h" />

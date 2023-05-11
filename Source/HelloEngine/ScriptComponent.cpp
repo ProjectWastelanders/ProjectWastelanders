@@ -386,6 +386,16 @@ void ScriptComponent::AddDragBoxShaderComponent(const char* name, API::API_Shade
 	inspectorFields.push_back(dragBoxField);
 }
 
+void ScriptComponent::AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value)
+{
+	DragBoxAudioSourceComponent* dragBoxField = new DragBoxAudioSourceComponent();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
 uint ScriptComponent::GetResourceUID()
 {
 	if (scriptResource != nullptr)

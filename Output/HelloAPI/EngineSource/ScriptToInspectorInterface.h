@@ -223,6 +223,14 @@ class DragBoxShaderComponent : public ScriptInspectorField
 #endif
 };
 
+class DragBoxAudioSourceComponent : public ScriptInspectorField
+{
+	void OnEditor() override;
+#ifndef HELLO_ENGINE_EXPORTS
+	void OnSerialize(json& j) override;
+	void OnDeserialize(json& j) override;
+#endif
+};
 
 class TO_API ScriptToInspectorInterface
 {
@@ -249,6 +257,8 @@ public:
 	virtual void AddDragBoxUIText(const char* name, API::API_UIText* value) = 0;
 	virtual void AddDragBoxPrefabResource(const char* name, uint* value) = 0;
 	virtual void AddDragBoxShaderComponent(const char* name, API::API_ShaderComponent* value) = 0;
+	virtual void AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value) = 0;
+
 
 protected:
 	std::vector<ScriptInspectorField*> inspectorFields;

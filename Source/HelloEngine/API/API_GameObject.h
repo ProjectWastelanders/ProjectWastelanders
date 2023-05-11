@@ -25,6 +25,7 @@ namespace API
     class API_SkinnedMeshRenderer;
     class API_ShaderComponent;
     class API_Agent;
+    class API_AudioSourceComponent;
 
     class TO_API API_GameObject
     {
@@ -110,5 +111,6 @@ namespace API
         friend class API_ShaderComponent;
         friend class API_Agent;
         friend class API_RayCast;
+        friend class API_AudioSourceComponent;
     };
 }

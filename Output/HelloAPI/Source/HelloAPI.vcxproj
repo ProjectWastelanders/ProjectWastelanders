@@ -279,6 +279,7 @@
 		<ClCompile Include="../../Assets/temp/PhysicsTesting/RayCastTest.cpp" />
 		<ClCompile Include="../../Assets/temp/BugPhysic/PhysicTest.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Audio/MusicManager.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -425,6 +426,7 @@
 		<ClInclude Include="../../Assets/temp/PhysicsTesting/RayCastTest.h" />
 		<ClInclude Include="../../Assets/temp/BugPhysic/PhysicTest.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Audio/MusicManager.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

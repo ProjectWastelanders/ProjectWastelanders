@@ -417,6 +417,7 @@
     <ClCompile Include="ModuleRenderer3D.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="API\API_AudioSource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -863,6 +864,7 @@
     <ClInclude Include="ModuleRenderer3D.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="API\API_AudioSource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

@@ -39,6 +39,8 @@ public:
     float Lerp(float a, float b, float time);
     void HitAnimation();
 
+    void LoookAt(API_Vector3 target);
+
     bool wander = false;
     bool targeting = false;
 
@@ -90,6 +92,9 @@ private:
     float _movCooldown;//max time that can be outside the zone
     float _outCooldown;//max time that can be outside the zone
     float _hitOutCooldown;//
+
+    float _agCooldown;
+    float _agTime;
 
 };
 

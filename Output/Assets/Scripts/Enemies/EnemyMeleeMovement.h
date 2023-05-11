@@ -46,6 +46,8 @@ public:
 
     void HitAnim();
 
+    void LoookAt(API_Vector3 target);
+
     API_Vector3 NormalizeVec3(float x, float y, float z);
 
     float Lerp(float a, float b, float time);

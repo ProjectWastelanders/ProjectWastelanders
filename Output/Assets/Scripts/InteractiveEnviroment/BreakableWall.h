@@ -11,6 +11,7 @@ public:
     void Start() override;
     void Update() override;
 
+    void OnCollisionStay(API_RigidBody other);
     void OnCollisionEnter(API_RigidBody other);
 
     void ShootWall(float projectileDamage);

@@ -35,6 +35,21 @@ void BreakableWall::Update()
     PopUpTutorial(tutorial_active);
 }
 
+void BreakableWall::OnCollisionStay(API_RigidBody other)
+{
+    std::string detectionTag = other.GetGameObject().GetTag();
+
+    if (detectionTag == "Player")
+    {
+        PlayerMove* playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
+
+        if (playerMove->isDashing)
+        {
+            DestroyWall();
+        }
+    }
+}
+
 void BreakableWall::OnCollisionEnter(API_RigidBody other)
 {
     std::string detectionTag = other.GetGameObject().GetTag();
@@ -44,15 +59,6 @@ void BreakableWall::OnCollisionEnter(API_RigidBody other)
         Projectile* projectile = (Projectile*)other.GetGameObject().GetScript("Projectile");
         ShootWall(projectile->damage);
 
-    }
-    else if (detectionTag == "Player")
-    {
-        PlayerMove* playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
-
-        if (playerMove->isDashing)
-        {
-            DestroyWall();
-        }
     }
 }
 

@@ -62,6 +62,10 @@ void Coleccionable_buttons::Update()
 		interruptor_Colec->menuPanel.SetActive(false);
 		if (playermovment) playermovment->openingChest = false;
 		interruptor_Colec->open = false;
+
+		Audio::StopEvent(song1);
+		Audio::StopEvent(song2);
+		Audio::StopEvent(song3);
 		return;
 	}//
 
@@ -99,17 +103,17 @@ void Coleccionable_buttons::Update()
 					switch (i)
 					{
 					case 0:
-						Audio::Event("L1_collectable3");
+						song1 = Audio::Event("L1_collectable3");
 						Audio::StopEvent(song2);
 						Audio::StopEvent(song3);
 						break;
 					case 1:
-						Audio::Event("L2_collectable3");
+						song2 = Audio::Event("L2_collectable3");
 						Audio::StopEvent(song1);
 						Audio::StopEvent(song3);
 						break;
 					case 2:
-						Audio::Event("L3_collectable3");
+						song3 = Audio::Event("L3_collectable3");
 						Audio::StopEvent(song2);
 						Audio::StopEvent(song1);
 						break;
@@ -143,7 +147,6 @@ void Coleccionable_buttons::Update()
 		}
 	
 	}
-
 }
 
 void Coleccionable_buttons::Level1selected( bool casete1, bool casete2, bool casete3)

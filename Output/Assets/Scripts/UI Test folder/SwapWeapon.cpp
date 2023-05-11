@@ -176,32 +176,6 @@ void SwapWeapon::Update()
 
     active_None_Weapon();
 
-    /*if (Input::GetKey(KeyCode::KEY_C) == KeyState::KEY_DOWN) {
-        arma_Princial = true;
-        arma_Secundaria = false;
-        arma_Especial = false;
-        SwapWeapon1(infinitWeapon_Type::HANDGUNS, arma_Princial);
-        Console::Log("si: ");
-    }
-
-    if (Input::GetKey(KeyCode::KEY_X) == KeyState::KEY_DOWN) {
-        arma_Princial = false;
-        arma_Secundaria = false;
-        arma_Especial = false;
-        SwapWeapon2(normalWeapon_Type::SEMI, arma_Secundaria);
-        Console::Log("no: ");
-    }
-
-    /*if (Input::GetKey(KeyCode::KEY_Z) == KeyState::KEY_DOWN) {
-        arma_Princial = false;
-        arma_Secundaria = false;
-        arma_Especial = true;
-        SwapWeapon3(specialWeapon_Type::RICOCHET, arma_Especial);
-        Console::Log("ss: ");
-    }*/
-
-
-
     if (playerMove && playerMove->dashesAvailable > 0 && !dashingReady)
     {
         Dash();

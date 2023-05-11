@@ -141,11 +141,17 @@
                     3765630460,
                     1551021094
                 ]
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 3963797722,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Panel",
+        "Name": "MenuButtons",
         "ParentUID": 1170745027,
         "PrefabUID": 0,
         "Tag": "UI",
@@ -231,38 +237,13 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
-                    }
-                ],
-                "Script Resource": 2459103775,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 1741124431
-                    },
-                    {
                         "minY": 0.0
                     },
                     {
-                        "maxY": 0.019999999552965164
+                        "maxY": 0.0
                     },
                     {
-                        "Vel": 0.0010000000474974513
+                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -317,38 +298,13 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
-                    }
-                ],
-                "Script Resource": 2459103775,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 351199318
-                    },
-                    {
                         "minY": 0.0
                     },
                     {
-                        "maxY": 0.019999999552965164
+                        "maxY": 0.0
                     },
                     {
-                        "Vel": 0.0010000000474974513
+                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -403,38 +359,13 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
-                    }
-                ],
-                "Script Resource": 2459103775,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 1057867941
-                    },
-                    {
                         "minY": 0.0
                     },
                     {
-                        "maxY": 0.019999999552965164
+                        "maxY": 0.0
                     },
                     {
-                        "Vel": 0.0010000000474974513
+                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -489,38 +420,13 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
-                    }
-                ],
-                "Script Resource": 2459103775,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 3765630460
-                    },
-                    {
                         "minY": 0.0
                     },
                     {
-                        "maxY": 0.019999999552965164
+                        "maxY": 0.0
                     },
                     {
-                        "Vel": 0.0010000000474974513
+                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -575,38 +481,13 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
-                    }
-                ],
-                "Script Resource": 2459103775,
-                "Type": 5
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 1551021094
-                    },
-                    {
                         "minY": 0.0
                     },
                     {
-                        "maxY": 0.019999999552965164
+                        "maxY": 0.0
                     },
                     {
-                        "Vel": 0.0010000000474974513
+                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -696,7 +577,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Velocity": 0.5
+                        "Velocity": 0.0
                     }
                 ],
                 "Script Resource": 3877120418,
@@ -746,19 +627,16 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Button Guide": 3959061821
-                    },
-                    {
                         "Move X animation repeat": 0
                     },
                     {
                         "Move Y animation repeat": 0
                     },
                     {
-                        "Move animation in loop": true
+                        "Move animation in loop": false
                     },
                     {
-                        "Move animation active": true
+                        "Move animation active": false
                     },
                     {
                         "Distance move X": 0.0
@@ -767,10 +645,10 @@
                         "Speed move X": 0.0
                     },
                     {
-                        "Distance move Y": 0.019999999552965164
+                        "Distance move Y": 0.0
                     },
                     {
-                        "Speed move Y": 0.20000000298023224
+                        "Speed move Y": 0.0
                     },
                     {
                         "Scale animation repeat": 0
@@ -782,10 +660,10 @@
                         "Scale animation active": false
                     },
                     {
-                        "Scale max": 0.10000000149011612
+                        "Scale max": 0.0
                     },
                     {
-                        "Speed Scale": 1.0
+                        "Speed Scale": 0.0
                     },
                     {
                         "Rotate animation repeat": 0
@@ -797,10 +675,10 @@
                         "Rotate animation active": false
                     },
                     {
-                        "Rotate distance": 0.0010000000474974513
+                        "Rotate distance": 0.0
                     },
                     {
-                        "Speed Rotation": 1.0
+                        "Speed Rotation": 0.0
                     }
                 ],
                 "Script Resource": 148961927,

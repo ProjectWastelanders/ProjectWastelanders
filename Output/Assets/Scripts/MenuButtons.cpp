@@ -20,13 +20,19 @@ void MenuButtons::Update()
 {
     if (Continue.OnPress())
     {
-        /*Scene::LoadScene("WinMenu.HScene");*/
+        // If we completed at least level 1, we must have a current save active.
+        if (API_QuickSave::GetBool("level1_completed"))
+        {
+            Scene::LoadScene("SpaceshipHUB_Scene.HScene");
+        }
+        else
+            Audio::Event("error");
     }
     if (NewGame.OnPress())
     {
         API_QuickSave::ResetAll();
         API_QuickSave::SetInt("equipedNormalGun", 2); // starter weapon
-        Scene::LoadScene("SpaceshipHUB_Scene.HScene");
+        Scene::LoadScene("Level1.HScene");
     }
     if (Exit.OnPress())
     {
@@ -34,10 +40,8 @@ void MenuButtons::Update()
     }
     if (Collectibles.OnPress())
     {
-        Scene::LoadScene("");
     }
     if (Settings.OnPress())
     {
-        Scene::LoadScene("");
     }
 }

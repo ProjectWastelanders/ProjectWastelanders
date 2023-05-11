@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.8575609922409058,
+                "Aspect ratio": 1.7788103818893433,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -145,21 +145,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Collectibles": 1057867941
-                    },
                     {
                         "Continue": 351199318
                     },
@@ -268,13 +253,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
+                        "Button": 1741124431
                     },
                     {
                         "minY": 0.0
@@ -338,13 +317,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
+                        "Button": 351199318
                     },
                     {
                         "minY": 0.0
@@ -408,13 +381,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
+                        "Button": 1057867941
                     },
                     {
                         "minY": 0.0
@@ -478,13 +445,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
+                        "Button": 3765630460
                     },
                     {
                         "minY": 0.0
@@ -548,13 +509,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
+                        "Button": 1551021094
                     },
                     {
                         "minY": 0.0
@@ -653,10 +608,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Velocity": 0.0
-                    },
-                    {
-                        "Velocity": 0.0
+                        "Velocity": 1.0
                     }
                 ],
                 "Script Resource": 3877120418,
@@ -706,7 +658,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Move X animation repeat": 0
+                        "Move X animation repeat": 3
                     },
                     {
                         "Move Y animation repeat": 0
@@ -718,61 +670,7 @@
                         "Move animation active": false
                     },
                     {
-                        "Distance move X": 0.0
-                    },
-                    {
-                        "Speed move X": 0.0
-                    },
-                    {
-                        "Distance move Y": 0.0
-                    },
-                    {
-                        "Speed move Y": 0.0
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.0
-                    },
-                    {
-                        "Speed Scale": 0.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0
-                    },
-                    {
-                        "Speed Rotation": 0.0
-                    },
-                    {
-                        "Move X animation repeat": 0
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": false
-                    },
-                    {
-                        "Move animation active": false
-                    },
-                    {
-                        "Distance move X": 0.0
+                        "Distance move X": 0.10000000149011612
                     },
                     {
                         "Speed move X": 0.0

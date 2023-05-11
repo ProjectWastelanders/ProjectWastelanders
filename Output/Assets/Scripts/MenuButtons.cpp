@@ -33,6 +33,17 @@ void MenuButtons::Update()
         API_QuickSave::ResetAll();
         API_QuickSave::SetInt("equipedNormalGun", 2); // starter weapon
         Scene::LoadScene("Level1.HScene");
+
+        API_QuickSave::SetBool("level1_completed", false);
+        API_QuickSave::SetBool("level2_completed", false);
+        API_QuickSave::SetBool("level3_completed", false);
+        API_QuickSave::SetBool("level4_completed", false);
+
+        API_QuickSave::SetBool("level1Selected", true);
+        API_QuickSave::SetBool("level2Selected", false);
+        API_QuickSave::SetBool("level3Selected", false);
+        API_QuickSave::SetBool("level4Selected", false);
+
     }
     if (Exit.OnPress())
     {

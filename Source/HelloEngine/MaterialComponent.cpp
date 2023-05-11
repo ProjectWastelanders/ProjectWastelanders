@@ -296,9 +296,6 @@ void MaterialComponent::DeSerialization(json& _j)
 			sComp->UpdateBones();
 		}
 	}
-	
-
-
 
 	bool enabled = _j["Enabled"];
 	if (!enabled)

@@ -92,7 +92,6 @@
     <ClCompile Include="ModuleCommand.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModuleFiles.cpp" />
-    <ClCompile Include="ModuleRenderer3D.cpp" />
     <ClCompile Include="ModuleResourceManager.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="ModuleXML.cpp" />
@@ -415,6 +414,9 @@
     </ClCompile>
     <ClCompile Include="API\API_RayCast.cpp" />
     <ClCompile Include="API\API_RayCastCollision.cpp" />
+    <ClCompile Include="ModuleRenderer3D.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -542,7 +544,6 @@
     <ClInclude Include="ModuleCommand.h" />
     <ClInclude Include="ModuleInput.h" />
     <ClInclude Include="ModuleFiles.h" />
-    <ClInclude Include="ModuleRenderer3D.h" />
     <ClInclude Include="ModuleResourceManager.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="ModuleXML.h" />
@@ -859,6 +860,9 @@
     </ClInclude>
     <ClInclude Include="API\API_RayCast.h" />
     <ClInclude Include="API\API_RayCastCollision.h" />
+    <ClInclude Include="ModuleRenderer3D.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

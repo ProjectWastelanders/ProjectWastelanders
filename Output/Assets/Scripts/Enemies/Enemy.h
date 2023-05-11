@@ -96,6 +96,7 @@ public:
     API_Vector3 initialPos;
 
     API_Agent enemyAgent;
+    bool isAgent;
 private:
 
     float _coldStun;

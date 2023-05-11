@@ -9,7 +9,7 @@ HELLO_ENGINE_API_C EnemyMeleeMovement* CreateEnemyMeleeMovement(ScriptToInspecto
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     script->AddDragFloat("Detection distance", &classInstance->detectionDis);
     script->AddDragFloat("Lossing Enemy distance", &classInstance->lossingDis);
-   // script->AddDragFloat("Range attack", &classInstance->rangeAtk);
+    // script->AddDragFloat("Range attack", &classInstance->rangeAtk);
     script->AddDragFloat("OutsideZone Time", &classInstance->outTime);
     script->AddDragFloat("Time cooldown between shoots", &classInstance->hitOutTime);
     script->AddDragFloat("Attack Time", &classInstance->attackTimeCpy);
@@ -39,7 +39,7 @@ HELLO_ENGINE_API_C EnemyMeleeMovement* CreateEnemyMeleeMovement(ScriptToInspecto
     script->AddDragBoxAnimationResource("Dash Animation", &classInstance->dashAnim);
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
     script->AddDragBoxAnimationResource("Hit Animation", &classInstance->hitAnim);
-    ///script->AddCheckBox("Dashiing", &classInstance->attacking);
+    script->AddCheckBox("Dashiing", &classInstance->test);
     return classInstance;
 }
 
@@ -59,7 +59,7 @@ void EnemyMeleeMovement::Start()
     animState = AnimationState::NONE;
     zoneRb = actionZone.GetRigidBody();
 
-    Game::FindGameObjectsWithTag("Player",&target, 1);
+    Game::FindGameObjectsWithTag("Player", &target, 1);
 
     enemy = (Enemy*)gameObject.GetScript("Enemy");
     attackZone = (EnemyMeleeAttackZone*)attackZoneGO.GetScript("EnemyMeleeAttackZone");
@@ -67,15 +67,19 @@ void EnemyMeleeMovement::Start()
     probDash = 50;
     tDash = 0.5;
     velDash = 10;
+    _agCooldown = 0;
+    _agTime = 0.5;
+    //test = enemy->enemyAgent.SetDestination(API_Vector3(-178.552, 60, 16.905));
 }
+
 void EnemyMeleeMovement::Update()
 {
-    
+    //test = enemy->enemyAgent.SetDestination(API_Vector3(-178.552, 60, 16.905));
     float dt = Time::GetDeltaTime();
-    
+
     if (enemy != nullptr && attackZone != nullptr && targStats != nullptr)
     {
-        if(enemy->dying)enemState = States::DYING;
+        if (enemy->dying)enemState = States::DYING;
 
         if (enemState == States::TARGETING || enemState == States::ATTACKIG)
         {
@@ -137,7 +141,7 @@ void EnemyMeleeMovement::Update()
             }
 
 
-            if (!dashing&&!enemy->actStun && !enemy->takingDmg)
+            if (!dashing && !enemy->actStun && !enemy->takingDmg)
             {
                 if ((enemState == States::ATTACKIG || enemState == States::TARGETING || enemy->isHit) && enemy->isTargIn)
                 {
@@ -167,36 +171,53 @@ void EnemyMeleeMovement::Update()
         switch (enemState)
         {
         case States::WANDERING:
-          ///  Console::Log("NumPoint: " + std::to_string(numPoint));
+            enemy->enemyAgent.Move();
+            ///  Console::Log("NumPoint: " + std::to_string(numPoint));
             attacking = false;
             enemy->currentSpeed = enemy->speed * enemy->stunVel * enemy->slowVel /** dt*/;
-            
+            enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
             //if ((gameObject.GetTransform().GetLocalPosition().Distance(actualPoint) < 5))
             if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 5))
             {
-                Console::Log("Change");
+                // Console::Log("Change");
                 numPoint++;
                 if (numPoint >= _avalPoints)numPoint = 0;
             }
             actualPoint = listPoints[numPoint].GetTransform().GetGlobalPosition();
-            Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
+            _agCooldown += dt;
+            if (_agCooldown >= _agTime)
+            {
+                _agCooldown = 0;
+               test= enemy->enemyAgent.SetDestination(API_Vector3(actualPoint.x, gameObject.GetTransform().GetGlobalPosition().y, actualPoint.z));
+                //enemy->enemyAgent.SetDestination(API_Vector3(-178.552,60, 16.905));
+                Console::Log("Vel: "+ std::to_string(enemy->enemyAgent.GetSpeed()));
+            }
+           // Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
 
             if (animState != AnimationState::WALK && !enemy->takingDmg)
             {
                 animState = AnimationState::WALK;
                 animationPlayer.ChangeAnimation(walkAnim);
                 animationPlayer.Play();
-                Console::Log("Walk");
+                //  Console::Log("Walk");
             }
-            
+
             break;
 
         case States::TARGETING:
+            enemy->enemyAgent.Move();
             attacking = false;
             enemy->currentSpeed = enemy->speed * enemy->acceleration * enemy->stunVel * enemy->slowVel /** dt*/;
+            enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
+            _agCooldown += dt;
+            if (_agCooldown >= _agTime)
+            {
+                _agCooldown = 0;
+                enemy->enemyAgent.SetDestination(API_Vector3(target.GetTransform().GetGlobalPosition().x,gameObject.GetTransform().GetGlobalPosition().y, target.GetTransform().GetGlobalPosition().z));
+            }
 
-            
-            Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+
+           // Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
 
             if (animState != AnimationState::RUN && !enemy->takingDmg)
             {
@@ -204,10 +225,11 @@ void EnemyMeleeMovement::Update()
                 animationPlayer.ChangeAnimation(runAnim);
                 animationPlayer.Play();
             }
-            
+
             break;
 
         case States::ATTACKIG:
+            enemy->enemyAgent.Stop();
             attacking = true;
             if (timer < attackCharge)
             {
@@ -222,7 +244,7 @@ void EnemyMeleeMovement::Update()
             else if (timer < attackTime)
             {
                 Attack();
-                
+
                 if (animState != AnimationState::ATTACK)
                 {
                     animState = AnimationState::ATTACK;
@@ -242,9 +264,9 @@ void EnemyMeleeMovement::Update()
                 attackZone->attack = false;
             }
 
-           
+
             timer += dt;
-            
+
             ////enemy->currentSpeed = enemy->speed * enemy->acceleration * enemy->stunVel * enemy->slowVel /** dt*/;
             //if (attackCharge > 0.0f) {
             //    if (animState != AnimationState::IDLE)
@@ -262,58 +284,60 @@ void EnemyMeleeMovement::Update()
             //        animationPlayer.Play();
             //    }
             //}
-            
+
             break;
 
-            case States::DASHING:
-                attacking = false;
-                _dashCooldown += dt;
-                if (_dashCooldown < tDash)
+        case States::DASHING:
+            enemy->enemyAgent.Stop();
+            attacking = false;
+            _dashCooldown += dt;
+            if (_dashCooldown < tDash)
+            {
+                if (sideDash == 0)
                 {
-                    if (sideDash == 0)
-                    {
-                        enemy->enemyRb.SetVelocity(gameObject.GetTransform().GetRight() * velDash);
-                    }
-                    else
-                    {
-                        enemy->enemyRb.SetVelocity(gameObject.GetTransform().GetLeft() * velDash);
-                    }
-                    Console::Log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-                    if (animState != AnimationState::DASH)
-                    {
-                        animState = AnimationState::DASH;
-                        animationPlayer.ChangeAnimation(dashAnim);
-                        animationPlayer.Play();
-                    }
+                    enemy->enemyRb.SetVelocity(gameObject.GetTransform().GetRight() * velDash);
                 }
-                else if(_dashCooldown >= tDash)
+                else
                 {
-                    enemy->enemyRb.SetVelocity(0);
-                    Console::Log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-                    dashing = false;
-                    attackZone->shooted = false;
+                    enemy->enemyRb.SetVelocity(gameObject.GetTransform().GetLeft() * velDash);
                 }
-                
-                break;
-            case States::DYING:
-                enemy->_coldAnimDie += dt;
-               // enemy->dying = true;
+                // Console::Log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                if (animState != AnimationState::DASH)
+                {
+                    animState = AnimationState::DASH;
+                    animationPlayer.ChangeAnimation(dashAnim);
+                    animationPlayer.Play();
+                }
+            }
+            else if (_dashCooldown >= tDash)
+            {
                 enemy->enemyRb.SetVelocity(0);
-                if (enemy->_coldAnimDie < enemy->_tAnimDie)
+                //Console::Log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+                dashing = false;
+                attackZone->shooted = false;
+            }
+
+            break;
+        case States::DYING:
+            enemy->_coldAnimDie += dt;
+            // enemy->dying = true;
+            enemy->enemyAgent.Stop();
+            enemy->enemyRb.SetVelocity(0);
+            if (enemy->_coldAnimDie < enemy->_tAnimDie)
+            {
+                if (animState != AnimationState::DIE)
                 {
-                    if (animState != AnimationState::DIE)
-                    {
-                        animState = AnimationState::DIE;
-                        animationPlayer.ChangeAnimation(dieAnim);
-                        animationPlayer.Play();
-                    }
+                    animState = AnimationState::DIE;
+                    animationPlayer.ChangeAnimation(dieAnim);
+                    animationPlayer.Play();
                 }
-                else 
-                {
-                    gameObject.SetActive(false);
-                }
-                
-                break;
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+
+            break;
 
         default:
             break;
@@ -324,12 +348,12 @@ void EnemyMeleeMovement::Update()
 
 void EnemyMeleeMovement::Seek(float vel, API_Vector3 tarPos, API_RigidBody enemyRb)
 {
-   
+
     if (!enemy->actStun)
     {
         API_Vector3 _bRot = enemy->baseRot;
         API_Vector2 lookDir;
-         lookDir.x = (tarPos.x - gameObject.GetTransform().GetGlobalPosition().x);
+        lookDir.x = (tarPos.x - gameObject.GetTransform().GetGlobalPosition().x);
         lookDir.y = (tarPos.z - gameObject.GetTransform().GetGlobalPosition().z);
         /*lookDir.x = (tarPos.x - gameObject.GetTransform().GetLocalPosition().x);
         lookDir.y = (tarPos.z - gameObject.GetTransform().GetLocalPosition().z);*/
@@ -341,7 +365,7 @@ void EnemyMeleeMovement::Seek(float vel, API_Vector3 tarPos, API_RigidBody enemy
         _angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
         //gameObject.GetTransform().SetRotation(0+_bRot.x, -_angle+ _bRot.y, 0+ _bRot.z);
         gameObject.GetTransform().SetRotation(0, -_angle, 0);
-        
+
     }
 
     enemyRb.SetVelocity(gameObject.GetTransform().GetForward() * vel);
@@ -401,11 +425,11 @@ void EnemyMeleeMovement::ChargeAttack()
 }
 void EnemyMeleeMovement::Attack()
 {
-   /* if (gameObject.GetTransform().GetGlobalPosition() == targetPosOnAttack)
-    {
-        timer = attackTime + 2;
-        attackCD += 2;
-    }*/
+    /* if (gameObject.GetTransform().GetGlobalPosition() == targetPosOnAttack)
+     {
+         timer = attackTime + 2;
+         attackCD += 2;
+     }*/
     enemy->currentSpeed = attackSpeed;
     Seek(enemy->currentSpeed, targetPosOnAttack, enemy->enemyRb);
 }

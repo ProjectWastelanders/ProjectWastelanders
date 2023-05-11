@@ -53,7 +53,9 @@ public:
     bool wander = false;
     bool targeting = false;
     bool dashing = false;
-   // bool shooted = false;
+    // bool shooted = false;
+
+    bool test = false;
 
     bool attacking = false;
 
@@ -83,7 +85,7 @@ public:
     int sideDash = 0;
     API_Vector3 targetPosOnAttack;
 
-    API_GameObject target;
+    API_GameObject target; 
     API_GameObject actionZone;
     API_GameObject attackZoneGO;
 
@@ -107,7 +109,7 @@ public:
     uint chargeAnim;
     uint dieAnim;
     uint hitAnim;
-    
+
 
     Enemy* enemy = nullptr;
     PlayerStats* targStats = nullptr;
@@ -119,7 +121,8 @@ private:
     float _hitOutCooldown;//
     float _dashCooldown;
 
-
+    float _agTime;
+    float _agCooldown;
     //Timer clock;
 };
 

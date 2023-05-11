@@ -64,7 +64,7 @@ void EnemyMeleeMovement::Start()
     enemy = (Enemy*)gameObject.GetScript("Enemy");
     attackZone = (EnemyMeleeAttackZone*)attackZoneGO.GetScript("EnemyMeleeAttackZone");
     targStats = (PlayerStats*)target.GetScript("PlayerStats");
-    probDash = 50;
+    probDash = 20;
     tDash = 0.5;
     velDash = 10;
     _agCooldown = 0;
@@ -193,7 +193,7 @@ void EnemyMeleeMovement::Update()
                 Console::Log("Vel: "+ std::to_string(enemy->enemyAgent.GetSpeed()));
             }
            // Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
-
+            LoookAt(actualPoint);
             if (animState != AnimationState::WALK && !enemy->takingDmg)
             {
                 animState = AnimationState::WALK;
@@ -216,8 +216,8 @@ void EnemyMeleeMovement::Update()
                 enemy->enemyAgent.SetDestination(API_Vector3(target.GetTransform().GetGlobalPosition().x,gameObject.GetTransform().GetGlobalPosition().y, target.GetTransform().GetGlobalPosition().z));
             }
 
-
-           // Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+            LoookAt(target.GetTransform().GetGlobalPosition());
+            //Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
 
             if (animState != AnimationState::RUN && !enemy->takingDmg)
             {
@@ -441,5 +441,23 @@ void EnemyMeleeMovement::HitAnim()
         animState = AnimationState::HITTED;
         animationPlayer.ChangeAnimation(hitAnim);
         animationPlayer.Play();
+    }
+}
+
+void EnemyMeleeMovement::LoookAt(API_Vector3 target)
+{
+    if (!enemy->actStun)
+    {
+        API_Vector2 lookDir;
+        lookDir.x = (target.x - gameObject.GetTransform().GetGlobalPosition().x);
+        lookDir.y = (target.z - gameObject.GetTransform().GetGlobalPosition().z);
+
+
+        API_Vector2 normLookDir;
+        normLookDir.x = lookDir.x / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
+        normLookDir.y = lookDir.y / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
+        float _angle = 0;
+        _angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
+        gameObject.GetTransform().SetRotation(0, -_angle, 0);
     }
 }

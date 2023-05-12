@@ -6,6 +6,7 @@
 #include "API/API.h"
 
 class PlayerStorage;
+class MusicManager;
 
 class CasetteManager : HelloBehavior
 {
@@ -18,11 +19,14 @@ public:
     API_GameObject casette3;
 
     API_GameObject playerStorageGO;
-    PlayerStorage* playerStorage;
+    PlayerStorage* playerStorage = nullptr;
 
     bool check;
     API_String playAudio1;
     API_String playAudio2;
     API_String playAudio3;
+    MusicManager* musicManager = nullptr;
+
+    bool playedCasetteMusic[3] = { false,false,false };
 };
 

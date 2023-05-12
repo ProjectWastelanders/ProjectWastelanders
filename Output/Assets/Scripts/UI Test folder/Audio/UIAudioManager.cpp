@@ -25,6 +25,8 @@ void UIAudioManager::Update()
 {
 	for (int i = 0; i < sceneButtons.size(); ++i)
 	{
+		if (!sceneButtons[i].GetGameObject().IsActive())
+			continue;
 		if (sceneButtons[i].OnPress())
 		{
 			Audio::Event("click");

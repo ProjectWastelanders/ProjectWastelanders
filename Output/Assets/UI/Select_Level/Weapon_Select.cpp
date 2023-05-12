@@ -172,9 +172,9 @@ void Weapon_Select::Update()
             }
             else if (API_QuickSave::GetBool("level3Selected"))
             {
-                API_QuickSave::SetFloat("PlayerPosX", -61.7f);
-                API_QuickSave::SetFloat("PlayerPosY", 92.5f);
-                API_QuickSave::SetFloat("PlayerPosZ", 47.3f);
+                API_QuickSave::SetFloat("PlayerPosX", 120.0f);
+                API_QuickSave::SetFloat("PlayerPosY", -4.5f);
+                API_QuickSave::SetFloat("PlayerPosZ", -1.0);
                 API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
                 API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
                 API_QuickSave::SetBool("IsInMiddleOfLevel", false);

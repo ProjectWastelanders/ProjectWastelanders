@@ -526,7 +526,7 @@ PhysBody3D* ModulePhysics::CreatePhysBody(const Primitive* primitive, float mass
 
 	btRigidBody* body = new btRigidBody(rbInfo);
 
-	body->setActivationState(DISABLE_DEACTIVATION);
+	body->setActivationState(ACTIVE_TAG);
 
 	PhysBody3D* pbody = new PhysBody3D(body);
 

@@ -13,7 +13,8 @@ XMLNode XMLNode::FindChildBreadth(std::string name, uint count)
 	// Check if this is the node we are looking for
 	std::string nodeName = node.name();
 
-	if (nodeName == name) return ret;
+	if (nodeName == name) 
+		return ret;
 
 	std::queue<pugi::xml_node> firstQueue;
 

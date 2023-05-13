@@ -10,6 +10,7 @@
 
 #include "ModuleInput.h"
 #include "ModuleWindow.h"
+#include "ModuleNavMesh.h"
 
 //TEMPORAL
 #include "ComponentUI.h"
@@ -86,6 +87,8 @@ bool ModuleLayers::Start()
         
         ModuleResourceManager::S_SerializeScene(rootGameObject);
     }
+    else
+        ModuleNavMesh::S_Load();
 
 #ifndef STANDALONE
     LayerGame::S_Play();
@@ -96,10 +99,13 @@ bool ModuleLayers::Start()
 
 UpdateStatus ModuleLayers::PreUpdate()
 {
+    OPTICK_EVENT();
     if(_requestScene)
     {
-        if(!ModuleResourceManager::S_DeserializeScene(_requestScenePath))
+        if (!ModuleResourceManager::S_DeserializeScene(_requestScenePath))
             _requestScenePath = "null";
+        else
+            ModuleNavMesh::S_Load(_requestScenePath);
 
         _requestScene = false;
     }
@@ -151,6 +157,7 @@ UpdateStatus ModuleLayers::PostUpdate()
 
 void ModuleLayers::S_DrawLayers()
 {
+    OPTICK_EVENT();
     for (int i = 0; i < (uint)LayersID::EDITOR; i++)
     {
         if (_layers[i] && _layers[i]->IsEnabled())
@@ -160,13 +167,13 @@ void ModuleLayers::S_DrawLayers()
 
 void ModuleLayers::S_DrawEditor()
 {
+    OPTICK_EVENT();
     if (_layers[(uint)LayersID::EDITOR] && _layers[(uint)LayersID::EDITOR]->IsEnabled()) 
         _layers[(uint)LayersID::EDITOR]->PostUpdate();
 }
 
 bool ModuleLayers::CleanUp()
-{
-   
+{ 
 #ifdef STANDALONE
     XMLNode sceneXML = Application::Instance()->xml->GetConfigXML();
 
@@ -224,9 +231,8 @@ void ModuleLayers::S_RequestLoadScene(const std::string& scenePath)
 GameObject* ModuleLayers::S_GetGameObject(uint ID)
 {
     if (gameObjects.find(ID) != gameObjects.end())
-    {
         return gameObjects[ID];
-    }
+
     return nullptr;
 }
 

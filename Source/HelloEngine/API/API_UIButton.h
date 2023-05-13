@@ -22,11 +22,16 @@ namespace API
 
 		bool OnHovered();
 
+		// returns true the dirst frame is hovered
+		bool OnHoveredFirst();
+
 		bool getIsBlocked();
 
 		void SetBlocked(bool);
 
 		bool OnRelease();
+
+		bool IsAlive();
 	
 	private:
 		ComponentUIButton* GetComponent();

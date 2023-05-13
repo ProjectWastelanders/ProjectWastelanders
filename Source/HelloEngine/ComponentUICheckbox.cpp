@@ -4,6 +4,7 @@
 #include "TextureComponent.h"
 #include "ComponentUIButton.h"
 #include "ComponentUISlider.h"
+#include "API/API_UICheckBox.h"
 
 ComponentUICheckbox::ComponentUICheckbox(GameObject* gameObject) : ComponentUI(gameObject)
 {
@@ -21,29 +22,6 @@ void ComponentUICheckbox::InputUpdate()
 
 	// PROBLEMA A SOLUCIONAR: NO PODEM TENIR ACTIVE I HOVERED AL MATEI TEMPS (EN PROCES DE PENSAR UNA SOLUCIÓ) 
 
-	/*State = ChangeState(State);
-	
-	switch (State)
-	{
-	case CheckboxState::NORMAL:
-		
-		break;
-	case CheckboxState::HOVERED:
-		
-		break;
-	case CheckboxState::HOVEREDACTIVE:
-		
-		break;
-	case CheckboxState::ONPRESS:
-
-		break;
-	case CheckboxState::ACTIVE:
-
-		break;
-	default:
-		break;
-	}*/
-
 	switch (State)
 	{
 	case CheckboxState::NORMAL:
@@ -52,14 +30,17 @@ void ComponentUICheckbox::InputUpdate()
 	case CheckboxState::HOVERED:
 		_material->ChangeTexture(textureIDHoverCB);
 		break;
-	case CheckboxState::HOVEREDACTIVE:
-		_material->ChangeTexture(textureIDHoverCB);
-		break;
 	case CheckboxState::ONPRESS:
 		_material->ChangeTexture(textureIDPressCB);
 		break;
-	case CheckboxState::ACTIVE:
+	case CheckboxState::NORMALACTIVE:
 		_material->ChangeTexture(textureIDActiveCB);
+		break;
+	case CheckboxState::HOVEREDACTIVE:
+		_material->ChangeTexture(textureIDHoverActiveCB);
+		break;
+	case CheckboxState::ONPRESSACTIVE:
+		_material->ChangeTexture(textureIDPressActiveCB);
 		break;
 	default:
 		break;
@@ -77,6 +58,9 @@ void ComponentUICheckbox::Serialization(json& j)
 	_j["idleImage"] = idleCB ? idleCB->UID : 0;
 	_j["hoverImage"] = hoverCB ? hoverCB->UID : 0;
 	_j["pressImage"] = pressCB ? pressCB->UID : 0;
+	_j["idleActiveImage"] = activeCB ? activeCB->UID : 0;
+	_j["hoverActiveImage"] = hoverActiveCB ? hoverActiveCB->UID : 0;
+	_j["pressActiveImage"] = pressActiveCB ? pressActiveCB->UID : 0;
 	SaveMeshState(_j);
 	//_j["checkActive"] = checkActive;
 	j["Components"].push_back(_j);
@@ -113,6 +97,27 @@ void ComponentUICheckbox::DeSerialization(json& j)
 	else
 		textureIDPressCB = -1;
 
+	uint savedUIDIdleActive = j["idleActiveImage"];
+	activeCB = savedUIDIdleActive == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["idleActiveImage"]);
+	if (activeCB != nullptr)
+		textureIDActiveCB = activeCB->OpenGLID;
+	else
+		textureIDActiveCB = -1;
+
+	uint savedUIDHoverActive = j["hoverActiveImage"];
+	hoverActiveCB = savedUIDHoverActive == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["hoverActiveImage"]);
+	if (hoverActiveCB != nullptr)
+		textureIDHoverActiveCB = hoverActiveCB->OpenGLID;
+	else
+		textureIDHoverActiveCB = -1;
+
+	uint savedUIDPressActive = j["pressActiveImage"];
+	pressActiveCB = savedUIDPressActive == 0 ? nullptr : (ResourceTexture*)ModuleResourceManager::S_LoadResource(j["pressActiveImage"]);
+	if (pressActiveCB != nullptr)
+		textureIDPressActiveCB = pressActiveCB->OpenGLID;
+	else
+		textureIDPressActiveCB = -1;
+
 	State = j["State"];
 	//checkActive = j["checkActive"];
 	LoadMeshState(j);
@@ -125,27 +130,28 @@ void ComponentUICheckbox::DeSerialization(json& j)
 	case CheckboxState::HOVERED:
 		_material->ChangeTexture(hoverCB);
 		break;
-	case CheckboxState::HOVEREDACTIVE:
-		_material->ChangeTexture(hoverCB);
-		break;
 	case CheckboxState::ONPRESS:
 		_material->ChangeTexture(pressCB);
 		break;
-	case CheckboxState::ACTIVE:
+	case CheckboxState::NORMALACTIVE:
 		_material->ChangeTexture(activeCB);
+		break;
+	case CheckboxState::HOVEREDACTIVE:
+		_material->ChangeTexture(hoverActiveCB);
+		break;
+	case CheckboxState::ONPRESSACTIVE:
+		_material->ChangeTexture(pressActiveCB);
 		break;
 	default:
 		break;
 	}
 }
 
-
-
 CheckboxState ComponentUICheckbox::ChangeState(CheckboxState State)
 {
 	if (IsMouseOver()) {
 
-		if (ModuleInput::S_GetMouseButton(1) != KEY_DOWN && State != CheckboxState::HOVEREDACTIVE && State != CheckboxState::ACTIVE)
+		if (ModuleInput::S_GetMouseButton(1) != KEY_DOWN && State != CheckboxState::HOVEREDACTIVE && State != CheckboxState::NORMALACTIVE)
 		{
 			_material->ChangeTexture(textureIDHoverCB);
 			State = CheckboxState::HOVERED;
@@ -167,7 +173,7 @@ CheckboxState ComponentUICheckbox::ChangeState(CheckboxState State)
 
 		}
 
-		if (State == CheckboxState::ACTIVE)
+		if (State == CheckboxState::NORMALACTIVE)
 		{
 			_material->ChangeTexture(textureIDHoverCB);
 			State = CheckboxState::HOVEREDACTIVE;
@@ -177,7 +183,7 @@ CheckboxState ComponentUICheckbox::ChangeState(CheckboxState State)
 	if (State == CheckboxState::ONPRESS)
 	{
 		if (checkActive == true)
-			State = CheckboxState::ACTIVE;
+			State = CheckboxState::NORMALACTIVE;
 
 		else if (checkActive == false)
 			State = CheckboxState::NORMAL;
@@ -185,7 +191,7 @@ CheckboxState ComponentUICheckbox::ChangeState(CheckboxState State)
 
 	if (!IsMouseOver())
 	{
-		if (State != CheckboxState::HOVEREDACTIVE && State != CheckboxState::ACTIVE)
+		if (State != CheckboxState::HOVEREDACTIVE && State != CheckboxState::NORMALACTIVE)
 		{
 			_material->ChangeTexture(textureIDIdleCB);
 			State = CheckboxState::NORMAL;
@@ -194,7 +200,7 @@ CheckboxState ComponentUICheckbox::ChangeState(CheckboxState State)
 		if (State == CheckboxState::HOVEREDACTIVE)
 		{
 			_material->ChangeTexture(textureIDPressCB);
-			State = CheckboxState::ACTIVE;
+			State = CheckboxState::NORMALACTIVE;
 		}
 	}
 
@@ -203,7 +209,75 @@ CheckboxState ComponentUICheckbox::ChangeState(CheckboxState State)
 
 void ComponentUICheckbox::UpdateGamePadInput(bool selected)
 {
-	
+	if (selected)
+	{
+		if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_REPEAT && (State != CheckboxState::ONPRESS || State != CheckboxState::ONPRESSACTIVE))
+		{
+			ModuleInput::S_HandleGamePadButton(GamePad::BUTTON_A); // Handle A button so no other UI detects it.
+			if (checkActive)
+			{
+				State = CheckboxState::ONPRESSACTIVE;
+			}
+			else
+			{
+				State = CheckboxState::ONPRESS;
+			}
+			//isPress = true;
+		}
+		else
+		{
+			// If previous state was hold or press, this frame the button was released
+			if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_UP && (State == CheckboxState::ONPRESS || State == CheckboxState::ONPRESSACTIVE))
+			{
+				checkActive = !checkActive;
+			}
+			if (checkActive)
+			{
+				State = CheckboxState::HOVEREDACTIVE;
+			}
+			else
+			{
+				State = CheckboxState::HOVERED;
+			}
+
+		}
+	}
+	else
+	{
+		if (checkActive)
+		{
+			State = CheckboxState::NORMALACTIVE;
+		}
+		else
+		{
+			State = CheckboxState::NORMAL;
+		}
+	}
+
+
+	switch (State)
+	{
+	case CheckboxState::NORMAL:
+		_material->ChangeTexture(textureIDIdleCB);
+		break;
+	case CheckboxState::HOVERED:
+		_material->ChangeTexture(textureIDHoverCB);
+		break;
+	case CheckboxState::ONPRESS:
+		_material->ChangeTexture(textureIDPressCB);
+		break;
+	case CheckboxState::NORMALACTIVE:
+		_material->ChangeTexture(textureIDActiveCB);
+		break;
+	case CheckboxState::HOVEREDACTIVE:
+		_material->ChangeTexture(textureIDHoverActiveCB);
+		break;
+	case CheckboxState::ONPRESSACTIVE:
+		_material->ChangeTexture(textureIDPressActiveCB);
+		break;
+	default:
+		break;
+	}
 }
 
 #ifdef STANDALONE
@@ -380,7 +454,7 @@ void ComponentUICheckbox::OnEditor()
 	//////////////////////////////////////////////////////////////////////////////////////
 	ImGui::Text("");
 	ImGui::Text("");
-	ImGui::Text("Active:"); ImGui::SameLine();
+	ImGui::Text("Normal Active:"); ImGui::SameLine();
 	{
 		//Mesh& mesh = _material->GetMesh();
 
@@ -388,7 +462,7 @@ void ComponentUICheckbox::OnEditor()
 		int width = 0;
 		int height = 0;
 
-		if (textureIDActiveCB != -1.0f && hoverCB != nullptr)
+		if (textureIDActiveCB != -1.0f && activeCB != nullptr)
 		{
 			ImGui::Image((ImTextureID)(uint)textureIDActiveCB, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 
@@ -411,6 +485,102 @@ void ComponentUICheckbox::OnEditor()
 
 				activeCB = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
 				textureIDActiveCB = activeCB->OpenGLID;
+			}
+			ImGui::EndDragDropTarget();
+		}
+
+		ImGui::TextWrapped("Path: "); ImGui::SameLine();
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), imageName.c_str());
+
+		ImGui::TextWrapped("Width: "); ImGui::SameLine();
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(width).c_str());
+
+		ImGui::TextWrapped("Height: "); ImGui::SameLine();
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(height).c_str());
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	ImGui::Text("");
+	ImGui::Text("");
+	ImGui::Text("Hover Active:"); ImGui::SameLine();
+	{
+		//Mesh& mesh = _material->GetMesh();
+
+		std::string imageName;
+		int width = 0;
+		int height = 0;
+
+		if (textureIDHoverActiveCB != -1.0f && hoverActiveCB != nullptr)
+		{
+			ImGui::Image((ImTextureID)(uint)textureIDHoverActiveCB, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+
+			imageName = hoverActiveCB->debugName;
+			width = hoverActiveCB->width;
+			height = hoverActiveCB->height;
+		}
+		else
+		{
+			ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+			imageName = "None";
+		}
+
+		if (ImGui::BeginDragDropTarget())
+		{
+			if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+			{
+				//Drop asset from Asset window to scene window
+				const uint* drop = (uint*)payload->Data;
+
+				hoverActiveCB = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+				textureIDHoverActiveCB = hoverActiveCB->OpenGLID;
+			}
+			ImGui::EndDragDropTarget();
+		}
+
+		ImGui::TextWrapped("Path: "); ImGui::SameLine();
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), imageName.c_str());
+
+		ImGui::TextWrapped("Width: "); ImGui::SameLine();
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(width).c_str());
+
+		ImGui::TextWrapped("Height: "); ImGui::SameLine();
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(height).c_str());
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	ImGui::Text("");
+	ImGui::Text("");
+	ImGui::Text("Press Active:"); ImGui::SameLine();
+	{
+		//Mesh& mesh = _material->GetMesh();
+
+		std::string imageName;
+		int width = 0;
+		int height = 0;
+
+		if (textureIDPressActiveCB != -1.0f && pressActiveCB != nullptr)
+		{
+			ImGui::Image((ImTextureID)(uint)textureIDPressActiveCB, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+
+			imageName = pressActiveCB->debugName;
+			width = pressActiveCB->width;
+			height = pressActiveCB->height;
+		}
+		else
+		{
+			ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+			imageName = "None";
+		}
+
+		if (ImGui::BeginDragDropTarget())
+		{
+			if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+			{
+				//Drop asset from Asset window to scene window
+				const uint* drop = (uint*)payload->Data;
+
+				pressActiveCB = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+				textureIDPressActiveCB = pressActiveCB->OpenGLID;
 			}
 			ImGui::EndDragDropTarget();
 		}

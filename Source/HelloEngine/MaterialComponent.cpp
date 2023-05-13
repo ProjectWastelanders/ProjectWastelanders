@@ -73,7 +73,9 @@ void MaterialComponent::OnEditor()
 					_resource->material.uniforms[i]->data.name == "ViewPoint" ||
 					_resource->material.uniforms[i]->data.name == "finalBonesMatrices[0]" ||
 					_resource->material.uniforms[i]->data.name == "Actual_Spot" ||
-					_resource->material.uniforms[i]->data.name == "Actual_Point")
+					_resource->material.uniforms[i]->data.name == "Actual_Point" ||
+					_resource->material.uniforms[i]->data.name == "shadowMap" || 
+					_resource->material.uniforms[i]->data.name == "lightSpaceMatrix")
 				{
 					continue;
 				}
@@ -122,7 +124,22 @@ void MaterialComponent::MarkAsAlive()
 	}
 }
 
+#endif
 
+void MaterialComponent::SetColor(float4 color)
+{
+	SkinnedMeshRenderComponent* comp = _gameObject->GetComponent<SkinnedMeshRenderComponent>();
+	if (comp != nullptr)
+	{
+		comp->GetMesh().color = color;
+	}
+	else
+	{
+		MeshRenderComponent* mehsComp = _gameObject->GetComponent<MeshRenderComponent>();
+		if (mehsComp != nullptr)
+			mehsComp->GetMesh().color = color;
+	}
+}
 
 void MaterialComponent::MaterialDragNDrop()
 {
@@ -198,7 +215,7 @@ void MaterialComponent::ShaderSelectCombo()
 		ImGui::EndCombo();
 	}
 }
-#endif
+
 int MaterialComponent::GetResourceUID()
 {
 	if (_resource == nullptr) return 0;
@@ -272,8 +289,13 @@ void MaterialComponent::DeSerialization(json& _j)
 			comp->CreateMesh(comp->GetResourceUID(), _resource->UID, MeshRenderType::INSTANCED);
 		else
 			comp->CreateMesh(comp->GetResourceUID(), _resource->UID, MeshRenderType::INDEPENDENT);
+		
+		if (comp->GetType() == Component::Type::SKINNING)
+		{
+			SkinnedMeshRenderComponent* sComp = (SkinnedMeshRenderComponent*)comp;
+			sComp->UpdateBones();
+		}
 	}
-	
 
 	bool enabled = _j["Enabled"];
 	if (!enabled)

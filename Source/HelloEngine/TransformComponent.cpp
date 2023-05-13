@@ -38,16 +38,32 @@ void TransformComponent::SetTransform(float3 pos, float3 scale, float3 rot)
 	UpdateDirtyFlag();
 }
 
-void TransformComponent::SetTransform(float4x4& localTransformMatrix, bool ignoreRotation)
+void TransformComponent::SetTransform(float4x4& localTransformMatrix, bool ignoreRotation, bool ignoreChildren, bool ignoreScale)
 {
 	Quat rotation;
-	localTransformMatrix.Decompose(localTransform.position, rotation, localTransform.scale);
+	float3 scale;
+
+	if (!ignoreScale)
+		localTransformMatrix.Decompose(localTransform.position, rotation, localTransform.scale);
+	else
+		localTransformMatrix.Decompose(localTransform.position, rotation, scale);
+
 	if (!ignoreRotation)
 		localTransform.rotation = RadToDeg(rotation.ToEulerXYZ());
 		
 	_localMatrix = localTransformMatrix;
 
-	UpdateDirtyFlagNoLocal();
+	for (auto& component : _gameObject->_components)
+	{
+		if (component->NeedsTransformCallback()) // Check if we need to callback our transform to some component.
+		{
+			component->OnTransformCallback(GetGlobalMatrix(true, false));
+		}
+	}
+
+	_dirtyFlag = true;
+	if (!ignoreChildren)
+		UpdateDirtyFlagForChildren();
 }
 
 void TransformComponent::SetTransform(float* matrix)
@@ -57,13 +73,22 @@ void TransformComponent::SetTransform(float* matrix)
 	UpdateDirtyFlagNoLocal();
 }
 
-void TransformComponent::SetLocalFromGlobal(float4x4& globalMatrix, bool ignoreRotation)
+void TransformComponent::SetLocalFromGlobal(float4x4& globalMatrix, bool ignoreRotation, bool ignoreScale)
 {
 	float4x4 parentGlobal = _gameObject->_parent->transform->_globalMatrix;
 	parentGlobal.InverseAccurate();
 
 	float4x4 localTransformed = parentGlobal * globalMatrix;
-	SetTransform(localTransformed, ignoreRotation);
+	SetTransform(localTransformed, ignoreRotation, false, ignoreScale);
+}
+
+void TransformComponent::SetLocalFromGlobalIgnoreChildren(float4x4& globalMatrix)
+{
+	float4x4 parentGlobal = _gameObject->_parent->transform->_globalMatrix;
+	parentGlobal.InverseAccurate();
+
+	float4x4 localTransformed = parentGlobal * globalMatrix;
+	SetTransform(localTransformed, false, true);
 }
 
 void TransformComponent::Translate(float3 translation)
@@ -88,6 +113,7 @@ float4x4 TransformComponent::GetGlobalMatrix(bool forceUpdate, bool updateLocal)
 {
 	if (updateLocal)
 		CalculateLocalMatrix();
+
 	if (_dirtyFlag || forceUpdate)
 	{
 		float4x4 parentGlobal = _gameObject->_parent != nullptr ? _gameObject->_parent->transform->GetGlobalMatrix() : float4x4::identity;

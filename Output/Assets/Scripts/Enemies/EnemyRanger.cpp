@@ -27,22 +27,29 @@ HELLO_ENGINE_API_C EnemyRanger* CreateEnemyRanger(ScriptToInspectorInterface* sc
     script->AddDragBoxAnimationResource("Aim Animation", &classInstance->aimAnim);
     script->AddDragBoxAnimationResource("Hited Animation", &classInstance->hitAnim);
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
-    script->AddCheckBox("Dashiing", &classInstance->_canWalk);
+    //script->AddCheckBox("Dashiing", &classInstance->_canWalk);
+    script->AddCheckBox("Scripted For Quest", &classInstance->scriptedForQuest);
     return classInstance;
 }
 
 void EnemyRanger::Start()
 {
-    Game::FindGameObjectsWithTag("Player", &target, 1);
-    cooldownPoint = 3.0f;
-    actualPoint = listPoints[0].GetTransform().GetGlobalPosition();
-    zoneRb = actionZone.GetRigidBody();
-    _avalPoints = 3;
-    enemState = States::WANDERING;
+    if (!scriptedForQuest)
+    {
+        Game::FindGameObjectsWithTag("Player", &target, 1);
+        //cooldownPoint = 3.0f;
+        actualPoint = listPoints[0].GetTransform().GetGlobalPosition();
+        zoneRb = actionZone.GetRigidBody();
+        _avalPoints = 3;
+        enemState = States::WANDERING;
 
-    _movCooldown = 0;
-    _outCooldown = 0;
-    _canWalk = true;
+        _movCooldown = 0;
+        _outCooldown = 0;
+        _agTime = 0.5;
+        _agCooldown = 0;
+        _canWalk = true;
+    }
+    
     switch (gunType)
     {
         case 0: 
@@ -55,18 +62,21 @@ void EnemyRanger::Start()
         break;
     }
    
-    //zoneRb.GetGameObject().
-    //clock.s
-     enemy = (Enemy*)gameObject.GetScript("Enemy");
-     targStats = (PlayerStats*)target.GetScript("PlayerStats");
+    if (!scriptedForQuest)
+    {
+        //zoneRb.GetGameObject().
+        //clock.s
+        targStats = (PlayerStats*)target.GetScript("PlayerStats");
+    }
+    enemy = (Enemy*)gameObject.GetScript("Enemy");
 }
 void EnemyRanger::Update()
 {
     float dt = Time::GetDeltaTime();
 
-    Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
-    Console::Log("_move coldowb "+std::to_string(_movCooldown));
-    if (enemy != nullptr /*&& targStats != nullptr*/)
+    //Console::Log(std::to_string(actualPoint.x) +" " + std::to_string(actualPoint.z) );
+    //Console::Log("_move coldowb "+std::to_string(_movCooldown));
+    if (enemy != nullptr && targStats != nullptr && !scriptedForQuest)
     {
             // float dis = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
           //float disZone = gameObject.GetTransform().GetGlobalPosition().Distance(actionZone.GetTransform().GetGlobalPosition());
@@ -83,6 +93,19 @@ void EnemyRanger::Update()
         {
             enemy->targeting = false;
         }
+
+        /*if (enemState != States::ATTACKIG)
+        {
+            enemy->isAgent = true;
+            enemy->enemyAgent.Move();
+        }
+        else
+        {
+            enemy->isAgent = false;
+            enemy->enemyAgent.Stop();
+        }*/
+
+       // enemy->isAgent? enemy->enemyAgent.Move(): enemy->enemyAgent.Stop();
 
         if (!enemy->dying)
         {
@@ -147,16 +170,41 @@ void EnemyRanger::Update()
         case States::WANDERING:
 
             enemy->currentSpeed = enemy->speed * enemy->stunVel * enemy->slowVel/** dt*/;
-            
+            enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
 
                 //if ((gameObject.GetTransform().GetLocalPosition().Distance(actualPoint) < 5))
-                if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 2))
+                if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 4))
                 {
                     numPoint++;
                     if (numPoint >= _avalPoints)numPoint = 0;
                     _canWalk = false;
                 }
-                if (!_canWalk)_movCooldown += Time::GetDeltaTime();
+                if (!_canWalk)
+                {
+                    _movCooldown += Time::GetDeltaTime();
+                    if (animState != AnimationState::IDLE && !enemy->takingDmg)
+                    {
+                        animState = AnimationState::IDLE;
+                        animationPlayer.ChangeAnimation(idleAnim);
+                        animationPlayer.Play();
+                        //Console::Log("Walk");
+                    }
+                }
+                else
+                {
+                    _agCooldown += dt;
+                    if (_agCooldown>=_agTime) 
+                    {
+                        _agCooldown = 0;
+                      //  enemy->enemyRb.SetVelocity(enemy->currentSpeed);
+                        //enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
+                        Console::Log("vel:" + std::to_string(enemy->enemyAgent.GetSpeed()));
+                        enemy->enemyAgent.SetDestination(API_Vector3(actualPoint.x, gameObject.GetTransform().GetGlobalPosition().y, actualPoint.z));
+                    }
+
+                }
+                // Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
+                LoookAt(actualPoint);
                 if (_movCooldown > cooldownPoint)
                 {
                     _movCooldown = 0;
@@ -165,33 +213,41 @@ void EnemyRanger::Update()
 
                 actualPoint = listPoints[numPoint].GetTransform().GetGlobalPosition();
 
-                if (_canWalk)Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
-                if (!_canWalk)Wander(0, actualPoint, enemy->enemyRb);
+               // if (!_canWalk)Wander(0, actualPoint, enemy->enemyRb);
 
-                if (animState != AnimationState::WALK && !enemy->takingDmg)
+                if (animState != AnimationState::WALK && !enemy->takingDmg && _canWalk)
                 {
                     animState = AnimationState::WALK;
                     animationPlayer.ChangeAnimation(walkAnim);
                     animationPlayer.Play();
                     //Console::Log("Walk");
                 }
+                
+               
             
             break;
 
         case States::TARGETING:
 
             enemy->currentSpeed = enemy->speed * enemy->acceleration * enemy->stunVel * enemy->slowVel/** dt*/;
-           
 
-                Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+            //Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+            LoookAt(target.GetTransform().GetGlobalPosition());
+            _agCooldown += dt;
+            if (_agCooldown >= _agTime)
+            {
+                enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
+                _agCooldown = 0;
+                enemy->enemyAgent.SetDestination(API_Vector3(target.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y,target.GetTransform().GetGlobalPosition().z));
+            }
 
-                if (animState != AnimationState::RUN && !enemy->takingDmg)
-                {
-                    animState = AnimationState::RUN;
-                    animationPlayer.ChangeAnimation(runAnim);
-                    animationPlayer.Play();
-                    //Console::Log("Walk");
-                }
+            if (animState != AnimationState::RUN && !enemy->takingDmg)
+            {
+                animState = AnimationState::RUN;
+                animationPlayer.ChangeAnimation(runAnim);
+                animationPlayer.Play();
+                //Console::Log("Walk");
+            }
             
             break;
 
@@ -203,17 +259,38 @@ void EnemyRanger::Update()
 
                 if (dis > disPlayer)
                 {
-                    Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
-
+                    enemy->enemyAgent.Move();
+                    enemy->isAgent = true;
+                   // Seek(enemy->currentSpeed, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+                    _agCooldown += dt;
+                    if (_agCooldown >= _agTime)
+                    {
+                        enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
+                        _agCooldown = 0;
+                        enemy->enemyAgent.SetDestination(API_Vector3(target.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y, target.GetTransform().GetGlobalPosition().z));
+                    }
                 }
                 else if (dis < disPlayer - 5)
                 {
+                    enemy->isAgent = false;
+                    enemy->enemyAgent.Stop();
                     enemy->enemyRb.SetVelocity(gameObject.GetTransform().GetBackward() * enemy->currentSpeed * 0.7);
 
                 }
                 else
                 {
-                    Seek(enemy->currentSpeed * 0, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+                   // Seek(enemy->currentSpeed * 0, target.GetTransform().GetGlobalPosition(), enemy->enemyRb);
+
+                    enemy->enemyAgent.Move();
+                    enemy->isAgent = true;
+                   
+                    _agCooldown += dt;
+                    if (_agCooldown >= _agTime)
+                    {
+                        enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
+                        _agCooldown = 0;
+                        enemy->enemyAgent.SetDestination(API_Vector3(target.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y, target.GetTransform().GetGlobalPosition().z));
+                    }
                 }
 
 
@@ -235,6 +312,8 @@ void EnemyRanger::Update()
         case States::DYING:
             enemy->_coldAnimDie += dt;
             // enemy->dying = true;
+            enemy->isAgent = false;
+            enemy->enemyAgent.Stop();
             enemy->enemyRb.SetVelocity(0);
             if (enemy->_coldAnimDie < enemy->_tAnimDie)
             {
@@ -254,6 +333,12 @@ void EnemyRanger::Update()
         default:
             break;
         }
+       // Console::Log("vel:" +std::to_string(enemy->enemyAgent.GetSpeed()));
+        
+    }
+    else if (enemy && scriptedForQuest)
+    {
+        enemyGun->Shoot();
     }
 }
 
@@ -361,4 +446,22 @@ void EnemyRanger::HitAnimation()
         animationPlayer.Play();
     }
 
+}
+
+void EnemyRanger::LoookAt(API_Vector3 target)
+{
+    if (!enemy->actStun)
+    {
+        API_Vector2 lookDir;
+        lookDir.x = (target.x - gameObject.GetTransform().GetGlobalPosition().x);
+        lookDir.y = (target.z - gameObject.GetTransform().GetGlobalPosition().z);
+
+
+        API_Vector2 normLookDir;
+        normLookDir.x = lookDir.x / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
+        normLookDir.y = lookDir.y / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
+        float _angle = 0;
+        _angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
+        gameObject.GetTransform().SetRotation(0, -_angle, 0);
+    }
 }

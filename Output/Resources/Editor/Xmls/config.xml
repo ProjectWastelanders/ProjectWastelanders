@@ -1,20 +1,24 @@
 <?xml version="1.0"?>
 <config>
 	<window>
-		<width value="1600" />
-		<height value="829" />
+		<width value="1920" />
+		<height value="1017" />
 		<brightness value="1" />
 	</window>
 	<renderer>
 		<vsync value="false" />
 		<framerate value="120" />
+		<drawNavMesh value="true" />
 	</renderer>
 	<scene>
-		<currentScene value="Assets/PlayerSkillsAndGuns.HScene" />
+		<currentScene value="Assets/Level3.HScene" />
 	</scene>
 	<openGL>
 		<blend value="true" tag="0x0BE2" />
 		<cullFace value="true" tag="0x0B44" />
 		<wireframe value="false" />
 	</openGL>
+	<input>
+		<mouseWheel value="0.5" />
+	</input>
 </config>

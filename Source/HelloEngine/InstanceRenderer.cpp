@@ -5,9 +5,12 @@
 #include "MeshRenderComponent.h"
 
 #include "RenderManager.h"
+#include "Lighting.h"
 
 InstanceRenderer::InstanceRenderer()
 {
+    instancedDepthShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMapInstanced.shader", 112, "Depth Map (Instanced)");
+
     instancedShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced.shader", 102, "Instanced");
     perMeshShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/basic.shader", 103, "Basic");
     mesh2DShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced2D.shader", 104, "Instanced 2D");
@@ -15,6 +18,9 @@ InstanceRenderer::InstanceRenderer()
 
 InstanceRenderer::~InstanceRenderer()
 {
+    instancedDepthShader->Dereference();
+    instancedDepthShader = nullptr;
+
     instancedShader->Dereference();
     instancedShader = nullptr;
     perMeshShader->Dereference();
@@ -82,6 +88,7 @@ void InstanceRenderer::Draw()
 
 void InstanceRenderer::DrawMaterial()
 {
+    OPTICK_EVENT();
     for (auto& mesh : meshes)
     {
         RenderUpdateState state = mesh.second.mesh.Update();
@@ -102,9 +109,18 @@ void InstanceRenderer::DrawMaterial()
     if (!modelMatrices.empty())
     {
         //Update all the uniforms
-        resMat->material.UpdateInstanced(Application::Instance()->camera->currentDrawingCamera->GetViewMatrix(),
-            Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
-
+        if (!depthDraw)
+        {
+            resMat->material.UpdateInstanced(Application::Instance()->camera->currentDrawingCamera->GetViewMatrix(),
+                Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+        }
+        else
+        {
+            instancedDepthShader->shader.Bind();
+            instancedDepthShader->shader.SetMatFloat4v("dirLightSpaceMatrix", 
+                &Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+        }
+        
         // Draw using Dynamic Geometrys
         glBindVertexArray(VAO);
 
@@ -119,6 +135,8 @@ void InstanceRenderer::DrawMaterial()
         glBindVertexArray(0);
     }
 
+    //depthDraw = !depthDraw;
+
     resMat->material.UnbindAllTextures();
     // Reset model matrices.
     modelMatrices.clear();
@@ -126,6 +144,7 @@ void InstanceRenderer::DrawMaterial()
 
 void InstanceRenderer::DrawRaw()
 {
+    OPTICK_EVENT();
     CameraObject* currentCamera = Application::Instance()->camera->currentDrawingCamera;
 
     if (is2D && currentCamera->type != CameraType::GAME)
@@ -264,6 +283,76 @@ void InstanceRenderer::DrawInstance(Mesh* mesh, bool useBasicShader)
     glBindVertexArray(0);
 
     glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void InstanceRenderer::DrawInstancedSorting()
+{
+
+    CameraObject* currentCamera = Application::Instance()->camera->currentDrawingCamera;
+    float3 cameraPos = currentCamera->cameraFrustum.pos;
+
+    std::vector<RenderEntry> _orderedMeshes;
+
+    glDepthMask(GL_FALSE);
+
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    for (auto& mesh : meshes)
+    {
+        RenderUpdateState state = mesh.second.mesh.Update();
+        if (state == RenderUpdateState::NODRAW)
+            continue;
+
+        if (state == RenderUpdateState::SELECTED)
+        {
+            Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second.mesh);
+        }
+
+        modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
+        textureIDs.push_back(mesh.second.mesh.OpenGLTextureID);
+        mesh.second.mesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+    }
+
+    if (!modelMatrices.empty())
+    {
+        // Update View and Projection matrices
+        instancedShader->shader.Bind();
+
+        instancedShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+        instancedShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+
+        // Draw using Dynamic Geometrys
+        glBindVertexArray(VAO);
+
+        // Update Model matrices
+        glBindBuffer(GL_ARRAY_BUFFER, MBO);
+        void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr, &modelMatrices.front(), modelMatrices.size() * sizeof(float4x4));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        // Update TextureIDs
+        glBindBuffer(GL_ARRAY_BUFFER, TBO);
+        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr2, &textureIDs.front(), textureIDs.size() * sizeof(float));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        for (int i = 0; i < TextureManager::bindedTextures; i++)
+        {
+            instancedShader->shader.SetInt(("textures[" + std::to_string(i) + "]").c_str(), i);
+        }
+
+        // Draw instanced
+        glDrawElementsInstanced(GL_TRIANGLES, totalIndices->size(), GL_UNSIGNED_INT, 0, modelMatrices.size());
+        glBindVertexArray(0);
+    }
+
+    
+    glDepthMask(GL_TRUE);
+
+    // Reset model matrices.
+    modelMatrices.clear();
+    textureIDs.clear();
+    TextureManager::UnBindTextures();
 }
 
 void InstanceRenderer::SetAs2D()

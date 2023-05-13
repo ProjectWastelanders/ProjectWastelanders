@@ -42,11 +42,13 @@ public:
 	void AddDragBoxMaterialComponent(const char* name, API::API_Material* value) override;
 	void AddDragBoxParticleSystem(const char* name, API::API_ParticleSystem* value);
 	void AddDragBoxUIButton(const char* name, API::API_UIButton* value) override;
+	void AddDragBoxUICheckBox(const char* name, API::API_UICheckBox* value) override;
 	void AddDragBoxUIImage(const char* name, API::API_UIImage* value) override;
 	void AddDragBoxUIInput(const char* name, API::API_UIInput* value) override;
 	void AddDragBoxUIText(const char* name, API::API_UIText* value) override;
 	void AddDragBoxPrefabResource(const char* name, uint* value) override;
 	void AddDragBoxShaderComponent(const char* name, API::API_ShaderComponent* value) override;
+	void AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value) override;
 
 	uint GetResourceUID();
 	void DestroyedResource();

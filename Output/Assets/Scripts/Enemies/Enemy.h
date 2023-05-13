@@ -4,8 +4,10 @@
 #include "Macro.h"
 
 #include "API/API.h"
-
+#include "API/API_Agent.h"
 #include "EnemyDropManager.h"
+
+class PlayerStats;
 
 class Enemy : HelloBehavior
 {
@@ -82,11 +84,19 @@ public:
     float burnTime = 0.0f;
     float resetBurn;
 
+    // player reference
+    PlayerStats* playerStats;
+    float ultGain = 0;
+
 
     float _tAnimDie;
     float _coldAnimDie;
 
     float _tHitColor = 0.35f;
+    API_Vector3 initialPos;
+
+    API_Agent enemyAgent;
+    bool isAgent;
 private:
 
     float _coldStun;
@@ -102,5 +112,6 @@ private:
     float _coldHitColor;
 
     bool _hitShader;
+    
 };
 

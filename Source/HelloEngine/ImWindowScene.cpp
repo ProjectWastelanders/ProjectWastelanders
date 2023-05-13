@@ -27,6 +27,8 @@ void ImWindowScene::Update()
 {
     if (ImGui::Begin(windowName.c_str(), 0, ImGuiWindowFlags_MenuBar))
     {
+        isActive = true;
+
         if (ImGui::IsWindowFocused())
             LayerEditor::detectInput = true;
 
@@ -98,7 +100,7 @@ void ImWindowScene::Update()
                         auxiliarMatrix.Transpose();
 
                     ModuleCommand::S_ChangeTransform(auxiliarMatrix, currentGlobal, _imOperation == ImGuizmo::OPERATION::SCALE,
-                        std::bind(&TransformComponent::SetLocalFromGlobal, selected->transform, std::placeholders::_1, std::placeholders::_2));
+                        std::bind(&TransformComponent::SetLocalFromGlobal, selected->transform, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
                     firstClick = false;
                 }
 
@@ -176,6 +178,7 @@ void ImWindowScene::Update()
     else
     {
         _sceneCamera->active = false;
+        isActive = false;
     }
 
     ImGui::End();

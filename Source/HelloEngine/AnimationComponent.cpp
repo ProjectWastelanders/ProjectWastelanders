@@ -159,6 +159,7 @@ void AnimationComponent::ResumeAnimation()
 
 void AnimationComponent::UpdateAnimation()
 {
+	OPTICK_EVENT();
 	if (_resource == nullptr) return;
 	if (!isPlaying) return;
 
@@ -188,6 +189,9 @@ void AnimationComponent::UpdateAnimation()
 
 			currentTime = fmod(currentTime, animDuration);
 		}
+
+		if (skin->GetMesh().outOfFrustum)
+			return;
 
 		skin->UpdateBones(&_resource->animation, currentTime);
 	}

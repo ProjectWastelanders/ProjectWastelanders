@@ -22,6 +22,7 @@
 #include "Component.h"
 #include "LayerEditor.h"
 #include "Lighting.h"
+#include "ModuleAudio.h"
 
 // In create resource mesh method save my index and model UID.
 // Save ResourceModel UID and index.
@@ -61,6 +62,9 @@ bool ModuleResourceManager::Init()
 {
 	// Create checkers texture resource
 	S_CreateResourceText("Null", CHECKERS_RESOURCE_UID, "Checkers", false);
+
+	// Create white texture resource
+	S_CreateResourceText("Null", WHITE_RESOURCE_UID, "White", false);
 	return true;
 }
 
@@ -149,6 +153,20 @@ void ModuleResourceManager::S_ImportFile(const std::string& filePath)
 		RELEASE(buffer);
 		break;
 	}
+	case ResourceType::VIDEO:
+	{
+		// Temporal import method: Copy and paste file into Resources.
+		uint UUID = HelloUUID::GenerateGUID(filePath);
+
+		char* buffer = nullptr;
+		uint size = ModuleFiles::S_Load(filePath, &buffer);
+		std::string resourcePath = "Resources/Videos/" + std::to_string(UUID) + ".HVideo";
+
+		ModuleFiles::S_Save(resourcePath, &buffer[0], size, false);
+		ModuleFiles::S_CreateMetaData(filePath, resourcePath, UUID);
+		RELEASE(buffer);
+	}
+	break;
 	default:
 		break;
 	}
@@ -291,6 +309,12 @@ void ModuleResourceManager::S_LoadFileIntoResource(Resource* resource)
 	{
 		ResourceMaterial* materialRes = (ResourceMaterial*)resource;
 		materialRes->material.LoadJSON(materialRes->assetsPath);
+	}
+	break;
+	case ResourceType::VIDEO:
+	{
+		ResourceVideo* videoRes = (ResourceVideo*)resource;
+		videoRes->video = new FfmpegVideoPlayer(videoRes->resourcePath.c_str());
 	}
 	break;
 	}
@@ -603,6 +627,8 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 									   // If we let it happen afterwards, the old meshes will destroy the new Instance Renderers.
 	LayerGame::RemoveAllScripts();
 	Lighting::ClearLights();
+	ModuleAudio::StopAllAudioEvents();
+
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)
 		ModuleLayers::rootGameObject->Destroy();
@@ -616,6 +642,12 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		//if (loadedPrefabs.count(prefabUID) > 0 && !sceneFile[i]["FirstOnPrefab"]) continue;
 
 		GameObject* g = new GameObject(nullptr, sceneFile[i]["Name"], sceneFile[i]["Tag"], sceneFile[i]["UID"]);
+		
+		if(sceneFile[i].contains("IsStatic"))
+			g->SetIsStatic(sceneFile[i]["IsStatic"]);
+		if (sceneFile[i].contains("UpdateWithBones"))
+			g->SetUpdateWithBones(sceneFile[i]["UpdateWithBones"]);
+		
 		g->SetPrefabUID(prefabUID);
 		/*if (prefabUID != 0)
 		{
@@ -649,12 +681,16 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		for (int j = 0; j < object.size(); j++)
 		{
 			Component::Type componentType = object[j]["Type"];
-			if (componentType == Component::Type::SCRIPT || componentType == Component::Type::MATERIAL ||componentType == Component::Type::UI_INPUT)
+			if (componentType == Component::Type::SCRIPT ||
+				componentType == Component::Type::MATERIAL ||
+				componentType == Component::Type::UI_INPUT ||
+				componentType == Component::Type::AGENT)
 				continue;
 			/*if (temp[i].first->_prefabUID == 0)*/ temp[i].first->AddComponentSerialized(componentType, object[j]);
 		}
 	}
 
+	// Create UI & Agent
 	for (int i = 0; i < sceneFile.size(); i++)
 	{
 		// Create components
@@ -662,12 +698,15 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		for (int j = 0; j < object.size(); j++)
 		{
 			Component::Type componentType = object[j]["Type"];
-			if (componentType != Component::Type::MATERIAL && componentType != Component::Type::UI_INPUT)
-				continue;
-			/*if (temp[i].first->_prefabUID == 0)*/ temp[i].first->AddComponentSerialized(componentType, object[j]);
+			if (componentType == Component::Type::MATERIAL || 
+				componentType == Component::Type::UI_INPUT ||
+				componentType == Component::Type::AGENT)
+				temp[i].first->AddComponentSerialized(componentType, object[j]);
+			/*if (temp[i].first->_prefabUID == 0)*/ 
 		}
 	}
 
+	// Create Scripting
 	for (int i = 0; i < sceneFile.size(); i++)
 	{
 		// Create components
@@ -675,9 +714,10 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 		for (int j = 0; j < object.size(); j++)
 		{
 			Component::Type componentType = object[j]["Type"];
-			if (componentType != Component::Type::SCRIPT)
-				continue;
-			/*if (temp[i].first->_prefabUID == 0)*/ temp[i].first->AddComponentSerialized(componentType, object[j]);
+
+			if (componentType == Component::Type::SCRIPT)
+				temp[i].first->AddComponentSerialized(componentType, object[j]);
+			/*if (temp[i].first->_prefabUID == 0)*/ 
 		}
 	}
 
@@ -864,6 +904,9 @@ void ModuleResourceManager::S_CreateResource(const MetaFile& metaFile)
 		materialRes->assetsPath = metaFile.assetsPath;
 	}
 	break;
+	case ResourceType::VIDEO:
+		resources[metaFile.UID] = new ResourceVideo();
+		break;
 	default:
 		Console::S_Log("Cannot create a resource of an undefined meta file!");
 		return;
@@ -986,7 +1029,9 @@ std::vector<Resource*> ModuleResourceManager::S_GetResourcePool(ResourceType typ
 	{
 		if (r.second == nullptr)
 			continue;
-		if (r.second->type == type) toReturn.push_back(r.second);
+
+		if (r.second->type == type) 
+			toReturn.push_back(r.second);
 	}
 
 	return toReturn;
@@ -995,9 +1040,8 @@ std::vector<Resource*> ModuleResourceManager::S_GetResourcePool(ResourceType typ
 void ModuleResourceManager::GetResourcePath(ModelNode& node, std::vector<std::string>& vector)
 {
 	if (node.meshPath != "N")
-	{
 		vector.push_back(node.meshPath);
-	}
+
 	for (int i = 0; i < node.children.size(); i++)
 	{
 		GetResourcePath(node.children[i], vector);
@@ -1014,14 +1058,12 @@ void ModuleResourceManager::SerializeSceneRecursive(const GameObject* g, json& j
 	_j["Tag"] = g->tag;
 	_j["Active"] = g->_isActive;
 	_j["PrefabUID"] = g->_prefabUID;
-	if (g->_prefabUID != 0 && g->_parent->_prefabUID != 0)
-	{
+	_j["IsStatic"] = g->_isStatic;
+	_j["UpdateWithBones"] = g->_updateTransformWithBones;
+	if (g->_prefabUID != 0)
 		_j["FirstOnPrefab"] = false;
-	}
 	else
-	{
 		_j["FirstOnPrefab"] = true;
-	}
 
 	// We delay the serialization of script components because they may need to reference another component when Deserialized.
 	// this way, ScriptComponents will always deserialize last, and will find any other component they need inside their game object.
@@ -1306,7 +1348,6 @@ void ResourceMesh::CalculateNormalsAndAABB()
 			vertexNormals[i] = meshInfo.vertices[j].position + (meshInfo.vertices[j].normals * lineMangitude);
 			j++;
 		}
-
 	}
 
 	// Face normals
@@ -1379,7 +1420,11 @@ void ResourceMesh::CalculateNormalsAndAABB()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float3), (void*)0);
 
 	glBindVertexArray(0);
+}
 
+MeshInfo ResourceMesh::GetMeshInfo()
+{
+	return meshInfo;
 }
 
 void ResourceMesh::Destroy()
@@ -1387,7 +1432,7 @@ void ResourceMesh::Destroy()
 	for (auto& gameObject : ModuleLayers::gameObjects)
 	{
 		MeshRenderComponent* meshComponent = gameObject.second->GetComponent<MeshRenderComponent>();
-		if (meshComponent != nullptr)
+		if (meshComponent)
 		{
 			if (meshComponent->GetResourceUID() == this->UID)
 				meshComponent->DestroyedResource();
@@ -1428,7 +1473,7 @@ void ResourceTexture::Destroy()
 	for (auto& gameObject : ModuleLayers::gameObjects)
 	{
 		TextureComponent* materialComponent = gameObject.second->GetComponent<TextureComponent>();
-		if (materialComponent != nullptr)
+		if (materialComponent)
 		{
 			if (materialComponent->GetResourceUID() == this->UID)
 				materialComponent->DestroyedResource();
@@ -1467,9 +1512,7 @@ void ResourceScript::Destroy()
 				ScriptComponent* script = (ScriptComponent*)components[i];
 
 				if (script->GetResourceUID() == this->UID)
-				{
 					script->DestroyedResource();
-				}
 			}
 		}
 	}
@@ -1496,7 +1539,7 @@ void ResourceShader::ReImport(const std::string& filePath)
 	char* buffer = nullptr;
 	uint size = ModuleFiles::S_Load(assetsPath, &buffer);
 
-	if (buffer != nullptr)
+	if (buffer)
 	{
 		ModuleFiles::S_Save(resourcePath, buffer, size, false);
 

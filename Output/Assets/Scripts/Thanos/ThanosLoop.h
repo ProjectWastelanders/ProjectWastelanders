@@ -34,6 +34,6 @@ public:
     float burnTime = 0.0f;
     float resetBurn;
 
-    int phase = 1;
+    int phase = 0;
 };
 

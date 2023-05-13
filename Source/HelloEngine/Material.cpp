@@ -24,14 +24,12 @@ Material::~Material()
 
 void Material::UpdateBones(std::vector<float4x4>& bones)
 {
-	for (int i = 0; i < bones.size(); ++i)
-	{
-		shader->shader.SetMatFloat4v("finalBonesMatrices[" + std::to_string(i) + "]", &bones[i].Transposed().v[0][0]);
-	}
+	shader->shader.SetMatFloat4v("finalBonesMatrices", bones[0].ptr(), bones.size(), true);
 }
 
 void Material::UpdateLights()
 {
+	OPTICK_EVENT();
 	LightMap& lightMap = Lighting::GetLightMap();
 
 	uint actualSpot = 0;
@@ -85,16 +83,22 @@ void Material::UpdateLights()
 
 	shader->shader.SetInt("Actual_Spot", actualSpot);
 	shader->shader.SetInt("Actual_Point", actualPoint);
+	shader->shader.data.hasUpdatedLights = true;
 }
 
 void Material::Update(const float* view, const float* projection, const float* model)
 {
+	OPTICK_EVENT();
 	shader->shader.Bind();
 
-	shader->shader.SetMatFloat4v("view", view);
-	shader->shader.SetMatFloat4v("projection", projection);
-	shader->shader.SetMatFloat4v("model", model);
+	if (!shader->shader.data.hasUpdatedCamera)
+	{
+		shader->shader.SetMatFloat4v("view", view);
+		shader->shader.SetMatFloat4v("projection", projection);
+		shader->shader.data.hasUpdatedCamera = true;
+	}
 
+	shader->shader.SetMatFloat4v("model", model);
 	for (uint i = 0; i < uniforms.size(); ++i)
 	{
 		//If true, the uniform was Key and has already been Handled (Given Data)
@@ -104,15 +108,22 @@ void Material::Update(const float* view, const float* projection, const float* m
 	}
 
 	//Update Engine lights if the shader uses them
-	if (shader->shader.data.hasEngineLight) UpdateLights();
+	if (shader->shader.data.hasEngineLight && !shader->shader.data.hasUpdatedLights)
+		UpdateLights();
 }
 
 void Material::UpdateInstanced(const float* view, const float* projection)
 {
+	OPTICK_EVENT();
+
 	shader->shader.Bind();
 
-	shader->shader.SetMatFloat4v("view", view);
-	shader->shader.SetMatFloat4v("projection", projection);
+	if (!shader->shader.data.hasUpdatedCamera)
+	{
+		shader->shader.SetMatFloat4v("view", view);
+		shader->shader.SetMatFloat4v("projection", projection);
+		shader->shader.data.hasUpdatedCamera = true;
+	}
 
 	for (uint i = 0; i < uniforms.size(); ++i)
 	{
@@ -124,7 +135,8 @@ void Material::UpdateInstanced(const float* view, const float* projection)
 	}
 
 	//Update Engine lights if the shader uses them
-	if (shader->shader.data.hasEngineLight) UpdateLights();
+	if (shader->shader.data.hasEngineLight && !shader->shader.data.hasUpdatedLights) 
+		UpdateLights();
 }
 
 void Material::UnbindAllTextures()
@@ -195,7 +207,7 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 		case GL_FLOAT_VEC4:
 			
 			break;
-		case GL_FLOAT:
+		case GL_INT:
 			if (uni->data.name == "Actual_Spot" || uni->data.name == "Actual_Point")
 			{
 				toReturn = true;
@@ -206,7 +218,18 @@ bool Material::HandleKeyUniforms(Uniform* uni)
 			{
 				toReturn = true;
 			}
+			if (uni->data.name == "lightSpaceMatrix")
+			{
+				shader->shader.SetMatFloat4v("lightSpaceMatrix", &Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+				toReturn = true;
+			}
 			break;
+		case GL_SAMPLER_2D:
+			if (uni->data.name == "shadowMap")
+			{
+				shader->shader.SetTexture("shadowMap", Lighting::GetLightMap().shadowMap, 31);
+				toReturn = true;
+			}
 	}
 
 	return toReturn;

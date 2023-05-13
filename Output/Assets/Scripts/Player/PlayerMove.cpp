@@ -41,7 +41,10 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxAnimationResource("Hit Animation", &classInstance->hittedAnim);
     script->AddDragBoxAnimationResource("Open Chest Animation", &classInstance->openChestAnim);
     script->AddDragBoxAnimationResource("Dead Animation", &classInstance->deathAnim);
+    script->AddDragBoxAnimationResource("Jumper Animation", &classInstance->jumperAnim);
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
+    script->AddDragBoxParticleSystem("Walk Particles", &classInstance->walkParticles);
+    script->AddDragBoxParticleSystem("Shoot Particles", &classInstance->shootParticles);
     return classInstance;
 }
 
@@ -99,6 +102,7 @@ void PlayerMove::Update()
     if (Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERRIGHT) < 5000 || isSwapingGun)
     {
         isShooting = false;
+        shootParticles.StopEmitting();
     }
 
     if (dashesAvailable > 0)
@@ -139,7 +143,7 @@ void PlayerMove::Update()
         return; //NO MORE MOVEMENT
     }
 
-    Aim();
+    bool aiming = Aim();
 
     API_Vector2 input = GetMoveInput();
     //currentInput = input.Distance(API_Vector2::S_Zero());   //TEST
@@ -163,6 +167,11 @@ void PlayerMove::Update()
         else {
             currentVel = 0.0f;
         }
+        if (playingWalkParticles)
+        {
+            walkParticles.StopEmitting();
+            playingWalkParticles = false;
+        }
     }
     else //MOVEMENT
     {
@@ -180,6 +189,21 @@ void PlayerMove::Update()
         {
             moveSoundCooldown = 0.5f;
             Audio::Event("starlord_walk");
+        }
+        if (!playingWalkParticles && !isShooting)
+        {
+            walkParticles.Play();
+            playingWalkParticles = true;
+        }
+        else if (playingWalkParticles && isShooting)
+        {
+            walkParticles.StopEmitting();
+            playingWalkParticles = false;
+        }
+
+        if (!aiming)
+        {
+            transform.SetRotation(0.0f, atan2(input.x, input.y)* RADTODEG, 0.0f);
         }
     }
 
@@ -239,7 +263,7 @@ void PlayerMove::DashSetup()
     dashesAvailable--;
     if (playerStats && playerStats->movementTreeLvl > 1) dashCooldown = maxFastDashCooldown + 0.0001f;
     else dashCooldown = maxDashCooldown + 0.0001f;
-
+    
     dashDepartTime = 0.0f;
     float norm = sqrt(pow(lastMovInput.x, 2) + pow(lastMovInput.y, 2));
     API_Vector3 movDir;
@@ -282,7 +306,21 @@ bool PlayerMove::DashInput()
     return Input::GetKey(KeyCode::KEY_SPACE) == KeyState::KEY_DOWN;
 }
 
-void PlayerMove::Aim()
+void PlayerMove::LookAt(API_Vector3 target)
+{
+    API_Vector2 movDir = {target.x, target.z};
+
+    float norm = sqrt(target.x * target.x + target.y * target.y);
+    movDir /= norm;
+
+    transform.SetRotation(0.0f, atan2(movDir.x, movDir.y) * RADTODEG, 0.0f);
+
+    //Maintain Aiming
+    lastAimInput = movDir;
+}
+
+
+bool PlayerMove::Aim()
 {
     API_Vector2 normalizedInput;
 
@@ -292,7 +330,7 @@ void PlayerMove::Aim()
         input.x = Input::GetGamePadAxis(GamePadAxis::AXIS_RIGHTX);
         input.y = -Input::GetGamePadAxis(GamePadAxis::AXIS_RIGHTY);
 
-        if (abs(input.x) < 10000 && abs(input.y) < 10000) return;
+        if (abs(input.x) < 10000 && abs(input.y) < 10000) return false;
 
         float norm = sqrt(pow(input.x, 2) + pow(input.y, 2));
         normalizedInput.x = input.x / norm;
@@ -311,15 +349,22 @@ void PlayerMove::Aim()
             normalizedInput.y *= 0.71f;
         }
     }
-
+    
+    bool aiming = false;
     //Get last input to keep Aim angle
     if (normalizedInput.x == 0.0f && normalizedInput.y == 0.0f)
+    {
         normalizedInput = lastAimInput;
+    }
     else
+    {
         lastAimInput = normalizedInput;
+        aiming = true;
+    }
 
     aimAngle = atan2(normalizedInput.y, normalizedInput.x) * RADTODEG - 90.0f;
     gameObject.GetTransform().SetRotation(0, aimAngle, 0);
+    return aiming;
 }
 
 API_Vector2 PlayerMove::GetMoveInput()
@@ -698,6 +743,7 @@ void PlayerMove::PlayShootAnim(int gunIndex)
     
     if (currentAnim != PlayerAnims::SHOOT)
     {
+        shootParticles.Play();
         playerAnimator.ChangeAnimation(shootAnim[gunIndex]);
         playerAnimator.Play();
         currentAnim = PlayerAnims::SHOOT;
@@ -754,5 +800,15 @@ void PlayerMove::PlayDeathAnim()
         playerAnimator.ChangeAnimation(deathAnim);
         playerAnimator.Play();
         currentAnim = PlayerAnims::DEATH;
+    }
+}
+
+void PlayerMove::PlayJumperAnim()
+{
+    if (currentAnim != PlayerAnims::JUMPER)
+    {
+        playerAnimator.ChangeAnimation(jumperAnim);
+        playerAnimator.Play();
+        currentAnim = PlayerAnims::JUMPER;
     }
 }

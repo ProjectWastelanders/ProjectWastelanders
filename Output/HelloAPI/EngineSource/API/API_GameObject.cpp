@@ -10,6 +10,7 @@
 #include "API/API_Material.h"
 #include "API/API_ParticleSystem.h"
 #include "API/API_AnimationPlayer.h"
+#include "API/API_Agent.h"
 #include "PhysicsComponent.h"
 #include "TextureComponent.h"
 #include "ParticleSystemComponent.h"
@@ -17,6 +18,9 @@
 #include "API/API_SkinnedMeshRenderer.h"
 #include "SkinnedMeshRenderComponent.h"
 #include "AnimationComponent.h"
+#include "NavAgentComponent.h"
+#include "API_UIButton.h"
+#include "ComponentUIButton.h"
 
 API::API_GameObject::API_GameObject()
 {
@@ -252,7 +256,7 @@ API::API_MeshRenderer API::API_GameObject::GetMeshRenderer()
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! AddMaterial()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetMeshRenderer()");
         return API_MeshRenderer();
     }
     API_MeshRenderer ret;
@@ -264,7 +268,7 @@ API::API_Material API::API_GameObject::GetMaterialCompoennt()
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! AddMaterial()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetMaterialCompoennt()");
         return API_Material();
     }
     API_Material ret;
@@ -276,7 +280,7 @@ API::API_ParticleSystem API::API_GameObject::GetParticleSystem()
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! AddMaterial()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetParticleSystem()");
         return API_ParticleSystem();
     }
     API_ParticleSystem ret;
@@ -288,7 +292,7 @@ API::API_RigidBody API::API_GameObject::GetRigidBody()
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! CreateRigidBody()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetRigidBody()");
         return API_RigidBody();
     }
     API_RigidBody ret;
@@ -300,7 +304,7 @@ API::API_AnimationPlayer API::API_GameObject::GetAnimationPlayer()
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! CreateRigidBody()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetAnimationPlayer()");
         return API_AnimationPlayer();
     }
     API_AnimationPlayer ret;
@@ -312,11 +316,35 @@ API::API_SkinnedMeshRenderer API::API_GameObject::GetSkinnedMeshRender()
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! CreateRigidBody()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetSkinnedMeshRender()");
         return API_SkinnedMeshRenderer();
     }
     API_SkinnedMeshRenderer ret;
     ret.SetComponent(_gameObject->GetComponent<SkinnedMeshRenderComponent>());
+    return ret;
+}
+
+API::API_Agent API::API_GameObject::GetAgent()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetAgent()");
+        return API_Agent();
+    }
+    API_Agent ret;
+    ret.SetComponent(_gameObject->GetComponent<ComponentAgent>());
+    return ret;
+}
+
+API::API_UIButton API::API_GameObject::GetUIButton()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetButton()");
+        return API::API_UIButton();
+    }
+    API_UIButton ret;
+    ret.SetComponent(_gameObject->GetComponent<ComponentUIButton>());
     return ret;
 }
 

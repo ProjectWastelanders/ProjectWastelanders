@@ -76,6 +76,7 @@ bool ModulePhysics::Start()
 
 UpdateStatus ModulePhysics::PreUpdate()
 {
+	OPTICK_EVENT();
 	/*if (hasToSetRenderBuffers == true) 
 	{
 		for (int i = 0; i < physBodies.size(); i++) 
@@ -98,7 +99,7 @@ UpdateStatus ModulePhysics::PreUpdate()
 #ifdef _DEBUG
 	if (LayerGame::S_IsPlaying() && !LayerGame::S_IsPause())
 	{
-		world->stepSimulation(EngineTime::GameDeltaTime(), 15);
+		world->stepSimulation(EngineTime::GameDeltaTime(), 8);
 	}
 	else
 	{
@@ -107,14 +108,14 @@ UpdateStatus ModulePhysics::PreUpdate()
 #elif STANDALONE
 	if (LayerGame::S_IsPlaying() && !LayerGame::S_IsPause())
 	{
-		world->stepSimulation(EngineTime::GameDeltaTime(), 15);
+		world->stepSimulation(EngineTime::GameDeltaTime(), 8);
 }
 	else
 	{
 		world->stepSimulation(0);
 	}
 #else
-	world->stepSimulation(EngineTime::GameDeltaTime(), 15);
+	world->stepSimulation(EngineTime::GameDeltaTime(), 8);
 #endif	
 
 	////////////OPCION 1 
@@ -122,7 +123,6 @@ UpdateStatus ModulePhysics::PreUpdate()
 	// Primero actualiza los mapas para este frame. 
 	// Luego, actualiza los mapas de los objetos que colisionan.
 	// Finalmente, actualiza los mapas de los objetos que no han colisionado y que en el anterior frame si lo hacian)
-
 
 	//if (LayerGame::S_IsPlaying()) {
 	//	for (int i = 0; i < physBodies.size(); i++)
@@ -140,7 +140,6 @@ UpdateStatus ModulePhysics::PreUpdate()
 	//		btPersistentManifold* contactManifold = world->getDispatcher()->getManifoldByIndexInternal(i);
 	//		btCollisionObject* obA = (btCollisionObject*)(contactManifold->getBody0());
 	//		btCollisionObject* obB = (btCollisionObject*)(contactManifold->getBody1());
-
 
 	//		int numContacts = contactManifold->getNumContacts();
 	//		if (numContacts > 0)
@@ -224,8 +223,8 @@ UpdateStatus ModulePhysics::PreUpdate()
 
 	////OPCION 1.5 (Adaptacion de la 1 que quiza esta un poco mas optimizado)
 	
-
-	if (LayerGame::S_IsPlaying()) {
+	if (LayerGame::S_IsPlaying()) 
+	{
 		for (int i = 0; i < physBodies.size(); i++)
 		{
 			PhysBody3D* pbody = physBodies.at(i);
@@ -241,7 +240,6 @@ UpdateStatus ModulePhysics::PreUpdate()
 			btPersistentManifold* contactManifold = world->getDispatcher()->getManifoldByIndexInternal(i);
 			btCollisionObject* obA = (btCollisionObject*)(contactManifold->getBody0());
 			btCollisionObject* obB = (btCollisionObject*)(contactManifold->getBody1());
-
 
 			int numContacts = contactManifold->getNumContacts();
 			if (numContacts > 0)
@@ -312,7 +310,7 @@ UpdateStatus ModulePhysics::PreUpdate()
 
 	///////////OPCION 2 
 	// (Itera cada gameobject con colisiones. Por cada uno, itera otra vez para encontrar posibles colisiones.
-	// Luego, itera todas las colisiones que se están produciendo.
+	// Luego, itera todas las colisiones que se esta produciendo.
 	// Si una de esas colisiones coincide con los gameobject que se estan iterando, actualiza su mapa.
 	// Si ninguna colision coincide con los gameobject que se estan iterando, actualiza su mapa.
 
@@ -528,7 +526,7 @@ PhysBody3D* ModulePhysics::CreatePhysBody(const Primitive* primitive, float mass
 
 	btRigidBody* body = new btRigidBody(rbInfo);
 
-	body->setActivationState(DISABLE_DEACTIVATION);
+	body->setActivationState(ACTIVE_TAG);
 
 	PhysBody3D* pbody = new PhysBody3D(body);
 
@@ -579,6 +577,7 @@ void ModulePhysics::UpdatePhysBodyPos(PhysBody3D* physBody)
 	if (ModuleLayers::gameObjects.count(physBody->gameObjectUID) == 0)
 		return;
 	float3 currentTransformPos = ModuleLayers::gameObjects[physBody->gameObjectUID]->transform->GetGlobalPosition();
+	//float3 currentTransformPos = ModuleLayers::gameObjects[physBody->gameObjectUID]->transform->GetLocalPosition();
 	physBody->SetPos(physBody->colPos.x + currentTransformPos.x, physBody->colPos.y + currentTransformPos.y, physBody->colPos.z + currentTransformPos.z);
 }
 
@@ -630,4 +629,15 @@ void ModulePhysics::PrepareNewGravityAtLast(float3 grav)
 {
 	hasToChangeGravity = true;
 	gravityToChange = grav;
+}
+
+btCollisionWorld::AllHitsRayResultCallback ModulePhysics::RayCastLine(const float3 start, const float3 end)
+{
+	btVector3 startV = { start.x, start.y, start.z };
+	btVector3 endV = { end.x, end.y, end.z };
+	btCollisionWorld::AllHitsRayResultCallback RayCallback(startV, endV);
+
+	world->rayTest(startV, endV, RayCallback);
+
+	return RayCallback;
 }

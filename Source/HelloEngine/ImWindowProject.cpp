@@ -511,6 +511,10 @@ void ImWindowProject::DrawTreeNodePanelRight(Directory*& newDir)
                 _dragUID = _fileTree->_currentDir->files[i].metaFile.UID;
                 ImGui::SetDragDropPayload("Material", &_dragUID, sizeof(uint));
                 break;
+			case ResourceType::VIDEO:
+				_dragUID = _fileTree->_currentDir->files[i].metaFile.UID;
+				ImGui::SetDragDropPayload("Video", &_dragUID, sizeof(uint));
+				break;
 			}
 			ImGui::EndDragDropSource();
 		}
@@ -810,7 +814,7 @@ void ImWindowProject::PanelCreateShader()
         {
             _temporalName.append(".shader");
 
-			uint UUID = HelloUUID::GenerateUUID();
+			uint UUID = HelloUUID::GenerateGUID(_fileTree->_currentDir->path + _temporalName);
 
             std::string resourcePath = "Resources/Shaders/" + std::to_string(UUID) + ".shader";
             std::string assetPath = _fileTree->_currentDir->path + _temporalName;
@@ -869,7 +873,7 @@ void ImWindowProject::PanelCreateMaterial()
         {
             _temporalName.append(".material");
 
-			uint UUID = HelloUUID::GenerateUUID();
+			uint UUID = HelloUUID::GenerateGUID(_fileTree->_currentDir->path + _temporalName);
 
             std::string resourcePath = "Resources/Materials/" + std::to_string(UUID) + ".material";
             std::string assetPath = _fileTree->_currentDir->path + _temporalName;

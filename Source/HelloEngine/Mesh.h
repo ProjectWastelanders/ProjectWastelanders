@@ -80,6 +80,8 @@ public:
 
 	void CalculateBoundingBoxes();
 
+	void BonesStep(Material& material);
+
 public:
 
 	std::vector<Vertex>* _vertices = nullptr;
@@ -109,6 +111,8 @@ public:
 	float opacityLimit = 1.0f;
 	OpacityDirection opacityDir = OpacityDirection::LEFT_TO_RIGHT;
 
+	float4 color = { 1.0f,1.0f,1.0f,1.0f };
+
 private:
 	ResourceMesh* resource = nullptr;
 	MeshRenderComponent* component = nullptr;
@@ -124,6 +128,8 @@ private:
 	ResourceShader* boneMeshShader = nullptr;
 
 	ResourceShader* stencilShader = nullptr;
+	ResourceShader* depthShader = nullptr;
+	ResourceShader* depthBoneShader = nullptr;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;

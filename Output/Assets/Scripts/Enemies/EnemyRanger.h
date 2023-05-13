@@ -39,6 +39,8 @@ public:
     float Lerp(float a, float b, float time);
     void HitAnimation();
 
+    void LoookAt(API_Vector3 target);
+
     bool wander = false;
     bool targeting = false;
 
@@ -82,11 +84,17 @@ public:
 
     int gunType;
     bool _canWalk = false;
+
+    // mission
+    bool scriptedForQuest = false;
 private:
     int _avalPoints = 0;
     float _movCooldown;//max time that can be outside the zone
     float _outCooldown;//max time that can be outside the zone
     float _hitOutCooldown;//
+
+    float _agCooldown;
+    float _agTime;
 
 };
 

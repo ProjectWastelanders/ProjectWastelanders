@@ -34,11 +34,14 @@ public:
 	/// Draws an instance with an individual draw call.
 	void DrawInstance(Mesh* mesh, bool useBasicShader = true);
 
+	void DrawInstancedSorting();
+
 	void SetAs2D();
 	uint GetRenderID();
 
 public:
 	bool initialized = false;
+	bool isParticle = false;
 	ResourceMesh* resource = nullptr;
 	ResourceMaterial* resMat = nullptr;
 	uint deletedResourceUID = 0;
@@ -51,6 +54,8 @@ private:
 	void CreateDynamicBuffers();
 
 private:
+
+	ResourceShader* instancedDepthShader = nullptr;
 
 	ResourceShader* instancedShader = nullptr;
 	ResourceShader* perMeshShader = nullptr;
@@ -85,6 +90,8 @@ private:
 	// 2D drawing
 
 	bool is2D = false;
+
+	bool depthDraw = false;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;

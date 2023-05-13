@@ -36,7 +36,7 @@ void ThanosMeleeDmg::OnCollisionEnter(API::API_RigidBody other)
 		float z = normalizedvector.z * normalizedvector.z;
 		float sum = x + y + z;
 		API_Vector3 direction = { normalizedvector.x / sum, 0, normalizedvector.z / sum };
-		pMove->RecieveImpulse(-direction, 0.25f, 50);
+		//pMove->RecieveImpulse(-direction, 0.25f, 50);
 
     }
 }

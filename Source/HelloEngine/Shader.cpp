@@ -240,6 +240,12 @@ void Shader::UniformParser(std::vector<Uniform*>& vec)
 			case GL_FLOAT_VEC4: vec.push_back((Uniform*) new UniFloat4(uni)); break;
 			case GL_DOUBLE: vec.push_back((Uniform*) new UniDouble(uni)); break;
 			case GL_SAMPLER_2D: 
+				if (uni.name.find("shadowMap") != std::string::npos)
+				{
+					vec.push_back((Uniform*) new UniSampler2D(uni, 31));
+					break;
+				}
+
 				vec.push_back((Uniform*) new UniSampler2D(uni, layerCount));
 				layerCount++;
 				break;
@@ -293,9 +299,9 @@ void Shader::SetFloat4v(const std::string& name, const float* value) const
 	glUniform4fv(glGetUniformLocation(data.ID, name.c_str()), 1, value);
 }
 
-void Shader::SetMatFloat4v(const std::string& name, const float* value) const
+void Shader::SetMatFloat4v(const std::string& name, const float* value, int num, bool transpose) const
 {
-	glUniformMatrix4fv(glGetUniformLocation(data.ID, name.c_str()), 1, GL_FALSE, value);
+	glUniformMatrix4fv(glGetUniformLocation(data.ID, name.c_str()), num, transpose, value);
 }
 
 void Shader::SetTexture(const std::string& name, uint id, int layer)

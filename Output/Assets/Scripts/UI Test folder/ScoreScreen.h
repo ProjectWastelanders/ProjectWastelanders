@@ -18,7 +18,7 @@ public:
 	void Update() override;
 
 	API_UIButton continueButton;
-	API_UIButton exitButton;
+
 
 	int screenType = 1;
 };

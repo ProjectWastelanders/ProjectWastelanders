@@ -13,8 +13,10 @@ public:
 
     void OnCollisionEnter(API_RigidBody other);
 
-    API_String scene = "";
+    API_GameObject panel;
+
+    /*API_String scene = "";
     int nextLevel;
-    bool isHub = false;
+    bool isHub = false;*/
 };
 

@@ -19,10 +19,13 @@ public:
 	void DashAttack();
 
 	void Seek(API_GameObject* seeker, API_Vector3 target, float speed);
+	void Seek2(API_GameObject* seeker, API_Vector3 target, float speed);
 	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
+	void LookAt(API_Vector3 tarPos, API_GameObject* go);
 
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
+	bool hasPulsed = false;
 	bool dashing = false;
 
 	API_GameObject boss;
@@ -39,6 +42,7 @@ public:
 	float swordTime = 0.0f;
 
 	float charge = 0.0f;
+	float selectAttack = 0.0f;
 
 	API_GameObject defenseSword;
 
@@ -56,6 +60,9 @@ public:
 		PULSE,
 		BURST,
 		BEAM,
+		DASH2,
+		LASER,
+		DEAD,
 	};
 
 	THANOS_STATE thanosState;
@@ -112,8 +119,66 @@ public:
 	float beamSpeed = 0.75f;
 
 	float Rotate(API_Vector3 target, float _angle, API_GameObject* rotator);
+	float Rotate2(API_Vector3 target, float _angle, API_GameObject* rotator);
 
 	float angle = 0.0f;
+
+	float pulse = false;
+
+	API_GameObject meteorRain;
+	float meteorRainTime = 0.0f;
+	float meteorRainSpeed = 5.0f;
+	API_Vector3 meteorRainPosition = { 0,0,0 };
+	float meteorRainCooldown = 0.0f;
+	bool isRainingMeteors = false;
+	void MeteorAttack();
+
+	bool areaDmg = false;
+	API_GameObject area;
+	float dashSpeed = 1.0f;
+	API_Vector3 thanosPosition;
+
+	API_GameObject laserPosition;
+	float laserSpeed = 1.5f;
+	API_GameObject laserGO;
+	API_ParticleSystem laserPS;
+
+	API_GameObject meteors[30];
+	API_Vector3 meteorsPosition[30];
+
+	//ThanosAnimations
+	API_AnimationPlayer thanosAnimationPlayer;
+	uint thanosOutOfCombat;
+	uint thanosWakeUp;
+	uint thanosAimAnimation;
+	uint thanosMeleeAnimation;
+	uint thanosChargeAttackAnimation;
+	uint thanosChargeOnlyAnimation;
+	uint thanosGuantletRecoilAnimation;
+	uint thanosIdleAnimation;
+	uint thanosIdle2Animation;
+	uint thanosMeteorAnimation;
+	uint thanosPulseAnimation;
+	uint thanosRunAnimation;
+	uint thanosShootAnimation;
+	uint thanosSpinAnimation;
+	uint thanosStartSpinAnimation;
+	uint thanosStopSpinAnimation;
+	uint thanosStartSwordThrownAnimation;
+	uint thanosStopSwordThrownAnimation;
+	uint thanosSwordThrownAnimation;
+	uint thanosWalkAnimation;
+	uint thanosWalk2Animation;
+	uint thanosWalkBackwardsAnimation;
+
+	bool justRandOnce = false;
+	float meteorAnimationCooldown = 0.0f;
+	bool isMeteorAnimationReady = false;
+	bool meteorQueue = false;
+	bool isDead = false;
+	float deathTimer = 0.0f;
+
+	bool anotherTimer = 0.0f;
 
 };
 

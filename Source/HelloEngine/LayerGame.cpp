@@ -104,17 +104,8 @@ void LayerGame::Update()
 		_animationComponent.at(i)->UpdateAnimation();
 	}
 
-	for (auto& behaviorScript : _behaviorScripts)
-	{
-		if (behaviorScript.second.lateStart && behaviorScript.second.active)
-		{
-			behaviorScript.second.script->Start();
-			behaviorScript.second.lateStart = false;
-		}
+	UpdateBehaviorScripts();
 
-		if (behaviorScript.second.active && behaviorScript.second.script)
-			behaviorScript.second.script->Update();
-	}
 	API::Engine::EnginePropertiesUpdate();
 }
 
@@ -300,6 +291,22 @@ void LayerGame::S_DisableCreatingBehaviors()
 bool LayerGame::S_IsCreatingBehaviorsEnabled()
 {
 	return _canCreateBehaviors;
+}
+
+void LayerGame::UpdateBehaviorScripts()
+{
+	OPTICK_EVENT();
+	for (auto& behaviorScript : _behaviorScripts)
+	{
+		if (behaviorScript.second.lateStart && behaviorScript.second.active)
+		{
+			behaviorScript.second.script->Start();
+			behaviorScript.second.lateStart = false;
+		}
+
+		if (behaviorScript.second.active && behaviorScript.second.script)
+			behaviorScript.second.script->Update();
+	}
 }
 
 void LayerGame::CleanUp()

@@ -36,5 +36,18 @@ public:
 	ThanosLoop* Tloop;
 
 	float justOnce = false;
+
+	bool isActive = false;
+
+	float startFightTimer = 0.0f;
+	bool isRunning = false;
+
+	enum class WALKSTATE {
+		NORMAL,
+		BACKWARDS,
+		IDLE,
+	};
+	float walkCooldown = 0.0f;
+	WALKSTATE walkState = WALKSTATE::NORMAL;
 };
 

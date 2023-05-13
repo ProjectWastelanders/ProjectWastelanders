@@ -74,6 +74,8 @@ public:
 
 	static bool detectInput;
 
+	static void UpdateBehaviorScripts();
+
 private:
 	static std::map<uint, BehaviorScript> _behaviorScripts;
 	static std::vector<ScriptComponent*> _scriptComponents;

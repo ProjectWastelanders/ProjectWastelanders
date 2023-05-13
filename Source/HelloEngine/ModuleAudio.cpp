@@ -63,7 +63,7 @@ UpdateStatus ModuleAudio::PostUpdate()
     return UpdateStatus::UPDATE_CONTINUE;
 }
 
-void ModuleAudio::S_ProduceEvent(const char* eventName)
+uint ModuleAudio::S_ProduceEvent(const char* eventName, AkGameObjectID gameObjectID)
 {
     AkPlayingID playing = AK::SoundEngine::PostEvent(eventName, defaultSource);
     if (playing == 0) 
@@ -71,13 +71,25 @@ void ModuleAudio::S_ProduceEvent(const char* eventName)
         std::string strName = eventName;
         Console::S_Log("Error at reproducing audio event: " + strName);
     }
+    return playing;
 }
 
-void ModuleAudio::S_ProduceEvent(AkUniqueID eventID)
+uint ModuleAudio::S_ProduceEvent(AkUniqueID eventID, AkGameObjectID gameObjectID)
 {
     AkPlayingID playing = AK::SoundEngine::PostEvent(eventID, defaultSource);
     if (playing == 0)
         Console::S_Log("Error at reproducing audio event with ID: " + std::to_string(eventID));
+    return playing;
+}
+
+void ModuleAudio::S_StopEvent(uint playingID)
+{
+    AK::SoundEngine::StopPlayingID(playingID);
+}
+
+void ModuleAudio::SetGameParameter(const char* paramName, float value)
+{
+    AK::SoundEngine::SetRTPCValue(paramName, value);
 }
 
 bool ModuleAudio::CleanUp()
@@ -96,6 +108,11 @@ void ModuleAudio::SetDefaultListener(const AkGameObjectID id)
     AK::SpatialAudio::RegisterListener(id);
     AK::SoundEngine::SetDefaultListeners(&id, 1);
 
+}
+
+void ModuleAudio::StopAllAudioEvents()
+{
+    AK::SoundEngine::StopAll();
 }
 
 bool ModuleAudio::InitSoundEngine()

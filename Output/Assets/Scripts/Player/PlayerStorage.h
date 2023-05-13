@@ -29,11 +29,6 @@ public:
     bool casette2Picked;
     bool casette3Picked;
 
-    // sound
-    API_String playAudio1;
-    API_String playAudio2;
-    API_String playAudio3;
-
     // map indicator
     API_GameObject playerIndicatorGO;
     PlayerIndicator* playerIndicator;

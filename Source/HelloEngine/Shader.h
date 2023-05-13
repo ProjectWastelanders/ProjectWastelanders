@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <map>
 
 #include "ShaderData.h"
 
@@ -30,7 +31,7 @@ public:
     void SetFloat3v(const std::string& name, const float* value) const;
     void SetFloat4(const std::string& name, float v1, float v2, float v3, float v4) const;
     void SetFloat4v(const std::string& name, const float* value) const;
-    void SetMatFloat4v(const std::string& name, const float* value) const;
+    void SetMatFloat4v(const std::string& name, const float* value, int num = 1, bool transpose = false) const;
     void SetTexture(const std::string& name, uint id, int layer);
 
     void UniformParser(std::vector<Uniform*>& vec);

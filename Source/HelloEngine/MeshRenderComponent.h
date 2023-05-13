@@ -53,6 +53,8 @@ public:
 	void Serialization(json& j) override;
 	void DeSerialization(json& j) override;
 
+	ResourceMesh* GetResource();
+
 	uint GetResourceUID();
 	void DestroyedResource();
 

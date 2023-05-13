@@ -7,37 +7,39 @@ class AnimationComponent;
 
 namespace API
 {
-	class TO_API API_AnimationPlayer
-	{
-	public:
-		API_AnimationPlayer();
-		~API_AnimationPlayer();
+    class TO_API API_AnimationPlayer
+    {
+    public:
+        API_AnimationPlayer();
+        ~API_AnimationPlayer();
 
-		API_GameObject GetGameObject();
+        API_GameObject GetGameObject();
 
-		void Play();
+        void Play();
 
-		void Pause();
+        void Pause();
 
-		void Resume();
+        void Resume();
 
-		void Stop();
+        void Stop();
 
-		bool IsPlaying();
+        bool IsPlaying();
 
-		void ChangeAnimation(uint animationResourceUID);
+        void ChangeAnimation(uint animationResourceUID);
 
-		void SetLoop(bool loop);
+        void SetLoop(bool loop);
 
-		void SetStayLast(bool stayLast);
+        void SetStayLast(bool stayLast);
 
-	private:
-		AnimationComponent* GetComponent();
-		void SetComponent(AnimationComponent* component);
-	private:
-		AnimationComponent* _animation = nullptr;
+        void SetAnimationSpeedMultiplier(float speed);
 
-		friend class API_GameObject;
-		friend class DragBoxAnimationPlayer;
-	};
+    private:
+        AnimationComponent* GetComponent();
+        void SetComponent(AnimationComponent* component);
+    private:
+        AnimationComponent* _animation = nullptr;
+
+        friend class API_GameObject;
+        friend class DragBoxAnimationPlayer;
+    };
 }

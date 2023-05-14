@@ -7,7 +7,6 @@ HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* sc
     script->AddDragBoxUIButton("NewGame", &classInstance->NewGame);
     script->AddDragBoxUIButton("Exit", &classInstance->Exit);
     script->AddDragBoxUIButton("Settings", &classInstance->Settings);
-    script->AddDragBoxUIButton("Collectibles", &classInstance->Collectibles);
 
     return classInstance;
 }
@@ -48,9 +47,6 @@ void MenuButtons::Update()
     if (Exit.OnPress())
     {
         Game::ExitApplication();
-    }
-    if (Collectibles.OnPress())
-    {
     }
     if (Settings.OnPress())
     {

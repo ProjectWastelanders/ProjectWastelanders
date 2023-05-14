@@ -628,6 +628,7 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 	LayerGame::RemoveAllScripts();
 	Lighting::ClearLights();
 	ModuleAudio::StopAllAudioEvents();
+	ModuleInput::S_ResetFrameInput();
 
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)

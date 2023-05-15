@@ -95,7 +95,11 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 	particle.SetTransformMatrix(BBRotAroundZ);
 
 	particle.elapsedTime = 0.0f;
+	particle.blendFactor = 0.0f;
 
+	particle.particleAnim.textOffsets = float4 (0.0f,0.0f,0.0f,0.0f);
+	particle.particleAnim.texInfo = float2(0.0f, emitterTexture.numOfRows);
+	
 	currentparticle--;
 
 }
@@ -191,7 +195,7 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	meshReference.modelMatrix = ParticleList[i].transformMat;
 
-	meshReference.textureID = emitterTexture._textureID;
+	meshReference.textureID = ParticleList[i].texture._textureID;
 
 	meshReference.CalculateBoundingBoxes();
 }
@@ -202,9 +206,11 @@ void Emitter::UpdateParticlesOnScene(int i)
 	ParticleList[i].UpdateTextureCoords();
 
 	// Compute all the calculus needed to move the particles
+	
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::EngineTimeDeltaTime();
+	ParticleList[i].elapsedTime += EngineTime::EngineTimeDeltaTime();
 
 
 	// velocity = acceleration * dt
@@ -221,6 +227,7 @@ void Emitter::UpdateParticlesOnGame(int i)
 	
 	ParticleList[i].UpdateTextureCoords();
 	// Compute all the calculus needed to move the particles
+	std::cout <<" EPAAAAAAA" << "\n";
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::GameDeltaTime();

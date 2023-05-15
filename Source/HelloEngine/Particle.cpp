@@ -49,15 +49,6 @@ void Particle::SetTransformMatrix(Quat rot = Quat::identity)
 void Particle::UpdateTextureCoords()
 {
 	
-	if (LayerGame::S_IsPlaying())
-	{
-		elapsedTime += EngineTime::GameDeltaTime();
-	}
-	else
-	{
-		elapsedTime += EngineTime::EngineTimeDeltaTime();
-	}
-	
 	float particleLife = elapsedTime / Lifetime;
 	int numOfText = texture.numOfRows * texture.numOfRows;
 	float atlasProgression = particleLife * numOfText;
@@ -72,11 +63,20 @@ void Particle::UpdateTextureCoords()
 	particleAnim.textOffsets.y = (float)row / texture.numOfRows;
 	int column2 = index2 % texture.numOfRows;
 	int row2 = index2 / texture.numOfRows;
+
 	particleAnim.textOffsets.z = (float)column2 / texture.numOfRows;
 	particleAnim.textOffsets.w = (float)row2 / texture.numOfRows;
 
 	particleAnim.texInfo.x = texture.numOfRows;
 	particleAnim.texInfo.y = blendFactor;
+
+	std::cout << particleAnim.textOffsets.x << " TexOffset X ";
+	std::cout << particleAnim.textOffsets.y << " TexOffset Y " << "\n";
+	std::cout << particleAnim.textOffsets.z << " TexOffset Z ";
+	std::cout << particleAnim.textOffsets.w << " TexOffset W " << "\n";
+	std::cout << index1 << " / " << " Index 1" << "\n";
+	std::cout << index2 << " / " << " Index 2" << "\n";
+	std::cout << atlasProgression << " AtlasProgression" << "\n\n";
 
 }
 

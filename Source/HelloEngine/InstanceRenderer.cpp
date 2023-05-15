@@ -318,9 +318,9 @@ void InstanceRenderer::DrawInstancedSorting()
         memcpy(ptr2, &particleAnimInfos.front(), particleAnimInfos.size() * sizeof(ParticleAnimInfo));
         glUnmapBuffer(GL_ARRAY_BUFFER);
 
-        /*for (int i = 0; i < TextureManager::bindedTextures; i++)
+       /* for (int i = 0; i < TextureManager::bindedTextures; i++)
         {
-            instancedShader->shader.SetInt(("textures[" + std::to_string(i) + "]").c_str(), i);
+            particleShader->shader.SetInt("texture_albedo", i);
         }*/
 
         // Draw instanced
@@ -523,13 +523,12 @@ void InstanceRenderer::CreateDynamicBuffersParticles()
     glVertexAttribDivisor(2, 1);
     glVertexAttribDivisor(3, 1);
     glVertexAttribDivisor(4, 1);
-    
 
     // Create Particle buffer object
     glGenBuffers(1, &PBO);
 
     glBindBuffer(GL_ARRAY_BUFFER, PBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float4) * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
+    glBufferData(GL_ARRAY_BUFFER, (sizeof(float4) + sizeof(float2))  * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
 
     glEnableVertexAttribArray(7);
     glVertexAttribPointer(7, 4, GL_FLOAT, GL_FALSE, sizeof(float4), (void*)offsetof(ParticleAnimInfo, textOffsets));

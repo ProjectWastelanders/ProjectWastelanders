@@ -28,51 +28,7 @@
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 1204658081,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Active camera": true,
-                "Active culling": true,
-                "Aspect ratio": 1.733137845993042,
-                "Enabled": true,
-                "FOV": 60.0,
-                "Far plane": 1000.0,
-                "Frustum type": 2,
-                "Near plane": 0.009999999776482582,
-                "Orthographic size": 10.0,
-                "Type": 4
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Camera",
-        "ParentUID": 1204658081,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1202977617,
+        "UID": 184013249,
         "UpdateWithBones": false
     },
     {
@@ -98,13 +54,13 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Canvas",
-        "ParentUID": 1204658081,
-        "PrefabUID": 0,
+        "ParentUID": 184013249,
+        "PrefabUID": 3625610561,
         "Tag": "UI",
-        "UID": 1170745027,
+        "UID": 2043034649,
         "UpdateWithBones": false
     },
     {
@@ -135,18 +91,14 @@
                 "MeshEnabled": false,
                 "Type": 16,
                 "listButtons": [
-                    351199318,
-                    1551021094
+                    257296791
                 ]
             },
             {
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Return": 1551021094
+                        "Continue": 257296791
                     },
                     {
                         "Respawn in lvl:": 1
@@ -156,13 +108,13 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Panel",
-        "ParentUID": 1170745027,
-        "PrefabUID": 0,
+        "ParentUID": 2043034649,
+        "PrefabUID": 3625610561,
         "Tag": "UI",
-        "UID": 2377698017,
+        "UID": 1683356396,
         "UpdateWithBones": false
     },
     {
@@ -196,13 +148,13 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackGround",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
+        "ParentUID": 1683356396,
+        "PrefabUID": 3625610561,
         "Tag": "UI",
-        "UID": 1997239396,
+        "UID": 183039963,
         "UpdateWithBones": false
     },
     {
@@ -211,7 +163,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.30000001192092896,
+                    0.0,
                     -0.36000001430511475,
                     -0.0010000000474974513
                 ],
@@ -241,58 +193,13 @@
                 "pressImage": 749262126
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Retry",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
+        "ParentUID": 1683356396,
+        "PrefabUID": 3625610561,
         "Tag": "UI",
-        "UID": 351199318,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.5,
-                    -0.36000001430511475,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.30000001192092896,
-                    0.23999999463558197,
-                    0.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "MaterialResource": 2238734580,
-                "MeshEnabled": true,
-                "State": 0,
-                "Type": 12,
-                "hoverBlockImage": 0,
-                "hoverImage": 869639210,
-                "idleBlockImage": 0,
-                "idleImage": 2238734580,
-                "pressBlockImage": 0,
-                "pressImage": 2014556209
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Return to Hub",
-        "ParentUID": 2377698017,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 1551021094,
+        "UID": 257296791,
         "UpdateWithBones": false
     }
 ]

@@ -33,6 +33,7 @@ public:
     void SetFloat4v(const std::string& name, const float* value) const;
     void SetMatFloat4v(const std::string& name, const float* value, int num = 1, bool transpose = false) const;
     void SetTexture(const std::string& name, uint id, int layer);
+    void SetIntv(const std::string& name, int* value, int count);
 
     void UniformParser(std::vector<Uniform*>& vec);
 

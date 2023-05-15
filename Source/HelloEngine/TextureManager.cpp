@@ -7,10 +7,12 @@
 #include "LayerEditor.h"
 #include "ImWindowConfiguration.h"
 
+
 std::map<uint, Texture> TextureManager::loadedTextures;
 std::map<std::string, uint> TextureManager::usedPaths;
 std::vector<TextureManager::BindedTextureInfo> TextureManager::bindedTexturesInfo;
 uint TextureManager::bindedTextures = 0;
+int TextureManager::bindTexturesArray[32];
 
 float TextureManager::BindTexture(uint texture)
 {
@@ -35,7 +37,7 @@ float TextureManager::BindTexture(uint texture)
 		bindedTextures++;
 		return -1.0f;
 	}*/
-
+	bindTexturesArray[bindedTextures] = bindedTextures;
 	return bindedTextures++;
 }
 
@@ -46,7 +48,7 @@ void TextureManager::UnBindTextures()
 	for (int i = 0; i < 32; i++)
 	{
 		glBindTexture(GL_TEXTURE0 + i, 0); // Unbind every texture
-
+		bindTexturesArray[i] = 0;
 		/*
 		glActiveTexture(GL_TEXTURE0 + i);
 		glBindTexture(GL_TEXTURE_2D, 0); // Unbind every texture

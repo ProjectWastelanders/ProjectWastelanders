@@ -42,6 +42,7 @@ public:
 public:
 	bool initialized = false;
 	bool isParticle = false;
+	bool sortedAndDrawn = false;
 	ResourceMesh* resource = nullptr;
 	ResourceMaterial* resMat = nullptr;
 	uint deletedResourceUID = 0;

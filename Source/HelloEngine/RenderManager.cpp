@@ -97,6 +97,7 @@ void RenderManager::Init()
 	lineShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/lines.shader", 100, "Lines");
 	localLineShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/localLines.shader", 101, "Local Lines");
 	textRenderingShader = new Shader("Resources/shaders/textRendering.shader");
+	instancedShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced.shader", 102, "Instanced");
 
 	// Set up debug drawing variables:
 	// Manually created box index buffer that corresponds to the order given by MathGeoLib's AABB class GetCornerPoints() method.
@@ -278,10 +279,11 @@ InstanceRenderer* RenderManager::GetRenderManager(uint meshID, uint materialID, 
 void RenderManager::Draw()
 {
 	OPTICK_EVENT();
+	instancedShader->shader.data.hasUpdatedCamera = false;
+
 	// Draw opaque meshes instanced.
 	for (auto& obj : _renderMap)
 	{
-		if (obj.second.isParticle)continue;
 		obj.second.Draw();
 	}
 	// Delete empty render managers.
@@ -1122,55 +1124,36 @@ void RenderManager::DrawTransparentMeshes()
 	OPTICK_EVENT();
 	if (_transparencyMeshes.empty())
 		return;
+	glDepthMask(GL_FALSE);
 
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	CameraObject* currentCamera = Application::Instance()->camera->currentDrawingCamera;
-
-	// Draw transparent objects with a draw call per mesh.
-	for (auto& entry : _transparencyMeshes)
+	for (auto& mesh : _transparencyMeshes)
 	{
-		float3 cameraPos = currentCamera->cameraFrustum.pos;
-		float distance = entry.second.mesh.modelMatrix.Transposed().TranslatePart().DistanceSq(currentCamera->cameraFrustum.pos);
-		_orderedMeshes.emplace(std::make_pair(distance, &entry.second));
-	}
-
-	// iterate meshes from furthest to closest.
-	for (auto entry = _orderedMeshes.rbegin(); entry != _orderedMeshes.rend(); entry++)
-	{
-		// Do camera culling checks first
-		if (currentCamera->isCullingActive)
-		{
-			if (!currentCamera->IsInsideFrustum(entry->second->mesh.globalAABB))
-			{
-				entry->second->mesh.outOfFrustum = true;
-				continue;
-			}
-			else
-				entry->second->mesh.outOfFrustum = false;
-		}
-		else if (currentCamera->type != CameraType::SCENE)
-		{
-			entry->second->mesh.outOfFrustum = false;
-		}
-
+		Mesh& currentMesh = mesh.second.mesh;
+		ResourceMaterial* currentMat = mesh.second.material;
 		// Update mesh. If the mesh should draw this frame, call Draw.
-		RenderUpdateState renderState = entry->second->mesh.Update();
+		RenderUpdateState renderState = currentMesh.Update();
 		if (renderState == RenderUpdateState::DRAW)
 		{
-			if (entry->second->material != nullptr && entry->second->material->material.GetShader() != nullptr)
-				entry->second->mesh.Draw(entry->second->material->material);
+			if (currentMat != nullptr && currentMat->material.GetShader() != nullptr)
+			{
+				currentMat->material.depthDraw = drawDepthIndependent;
+				currentMesh.Draw(currentMat->material);
+			}
 			else
-				entry->second->mesh.Draw(Material(), false);
+				currentMesh.Draw(Material(), false);
 		}
 		else if (renderState == RenderUpdateState::SELECTED)
 		{
-			if (entry->second->material != nullptr && entry->second->material->material.GetShader() != nullptr)
-				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(entry->second);
+			if (currentMat != nullptr && currentMat->material.GetShader() != nullptr)
+				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second); //Selected with Mat
 			else
-				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&entry->second->mesh);
+				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&currentMesh); //Selected without Mat
 		}
 	}
 
-	_orderedMeshes.clear();
+	glDepthMask(GL_TRUE);
 }
 
 void RenderManager::DrawIndependentMeshes()
@@ -1223,6 +1206,7 @@ void RenderManager::DrawIndependentMeshes()
 
 void RenderManager::DrawTextObjects()
 {
+	OPTICK_EVENT();
 	// Activate Shader to render text
 	textRenderingShader->Bind();
 	for (auto& textObject : textObjects)

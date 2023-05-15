@@ -43519,9 +43519,9 @@
                     0.0
                 ],
                 "Rotation": [
-                    65.80000305175781,
-                    180.0,
-                    0.0
+                    71.0,
+                    101.9000015258789,
+                    22.0
                 ],
                 "Scale": [
                     1.0,
@@ -43531,13 +43531,13 @@
                 "Type": 1
             },
             {
-                "Ambient Intensity": 2.0,
+                "Ambient Intensity": 2.5,
                 "Color": [
                     1.0,
                     1.0,
                     1.0
                 ],
-                "Diffuse Intensity": 0.800000011920929,
+                "Diffuse Intensity": 1.0,
                 "Enabled": true,
                 "Type": 20
             }

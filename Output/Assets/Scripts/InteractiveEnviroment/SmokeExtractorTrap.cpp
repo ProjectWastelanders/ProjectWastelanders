@@ -42,7 +42,7 @@ void SmokeExtractorTrap::Update()
         fireTimer += Time::GetDeltaTime();
 
         smoke.StopEmitting();
-        fire.SetInitialSpeed(gameObject.GetTransform().GetForward() * 5);
+        fire.SetInitialSpeed(gameObject.GetTransform().GetForward() * 15);
         fire.Play();
 
         throwFire = true;

@@ -29,7 +29,7 @@ void PlayerDuals::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
+    //SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
 
     if (cadence == 0)
     {

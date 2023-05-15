@@ -24,7 +24,7 @@ void PlayerRicochet::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(0);
+    //SetGunStatsPerLevel(0);
 
     if (cadence == 0)
     {

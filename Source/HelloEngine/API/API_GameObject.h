@@ -19,7 +19,6 @@ namespace API
     class API_Material;
 	class API_UIButton;
     class API_UICheckBox;
-    class API_UISlider;
 	class API_UIImage;
 	class API_UIInput;
 	class API_UIText;
@@ -105,7 +104,6 @@ namespace API
         friend class API_ParticleSystem;
         friend class API_UIButton;
         friend class API_UICheckBox;
-        friend class API_UISlider;
 		friend class API_UIImage;
 		friend class API_UIInput;
 		friend class API_UIText;

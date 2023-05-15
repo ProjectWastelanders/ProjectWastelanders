@@ -6,7 +6,6 @@
 #include "LayerEditor.h"
 #include "ComponentUIButton.h"
 #include "ComponentUICheckbox.h"
-#include "API/API_UISlider.h"
 
 ComponentUISlider::ComponentUISlider(GameObject* gameObject) : ComponentUI(gameObject)
 {
@@ -37,9 +36,6 @@ void ComponentUISlider::InputUpdate()
 		switch (State)
 		{
 		case SliderState::NORMAL:
-
-			break;
-		case SliderState::HOVER:
 
 			break;
 		case SliderState::ONPRESS:
@@ -76,7 +72,7 @@ void ComponentUISlider::InputUpdate()
 					}
 				}
 			}
-			_gameObject->transform->SetPosition({ mousePosX, _gameObject->transform->GetLocalScale().y, _gameObject->transform->GetLocalScale().z });
+			_gameObject->transform->SetPosition({ mousePosX, _gameObject->transform->GetGlobalScale().y, _gameObject->transform->GetGlobalScale().z });
 			
 			break;
 
@@ -96,49 +92,7 @@ void ComponentUISlider::InputUpdate()
 
 void ComponentUISlider::UpdateGamePadInput(bool selected)
 {
-	if (selected)
-	{
-		State = SliderState::HOVER;
-	}
-	else
-	{
-		State = SliderState::NORMAL;
-	}
-
-	if (State == SliderState::HOVER)
-	{
-		if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_RIGHT) == KEY_REPEAT)
-		{
-			for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
-			{
-				if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
-				{
-					widthBar = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
-				}
-			}
-
-			if (mousePosX < widthBar)
-			{
-				mousePosX += 0.001f;
-			}
-		}
-		else if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_LEFT) == KEY_REPEAT)
-		{
-			for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
-			{
-				if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
-				{
-					widthBar = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
-				}
-			}
-
-			if (mousePosX > -widthBar)
-			{
-				mousePosX -= 0.001f;
-			}
-		}
-		_gameObject->transform->SetPosition({ mousePosX, 0, -0.003 });
-	}
+	
 }
 
 void ComponentUISlider::Serialization(json& j)

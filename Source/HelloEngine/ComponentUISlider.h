@@ -4,7 +4,6 @@
 enum class SliderState {
 	NORMAL,
 	ONPRESS,
-	HOVER,
 	ONHOLD,
 	ONUNHOLD
 };

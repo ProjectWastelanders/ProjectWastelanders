@@ -23,11 +23,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 2932937564
+        "UID": 2932937564,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -65,14 +67,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Camera",
         "ParentUID": 2932937564,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1006505850
+        "UID": 1006505850,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -94,15 +98,17 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HudFinished",
         "ParentUID": 2932937564,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 570587173
+        "UID": 570587173,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -125,14 +131,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HUD",
         "ParentUID": 570587173,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 697050729
+        "UID": 697050729,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -157,9 +165,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "All GO HUD BOSS": 533326204
-                    },
-                    {
                         "HP BOSS UI IMAGE": 825774155
                     },
                     {
@@ -167,45 +172,21 @@
                     },
                     {
                         "HP BOSS 1 TEXTURE": 2911723293
-                    },
-                    {
-                        "SHIELD BOSS TEXTURE": 3349762469
-                    },
-                    {
-                        "All GO HUD BOSS": 533326204
-                    },
-                    {
-                        "HP BOSS UI IMAGE": 825774155
-                    },
-                    {
-                        "SHIELD BOSS UI IMAGE": 2234780185
-                    },
-                    {
-                        "HP BOSS 1 TEXTURE": 2911723293
-                    },
-                    {
-                        "SHIELD BOSS TEXTURE": 3349762469
-                    },
-                    {
-                        "All GO HUD BOSS": 533326204
-                    },
-                    {
-                        "HP BOSS UI IMAGE": 825774155
-                    },
-                    {
-                        "SHIELD BOSS UI IMAGE": 2234780185
-                    },
-                    {
-                        "HP BOSS 1 TEXTURE": 2911723293
-                    },
-                    {
-                        "SHIELD BOSS TEXTURE": 3349762469
                     },
                     {
                         "SHIELD BOSS icon": 91629146
                     },
                     {
-                        "All GO HUD BOSS": 533326204
+                        "HP BOSS UI IMAGE": 825774155
+                    },
+                    {
+                        "SHIELD BOSS UI IMAGE": 2234780185
+                    },
+                    {
+                        "HP BOSS 1 TEXTURE": 2911723293
+                    },
+                    {
+                        "SHIELD BOSS icon": 91629146
                     },
                     {
                         "HP BOSS UI IMAGE": 825774155
@@ -217,7 +198,40 @@
                         "HP BOSS 1 TEXTURE": 2911723293
                     },
                     {
-                        "SHIELD BOSS TEXTURE": 3349762469
+                        "SHIELD BOSS icon": 91629146
+                    },
+                    {
+                        "HP BOSS UI IMAGE": 825774155
+                    },
+                    {
+                        "SHIELD BOSS UI IMAGE": 2234780185
+                    },
+                    {
+                        "HP BOSS 1 TEXTURE": 2911723293
+                    },
+                    {
+                        "SHIELD BOSS icon": 91629146
+                    },
+                    {
+                        "HP BOSS UI IMAGE": 825774155
+                    },
+                    {
+                        "SHIELD BOSS UI IMAGE": 2234780185
+                    },
+                    {
+                        "HP BOSS 1 TEXTURE": 2911723293
+                    },
+                    {
+                        "SHIELD BOSS icon": 91629146
+                    },
+                    {
+                        "HP BOSS UI IMAGE": 825774155
+                    },
+                    {
+                        "SHIELD BOSS UI IMAGE": 2234780185
+                    },
+                    {
+                        "HP BOSS 1 TEXTURE": 2911723293
                     },
                     {
                         "SHIELD BOSS icon": 91629146
@@ -229,6 +243,12 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Bar": 533326204
+                    },
+                    {
+                        "Bar": 533326204
+                    },
                     {
                         "Bar": 533326204
                     },
@@ -265,6 +285,42 @@
                     },
                     {
                         "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
                     }
                 ],
                 "Script Resource": 360515611,
@@ -272,14 +328,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HUD_Boss_Bar",
         "ParentUID": 697050729,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 533326204
+        "UID": 533326204,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -310,14 +368,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Boss_Bar_Background",
         "ParentUID": 533326204,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 711374764
+        "UID": 711374764,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -348,14 +408,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Boss_Bar_Bachground_HP",
         "ParentUID": 533326204,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1354554268
+        "UID": 1354554268,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -386,14 +448,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Boss_HP",
         "ParentUID": 533326204,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 825774155
+        "UID": 825774155,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -424,14 +488,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Boss_Image/Icon",
         "ParentUID": 533326204,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 3085188295
+        "UID": 3085188295,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -462,14 +528,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Boss_Name_Image",
         "ParentUID": 533326204,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2579813234
+        "UID": 2579813234,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -500,14 +568,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Boss_Shield",
         "ParentUID": 533326204,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2234780185
+        "UID": 2234780185,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -538,14 +608,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Shield_Icon",
         "ParentUID": 533326204,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 91629146
+        "UID": 91629146,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -569,6 +641,54 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Texture_SPEED_INCREASE": 572968604
+                    },
+                    {
+                        "Texture_FIRERATE_INCREASE": 904723382
+                    },
+                    {
+                        "Texture_SHIELD": 874482960
+                    },
+                    {
+                        "Texture_SLOW_TIME": 3865343995
+                    },
+                    {
+                        "GamesObjects_1": 1272486707
+                    },
+                    {
+                        "GamesObjects_2": 3264243153
+                    },
+                    {
+                        "GamesObjects_3": 268021764
+                    },
+                    {
+                        "GamesObjects_4": 2605297620
+                    },
+                    {
+                        "Texture_SPEED_INCREASE": 572968604
+                    },
+                    {
+                        "Texture_FIRERATE_INCREASE": 904723382
+                    },
+                    {
+                        "Texture_SHIELD": 874482960
+                    },
+                    {
+                        "Texture_SLOW_TIME": 3865343995
+                    },
+                    {
+                        "GamesObjects_1": 1272486707
+                    },
+                    {
+                        "GamesObjects_2": 3264243153
+                    },
+                    {
+                        "GamesObjects_3": 268021764
+                    },
+                    {
+                        "GamesObjects_4": 2605297620
+                    },
                     {
                         "Texture_SPEED_INCREASE": 572968604
                     },
@@ -671,14 +791,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HUD_Power_Ups",
         "ParentUID": 697050729,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 2440962285
+        "UID": 2440962285,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -709,14 +831,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Power_up_2",
         "ParentUID": 2440962285,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 3264243153
+        "UID": 3264243153,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -747,14 +871,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Power_up_3",
         "ParentUID": 2440962285,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 268021764
+        "UID": 268021764,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -785,14 +911,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Power_up_4",
         "ParentUID": 2440962285,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2605297620
+        "UID": 2605297620,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -823,14 +951,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PowerBackGround",
         "ParentUID": 2440962285,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2661724644
+        "UID": 2661724644,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -861,14 +991,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Power_Up_1",
         "ParentUID": 2440962285,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1272486707
+        "UID": 1272486707,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -891,14 +1023,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HUD_Finshed",
         "ParentUID": 697050729,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 3801580751
+        "UID": 3801580751,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -969,6 +1103,30 @@
                     },
                     {
                         "HP Regen Texture": 4119276236
+                    },
+                    {
+                        "HP_BAR": 1144516396
+                    },
+                    {
+                        "SHIELD_BAR": 1706043033
+                    },
+                    {
+                        "HP Texture": 2859695454
+                    },
+                    {
+                        "HP Regen Texture": 4119276236
+                    },
+                    {
+                        "HP_BAR": 1144516396
+                    },
+                    {
+                        "SHIELD_BAR": 1706043033
+                    },
+                    {
+                        "HP Texture": 2859695454
+                    },
+                    {
+                        "HP Regen Texture": 4119276236
                     }
                 ],
                 "Script Resource": 3952342186,
@@ -988,6 +1146,12 @@
                     },
                     {
                         "Bar": 1144516396
+                    },
+                    {
+                        "Bar": 1144516396
+                    },
+                    {
+                        "Bar": 1144516396
                     }
                 ],
                 "Script Resource": 2563255136,
@@ -995,14 +1159,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HP",
         "ParentUID": 3801580751,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 137762273
+        "UID": 137762273,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1033,14 +1199,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Reg_Limit",
         "ParentUID": 137762273,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2737108825
+        "UID": 2737108825,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1071,14 +1239,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HP_Bar",
         "ParentUID": 137762273,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1144516396
+        "UID": 1144516396,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1127,6 +1297,42 @@
                     },
                     {
                         "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
+                    },
+                    {
+                        "Movment on X": 0.0
+                    },
+                    {
+                        "Movment Repetitions": 0.0
+                    },
+                    {
+                        "Movment Speed": 0.0
                     }
                 ],
                 "Script Resource": 272862626,
@@ -1134,14 +1340,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "HUD_Fons",
         "ParentUID": 3801580751,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2142730524
+        "UID": 2142730524,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1165,6 +1373,174 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "HandgunsWeapons_On": 3076489896
+                    },
+                    {
+                        "HandgunsWeapons_Off": 3986648714
+                    },
+                    {
+                        "Auto_On": 2067694486
+                    },
+                    {
+                        "Burst_On": 1186397666
+                    },
+                    {
+                        "Semi_On": 953282997
+                    },
+                    {
+                        "Shotgun_On": 3011687056
+                    },
+                    {
+                        "Handgun_On": 2485249494
+                    },
+                    {
+                        "Auto_Off": 554082642
+                    },
+                    {
+                        "Burst_Off": 2098528651
+                    },
+                    {
+                        "Semi_Off": 3008937367
+                    },
+                    {
+                        "Shotgun_Off": 1390408833
+                    },
+                    {
+                        "Handgun_Off": 732632770
+                    },
+                    {
+                        "FlameThrower_On 1": 2806950331
+                    },
+                    {
+                        "Ricochet_On 2": 4165763925
+                    },
+                    {
+                        "FlameThrower_Off 1": 2148606541
+                    },
+                    {
+                        "Ricochet_Off 2": 852787717
+                    },
+                    {
+                        "Material Weapon 1 on": 1701820068
+                    },
+                    {
+                        "Material Weapon 1 off": 1447126771
+                    },
+                    {
+                        "Game Bar Weapon 1": 42656509
+                    },
+                    {
+                        "Material Weapon 2 on": 1762482833
+                    },
+                    {
+                        "Material Weapon 2 off": 2896636869
+                    },
+                    {
+                        "Game Bar Weapon 2": 1366919386
+                    },
+                    {
+                        "Material Weapon 3 on": 4256981011
+                    },
+                    {
+                        "Material Weapon 3 off": 1056706350
+                    },
+                    {
+                        "Game Bar Weapon 3": 1625669672
+                    },
+                    {
+                        "Text_Dash_on": 486085637
+                    },
+                    {
+                        "Text_Dash_off": 3635487892
+                    },
+                    {
+                        "Material_Dash": 3494829257
+                    },
+                    {
+                        "HandgunsWeapons_On": 3076489896
+                    },
+                    {
+                        "HandgunsWeapons_Off": 3986648714
+                    },
+                    {
+                        "Auto_On": 2067694486
+                    },
+                    {
+                        "Burst_On": 1186397666
+                    },
+                    {
+                        "Semi_On": 953282997
+                    },
+                    {
+                        "Shotgun_On": 3011687056
+                    },
+                    {
+                        "Handgun_On": 2485249494
+                    },
+                    {
+                        "Auto_Off": 554082642
+                    },
+                    {
+                        "Burst_Off": 2098528651
+                    },
+                    {
+                        "Semi_Off": 3008937367
+                    },
+                    {
+                        "Shotgun_Off": 1390408833
+                    },
+                    {
+                        "Handgun_Off": 732632770
+                    },
+                    {
+                        "FlameThrower_On 1": 2806950331
+                    },
+                    {
+                        "Ricochet_On 2": 4165763925
+                    },
+                    {
+                        "FlameThrower_Off 1": 2148606541
+                    },
+                    {
+                        "Ricochet_Off 2": 852787717
+                    },
+                    {
+                        "Material Weapon 1 on": 1701820068
+                    },
+                    {
+                        "Material Weapon 1 off": 1447126771
+                    },
+                    {
+                        "Game Bar Weapon 1": 42656509
+                    },
+                    {
+                        "Material Weapon 2 on": 1762482833
+                    },
+                    {
+                        "Material Weapon 2 off": 2896636869
+                    },
+                    {
+                        "Game Bar Weapon 2": 1366919386
+                    },
+                    {
+                        "Material Weapon 3 on": 4256981011
+                    },
+                    {
+                        "Material Weapon 3 off": 1056706350
+                    },
+                    {
+                        "Game Bar Weapon 3": 1625669672
+                    },
+                    {
+                        "Text_Dash_on": 486085637
+                    },
+                    {
+                        "Text_Dash_off": 3635487892
+                    },
+                    {
+                        "Material_Dash": 3494829257
+                    },
                     {
                         "HandgunsWeapons_On": 3076489896
                     },
@@ -1507,14 +1883,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapons/Habilities",
         "ParentUID": 3801580751,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 1942719435
+        "UID": 1942719435,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1537,14 +1915,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_1",
         "ParentUID": 1942719435,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 1254665798
+        "UID": 1254665798,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1575,14 +1955,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_Bar_On_1",
         "ParentUID": 1254665798,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 42656509
+        "UID": 42656509,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1613,14 +1995,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_Bar_Off_1",
         "ParentUID": 1254665798,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1966411553
+        "UID": 1966411553,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1643,14 +2027,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Infinit_Weapon_icon_1",
         "ParentUID": 1254665798,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 1456171412
+        "UID": 1456171412,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1681,14 +2067,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Infinit_Weapon_icon_On",
         "ParentUID": 1456171412,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1701820068
+        "UID": 1701820068,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1719,14 +2107,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Infinit_Weapon_icon_Off",
         "ParentUID": 1456171412,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1447126771
+        "UID": 1447126771,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1749,14 +2139,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_2",
         "ParentUID": 1942719435,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 3365061519
+        "UID": 3365061519,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1787,14 +2179,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_Bar_On_2",
         "ParentUID": 3365061519,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1366919386
+        "UID": 1366919386,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1825,14 +2219,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_Bar_Off_2",
         "ParentUID": 3365061519,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2704195234
+        "UID": 2704195234,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1855,14 +2251,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Normal_Weapon_icon",
         "ParentUID": 3365061519,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 3179933450
+        "UID": 3179933450,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1893,14 +2291,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Normal_Weapon_icon_On",
         "ParentUID": 3179933450,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1762482833
+        "UID": 1762482833,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1931,14 +2331,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Normal_Weapon_icon_Off",
         "ParentUID": 3179933450,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2896636869
+        "UID": 2896636869,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1961,14 +2363,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_3",
         "ParentUID": 1942719435,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 861040264
+        "UID": 861040264,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1999,14 +2403,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_Bar_On_3",
         "ParentUID": 861040264,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1625669672
+        "UID": 1625669672,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2037,14 +2443,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Weapon_Bar_Off_3",
         "ParentUID": 861040264,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 4065017416
+        "UID": 4065017416,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2067,14 +2475,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special_Weapon_icon",
         "ParentUID": 861040264,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 2297484007
+        "UID": 2297484007,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2105,14 +2515,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special_Weapon_icon_On",
         "ParentUID": 2297484007,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 4256981011
+        "UID": 4256981011,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2143,14 +2555,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special_Weapon_icon_Off",
         "ParentUID": 2297484007,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1056706350
+        "UID": 1056706350,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2173,14 +2587,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Dash",
         "ParentUID": 1942719435,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 457980165
+        "UID": 457980165,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2211,14 +2627,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Dash",
         "ParentUID": 457980165,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 3494829257
+        "UID": 3494829257,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2242,6 +2660,18 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Disable_Ultimate_HUD": 4117494529
+                    },
+                    {
+                        "Active_Ultimate_HUD": 789399284
+                    },
+                    {
+                        "Disable_Ultimate_HUD": 4117494529
+                    },
+                    {
+                        "Active_Ultimate_HUD": 789399284
+                    },
                     {
                         "Disable_Ultimate_HUD": 4117494529
                     },
@@ -2272,14 +2702,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Casete",
         "ParentUID": 3801580751,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 3610383197
+        "UID": 3610383197,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2310,14 +2742,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Casete_Off",
         "ParentUID": 3610383197,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 4117494529
+        "UID": 4117494529,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2340,14 +2774,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Casete_On",
         "ParentUID": 3610383197,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 789399284
+        "UID": 789399284,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2378,14 +2814,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Casete_On_Details",
         "ParentUID": 789399284,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 366031747
+        "UID": 366031747,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2416,14 +2854,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "PowerBackGround",
         "ParentUID": 789399284,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1455290719
+        "UID": 1455290719,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2454,14 +2894,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Casete_Ult_Avaliable",
         "ParentUID": 789399284,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 516634858
+        "UID": 516634858,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2496,6 +2938,12 @@
                     },
                     {
                         "Bar": 1706043033
+                    },
+                    {
+                        "Bar": 1706043033
+                    },
+                    {
+                        "Bar": 1706043033
                     }
                 ],
                 "Script Resource": 2563255136,
@@ -2503,14 +2951,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Shield",
         "ParentUID": 3801580751,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 2579312114
+        "UID": 2579312114,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2541,14 +2991,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Sield_Indicator",
         "ParentUID": 2579312114,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1706043033
+        "UID": 1706043033,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2572,6 +3024,42 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Infinit munition on": 1124720208
+                    },
+                    {
+                        "Infinit munition off": 2596827792
+                    },
+                    {
+                        "Normal munition on": 1394349007
+                    },
+                    {
+                        "Normal munition off": 1121392154
+                    },
+                    {
+                        "Special munition on": 2822614242
+                    },
+                    {
+                        "Special munition off": 1292481097
+                    },
+                    {
+                        "Infinit munition on": 1124720208
+                    },
+                    {
+                        "Infinit munition off": 2596827792
+                    },
+                    {
+                        "Normal munition on": 1394349007
+                    },
+                    {
+                        "Normal munition off": 1121392154
+                    },
+                    {
+                        "Special munition on": 2822614242
+                    },
+                    {
+                        "Special munition off": 1292481097
+                    },
                     {
                         "Infinit munition on": 1124720208
                     },
@@ -2650,14 +3138,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Munition",
         "ParentUID": 570587173,
         "PrefabUID": 3202643080,
         "Tag": "Default",
-        "UID": 3396396909
+        "UID": 3396396909,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2688,14 +3178,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Infinit_Munition_ON",
         "ParentUID": 3396396909,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1124720208
+        "UID": 1124720208,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2726,14 +3218,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Infinit_Munition_OFF",
         "ParentUID": 3396396909,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2596827792
+        "UID": 2596827792,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2761,7 +3255,7 @@
                     0.5529412031173706,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.6499999761581421,
                 "PositionY": 0.699999988079071,
                 "Scale": 0.20000000298023224,
@@ -2770,14 +3264,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Normal_Munition_ON",
         "ParentUID": 3396396909,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1394349007
+        "UID": 1394349007,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2805,7 +3301,7 @@
                     0.5058823823928833,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.6499999761581421,
                 "PositionY": 0.699999988079071,
                 "Scale": 0.20000000298023224,
@@ -2814,14 +3310,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Normal_Munition_Off",
         "ParentUID": 3396396909,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1121392154
+        "UID": 1121392154,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2849,7 +3347,7 @@
                     0.1764705926179886,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.6499999761581421,
                 "PositionY": 0.6499999761581421,
                 "Scale": 0.20000000298023224,
@@ -2858,14 +3356,16 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special_Munition_On",
         "ParentUID": 3396396909,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 2822614242
+        "UID": 2822614242,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2893,7 +3393,7 @@
                     0.5058823823928833,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.6499999761581421,
                 "PositionY": 0.6499999761581421,
                 "Scale": 0.20000000298023224,
@@ -2902,11 +3402,13 @@
             }
         ],
         "FirstOnPrefab": false,
+        "IsStatic": false,
         "Name": "Special_Munition_Off",
         "ParentUID": 3396396909,
         "PrefabUID": 3202643080,
         "Tag": "UI",
-        "UID": 1292481097
+        "UID": 1292481097,
+        "UpdateWithBones": false
     },
     {
         "Active": false,
@@ -2946,14 +3448,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "More_Munition_text",
         "ParentUID": 3396396909,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3278993731
+        "UID": 3278993731,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -2984,14 +3488,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "More_Munition_GO",
         "ParentUID": 3396396909,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 373225517
+        "UID": 373225517,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3020,14 +3526,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "HUD_Blue_Prints",
         "ParentUID": 570587173,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3767665390
+        "UID": 3767665390,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3050,14 +3558,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "GO_New_Weapon",
         "ParentUID": 3767665390,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1176017470
+        "UID": 1176017470,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3088,14 +3598,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "New_Weapon",
         "ParentUID": 1176017470,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2749613084
+        "UID": 2749613084,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3123,7 +3635,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 1.0499999523162842,
                 "PositionY": 0.029999999329447746,
                 "Scale": 0.20000000298023224,
@@ -3132,14 +3644,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Text_Alert_New_Weapon",
         "ParentUID": 1176017470,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2978910595
+        "UID": 2978910595,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3170,14 +3684,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Background_New_Weapon",
         "ParentUID": 1176017470,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 506612752
+        "UID": 506612752,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3200,14 +3716,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "GO_Special_Weapon",
         "ParentUID": 3767665390,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 550715221
+        "UID": 550715221,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3238,14 +3756,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Special_Weapon",
         "ParentUID": 550715221,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 177811771
+        "UID": 177811771,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3273,7 +3793,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 1.0499999523162842,
                 "PositionY": -0.11999999731779099,
                 "Scale": 0.20000000298023224,
@@ -3282,14 +3802,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Text_Alert_Special_Weapon",
         "ParentUID": 550715221,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1858958322
+        "UID": 1858958322,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3320,14 +3842,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Background_Special_Weapon",
         "ParentUID": 550715221,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2748314512
+        "UID": 2748314512,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3350,14 +3874,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "GO_Upgrade",
         "ParentUID": 3767665390,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 3198493923
+        "UID": 3198493923,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3388,14 +3914,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Upgrade",
         "ParentUID": 3198493923,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2094448581
+        "UID": 2094448581,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3423,7 +3951,7 @@
                     1.0,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 1.0499999523162842,
                 "PositionY": 0.18000000715255737,
                 "Scale": 0.20000000298023224,
@@ -3432,14 +3960,16 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Text_Alert_Upgrade",
         "ParentUID": 3198493923,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 171349848
+        "UID": 171349848,
+        "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -3470,10 +4000,964 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Background_Upgrade",
         "ParentUID": 3198493923,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1138365017
+        "UID": 1138365017,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "NEW_HUD",
+        "ParentUID": 2932937564,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3169689659,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.09000000357627869,
+                    -0.05000000074505806,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Canvas",
+        "ParentUID": 3169689659,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1544080758,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "New_HUD_Finished",
+        "ParentUID": 1544080758,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 453688899,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "HP",
+        "ParentUID": 453688899,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2235803156,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7599999904632568,
+                    0.800000011920929,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.25,
+                    0.17000000178813934,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 66545389,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_HP",
+        "ParentUID": 2235803156,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1710001134,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7649999856948853,
+                    0.7900000214576721,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    1.100000023841858
+                ],
+                "Scale": [
+                    0.23999999463558197,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1878122064,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "HP",
+        "ParentUID": 2235803156,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 646782243,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.8899999856948853,
+                    0.7649999856948853,
+                    -0.004999999888241291
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.019999999552965164,
+                    0.0949999988079071,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1884696157,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Regen_limit",
+        "ParentUID": 2235803156,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 589050753,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Shield",
+        "ParentUID": 453688899,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 849388938,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7739999890327454,
+                    0.8700000047683716,
+                    -0.0020000000949949026
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.17000000178813934,
+                    0.05000000074505806,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3367578396,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Shield",
+        "ParentUID": 849388938,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2482168701,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7739999890327454,
+                    0.8799999952316284,
+                    -0.004000000189989805
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.30000001192092896
+                ],
+                "Scale": [
+                    0.1599999964237213,
+                    0.03999999910593033,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 109965011,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Shield",
+        "ParentUID": 849388938,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2197521170,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Casete",
+        "ParentUID": 453688899,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 91027448,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.9750000238418579,
+                    0.8799999952316284,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.11999999731779099,
+                    0.20000000298023224,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3089702664,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Casete_Off",
+        "ParentUID": 91027448,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2345195608,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.9950000047683716,
+                    0.8600000143051147,
+                    -0.019999999552965164
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.11999999731779099,
+                    0.20000000298023224,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1881453545,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Casete_On",
+        "ParentUID": 91027448,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2833527203,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapons",
+        "ParentUID": 453688899,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3466085910,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon_1",
+        "ParentUID": 3466085910,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1603251113,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.8999999761581421,
+                    0.6000000238418579,
+                    -0.006000000052154064
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07000000029802322,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 905840504,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Bar_off_1",
+        "ParentUID": 1603251113,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3924581646,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.8999999761581421,
+                    0.6050000190734863,
+                    -0.007000000216066837
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07000000029802322,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2082166432,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Bar_on_1",
+        "ParentUID": 1603251113,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2335649725,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Infinit_Weapon",
+        "ParentUID": 1603251113,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 775139412,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 240240,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Infinit_Weapon_icon_On",
+        "ParentUID": 775139412,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 4011895908,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Infinit_Weapon_icon_Off",
+        "ParentUID": 775139412,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 751758158,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon_2",
+        "ParentUID": 3466085910,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2140010461,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7799999713897705,
+                    0.6299999952316284,
+                    -0.006000000052154064
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07000000029802322,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3046863063,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Bar_off_2",
+        "ParentUID": 2140010461,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1547774336,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7799999713897705,
+                    0.6299999952316284,
+                    -0.007000000216066837
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07000000029802322,
+                    0.10000000149011612,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 4250571023,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Bar_on_2",
+        "ParentUID": 2140010461,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 4038823307,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Weapon_3",
+        "ParentUID": 3466085910,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2803087037,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.656000018119812,
+                    0.6499999761581421,
+                    -0.006000000052154064
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07999999821186066,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1637751163,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Bar_off_3",
+        "ParentUID": 2803087037,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3293574625,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.6579999923706055,
+                    0.6600000262260437,
+                    -0.007000000216066837
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.07000000029802322,
+                    0.10999999940395355,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3977013793,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background_Bar_on_3",
+        "ParentUID": 2803087037,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3076441956,
+        "UpdateWithBones": false
     }
 ]

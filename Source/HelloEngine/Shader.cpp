@@ -311,3 +311,8 @@ void Shader::SetTexture(const std::string& name, uint id, int layer)
 	SetInt(name, layer);
 }
 
+void Shader::SetIntv(const std::string& name, int* value, int count)
+{
+	glUniform1iv(glGetUniformLocation(data.ID, name.c_str()), count, value);
+}
+

@@ -1218,7 +1218,7 @@ void RenderManager::DrawIndependentMeshes()
 				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second.mesh); //Selected without Mat
 		}
 	}
-	//drawDepthIndependent = !drawDepthIndependent;
+	drawDepthIndependent = !drawDepthIndependent;
 }
 
 void RenderManager::DrawTextObjects()

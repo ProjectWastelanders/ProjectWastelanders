@@ -114,7 +114,7 @@ void ModuleRenderer3D::DrawGame()
 	{
 		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
 
-		//ShadowRenderPass();
+		ShadowRenderPass();
 
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0); // Bind to default buffer because a camera buffer is not necessary with only one display.
@@ -151,7 +151,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	{
 		_cameras->currentDrawingCamera = _cameras->sceneCamera;
 		
-		//ShadowRenderPass();
+		ShadowRenderPass();
 
 		//Normal Rendering of scene
 		_cameras->sceneCamera->frameBuffer.Bind();
@@ -190,7 +190,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	{
 		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
 
-		//ShadowRenderPass();
+		ShadowRenderPass();
 
 		_cameras->activeGameCamera->frameBuffer.Bind();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);

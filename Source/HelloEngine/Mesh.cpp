@@ -201,6 +201,10 @@ void Mesh::UniformDraw(Material material)
 	{
 		if (component->_hasBones)
 		{	
+			depthBoneShader->shader.Bind();
+			depthBoneShader->shader.SetMatFloat4v("dirLightSpaceMatrix",
+				&Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+			depthBoneShader->shader.SetMatFloat4v("model", &modelMatrix.v[0][0]);
 			return;
 		}
 		depthShader->shader.Bind();

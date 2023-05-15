@@ -28,7 +28,7 @@
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 1666278018,
+        "UID": 3697978039,
         "UpdateWithBones": false
     },
     {
@@ -37,19 +37,19 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
+                    3.8858482837677,
+                    -18.72828483581543,
                     0.0
                 ],
                 "Rotation": [
-                    -90.0,
-                    0.0,
-                    0.0
+                    -90.00218963623047,
+                    0.0007188773597590625,
+                    -41.36688995361328
                 ],
                 "Scale": [
-                    25.0,
-                    25.0,
-                    1.0
+                    24.999998092651367,
+                    25.00000762939453,
+                    25.0
                 ],
                 "Type": 1
             },
@@ -66,17 +66,17 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 3584851402,
+                "MaterialUID": 1314098061,
                 "Type": 18
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "Plane",
-        "ParentUID": 1666278018,
+        "ParentUID": 3697978039,
         "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 875226217,
+        "UID": 3704429091,
         "UpdateWithBones": false
     },
     {
@@ -85,19 +85,19 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    4.238802909851074,
-                    0.0
+                    8.604608535766602,
+                    -17.09856605529785,
+                    -1.9460797309875488
                 ],
                 "Rotation": [
-                    -0.0,
                     0.0,
-                    -0.0
+                    -20.68205451965332,
+                    0.0
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    1.0000817775726318,
+                    1.000057339668274,
+                    1.0001413822174072
                 ],
                 "Type": 1
             },
@@ -114,17 +114,17 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 361543442,
+                "MaterialUID": 4158210607,
                 "Type": 18
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "Cube",
-        "ParentUID": 1666278018,
+        "ParentUID": 3697978039,
         "PrefabUID": 0,
         "Tag": "Primitive",
-        "UID": 451912212,
+        "UID": 2021910291,
         "UpdateWithBones": false
     },
     {
@@ -134,18 +134,18 @@
                 "Enabled": true,
                 "Position": [
                     0.0,
-                    4.55598258972168,
-                    0.0
+                    0.0,
+                    -2.519392967224121
                 ],
                 "Rotation": [
-                    -50.0,
-                    30.0,
+                    -69.47899627685547,
+                    33.42399978637695,
                     0.0
                 ],
                 "Scale": [
-                    1.0000079870224,
-                    1.0000156164169312,
-                    1.0000097751617432
+                    0.9999992251396179,
+                    0.9999999403953552,
+                    1.0000030994415283
                 ],
                 "Type": 1
             },
@@ -156,7 +156,7 @@
                     1.0,
                     1.0
                 ],
-                "Diffuse Intensity": 1.0,
+                "Diffuse Intensity": 0.5,
                 "Enabled": true,
                 "Type": 20
             }
@@ -164,10 +164,10 @@
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "DirectionalLight",
-        "ParentUID": 1666278018,
+        "ParentUID": 3697978039,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1944668452,
+        "UID": 1957738336,
         "UpdateWithBones": false
     },
     {
@@ -176,56 +176,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -4.106740951538086,
-                    7.582552909851074,
-                    0.0
-                ],
-                "Rotation": [
-                    -90.00016021728516,
-                    -0.00012465094914659858,
-                    78.1689682006836
-                ],
-                "Scale": [
-                    1.0000098943710327,
-                    1.0000015497207642,
-                    1.0000091791152954
-                ],
-                "Type": 1
-            },
-            {
-                "Ambient Intensity": 1.0,
-                "Color": [
-                    1.0,
-                    0.0,
-                    0.0
-                ],
-                "Cutoff": 53.0,
-                "Diffuse Intensity": 1.0,
-                "Distance": 16.0,
-                "Enabled": true,
-                "Exp": 0.0,
-                "Linear": 1.0,
-                "Type": 22
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "SpotLight",
-        "ParentUID": 1666278018,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 3803192180,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    7.477858543395996,
-                    2.731537342071533,
-                    0.0
+                    -2.7351410388946533,
+                    -14.30596923828125,
+                    -3.807015895843506
                 ],
                 "Rotation": [
                     -0.0,
@@ -242,12 +195,12 @@
             {
                 "Ambient Intensity": 1.0,
                 "Color": [
-                    0.0,
-                    0.1708545684814453,
-                    1.0
+                    0.8090451955795288,
+                    0.37809646129608154,
+                    0.37809646129608154
                 ],
                 "Diffuse Intensity": 1.0,
-                "Distance": 7.0,
+                "Distance": 16.0,
                 "Enabled": true,
                 "Exp": 0.0,
                 "Linear": 1.0,
@@ -256,11 +209,11 @@
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "PointLight",
-        "ParentUID": 1666278018,
+        "Name": "Empty",
+        "ParentUID": 3697978039,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 2542037471,
+        "UID": 2569288229,
         "UpdateWithBones": false
     }
 ]

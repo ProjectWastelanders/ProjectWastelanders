@@ -9,8 +9,6 @@
 	uniform mat4 projection;
 	uniform mat4 lightSpaceMatrix;
 	
-	uniform sampler2D normal_texture;
-	
 	out vec2 TextureCoords;
 	out vec3 Normal;
 	out vec3 FragPos;
@@ -85,7 +83,7 @@
 	
 	uniform vec3 ViewPoint;
 	
-	int steps = 2;
+	int steps = 3;
 	float scaleFactor = 1.0f/steps;
 	
 	in vec2 TextureCoords;
@@ -130,10 +128,24 @@
 	}
 	
 	//SHADOW METHODS
-
+	
+	float CalculateShadow(vec4 fragPosLightSpace, float bias)
+	{
+		// perform perspective divide
+	    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+	    projCoords = projCoords * 0.5 + 0.5;
+	    if (projCoords.z > 1.0f) projCoords.z = 1.0f; //Capping Z
+	    
+	    float closestDepth = texture(shadowMap, projCoords.xy).r; 
+	    float currentDepth = projCoords.z;
+	    
+	    float shadow = currentDepth - bias > closestDepth  ? 1.00 : 0.15;
+	
+	    return shadow;
+	}
 	
 	//LIGHT METHODS
-	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
+	vec4 CalculateLight(Light light, vec3 direction, vec3 normal, float shadowFactor)
 	{
 		//Ambient
 		vec4 Ambient = vec4(light.Color, 1.0f) * light.AmbientIntensity;
@@ -146,7 +158,7 @@
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0);
 	
-		vec4 result = Ambient * Diffuse;
+		vec4 result = (Ambient + (1 - shadowFactor)) * Diffuse;
 		//vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
 		return result; 
@@ -157,7 +169,10 @@
 	{
 		vec3 dir = normalize(CalculateDirection(Light_Directional.Direction));
 		
-		return CalculateLight(Light_Directional.Base, dir, normal);
+		float bias = max(0.00032 * (1.0 - dot(normal, dir)), 0.00032);
+		float shadowFactor = CalculateShadow(FragPosLightSpace, bias);
+		
+		return CalculateLight(Light_Directional.Base, dir, normal, shadowFactor);
 	}
 	
 	vec4 CalculatePointLight(PointLight light, vec3 normal)
@@ -169,7 +184,8 @@
 		
 		if (light.Distance > dist)
 		{
-			color = CalculateLight(light.Base, lightDir, normal);
+			float shadowFactor = 1.0f;
+			color = CalculateLight(light.Base, lightDir, normal, shadowFactor);
 		}
 		
 		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -191,7 +207,8 @@
 		
 			if (light.Distance > dist)
 			{
-				color = CalculateLight(light.Base, lightDir, normal);
+				float shadowFactor = 1.0f;
+				color = CalculateLight(light.Base, lightDir, normal, shadowFactor);
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -227,6 +244,9 @@
 		
 	}
 #endif
+
+
+
 
 
 

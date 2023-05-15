@@ -1,7 +1,4 @@
 #pragma once
-
-#define NUM_OF_CASCADES 3
-
 class FrameBuffer
 {
 public:
@@ -9,7 +6,7 @@ public:
 	~FrameBuffer();
 
 	void Bind();
-	void BindShadowBuffer(uint cascadeIndex);
+	void BindShadowBuffer();
 	void BindShadowTexture();
 
 	void SetDimensions(int width, int height);
@@ -33,7 +30,7 @@ private:
 
 	/*Depth map for shadow mapping*/
 	uint depthMapFBO = 0;
-	uint depthMap[NUM_OF_CASCADES] = { 0, 0, 0};
+	uint depthMap = 0;
 	const uint SHADOW_WIDTH = 1024;
 	const uint SHADOW_HEIGHT = 1024;
 

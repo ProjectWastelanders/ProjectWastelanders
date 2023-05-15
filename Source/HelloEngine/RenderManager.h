@@ -177,7 +177,7 @@ private:
 
 	InstanceRenderer* renderer2D = nullptr;
 
-	bool drawDepthIndependent = false;
+	bool drawDepthIndependent = true;
 
 	friend class Emitter;
 	friend class ParticleSystemComponent;

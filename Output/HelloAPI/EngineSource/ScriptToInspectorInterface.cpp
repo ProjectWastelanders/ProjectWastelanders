@@ -8,6 +8,7 @@
 #include "API/API_AnimationPlayer.h"
 #include "API/API_UIButton.h"
 #include "API/API_UICheckBox.h"
+#include "API/API_UISlider.h"
 #include "API/API_UIImage.h"
 #include "API/API_UIInput.h"
 #include "API/API_UIText.h"
@@ -22,6 +23,7 @@
 #include "AnimationComponent.h"
 #include "ComponentUIButton.h"
 #include "ComponentUICheckbox.h"
+#include "ComponentUISlider.h"
 #include "ComponentUIImage.h"
 #include "ComponentUIInput.h"
 #include "TextRendererComponent.h"
@@ -1476,6 +1478,82 @@ void DragBoxUICheckBox::OnDeserialize(json& j)
 			if (component != nullptr)
 			{
 				API::API_UICheckBox* buttonui = (API::API_UICheckBox*)value;
+				buttonui->SetComponent(component);
+			}
+		}
+	}
+}
+
+void DragBoxUISlider::OnEditor()
+{
+	API::API_UISlider* buttonui = (API::API_UISlider*)value;
+
+	std::string buttonName = "X##" + std::to_string(UID);
+	if (ImGui::Button(buttonName.c_str()))
+	{
+		buttonui->SetComponent(nullptr);
+
+	}
+	ImGui::SameLine();
+
+	ImGui::TextWrapped((valueName + ": ").c_str()); ImGui::SameLine();
+
+	if (buttonui->_UISlider == nullptr)
+	{
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), "NULL (Drag an UI CheckBox Here)");
+	}
+	else
+	{
+		std::string gameObjectName(buttonui->GetGameObject().GetName());
+		std::string text = "(" + gameObjectName + ")" + ": UI CheckBox";
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), text.c_str());
+	}
+
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("GameObject"))
+		{
+			const uint* drop = (uint*)payload->Data;
+
+			GameObject* droppedGO = ModuleLayers::S_GetGameObject(*drop);
+			ComponentUISlider* component = nullptr;
+
+			if (droppedGO != nullptr)
+				component = droppedGO->GetComponent<ComponentUISlider>();
+
+			buttonui->SetComponent(component);
+		}
+		ImGui::EndDragDropTarget();
+	}
+}
+
+void DragBoxUISlider::OnSerialize(json& j)
+{
+	json _j;
+
+	API::API_UISlider* buttonui = (API::API_UISlider*)value;
+
+	if (buttonui->_UISlider != nullptr)
+	{
+		_j[valueName.c_str()] = buttonui->_UISlider->GetGameObject()->GetID();
+		j.push_back(_j);
+	}
+}
+
+void DragBoxUISlider::OnDeserialize(json& j)
+{
+	for (int i = 0; i < j.size(); i++)
+	{
+		if (j[i].find(valueName) != j[i].end())
+		{
+			uint id = j[i][valueName.c_str()];
+			GameObject* gameObject = ModuleLayers::S_GetGameObject(id);
+			ComponentUISlider* component = nullptr;
+			if (gameObject != nullptr)
+				component = gameObject->GetComponent<ComponentUISlider>();
+			if (component != nullptr)
+			{
+				API::API_UISlider* buttonui = (API::API_UISlider*)value;
 				buttonui->SetComponent(component);
 			}
 		}

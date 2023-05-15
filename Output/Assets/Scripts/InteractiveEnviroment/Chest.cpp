@@ -23,9 +23,10 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
 void Chest::Start()
 {
     openChestTime = maxOpenChestTime;
-    openChestTimeBar = 0;
+    //openChestTimeBar = 0.0f;
     opening = false;
-  
+    guideButton.GetGameObject().SetActive(false);
+    //guideButton.FillImage(1);
     initalPos = { -1.250, -0.700, 0 };
     movingPos = { -1.250, -0.700, 0 };
     Tutorial_Img.GetGameObject().GetTransform().SetPosition(initalPos);
@@ -35,7 +36,7 @@ void Chest::Start()
 
 void Chest::Update()
 {
-    guideButton.FillImage(openChestTimeBar / maxOpenChestTime);
+   
     if (opening)
     {
         openChestTime -= Time::GetRealTimeDeltaTime();
@@ -101,6 +102,10 @@ void Chest::Update()
 
         }
     }
+    guideButton.FillImage(openChestTime/maxOpenChestTime);
+    Console::Log("Barra Cofre" + std::to_string(openChestTimeBar));
+    Console::Log("Barra Cofre Activa" + std::to_string(guideButton.GetGameObject().IsActive()));
+
 
     if (activeTutorial == true && endTutorial == false && hideChest == false)
     {
@@ -153,7 +158,7 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
 
             float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
             float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
-
+                        
             if (abs(distanceX) < abs(distanceZ))
             {
                 if (distanceZ >= 0.0f && playerMove->aimAngle <= 90 && playerMove->aimAngle > -90) // chest up
@@ -216,7 +221,7 @@ void Chest::OnCollisionExit(API::API_RigidBody other)
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "Player")
     {
-        guideButton.GetGameObject().SetActive(false);
+       guideButton.GetGameObject().SetActive(false);
        
     }
 }

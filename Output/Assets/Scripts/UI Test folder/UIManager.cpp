@@ -18,13 +18,14 @@ HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script
 void UIManager::Start()
 {
 	currentPanel = CurrentPanel::NONE;
+	isPaused = true;
 }
 
 void UIManager::Update()
 {
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_START) == KeyState::KEY_DOWN)
 	{
-		if (currentPanel == CurrentPanel::NONE)
+		if (currentPanel == CurrentPanel::NONE && isPaused)
 		{
 			// Call Pause on game
 			Time::ChangeTimeScale(0.0f);
@@ -32,6 +33,7 @@ void UIManager::Update()
 			pausePanel.SetActive(true);
 			HUDPanel.SetActive(false);
 			currentPanel = CurrentPanel::PAUSE;
+			isPaused = false;
 		}
 
 	
@@ -76,6 +78,7 @@ void UIManager::ContinueGame()
 
 	currentPanel = CurrentPanel::NONE;
 
+	isPaused = true;
 }
 
 void UIManager::ShowInitialText()

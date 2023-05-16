@@ -4,6 +4,7 @@
 #include "..\..\Quests\Secondary_Quests\Mision_SomethingPersonal.h"
 #include "..\..\Quests\Secondary_Quests\Mision_TheRuleOfFive.h"
 #include "..\..\Quests\Secondary_Quests\Mision_RageMonster.h"
+//#include "..\..\Quests\Secondary_Quests\Mision_FirstClassTurbulence.h"
 #include "..\..\Player\PlayerStorage.h"
 #include "..\..\UI Test folder\Animation\AnimationMove.h"
 
@@ -33,6 +34,7 @@ void feedbackMission::Start()
 	mision_Personal = (Mision_SomethingPersonal*)missionsGO.GetScript("Mision_SomethingPersonal");
 	mision_RageMonster = (Mision_RageMonster*)missionsGO.GetScript("Mision_RageMonster");
 	mision_TheRule = (Mision_TheRuleOfFive*)missionsGO.GetScript("Mision_RageMonster");
+	//mision_FirstClassTurbulence = (Mision_FirstClassTurbulence*)missionsGO.GetScript("Mision_FirstClassTurbulence");
 
 	viusalFeedbackScript = (AnimationMove*)visualFeedback.GetScript("AnimationMove");
 }
@@ -94,6 +96,15 @@ void feedbackMission::Update()
 			misionCompleted_1_3 = false;
 			API_QuickSave::SetBool("mision_TheRule", true);
 		}
+		/*if (mision_FirstClassTurbulence->misionCompleted && misionCompleted_2_3)
+		{
+			visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
+			viusalFeedbackScript->ResetAnimationMoveX();
+			viusalFeedbackScript->PlayAnimationMoveX();
+			missionPostit2.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
+			misionCompleted_2_3 = false;
+			API_QuickSave::SetBool("mision_FirstClassTurbulence", true);
+		}*/
         break;
     case 4: // level 4
         break;

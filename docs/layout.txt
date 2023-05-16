@@ -1,0 +1,38 @@
+home:
+
+big logo
+catch phrase
+teaser to the 3 sub pages
+
+
+game:
+
+title img
+trailer youtube embed
+5 lines game description (history)
+download button
+features:
+    game pillars,
+    mechanics
+    characters
+    aesthetics and style
+    levels
+
+team:
+
+grid view with filters for role
+when click on someone pop up:
+    name
+    role
+    profile picture
+    brief desxcription personal thoughts
+    links (github, linkedin, email)
+    contributions + pictures
+
+production:
+
+overview of goals and objectives,
+organization methods, disctribution of tasks
+roadmap
+tools and knowledge used
+leads 

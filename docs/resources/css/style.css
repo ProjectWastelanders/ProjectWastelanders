@@ -47,6 +47,15 @@ h1 {
     color: inherit;
     font-size: 40px;
 }
+h_description {
+    text-align: center;
+    padding: 50px 0;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+    color: #000;
+    font-size: 20px;
+}
 
 /* By Dominik Biedebach @domobch */
 
@@ -212,7 +221,7 @@ section {
 
 h2 {
     font-size: 4rem;
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
     letter-spacing: .3rem;
     margin-top: 0;
@@ -257,7 +266,7 @@ h3 {
     font-size: 2.4rem;
     text-transform: uppercase;
     font-weight: 600;
-    color: #fff;
+    color: #000;
 }
 
 h4 {
@@ -275,6 +284,7 @@ h4 {
     /* margin-left: 20%; */
     line-height: 3rem;
     font-weight: 500;
+    color:#000
 }
 
 
@@ -287,7 +297,7 @@ h4 {
     font-size: 1.6rem;
     font-weight: 300;
     margin-top: 2rem;
-    color: #fff;
+    color: #d74680;/* this changes color of all little boxes */
 }
 
 
@@ -427,6 +437,15 @@ header {
 
 
 }
+.logo_3 {
+    height: auto;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
 
 /* Sticky Navigation */
 .sticky {
@@ -486,10 +505,19 @@ header {
     background: #643a70;
 }
 
-.hero-text-box {
+.home_title {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 114rem;
+}
+.game_title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 10%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 114rem;

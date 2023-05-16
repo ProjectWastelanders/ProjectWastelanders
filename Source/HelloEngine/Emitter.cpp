@@ -25,7 +25,7 @@ Emitter::Emitter()
 	playOnAwake = false;
 	enableEmissionModule = true;
 	ParticlesPerSecond = 1;
-	emitterTexture.numOfRows = 8;
+	emitterTexture.numOfRows = 4;
 }
 
 Emitter::~Emitter()
@@ -98,7 +98,7 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 	particle.blendFactor = 0.0f;
 
 	particle.particleAnim.textOffsets = float4 (0.0f,0.0f,0.0f,0.0f);
-	particle.particleAnim.texInfo = float2(0.0f, emitterTexture.numOfRows);
+	particle.particleAnim.texInfo = float2(emitterTexture.numOfRows, 0.0f);
 	
 	currentparticle--;
 
@@ -188,23 +188,25 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
 
 	manager->particleAnimInfos.push_back(ParticleList[i].particleAnim);
-
+	
 	Mesh& meshReference = manager->GetMap()[ParticleList[i]._instanceID].mesh;
 
 	meshReference.draw = true;
 
 	meshReference.modelMatrix = ParticleList[i].transformMat;
 
-	meshReference.textureID = ParticleList[i].texture._textureID;
+	meshReference.textureID = emitterTexture._textureID;
 
 	meshReference.CalculateBoundingBoxes();
 }
 
 void Emitter::UpdateParticlesOnScene(int i)
 {
-
-	ParticleList[i].UpdateTextureCoords();
-
+	/*if (ModuleInput::S_GetKey(SDL_SCANCODE_J) == KEY_DOWN)
+	{*/
+		ParticleList[i].UpdateTextureCoords(cont);
+		//cont++;
+	//}
 	// Compute all the calculus needed to move the particles
 
 
@@ -225,7 +227,7 @@ void Emitter::UpdateParticlesOnScene(int i)
 void Emitter::UpdateParticlesOnGame(int i)
 {
 	
-	ParticleList[i].UpdateTextureCoords();
+	//ParticleList[i].UpdateTextureCoords(cont);
 	// Compute all the calculus needed to move the particles
 	std::cout <<" EPAAAAAAA" << "\n";
 

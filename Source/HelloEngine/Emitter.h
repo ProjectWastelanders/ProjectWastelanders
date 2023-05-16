@@ -45,6 +45,7 @@ public:
 	int64_t _meshID = -1;
 
 private:
+	int cont = 0;
 	//Position Emitter
 	float3 position;
 	

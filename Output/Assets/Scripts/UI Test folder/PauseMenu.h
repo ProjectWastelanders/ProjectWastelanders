@@ -6,6 +6,8 @@
 #include "API/API.h"
 #include"API/API_UIImage.h"
 
+class UIManager;
+
 class PauseMenu : HelloBehavior
 {
 public:
@@ -17,6 +19,7 @@ public:
 	API_UIButton continueButton;
 	API_UIButton settingsButton;
 	API_UIButton mainMenuButton;
+	UIManager* manager;
 
 };
 

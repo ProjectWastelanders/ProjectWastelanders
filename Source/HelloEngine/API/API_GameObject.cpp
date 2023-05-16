@@ -69,7 +69,12 @@ void API::API_GameObject::SetTag(const char* tag)
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! GetTag()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! SetTag()");
+        return;
+    }
+    if (tag == nullptr)
+    {
+        Console::S_Log("Trying to set as tag an empry string! SetTag()");
         return;
     }
     _gameObject->tag = tag;

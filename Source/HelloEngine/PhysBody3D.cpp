@@ -34,7 +34,10 @@ void PhysBody3D::Push(float x, float y, float z)
 void PhysBody3D::SetVelocity(float x, float y, float z)
 {
 	if (body)
+	{
+		body->forceActivationState(DISABLE_DEACTIVATION);
 		body->setLinearVelocity(btVector3(x, y, z));
+	}
 }
 
 void PhysBody3D::GetTransform(float* matrix) const

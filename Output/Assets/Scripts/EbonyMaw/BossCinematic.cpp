@@ -13,6 +13,7 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragBoxUIImage("Dialog 3", &classInstance->Dialog_3);
     script->AddDragBoxUIImage("Dialog 4", &classInstance->Dialog_4);
     script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_5);
+    script->AddDragBoxUIImage("Dialog 6", &classInstance->Dialog_6);
 
 	return classInstance;
 }
@@ -24,6 +25,8 @@ void BossCinematic::Start()
     playerMov = (PlayerMove*)player.GetScript("PlayerMove");
 
     activeCinematic = false;
+    nextDialog = false;
+    animBoss = false;
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
@@ -45,12 +48,24 @@ void BossCinematic::Start()
 
     Dialog_5.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_5.GetGameObject().SetActive(false);
+
+    Dialog_6.GetGameObject().GetTransform().SetPosition(initalPos);
+    Dialog_6.GetGameObject().SetActive(false);
 }
 void BossCinematic::Update()
 {
     if (bLoop != nullptr && camMov != nullptr && playerMov != nullptr)
     {
-        if (activeCinematic) {
+        if (!animBoss)
+        {
+            animBoss = true;
+            bLoop->animationPlayer.ChangeAnimation(bLoop->idleAnim);
+            bLoop->animationPlayer.SetLoop(true);
+            bLoop->animationPlayer.Play();
+        } 
+
+
+        if (activeCinematic) {            
 
             switch (currentDialog)
             {
@@ -67,12 +82,16 @@ void BossCinematic::Update()
                 PrintDialog(Dialog_3);
                 break;
             case 4:
-                camMov->target = player;
+                camMov->target = boss;
                 PrintDialog(Dialog_4);
                 break;
             case 5:
-                camMov->target = boss;
+                camMov->target = player;
                 PrintDialog(Dialog_5);
+                break;
+            case 6:
+                camMov->target = boss;
+                PrintDialog(Dialog_6);
                 break;
             }
         }
@@ -82,19 +101,14 @@ void BossCinematic::Update()
 void BossCinematic::PrintDialog(API_UIImage &Dialog)
 {
     Dialog.GetGameObject().SetActive(true);
-    if (Dialog.GetGameObject().GetTransform().GetLocalPosition().y < finalPos.y)
-    {
-        movingPos.y += 1 * Time::GetDeltaTime();
-    }
 
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_RETURN) == KeyState::KEY_DOWN)
-    {
-        if (Dialog.GetGameObject().GetTransform().GetLocalPosition().y > initalPos.y)
+    if (nextDialog) {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
         {
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 5) {
+            if (currentDialog == 6) {
                 camMov->target = player;
                 bLoop->battle = true;
                 activeCinematic = false;
@@ -102,9 +116,23 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
             }
             else {
                 currentDialog += 1;
+                nextDialog = false;
+                Dialog.GetGameObject().SetActive(false);
             }
         }
     }
+    else {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
+        {
+            movingPos.y += 1 * Time::GetDeltaTime();
+        }
+        if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_RETURN) == KeyState::KEY_DOWN)
+        {
+            nextDialog = true;
+        }
+    }
+    
+    Dialog.GetGameObject().GetTransform().SetPosition(movingPos);    
 }
 
 void BossCinematic::OnCollisionEnter(API::API_RigidBody other)
@@ -113,6 +141,6 @@ void BossCinematic::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         activeCinematic = true;
-        playerMov->openingChest = true;
+        //playerMov->openingChest = true;
     }
 }

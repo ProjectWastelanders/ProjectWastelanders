@@ -96,6 +96,31 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Continue": 351199318
+                    },
+                    {
+                        "NewGame": 1741124431
+                    },
+                    {
+                        "Exit": 1551021094
+                    },
+                    {
+                        "Settings": 3765630460
+                    },
+                    {
+                        "Panel Main Menu": 2377698017
+                    },
+                    {
+                        "Panel Settings Menu": 793174522
+                    }
+                ],
+                "Script Resource": 2459103775,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
@@ -140,12 +165,6 @@
                     3765630460,
                     1551021094
                 ]
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": null,
-                "Script Resource": 3963797722,
-                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
@@ -660,7 +679,10 @@
                 "MeshEnabled": false,
                 "Type": 16,
                 "listButtons": [
-                    0
+                    1288501553,
+                    4014868040,
+                    2063935289,
+                    3314231203
                 ]
             }
         ],

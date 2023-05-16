@@ -14,5 +14,10 @@ public:
 	API_UIButton NewGame;
 	API_UIButton Exit;
 	API_UIButton Settings;
+
+	API_GameObject settingsPanel;
+	API_GameObject mainPanel;
+
+	bool settingsActive;
 };
 

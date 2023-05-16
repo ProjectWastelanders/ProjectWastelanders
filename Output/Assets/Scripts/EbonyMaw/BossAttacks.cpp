@@ -81,7 +81,7 @@ void BossAttacks::Update()
 		}
 	}
 
-	if (distSA < 80.0f) {
+	if (distSA < 80.0f && bLoop->battle) {
 		if (bLoop->phase == 2) {
 			specialAttackCooldown += Time::GetDeltaTime();
 		}
@@ -179,11 +179,12 @@ void BossAttacks::Update()
 				case BossAttacks::BOSS_STATE::THROWING:
 					currentTimeAttack += Time::GetDeltaTime();
 
-					if (bLoop->animState != BossLoop::AnimationState::THROWOBJ)
+					if (!animAttack)
 					{
+						animAttack = true;
 						bLoop->animState = BossLoop::AnimationState::THROWOBJ;
 						bLoop->animationPlayer.ChangeAnimation(bLoop->throwObjAnim);
-						bLoop->animationPlayer.SetLoop(false);
+						bLoop->animationPlayer.SetLoop(true);
 						bLoop->animationPlayer.Play();
 					}
 
@@ -198,6 +199,7 @@ void BossAttacks::Update()
 					if (currentTimeAttack >= timeAttack[numRocks[attackType]]) {
 						bossState = BOSS_STATE::IDLE;
 						attacking = false;
+						animAttack = false;
 					}
 
 					break;

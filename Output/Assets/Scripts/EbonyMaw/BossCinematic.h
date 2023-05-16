@@ -21,6 +21,7 @@ public:
 	API_UIImage Dialog_3;
 	API_UIImage Dialog_4;
 	API_UIImage Dialog_5;
+	API_UIImage Dialog_6;
 
 	API_GameObject player;
 	API_GameObject boss;
@@ -34,7 +35,7 @@ public:
 	CamMov* camMov;
 	PlayerMove* playerMov;
 
-	bool activeCinematic;
+	bool activeCinematic, nextDialog, animBoss;
 	int currentDialog;
 
 };

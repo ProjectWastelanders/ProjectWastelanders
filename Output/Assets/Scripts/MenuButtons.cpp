@@ -8,12 +8,15 @@ HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* sc
     script->AddDragBoxUIButton("Exit", &classInstance->Exit);
     script->AddDragBoxUIButton("Settings", &classInstance->Settings);
 
+    script->AddDragBoxGameObject("Panel Main Menu", &classInstance->mainPanel);
+    script->AddDragBoxGameObject("Panel Settings Menu", &classInstance->settingsPanel);
+
     return classInstance;
 }
 
 void MenuButtons::Start()
 {
-
+    settingsActive = true;
 }
 void MenuButtons::Update()
 {
@@ -48,7 +51,19 @@ void MenuButtons::Update()
     {
         Game::ExitApplication();
     }
-    if (Settings.OnPress())
+    if (Settings.OnPress() && settingsActive)
     {
+        settingsPanel.SetActive(true);
+        mainPanel.SetActive(false);
+    }
+
+    if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
+    {
+        if (settingsPanel.IsActive())
+        {
+            settingsPanel.SetActive(false);
+            mainPanel.SetActive(true);
+            settingsActive = true;
+        }
     }
 }

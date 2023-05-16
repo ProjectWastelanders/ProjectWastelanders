@@ -13,7 +13,7 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragBoxUIImage("Dialog 3", &classInstance->Dialog_3);
     script->AddDragBoxUIImage("Dialog 4", &classInstance->Dialog_4);
     script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_5);
-    script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_6);
+    script->AddDragBoxUIImage("Dialog 6", &classInstance->Dialog_6);
 
 	return classInstance;
 }
@@ -48,6 +48,9 @@ void BossCinematic::Start()
 
     Dialog_5.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_5.GetGameObject().SetActive(false);
+
+    Dialog_6.GetGameObject().GetTransform().SetPosition(initalPos);
+    Dialog_6.GetGameObject().SetActive(false);
 }
 void BossCinematic::Update()
 {
@@ -79,12 +82,16 @@ void BossCinematic::Update()
                 PrintDialog(Dialog_3);
                 break;
             case 4:
-                camMov->target = player;
+                camMov->target = boss;
                 PrintDialog(Dialog_4);
                 break;
             case 5:
-                camMov->target = boss;
+                camMov->target = player;
                 PrintDialog(Dialog_5);
+                break;
+            case 6:
+                camMov->target = boss;
+                PrintDialog(Dialog_6);
                 break;
             }
         }
@@ -101,7 +108,7 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 5) {
+            if (currentDialog == 6) {
                 camMov->target = player;
                 bLoop->battle = true;
                 activeCinematic = false;

@@ -34,7 +34,7 @@ public:
 	CamMov* camMov;
 	PlayerMove* playerMov;
 
-	bool activeCinematic;
+	bool activeCinematic, nextDialog, animBoss;
 	int currentDialog;
 
 };

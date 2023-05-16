@@ -14,18 +14,17 @@ HELLO_ENGINE_API_C PauseMenu* CreatePauseMenu(ScriptToInspectorInterface* script
 
 void PauseMenu::Start()
 {
-
+	manager = (UIManager*)uiManager.GetScript("UIManager");
 }
 void PauseMenu::Update()
 {
 	if (continueButton.OnPress())
 	{
-		UIManager* manager = (UIManager*)uiManager.GetScript("UIManager");
 		manager->ContinueGame();
 	}
 	else if (settingsButton.OnPress())
 	{
-		// No settings yet!
+		manager->ShowSettings();
 	}
 	else if (mainMenuButton.OnPress())
 	{

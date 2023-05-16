@@ -23,7 +23,7 @@ void Map::Start()
 
 void Map::Update()
 {
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_M) == KeyState::KEY_DOWN)
+    /*if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_M) == KeyState::KEY_DOWN)
     {
         if (mapOpen)
         {
@@ -40,5 +40,5 @@ void Map::Update()
             casette2.SetActive(playerStorage->casette2Picked);
             casette3.SetActive(playerStorage->casette3Picked);
         }
-    }
+    }*/
 }

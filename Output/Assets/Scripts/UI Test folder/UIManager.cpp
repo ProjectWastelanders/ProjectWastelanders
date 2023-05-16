@@ -10,6 +10,8 @@ HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script
 	script->AddDragBoxUIButton("Continute button Initial text", &classInstance->initialTextConinue);
 	script->AddDragBoxUIButton("Continute button Final text", &classInstance->finalTextConinue);
 
+	script->AddDragBoxGameObject("Settings Panel", &classInstance->settingsPanel);
+
 	return classInstance;
 }
 
@@ -31,16 +33,28 @@ void UIManager::Update()
 			HUDPanel.SetActive(false);
 			currentPanel = CurrentPanel::PAUSE;
 		}
+
 	
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_LEFT) == KeyState::KEY_DOWN)
 	{
-		if (currentPanel != CurrentPanel::PAUSE)
+		if (currentPanel != CurrentPanel::PAUSE && currentPanel != CurrentPanel::SETTINGS)
 		{
 			bool hasMap = currentPanel != CurrentPanel::MAP;
 			mapPanel.SetActive(hasMap);
 			HUDPanel.SetActive(!hasMap);
 			currentPanel = hasMap ? CurrentPanel::MAP : CurrentPanel::NONE;
+		}
+		if (currentPanel == CurrentPanel::SETTINGS)
+		{
+			CloseSettings();
+		}
+	}
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
+	{
+		if (currentPanel == CurrentPanel::SETTINGS)
+		{
+			CloseSettings();
 		}
 	}
 
@@ -72,4 +86,20 @@ void UIManager::ShowInitialText()
 void UIManager::ShowFinalText()
 {
 	finalText.SetActive(true);
+}
+
+void UIManager::ShowSettings()
+{
+	settingsPanel.SetActive(true);
+	pausePanel.SetActive(false);
+
+	currentPanel = CurrentPanel::SETTINGS;
+}
+
+void UIManager::CloseSettings()
+{
+	settingsPanel.SetActive(false);
+	pausePanel.SetActive(true);
+
+	currentPanel = CurrentPanel::PAUSE;
 }

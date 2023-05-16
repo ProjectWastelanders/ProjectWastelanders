@@ -24,7 +24,7 @@ void PlayerAutomatic::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("automatic_level")); // read from save file
+    //SetGunStatsPerLevel(API_QuickSave::GetInt("automatic_level")); // read from save file
 
     if (cadence == 0)
     {

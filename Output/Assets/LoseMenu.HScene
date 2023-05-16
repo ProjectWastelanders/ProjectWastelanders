@@ -146,13 +146,10 @@
                         "Continue": 351199318
                     },
                     {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
+                        "Return": 1551021094
                     },
                     {
-                        "Continue": 351199318
-                    },
-                    {
-                        "Screen type (0:LEVEL2,1:WIN,2:LOSE)": 1
+                        "Respawn in lvl:": 1
                     }
                 ],
                 "Script Resource": 2840601128,

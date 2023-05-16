@@ -46,6 +46,8 @@ public:
 
     float hp = 1500.0f;
 
+    bool battle = false;
+
     bool isBossAlive = false;
     bool isBossActive = false;
     bool canTakeDamage = false;

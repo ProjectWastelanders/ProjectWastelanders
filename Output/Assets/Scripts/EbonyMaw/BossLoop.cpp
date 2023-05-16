@@ -66,7 +66,7 @@ void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
-    if (dist < 80.0f) {
+    if (dist < 80.0f && battle) {
         if (hp > 0) {
             if (canTakeDamage == true) {
                 dt = Time::GetDeltaTime();

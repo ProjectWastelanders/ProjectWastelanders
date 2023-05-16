@@ -308,12 +308,12 @@ void ScriptComponent::AddDragBoxMaterialComponent(const char* name, API::API_Mat
 
 void ScriptComponent::AddDragBoxParticleSystem(const char* name, API::API_ParticleSystem* value)
 {
-    DragBoxParticleSystem* dragBoxField = new DragBoxParticleSystem();
-    dragBoxField->valueName = name;
-    dragBoxField->value = value;
-    dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+	DragBoxParticleSystem* dragBoxField = new DragBoxParticleSystem();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
 
-    inspectorFields.push_back(dragBoxField);
+	inspectorFields.push_back(dragBoxField);
 }
 
 void ScriptComponent::AddDragBoxUIButton(const char* name, API::API_UIButton* value)
@@ -359,6 +359,16 @@ void ScriptComponent::AddDragBoxUIText(const char* name, API::API_UIText* value)
 void ScriptComponent::AddDragBoxUICheckBox(const char* name, API::API_UICheckBox* value)
 {
 	DragBoxUICheckBox* dragBoxField = new DragBoxUICheckBox();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
+void ScriptComponent::AddDragBoxUISlider(const char* name, API::API_UISlider* value)
+{
+	DragBoxUISlider* dragBoxField = new DragBoxUISlider();
 	dragBoxField->valueName = name;
 	dragBoxField->value = value;
 	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;

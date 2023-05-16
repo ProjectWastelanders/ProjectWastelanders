@@ -38,5 +38,7 @@ public:
 	API_UIButton finalTextConinue;
 
 	CurrentPanel currentPanel;
+
+	bool isPaused;
 };
 

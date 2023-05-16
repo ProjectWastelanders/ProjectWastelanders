@@ -33,16 +33,21 @@ void UIManager::Update()
 			HUDPanel.SetActive(false);
 			currentPanel = CurrentPanel::PAUSE;
 		}
+
 	
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_LEFT) == KeyState::KEY_DOWN)
 	{
-		if (currentPanel != CurrentPanel::PAUSE)
+		if (currentPanel != CurrentPanel::PAUSE && currentPanel != CurrentPanel::SETTINGS)
 		{
 			bool hasMap = currentPanel != CurrentPanel::MAP;
 			mapPanel.SetActive(hasMap);
 			HUDPanel.SetActive(!hasMap);
 			currentPanel = hasMap ? CurrentPanel::MAP : CurrentPanel::NONE;
+		}
+		if (currentPanel == CurrentPanel::SETTINGS)
+		{
+			CloseSettings();
 		}
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)

@@ -178,7 +178,6 @@ void BossLoop::Update()
 void BossLoop::OnCollisionEnter(API::API_RigidBody other)
 {
     std::string detectionName = other.GetGameObject().GetName();
-
     if (hp > 0) {
         if (detectionName == "Player")
         {

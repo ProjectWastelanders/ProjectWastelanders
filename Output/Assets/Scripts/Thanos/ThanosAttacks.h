@@ -37,7 +37,7 @@ public:
 	API_GameObject sword;
 	API_GameObject bTarget;
 	bool swordThrown = false;
-	float swordSpeed = 1.0f;
+	float swordSpeed = 0.5f;
 	API_Vector3 aimPosition;
 	float swordTime = 0.0f;
 
@@ -170,6 +170,10 @@ public:
 	uint thanosWalkAnimation;
 	uint thanosWalk2Animation;
 	uint thanosWalkBackwardsAnimation;
+	uint thanosPunchAttack;
+	uint thanosPunchAttack2;
+	
+	bool punchAnimation = false;
 
 	bool justRandOnce = false;
 	float meteorAnimationCooldown = 0.0f;

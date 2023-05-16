@@ -220,14 +220,14 @@ void BossAttacks::Update()
 				break;
 			case 4:
 				explosionTime += Time::GetDeltaTime();
-				explosionWave1.GetTransform().Scale(20.0f * Time::GetDeltaTime());
-				if (explosionTime < 0.5 && distSA < 30.0 && explosionWave1HasArrived == false) {
+				//explosionWave1.GetTransform().Scale(20.0f * Time::GetDeltaTime());
+				if (explosionTime < 0.5 && distSA < 15.0 && explosionWave1HasArrived == false) {
 					pStats->TakeDamage(50,0);
 					explosionWave1HasArrived = true;
 				}
-				if (explosionTime >= 0.5 && distSA > 30.0 && distSA < 60.0 && explosionWave2HasArrived == false) {
+				if (explosionTime >= 0.5 && distSA > 15.0 && distSA < 30.0 && explosionWave2HasArrived == false) {
 
-					pStats->TakeDamage(1,0);
+					pStats->TakeDamage(0,0);
 
 					API_Vector3 normalizedvector = boss.GetTransform().GetGlobalPosition() - player.GetTransform().GetGlobalPosition();
 					float x = normalizedvector.x * normalizedvector.x;
@@ -243,6 +243,8 @@ void BossAttacks::Update()
 				if (explosionTime > 0.6) {
 					bLoop->exploting = false;
 					explosionWave1.SetActive(false);
+					explosionWave1.GetParticleSystem().Stop();
+					explosionWave1.GetParticleSystem().StopEmitting();
 					bossState = BOSS_STATE::IDLE;
 					attacking = false;
 				}
@@ -398,7 +400,7 @@ void BossAttacks::Update()
 					explosionWave2HasArrived = false;
 					bossState = BOSS_STATE::EXPLOSIONWAVE;
 					explosionWave1.SetActive(true);
-					explosionWave1.GetTransform().SetScale(0.1f, 0.1f, 0.1f);
+					explosionWave1.GetParticleSystem().Play();
 				}
 
 				if (attackType == 5) {

@@ -13,6 +13,7 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragBoxUIImage("Dialog 3", &classInstance->Dialog_3);
     script->AddDragBoxUIImage("Dialog 4", &classInstance->Dialog_4);
     script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_5);
+    script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_6);
 
 	return classInstance;
 }

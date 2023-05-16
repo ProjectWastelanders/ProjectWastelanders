@@ -24,6 +24,8 @@ void BossCinematic::Start()
     playerMov = (PlayerMove*)player.GetScript("PlayerMove");
 
     activeCinematic = false;
+    nextDialog = false;
+    animBoss = false;
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
@@ -50,7 +52,16 @@ void BossCinematic::Update()
 {
     if (bLoop != nullptr && camMov != nullptr && playerMov != nullptr)
     {
-        if (activeCinematic) {
+        if (!animBoss)
+        {
+            animBoss = true;
+            bLoop->animationPlayer.ChangeAnimation(bLoop->idleAnim);
+            bLoop->animationPlayer.SetLoop(true);
+            bLoop->animationPlayer.Play();
+        } 
+
+
+        if (activeCinematic) {            
 
             switch (currentDialog)
             {
@@ -82,14 +93,9 @@ void BossCinematic::Update()
 void BossCinematic::PrintDialog(API_UIImage &Dialog)
 {
     Dialog.GetGameObject().SetActive(true);
-    if (Dialog.GetGameObject().GetTransform().GetLocalPosition().y < finalPos.y)
-    {
-        movingPos.y += 1 * Time::GetDeltaTime();
-    }
 
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_RETURN) == KeyState::KEY_DOWN)
-    {
-        if (Dialog.GetGameObject().GetTransform().GetLocalPosition().y > initalPos.y)
+    if (nextDialog) {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
         {
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
@@ -102,9 +108,23 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
             }
             else {
                 currentDialog += 1;
+                nextDialog = false;
+                Dialog.GetGameObject().SetActive(false);
             }
         }
     }
+    else {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
+        {
+            movingPos.y += 1 * Time::GetDeltaTime();
+        }
+        if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_RETURN) == KeyState::KEY_DOWN)
+        {
+            nextDialog = true;
+        }
+    }
+    
+    Dialog.GetGameObject().GetTransform().SetPosition(movingPos);    
 }
 
 void BossCinematic::OnCollisionEnter(API::API_RigidBody other)
@@ -113,6 +133,6 @@ void BossCinematic::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         activeCinematic = true;
-        playerMov->openingChest = true;
+        //playerMov->openingChest = true;
     }
 }

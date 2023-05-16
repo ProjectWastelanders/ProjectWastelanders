@@ -66,6 +66,11 @@ void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
+    if (!battle)
+    {
+        rockShield.SetActive(false);
+    }
+
     if (dist < 80.0f && battle) {
         if (hp > 0) {
             if (canTakeDamage == true) {

@@ -25,7 +25,7 @@ Emitter::Emitter()
 	playOnAwake = false;
 	enableEmissionModule = true;
 	ParticlesPerSecond = 1;
-	emitterTexture.numOfRows = 4;
+	emitterTexture.numOfRows = 8;
 }
 
 Emitter::~Emitter()
@@ -202,11 +202,11 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 void Emitter::UpdateParticlesOnScene(int i)
 {
-	
+
 	ParticleList[i].UpdateTextureCoords();
 
 	// Compute all the calculus needed to move the particles
-	
+
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::EngineTimeDeltaTime();

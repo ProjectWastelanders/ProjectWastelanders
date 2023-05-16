@@ -76,7 +76,9 @@ void Particle::UpdateTextureCoords()
 	std::cout << particleAnim.textOffsets.w << " TexOffset W " << "\n";
 	std::cout << index1 << " / " << " Index 1" << "\n";
 	std::cout << index2 << " / " << " Index 2" << "\n";
+	std::cout << elapsedTime << "elapsed time ";
 	std::cout << atlasProgression << " AtlasProgression" << "\n\n";
+	
 
 }
 

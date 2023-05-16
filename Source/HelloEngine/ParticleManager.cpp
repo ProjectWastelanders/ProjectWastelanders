@@ -134,6 +134,7 @@ void ParticleManager::Draw()
 				}
 			}
 
+
 			emitter->UpdateParticles();
 
 			if (emitter->manager->isParticle && emitter->component->_resourceText && emitter->component->_resourceText->isTransparent)

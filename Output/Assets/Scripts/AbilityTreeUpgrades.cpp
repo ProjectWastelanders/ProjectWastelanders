@@ -38,12 +38,15 @@ void AbilityTreeUpgrades::Start()
 
 void AbilityTreeUpgrades::Update()
 {
+    if (!isOn)
+        return;
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN && currentPanel.IsEnabled())
     {
         Audio::Event("click");
         Input::HandleGamePadButton(GamePadButton::BUTTON_B);
         mainPanel.SetEnable(true);
         currentPanel.SetEnable(false);
+        isOn = false;
         return;
     }
 

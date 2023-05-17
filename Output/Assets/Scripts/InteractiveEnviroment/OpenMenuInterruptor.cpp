@@ -44,18 +44,12 @@ void OpenMenuInterruptor::OnCollisionStay(API::API_RigidBody other)
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "Player")
     {
-        if (open) return;
 
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN)
         {
-            playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
-            if (playerMove != nullptr) playerMove->openingChest = true;
-
-            float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
-            float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
-
+            //playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
+            //if (playerMove != nullptr) playerMove->openingChest = true;
             OpenMenus();
-            open = true;
 
         }
     }

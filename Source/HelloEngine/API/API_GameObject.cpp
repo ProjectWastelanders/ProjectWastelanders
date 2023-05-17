@@ -21,6 +21,8 @@
 #include "NavAgentComponent.h"
 #include "API_UIButton.h"
 #include "ComponentUIButton.h"
+#include "ComponentUIImage.h"
+#include "API_UIImage.h"
 
 API::API_GameObject::API_GameObject()
 {
@@ -94,7 +96,7 @@ void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! AddScript()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetChildren()");
         return;
     }
     std::vector<GameObject*>* children = _gameObject->GetChildren();
@@ -110,6 +112,18 @@ void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
         if (currentCount == count)
             return;
     }
+}
+
+API::API_GameObject API::API_GameObject::GetParent()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetParent()");
+        return API_GameObject();
+    }
+    API_GameObject parent;
+    parent.SetGameObject(_gameObject->GetParent());
+    return parent;
 }
 
 HelloBehavior* API::API_GameObject::AddScript(const char* className)
@@ -350,6 +364,18 @@ API::API_UIButton API::API_GameObject::GetUIButton()
     }
     API_UIButton ret;
     ret.SetComponent(_gameObject->GetComponent<ComponentUIButton>());
+    return ret;
+}
+
+API::API_UIImage API::API_GameObject::GetUIImage()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetButton()");
+        return API::API_UIImage();
+    }
+    API_UIImage ret;
+    ret.SetComponent(_gameObject->GetComponent<ComponentUIImage>());
     return ret;
 }
 

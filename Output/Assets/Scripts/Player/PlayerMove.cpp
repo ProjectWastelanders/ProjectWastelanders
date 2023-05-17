@@ -60,6 +60,8 @@ void PlayerMove::Start()
     else dashesAvailable = 1;
     dashBuffer = false;
 
+    playerAnimator.Play();
+
     impulseTime = 0.0f;
 }
 

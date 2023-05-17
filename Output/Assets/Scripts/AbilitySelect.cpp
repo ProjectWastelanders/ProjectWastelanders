@@ -1,4 +1,5 @@
 #include "AbilitySelect.h"
+#include "AbilityTreeUpgrades.h"
 HELLO_ENGINE_API_C AbilitySelect* CreateAbilitySelect(ScriptToInspectorInterface* script)
 {
     AbilitySelect* classInstance = new AbilitySelect();
@@ -38,6 +39,9 @@ void AbilitySelect::Update()
 
         mainPanel.SetEnable(false);
         abilityPanel.SetEnable(true);
+
+        AbilityTreeUpgrades* panelScript = (AbilityTreeUpgrades*)abilityPanel.GetGameObject().GetScript("AbilityTreeUpgrades");
+        panelScript->isOn = true;
         waitFrame = true;
     }
     else if (!abilitySelect.OnHovered())

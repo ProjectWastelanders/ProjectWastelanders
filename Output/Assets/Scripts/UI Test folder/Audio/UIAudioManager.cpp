@@ -3,14 +3,6 @@ HELLO_ENGINE_API_C UIAudioManager* CreateUIAudioManager(ScriptToInspectorInterfa
 {
 	UIAudioManager* classInstance = new UIAudioManager();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
-	script->AddDragBoxUIText("Text Master Volume", &classInstance->masterText);
-	script->AddDragBoxUIText("Text SFX Volume", &classInstance->sfxText);
-	script->AddDragBoxUIText("Text Music Volume", &classInstance->musicText);
-
-	script->AddDragBoxUISlider("Slider Master", &classInstance->masterSlider);
-	script->AddDragBoxUISlider("Slider SFX", &classInstance->sfxSlider);
-	script->AddDragBoxUISlider("Slider Music", &classInstance->musicSlider);
-
 	return classInstance;
 	 
 }
@@ -44,21 +36,5 @@ void UIAudioManager::Update()
 		{
 			Audio::Event("hover");
 		}
-	}
-
-	if (masterSlider.OnHovered())
-	{
-		Console::Log(std::to_string(masterSlider.GetValue()).c_str());
-		masterText.SetText(std::to_string(masterSlider.GetValue()).c_str());
-	}
-
-	if (sfxSlider.OnHovered())
-	{
-		sfxText.SetText(std::to_string(sfxSlider.GetValue()).c_str());
-	}
-
-	if (musicSlider.OnHovered())
-	{
-		musicText.SetText(std::to_string(musicSlider.GetValue()).c_str());
 	}
 }

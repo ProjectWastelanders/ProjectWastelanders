@@ -2,6 +2,7 @@
 #include "InteractiveEnviroment/OpenMenuInterruptor.h"
 #include "Player/PlayerMove.h"
 #include "AbilityTreeUpgrades.h"
+#include "UI Test folder/HUB/HUB_UIManager.h"
 
 HELLO_ENGINE_API_C AbilityTreeScript* CreateAbilityTreeScript(ScriptToInspectorInterface* script)
 {
@@ -46,6 +47,7 @@ void AbilityTreeScript::Update()
         {
             PanelAbility[i].SetActive(false);
         }
+        HUB_UIManager::ClosePanel();
         return;
     }
 

@@ -9,9 +9,5 @@ HELLO_ENGINE_API_C LevelPreset* CreateLevelPreset(ScriptToInspectorInterface* sc
 
 void LevelPreset::Start()
 {
-	std::vector<std::string> levels = { "level1Selected" , "level2Selected", "level3Selected" , "level4Selected" };
-	for (int i = 0; i < levels.size(); i++)
-	{
-		API_QuickSave::SetBool(levels.at(i), i == (lvlToSpawn - 1) ? true : false);
-	}
+	API_QuickSave::SetInt("currentSelectedLevel", lvlToSpawn);
 }

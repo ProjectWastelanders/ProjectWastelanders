@@ -11,12 +11,13 @@ HELLO_ENGINE_API_C ScoreScreen* CreateScoreScreen(ScriptToInspectorInterface* sc
 
 void ScoreScreen::Start()
 {
+	lvlToSpawn = API_QuickSave::GetInt("currentSelectedLevel") + 1;
 	hasToStart = true;
 }
 
 void ScoreScreen::Update()
 {
-	if (hasToStart == true) 
+	/*if (hasToStart == true) 
 	{
 		std::vector<std::string> levels = { "level1Selected" , "level2Selected", "level3Selected" , "level4Selected" };
 		for (int i = 0; i < levels.size(); i++) 
@@ -35,7 +36,7 @@ void ScoreScreen::Update()
 		}
 
 		hasToStart = false;
-	}
+	}*/
 
 	switch (lvlToSpawn)
 	{

@@ -1,4 +1,5 @@
 #include "HUB_LevelSelect.h"
+#include "HUB_UIManager.h"
 HELLO_ENGINE_API_C HUB_LevelSelect* CreateHUB_LevelSelect(ScriptToInspectorInterface* script)
 {
 	HUB_LevelSelect* classInstance = new HUB_LevelSelect();
@@ -46,8 +47,9 @@ void HUB_LevelSelect::Update()
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
 		std::string message = this->gameObject.GetName();
-		Console::Log("Curretn game object: " + message);
 		this->gameObject.SetActive(false);
+		HUB_UIManager::ClosePanel();
+
 		return;
 	}
 

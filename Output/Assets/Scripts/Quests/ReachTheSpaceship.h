@@ -28,5 +28,7 @@ public:
     API_GameObject finalText;
 
     API_GameObject enebledEnemies[8];
+
+    bool uwu = false;
 };
 

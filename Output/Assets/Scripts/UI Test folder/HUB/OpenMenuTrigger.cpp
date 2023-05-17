@@ -1,4 +1,5 @@
 #include "OpenMenuTrigger.h"
+#include "HUB_UIManager.h"
 HELLO_ENGINE_API_C OpenMenuTrigger* CreateOpenMenuTrigger(ScriptToInspectorInterface* script)
 {
 	OpenMenuTrigger* classInstance = new OpenMenuTrigger();
@@ -23,9 +24,13 @@ void OpenMenuTrigger::Update()
 
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN && !menu.IsActive())
 	{
+		if (HUB_UIManager::IsPanelOpened())
+			return;
+
 		Input::HandleGamePadButton(GamePadButton::BUTTON_X);
 		menu.SetActive(true);
 		secondaryMenu.SetActive(true);
+		HUB_UIManager::OpenPanel();
 	}
 }
 

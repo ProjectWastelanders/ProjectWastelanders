@@ -14,10 +14,8 @@ public:
 	void Start() override; 
 	void Update() override;
 
-	API_UIButton weapon1;
-	API_UIButton weapon2;
-	API_UIButton weapon3;
-	API_UIButton weapon4;
+	API_UIButton weapons[4];
+
 	API_UIButton proceedButton;
 
 	API_UIImage infoWeapon;

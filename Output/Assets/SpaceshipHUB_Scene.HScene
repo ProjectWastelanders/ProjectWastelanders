@@ -10790,13 +10790,13 @@
                         "Material componentt": 3010741293
                     },
                     {
-                        "R (MIN 1.0F)": 2.0
+                        "R (MIN 1.0F)": 1.5
                     },
                     {
-                        "G (MIN 1.0F)": 2.0
+                        "G (MIN 1.0F)": 1.5
                     },
                     {
-                        "B (MIN 1.0F)": 2.0
+                        "B (MIN 1.0F)": 1.5
                     },
                     {
                         "Fade In time": 1.5
@@ -11373,7 +11373,10 @@
                         "Number of menus": 1
                     },
                     {
-                        "Menu to Open 1": 4119569708
+                        "Menu to Open 1": 339357948
+                    },
+                    {
+                        "Menu to Open 2": 4119569708
                     },
                     {
                         "Menu Panel": 4119569708
@@ -11388,7 +11391,7 @@
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "GoToLevel1Trigger",
+        "Name": "GoToLevelTrigger",
         "ParentUID": 2830428646,
         "PrefabUID": 0,
         "Tag": "Default",
@@ -11420,7 +11423,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.7094473838806152,
+                "Aspect ratio": 1.745519757270813,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -12939,16 +12942,7 @@
                         "Idle Animation 3": 1590499778
                     },
                     {
-                        "Run Forward Animation": 781813718
-                    },
-                    {
-                        "Run Back Animation": 915742792
-                    },
-                    {
-                        "Run Left Animation": 4072259668
-                    },
-                    {
-                        "Run Right Animation": 3628832266
+                        "Run Animation": 781813718
                     },
                     {
                         "Shoot Duals Animation": 2706901869
@@ -20336,6 +20330,9 @@
                             0.0,
                             0.0
                         ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
                     }
                 },
                 "ParticleVectorSize": 60,
@@ -20414,6 +20411,9 @@
                             0.0,
                             0.0
                         ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
                     }
                 },
                 "ParticleVectorSize": 60,
@@ -20492,6 +20492,9 @@
                             0.0,
                             0.0
                         ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
                     }
                 },
                 "ParticleVectorSize": 60,
@@ -20570,6 +20573,9 @@
                             0.0,
                             0.0
                         ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
                     }
                 },
                 "ParticleVectorSize": 60,
@@ -20590,6 +20596,9 @@
                     },
                     {
                         "Shotgun Bomb Pull Size": 0
+                    },
+                    {
+                        "Testing": false
                     }
                 ],
                 "Script Resource": 211675320,
@@ -21516,7 +21525,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "UI Manager: ": 2016923459
+                        "UI Manager: ": 3574015608
                     },
                     {
                         "Continue: ": 3828209197
@@ -23172,14 +23181,7 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Disable_Ultimate_HUD": 3930738059
-                    },
-                    {
-                        "Active_Ultimate_HUD": 3778173702
-                    }
-                ],
+                "Inspector Fields": null,
                 "Script Resource": 1642016886,
                 "Type": 5
             }
@@ -32894,7 +32896,7 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Proceed Panel WS",
-        "ParentUID": 339357948,
+        "ParentUID": 3502382728,
         "PrefabUID": 3632537577,
         "Tag": "UI",
         "UID": 3515385126,
@@ -33690,6 +33692,54 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 1190404596,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Pause Panel": 2016923459
+                    }
+                ],
+                "Script Resource": 3735874758,
+                "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 94294920,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "UIManager",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3574015608,
         "UpdateWithBones": false
     }
 ]

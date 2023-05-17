@@ -127,7 +127,6 @@
     <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.cpp" />
     <ClCompile Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.cpp" />
     <ClCompile Include="../../Assets/Scripts/Quests/ReachTheSpaceship.cpp" />
-    <ClCompile Include="..\..\Assets\temp\LVL3_TESTING\Jumper.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
     <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.cpp" />
     <ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
@@ -138,6 +137,21 @@
     <ClCompile Include="..\..\Assets\Scripts\Coleccionable_buttons.cpp" />
     <ClCompile Include="../../Assets/temp/BugPhysic/PhysicTest.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\LaserDmg.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\Meteor.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\SpinSword.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosDmg.cpp" />
+    <ClCompile Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.cpp" />
+    <ClCompile Include="../../Assets/Scripts/Audio/MusicManager.cpp" />
+    <ClCompile Include="../../Assets/Scripts/EbonyMaw/BossCinematic.cpp" />
+    <ClCompile Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.cpp" />
+    <ClCompile Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.cpp" />
+    <ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
+    <ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -263,7 +277,6 @@
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.h" />
     <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.h" />
-    <ClInclude Include="..\..\Assets\temp\LVL3_TESTING\Jumper.h" />
     <ClInclude Include="../../Assets/temp/NavMesh/testNavAgent.h" />
     <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.h" />
     <ClInclude Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.h" />
@@ -278,5 +291,20 @@
     <ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
     <ClInclude Include="../../Assets/temp/BugPhysic/PhysicTest.h" />
     <ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
+    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.h" />
+    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\LaserDmg.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\Meteor.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\SpinSword.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosDmg.h" />
+    <ClInclude Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.h" />
+    <ClInclude Include="../../Assets/Scripts/Audio/MusicManager.h" />
+    <ClInclude Include="../../Assets/Scripts/EbonyMaw/BossCinematic.h" />
+    <ClInclude Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.h" />
+    <ClInclude Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.h" />
+    <ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
+    <ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.h" />
+    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.h" />
+    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.h" />
   </ItemGroup>
 </Project>

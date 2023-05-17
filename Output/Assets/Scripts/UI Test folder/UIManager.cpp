@@ -1,4 +1,5 @@
 #include "UIManager.h"
+#include "HUB/HUB_UIManager.h"
 HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script)
 {
 	UIManager* classInstance = new UIManager();
@@ -25,7 +26,7 @@ void UIManager::Update()
 {
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_START) == KeyState::KEY_DOWN)
 	{
-		if (currentPanel == CurrentPanel::NONE && isPaused)
+		if (currentPanel == CurrentPanel::NONE && isPaused && !HUB_UIManager::IsPanelOpened() /*Esto siempre deveulve false si no estas en HUB*/)
 		{
 			// Call Pause on game
 			Time::ChangeTimeScale(0.0f);
@@ -33,10 +34,9 @@ void UIManager::Update()
 			pausePanel.SetActive(true);
 			HUDPanel.SetActive(false);
 			currentPanel = CurrentPanel::PAUSE;
-			isPaused = false;
-		}
 
-	
+			HUB_UIManager::OpenPanel();
+		}
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN)
 	{
@@ -79,6 +79,7 @@ void UIManager::ContinueGame()
 	currentPanel = CurrentPanel::NONE;
 
 	isPaused = true;
+	HUB_UIManager::ClosePanel();
 }
 
 void UIManager::ShowInitialText()

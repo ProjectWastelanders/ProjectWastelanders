@@ -1,5 +1,6 @@
 #include "OpenMenuInterruptor.h"
 #include "../Player/PlayerMove.h"
+#include "../UI Test folder/HUB/HUB_UIManager.h"
 HELLO_ENGINE_API_C OpenMenuInterruptor* CreateOpenMenuInterruptor(ScriptToInspectorInterface* script)
 {
     OpenMenuInterruptor* classInstance = new OpenMenuInterruptor();
@@ -66,8 +67,11 @@ void OpenMenuInterruptor::OnCollisionExit(API::API_RigidBody other)
 
 void OpenMenuInterruptor::OpenMenus()
 {
+    if (HUB_UIManager::IsPanelOpened())
+        return;
     for (size_t i = 0; i < numberOfAsignedMenus; i++)
     {
         menu[i].SetActive(true);
     }
+    HUB_UIManager::OpenPanel();
 }

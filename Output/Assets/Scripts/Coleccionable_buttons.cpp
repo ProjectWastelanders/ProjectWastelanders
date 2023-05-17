@@ -1,6 +1,7 @@
 #include "Coleccionable_buttons.h"
 #include "InteractiveEnviroment/OpenMenuInterruptor.h"
 #include "Player/PlayerMove.h"
+#include "UI Test folder/HUB/HUB_UIManager.h"
 
 HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToInspectorInterface* script)
 {
@@ -55,7 +56,6 @@ void Coleccionable_buttons::Update()
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN /* && coleccionable_panel.IsActive()*/)
 	{
 		if (!interruptor_Colec) return;
-		Input::HandleGamePadButton(GamePadButton::BUTTON_B);
 		// IT'S CORRECT DON'T REMOVE NOTHING
 
 		interruptor_Colec->menuPanel.SetActive(true); // can set false if is not true
@@ -66,6 +66,8 @@ void Coleccionable_buttons::Update()
 		Audio::StopEvent(song1);
 		Audio::StopEvent(song2);
 		Audio::StopEvent(song3);
+		HUB_UIManager::ClosePanel();
+
 		return;
 	}//
 

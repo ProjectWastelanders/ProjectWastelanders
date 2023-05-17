@@ -11,7 +11,7 @@ HELLO_ENGINE_API_C ScoreScreen* CreateScoreScreen(ScriptToInspectorInterface* sc
 
 void ScoreScreen::Start()
 {
-	
+	lvlToSpawn = API_QuickSave::GetInt("currentSelectedLevel") + 1;
 }
 
 void ScoreScreen::Update()

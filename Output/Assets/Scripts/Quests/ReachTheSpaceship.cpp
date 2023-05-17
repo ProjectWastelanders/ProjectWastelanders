@@ -13,6 +13,10 @@ HELLO_ENGINE_API_C ReachTheSpaceship* CreateReachTheSpaceship(ScriptToInspectorI
     script->AddDragBoxGameObject("Enemy to Active 1", &classInstance->enebledEnemies[1]);
     script->AddDragBoxGameObject("Enemy to Active 2", &classInstance->enebledEnemies[2]);
     script->AddDragBoxGameObject("Enemy to Active 3", &classInstance->enebledEnemies[3]);
+    script->AddDragBoxGameObject("Enemy to Active 4", &classInstance->enebledEnemies[4]);
+    script->AddDragBoxGameObject("Enemy to Active 5", &classInstance->enebledEnemies[5]);
+    script->AddDragBoxGameObject("Enemy to Active 6", &classInstance->enebledEnemies[6]);
+    script->AddDragBoxGameObject("Enemy to Active 7", &classInstance->enebledEnemies[7]);
     return classInstance;
 }
 
@@ -62,7 +66,7 @@ void ReachTheSpaceship::EnableMision()
 {
     enabled = true;
 
-    for (size_t i = 0; i < 4; i++)
+    for (size_t i = 0; i < 8; i++)
     {
         enebledEnemies[i].SetActive(true);
     }

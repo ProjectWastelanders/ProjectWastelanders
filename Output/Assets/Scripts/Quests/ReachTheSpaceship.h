@@ -27,6 +27,6 @@ public:
     PlayerStorage* playerStorage;
     API_GameObject finalText;
 
-    API_GameObject enebledEnemies[4];
+    API_GameObject enebledEnemies[8];
 };
 

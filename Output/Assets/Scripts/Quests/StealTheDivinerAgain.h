@@ -2,7 +2,7 @@
 #include "API/HelloBehavior.h"
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
-
+#include "../CamMov.h"
 #include "API/API.h"
 
 class PlayerStorage;
@@ -22,5 +22,9 @@ public:
 
     API_GameObject reachTheSpaceShipGO;
     ReachTheSpaceship* reachTheSpaceShip;
+
+    CamMov* cam;
+    API_GameObject camObj;
+    bool uwu = false;
 };
 

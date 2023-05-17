@@ -111565,5 +111565,53 @@
         "Tag": "Default",
         "UID": 2830759294,
         "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Respawn in lvl:": 1
+                    },
+                    {
+                        "Respawn in lvl:": 3
+                    },
+                    {
+                        "Respawn in lvl:": 3
+                    }
+                ],
+                "Script Resource": 3135958647,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "LevelPreset",
+        "ParentUID": 2462894403,
+        "PrefabUID": 1498491533,
+        "Tag": "Default",
+        "UID": 3826025244,
+        "UpdateWithBones": false
     }
 ]

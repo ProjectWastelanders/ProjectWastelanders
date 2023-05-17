@@ -147,6 +147,7 @@ void BossLoop::Update()
                 animationPlayer.Play();
             }
             if (DieTimer >= 4) {
+                endBattle = true;
                 gameObject.SetActive(false);
                 gameObject.GetTransform().SetScale(0, 0, 0);
                 //TEMPORAL FOR ALPHA 1

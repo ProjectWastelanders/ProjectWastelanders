@@ -107,3 +107,11 @@ bool P_ShapeModule::IsInside(float3 position)
 {
     return false;
 }
+
+void P_ShapeModule::Serialization(json& j)
+{
+}
+
+void P_ShapeModule::DeSerialization(json& j)
+{
+}

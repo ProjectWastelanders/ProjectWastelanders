@@ -14,7 +14,6 @@ public:
 	void Start() override; 
 	void Update() override;
 	void PrintDialog(API_UIImage &Dialog);
-	void PrintTempDialog(API_UIImage& Dialog, float temp);
 	void OnCollisionEnter(API::API_RigidBody other) override;
 
 	API_UIImage Dialog_1;
@@ -40,7 +39,10 @@ public:
 
 	bool activeCinematic, nextDialog, animBoss;
 	int currentDialog;
-	float timer = 0.0f;
+	float timerSB = 0.0f;
+	float timerSBCpy = 0.0f;
+	float timerEB = 0.0f;
+	float timerEBCpy = 0.0f;
 
 };
 

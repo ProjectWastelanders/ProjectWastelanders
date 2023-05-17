@@ -21,6 +21,7 @@ void ThanosMovement::Start()
     Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosWakeUp);
     Tattack->thanosAnimationPlayer.SetLoop(false);
     Tattack->thanosAnimationPlayer.Play();
+    gameObject.GetRigidBody().SetVelocity(API_Vector3(0, 0, 0));
 
 }
 void ThanosMovement::Update()

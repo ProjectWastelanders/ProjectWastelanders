@@ -22,6 +22,9 @@ public:
     
 
     //Button
+    API_UIImage HoldBlue;
+    API_UIImage HoldText;
+    API_UIImage HoldBlack;
     API_UIImage HoldButton;
 
     float openBarrierTimeBar;

@@ -3,20 +3,26 @@ HELLO_ENGINE_API_C ButtonBarrier* CreateButtonBarrier(ScriptToInspectorInterface
 {
     ButtonBarrier* classInstance = new ButtonBarrier();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
-    script->AddDragBoxUIImage("Guide Button", &classInstance->HoldButton);
+    script->AddDragBoxUIImage("Hold Button", &classInstance->HoldButton);
+    script->AddDragBoxUIImage("Blue Bar", &classInstance->HoldBlue);
+    script->AddDragBoxUIImage("Black Bar", &classInstance->HoldBlack);
+    script->AddDragBoxUIImage("Hold Text", &classInstance->HoldText);
     return classInstance;
 }
 
 void ButtonBarrier::Start()
 {
     HoldButton.GetGameObject().SetActive(false);
+    HoldBlue.GetGameObject().SetActive(false);
+    HoldBlack.GetGameObject().SetActive(false);
+    HoldText.GetGameObject().SetActive(false);
     openBarrierTime = maxOpenBarrierTime;
     picked = false;
 }
 
 void ButtonBarrier::Update()
 {
-    HoldButton.FillImage(openBarrierTime / maxOpenBarrierTime);
+    HoldBlue.FillImage(openBarrierTimeBar / maxOpenBarrierTime);
 }
 
 void ButtonBarrier::OnCollisionStay(API::API_RigidBody other)
@@ -39,6 +45,9 @@ void ButtonBarrier::OnCollisionStay(API::API_RigidBody other)
             {
                 picked = false;
                 HoldButton.GetGameObject().SetActive(false);
+                HoldBlue.GetGameObject().SetActive(false);
+                HoldBlack.GetGameObject().SetActive(false);
+                HoldText.GetGameObject().SetActive(false);
                 isOver = true;
             }
         }
@@ -58,6 +67,9 @@ void ButtonBarrier::OnCollisionEnter(API::API_RigidBody other)
         if (isOver == false) 
         {
             HoldButton.GetGameObject().SetActive(true);
+            HoldBlue.GetGameObject().SetActive(true);
+            HoldBlack.GetGameObject().SetActive(true);
+            HoldText.GetGameObject().SetActive(true);
         }
     }
 }
@@ -68,6 +80,9 @@ void ButtonBarrier::OnCollisionExit(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         HoldButton.GetGameObject().SetActive(false);
+        HoldBlue.GetGameObject().SetActive(false);
+        HoldBlack.GetGameObject().SetActive(false);
+        HoldText.GetGameObject().SetActive(false);
 
     }
 }

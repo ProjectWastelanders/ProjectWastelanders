@@ -20,7 +20,8 @@ void HUD_Ultimate::Start()
 }
 void HUD_Ultimate::Update()
 {
-    HUD_Ultimate_Active(playerUltimate->ultPercentage / 100);
+    if (playerUltimate)
+        HUD_Ultimate_Active(playerUltimate->ultPercentage / 100); 
 }
 
 void HUD_Ultimate::HUD_Ultimate_Active(float IsActive)

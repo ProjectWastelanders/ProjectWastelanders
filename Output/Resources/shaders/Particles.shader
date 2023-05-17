@@ -6,6 +6,7 @@
     layout (location = 6) in vec2 texCoords;
     layout (location = 7) in vec4 textOffsets;
     layout (location = 8) in vec2 textinfos;
+    layout (location = 9) in float texID;
 
     uniform mat4 view;
     uniform mat4 projection;
@@ -13,6 +14,7 @@
     out vec2 TextureCoords1;
     out vec2 TextureCoords2;
     out float blend;
+    out float TextureID;
 
     void main()
     {
@@ -22,21 +24,23 @@
         TextureCoords1 = textcoords + textOffsets.xy;
         TextureCoords2 = textcoords + textOffsets.zw;
         blend = textinfos.y;
+        TextureID = texID;
         gl_Position = projection * view * model * vec4(aPos.x, aPos.y, aPos.z, 1.0f);
 
     }
 #endif
 #ifdef FRAGMENT_PROGRAM
-    uniform sampler2D texture_albedo;
+    uniform sampler2D textures[32];
 
     in vec2 TextureCoords1;
     in vec2 TextureCoords2;
     in float blend;
+    in float TextureID;
     out vec4 FragColor;
     void main()
     {
-        vec4 texture1 = texture(texture_albedo,TextureCoords1);
-        vec4 texture2 = texture(texture_albedo,TextureCoords2);
+        vec4 texture1 = texture(textures[int(round(TextureID))],TextureCoords1);
+        vec4 texture2 = texture(textures[int(round(TextureID))],TextureCoords2);
         FragColor = mix(texture1,texture2,blend);
     }
 #endif

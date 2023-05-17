@@ -43,12 +43,15 @@ public:
 
 	void DrawInstancedSorting();
 
+	void DrawInstancedSortingAnimated();
+
 	void SetAs2D();
 	uint GetRenderID();
 
 public:
 	bool initialized = false;
 	bool isParticle = false;
+	bool isParticleAnimated = false;
 	bool sortedAndDrawn = false;
 	ResourceMesh* resource = nullptr;
 	ResourceMaterial* resMat = nullptr;

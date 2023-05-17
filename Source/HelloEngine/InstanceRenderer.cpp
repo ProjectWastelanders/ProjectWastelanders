@@ -340,7 +340,7 @@ void InstanceRenderer::DrawInstancedSorting()
     if (!modelMatrices.empty())
     {
         // Update View and Projection matrices
-        particleShader->shader.Bind();
+        instancedShader->shader.Bind();
 
         if (!instancedShader->shader.data.hasUpdatedCamera)
         {
@@ -358,17 +358,13 @@ void InstanceRenderer::DrawInstancedSorting()
         memcpy(ptr, &modelMatrices.front(), drawingMeshes * sizeof(float4x4));
         glUnmapBuffer(GL_ARRAY_BUFFER);
 
-        // Update PARTICLE Buffer
-        
-        /*glBindBuffer(GL_ARRAY_BUFFER, PBO);
-        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-        memcpy(ptr2, &particleAnimInfos.front(), particleAnimInfos.size() * sizeof(ParticleAnimInfo));
-        glUnmapBuffer(GL_ARRAY_BUFFER);*/
+       /*for (int i = 0; i < TextureManager::bindedTextures; i++)
+       {
+           particleShader->shader.SetInt("texture_albedo", i); 
+       }*/
 
-       /* for (int i = 0; i < TextureManager::bindedTextures; i++)
-        {
-            particleShader->shader.SetInt("texture_albedo", i);
-        }*/
+        glBindBuffer(GL_ARRAY_BUFFER, TBO);
+        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
         memcpy(ptr2, &textureIDs.front(), drawingMeshes * sizeof(float));
         glUnmapBuffer(GL_ARRAY_BUFFER);
 
@@ -384,7 +380,95 @@ void InstanceRenderer::DrawInstancedSorting()
     sortedAndDrawn = true;
     // Reset model matrices.
     modelMatrices.clear();
+    TextureManager::UnBindTextures();
+}
+
+void InstanceRenderer::DrawInstancedSortingAnimated()
+{
+
+    OPTICK_EVENT();
+
+    glDepthMask(GL_FALSE);
+
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    RenderManager& renderManger = Application::Instance()->renderer3D->renderManager;
+
+    uint totalMeshes = meshes.size();
+    uint drawingMeshes = 0;
+
+    modelMatrices.reserve(totalMeshes);
+    textureIDs.reserve(totalMeshes);
+
+    for (auto& mesh : meshes)
+    {
+        Mesh& currentMesh = mesh.second.mesh;
+        RenderUpdateState state = currentMesh.Update();
+        if (state == RenderUpdateState::NODRAW)
+            continue;
+
+        if (state == RenderUpdateState::SELECTED)
+        {
+            renderManger.SetSelectedMesh(&currentMesh);
+        }
+
+        modelMatrices.push_back(currentMesh.modelMatrix); // Insert updated matrices
+        textureIDs.push_back(currentMesh.OpenGLTextureID);
+        currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+        ++drawingMeshes;
+    }
+
+    if (!modelMatrices.empty())
+    {
+        // Update View and Projection matrices
+        particleShader->shader.Bind();
+
+        if (!particleShader->shader.data.hasUpdatedCamera)
+        {
+            particleShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+            particleShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+            particleShader->shader.data.hasUpdatedCamera = true;
+        }
+
+        // Draw using Dynamic Geometrys
+        glBindVertexArray(VAO);
+
+        // Update Model matrices
+        glBindBuffer(GL_ARRAY_BUFFER, MBO);
+        void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr, &modelMatrices.front(), drawingMeshes * sizeof(float4x4));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        /* for (int i = 0; i < TextureManager::bindedTextures; i++)
+         {
+             particleShader->shader.SetInt("texture_albedo", i);
+         }*/
+
+        glBindBuffer(GL_ARRAY_BUFFER, TBO);
+        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr2, &textureIDs.front(), drawingMeshes * sizeof(float));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        particleShader->shader.SetIntv("textures", &TextureManager::bindTexturesArray[0], TextureManager::bindedTextures);
+
+        // Update PARTICLE Buffer
+
+        glBindBuffer(GL_ARRAY_BUFFER, PBO);
+        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr2, &particleAnimInfos.front(), particleAnimInfos.size() * sizeof(ParticleAnimInfo));
+        glUnmapBuffer(GL_ARRAY_BUFFER);
+
+        // Draw instanced
+        glDrawElementsInstanced(GL_TRIANGLES, totalIndices->size(), GL_UNSIGNED_INT, 0, drawingMeshes);
+        glBindVertexArray(0);
+    }
+
+    glDepthMask(GL_TRUE);
+    sortedAndDrawn = true;
+    // Reset model matrices.
+    modelMatrices.clear();
     particleAnimInfos.clear();
+    TextureManager::UnBindTextures();
 }
 
 void InstanceRenderer::SetAs2D()
@@ -589,6 +673,17 @@ void InstanceRenderer::CreateDynamicBuffersParticles()
     glVertexAttribDivisor(7, 1);
     glVertexAttribDivisor(8, 1);
 
+    glGenBuffers(1, &TBO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, TBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamically change
+
+
+    glEnableVertexAttribArray(9);
+    glVertexAttribPointer(9, 1, GL_FLOAT, GL_FALSE, sizeof(float), (void*)0);
+
+    glVertexAttribDivisor(9, 1);
+
     glBindVertexArray(0);
 }
 
@@ -596,5 +691,6 @@ void InstanceRenderer::DestroyDynamicBuffersParticles()
 {
     glDeleteBuffers(1, &MBO);
     glDeleteBuffers(1, &PBO);
+    glDeleteBuffers(1, &TBO);
 }
 

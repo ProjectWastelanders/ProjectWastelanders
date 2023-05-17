@@ -216,7 +216,7 @@
 		
 		if (theta > light.Cutoff)
 		{
-			float dist = length(lightDir);
+			float dist = length(lightDir - FragPos);
 		
 			if (light.Distance > dist)
 			{
@@ -256,6 +256,7 @@
 		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 	}
 #endif
+
 
 
 

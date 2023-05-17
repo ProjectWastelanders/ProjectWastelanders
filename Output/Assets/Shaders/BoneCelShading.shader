@@ -44,11 +44,9 @@
 		{
 			totalPosition = vec4(aPos, 1.0f);
 		}
-	
-		vec4 aPos4 = vec4(aPos, 1.0);
 		
 		//OUT
-		FragPos = vec3(model * aPos4);
+		FragPos = vec3(model * totalPosition);
 		TextureCoords = textCoords;
 		Normal = normalize(mat3(transpose(inverse(model))) * normals);
 		FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0f);
@@ -243,7 +241,7 @@
 		
 		if (theta > light.Cutoff)
 		{
-			float dist = length(lightDir);
+			float dist = length(lightDir - FragPos);
 		
 			if (light.Distance > dist)
 			{
@@ -283,6 +281,8 @@
 		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 	}
 #endif
+
+
 
 
 

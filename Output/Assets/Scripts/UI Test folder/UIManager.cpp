@@ -49,7 +49,7 @@ void UIManager::Update()
 		}
 		if (currentPanel == CurrentPanel::SETTINGS)
 		{
-			CloseSettings();
+			//CloseSettings();
 		}
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)

@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.8557919263839722,
+                "Aspect ratio": 1.3816567659378052,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 3611.0,
@@ -9337,38 +9337,6 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 3922465793,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Coll58",
-        "ParentUID": 559194340,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 2808031325,
         "UpdateWithBones": false
     },
     {
@@ -30444,6 +30412,38 @@
                     1.0
                 ],
                 "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Coll58",
+        "ParentUID": 559194340,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2808031325,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
             },
             {
                 "Enabled": true,
@@ -30470,7 +30470,7 @@
                         "Continute button Final text": 3535348323
                     },
                     {
-                        "Settings Panel": 737007425
+                        "Settings Panel": 1437004097
                     }
                 ],
                 "Script Resource": 3735874758,
@@ -33277,6 +33277,209 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
+                        "SpaceShip GO": 2830759294
+                    },
+                    {
+                        "HUD SpaceShip": 4273912707
+                    },
+                    {
+                        "HP SpaceShip UI IMG": 3545358878
+                    },
+                    {
+                        "aaaaaaaaaaaaaaaa": false
+                    }
+                ],
+                "Script Resource": 3058350265,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "HUD_Milano_Bar",
+        "ParentUID": 2311813809,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2887602304,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Milano_Bar_obj",
+        "ParentUID": 2887602304,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4273912707,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    1.5,
+                    0.019999999552965164
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5450000166893005,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2402869749,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Background",
+        "ParentUID": 4273912707,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3569475927,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    1.5,
+                    0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 4014534168,
+                "MeshEnabled": true,
+                "OpacityDirection": 1,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "HP_Bar",
+        "ParentUID": 4273912707,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3545358878,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.46000000834465027,
+                    1.7999999523162842,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.4000000059604645,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1155150704,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Icon",
+        "ParentUID": 4273912707,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3124142125,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
                         "Image_Upgrade": 2363139637
                     },
                     {
@@ -34438,20 +34641,20 @@
                 "MeshEnabled": false,
                 "Type": 16,
                 "listButtons": [
-                    1445361943,
-                    2900794610,
-                    233615707,
-                    2539017457
+                    3299101464,
+                    890633429,
+                    2623952643,
+                    3929008766
                 ]
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Settings",
+        "Name": "SettingsPanel",
         "ParentUID": 1721330332,
-        "PrefabUID": 953767367,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 737007425,
+        "UID": 1437004097,
         "UpdateWithBones": false
     },
     {
@@ -34479,7 +34682,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 2373411443,
+                "MaterialResource": 2781629840,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -34488,10 +34691,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackGround",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 3514617909,
+        "UID": 2989011509,
         "UpdateWithBones": false
     },
     {
@@ -34500,7 +34703,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
+                    0.15000000596046448,
                     0.4000000059604645,
                     -0.0010000000474974513
                 ],
@@ -34520,10 +34723,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Master",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 2631622072,
+        "UID": 2509809592,
         "UpdateWithBones": false
     },
     {
@@ -34532,7 +34735,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.49000000953674316,
+                    0.0,
                     0.0,
                     -0.003000000026077032
                 ],
@@ -34554,7 +34757,7 @@
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
-                "SliderPerCent": 0.49000000953674316,
+                "SliderPerCent": 0.0,
                 "StateButton": 0,
                 "Type": 13
             }
@@ -34562,10 +34765,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderButton",
-        "ParentUID": 2631622072,
-        "PrefabUID": 953767367,
+        "ParentUID": 2509809592,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderButton",
-        "UID": 1445361943,
+        "UID": 3299101464,
         "UpdateWithBones": false
     },
     {
@@ -34584,15 +34787,15 @@
                     0.0
                 ],
                 "Scale": [
-                    0.699999988079071,
-                    0.25,
+                    0.3499999940395355,
+                    0.10000000149011612,
                     0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1943036561,
+                "MaterialResource": 727621443,
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
@@ -34604,10 +34807,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderBar",
-        "ParentUID": 2631622072,
-        "PrefabUID": 953767367,
+        "ParentUID": 2509809592,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderBar",
-        "UID": 755055618,
+        "UID": 481969655,
         "UpdateWithBones": false
     },
     {
@@ -34616,7 +34819,47 @@
             {
                 "Enabled": true,
                 "Position": [
+                    -0.15000000596046448,
                     0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3301740551,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Image",
+        "ParentUID": 2509809592,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 2924834403,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.15000000596046448,
                     0.05000000074505806,
                     -0.0010000000474974513
                 ],
@@ -34636,10 +34879,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SFX",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 1622445034,
+        "UID": 1201500606,
         "UpdateWithBones": false
     },
     {
@@ -34678,10 +34921,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderButton",
-        "ParentUID": 1622445034,
-        "PrefabUID": 953767367,
+        "ParentUID": 1201500606,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderButton",
-        "UID": 2900794610,
+        "UID": 890633429,
         "UpdateWithBones": false
     },
     {
@@ -34700,15 +34943,15 @@
                     0.0
                 ],
                 "Scale": [
-                    0.699999988079071,
-                    0.25,
+                    0.3499999940395355,
+                    0.10000000149011612,
                     0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1943036561,
+                "MaterialResource": 727621443,
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
@@ -34720,10 +34963,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderBar",
-        "ParentUID": 1622445034,
-        "PrefabUID": 953767367,
+        "ParentUID": 1201500606,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderBar",
-        "UID": 2564317593,
+        "UID": 347108056,
         "UpdateWithBones": false
     },
     {
@@ -34732,7 +34975,47 @@
             {
                 "Enabled": true,
                 "Position": [
+                    -0.15000000596046448,
                     0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 973979197,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Image",
+        "ParentUID": 1201500606,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 2523959480,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.15000000596046448,
                     -0.30000001192092896,
                     -0.0010000000474974513
                 ],
@@ -34752,10 +35035,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Music",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 1449549420,
+        "UID": 585975831,
         "UpdateWithBones": false
     },
     {
@@ -34764,7 +35047,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.1599999964237213,
+                    0.0,
                     0.0,
                     -0.003000000026077032
                 ],
@@ -34786,7 +35069,7 @@
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
-                "SliderPerCent": 0.1599999964237213,
+                "SliderPerCent": 0.0,
                 "StateButton": 0,
                 "Type": 13
             }
@@ -34794,10 +35077,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderButton",
-        "ParentUID": 1449549420,
-        "PrefabUID": 953767367,
+        "ParentUID": 585975831,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderButton",
-        "UID": 233615707,
+        "UID": 2623952643,
         "UpdateWithBones": false
     },
     {
@@ -34808,7 +35091,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -34816,15 +35099,15 @@
                     0.0
                 ],
                 "Scale": [
-                    0.699999988079071,
-                    0.25,
+                    0.3499999940395355,
+                    0.10000000149011612,
                     0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1943036561,
+                "MaterialResource": 727621443,
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
@@ -34836,10 +35119,50 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderBar",
-        "ParentUID": 1449549420,
-        "PrefabUID": 953767367,
+        "ParentUID": 585975831,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderBar",
-        "UID": 3812954391,
+        "UID": 67990238,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.15000000596046448,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1640090254,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Image",
+        "ParentUID": 585975831,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 494399606,
         "UpdateWithBones": false
     },
     {
@@ -34868,10 +35191,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "VSync",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "Default",
-        "UID": 2653991938,
+        "UID": 727059182,
         "UpdateWithBones": false
     },
     {
@@ -34890,8 +35213,8 @@
                     0.0
                 ],
                 "Scale": [
+                    0.20000000298023224,
                     0.15000000596046448,
-                    0.10000000149011612,
                     0.5
                 ],
                 "Type": 1
@@ -34899,7 +35222,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 1974143661,
+                "MaterialResource": 2254243334,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -34908,10 +35231,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "CheckBox_BackGround",
-        "ParentUID": 2653991938,
-        "PrefabUID": 953767367,
+        "ParentUID": 727059182,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 4079641578,
+        "UID": 2397726662,
         "UpdateWithBones": false
     },
     {
@@ -34920,7 +35243,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.10000000149011612,
+                    0.125,
                     -0.6000000238418579,
                     -0.0020000000949949026
                 ],
@@ -34930,8 +35253,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.05000000074505806,
-                    0.10000000149011612,
+                    0.07500000298023224,
+                    0.15000000596046448,
                     0.5
                 ],
                 "Type": 1
@@ -34942,8 +35265,8 @@
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 14,
-                "hoverActiveImage": 1544303032,
-                "hoverImage": 334007211,
+                "hoverActiveImage": 334007211,
+                "hoverImage": 1544303032,
                 "idleActiveImage": 1544303032,
                 "idleImage": 334007211,
                 "pressActiveImage": 334007211,
@@ -34953,10 +35276,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "CheckBox",
-        "ParentUID": 2653991938,
-        "PrefabUID": 953767367,
+        "ParentUID": 727059182,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 2539017457,
+        "UID": 3929008766,
         "UpdateWithBones": false
     },
     {
@@ -34985,10 +35308,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Controlls",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 965372324,
+        "UID": 3642150037,
         "UpdateWithBones": false
     },
     {
@@ -35025,10 +35348,235 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Controlls",
-        "ParentUID": 965372324,
-        "PrefabUID": 953767367,
+        "ParentUID": 3642150037,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 2538321396,
+        "UID": 3848504729,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    0.3400000035762787,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.686274528503418,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": 0.4000000059604645,
+                "PositionY": 0.3400000035762787,
+                "Scale": 0.30000001192092896,
+                "Text": "50",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "MasterText",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 3802911340,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    0.03999999910593033,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.686274528503418,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": 0.4000000059604645,
+                "PositionY": 0.03999999910593033,
+                "Scale": 0.30000001192092896,
+                "Text": "50",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "SFX Text",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 3526407515,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    -0.36000001430511475,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.686274528503418,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": 0.4000000059604645,
+                "PositionY": -0.36000001430511475,
+                "Scale": 0.30000001192092896,
+                "Text": "50",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Music Text",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 3097027862,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Text Master Volume": 3802911340
+                    },
+                    {
+                        "Text SFX Volume": 3526407515
+                    },
+                    {
+                        "Text Music Volume": 3097027862
+                    },
+                    {
+                        "Slider Master": 3299101464
+                    },
+                    {
+                        "Slider SFX": 890633429
+                    },
+                    {
+                        "Slider Music": 2623952643
+                    },
+                    {
+                        "Master Ojbect": 2924834403
+                    },
+                    {
+                        "SFX Ojbect": 2523959480
+                    },
+                    {
+                        "Music Ojbect": 494399606
+                    },
+                    {
+                        "Master Idle": 3301740551
+                    },
+                    {
+                        "Master Hover": 306170160
+                    },
+                    {
+                        "SFX Idle": 973979197
+                    },
+                    {
+                        "SFX Hover": 2826068840
+                    },
+                    {
+                        "Music Idle": 1640090254
+                    },
+                    {
+                        "Music Hover": 3827949153
+                    },
+                    {
+                        "VSync CheckBox": 3929008766
+                    }
+                ],
+                "Script Resource": 3900714064,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "SettingsManager",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "Default",
+        "UID": 2228586509,
         "UpdateWithBones": false
     },
     {
@@ -71594,9 +72142,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    2.2339968381857034e-06,
-                    0.0,
-                    2.2044525146484375
+                    0.535528838634491,
+                    -7.62939453125e-06,
+                    2.7284812927246094
                 ],
                 "Rotation": [
                     -0.0,
@@ -71927,10 +72475,10 @@
                         "Base Gun": 0
                     },
                     {
-                        "Normal Gun": 1
+                        "Normal Gun": 0
                     },
                     {
-                        "Special Gun": 5
+                        "Special Gun": -1
                     },
                     {
                         "Duals": 16982780
@@ -79224,16 +79772,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 30.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 1.0
                     },
                     {
                         "Projectile Spawn": 1242119980
@@ -79251,13 +79799,13 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.5
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Burst Space": 0.0
+                        "Burst Space": 0.10000000149011612
                     },
                     {
                         "Second Gun GO": 982916517
@@ -79378,16 +79926,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 80.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 60.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 60.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.30000001192092896
                     },
                     {
                         "Projectile Spawn": 2243582923
@@ -79402,7 +79950,7 @@
                         "Projectile ScaleZ": 0.4000000059604645
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.0
                     },
                     {
                         "Extra % firerate": 15.0
@@ -79517,16 +80065,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 40.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 3.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 3.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.5
                     },
                     {
                         "Projectile Spawn": 1047212797
@@ -79541,7 +80089,7 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 20.0
                     },
                     {
                         "Extra % firerate": 15.0
@@ -79656,16 +80204,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 35.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 1.0
                     },
                     {
                         "Projectile Spawn": 1439705504
@@ -79680,16 +80228,16 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Burst Space": 0.0
+                        "Burst Space": 0.10000000149011612
                     },
                     {
-                        "Projectiles per burst": 0
+                        "Projectiles per burst": 2
                     },
                     {
                         "Player Stats GO": 2252131494
@@ -79801,16 +80349,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 40.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.4000000059604645
                     },
                     {
                         "Projectile Spawn": 1650961567
@@ -79825,16 +80373,16 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 2.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Pellets per shot": 0
+                        "Pellets per shot": 3
                     },
                     {
-                        "Pellets Dispersion": 0.0
+                        "Pellets Dispersion": 0.30000001192092896
                     },
                     {
                         "Player Stats GO": 2252131494
@@ -79995,16 +80543,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 10.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 8.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 8.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 2.0
                     },
                     {
                         "Projectile Spawn": 2667312934
@@ -80022,7 +80570,7 @@
                         "Projectile ScaleZ": 0.0
                     },
                     {
-                        "Ticks per second": 0.0
+                        "Ticks per second": 20.0
                     },
                     {
                         "Extra % firerate": 15.0
@@ -80218,16 +80766,16 @@
                         "Projectile Pull": 1730314675
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 15.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 65.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 65.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 3.0
                     },
                     {
                         "Projectile Spawn": 2886276473
@@ -80242,7 +80790,7 @@
                         "Projectile ScaleZ": 0.4000000059604645
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 0.3499999940395355
                     },
                     {
                         "Extra % firerate": 15.0
@@ -83913,9 +84461,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -7.2635602951049805,
-                    -55.168148040771484,
-                    17.047260284423828
+                    2.960150718688965,
+                    1.3974494934082031,
+                    -24.22572898864746
                 ],
                 "Rotation": [
                     -2.0688027291271283e-08,
@@ -100448,14 +100996,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    71.90809631347656,
+                    -5.083034038543701,
+                    2.5387890338897705
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100463,6 +101011,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 42.79999923706055,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100480,14 +101097,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    63.87975311279297,
+                    14.343707084655762,
+                    48.409706115722656
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100495,6 +101112,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 48.70000076293945,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100512,14 +101198,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    10.925455093383789,
+                    -15.612458229064941,
+                    4.760010719299316
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100527,6 +101213,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 65.9000015258789,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100544,14 +101299,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    52.681114196777344,
+                    -17.690595626831055,
+                    -106.44876098632813
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100559,6 +101314,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 146.8000030517578,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100576,14 +101400,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    -23.379119873046875,
+                    -27.11374282836914,
+                    -27.250507354736328
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100591,6 +101415,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 68.19999694824219,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100608,14 +101501,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    -143.06967163085938,
+                    -0.00019772580708377063,
+                    61.156734466552734
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100623,6 +101516,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 71.30000305175781,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100672,14 +101634,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    83.55411529541016,
+                    94.73038482666016,
+                    -16.30326271057129
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100687,6 +101649,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 87.80000305175781,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100704,14 +101735,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    -17.775814056396484,
+                    99.91959381103516,
+                    -7.183123588562012
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100719,6 +101750,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 82.30000305175781,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -100736,14 +101836,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
-                    0.0,
-                    0.0
+                    -125.80731964111328,
+                    91.4669418334961,
+                    22.010887145996094
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -100751,6 +101851,75 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 93.5,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
             }
         ],
         "FirstOnPrefab": true,
@@ -108339,6 +109508,528 @@
         "PrefabUID": 1883435120,
         "Tag": "Default",
         "UID": 2576887417,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    105.75940704345703,
+                    93.7950439453125,
+                    -19.539731979370117
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Diviner",
+        "ParentUID": 2462894403,
+        "PrefabUID": 2344457252,
+        "Tag": "Default",
+        "UID": 1816191603,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.5,
+                    1.5,
+                    1.5
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Pedestal",
+        "ParentUID": 1816191603,
+        "PrefabUID": 2344457252,
+        "Tag": "Default",
+        "UID": 1238398222,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "group1",
+        "ParentUID": 1238398222,
+        "PrefabUID": 2344457252,
+        "Tag": "Default",
+        "UID": 1349113958,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.551419734954834,
+                    8.881784197001252e-16,
+                    -0.10747013241052628
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.2734042406082153,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1993320690,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 3181567656,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "pDisc1",
+        "ParentUID": 1349113958,
+        "PrefabUID": 2344457252,
+        "Tag": "Default",
+        "UID": 23073693,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.551419734954834,
+                    1.1717870235443115,
+                    -0.10747013241052628
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    0.4274950921535492,
+                    1.0,
+                    0.4274950921535492
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 1,
+                "ModelUID": 1993320690,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 3181567656,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "pDisc2",
+        "ParentUID": 1349113958,
+        "PrefabUID": 2344457252,
+        "Tag": "Default",
+        "UID": 95811649,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -2.2955703735351563,
+                    2.2869873046875,
+                    -0.1433258056640625
+                ],
+                "Rotation": [
+                    -179.99989318847656,
+                    79.99996948242188,
+                    179.99989318847656
+                ],
+                "Scale": [
+                    0.24000012874603271,
+                    1.0199999809265137,
+                    0.24000012874603271
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 3158707328,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    5.199999809265137,
+                    4.699999809265137,
+                    5.300000190734863
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 3.0
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 277431766,
+                "Type": 18
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "R (MIN 1.0F)": 1.5
+                    },
+                    {
+                        "G (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "B (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "Fade In time": 2.0
+                    },
+                    {
+                        "Fade out Time": 2.0
+                    }
+                ],
+                "Script Resource": 3127607323,
+                "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Player Storage GO": 2252131494
+                    },
+                    {
+                        "Reach The Spaceship GO": 2830759294
+                    }
+                ],
+                "Script Resource": 469135170,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Diviner",
+        "ParentUID": 1816191603,
+        "PrefabUID": 2344457252,
+        "Tag": "Default",
+        "UID": 418604341,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    127.64569854736328,
+                    1.1312443017959595,
+                    -0.9597415924072266
+                ],
+                "Rotation": [
+                    -90.00016021728516,
+                    -0.000300528306979686,
+                    -90.00016021728516
+                ],
+                "Scale": [
+                    5.0,
+                    5.0,
+                    5.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 4134868000,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.800000011920929,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    11.399999618530273,
+                    14.199999809265137,
+                    20.100000381469727
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 3882081277,
+                "Type": 18
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Player Storage GO": 2252131494
+                    },
+                    {
+                        "Max HP": 1000.0
+                    },
+                    {
+                        "Current HP": 0.0
+                    },
+                    {
+                        "DamagePerProjectile": 2.0
+                    }
+                ],
+                "Script Resource": 175185159,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "MilanoLowPoly",
+        "ParentUID": 2462894403,
+        "PrefabUID": 1373398726,
+        "Tag": "Default",
+        "UID": 2830759294,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Respawn in lvl:": 3
+                    }
+                ],
+                "Script Resource": 3135958647,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "LevelPreset",
+        "ParentUID": 2462894403,
+        "PrefabUID": 1498491533,
+        "Tag": "Default",
+        "UID": 3826025244,
         "UpdateWithBones": false
     }
 ]

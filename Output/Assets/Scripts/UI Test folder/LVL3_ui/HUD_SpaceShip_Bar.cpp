@@ -8,11 +8,9 @@ HELLO_ENGINE_API_C HUD_SpaceShip_Bar* CreateHUD_SpaceShip_Bar(ScriptToInspectorI
 
     script->AddDragBoxGameObject("HUD SpaceShip", &classInstance->shipHUD);
     script->AddDragBoxUIImage("HP SpaceShip UI IMG", &classInstance->shipHpBar);
-   
-
-    script->AddDragBoxTextureResource("HP SpaceShip TEX", &classInstance->hpShipTex);
+    //script->AddDragBoxTextureResource("HP SpaceShip TEX", &classInstance->hpShipTex);
     
-   
+    script->AddCheckBox("aaaaaaaaaaaaaaaa", &classInstance->uwu);
    
 	return classInstance;
 }
@@ -22,12 +20,14 @@ void HUD_SpaceShip_Bar::Start()
     ship = (ReachTheSpaceship*)shipGO.GetScript("ReachTheSpaceship");
     if (!ship ) Console::Log("Missing BossStats on Boss_Bar_HUD Script.");
 
-    shipHpBar.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(hpShipTex);
+    //shipHpBar.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(hpShipTex);
 }
 void HUD_SpaceShip_Bar::Update()
 {
-    if (ship)
+    
+    if (ship!=nullptr)
     {
+        uwu = true;
         if (ship->enabled)
         {
             shipHUD.SetActive(true);
@@ -35,7 +35,7 @@ void HUD_SpaceShip_Bar::Update()
         }
         else
         {
-            shipHUD.SetActive(true);
+            shipHUD.SetActive(false);
         }
     }
 }

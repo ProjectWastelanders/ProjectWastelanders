@@ -15,6 +15,11 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_5);
     script->AddDragBoxUIImage("Dialog 6", &classInstance->Dialog_6);
 
+    script->AddDragBoxUIImage("Dialog Start Battle", &classInstance->Dialog_StartBattle);
+    script->AddDragBoxUIImage("Dialog End Battle", &classInstance->Dialog_EndBattle);
+
+    script->AddDragFloat("Dialog timer", &classInstance->timer);
+
 	return classInstance;
 }
 
@@ -51,6 +56,12 @@ void BossCinematic::Start()
 
     Dialog_6.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_6.GetGameObject().SetActive(false);
+
+    Dialog_StartBattle.GetGameObject().GetTransform().SetPosition(initalPos);
+    Dialog_StartBattle.GetGameObject().SetActive(false);
+
+    Dialog_EndBattle.GetGameObject().GetTransform().SetPosition(initalPos);
+    Dialog_EndBattle.GetGameObject().SetActive(false);
 }
 void BossCinematic::Update()
 {
@@ -95,6 +106,16 @@ void BossCinematic::Update()
                 break;
             }
         }
+
+        if (bLoop->battle)
+        {
+            PrintTempDialog(Dialog_StartBattle, timer);
+        }
+
+        if (bLoop->endBattle)
+        {
+            PrintTempDialog(Dialog_EndBattle, timer);
+        }
     }
 }
 
@@ -133,6 +154,70 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
     }
     
     Dialog.GetGameObject().GetTransform().SetPosition(movingPos);    
+}
+
+void BossCinematic::PrintTempDialog(API_UIImage& Dialog, float temp)
+{
+
+    if (temp <= 0.0f)
+    {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
+        {
+            movingPos.y -= 1 * Time::GetDeltaTime();
+        }
+        else {
+            Dialog.GetGameObject().SetActive(false);
+        }
+    }
+    else {
+        Dialog.GetGameObject().SetActive(true);
+
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
+        {
+            movingPos.y += 1 * Time::GetDeltaTime();
+        }
+        else {
+            temp -= Time::GetDeltaTime();
+        }
+    }
+
+    Dialog.GetGameObject().GetTransform().SetPosition(movingPos);
+
+   /* if (activeTutorial == true && endTutorial == false && hideChest == false)
+    {
+        Tutorial_Img.GetGameObject().SetActive(true);
+        if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < finalPos.x)
+        {
+            movingPos.x += 0.32 * Time::GetDeltaTime();
+            timerTutorial = true;
+
+        }
+        if (timerTutorial == true)
+        {
+            showTutorial += 1.0f * Time::GetDeltaTime();
+
+        }
+
+    }
+
+    if (showTutorial >= 8.0f)
+    {
+
+        if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x > initalPos.x)
+        {
+            movingPos.x -= 0.32 * Time::GetDeltaTime();
+            timerTutorial = false;
+            hideChest = true;
+        }
+
+        else if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < initalPos.x) {
+            endTutorial = true;
+        }
+
+
+
+    }
+    Tutorial_Img.GetGameObject().GetTransform().SetPosition(movingPos);*/
 }
 
 void BossCinematic::OnCollisionEnter(API::API_RigidBody other)

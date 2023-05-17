@@ -20,6 +20,8 @@ namespace API
 
 		bool OnHovered();
 
+		int GetValue();
+
 	private:
 		ComponentUISlider* GetComponent();
 		void SetComponent(ComponentUISlider* component);

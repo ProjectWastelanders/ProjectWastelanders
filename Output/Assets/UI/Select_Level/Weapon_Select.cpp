@@ -29,7 +29,6 @@ HELLO_ENGINE_API_C Weapon_Select* CreateWeapon_Select(ScriptToInspectorInterface
 
     script->AddDragBoxUIButton("Proceed Button", &classInstance->proceedButton);
 
-    script->AddDragBoxGameObject("Open Menu Interruptor", &classInstance->interruptorGO);
     script->AddDragBoxGameObject("Player", &classInstance->playerGO);
     return classInstance;
 }
@@ -42,8 +41,6 @@ void Weapon_Select::Start()
     firstTime = true;
     firstTimeLevel = true;
 
-    interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
-    if (interruptor == nullptr) Console::Log("OpenMenuInterruptor missing Level Select");
     playerMove = (PlayerMove*)playerGO.GetScript("PlayerMove");
     if (playerMove == nullptr) Console::Log("PlayerMove missing in ArmoryWeaponSelect Script with gunIndex 0.");
 }
@@ -85,13 +82,9 @@ void Weapon_Select::Update()
         }
         else
         {
-            if (!interruptor) return;
             Input::HandleGamePadButton(GamePadButton::BUTTON_B);
             // IT'S CORRECT DON'T REMOVE NOTHING
-            interruptor->menuPanel.SetActive(true); // can set false if is not true
-            interruptor->menuPanel.SetActive(false);
             if (playerMove) playerMove->openingChest = false;
-            interruptor->open = false;
             firstTime = true;
         }
     }

@@ -41,16 +41,10 @@ bool API::API_UISlider::OnPress()
         Engine::Console::S_Log("Trying to acces a NULLPTR UI Button");
         return false;
     }
-
-    /*if (_UICheckBox->checkActive)
-    {
-        return _UICheckBox->State == CheckboxState::ONPRESSACTIVE;
-    }
     else
     {
-        return _UICheckBox->State == CheckboxState::ONPRESS;
-    }*/
-    //return _UIButton->State == CheckboxState::ONPRESS;
+        return _UISlider->State == SliderState::ONPRESS;
+    }
 }
 
 bool API::API_UISlider::OnHold()
@@ -60,16 +54,10 @@ bool API::API_UISlider::OnHold()
         Engine::Console::S_Log("Trying to acces a NULLPTR UI Button");
         return false;
     }
-
-    /*if (_UICheckBox->checkActive)
-    {
-        return _UICheckBox->State == CheckboxState::ONPRESSACTIVE;
-    }
     else
     {
-        return _UICheckBox->State == CheckboxState::ONPRESS;
-    }*/
-    //return _UICheckBox->State == CheckboxState::ONHOLD;
+        return _UISlider->State == SliderState::ONHOLD;
+    }
 }
 
 bool API::API_UISlider::OnHovered()
@@ -79,12 +67,14 @@ bool API::API_UISlider::OnHovered()
         Engine::Console::S_Log("Trying to acces a NULLPTR UI Button");
         return false;
     }
-    /*if (_UICheckBox->checkActive)
-    {
-        return _UICheckBox->State == CheckboxState::HOVEREDACTIVE;
-    }
     else
     {
-        return _UICheckBox->State == CheckboxState::HOVERED;
-    }*/
+        return _UISlider->State == SliderState::HOVER;
+    }
+}
+
+int API::API_UISlider::GetValue()
+{
+    _UISlider->CalculPerCent();
+    return _UISlider->perCent;
 }

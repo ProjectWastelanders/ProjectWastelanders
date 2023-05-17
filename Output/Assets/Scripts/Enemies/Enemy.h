@@ -88,7 +88,6 @@ public:
     PlayerStats* playerStats;
     float ultGain = 0;
 
-
     float _tAnimDie;
     float _coldAnimDie;
 
@@ -97,6 +96,7 @@ public:
 
     API_Agent enemyAgent;
     bool isAgent;
+
 private:
 
     float _coldStun;
@@ -112,6 +112,5 @@ private:
     float _coldHitColor;
 
     bool _hitShader;
-    
 };
 

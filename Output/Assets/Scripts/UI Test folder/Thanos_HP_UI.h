@@ -33,7 +33,7 @@ public:
 	API_UIImage  thanos_hp_bar;
 	API_UIImage  thanos_shield_bar;
 
-	bool shield_thanos_broked = false;
+	bool shield_Fight_On = false;
 	int not_loop = 0;
 };
 

@@ -121,7 +121,7 @@
 		rotation[3] = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 		
 		rotation = rotate(rotation, radians(euler.x), vec3(-1.0f, 0.0f, 0.0f));
-		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, 1.0f, 0.0f));
+		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, -1.0f, 0.0f));
 		rotation = rotate(rotation, radians(euler.z), vec3(0.0f, 0.0f, -1.0f));
 		
 		return vec3(rotation * vec4(direction, 0.0f));
@@ -181,7 +181,8 @@
 	{
 		vec3 dir = normalize(CalculateDirection(Light_Directional.Direction));
 		
-		float bias = max(0.00032 * (1.0 - dot(normal, dir)), 0.00032);
+		float bias = max(0.0005 * (1.0 - dot(normal, dir)), 0.00005);
+		//float bias = 0.0005;
 		float shadowFactor = CalculateShadow(FragPosLightSpace, bias);
 		
 		return CalculateLight(Light_Directional.Base, dir, normal, shadowFactor);
@@ -256,6 +257,7 @@
 		
 	}
 #endif
+
 
 
 

@@ -285,6 +285,7 @@
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -437,6 +438,7 @@
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
+		<ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

@@ -279,6 +279,7 @@ void InstanceRenderer::DrawInstancedSorting()
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+
     for (auto& mesh : meshes)
     {
         RenderUpdateState state = mesh.second.mesh.Update();
@@ -334,7 +335,6 @@ void InstanceRenderer::DrawInstancedSorting()
     // Reset model matrices.
     modelMatrices.clear();
     particleAnimInfos.clear();
-    //TextureManager::UnBindTextures();
 }
 
 void InstanceRenderer::SetAs2D()
@@ -528,13 +528,13 @@ void InstanceRenderer::CreateDynamicBuffersParticles()
     glGenBuffers(1, &PBO);
 
     glBindBuffer(GL_ARRAY_BUFFER, PBO);
-    glBufferData(GL_ARRAY_BUFFER, (sizeof(float4) + sizeof(float2))  * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
+    glBufferData(GL_ARRAY_BUFFER, sizeof(ParticleAnimInfo)  * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
 
     glEnableVertexAttribArray(7);
-    glVertexAttribPointer(7, 4, GL_FLOAT, GL_FALSE, sizeof(float4), (void*)offsetof(ParticleAnimInfo, textOffsets));
+    glVertexAttribPointer(7, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleAnimInfo), (void*)offsetof(ParticleAnimInfo, textOffsets));
 
     glEnableVertexAttribArray(8);
-    glVertexAttribPointer(8, 2, GL_FLOAT, GL_FALSE, sizeof(float2), (void*)offsetof(ParticleAnimInfo, texInfo));
+    glVertexAttribPointer(8, 2, GL_FLOAT, GL_FALSE, sizeof(ParticleAnimInfo), (void*)offsetof(ParticleAnimInfo, texInfo));
 
     glVertexAttribDivisor(7, 1);
     glVertexAttribDivisor(8, 1);

@@ -202,13 +202,9 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 void Emitter::UpdateParticlesOnScene(int i)
 {
-	/*if (ModuleInput::S_GetKey(SDL_SCANCODE_J) == KEY_DOWN)
-	{*/
-		ParticleList[i].UpdateTextureCoords(cont);
-		//cont++;
-	//}
+	
+	ParticleList[i].UpdateTextureCoords();
 	// Compute all the calculus needed to move the particles
-
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::EngineTimeDeltaTime();
@@ -227,12 +223,12 @@ void Emitter::UpdateParticlesOnScene(int i)
 void Emitter::UpdateParticlesOnGame(int i)
 {
 	
-	//ParticleList[i].UpdateTextureCoords(cont);
+	ParticleList[i].UpdateTextureCoords();
 	// Compute all the calculus needed to move the particles
-	std::cout <<" EPAAAAAAA" << "\n";
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::GameDeltaTime();
+	ParticleList[i].elapsedTime += EngineTime::GameDeltaTime();
 
 
 	// velocity = acceleration * dt

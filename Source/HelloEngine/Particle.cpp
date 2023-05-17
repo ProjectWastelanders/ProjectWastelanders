@@ -46,58 +46,8 @@ void Particle::SetTransformMatrix(Quat rot = Quat::identity)
 	transformMat = float4x4::FromTRS(position, q, scale).Transposed();
 }
 
-void Particle::UpdateTextureCoords(int &cont)
+void Particle::UpdateTextureCoords()
 {
-
-	/*switch (cont)
-	{
-	case 0: {
-		particleAnim.textOffsets.x = 0.0f;
-		particleAnim.textOffsets.y = 0.0f;
-		particleAnim.textOffsets.z = 0.25f;
-		particleAnim.textOffsets.w = 0.0f;
-	}break;
-	case 1: {
-		particleAnim.textOffsets.x = 0.25f;
-		particleAnim.textOffsets.y = 0.0f;
-		particleAnim.textOffsets.z = 0.50f;
-		particleAnim.textOffsets.w = 0.0f;
-	}break;
-	case 2: {
-		particleAnim.textOffsets.x = 0.5f;
-		particleAnim.textOffsets.y = 0.0f;
-		particleAnim.textOffsets.z = 0.75f;
-		particleAnim.textOffsets.w = 0.0f;
-	}break;
-	case 3: {
-		particleAnim.textOffsets.x = 0.75f;
-		particleAnim.textOffsets.y = 0.0f;
-		particleAnim.textOffsets.z = 0.0f;
-		particleAnim.textOffsets.w = 0.25f;
-	}break;
-	case 4: {
-		particleAnim.textOffsets.x = 0.0f;
-		particleAnim.textOffsets.y = 0.25f;
-		particleAnim.textOffsets.z = 0.25f;
-		particleAnim.textOffsets.w = 0.25f;
-	}break;
-	case 5: {
-		particleAnim.textOffsets.x = 0.25f;
-		particleAnim.textOffsets.y = 0.25f;
-		particleAnim.textOffsets.z = 0.5f;
-		particleAnim.textOffsets.w = 0.25f;
-	}break;
-	case 6: {
-		particleAnim.textOffsets.x = 0.5f;
-		particleAnim.textOffsets.y = 0.25f;
-		particleAnim.textOffsets.z = 0.75f;
-		particleAnim.textOffsets.w = 0.25f;
-	}break;
-
-	default:
-		cont = 0;
-		break;
-	}*/
 	
 	float particleLife = elapsedTime / Lifetime;
 	int numOfText = texture.numOfRows * texture.numOfRows;
@@ -119,16 +69,6 @@ void Particle::UpdateTextureCoords(int &cont)
 
 	particleAnim.texInfo.x = texture.numOfRows;
 	particleAnim.texInfo.y = blendFactor;
-
-	std::cout << particleAnim.textOffsets.x << " TexOffset X ";
-	std::cout << particleAnim.textOffsets.y << " TexOffset Y " << "\n";
-	std::cout << particleAnim.textOffsets.z << " TexOffset Z ";
-	std::cout << particleAnim.textOffsets.w << " TexOffset W " << "\n";
-	std::cout << index1 << " / " << " Index 1" << "\n";
-	std::cout << index2 << " / " << " Index 2" << "\n";
-	std::cout << elapsedTime << "elapsed time ";
-	std::cout << atlasProgression << " AtlasProgression" << "\n\n";
-	
 
 }
 

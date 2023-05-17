@@ -351,6 +351,16 @@ void ParticleSystemComponent::OnEditor()
 			ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 			imageName = "None";
 		}
+		if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText->isTransparent)
+		{
+			if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
+			{
+				for (Particle& var : ParticleEmitter.ParticleList)
+				{
+					var.texture = ParticleEmitter.emitterTexture;
+				}
+			}
+		}
 
 		if (ParticleEmitter.emitterTexture._textureID == -1)
 		{

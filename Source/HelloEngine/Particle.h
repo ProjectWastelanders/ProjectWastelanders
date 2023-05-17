@@ -79,7 +79,7 @@ struct Particle
 	//Calculate the Transform Matrix of the particle
 	void SetTransformMatrix(Quat rot);
 
-	void UpdateTextureCoords(int& cont);
+	void UpdateTextureCoords();
 
 	float FindModule(float a, float b);
 

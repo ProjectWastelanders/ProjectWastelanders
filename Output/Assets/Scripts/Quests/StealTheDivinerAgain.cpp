@@ -50,6 +50,7 @@ void StealTheDivinerAgain::OnCollisionStay(API_RigidBody other)
             finalText.SetActive(true);
             if (reachTheSpaceShip) reachTheSpaceShip->EnableMision();
             if (cam) cam->Earthquake(4), uwu = true;
+            gameObject.SetActive(false);
         }
     }
 }

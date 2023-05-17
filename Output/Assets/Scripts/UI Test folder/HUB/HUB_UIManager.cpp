@@ -19,14 +19,16 @@ void HUB_UIManager::Start()
 
 void HUB_UIManager::OpenPanel()        
 {
-	openedPanel = true; 
-	player->openingChest = true; 
+	openedPanel = true;
+	if (player)
+		player->openingChest = true; 
 }
 
 void HUB_UIManager::ClosePanel()
 {
 	openedPanel = false;
-	player->openingChest = false;
+	if (player)
+		player->openingChest = false;
 
 }
 

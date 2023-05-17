@@ -20,6 +20,7 @@ void UIManager::Start()
 {
 	currentPanel = CurrentPanel::NONE;
 	isPaused = true;
+	HUB_UIManager::ClosePanel(); // Do this in case the static state of the panel is blocked.
 }
 
 void UIManager::Update()

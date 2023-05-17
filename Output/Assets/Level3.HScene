@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.697026014328003,
+                "Aspect ratio": 1.9408766031265259,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 3611.0,
@@ -152,203 +152,6 @@
         "PrefabUID": 0,
         "Tag": "Camera",
         "UID": 2234365864,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Enemy Drop Rate": 20.0
-                    },
-                    {
-                        "Upgraded Enemy Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Ammo Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Aid Kit Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Power Ups Drop Rate": 30.0
-                    },
-                    {
-                        "Box Drop Rate": 35.0
-                    },
-                    {
-                        "Box Ammo Drop Rate": 50.0
-                    },
-                    {
-                        "Box Aid Kit Drop Rate": 50.0
-                    },
-                    {
-                        "Player Stats GO": 2252131494
-                    },
-                    {
-                        "Pull Size per Drop Type": 2
-                    },
-                    {
-                        "Lase Ammo Drop MeshIndexInsideModel": 0,
-                        "Lase Ammo Drop MeshModelUID": 1697595829
-                    },
-                    {
-                        "First Aid Kit Drop MeshIndexInsideModel": 0,
-                        "First Aid Kit Drop MeshModelUID": 2874499955
-                    },
-                    {
-                        "Speed Power Up Drop MeshIndexInsideModel": 0,
-                        "Speed Power Up Drop MeshModelUID": 4155151858
-                    },
-                    {
-                        "Firearte Power Up Drop MeshIndexInsideModel": 0,
-                        "Firearte Power Up Drop MeshModelUID": 64207190
-                    },
-                    {
-                        "Shield Drop MeshIndexInsideModel": 0,
-                        "Shield Drop MeshModelUID": 1809370760
-                    },
-                    {
-                        "Max Ammo Drop MeshIndexInsideModel": 0,
-                        "Max Ammo Drop MeshModelUID": 1221208577
-                    },
-                    {
-                        "Slow Time Drop MeshIndexInsideModel": 0,
-                        "Slow Time Drop MeshModelUID": 3985081795
-                    },
-                    {
-                        "Lase Ammo Drop Material": 2330959624
-                    },
-                    {
-                        "First Aid Kit Drop Material": 2491720131
-                    },
-                    {
-                        "Speed Power Up Drop Material": 4277319149
-                    },
-                    {
-                        "Firearte Power Up Drop Material": 118042655
-                    },
-                    {
-                        "Shield Drop Material": 2372725634
-                    },
-                    {
-                        "Max Ammo Drop Material": 1187059155
-                    },
-                    {
-                        "Slow Time Drop Material": 4050818447
-                    },
-                    {
-                        "Enemy Drop Rate": 20.0
-                    },
-                    {
-                        "Upgraded Enemy Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Ammo Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Aid Kit Drop Rate": 35.0
-                    },
-                    {
-                        "Enemy Power Ups Drop Rate": 30.0
-                    },
-                    {
-                        "Box Drop Rate": 35.0
-                    },
-                    {
-                        "Box Ammo Drop Rate": 50.0
-                    },
-                    {
-                        "Box Aid Kit Drop Rate": 50.0
-                    },
-                    {
-                        "Player Stats GO": 2252131494
-                    },
-                    {
-                        "Pull Size per Drop Type": 2
-                    },
-                    {
-                        "Lase Ammo Drop MeshIndexInsideModel": 0,
-                        "Lase Ammo Drop MeshModelUID": 1697595829
-                    },
-                    {
-                        "First Aid Kit Drop MeshIndexInsideModel": 0,
-                        "First Aid Kit Drop MeshModelUID": 2874499955
-                    },
-                    {
-                        "Speed Power Up Drop MeshIndexInsideModel": 0,
-                        "Speed Power Up Drop MeshModelUID": 4155151858
-                    },
-                    {
-                        "Firearte Power Up Drop MeshIndexInsideModel": 0,
-                        "Firearte Power Up Drop MeshModelUID": 64207190
-                    },
-                    {
-                        "Shield Drop MeshIndexInsideModel": 0,
-                        "Shield Drop MeshModelUID": 1809370760
-                    },
-                    {
-                        "Max Ammo Drop MeshIndexInsideModel": 0,
-                        "Max Ammo Drop MeshModelUID": 1221208577
-                    },
-                    {
-                        "Slow Time Drop MeshIndexInsideModel": 0,
-                        "Slow Time Drop MeshModelUID": 3985081795
-                    },
-                    {
-                        "Lase Ammo Drop Material": 2330959624
-                    },
-                    {
-                        "First Aid Kit Drop Material": 2491720131
-                    },
-                    {
-                        "Speed Power Up Drop Material": 4277319149
-                    },
-                    {
-                        "Firearte Power Up Drop Material": 118042655
-                    },
-                    {
-                        "Shield Drop Material": 2372725634
-                    },
-                    {
-                        "Max Ammo Drop Material": 1187059155
-                    },
-                    {
-                        "Slow Time Drop Material": 4050818447
-                    }
-                ],
-                "Script Resource": 3418902942,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "DropManager",
-        "ParentUID": 2462894403,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 2371815913,
         "UpdateWithBones": false
     },
     {
@@ -107880,13 +107683,13 @@
                 "Enabled": true,
                 "Position": [
                     0.0,
-                    0.0,
+                    0.20000000298023224,
                     0.0
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -108052,7 +107855,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -108263,7 +108072,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -108554,7 +108369,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -108845,7 +108666,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -109136,7 +108963,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -109427,7 +109260,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -109718,7 +109557,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -110009,7 +109854,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -110300,7 +110151,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -110591,7 +110448,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -110882,7 +110745,13 @@
                         "MaxHp": 10
                     },
                     {
+                        "Drop Manager": 2371815913
+                    },
+                    {
                         "MaxHp": 10
+                    },
+                    {
+                        "Drop Manager": 2371815913
                     }
                 ],
                 "Script Resource": 1066035858,
@@ -111594,6 +111463,551 @@
         "PrefabUID": 1498491533,
         "Tag": "Default",
         "UID": 3826025244,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    45.48817443847656,
+                    94.9460220336914,
+                    -6.656069755554199
+                ],
+                "Rotation": [
+                    179.99501037597656,
+                    64.47421264648438,
+                    179.9997100830078
+                ],
+                "Scale": [
+                    2.0000417232513428,
+                    2.0,
+                    2.0000412464141846
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1910303537,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.5,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 2.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2300758733,
+                "Type": 18
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Connected_Jumper": 3981359729
+                    },
+                    {
+                        "Jump Duration": 1.0
+                    },
+                    {
+                        "Jump Height": 10.0
+                    },
+                    {
+                        "Connected_Jumper": 3981359729
+                    },
+                    {
+                        "Jump Duration": 1.0
+                    },
+                    {
+                        "Jump Height": 10.0
+                    }
+                ],
+                "Script Resource": 2883654131,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Space_Jumper",
+        "ParentUID": 2462894403,
+        "PrefabUID": 3025516120,
+        "Tag": "Default",
+        "UID": 987848461,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.5587201118469238,
+                    -1.0508918762207031,
+                    -12.154629707336426
+                ],
+                "Rotation": [
+                    -1.5216416571206537e-08,
+                    7.34257118892856e-05,
+                    -1.6883690889812897e-08
+                ],
+                "Scale": [
+                    1.0000008344650269,
+                    1.0,
+                    0.9999676942825317
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Landing",
+        "ParentUID": 987848461,
+        "PrefabUID": 3025516120,
+        "Tag": "Default",
+        "UID": 3981359729,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    45.974098205566406,
+                    94.62565612792969,
+                    -21.696340560913086
+                ],
+                "Rotation": [
+                    0.006703357677906752,
+                    71.80052947998047,
+                    -0.011053916998207569
+                ],
+                "Scale": [
+                    2.0000393390655518,
+                    2.0,
+                    2.0000393390655518
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 1910303537,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.5,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsShapeSelected": [
+                    false,
+                    true,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 1,
+                "SphereHorSlices": 16,
+                "SphereRadius": 2.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": true,
+                "MaterialUID": 2300758733,
+                "Type": 18
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Connected_Jumper": 2088216825
+                    },
+                    {
+                        "Jump Duration": 1.0
+                    },
+                    {
+                        "Jump Height": 10.0
+                    },
+                    {
+                        "Connected_Jumper": 2088216825
+                    },
+                    {
+                        "Jump Duration": 1.0
+                    },
+                    {
+                        "Jump Height": 10.0
+                    }
+                ],
+                "Script Resource": 2883654131,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Space_Jumper",
+        "ParentUID": 2462894403,
+        "PrefabUID": 3025516120,
+        "Tag": "Default",
+        "UID": 3463776978,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.5354781150817871,
+                    -1.3177337646484375,
+                    -12.326443672180176
+                ],
+                "Rotation": [
+                    -1.2871413268555898e-08,
+                    -1.7929489331436343e-05,
+                    -1.813434735709052e-08
+                ],
+                "Scale": [
+                    1.0000004768371582,
+                    1.0,
+                    0.9999707937240601
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Landing",
+        "ParentUID": 3463776978,
+        "PrefabUID": 3025516120,
+        "Tag": "Default",
+        "UID": 2088216825,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Enemy Drop Rate": 20.0
+                    },
+                    {
+                        "Upgraded Enemy Drop Rate": 35.0
+                    },
+                    {
+                        "Enemy Ammo Drop Rate": 35.0
+                    },
+                    {
+                        "Enemy Aid Kit Drop Rate": 35.0
+                    },
+                    {
+                        "Enemy Power Ups Drop Rate": 30.0
+                    },
+                    {
+                        "Box Drop Rate": 35.0
+                    },
+                    {
+                        "Box Ammo Drop Rate": 50.0
+                    },
+                    {
+                        "Box Aid Kit Drop Rate": 50.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Pull Size per Drop Type": 2
+                    },
+                    {
+                        "Lase Ammo Drop MeshIndexInsideModel": 0,
+                        "Lase Ammo Drop MeshModelUID": 1697595829
+                    },
+                    {
+                        "First Aid Kit Drop MeshIndexInsideModel": 0,
+                        "First Aid Kit Drop MeshModelUID": 2874499955
+                    },
+                    {
+                        "Speed Power Up Drop MeshIndexInsideModel": 0,
+                        "Speed Power Up Drop MeshModelUID": 4155151858
+                    },
+                    {
+                        "Firearte Power Up Drop MeshIndexInsideModel": 0,
+                        "Firearte Power Up Drop MeshModelUID": 64207190
+                    },
+                    {
+                        "Shield Drop MeshIndexInsideModel": 0,
+                        "Shield Drop MeshModelUID": 1809370760
+                    },
+                    {
+                        "Max Ammo Drop MeshIndexInsideModel": 0,
+                        "Max Ammo Drop MeshModelUID": 1221208577
+                    },
+                    {
+                        "Slow Time Drop MeshIndexInsideModel": 0,
+                        "Slow Time Drop MeshModelUID": 3985081795
+                    },
+                    {
+                        "Lase Ammo Drop Material": 2330959624
+                    },
+                    {
+                        "First Aid Kit Drop Material": 2491720131
+                    },
+                    {
+                        "Speed Power Up Drop Material": 4277319149
+                    },
+                    {
+                        "Firearte Power Up Drop Material": 118042655
+                    },
+                    {
+                        "Shield Drop Material": 2372725634
+                    },
+                    {
+                        "Max Ammo Drop Material": 1187059155
+                    },
+                    {
+                        "Slow Time Drop Material": 4050818447
+                    },
+                    {
+                        "Enemy Drop Rate": 20.0
+                    },
+                    {
+                        "Upgraded Enemy Drop Rate": 35.0
+                    },
+                    {
+                        "Enemy Ammo Drop Rate": 35.0
+                    },
+                    {
+                        "Enemy Aid Kit Drop Rate": 35.0
+                    },
+                    {
+                        "Enemy Power Ups Drop Rate": 30.0
+                    },
+                    {
+                        "Box Drop Rate": 35.0
+                    },
+                    {
+                        "Box Ammo Drop Rate": 50.0
+                    },
+                    {
+                        "Box Aid Kit Drop Rate": 50.0
+                    },
+                    {
+                        "Player Stats GO": 2252131494
+                    },
+                    {
+                        "Pull Size per Drop Type": 2
+                    },
+                    {
+                        "Lase Ammo Drop MeshIndexInsideModel": 0,
+                        "Lase Ammo Drop MeshModelUID": 1697595829
+                    },
+                    {
+                        "First Aid Kit Drop MeshIndexInsideModel": 0,
+                        "First Aid Kit Drop MeshModelUID": 2874499955
+                    },
+                    {
+                        "Speed Power Up Drop MeshIndexInsideModel": 0,
+                        "Speed Power Up Drop MeshModelUID": 4155151858
+                    },
+                    {
+                        "Firearte Power Up Drop MeshIndexInsideModel": 0,
+                        "Firearte Power Up Drop MeshModelUID": 64207190
+                    },
+                    {
+                        "Shield Drop MeshIndexInsideModel": 0,
+                        "Shield Drop MeshModelUID": 1809370760
+                    },
+                    {
+                        "Max Ammo Drop MeshIndexInsideModel": 0,
+                        "Max Ammo Drop MeshModelUID": 1221208577
+                    },
+                    {
+                        "Slow Time Drop MeshIndexInsideModel": 0,
+                        "Slow Time Drop MeshModelUID": 3985081795
+                    },
+                    {
+                        "Lase Ammo Drop Material": 2330959624
+                    },
+                    {
+                        "First Aid Kit Drop Material": 2491720131
+                    },
+                    {
+                        "Speed Power Up Drop Material": 4277319149
+                    },
+                    {
+                        "Firearte Power Up Drop Material": 118042655
+                    },
+                    {
+                        "Shield Drop Material": 2372725634
+                    },
+                    {
+                        "Max Ammo Drop Material": 1187059155
+                    },
+                    {
+                        "Slow Time Drop Material": 4050818447
+                    }
+                ],
+                "Script Resource": 3418902942,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "DropManager",
+        "ParentUID": 2462894403,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2371815913,
         "UpdateWithBones": false
     }
 ]

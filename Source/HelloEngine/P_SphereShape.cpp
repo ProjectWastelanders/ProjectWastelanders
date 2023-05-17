@@ -54,3 +54,13 @@ bool P_SphereShape::IsInside(float3 position)
 	return true;
 }
 
+void P_SphereShape::Serialization(json& j)
+{
+	j["ParticleModules"]["ShapeModule"]["Radius"] = radius;
+}
+
+void P_SphereShape::DeSerialization(json& j)
+{
+	radius = j["ParticleModules"]["ShapeModule"]["Radius"];
+}
+

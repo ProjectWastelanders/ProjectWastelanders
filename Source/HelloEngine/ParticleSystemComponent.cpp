@@ -567,14 +567,22 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	size = j["ParticleVectorSize"];
 	sizeCpy = j["ParticleVectorSize"];
-	ShapeType shape = j["ParticleModules"]["ShapeModule"]["ShapeType"];
-	CreateCurrentShape(shape);
-	if (shape != ShapeType::NONE) {
+
+	ShapeType shape = ShapeType::NONE;
+
+	if (j.contains("ParticleModules") && j["ParticleModules"].contains("ShapeModule") 
+		&& j["ParticleModules"]["ShapeModule"].contains("ShapeType"))
+	{
+		shape = j["ParticleModules"]["ShapeModule"]["ShapeType"];
+		CreateCurrentShape(shape);
+	}
+
+	if (shape != ShapeType::NONE) 
+	{
 		GetCurrentShape()->DeSerialization(j);
 	}
-	
-	bool enabled = j["Enabled"];
 
+	bool enabled = j["Enabled"];
 }
 
 void ParticleSystemComponent::SetPlayOnGame(bool playongame)

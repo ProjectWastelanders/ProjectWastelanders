@@ -192,6 +192,8 @@ void Weapon_Select::Update()
             }
         }
 
+        HUB_UIManager::ClosePanel();
+
         firstTimeLevel = false;
     }
 }

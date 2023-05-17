@@ -58,3 +58,17 @@ bool P_CubeShape::IsInside(float3 position)
 
 	return false;
 }
+
+void P_CubeShape::Serialization(json& j)
+{
+	j["ParticleModules"]["ShapeModule"]["C1"] = c1;
+	j["ParticleModules"]["ShapeModule"]["C2"] = c2;
+	j["ParticleModules"]["ShapeModule"]["C3"] = c3;
+}
+
+void P_CubeShape::DeSerialization(json& j)
+{
+	c1 = j["ParticleModules"]["ShapeModule"]["C1"];
+	c2 = j["ParticleModules"]["ShapeModule"]["C2"];
+	c3 = j["ParticleModules"]["ShapeModule"]["C3"];
+}

@@ -388,7 +388,7 @@ void ParticleSystemComponent::OnEditor()
 		ImGui::NewLine();
 		for (int i = 0; i < ParticleModules.size(); i++)
 		{
-			ParticleModules[i]->OnEditor();
+			ParticleModules[i]->OnEditor(); 
 		}		
 	}
 	if (!created)
@@ -502,6 +502,9 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleMain"]["PlayOnAwake"] = ParticleEmitter.playOnAwake;
 		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
 		_j["ParticleModules"]["ModuleEmission"]["Enable"] = ParticleEmitter.enableEmissionModule;
+		_j["ParticleModules"]["ShapeModule"]["ShapeType"] = GetCurrentShape()->shapeType;
+		
+		GetCurrentShape()->Serialization(_j);
 	}
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
@@ -559,6 +562,12 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	//ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	//size = j["ParticleVectorSize"];
 	//sizeCpy = j["ParticleVectorSize"];
+	/*ShapeType shape = j["ParticleModules"]["ShapeModule"]["ShapeType"];
+	CreateCurrentShape(shape);
+	if (shape != ShapeType::NONE) {
+		GetCurrentShape()->DeSerialization(j);
+	}*/
+	
 	bool enabled = j["Enabled"];
 
 }

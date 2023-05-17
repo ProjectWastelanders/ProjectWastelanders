@@ -5,6 +5,8 @@ class P_CubeShape : public P_ShapeModule
 public:
 	P_CubeShape();
 	~P_CubeShape();
+	void Serialization(json& j) override;
+	void DeSerialization(json& j) override;
 
 	void OnEditor() override;
 

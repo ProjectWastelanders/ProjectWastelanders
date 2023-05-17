@@ -14,7 +14,10 @@ class PlayerMove : HelloBehavior
     enum class PlayerAnims
     {
         IDLE,
-        RUN,
+        RUN_FORWARD,
+        RUN_BACK,
+        RUN_LEFT,
+        RUN_RIGHT,
         DASH,
         SHOOT,
         SWAP_GUN,
@@ -86,7 +89,10 @@ public:
     uint idle3Anim = 0;
     bool specialIdleActive = false;
     float specialIdleTime = 1.0f;
-    uint runAnim = 0;
+    uint runForwardAnim = 0;
+    uint runBackAnim = 0;
+    uint runLeftAnim = 0;
+    uint runRightAnim = 0;
     uint shootAnim[7];
     void PlayShootAnim(int gunIndex);
     bool isShooting = false;

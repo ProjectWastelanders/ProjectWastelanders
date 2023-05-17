@@ -99,6 +99,7 @@ bool ModuleLayers::Start()
 
 UpdateStatus ModuleLayers::PreUpdate()
 {
+    OPTICK_EVENT();
     if(_requestScene)
     {
         if (!ModuleResourceManager::S_DeserializeScene(_requestScenePath))
@@ -156,6 +157,7 @@ UpdateStatus ModuleLayers::PostUpdate()
 
 void ModuleLayers::S_DrawLayers()
 {
+    OPTICK_EVENT();
     for (int i = 0; i < (uint)LayersID::EDITOR; i++)
     {
         if (_layers[i] && _layers[i]->IsEnabled())
@@ -165,6 +167,7 @@ void ModuleLayers::S_DrawLayers()
 
 void ModuleLayers::S_DrawEditor()
 {
+    OPTICK_EVENT();
     if (_layers[(uint)LayersID::EDITOR] && _layers[(uint)LayersID::EDITOR]->IsEnabled()) 
         _layers[(uint)LayersID::EDITOR]->PostUpdate();
 }

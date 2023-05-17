@@ -116,6 +116,8 @@ public:
 
 	static bool S_IsUsingController() { return _usingGamePad; }
 
+	static void S_ResetFrameInput();
+
 private:
 
 	static void OpenController();

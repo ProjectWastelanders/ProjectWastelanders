@@ -28,7 +28,8 @@
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 831504440
+        "UID": 831504440,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -59,46 +60,8 @@
         "ParentUID": 831504440,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2601401752
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2083724339,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Coleccionables_BackGround",
-        "ParentUID": 2601401752,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 2010438263
+        "UID": 2601401752,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -121,15 +84,87 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "CheckBox 1": 2108449282
+                    },
+                    {
+                        "CheckBox 2": 898339569
+                    },
+                    {
+                        "CheckBox 3": 3577156584
+                    },
+                    {
+                        "level": 2047112327
+                    },
+                    {
+                        "Song 1 texture": 327255597
+                    },
+                    {
+                        "Song 2 texture": 2363840146
+                    },
+                    {
+                        "Song 3 texture": 3892646585
+                    }
+                ],
+                "Script Resource": 1661215582,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Buttons",
+        "Name": "Coleccionables",
         "ParentUID": 2601401752,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 1171605434
+        "UID": 2754341677,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    2108449282,
+                    898339569,
+                    3577156584
+                ]
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Panel_Buttons",
+        "ParentUID": 2754341677,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 87265403,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -138,8 +173,8 @@
                 "Enabled": true,
                 "Position": [
                     -0.6100000143051147,
-                    0.10000000149011612,
-                    -0.003000000026077032
+                    0.6000000238418579,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -155,20 +190,26 @@
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2477737623,
+                "MaterialResource": 2148210497,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 245536225,
+                "hoverImage": 680300656,
+                "idleActiveImage": 337283063,
+                "idleImage": 2148210497,
+                "pressActiveImage": 337283063,
+                "pressImage": 337283063
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Button_3",
-        "ParentUID": 1171605434,
+        "Name": "HALA - 1  ",
+        "ParentUID": 87265403,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 1589657447
+        "UID": 2108449282,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -194,20 +235,26 @@
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2477737623,
+                "MaterialResource": 2148210497,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 245536225,
+                "hoverImage": 680300656,
+                "idleActiveImage": 337283063,
+                "idleImage": 2148210497,
+                "pressActiveImage": 337283063,
+                "pressImage": 337283063
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Button_2",
-        "ParentUID": 1171605434,
+        "Name": "HALA - 2",
+        "ParentUID": 87265403,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 4108211461
+        "UID": 898339569,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -216,7 +263,7 @@
                 "Enabled": true,
                 "Position": [
                     -0.6100000143051147,
-                    0.6000000238418579,
+                    0.10000000149011612,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -227,26 +274,32 @@
                 "Scale": [
                     0.07999999821186066,
                     0.15000000596046448,
-                    0.20000000298023224
+                    0.5
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2477737623,
+                "MaterialResource": 2148210497,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 14,
+                "hoverActiveImage": 245536225,
+                "hoverImage": 680300656,
+                "idleActiveImage": 337283063,
+                "idleImage": 2148210497,
+                "pressActiveImage": 337283063,
+                "pressImage": 337283063
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Button_1",
-        "ParentUID": 1171605434,
+        "Name": "SANCTUARY",
+        "ParentUID": 87265403,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2281476682
+        "UID": 3577156584,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -274,10 +327,11 @@
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "CASETES",
-        "ParentUID": 2601401752,
+        "ParentUID": 2754341677,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 78840953
+        "UID": 78840953,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -316,7 +370,8 @@
         "ParentUID": 78840953,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3729535527
+        "UID": 3729535527,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -355,7 +410,8 @@
         "ParentUID": 78840953,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 841278460
+        "UID": 841278460,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -394,7 +450,8 @@
         "ParentUID": 78840953,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2618002178
+        "UID": 2618002178,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -421,7 +478,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 327255597,
+                "MaterialResource": 0,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -430,10 +487,11 @@
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "levels",
-        "ParentUID": 2601401752,
+        "ParentUID": 2754341677,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 2047112327
+        "UID": 2047112327,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -464,14 +522,163 @@
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button Guide": 4014437327
+                    },
+                    {
+                        "Move X animation repeat": 0
+                    },
+                    {
+                        "Move Y animation repeat": 0
+                    },
+                    {
+                        "Move animation in loop": false
+                    },
+                    {
+                        "Move animation active": false
+                    },
+                    {
+                        "Distance move X": 0.0
+                    },
+                    {
+                        "Speed move X": 0.0
+                    },
+                    {
+                        "Distance move Y": 0.0
+                    },
+                    {
+                        "Speed move Y": 0.0
+                    },
+                    {
+                        "Scale animation repeat": 0
+                    },
+                    {
+                        "Scale animation in loop": false
+                    },
+                    {
+                        "Scale animation active": false
+                    },
+                    {
+                        "Scale max": 0.0
+                    },
+                    {
+                        "Speed Scale": 0.0
+                    },
+                    {
+                        "Rotate animation repeat": 0
+                    },
+                    {
+                        "Rotate animation in loop": true
+                    },
+                    {
+                        "Rotate animation active": true
+                    },
+                    {
+                        "Rotate distance": 4.0
+                    },
+                    {
+                        "Speed Rotation": 200.0
+                    }
+                ],
+                "Script Resource": 148961927,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": true,
         "IsStatic": false,
         "Name": "groot_head",
-        "ParentUID": 2601401752,
+        "ParentUID": 2754341677,
         "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 4014437327
+        "UID": 4014437327,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2083724339,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Coleccionables_BackGround",
+        "ParentUID": 2754341677,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2010438263,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 2.0055761337280273,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Main Camera",
+        "ParentUID": 831504440,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1886629161,
+        "UpdateWithBones": false
     }
 ]

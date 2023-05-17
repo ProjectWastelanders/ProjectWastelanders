@@ -6,6 +6,10 @@ struct DirectionalLight : public Light
 	DirectionalLight() : Light(Component::Type::DIRECTIONAL_LIGHT) {}
 
 	float3 direction;
+	float4x4 lightSpaceMatrix;
+	Frustum lightFrustum;
+
+	void CalculateLightSpaceMatrix();
 };
 
 class DirectionalLightComponent : public LightComponent
@@ -33,5 +37,8 @@ public:
 public:
 	DirectionalLight& GetData() override { return data; }
 	void SetData(DirectionalLight& data) { this->data = data; }
+
+private:
+	void CalculateLightSpaceMatrix();
 };
 

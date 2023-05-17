@@ -13,7 +13,11 @@ public:
 	API_UIButton Continue;
 	API_UIButton NewGame;
 	API_UIButton Exit;
-	API_UIButton Collectibles;
 	API_UIButton Settings;
+
+	API_GameObject settingsPanel;
+	API_GameObject mainPanel;
+
+	bool settingsActive;
 };
 

@@ -32,6 +32,13 @@ PhysicsComponent::PhysicsComponent(GameObject* gameObject) : Component(gameObjec
 
 	wireframeSize = 1.0f;
 
+	raycastColor[0] = 0.5f;
+	raycastColor[1] = 0.0f;
+	raycastColor[2] = 0.5f;
+	raycastColor[3] = 1.0f;
+
+	raycastSize = 1.0f;
+
 	sphereVerSlices = 16;
 	sphereHorSlices = 16;
 	cylinderVerSlices = 16;
@@ -89,11 +96,13 @@ void PhysicsComponent::Serialization(json& j)
 	{
 		_j["HasPhysBody"] = true;
 		_j["IsRenderingCol"] = _physBody->isRenderingCol;
+		_j["IsRenderingRayCast"] = _physBody->isRenderingRayCast;
 	}
 	else
 	{
 		_j["HasPhysBody"] = false;
 		_j["IsRenderingCol"] = false;
+		_j["IsRenderingRayCast"] = false;
 	}
 
 	_j["ShapeSelected"] = _shapeSelected;
@@ -122,6 +131,9 @@ void PhysicsComponent::Serialization(json& j)
 		_j["CylVerSlices"] = cylinderVerSlices;
 
 		_j["RenderColColor"] = { renderColColor[0] , renderColColor[1] , renderColColor[2], renderColColor[3] };
+
+		_j["RayCastSize"] = raycastSize;
+		_j["RayCastColor"] = { raycastColor[0] , raycastColor[1] , raycastColor[2], raycastColor[3] };
 	}
 	else
 	{
@@ -137,13 +149,16 @@ void PhysicsComponent::Serialization(json& j)
 
 		_j["Gravity"] = { 0, -9.8f, 0 };
 
-		_j["WireframeSize"] = 3.0f;
+		_j["WireframeSize"] = 1.0f;
 
 		_j["SphereVerSlices"] = 16;
 		_j["SphereHorSlices"] = 16;
 		_j["CylVerSlices"] = 16;
 
 		_j["RenderColColor"] = { 0.5f , 0 , 0.5f, 1 };
+
+		_j["RayCastSize"] = 1.0f;
+		_j["RayCastColor"] = { 0.5f , 0 , 0.5f, 1 };
 	}
 
 	_j["SphereRadius"] = sphereRadius;
@@ -197,6 +212,11 @@ void PhysicsComponent::DeSerialization(json& j)
 		}
 
 		_physBody->isRenderingCol = j["IsRenderingCol"];
+		if (j.contains("IsRenderingRayCast"))
+		{
+			_physBody->isRenderingRayCast = j["IsRenderingRayCast"];
+		}
+
 		std::vector<float> colPosTemp = j["ColPosition"];
 		_physBody->colPos = { colPosTemp[0], colPosTemp[1], colPosTemp[2] };
 
@@ -217,6 +237,19 @@ void PhysicsComponent::DeSerialization(json& j)
 		renderColColor[1] = RenderColColorTemp[1];
 		renderColColor[2] = RenderColColorTemp[2];
 		renderColColor[3] = RenderColColorTemp[3];
+
+		if (j.contains("RayCastSize"))
+		{
+			raycastSize = j["RayCastSize"];
+		}
+		if (j.contains("RayCastColor"))
+		{
+			std::vector<float> RenderRayColorTemp = j["RayCastColor"];
+			raycastColor[0] = RenderRayColorTemp[0];
+			raycastColor[1] = RenderRayColorTemp[1];
+			raycastColor[2] = RenderRayColorTemp[2];
+			raycastColor[3] = RenderRayColorTemp[3];
+		}
 
 		CallUpdateAllPram();
 	}
@@ -257,6 +290,7 @@ void PhysicsComponent::OnEditor()
 				{
 					CreateCollider();
 					_physBody->isRenderingCol = true;
+					_physBody->isRenderingRayCast = false;
 				}
 			}
 
@@ -403,7 +437,6 @@ void PhysicsComponent::OnEditor()
 				}
 			}
 
-
 			switch (_shapeSelected)
 			{
 			case ColliderShape::BOX:
@@ -462,6 +495,18 @@ void PhysicsComponent::OnEditor()
 			if (ImGui::Button("Remove Collider"))
 			{
 				RemoveCollider();
+			}
+
+			if (ImGui::CollapsingHeader("RayCast", nullptr))
+			{
+				ImGui::Checkbox("Render RayCast", &_physBody->isRenderingRayCast);
+
+				if (_physBody->isRenderingRayCast)
+				{
+					ImGui::ColorEdit4("RayCast Color", raycastColor);
+
+					ImGui::DragFloat("RayCast Size: ", &raycastSize, 0.1f, 0.5f, 100.f);
+				}
 			}
 		}
 	}

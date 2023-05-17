@@ -47,3 +47,13 @@ bool P_CircleShape::IsInside(float3 position)
 
 	return distance <= radius;
 }
+
+void P_CircleShape::Serialization(json& j)
+{
+	j["ParticleModules"]["ShapeModule"]["Radius"] = radius;
+}
+
+void P_CircleShape::DeSerialization(json& j)
+{
+	radius = j["ParticleModules"]["ShapeModule"]["Radius"];
+}

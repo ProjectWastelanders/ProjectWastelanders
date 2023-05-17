@@ -84,8 +84,6 @@
     <ClCompile Include="ParticleSystemComponent.cpp" />
     <ClCompile Include="P_EmissionModule.cpp" />
     <ClCompile Include="P_MainModule.cpp" />
-    <ClCompile Include="ModulePhysics.cpp" />
-    <ClCompile Include="PhysBody3D.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
     <ClCompile Include="P_Module.cpp" />
     <ClCompile Include="RenderManager.cpp" />
@@ -94,7 +92,6 @@
     <ClCompile Include="ModuleCommand.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModuleFiles.cpp" />
-    <ClCompile Include="ModuleRenderer3D.cpp" />
     <ClCompile Include="ModuleResourceManager.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="ModuleXML.cpp" />
@@ -110,7 +107,6 @@
     <ClCompile Include="TextureImporter.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="EngineTime.cpp" />
-    <ClCompile Include="TransformComponent.cpp" />
     <ClCompile Include="Uniform.cpp" />
     <ClCompile Include="UUID.cpp" />
     <ClCompile Include="XMLNode.cpp" />
@@ -406,6 +402,23 @@
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="API\API_UICheckBox.cpp" />
+    <ClCompile Include="AudioSourceComponent.cpp" />
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ModulePhysics.cpp">
+      <Filter>Modules\Physic</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysBody3D.cpp">
+      <Filter>Modules\Physic</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_RayCast.cpp" />
+    <ClCompile Include="API\API_RayCastCollision.cpp" />
+    <ClCompile Include="ModuleRenderer3D.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="API\API_AudioSource.cpp" />
+    <ClCompile Include="API\API_UISlider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -524,8 +537,6 @@
     <ClInclude Include="ParticleSystemComponent.h" />
     <ClInclude Include="P_EmissionModule.h" />
     <ClInclude Include="P_MainModule.h" />
-    <ClInclude Include="ModulePhysics.h" />
-    <ClInclude Include="PhysBody3D.h" />
     <ClInclude Include="Primitive.h" />
     <ClInclude Include="ModuleAudio.h" />
     <ClInclude Include="P_Module.h" />
@@ -535,7 +546,6 @@
     <ClInclude Include="ModuleCommand.h" />
     <ClInclude Include="ModuleInput.h" />
     <ClInclude Include="ModuleFiles.h" />
-    <ClInclude Include="ModuleRenderer3D.h" />
     <ClInclude Include="ModuleResourceManager.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="ModuleXML.h" />
@@ -554,7 +564,6 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="EngineTime.h" />
     <ClInclude Include="Timer.hpp" />
-    <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Uniform.h" />
     <ClInclude Include="UUID.h" />
     <ClInclude Include="XMLNode.h" />
@@ -841,6 +850,23 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="API\API_UICheckBox.h" />
+    <ClInclude Include="AudioSourceComponent.h" />
+    <ClInclude Include="TransformComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ModulePhysics.h">
+      <Filter>Modules\Physic</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysBody3D.h">
+      <Filter>Modules\Physic</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_RayCast.h" />
+    <ClInclude Include="API\API_RayCastCollision.h" />
+    <ClInclude Include="ModuleRenderer3D.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="API\API_AudioSource.h" />
+    <ClInclude Include="API\API_UISlider.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />
@@ -898,6 +924,9 @@
     </Filter>
     <Filter Include="Modules\Layer">
       <UniqueIdentifier>{f97622bc-9f87-48bb-9edb-7dc2b9de815c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Physic">
+      <UniqueIdentifier>{35a5bd4f-753c-46e4-bbdf-eb268e0d79db}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -15,6 +15,10 @@ PhysBody3D::PhysBody3D(btRigidBody* body)
 	isStatic = false;
 	isKinematic = false;
 	isTrigger = false;
+
+	isRenderingRayCast = false;
+	raycastPos1 = { 0,0,0 };
+	raycastPos2 = { 0,0,0 };
 }
 
 PhysBody3D::~PhysBody3D()
@@ -30,7 +34,10 @@ void PhysBody3D::Push(float x, float y, float z)
 void PhysBody3D::SetVelocity(float x, float y, float z)
 {
 	if (body)
+	{
+		body->forceActivationState(DISABLE_DEACTIVATION);
 		body->setLinearVelocity(btVector3(x, y, z));
+	}
 }
 
 void PhysBody3D::GetTransform(float* matrix) const
@@ -125,7 +132,6 @@ float3 PhysBody3D::GetVelocity()
 
 void PhysBody3D::Update()
 {
-
 	//btTransform worldTransform = body->getWorldTransform();
 	//btScalar matrix;
 	//worldTransform.getOpenGLMatrix(&matrix);
@@ -165,12 +171,6 @@ void PhysBody3D::Update()
 		//go->transform->SetRotation(goRot); //This line provokes that the collider does not rotate for some reason
 		//go->transform->Translate(-colPos); //This line provokes that the collider does not rotate for some reason
 
-		
-
-
-
-
-
 		// Commented out because it affects bodies that are rotated by script. 
 		/*go->transform->_ignorePhysBody = true;
 		float3 rot = GetRotation();
@@ -191,7 +191,6 @@ void PhysBody3D::SetShape(ColliderShape shape)
 }
 
 void PhysBody3D::RenderCollider()
-
 {
 	if (isRenderingCol == true) {
 		switch (colShape) {
@@ -256,5 +255,24 @@ void PhysBody3D::RenderCollider()
 
 	}
 
+}
+
+void PhysBody3D::RenderRayCast()
+{
+	if (isRenderingRayCast) {
+
+		if (ModuleLayers::gameObjects.count(gameObjectUID) != 0)
+		{
+			GameObject* go = ModuleLayers::gameObjects[gameObjectUID];
+			if (go->IsActive() && !go->IsPendingToDelete())
+			{
+				PhysicsComponent* physComp = go->GetComponent<PhysicsComponent>();
+				if (physComp != nullptr)
+				{
+					Application::Instance()->renderer3D->renderManager.DrawRayCastLine(raycastPos1, raycastPos2, float4(physComp->raycastColor), physComp->raycastSize);
+				}
+			}
+		}
+	}
 }
 

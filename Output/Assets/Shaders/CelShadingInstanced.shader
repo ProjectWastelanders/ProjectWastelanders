@@ -7,12 +7,14 @@
 	
 	uniform mat4 view;
 	uniform mat4 projection;
+	uniform mat4 lightSpaceMatrix;
 	
 	uniform sampler2D normal_texture;
 	
 	out vec2 TextureCoords;
 	out vec3 Normal;
 	out vec3 FragPos;
+	out vec4 FragPosLightSpace;
 	
 	void main()
 	{
@@ -22,6 +24,7 @@
 		FragPos = vec3(model * aPos4);
 		TextureCoords = texCoords;
 		Normal = normalize(mat3(transpose(inverse(model))) * normals);
+		FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0f);
 		
 		gl_Position = projection * view * model * aPos4;
 	}
@@ -41,6 +44,7 @@
 	{
 		Light Base;
 		vec3 Direction;
+		mat4 lightSpaceMatrix;
 	};
 	
 	struct PointLight
@@ -77,6 +81,7 @@
 	uniform int Actual_Spot;
 	
 	uniform sampler2D albedo_texture;
+	uniform sampler2D shadowMap;
 	
 	uniform vec3 ViewPoint;
 	
@@ -86,6 +91,7 @@
 	in vec2 TextureCoords;
 	in vec3 FragPos;
 	in vec3 Normal;
+	in vec4 FragPosLightSpace;
 	
 	out vec4 FragColor;
 	
@@ -117,11 +123,14 @@
 		rotation[3] = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 		
 		rotation = rotate(rotation, radians(euler.x), vec3(-1.0f, 0.0f, 0.0f));
-		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, -1.0f, 0.0f));
+		rotation = rotate(rotation, radians(euler.y), vec3(0.0f, 1.0f, 0.0f));
 		rotation = rotate(rotation, radians(euler.z), vec3(0.0f, 0.0f, -1.0f));
 		
 		return vec3(rotation * vec4(direction, 0.0f));
 	}
+	
+	//SHADOW METHODS
+
 	
 	//LIGHT METHODS
 	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
@@ -137,9 +146,10 @@
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0);
 	
-		vec4 result = (Ambient * Diffuse);
+		vec4 result = Ambient * Diffuse;
+		//vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
-		return result;
+		return result; 
 	}
 	
 	//Calculate Lights
@@ -152,17 +162,17 @@
 	
 	vec4 CalculatePointLight(PointLight light, vec3 normal)
 	{
-		vec3 lightDir = normalize(light.Position - FragPos);
+		vec3 lightDir = normalize(light.Position - FragPos); 
 		float dist = length(light.Position - FragPos);
 		
-		vec4 color = vec4(0.1f);
+		vec4 color = vec4(0.0f);
 		
 		if (light.Distance > dist)
 		{
 			color = CalculateLight(light.Base, lightDir, normal);
 		}
 		
-		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist) * (dist * dist);
+		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
 		
 		return (color / attenuation);
 	}
@@ -185,8 +195,7 @@
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
-			float spotLightIntensity = (1.0 - (1.0 - theta) / (1.0 - light.Cutoff));
-			
+		
 			vec4 result = (color / attenuation);
 			result.w = 1.0f;
 			return result;
@@ -199,8 +208,7 @@
 	
 	void main()
 	{
-		
-		//Directionalasde
+		//Directional
 		vec4 result = CalculateDirectionalLight(Normal);
 		
 		//Point
@@ -215,18 +223,31 @@
 			result += CalculateSpotLight(Light_Spot[i], Normal);
 		}
 		
+		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
 		
-		vec3 texDiffCol = texture2D(albedo_texture, TextureCoords).rgb;
-		if (length(texDiffCol) != 0.0)
-		{
-			FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
-		}
-		else
-		{
-			FragColor = result * vec4(ColourTest, 1.0f);
-		}
 	}
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

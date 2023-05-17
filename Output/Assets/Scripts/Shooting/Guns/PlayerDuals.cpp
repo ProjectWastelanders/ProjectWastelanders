@@ -29,7 +29,8 @@ void PlayerDuals::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
+    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
+    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -131,7 +132,7 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
     {
     case 0:
         projectileSpeed = 30.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 5.0f;
         projectileLifetime = 1.0f;
         cadence = 1.2f;
@@ -139,7 +140,7 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
         break;
     case 1:
         projectileSpeed = 30.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 5.0f;
         projectileLifetime = 1.0f;
         cadence = 1.5f;
@@ -147,7 +148,7 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
         break;
     case 2:
         projectileSpeed = 35.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 5.0f;
         projectileLifetime = 1.0f;
         cadence = 1.5f;
@@ -155,7 +156,7 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
         break;
     case 3:
         projectileSpeed = 35.0f;
-        projectileDamage = 15.0f;
+        projectileDamage = 30.0f;
         projectileResistanceDamage = 15.0f;
         projectileLifetime = 1.0f;
         cadence = 1.5f;

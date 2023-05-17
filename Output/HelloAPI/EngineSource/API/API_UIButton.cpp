@@ -89,6 +89,16 @@ void API::API_UIButton::SetComponent(ComponentUIButton* component)
 }
 
 
+bool API::API_UIButton::OnHoveredFirst()
+{
+    if (!_UIButton)
+    {
+        Engine::Console::S_Log("Trying to acces a NULLPTR UI Button");
+        return false;
+    }
+    return _UIButton->isHoveredFirstFrame;
+}
+
 bool API::API_UIButton::getIsBlocked()
 {
     if (!_UIButton)
@@ -117,5 +127,10 @@ bool API::API_UIButton::OnRelease()
         return false;
     }
     return _UIButton->isReleased;
+}
+
+bool API::API_UIButton::IsAlive()
+{
+    return _UIButton != nullptr;
 }
 

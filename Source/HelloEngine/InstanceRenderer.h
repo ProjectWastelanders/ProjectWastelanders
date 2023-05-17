@@ -49,6 +49,7 @@ public:
 public:
 	bool initialized = false;
 	bool isParticle = false;
+	bool sortedAndDrawn = false;
 	ResourceMesh* resource = nullptr;
 	ResourceMaterial* resMat = nullptr;
 	uint deletedResourceUID = 0;
@@ -64,6 +65,8 @@ private:
 	void DestroyDynamicBuffersParticles();
 
 private:
+
+	ResourceShader* instancedDepthShader = nullptr;
 
 	ResourceShader* instancedShader = nullptr;
 	ResourceShader* perMeshShader = nullptr;
@@ -101,6 +104,8 @@ private:
 	// 2D drawing
 
 	bool is2D = false;
+
+	bool depthDraw = false;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;

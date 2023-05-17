@@ -22,6 +22,7 @@
 #include "Component.h"
 #include "LayerEditor.h"
 #include "Lighting.h"
+#include "ModuleAudio.h"
 
 // In create resource mesh method save my index and model UID.
 // Save ResourceModel UID and index.
@@ -61,6 +62,9 @@ bool ModuleResourceManager::Init()
 {
 	// Create checkers texture resource
 	S_CreateResourceText("Null", CHECKERS_RESOURCE_UID, "Checkers", false);
+
+	// Create white texture resource
+	S_CreateResourceText("Null", WHITE_RESOURCE_UID, "White", false);
 	return true;
 }
 
@@ -623,6 +627,9 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 									   // If we let it happen afterwards, the old meshes will destroy the new Instance Renderers.
 	LayerGame::RemoveAllScripts();
 	Lighting::ClearLights();
+	ModuleAudio::StopAllAudioEvents();
+	ModuleInput::S_ResetFrameInput();
+
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)
 		ModuleLayers::rootGameObject->Destroy();

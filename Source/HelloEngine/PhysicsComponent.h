@@ -74,6 +74,10 @@ public:
 	float renderColColor[4];
 	float wireframeSize = 0;
 
+	//Raycast
+	float raycastColor[4];
+	float raycastSize = 0;
+
 	int sphereHorSlices = 0;
 	int sphereVerSlices = 0;
 

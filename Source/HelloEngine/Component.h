@@ -35,6 +35,7 @@ public:
 		SPOT_LIGHT,
 		AGENT,
 		UI_VIDEO,
+		AUDIO_SOURCE,
 		MAX
 	};
 

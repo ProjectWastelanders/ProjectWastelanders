@@ -4,10 +4,6 @@
 #include "Application.h"
 #include "MemLeaks.h"
 
-
-// TEMPORAL
-#include "sha256.h"
-
 enum main_states
 {
 	MAIN_CREATION,
@@ -27,17 +23,15 @@ int main(int argc, char** argv)
 	main_states state = MAIN_CREATION;
 	Application* app = nullptr;
 
-	// HASHMAP TESTING
-
-	//std::string fileName = "Assets/Test.png";
-	//std::hash<std::string> hasher;
-	//size_t hashValue = hasher(fileName);
-
-
-	//SHA256 hash;
-	//std::string test = hash("Assets/Test.txt");
-
 	//_CrtSetBreakAlloc(152277);
+
+#ifdef _DEBUG
+	CopyFile(TEXT("../Source/External/Optick/lib/debug/OptickCore.dll"), TEXT("OptickCore.dll"), FALSE);
+#else 
+#ifdef DEVELOPMENT
+	CopyFile(TEXT("../Source/External/Optick/lib/release/OptickCore.dll"), TEXT("OptickCore.dll"), FALSE);
+#endif
+#endif
 
 	while (state != MAIN_EXIT)
 	{
@@ -68,6 +62,11 @@ int main(int argc, char** argv)
 
 		case MAIN_UPDATE:
 		{
+#ifdef STANDALONE
+			OPTICK_FRAME("MainThread");
+#endif // DEVELOPMENT
+
+
 			int update_return = (int)app->Update();
 
 			if (update_return == (int)UpdateStatus::UPDATE_ERROR)

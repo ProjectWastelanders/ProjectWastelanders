@@ -514,6 +514,11 @@ void LayerEditor::S_ReimportAllAssets()
 	proj->RefreshAssets();
 }
 
+bool LayerEditor::S_GetWindowActive(ImWindowID id)
+{
+	return _imWindows[(uint)id]->isActive;
+}
+
 std::string LayerEditor::S_GetCurrentSceneName()
 {
 	XMLNode sceneXML = Application::Instance()->xml->GetConfigXML();

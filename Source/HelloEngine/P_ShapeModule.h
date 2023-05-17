@@ -11,6 +11,10 @@ public:
 
 	void OnEditor() override;
 
+	void Serialization(json& j) override;
+
+	void DeSerialization(json& j) override;
+
 	virtual float3 GetRandomPos();
 
 	virtual bool IsInside(float3 position);

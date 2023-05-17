@@ -25,6 +25,7 @@ public:
 
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
+	bool hasPulsed = false;
 	bool dashing = false;
 
 	API_GameObject boss;
@@ -36,11 +37,12 @@ public:
 	API_GameObject sword;
 	API_GameObject bTarget;
 	bool swordThrown = false;
-	float swordSpeed = 1.0f;
+	float swordSpeed = 0.5f;
 	API_Vector3 aimPosition;
 	float swordTime = 0.0f;
 
 	float charge = 0.0f;
+	float selectAttack = 0.0f;
 
 	API_GameObject defenseSword;
 
@@ -60,6 +62,7 @@ public:
 		BEAM,
 		DASH2,
 		LASER,
+		DEAD,
 	};
 
 	THANOS_STATE thanosState;
@@ -142,5 +145,44 @@ public:
 
 	API_GameObject meteors[30];
 	API_Vector3 meteorsPosition[30];
+
+	//ThanosAnimations
+	API_AnimationPlayer thanosAnimationPlayer;
+	uint thanosOutOfCombat;
+	uint thanosWakeUp;
+	uint thanosAimAnimation;
+	uint thanosMeleeAnimation;
+	uint thanosChargeAttackAnimation;
+	uint thanosChargeOnlyAnimation;
+	uint thanosGuantletRecoilAnimation;
+	uint thanosIdleAnimation;
+	uint thanosIdle2Animation;
+	uint thanosMeteorAnimation;
+	uint thanosPulseAnimation;
+	uint thanosRunAnimation;
+	uint thanosShootAnimation;
+	uint thanosSpinAnimation;
+	uint thanosStartSpinAnimation;
+	uint thanosStopSpinAnimation;
+	uint thanosStartSwordThrownAnimation;
+	uint thanosStopSwordThrownAnimation;
+	uint thanosSwordThrownAnimation;
+	uint thanosWalkAnimation;
+	uint thanosWalk2Animation;
+	uint thanosWalkBackwardsAnimation;
+	uint thanosPunchAttack;
+	uint thanosPunchAttack2;
+	
+	bool punchAnimation = false;
+
+	bool justRandOnce = false;
+	float meteorAnimationCooldown = 0.0f;
+	bool isMeteorAnimationReady = false;
+	bool meteorQueue = false;
+	bool isDead = false;
+	float deathTimer = 0.0f;
+
+	bool anotherTimer = 0.0f;
+
 };
 

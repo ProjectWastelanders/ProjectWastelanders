@@ -41,6 +41,9 @@ void Engine::Console::S_Log(API::API_Vector3 vec, LogType type)
 
 void Console::S_Log(const std::string text, LogType type)
 {
+	if (_buffers.size() > 999)
+		return;
+
 	_buffers.emplace_back("\nConsole.Log: " + text, type);
 
 	auto it = _buffersMap.find(text);

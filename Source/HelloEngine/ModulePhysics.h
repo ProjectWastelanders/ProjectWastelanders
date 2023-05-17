@@ -18,6 +18,14 @@ enum class ColliderShape
 
 };
 
+class RayCast
+{
+public:
+	RayCast(btCollisionWorld::AllHitsRayResultCallback& raycast) : btRaycast(raycast) {}
+	~RayCast() {};
+	btCollisionWorld::AllHitsRayResultCallback btRaycast;
+};
+
 class ModulePhysics : public Module
 {
 public:
@@ -61,6 +69,8 @@ public:
 	void PrepareNewGravityAtLast(float3 grav);
 	void SetNewGravityAtLast();
 
+	static btCollisionWorld::AllHitsRayResultCallback RayCastLine(const float3 start, const float3 end);
+
 private:
 
 	btDefaultCollisionConfiguration* collision_conf = nullptr;
@@ -75,5 +85,5 @@ private:
 	std::vector <btDefaultMotionState*> motions;
 	std::vector <btTypedConstraint*> constraints;
 
-	bool hasToSetRenderBuffers;
+	bool hasToSetRenderBuffers = false;
 };

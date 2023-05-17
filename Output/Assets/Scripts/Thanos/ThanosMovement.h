@@ -24,7 +24,7 @@ public:
 	API_GameObject boss;
 
 	float distBP;
-	float bossSpeed = 1.0f;
+	float bossSpeed = 0.75f;
 
 	float angle = 0.0f;
 
@@ -36,5 +36,20 @@ public:
 	ThanosLoop* Tloop;
 
 	float justOnce = false;
+
+	bool isActive = false;
+
+	float startFightTimer = 0.0f;
+	bool isRunning = false;
+
+	enum class WALKSTATE {
+		NORMAL,
+		BACKWARDS,
+		IDLE,
+	};
+	float walkCooldown = 0.0f;
+	WALKSTATE walkState = WALKSTATE::NORMAL;
+
+	bool letsFight = false;
 };
 

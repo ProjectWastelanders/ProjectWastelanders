@@ -15,15 +15,18 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
 
     script->AddDragBoxUIImage("Tutorial_Img", &classInstance->Tutorial_Img);
 
+    script->AddCheckBox("Blueprint_Tutorial", &classInstance->bluprintTutorial);
+
     return classInstance;
 }
 
 void Chest::Start()
 {
     openChestTime = maxOpenChestTime;
-    openChestTimeBar = 0;
+    //openChestTimeBar = 0.0f;
     opening = false;
-  
+    guideButton.GetGameObject().SetActive(false);
+    //guideButton.FillImage(1);
     initalPos = { -1.250, -0.700, 0 };
     movingPos = { -1.250, -0.700, 0 };
     Tutorial_Img.GetGameObject().GetTransform().SetPosition(initalPos);
@@ -33,7 +36,7 @@ void Chest::Start()
 
 void Chest::Update()
 {
-    guideButton.FillImage(openChestTimeBar / maxOpenChestTime);
+   
     if (opening)
     {
         openChestTime -= Time::GetRealTimeDeltaTime();
@@ -90,20 +93,53 @@ void Chest::Update()
             Audio::Event("open_chest");
             playerMove->StopOpenChestAnim();
             chestAnimatorPlayer.Play();
-            gameObject.SetActive(false);
+            if (endTutorial == true || bluprintTutorial == false)
+            {
+                Tutorial_Img.GetGameObject().SetActive(false);
+                gameObject.SetActive(false);
+            }
+            activeTutorial = true;
+
         }
     }
+    guideButton.FillImage(openChestTime/maxOpenChestTime);
 
-    if (activeTutorial == true && endTutorial == false)
+
+    if (activeTutorial == true && endTutorial == false && hideChest == false)
     {
         Tutorial_Img.GetGameObject().SetActive(true);
         if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < finalPos.x)
         {
-            movingPos.x += 0.0032;
+            movingPos.x += 0.32 * Time::GetDeltaTime();
+            timerTutorial = true;
+           
         }
-        Tutorial_Img.GetGameObject().GetTransform().SetPosition(movingPos);
-        Console::Log("GOD");
+        if (timerTutorial == true)
+        {
+            showTutorial += 1.0f * Time::GetDeltaTime();
+            
+        }
+        
     }
+
+    if (showTutorial >=  8.0f) 
+    {
+       
+        if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x > initalPos.x)
+        {
+            movingPos.x -= 0.32 * Time::GetDeltaTime();
+            timerTutorial = false;
+            hideChest = true;
+        }
+
+        else if(Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < initalPos.x) {
+            endTutorial = true;
+        }
+
+        
+
+    }
+    Tutorial_Img.GetGameObject().GetTransform().SetPosition(movingPos);
 }
 
 void Chest::OnCollisionStay(API::API_RigidBody other)
@@ -118,16 +154,22 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
             playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
             if (playerMove == nullptr) return;
 
-            float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
-            float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
+            playerGunManager = (PlayerGunManager*)other.GetGameObject().GetScript("PlayerGunManager");
+            playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
+            if (playerMove) playerMove->PlayOpenChestAnim();
+            opening = true;
 
+            
+           //float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
+            //float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
+            
+            /*
             if (abs(distanceX) < abs(distanceZ))
             {
                 if (distanceZ >= 0.0f && playerMove->aimAngle <= 90 && playerMove->aimAngle > -90) // chest up
                 {
                     playerGunManager = (PlayerGunManager*)other.GetGameObject().GetScript("PlayerGunManager");
                     playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-
                     if (playerMove) playerMove->PlayOpenChestAnim();
                     opening = true;
                 }
@@ -146,7 +188,6 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
                 {
                     playerGunManager = (PlayerGunManager*)other.GetGameObject().GetScript("PlayerGunManager");
                     playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-
                     if (playerMove) playerMove->PlayOpenChestAnim();
                     opening = true;
                 }
@@ -158,8 +199,9 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
                     if (playerMove) playerMove->PlayOpenChestAnim();
                     opening = true;
                 }
-            }
+            }*/
         }
+        
     }
 }
 
@@ -175,8 +217,6 @@ void Chest::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         guideButton.GetGameObject().SetActive(true);
-        activeTutorial = true;
-        Console::Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 }
 
@@ -185,9 +225,7 @@ void Chest::OnCollisionExit(API::API_RigidBody other)
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "Player")
     {
-        guideButton.GetGameObject().SetActive(false);
-        Tutorial_Img.GetGameObject().SetActive(false);
-        activeTutorial = false;
-        endTutorial = true;
+       guideButton.GetGameObject().SetActive(false);
+       
     }
 }

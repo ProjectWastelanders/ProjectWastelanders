@@ -39,6 +39,9 @@ private:
 
 	float _systemRAM = 0;
 
+	// Mouse wheel
+	int _mouseWheelInteger = 1;
+	float _mouseWheelDecimal = 0.5f;
 	float _mouseWheel = 10.5f;
 
 	int _frameLimit = 60;

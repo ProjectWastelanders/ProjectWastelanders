@@ -113,6 +113,7 @@ float4x4 TransformComponent::GetGlobalMatrix(bool forceUpdate, bool updateLocal)
 {
 	if (updateLocal)
 		CalculateLocalMatrix();
+
 	if (_dirtyFlag || forceUpdate)
 	{
 		float4x4 parentGlobal = _gameObject->_parent != nullptr ? _gameObject->_parent->transform->GetGlobalMatrix() : float4x4::identity;

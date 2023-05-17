@@ -11,11 +11,32 @@ HELLO_ENGINE_API_C ScoreScreen* CreateScoreScreen(ScriptToInspectorInterface* sc
 
 void ScoreScreen::Start()
 {
-	
+	hasToStart = true;
 }
 
 void ScoreScreen::Update()
 {
+	if (hasToStart == true) 
+	{
+		std::vector<std::string> levels = { "level1Selected" , "level2Selected", "level3Selected" , "level4Selected" };
+		for (int i = 0; i < levels.size(); i++) 
+		{
+			if (API_QuickSave::GetBool(levels.at(i))) 
+			{
+				lvlToSpawn = i+1;
+				break;
+			}
+		}
+
+		if (lvlToSpawn == 1)
+		{
+			continueButton.GetGameObject().GetTransform().SetPosition(0.0f, -0.36f, -0.001f);
+			returnButton.GetGameObject().SetActive(false);
+		}
+
+		hasToStart = false;
+	}
+
 	switch (lvlToSpawn)
 	{
 	case 1:
@@ -43,13 +64,16 @@ void ScoreScreen::Update()
 		}
 		break;
 	default:
-		
+
 		break;
 	}
 
-	if (returnButton.OnPress())
+	if (lvlToSpawn != 1)
 	{
-		Scene::LoadScene("SpaceshipHUB_Scene.HScene");
+		if (returnButton.OnPress())
+		{
+			Scene::LoadScene("SpaceshipHUB_Scene.HScene");
+		}
 	}
 	
 }

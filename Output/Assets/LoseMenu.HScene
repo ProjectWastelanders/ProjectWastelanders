@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.733137845993042,
+                "Aspect ratio": 1.006666660308838,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -142,6 +142,24 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Continue": 351199318
+                    },
+                    {
+                        "Return": 1551021094
+                    },
+                    {
+                        "Respawn in lvl:": 1
+                    },
+                    {
+                        "Continue": 351199318
+                    },
+                    {
+                        "Return": 1551021094
+                    },
+                    {
+                        "Respawn in lvl:": 1
+                    },
                     {
                         "Continue": 351199318
                     },

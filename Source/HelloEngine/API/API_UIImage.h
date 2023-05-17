@@ -17,6 +17,8 @@ namespace API
 		void FillImage(float _GetFillImage);
 		void SetOpacity(float opacity);
 
+		bool IsAlive();
+
 	private:
 		ComponentUIImage* GetComponent();
 		void SetComponent(ComponentUIImage* component);

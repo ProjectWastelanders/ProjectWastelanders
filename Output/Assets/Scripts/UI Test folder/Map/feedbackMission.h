@@ -12,6 +12,7 @@ class Mision_SomethingPersonal;
 class Mision_TheRuleOfFive;
 class Mision_RageMonster;
 class AnimationMove;
+//class Mision_FirstClassTurbulence;
 
 class feedbackMission : HelloBehavior
 {
@@ -37,11 +38,13 @@ public:
 	Mision_RageMonster* mision_RageMonster = nullptr;
 	Mision_TheRuleOfFive* mision_TheRule = nullptr;
 	AnimationMove* viusalFeedbackScript = nullptr;
+	//Mision_FirstClassTurbulence mision_FirstClassTurbulence = nullptr
 
 	bool misionCompleted_1_1 = true;
 	bool misionCompleted_2_1 = true;
 	bool misionCompleted_1_2 = true;
 	bool misionCompleted_2_2 = true;
 	bool misionCompleted_1_3 = true;
+	bool misionCompleted_2_3 = true;
 };
 

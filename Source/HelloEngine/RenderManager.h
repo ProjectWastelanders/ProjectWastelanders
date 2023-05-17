@@ -138,6 +138,7 @@ private:
 	// Shaders for drawing debug information
 	ResourceShader* lineShader = nullptr;
 	ResourceShader* localLineShader = nullptr;
+	ResourceShader* instancedShader = nullptr;
 	Shader* textRenderingShader = nullptr;
 
 	uint AABBVAO = 0;

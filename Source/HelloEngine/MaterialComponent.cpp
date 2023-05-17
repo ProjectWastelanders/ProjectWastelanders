@@ -289,8 +289,13 @@ void MaterialComponent::DeSerialization(json& _j)
 			comp->CreateMesh(comp->GetResourceUID(), _resource->UID, MeshRenderType::INSTANCED);
 		else
 			comp->CreateMesh(comp->GetResourceUID(), _resource->UID, MeshRenderType::INDEPENDENT);
+		
+		if (comp->GetType() == Component::Type::SKINNING)
+		{
+			SkinnedMeshRenderComponent* sComp = (SkinnedMeshRenderComponent*)comp;
+			sComp->UpdateBones();
+		}
 	}
-	
 
 	bool enabled = _j["Enabled"];
 	if (!enabled)

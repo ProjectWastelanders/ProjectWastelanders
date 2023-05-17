@@ -5,6 +5,9 @@
 #include "../Scripts/Player/PlayerStorage.h"
 #include "API/API.h"
 
+class OpenMenuInterruptor;
+class PlayerMove;
+
 class Coleccionable_buttons : HelloBehavior
 {
 public:
@@ -27,8 +30,14 @@ public:
 
 	API_GameObject playerStorageGO;
 	PlayerStorage* playerStorage;
+	PlayerMove* playermovment;
 
+	API_GameObject interruptor_Colec_GO;
+	OpenMenuInterruptor* interruptor_Colec;
 
+	uint song1 = 1;
+	uint song2 = 2;
+	uint song3 = 3;
 
 };
 

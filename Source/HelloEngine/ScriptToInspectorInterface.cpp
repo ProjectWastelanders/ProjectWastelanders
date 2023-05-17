@@ -8,12 +8,14 @@
 #include "API/API_AnimationPlayer.h"
 #include "API/API_UIButton.h"
 #include "API/API_UICheckBox.h"
+#include "API/API_UISlider.h"
 #include "API/API_UIImage.h"
 #include "API/API_UIInput.h"
 #include "API/API_UIText.h"
 #include "API/API_ParticleSystem.h"
 #include "API/API_Material.h"
 #include "API/API_ShaderComponent.h"
+#include "API/API_AudioSource.h"
 
 #include "PhysicsComponent.h"
 #include "MeshRenderComponent.h"
@@ -21,6 +23,7 @@
 #include "AnimationComponent.h"
 #include "ComponentUIButton.h"
 #include "ComponentUICheckbox.h"
+#include "ComponentUISlider.h"
 #include "ComponentUIImage.h"
 #include "ComponentUIInput.h"
 #include "TextRendererComponent.h"
@@ -28,6 +31,7 @@
 #include "TextureComponent.h"
 #include "MeshRenderComponent.h"
 #include "MaterialComponent.h"
+#include "AudioSourceComponent.h"
 
 void DragFieldFloat::OnEditor()
 {
@@ -726,7 +730,7 @@ void DragBoxMeshResource::OnDeserialize(json& j)
 		if (j[i].find((valueName + "ModelUID").c_str()) != j[i].end())
 		{
 			uint modelUID = j[i][(valueName + "ModelUID").c_str()];
-			
+
 			ResourceModel* model = nullptr;
 			if (ModuleResourceManager::resources.count(modelUID) != 0)
 				model = (ResourceModel*)ModuleResourceManager::resources[modelUID];
@@ -1475,6 +1479,158 @@ void DragBoxUICheckBox::OnDeserialize(json& j)
 			{
 				API::API_UICheckBox* buttonui = (API::API_UICheckBox*)value;
 				buttonui->SetComponent(component);
+			}
+		}
+	}
+}
+
+void DragBoxUISlider::OnEditor()
+{
+	API::API_UISlider* buttonui = (API::API_UISlider*)value;
+
+	std::string buttonName = "X##" + std::to_string(UID);
+	if (ImGui::Button(buttonName.c_str()))
+	{
+		buttonui->SetComponent(nullptr);
+
+	}
+	ImGui::SameLine();
+
+	ImGui::TextWrapped((valueName + ": ").c_str()); ImGui::SameLine();
+
+	if (buttonui->_UISlider == nullptr)
+	{
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), "NULL (Drag an UI CheckBox Here)");
+	}
+	else
+	{
+		std::string gameObjectName(buttonui->GetGameObject().GetName());
+		std::string text = "(" + gameObjectName + ")" + ": UI CheckBox";
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), text.c_str());
+	}
+
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("GameObject"))
+		{
+			const uint* drop = (uint*)payload->Data;
+
+			GameObject* droppedGO = ModuleLayers::S_GetGameObject(*drop);
+			ComponentUISlider* component = nullptr;
+
+			if (droppedGO != nullptr)
+				component = droppedGO->GetComponent<ComponentUISlider>();
+
+			buttonui->SetComponent(component);
+		}
+		ImGui::EndDragDropTarget();
+	}
+}
+
+void DragBoxUISlider::OnSerialize(json& j)
+{
+	json _j;
+
+	API::API_UISlider* buttonui = (API::API_UISlider*)value;
+
+	if (buttonui->_UISlider != nullptr)
+	{
+		_j[valueName.c_str()] = buttonui->_UISlider->GetGameObject()->GetID();
+		j.push_back(_j);
+	}
+}
+
+void DragBoxUISlider::OnDeserialize(json& j)
+{
+	for (int i = 0; i < j.size(); i++)
+	{
+		if (j[i].find(valueName) != j[i].end())
+		{
+			uint id = j[i][valueName.c_str()];
+			GameObject* gameObject = ModuleLayers::S_GetGameObject(id);
+			ComponentUISlider* component = nullptr;
+			if (gameObject != nullptr)
+				component = gameObject->GetComponent<ComponentUISlider>();
+			if (component != nullptr)
+			{
+				API::API_UISlider* buttonui = (API::API_UISlider*)value;
+				buttonui->SetComponent(component);
+			}
+		}
+	}
+}
+
+void DragBoxAudioSourceComponent::OnEditor()
+{
+	API::API_AudioSourceComponent* audio = (API::API_AudioSourceComponent*)value;
+
+	std::string buttonName = "X##" + std::to_string(UID);
+	if (ImGui::Button(buttonName.c_str()))
+	{
+		audio->SetComponent(nullptr);
+
+	}
+	ImGui::SameLine();
+
+	ImGui::TextWrapped((valueName + ": ").c_str()); ImGui::SameLine();
+
+	if (audio->_audioSource == nullptr)
+	{
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), "NULL (Drag an Audio Source Here)");
+	}
+	else
+	{
+		std::string gameObjectName(audio->GetGameObject().GetName());
+		std::string text = "(" + gameObjectName + ")" + ": Audio Source";
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), text.c_str());
+	}
+
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("GameObject"))
+		{
+			const uint* drop = (uint*)payload->Data;
+
+			GameObject* droppedGO = ModuleLayers::S_GetGameObject(*drop);
+			AudioSourceComponent* component = nullptr;
+
+			if (droppedGO != nullptr)
+				component = droppedGO->GetComponent<AudioSourceComponent>();
+
+			audio->SetComponent(component);
+		}
+		ImGui::EndDragDropTarget();
+	}
+}
+
+void DragBoxAudioSourceComponent::OnSerialize(json& j)
+{
+	json _j;
+
+	API::API_AudioSourceComponent* audio = (API::API_AudioSourceComponent*)value;
+
+	if (audio->_audioSource != nullptr)
+	{
+		_j[valueName.c_str()] = audio->_audioSource->GetGameObject()->GetID();
+		j.push_back(_j);
+	}
+}
+
+void DragBoxAudioSourceComponent::OnDeserialize(json& j)
+{
+	for (int i = 0; i < j.size(); i++)
+	{
+		if (j[i].find(valueName) != j[i].end())
+		{
+			uint id = j[i][valueName.c_str()];
+			GameObject* gameObject = ModuleLayers::S_GetGameObject(id);
+			AudioSourceComponent* component = nullptr;
+			if (gameObject != nullptr)
+				component = gameObject->GetComponent<AudioSourceComponent>();
+			if (component != nullptr)
+			{
+				API::API_AudioSourceComponent* audioSource = (API::API_AudioSourceComponent*)value;
+				audioSource->SetComponent(component);
 			}
 		}
 	}

@@ -8,10 +8,14 @@
 
 void API::Console::Log(const API::API_Vector3& vec, API::Console::MessageType type)
 {
+#ifdef STANDALONE
 	Engine::Console::S_Log(vec, (LogType)type);
+#endif
 }
 
 void API::Console::Log(const std::string& text, API::Console::MessageType type)
 {
+#ifdef STANDALONE
 	Engine::Console::S_Log(text, (LogType)type);
+#endif
 }

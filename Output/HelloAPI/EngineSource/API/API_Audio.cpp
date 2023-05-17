@@ -2,12 +2,22 @@
 #include "API_Audio.h"
 #include "ModuleAudio.h"
 
-void API::Audio::Event(const char* eventName)
+uint API::Audio::Event(const char* eventName)
 {
-	ModuleAudio::S_ProduceEvent(eventName);
+	return ModuleAudio::S_ProduceEvent(eventName);
 }
 
-void API::Audio::Event(uint eventID)
+uint API::Audio::Event(uint eventID)
 {
-	ModuleAudio::S_ProduceEvent(eventID);
+	return ModuleAudio::S_ProduceEvent(eventID);
+}
+
+void API::Audio::StopEvent(uint playID)
+{
+	ModuleAudio::S_StopEvent(playID);
+}
+
+void API::Audio::SetGlobalGameParameter(const char* parameterName, float value)
+{
+	ModuleAudio::SetGameParameter(parameterName, value);
 }

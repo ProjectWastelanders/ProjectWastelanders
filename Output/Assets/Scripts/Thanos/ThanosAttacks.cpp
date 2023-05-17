@@ -92,6 +92,8 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxAnimationResource("Thanos Walk Backwards Animation (Without sword)", &classInstance->thanosWalkBackwardsAnimation);
 	script->AddDragBoxAnimationResource("Thanos Getting On Combat", &classInstance->thanosWakeUp);
 	script->AddDragBoxAnimationResource("Thanos Out Of Combat", &classInstance->thanosOutOfCombat);
+	script->AddDragBoxAnimationResource("Thanos Punch Attack", &classInstance->thanosPunchAttack);
+	script->AddDragBoxAnimationResource("Thanos Punch Attack 2", &classInstance->thanosPunchAttack2);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
@@ -182,19 +184,18 @@ void ThanosAttacks::Update()
 		{
 		case THANOS_STATE::PULSE:
 
-			Console::Log("leleleleleleleelelelelele");
-
 			isAttacking = true;
 			distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
 			explosionTime += Time::GetDeltaTime();
 			explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
-			if (explosionTime < 2.9f && distSA < 30.0 && explosionWave1HasArrived == false) {
+			explosionWave.GetParticleSystem().Play();
+			if (explosionTime < 2.9f && distSA < 15.0 && explosionWave1HasArrived == false) {
 				pStats->TakeDamage(50, 0);
 				explosionWave1HasArrived = true;
 			}
-			if (explosionTime >= 2.9f && distSA > 30.0 && distSA < 60.0 && explosionWave2HasArrived == false) {
+			if (explosionTime >= 2.9f && distSA > 15.0 && distSA < 30.0 && explosionWave2HasArrived == false) {
 
 				//pStats->TakeDamage(1, 0);
 
@@ -210,6 +211,8 @@ void ThanosAttacks::Update()
 				explosionWave2HasArrived = true;
 			}
 			if (explosionTime > 4.0f) {
+				explosionWave.GetParticleSystem().Stop();
+				explosionWave.GetParticleSystem().StopEmitting();
 				explosionWave.SetActive(false);
 				hasPulsed = true;
 				isAttacking = false;
@@ -222,7 +225,7 @@ void ThanosAttacks::Update()
 			break;
 		case THANOS_STATE::IDLE:
 
-			//laserPS.Stop();
+			laserPS.Stop();
 
 			for (int i = 0; i < 4; i++) {
 				beams[i].SetActive(false);
@@ -262,6 +265,10 @@ void ThanosAttacks::Update()
 					playerPosition = player.GetTransform().GetGlobalPosition();
 					thanosPosition = gameObject.GetTransform().GetGlobalPosition();
 					thanosState = THANOS_STATE::DASH2;
+
+					thanosAnimationPlayer.ChangeAnimation(thanosPunchAttack);
+					thanosAnimationPlayer.SetLoop(false);
+					thanosAnimationPlayer.Play();
 				}
 				if (attackType <= 25) {
 					playerPosition = player.GetTransform().GetGlobalPosition();
@@ -351,15 +358,27 @@ void ThanosAttacks::Update()
 				charge = 0.0f;
 			}
 			if (areaDmg == false) {
-				Seek2(&gameObject, playerPosition, dashSpeed);
-			}
-			else {
+				
 				charge += Time::GetDeltaTime();
 
-				if (charge > 0.25f) {
-					area.SetActive(false);
-					Seek2(&gameObject, thanosPosition, dashSpeed);
+				if (charge > 1.0f) {
+					Seek2(&gameObject, playerPosition, dashSpeed / 4);
+					if (punchAnimation == false) {
+
+						thanosAnimationPlayer.ChangeAnimation(thanosPunchAttack2);
+						thanosAnimationPlayer.SetLoop(false);
+						thanosAnimationPlayer.Play();
+						punchAnimation = true;
+
+					}
 				}
+
+			}
+			else {
+				area.SetActive(false);
+				Seek2(&gameObject, thanosPosition, dashSpeed);
+				
+
 			}
 
 			break;
@@ -518,7 +537,7 @@ void ThanosAttacks::Update()
 void ThanosAttacks::MeleeAttack() {
 
 	meleeAttackTime += Time::GetDeltaTime();
-	if (meleeAttackTime >= 0.5f) {
+	if (meleeAttackTime >= 0.75f) {
 		melee1.SetActive(false);
 		meleeAttackTime = 0.0f;
 		isAttacking = false;
@@ -548,6 +567,9 @@ void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float spee
 			if (areaDmg == false) {
 				areaDmg = true;
 				area.SetActive(true);
+				thanosAnimationPlayer.ChangeAnimation(thanosIdle2Animation);
+				thanosAnimationPlayer.SetLoop(true);
+				thanosAnimationPlayer.Play();
 			}
 			else if(thanosState != THANOS_STATE::LASER){
 				anotherTimer = 0.0f;
@@ -555,6 +577,7 @@ void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float spee
 				isAttacking = false;
 				areaDmg = false;
 				charge = 0.0f;
+				punchAnimation = false;
 			}
 		}
 	

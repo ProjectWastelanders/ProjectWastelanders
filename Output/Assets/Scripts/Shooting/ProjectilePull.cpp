@@ -19,6 +19,7 @@ HELLO_ENGINE_API_C ProjectilePull* CreateProjectilePull(ScriptToInspectorInterfa
     script->AddDragBoxTextureResource("Burst Projectile Texture", &classInstance->burstTex);
     script->AddDragBoxTextureResource("Shotgun Projectile Texture", &classInstance->shotgunTex);
     script->AddDragBoxTextureResource("Ricochet Projectile Texture", &classInstance->ricochetTex);
+    script->AddCheckBox("Testing", &classInstance->testing);
     return classInstance;
 }
 
@@ -266,7 +267,7 @@ void ProjectilePull::LauchProjectileFLAMETHROWER(float projectileSpeed, float pr
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
-    go.GetMeshRenderer().SetActive(false);
+    //go.GetMeshRenderer().SetActive(false);
     go.GetRigidBody().SetBoxScale({ 0.1f, 0.1f, 0.1f });
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");

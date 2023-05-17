@@ -177,10 +177,7 @@ void Mesh::DefaultDraw()
 			smComp->UpdateBones();
 		}
 
-		for (int i = 0; i < smComp->goBonesArr.size(); ++i)
-		{
-			boneMeshShader->shader.SetMatFloat4v("finalBonesMatrices[" + std::to_string(i) + "]", &smComp->goBonesArr[i].Transposed().v[0][0]);
-		}
+		boneMeshShader->shader.SetMatFloat4v("finalBonesMatrices", smComp->goBonesArr[0].ptr(), smComp->goBonesArr.size(), true);
 
 	}
 	else if (!is2D)

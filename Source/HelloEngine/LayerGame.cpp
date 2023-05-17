@@ -190,6 +190,11 @@ void LayerGame::S_RemoveAnimationComponent(AnimationComponent* component)
 	}
 }
 
+void LayerGame::S_RemoveAllAnimationComponents()
+{
+	_animationComponent.clear();
+}
+
 void LayerGame::StartAllScripts()
 {
 	for (auto& behaviorScript : _behaviorScripts)

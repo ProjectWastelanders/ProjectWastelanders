@@ -234,7 +234,7 @@
 		return color;
 	}
 	
-	uniform vec3 ColourTest; 
+	uniform vec4 ColourTest; 
 	
 	void main()
 	{
@@ -253,14 +253,9 @@
 			result += CalculateSpotLight(Light_Spot[i], Normal);
 		}
 		
-		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
+		FragColor = texture(albedo_texture, TextureCoords) * result * ColourTest;
 	}
 #endif
-
-
-
-
-
 
 
 

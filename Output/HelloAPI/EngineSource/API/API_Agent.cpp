@@ -26,13 +26,15 @@ API::API_GameObject API::API_Agent::GetGameObject()
 	return returnGO;
 }
 
-void API::API_Agent::SetDestination(API_Vector3 des)
+bool API::API_Agent::SetDestination(API_Vector3 des)
 {
 	if (!_componentAgent)
-		return;
+		return false;
 
 	_componentAgent->SetTarget(des);
 	_componentAgent->MoveToTarget();
+
+	return _componentAgent->agentProperties->path.size() > 0 ? true : false;
 }
 
 void API::API_Agent::Move()

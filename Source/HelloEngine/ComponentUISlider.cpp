@@ -6,13 +6,14 @@
 #include "LayerEditor.h"
 #include "ComponentUIButton.h"
 #include "ComponentUICheckbox.h"
+#include "API/API_UISlider.h"
 
 ComponentUISlider::ComponentUISlider(GameObject* gameObject) : ComponentUI(gameObject)
 {
 	_type = Component::Type::UI_SLIDER;
 
 	State = SliderState::NORMAL;
-	
+
 	_gameWindow = (ImWindowGame*)LayerEditor::_imWindows[(uint)ImWindowID::GAME];
 }
 
@@ -22,7 +23,7 @@ ComponentUISlider::~ComponentUISlider()
 
 void ComponentUISlider::InputUpdate()
 {
-	if (_gameObject->GetTag() == "UIsliderButton") 
+	if (_gameObject->GetTag() == "UIsliderButton")
 	{
 		if (IsMouseOver()) {
 			isFocused = true;
@@ -38,10 +39,13 @@ void ComponentUISlider::InputUpdate()
 		case SliderState::NORMAL:
 
 			break;
+		case SliderState::HOVER:
+
+			break;
 		case SliderState::ONPRESS:
-			if (ModuleInput::S_GetMouseButton(1) == KEY_REPEAT) 
+			if (ModuleInput::S_GetMouseButton(1) == KEY_REPEAT)
 			{
-				if (ModuleInput::S_GetKey(SDL_SCANCODE_D) == KEY_DOWN) 
+				if (ModuleInput::S_GetKey(SDL_SCANCODE_D) == KEY_DOWN)
 				{
 					for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
 					{
@@ -72,8 +76,8 @@ void ComponentUISlider::InputUpdate()
 					}
 				}
 			}
-			_gameObject->transform->SetPosition({ mousePosX, _gameObject->transform->GetGlobalScale().y, _gameObject->transform->GetGlobalScale().z });
-			
+			_gameObject->transform->SetPosition({ mousePosX, _gameObject->transform->GetLocalScale().y, _gameObject->transform->GetLocalScale().z });
+
 			break;
 
 		default:
@@ -92,7 +96,49 @@ void ComponentUISlider::InputUpdate()
 
 void ComponentUISlider::UpdateGamePadInput(bool selected)
 {
-	
+	if (selected)
+	{
+		State = SliderState::HOVER;
+	}
+	else
+	{
+		State = SliderState::NORMAL;
+	}
+
+	if (State == SliderState::HOVER)
+	{
+		if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_RIGHT) == KEY_REPEAT)
+		{
+			for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
+			{
+				if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
+				{
+					widthBar = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
+				}
+			}
+
+			if (mousePosX < widthBar)
+			{
+				mousePosX += 0.001f;
+			}
+		}
+		else if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_LEFT) == KEY_REPEAT)
+		{
+			for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
+			{
+				if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
+				{
+					widthBar = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
+				}
+			}
+
+			if (mousePosX > -widthBar)
+			{
+				mousePosX -= 0.001f;
+			}
+		}
+		_gameObject->transform->SetPosition({ mousePosX, 0, -0.003 });
+	}
 }
 
 void ComponentUISlider::Serialization(json& j)
@@ -130,6 +176,32 @@ void ComponentUISlider::DeSerialization(json& j)
 
 }
 
+void ComponentUISlider::CalculPerCent()
+{
+	for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
+	{
+		if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
+		{
+			widthBarAux = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
+		}
+	}
+
+	perCent = ((mousePosX * 50) / (widthBarAux)) + 50;
+}
+
+void ComponentUISlider::CalculNormalize()
+{
+	for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
+	{
+		if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
+		{
+			widthBarAux = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
+		}
+	}
+
+	NormalizedPos = (((mousePosX * (numMax - numMin) / 2) / widthBarAux) + ((numMax - numMin) / 2)) + numMin;
+}
+
 #ifdef STANDALONE
 void ComponentUISlider::OnEditor()
 {
@@ -142,18 +214,12 @@ void ComponentUISlider::OnEditor()
 		return;
 	}
 
-	if (_gameObject->GetTag() == "UIsliderButton") 
+	if (_gameObject->GetTag() == "UIsliderButton")
 	{
-		for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
-		{
-			if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
-			{
-				widthBarAux = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
-			}
-		}
+		
 
-		perCent = ((mousePosX * 50) / (widthBarAux)) + 50;
-		NormalizedPos = (((mousePosX * (numMax - numMin) /2) / widthBarAux) + ((numMax - numMin)/2)) + numMin;
+		CalculPerCent();
+		CalculNormalize();
 
 		if (ImGui::SliderFloat("##SliderPerCent", &mousePosX, -widthBarAux, widthBarAux, "%.2f")) {
 			_gameObject->transform->SetPosition({ mousePosX, _gameObject->transform->GetLocalPosition().y, _gameObject->transform->GetLocalPosition().z });
@@ -164,8 +230,8 @@ void ComponentUISlider::OnEditor()
 		ImGui::TextColored(ImVec4(1, 1, 0, 1), std::to_string(NormalizedPos).c_str());
 
 
-		ImGui::InputFloat("Min",&numMin);
-		ImGui::InputFloat("Max",&numMax);
+		ImGui::InputFloat("Min", &numMin);
+		ImGui::InputFloat("Max", &numMax);
 	}
 }
 #endif // STANDALONE

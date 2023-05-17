@@ -25,7 +25,8 @@ void PlayerFlamethrower::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(0);
+    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
+    if (pull->testing) SetGunStatsPerLevel(0);
 
     if (cadence == 0)
     {

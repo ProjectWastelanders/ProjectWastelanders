@@ -42,5 +42,7 @@ public:
     float manteinTime = 0.0f;
     int upgradingLevel;
 
+    bool isOn = false;
+
 };
 

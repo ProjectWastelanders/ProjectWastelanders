@@ -626,8 +626,10 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 	ModuleLayers::DestroyMeshes(); // When all meshes are destroyed, the Instance Renderers get destroyed as well. In this case, we want this to happen BEFORE we Deserialize the scene
 									   // If we let it happen afterwards, the old meshes will destroy the new Instance Renderers.
 	LayerGame::RemoveAllScripts();
+	LayerGame::S_RemoveAllAnimationComponents();
 	Lighting::ClearLights();
 	ModuleAudio::StopAllAudioEvents();
+	ModuleInput::S_ResetFrameInput();
 
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)

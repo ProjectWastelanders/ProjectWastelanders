@@ -15,7 +15,7 @@ namespace API
 		API_GameObject GetGameObject();
 
 		// Move to the position that recived	
-		void SetDestination(API_Vector3 des);
+		bool SetDestination(API_Vector3 des);
 
 		// Move to the last position which recived
 		void Move();

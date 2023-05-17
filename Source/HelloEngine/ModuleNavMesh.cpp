@@ -284,8 +284,6 @@ void ModuleNavMesh::S_Load(std::string navMeshPath)
 
 	//dtFreeNavMesh(navMesh);
 
-	return;
-
 	_geometry->SetChunkyMesh();
 
 	if (!_navMeshBuilder)

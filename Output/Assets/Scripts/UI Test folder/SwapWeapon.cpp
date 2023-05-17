@@ -121,7 +121,6 @@ void SwapWeapon::Update()
 
     if (equipedIndex == 0)
     {
-        Console::Log("0");
         //weapons on
         material_Infinite_Weapon_on.GetGameObject().SetActive(true);
         material_Normal_Weapon_on.GetGameObject().SetActive(false);
@@ -139,7 +138,6 @@ void SwapWeapon::Update()
     }
     else if (equipedIndex == 1)
     {
-        Console::Log("1");
         //weapons on
         material_Infinite_Weapon_on.GetGameObject().SetActive(false);
         material_Normal_Weapon_on.GetGameObject().SetActive(true);
@@ -157,7 +155,6 @@ void SwapWeapon::Update()
     }
     else
     {
-        Console::Log("2");
         //weapons on
         material_Infinite_Weapon_on.GetGameObject().SetActive(false);
         material_Normal_Weapon_on.GetGameObject().SetActive(false);
@@ -175,32 +172,6 @@ void SwapWeapon::Update()
     }
 
     active_None_Weapon();
-
-    /*if (Input::GetKey(KeyCode::KEY_C) == KeyState::KEY_DOWN) {
-        arma_Princial = true;
-        arma_Secundaria = false;
-        arma_Especial = false;
-        SwapWeapon1(infinitWeapon_Type::HANDGUNS, arma_Princial);
-        Console::Log("si: ");
-    }
-
-    if (Input::GetKey(KeyCode::KEY_X) == KeyState::KEY_DOWN) {
-        arma_Princial = false;
-        arma_Secundaria = false;
-        arma_Especial = false;
-        SwapWeapon2(normalWeapon_Type::SEMI, arma_Secundaria);
-        Console::Log("no: ");
-    }
-
-    /*if (Input::GetKey(KeyCode::KEY_Z) == KeyState::KEY_DOWN) {
-        arma_Princial = false;
-        arma_Secundaria = false;
-        arma_Especial = true;
-        SwapWeapon3(specialWeapon_Type::RICOCHET, arma_Especial);
-        Console::Log("ss: ");
-    }*/
-
-
 
     if (playerMove && playerMove->dashesAvailable > 0 && !dashingReady)
     {
@@ -277,13 +248,11 @@ void SwapWeapon::SwapWeapon3(specialWeapon_Type specialWeapon)
         material_Special_Weapon_on.ChangeAlbedoTexture(specialsWeaponsOn[1]);
         material_Special_Weapon_off.ChangeAlbedoTexture(specialsWeaponsOff[1]);
         special_NONE = false;
-        Console::Log("Hola2");
         break;
     case specialWeapon_Type::RICOCHET:
         material_Special_Weapon_on.ChangeAlbedoTexture(specialsWeaponsOn[2]);
         material_Special_Weapon_off.ChangeAlbedoTexture(specialsWeaponsOff[2]);
         special_NONE = false;
-        Console::Log("Hola2");
         break;
     default:
         break;

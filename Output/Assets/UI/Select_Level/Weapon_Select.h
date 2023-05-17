@@ -46,7 +46,6 @@ public:
 	int indexLevles;
 
 	API_GameObject interruptorGO;
-	OpenMenuInterruptor* interruptor;
 
 	API_GameObject playerGO;
 	PlayerMove* playerMove;

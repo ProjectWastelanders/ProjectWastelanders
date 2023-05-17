@@ -221,7 +221,7 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         if (storage->casette2Picked) casettesPicked++;
         if (storage->casette3Picked) casettesPicked++;
 
-        switch (casettesPicked)
+        /*switch (casettesPicked)
         {
         case 0:
             Audio::Event(storage->playAudio1.c_str());
@@ -234,7 +234,7 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
             break;
         default:
             break;
-        }
+        }*/
 
         switch (indexContainer->index)
         {

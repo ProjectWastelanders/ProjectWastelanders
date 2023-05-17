@@ -221,6 +221,7 @@ void ComponentUIButton::UpdateGamePadInput(bool selected)
     isPress = false;
     isReleased = false;
 
+    lastState = State;
     if (selected)
     {
         if (ModuleInput::S_GetGamePadButton(GamePad::BUTTON_A) == KEY_DOWN && (State != ButtonState::ONPRESS && State != ButtonState::ONPRESSBLOCKED))
@@ -276,6 +277,14 @@ void ComponentUIButton::UpdateGamePadInput(bool selected)
         }
     }
     
+    // Handle First frame Hovered
+    if (lastState != ButtonState::HOVERED && State == ButtonState::HOVERED)
+    {
+        isHoveredFirstFrame = true;
+    }
+    else
+        isHoveredFirstFrame = false;
+
 
     switch (State)
     {

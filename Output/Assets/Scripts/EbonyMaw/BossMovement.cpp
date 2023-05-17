@@ -16,12 +16,14 @@ HELLO_ENGINE_API_C BossMovement* CreateBossMovement(ScriptToInspectorInterface* 
 void BossMovement::Start()
 {
    bLoop = (BossLoop*)boss.GetScript("BossLoop");
+
+   gameObject.GetRigidBody().SetVelocity(API_Vector3(0, 0, 0));
 }
 void BossMovement::Update()
 {
     distBP = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
-    if (distBP < 80.0f) {
+    if (distBP < 80.0f && bLoop->battle) {
         if (bLoop->canTakeDamage == false && bossDash == false) {
             angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
 

@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.302973985671997,
+                "Aspect ratio": 0.8119469285011292,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -216,18 +216,6 @@
                     },
                     {
                         "Idle Animation 3": 1590499778
-                    },
-                    {
-                        "Run Forward Animation": 781813718
-                    },
-                    {
-                        "Run Back Animation": 915742792
-                    },
-                    {
-                        "Run Left Animation": 4072259668
-                    },
-                    {
-                        "Run Right Animation": 1813925056
                     },
                     {
                         "Shoot Duals Animation": 2706901869
@@ -8523,6 +8511,9 @@
                     },
                     {
                         "Duals Projectile Texture": 3663622624
+                    },
+                    {
+                        "Testing": false
                     }
                 ],
                 "Script Resource": 211675320,

@@ -3,6 +3,7 @@
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
 #include "BossLoop.h"
+#include "BossAttacks.h"
 #include "../CamMov.h"
 #include "../Player/PlayerMove.h"
 
@@ -34,6 +35,7 @@ public:
 	API_Vector3 movingPos;
 	
 	BossLoop* bLoop;
+	BossAttacks* bAttacks;
 	CamMov* camMov;
 	PlayerMove* playerMov;
 

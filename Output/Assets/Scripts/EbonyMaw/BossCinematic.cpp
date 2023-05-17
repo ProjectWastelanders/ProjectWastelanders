@@ -27,6 +27,7 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
 void BossCinematic::Start()
 {
     bLoop = (BossLoop*)boss.GetScript("BossLoop");
+    bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
     camMov = (CamMov*)camera.GetScript("CamMov");
     playerMov = (PlayerMove*)player.GetScript("PlayerMove");
    
@@ -185,6 +186,8 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
                 bLoop->battle = true;
                 activeCinematic = false;
                 playerMov->openingChest = false;
+                bAttacks->orbitingRocks.SetActive(true);
+                
             }
             else {
                 currentDialog += 1;

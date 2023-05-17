@@ -65,6 +65,8 @@ void BossAttacks::Start()
 		Console::Log("BossLoop is nullptr in BOSSATTACK script");
 	}
 	takeobjTimer = 0;
+	explosionWave1.GetTransform().Translate(0, -10, 0);
+	orbitingRocks.SetActive(false);
 }
 
 void BossAttacks::Update()
@@ -220,7 +222,6 @@ void BossAttacks::Update()
 				break;
 			case 4:
 				explosionTime += Time::GetDeltaTime();
-				//explosionWave1.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 				if (explosionTime < 0.5 && distSA < 15.0 && explosionWave1HasArrived == false) {
 					pStats->TakeDamage(50,0);
 					explosionWave1HasArrived = true;
@@ -243,6 +244,7 @@ void BossAttacks::Update()
 				if (explosionTime > 0.6) {
 					bLoop->exploting = false;
 					explosionWave1.SetActive(false);
+					explosionWave1.GetTransform().Translate(0, -10, 0);
 					explosionWave1.GetParticleSystem().Stop();
 					explosionWave1.GetParticleSystem().StopEmitting();
 					bossState = BOSS_STATE::IDLE;
@@ -400,6 +402,7 @@ void BossAttacks::Update()
 					explosionWave2HasArrived = false;
 					bossState = BOSS_STATE::EXPLOSIONWAVE;
 					explosionWave1.SetActive(true);
+					explosionWave1.GetTransform().Translate(0, 10, 0);
 					explosionWave1.GetParticleSystem().Play();
 				}
 

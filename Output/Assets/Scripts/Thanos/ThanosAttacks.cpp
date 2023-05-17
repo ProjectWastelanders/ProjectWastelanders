@@ -133,6 +133,7 @@ void ThanosAttacks::Start()
 	for (int i = 0; i < 30; i++) {
 		meteorsPosition[i] = meteors[i].GetTransform().GetGlobalPosition();
 	}
+	explosionWave.GetTransform().Translate(0, -10, 0);
 
 }
 void ThanosAttacks::Update()
@@ -190,6 +191,7 @@ void ThanosAttacks::Update()
 			explosionTime += Time::GetDeltaTime();
 			explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
+			explosionWave.GetTransform().Translate(0, 10, 0);
 			explosionWave.GetParticleSystem().Play();
 			if (explosionTime < 2.9f && distSA < 15.0 && explosionWave1HasArrived == false) {
 				pStats->TakeDamage(50, 0);
@@ -214,6 +216,8 @@ void ThanosAttacks::Update()
 				explosionWave.GetParticleSystem().Stop();
 				explosionWave.GetParticleSystem().StopEmitting();
 				explosionWave.SetActive(false);
+				explosionWave.GetTransform().Translate(0, -10, 0);
+
 				hasPulsed = true;
 				isAttacking = false;
 

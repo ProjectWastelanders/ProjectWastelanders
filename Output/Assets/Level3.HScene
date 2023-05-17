@@ -30585,7 +30585,7 @@
                         "Continute button Final text": 3535348323
                     },
                     {
-                        "Settings Panel": 737007425
+                        "Settings Panel": 1437004097
                     },
                     {
                         "Pause Panel": 2561551180
@@ -30609,7 +30609,7 @@
                         "Continute button Final text": 3535348323
                     },
                     {
-                        "Settings Panel": 737007425
+                        "Settings Panel": 1437004097
                     }
                 ],
                 "Script Resource": 3735874758,
@@ -35140,20 +35140,20 @@
                 "MeshEnabled": false,
                 "Type": 16,
                 "listButtons": [
-                    1445361943,
-                    2900794610,
-                    233615707,
-                    2539017457
+                    3299101464,
+                    890633429,
+                    2623952643,
+                    3929008766
                 ]
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Settings",
+        "Name": "SettingsPanel",
         "ParentUID": 1721330332,
-        "PrefabUID": 953767367,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 737007425,
+        "UID": 1437004097,
         "UpdateWithBones": false
     },
     {
@@ -35181,7 +35181,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 2373411443,
+                "MaterialResource": 2781629840,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -35190,10 +35190,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackGround",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 3514617909,
+        "UID": 2989011509,
         "UpdateWithBones": false
     },
     {
@@ -35202,7 +35202,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
+                    0.15000000596046448,
                     0.4000000059604645,
                     -0.0010000000474974513
                 ],
@@ -35222,10 +35222,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Master",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 2631622072,
+        "UID": 2509809592,
         "UpdateWithBones": false
     },
     {
@@ -35234,7 +35234,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.49000000953674316,
+                    0.0,
                     0.0,
                     -0.003000000026077032
                 ],
@@ -35256,7 +35256,7 @@
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
-                "SliderPerCent": 0.49000000953674316,
+                "SliderPerCent": 0.0,
                 "StateButton": 0,
                 "Type": 13
             }
@@ -35264,10 +35264,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderButton",
-        "ParentUID": 2631622072,
-        "PrefabUID": 953767367,
+        "ParentUID": 2509809592,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderButton",
-        "UID": 1445361943,
+        "UID": 3299101464,
         "UpdateWithBones": false
     },
     {
@@ -35286,15 +35286,15 @@
                     0.0
                 ],
                 "Scale": [
-                    0.699999988079071,
-                    0.25,
+                    0.3499999940395355,
+                    0.10000000149011612,
                     0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1943036561,
+                "MaterialResource": 727621443,
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
@@ -35306,10 +35306,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderBar",
-        "ParentUID": 2631622072,
-        "PrefabUID": 953767367,
+        "ParentUID": 2509809592,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderBar",
-        "UID": 755055618,
+        "UID": 481969655,
         "UpdateWithBones": false
     },
     {
@@ -35318,7 +35318,47 @@
             {
                 "Enabled": true,
                 "Position": [
+                    -0.15000000596046448,
                     0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3301740551,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Image",
+        "ParentUID": 2509809592,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 2924834403,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.15000000596046448,
                     0.05000000074505806,
                     -0.0010000000474974513
                 ],
@@ -35338,10 +35378,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SFX",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 1622445034,
+        "UID": 1201500606,
         "UpdateWithBones": false
     },
     {
@@ -35380,10 +35420,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderButton",
-        "ParentUID": 1622445034,
-        "PrefabUID": 953767367,
+        "ParentUID": 1201500606,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderButton",
-        "UID": 2900794610,
+        "UID": 890633429,
         "UpdateWithBones": false
     },
     {
@@ -35402,15 +35442,15 @@
                     0.0
                 ],
                 "Scale": [
-                    0.699999988079071,
-                    0.25,
+                    0.3499999940395355,
+                    0.10000000149011612,
                     0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1943036561,
+                "MaterialResource": 727621443,
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
@@ -35422,10 +35462,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderBar",
-        "ParentUID": 1622445034,
-        "PrefabUID": 953767367,
+        "ParentUID": 1201500606,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderBar",
-        "UID": 2564317593,
+        "UID": 347108056,
         "UpdateWithBones": false
     },
     {
@@ -35434,7 +35474,47 @@
             {
                 "Enabled": true,
                 "Position": [
+                    -0.15000000596046448,
                     0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 973979197,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Image",
+        "ParentUID": 1201500606,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 2523959480,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.15000000596046448,
                     -0.30000001192092896,
                     -0.0010000000474974513
                 ],
@@ -35454,10 +35534,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Music",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 1449549420,
+        "UID": 585975831,
         "UpdateWithBones": false
     },
     {
@@ -35466,7 +35546,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.1599999964237213,
+                    0.0,
                     0.0,
                     -0.003000000026077032
                 ],
@@ -35488,7 +35568,7 @@
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
-                "SliderPerCent": 0.1599999964237213,
+                "SliderPerCent": 0.0,
                 "StateButton": 0,
                 "Type": 13
             }
@@ -35496,10 +35576,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderButton",
-        "ParentUID": 1449549420,
-        "PrefabUID": 953767367,
+        "ParentUID": 585975831,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderButton",
-        "UID": 233615707,
+        "UID": 2623952643,
         "UpdateWithBones": false
     },
     {
@@ -35510,7 +35590,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -35518,15 +35598,15 @@
                     0.0
                 ],
                 "Scale": [
-                    0.699999988079071,
-                    0.25,
+                    0.3499999940395355,
+                    0.10000000149011612,
                     0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1943036561,
+                "MaterialResource": 727621443,
                 "MaxValue": 1.0,
                 "MeshEnabled": true,
                 "MinValue": 0.0,
@@ -35538,10 +35618,50 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SliderBar",
-        "ParentUID": 1449549420,
-        "PrefabUID": 953767367,
+        "ParentUID": 585975831,
+        "PrefabUID": 4076827353,
         "Tag": "UIsliderBar",
-        "UID": 3812954391,
+        "UID": 67990238,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.15000000596046448,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1640090254,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Image",
+        "ParentUID": 585975831,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 494399606,
         "UpdateWithBones": false
     },
     {
@@ -35570,10 +35690,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "VSync",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "Default",
-        "UID": 2653991938,
+        "UID": 727059182,
         "UpdateWithBones": false
     },
     {
@@ -35592,8 +35712,8 @@
                     0.0
                 ],
                 "Scale": [
+                    0.20000000298023224,
                     0.15000000596046448,
-                    0.10000000149011612,
                     0.5
                 ],
                 "Type": 1
@@ -35601,7 +35721,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 1974143661,
+                "MaterialResource": 2254243334,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -35610,10 +35730,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "CheckBox_BackGround",
-        "ParentUID": 2653991938,
-        "PrefabUID": 953767367,
+        "ParentUID": 727059182,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 4079641578,
+        "UID": 2397726662,
         "UpdateWithBones": false
     },
     {
@@ -35622,7 +35742,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.10000000149011612,
+                    0.125,
                     -0.6000000238418579,
                     -0.0020000000949949026
                 ],
@@ -35632,8 +35752,8 @@
                     0.0
                 ],
                 "Scale": [
-                    0.05000000074505806,
-                    0.10000000149011612,
+                    0.07500000298023224,
+                    0.15000000596046448,
                     0.5
                 ],
                 "Type": 1
@@ -35644,8 +35764,8 @@
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 14,
-                "hoverActiveImage": 1544303032,
-                "hoverImage": 334007211,
+                "hoverActiveImage": 334007211,
+                "hoverImage": 1544303032,
                 "idleActiveImage": 1544303032,
                 "idleImage": 334007211,
                 "pressActiveImage": 334007211,
@@ -35655,10 +35775,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "CheckBox",
-        "ParentUID": 2653991938,
-        "PrefabUID": 953767367,
+        "ParentUID": 727059182,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 2539017457,
+        "UID": 3929008766,
         "UpdateWithBones": false
     },
     {
@@ -35687,10 +35807,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Controlls",
-        "ParentUID": 737007425,
-        "PrefabUID": 953767367,
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 965372324,
+        "UID": 3642150037,
         "UpdateWithBones": false
     },
     {
@@ -35727,10 +35847,283 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Controlls",
-        "ParentUID": 965372324,
-        "PrefabUID": 953767367,
+        "ParentUID": 3642150037,
+        "PrefabUID": 4076827353,
         "Tag": "UI",
-        "UID": 2538321396,
+        "UID": 3848504729,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    0.3400000035762787,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.686274528503418,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": 0.4000000059604645,
+                "PositionY": 0.3400000035762787,
+                "Scale": 0.30000001192092896,
+                "Text": "50",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "MasterText",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 3802911340,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    0.03999999910593033,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.686274528503418,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": 0.4000000059604645,
+                "PositionY": 0.03999999910593033,
+                "Scale": 0.30000001192092896,
+                "Text": "50",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "SFX Text",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 3526407515,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.4000000059604645,
+                    -0.36000001430511475,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.686274528503418,
+                    1.0
+                ],
+                "Enabled": false,
+                "PositionX": 0.4000000059604645,
+                "PositionY": -0.36000001430511475,
+                "Scale": 0.30000001192092896,
+                "Text": "50",
+                "Type": 17
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Music Text",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "UI",
+        "UID": 3097027862,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Text Master Volume": 3802911340
+                    },
+                    {
+                        "Text SFX Volume": 3526407515
+                    },
+                    {
+                        "Text Music Volume": 3097027862
+                    },
+                    {
+                        "Slider Master": 3299101464
+                    },
+                    {
+                        "Slider SFX": 890633429
+                    },
+                    {
+                        "Slider Music": 2623952643
+                    },
+                    {
+                        "Master Ojbect": 2924834403
+                    },
+                    {
+                        "SFX Ojbect": 2523959480
+                    },
+                    {
+                        "Music Ojbect": 494399606
+                    },
+                    {
+                        "Master Idle": 3301740551
+                    },
+                    {
+                        "Master Hover": 306170160
+                    },
+                    {
+                        "SFX Idle": 973979197
+                    },
+                    {
+                        "SFX Hover": 2826068840
+                    },
+                    {
+                        "Music Idle": 1640090254
+                    },
+                    {
+                        "Music Hover": 3827949153
+                    },
+                    {
+                        "VSync CheckBox": 3929008766
+                    },
+                    {
+                        "Text Master Volume": 3802911340
+                    },
+                    {
+                        "Text SFX Volume": 3526407515
+                    },
+                    {
+                        "Text Music Volume": 3097027862
+                    },
+                    {
+                        "Slider Master": 3299101464
+                    },
+                    {
+                        "Slider SFX": 890633429
+                    },
+                    {
+                        "Slider Music": 2623952643
+                    },
+                    {
+                        "Master Ojbect": 2924834403
+                    },
+                    {
+                        "SFX Ojbect": 2523959480
+                    },
+                    {
+                        "Music Ojbect": 494399606
+                    },
+                    {
+                        "Master Idle": 3301740551
+                    },
+                    {
+                        "Master Hover": 306170160
+                    },
+                    {
+                        "SFX Idle": 973979197
+                    },
+                    {
+                        "SFX Hover": 2826068840
+                    },
+                    {
+                        "Music Idle": 1640090254
+                    },
+                    {
+                        "Music Hover": 3827949153
+                    },
+                    {
+                        "VSync CheckBox": 3929008766
+                    }
+                ],
+                "Script Resource": 3900714064,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "SettingsManager",
+        "ParentUID": 1437004097,
+        "PrefabUID": 4076827353,
+        "Tag": "Default",
+        "UID": 2228586509,
         "UpdateWithBones": false
     },
     {
@@ -111148,9 +111541,6 @@
                         "DamagePerProjectile": 2.0
                     },
                     {
-                        "aaaaaaaaaaaaaaaa": false
-                    },
-                    {
                         "Player Storage GO": 2252131494
                     },
                     {
@@ -111161,9 +111551,6 @@
                     },
                     {
                         "DamagePerProjectile": 2.0
-                    },
-                    {
-                        "aaaaaaaaaaaaaaaa": false
                     }
                 ],
                 "Script Resource": 175185159,
@@ -111177,6 +111564,54 @@
         "PrefabUID": 1373398726,
         "Tag": "Default",
         "UID": 2830759294,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Respawn in lvl:": 1
+                    },
+                    {
+                        "Respawn in lvl:": 3
+                    },
+                    {
+                        "Respawn in lvl:": 3
+                    }
+                ],
+                "Script Resource": 3135958647,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "LevelPreset",
+        "ParentUID": 2462894403,
+        "PrefabUID": 1498491533,
+        "Tag": "Default",
+        "UID": 3826025244,
         "UpdateWithBones": false
     }
 ]

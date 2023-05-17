@@ -51,6 +51,7 @@ void Chest::Update()
         if (openChestTime <= 0.0f)
         {
             opening = false;
+            guideButton.GetGameObject().SetActive(false);
 
             if (!playerGunManager || !playerStats || !playerMove)
             {
@@ -102,7 +103,7 @@ void Chest::Update()
 
         }
     }
-    guideButton.FillImage(openChestTime/maxOpenChestTime);
+    //guideButton.FillImage(openChestTime/maxOpenChestTime);
 
 
     if (activeTutorial == true && endTutorial == false && hideChest == false)

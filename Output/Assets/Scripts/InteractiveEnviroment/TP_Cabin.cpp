@@ -10,6 +10,7 @@ HELLO_ENGINE_API_C TP_Cabin* CreateTP_Cabin(ScriptToInspectorInterface* script)
 	script->AddDragBoxParticleSystem("Smoke Particle", &classInstance->smoke);
 	script->AddDragBoxPrefabResource("Sphere Prefab", &classInstance->effectSpherePrefab);
 	script->AddDragFloat("Scale Value", &classInstance->scaleValue);
+	script->AddDragBoxUIImage("Tp Button", &classInstance->tpButton);
 	return classInstance;
 }
 
@@ -168,5 +169,25 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 				}
 			}
 		}
+	}
+}
+
+void TP_Cabin::OnCollisionEnter(API_RigidBody other)
+{
+	std::string detectionTag = other.GetGameObject().GetTag();
+	if (detectionTag == "Player")
+	{
+		tpButton.GetGameObject().SetActive(true);
+
+	}
+}
+
+void TP_Cabin::OnCollisionExit(API_RigidBody other)
+{
+	std::string detectionTag = other.GetGameObject().GetTag();
+	if (detectionTag == "Player")
+	{
+		tpButton.GetGameObject().SetActive(false);
+
 	}
 }

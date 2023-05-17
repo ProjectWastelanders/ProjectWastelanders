@@ -176,6 +176,32 @@ void ComponentUISlider::DeSerialization(json& j)
 
 }
 
+void ComponentUISlider::CalculPerCent()
+{
+	for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
+	{
+		if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
+		{
+			widthBarAux = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
+		}
+	}
+
+	perCent = ((mousePosX * 50) / (widthBarAux)) + 50;
+}
+
+void ComponentUISlider::CalculNormalize()
+{
+	for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
+	{
+		if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
+		{
+			widthBarAux = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
+		}
+	}
+
+	NormalizedPos = (((mousePosX * (numMax - numMin) / 2) / widthBarAux) + ((numMax - numMin) / 2)) + numMin;
+}
+
 #ifdef STANDALONE
 void ComponentUISlider::OnEditor()
 {
@@ -190,16 +216,10 @@ void ComponentUISlider::OnEditor()
 
 	if (_gameObject->GetTag() == "UIsliderButton")
 	{
-		for (size_t i = 0; i < _gameObject->GetParent()->GetChildren()->size(); i++)
-		{
-			if (_gameObject->GetParent()->GetChildren()->at(i)->GetTag() == "UIsliderBar")
-			{
-				widthBarAux = _gameObject->GetParent()->GetChildren()->at(i)->transform->GetGlobalScale().x;
-			}
-		}
+		
 
-		perCent = ((mousePosX * 50) / (widthBarAux)) + 50;
-		NormalizedPos = (((mousePosX * (numMax - numMin) / 2) / widthBarAux) + ((numMax - numMin) / 2)) + numMin;
+		CalculPerCent();
+		CalculNormalize();
 
 		if (ImGui::SliderFloat("##SliderPerCent", &mousePosX, -widthBarAux, widthBarAux, "%.2f")) {
 			_gameObject->transform->SetPosition({ mousePosX, _gameObject->transform->GetLocalPosition().y, _gameObject->transform->GetLocalPosition().z });

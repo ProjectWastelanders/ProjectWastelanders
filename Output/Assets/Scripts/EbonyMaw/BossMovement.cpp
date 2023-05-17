@@ -16,6 +16,8 @@ HELLO_ENGINE_API_C BossMovement* CreateBossMovement(ScriptToInspectorInterface* 
 void BossMovement::Start()
 {
    bLoop = (BossLoop*)boss.GetScript("BossLoop");
+
+   gameObject.GetRigidBody().SetVelocity(API_Vector3(0, 0, 0));
 }
 void BossMovement::Update()
 {

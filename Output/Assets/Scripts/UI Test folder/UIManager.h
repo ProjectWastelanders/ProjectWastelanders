@@ -12,7 +12,8 @@ public:
 	{
 		NONE,
 		PAUSE,
-		MAP
+		MAP,
+		SETTINGS
 	};
 
 	void Start() override; 
@@ -23,15 +24,21 @@ public:
 	void ShowInitialText();
 	void ShowFinalText();
 
+	void ShowSettings();
+	void CloseSettings();
+
 	API_GameObject pausePanel;
 	API_GameObject mapPanel;
 	API_GameObject HUDPanel;
 	API_GameObject initialText;
 	API_GameObject finalText;
+	API_GameObject settingsPanel;
 
 	API_UIButton initialTextConinue;
 	API_UIButton finalTextConinue;
 
 	CurrentPanel currentPanel;
+
+	bool isPaused;
 };
 

@@ -118,7 +118,8 @@ void EnemyRanger::Update()
             disZone > zoneRad ? _outCooldown += dt : _outCooldown = 0;
             enemy->isHit ? _hitOutCooldown += dt : _hitOutCooldown = 0;
 
-            if (_hitOutCooldown >= hitOutTime) enemy->isHit = false, enemy->hitParticles.Stop();
+            if (_hitOutCooldown >= hitOutTime) 
+                enemy->isHit = false, enemy->hitParticles.Stop();
 
             if (enemy->isTargIn)
             {

@@ -19,6 +19,7 @@ HELLO_ENGINE_API_C ProjectilePull* CreateProjectilePull(ScriptToInspectorInterfa
     script->AddDragBoxTextureResource("Burst Projectile Texture", &classInstance->burstTex);
     script->AddDragBoxTextureResource("Shotgun Projectile Texture", &classInstance->shotgunTex);
     script->AddDragBoxTextureResource("Ricochet Projectile Texture", &classInstance->ricochetTex);
+    script->AddCheckBox("Testing", &classInstance->testing);
     return classInstance;
 }
 

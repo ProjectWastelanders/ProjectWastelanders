@@ -2,6 +2,8 @@
 
 class ParticleSystemComponent;
 
+using json = nlohmann::json;
+
 enum class P_ModuleType
 {
 	MAIN,
@@ -27,6 +29,10 @@ public:
 	virtual ~P_Module();
 
 	virtual void OnEditor();
+
+	virtual void Serialization(json& j);
+
+	virtual void DeSerialization(json& j);
 
 	ParticleSystemComponent* component = nullptr;
 

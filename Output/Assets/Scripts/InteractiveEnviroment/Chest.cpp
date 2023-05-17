@@ -103,8 +103,6 @@ void Chest::Update()
         }
     }
     guideButton.FillImage(openChestTime/maxOpenChestTime);
-    Console::Log("Barra Cofre" + std::to_string(openChestTimeBar));
-    Console::Log("Barra Cofre Activa" + std::to_string(guideButton.GetGameObject().IsActive()));
 
 
     if (activeTutorial == true && endTutorial == false && hideChest == false)
@@ -156,16 +154,22 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
             playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
             if (playerMove == nullptr) return;
 
-            float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
-            float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
-                        
+            playerGunManager = (PlayerGunManager*)other.GetGameObject().GetScript("PlayerGunManager");
+            playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
+            if (playerMove) playerMove->PlayOpenChestAnim();
+            opening = true;
+
+            
+           //float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
+            //float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
+            
+            /*
             if (abs(distanceX) < abs(distanceZ))
             {
                 if (distanceZ >= 0.0f && playerMove->aimAngle <= 90 && playerMove->aimAngle > -90) // chest up
                 {
                     playerGunManager = (PlayerGunManager*)other.GetGameObject().GetScript("PlayerGunManager");
                     playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-
                     if (playerMove) playerMove->PlayOpenChestAnim();
                     opening = true;
                 }
@@ -184,7 +188,6 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
                 {
                     playerGunManager = (PlayerGunManager*)other.GetGameObject().GetScript("PlayerGunManager");
                     playerStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-
                     if (playerMove) playerMove->PlayOpenChestAnim();
                     opening = true;
                 }
@@ -196,8 +199,9 @@ void Chest::OnCollisionStay(API::API_RigidBody other)
                     if (playerMove) playerMove->PlayOpenChestAnim();
                     opening = true;
                 }
-            }
+            }*/
         }
+        
     }
 }
 

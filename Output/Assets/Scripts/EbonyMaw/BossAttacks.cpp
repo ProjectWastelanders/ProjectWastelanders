@@ -81,7 +81,7 @@ void BossAttacks::Update()
 		}
 	}
 
-	if (distSA < 80.0f) {
+	if (distSA < 80.0f && bLoop->battle) {
 		if (bLoop->phase == 2) {
 			specialAttackCooldown += Time::GetDeltaTime();
 		}
@@ -179,11 +179,12 @@ void BossAttacks::Update()
 				case BossAttacks::BOSS_STATE::THROWING:
 					currentTimeAttack += Time::GetDeltaTime();
 
-					if (bLoop->animState != BossLoop::AnimationState::THROWOBJ)
+					if (!animAttack)
 					{
+						animAttack = true;
 						bLoop->animState = BossLoop::AnimationState::THROWOBJ;
 						bLoop->animationPlayer.ChangeAnimation(bLoop->throwObjAnim);
-						bLoop->animationPlayer.SetLoop(false);
+						bLoop->animationPlayer.SetLoop(true);
 						bLoop->animationPlayer.Play();
 					}
 
@@ -198,6 +199,7 @@ void BossAttacks::Update()
 					if (currentTimeAttack >= timeAttack[numRocks[attackType]]) {
 						bossState = BOSS_STATE::IDLE;
 						attacking = false;
+						animAttack = false;
 					}
 
 					break;
@@ -218,14 +220,14 @@ void BossAttacks::Update()
 				break;
 			case 4:
 				explosionTime += Time::GetDeltaTime();
-				explosionWave1.GetTransform().Scale(20.0f * Time::GetDeltaTime());
-				if (explosionTime < 0.5 && distSA < 30.0 && explosionWave1HasArrived == false) {
+				//explosionWave1.GetTransform().Scale(20.0f * Time::GetDeltaTime());
+				if (explosionTime < 0.5 && distSA < 15.0 && explosionWave1HasArrived == false) {
 					pStats->TakeDamage(50,0);
 					explosionWave1HasArrived = true;
 				}
-				if (explosionTime >= 0.5 && distSA > 30.0 && distSA < 60.0 && explosionWave2HasArrived == false) {
+				if (explosionTime >= 0.5 && distSA > 15.0 && distSA < 30.0 && explosionWave2HasArrived == false) {
 
-					pStats->TakeDamage(1,0);
+					pStats->TakeDamage(0,0);
 
 					API_Vector3 normalizedvector = boss.GetTransform().GetGlobalPosition() - player.GetTransform().GetGlobalPosition();
 					float x = normalizedvector.x * normalizedvector.x;
@@ -241,6 +243,8 @@ void BossAttacks::Update()
 				if (explosionTime > 0.6) {
 					bLoop->exploting = false;
 					explosionWave1.SetActive(false);
+					explosionWave1.GetParticleSystem().Stop();
+					explosionWave1.GetParticleSystem().StopEmitting();
 					bossState = BOSS_STATE::IDLE;
 					attacking = false;
 				}
@@ -396,7 +400,7 @@ void BossAttacks::Update()
 					explosionWave2HasArrived = false;
 					bossState = BOSS_STATE::EXPLOSIONWAVE;
 					explosionWave1.SetActive(true);
-					explosionWave1.GetTransform().SetScale(0.1f, 0.1f, 0.1f);
+					explosionWave1.GetParticleSystem().Play();
 				}
 
 				if (attackType == 5) {

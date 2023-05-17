@@ -66,6 +66,11 @@ void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
+    if (!battle)
+    {
+        rockShield.SetActive(false);
+    }
+
     if (dist < 80.0f && battle) {
         if (hp > 0) {
             if (canTakeDamage == true) {
@@ -173,7 +178,6 @@ void BossLoop::Update()
 void BossLoop::OnCollisionEnter(API::API_RigidBody other)
 {
     std::string detectionName = other.GetGameObject().GetName();
-
     if (hp > 0) {
         if (detectionName == "Player")
         {

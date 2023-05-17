@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.540958285331726,
+                "Aspect ratio": 1.9408766031265259,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -165,10 +165,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "HP BOSS UI IMAGE": 825774155
+                        "HP BOSS 1 TEXTURE": 2911723293
                     },
                     {
-                        "SHIELD BOSS UI IMAGE": 2234780185
+                        "SHIELD BOSS icon": 91629146
                     },
                     {
                         "HP BOSS 1 TEXTURE": 2911723293
@@ -177,46 +177,10 @@
                         "SHIELD BOSS icon": 91629146
                     },
                     {
-                        "HP BOSS UI IMAGE": 825774155
-                    },
-                    {
-                        "SHIELD BOSS UI IMAGE": 2234780185
-                    },
-                    {
                         "HP BOSS 1 TEXTURE": 2911723293
                     },
                     {
                         "SHIELD BOSS icon": 91629146
-                    },
-                    {
-                        "HP BOSS UI IMAGE": 825774155
-                    },
-                    {
-                        "SHIELD BOSS UI IMAGE": 2234780185
-                    },
-                    {
-                        "HP BOSS 1 TEXTURE": 2911723293
-                    },
-                    {
-                        "SHIELD BOSS icon": 91629146
-                    },
-                    {
-                        "HP BOSS UI IMAGE": 825774155
-                    },
-                    {
-                        "SHIELD BOSS UI IMAGE": 2234780185
-                    },
-                    {
-                        "HP BOSS 1 TEXTURE": 2911723293
-                    },
-                    {
-                        "SHIELD BOSS icon": 91629146
-                    },
-                    {
-                        "HP BOSS UI IMAGE": 825774155
-                    },
-                    {
-                        "SHIELD BOSS UI IMAGE": 2234780185
                     },
                     {
                         "HP BOSS 1 TEXTURE": 2911723293
@@ -242,9 +206,6 @@
                     },
                     {
                         "Bar": 533326204
-                    },
-                    {
-                        "Bar": 533326204
                     }
                 ],
                 "Script Resource": 2563255136,
@@ -253,15 +214,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Movment on X": 0.0
-                    },
-                    {
-                        "Movment Repetitions": 0.0
-                    },
-                    {
-                        "Movment Speed": 0.0
-                    },
                     {
                         "Movment on X": 0.0
                     },
@@ -712,30 +664,6 @@
                     },
                     {
                         "GamesObjects_4": 2605297620
-                    },
-                    {
-                        "Texture_SPEED_INCREASE": 572968604
-                    },
-                    {
-                        "Texture_FIRERATE_INCREASE": 904723382
-                    },
-                    {
-                        "Texture_SHIELD": 874482960
-                    },
-                    {
-                        "Texture_SLOW_TIME": 3865343995
-                    },
-                    {
-                        "GamesObjects_1": 1272486707
-                    },
-                    {
-                        "GamesObjects_2": 3264243153
-                    },
-                    {
-                        "GamesObjects_3": 268021764
-                    },
-                    {
-                        "GamesObjects_4": 2605297620
                     }
                 ],
                 "Script Resource": 3847216677,
@@ -1009,10 +937,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "HP_BAR": 1144516396
+                        "HP Texture": 2859695454
                     },
                     {
-                        "SHIELD_BAR": 1706043033
+                        "HP Regen Texture": 4119276236
                     },
                     {
                         "HP Texture": 2859695454
@@ -1021,46 +949,10 @@
                         "HP Regen Texture": 4119276236
                     },
                     {
-                        "HP_BAR": 1144516396
-                    },
-                    {
-                        "SHIELD_BAR": 1706043033
-                    },
-                    {
                         "HP Texture": 2859695454
                     },
                     {
                         "HP Regen Texture": 4119276236
-                    },
-                    {
-                        "HP_BAR": 1144516396
-                    },
-                    {
-                        "SHIELD_BAR": 1706043033
-                    },
-                    {
-                        "HP Texture": 2859695454
-                    },
-                    {
-                        "HP Regen Texture": 4119276236
-                    },
-                    {
-                        "HP_BAR": 1144516396
-                    },
-                    {
-                        "SHIELD_BAR": 1706043033
-                    },
-                    {
-                        "HP Texture": 2859695454
-                    },
-                    {
-                        "HP Regen Texture": 4119276236
-                    },
-                    {
-                        "HP_BAR": 1144516396
-                    },
-                    {
-                        "SHIELD_BAR": 1706043033
                     },
                     {
                         "HP Texture": 2859695454
@@ -1075,9 +967,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Bar": 1144516396
-                    },
                     {
                         "Bar": 1144516396
                     },
@@ -1252,15 +1141,6 @@
                     },
                     {
                         "Movment Speed": 0.0
-                    },
-                    {
-                        "Movment on X": 0.0
-                    },
-                    {
-                        "Movment Repetitions": 0.0
-                    },
-                    {
-                        "Movment Speed": 0.0
                     }
                 ],
                 "Script Resource": 272862626,
@@ -1301,90 +1181,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "HandgunsWeapons_On": 3076489896
-                    },
-                    {
-                        "HandgunsWeapons_Off": 3986648714
-                    },
-                    {
-                        "Auto_On": 2067694486
-                    },
-                    {
-                        "Burst_On": 1186397666
-                    },
-                    {
-                        "Semi_On": 953282997
-                    },
-                    {
-                        "Shotgun_On": 3011687056
-                    },
-                    {
-                        "Handgun_On": 2485249494
-                    },
-                    {
-                        "Auto_Off": 554082642
-                    },
-                    {
-                        "Burst_Off": 2098528651
-                    },
-                    {
-                        "Semi_Off": 3008937367
-                    },
-                    {
-                        "Shotgun_Off": 1390408833
-                    },
-                    {
-                        "Handgun_Off": 732632770
-                    },
-                    {
-                        "FlameThrower_On 1": 2806950331
-                    },
-                    {
-                        "Ricochet_On 2": 4165763925
-                    },
-                    {
-                        "FlameThrower_Off 1": 2148606541
-                    },
-                    {
-                        "Ricochet_Off 2": 852787717
-                    },
-                    {
-                        "Material Weapon 1 on": 1701820068
-                    },
-                    {
-                        "Material Weapon 1 off": 1447126771
-                    },
-                    {
-                        "Game Bar Weapon 1": 42656509
-                    },
-                    {
-                        "Material Weapon 2 on": 1762482833
-                    },
-                    {
-                        "Material Weapon 2 off": 2896636869
-                    },
-                    {
-                        "Game Bar Weapon 2": 1366919386
-                    },
-                    {
-                        "Material Weapon 3 on": 4256981011
-                    },
-                    {
-                        "Material Weapon 3 off": 1056706350
-                    },
-                    {
-                        "Game Bar Weapon 3": 1625669672
-                    },
-                    {
-                        "Text_Dash_on": 486085637
-                    },
-                    {
-                        "Text_Dash_off": 3635487892
-                    },
-                    {
-                        "Material_Dash": 3494829257
-                    },
                     {
                         "HandgunsWeapons_On": 3076489896
                     },
@@ -2527,12 +2323,6 @@
                     },
                     {
                         "Active_Ultimate_HUD": 789399284
-                    },
-                    {
-                        "Disable_Ultimate_HUD": 4117494529
-                    },
-                    {
-                        "Active_Ultimate_HUD": 789399284
                     }
                 ],
                 "Script Resource": 1642016886,
@@ -2776,9 +2566,6 @@
                     },
                     {
                         "Bar": 1706043033
-                    },
-                    {
-                        "Bar": 1706043033
                     }
                 ],
                 "Script Resource": 2563255136,
@@ -2924,11 +2711,11 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "New_HUD_Finished",
         "ParentUID": 697050729,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 453688899,
         "UpdateWithBones": false
@@ -2962,10 +2749,10 @@
                         "HUD fons": 453688899
                     },
                     {
-                        "HP_BAR": 646782243
+                        "HP Texture": 1878122064
                     },
                     {
-                        "SHIELD_BAR": 2197521170
+                        "HUD fons": 453688899
                     },
                     {
                         "HP Texture": 1878122064
@@ -2974,10 +2761,7 @@
                         "HUD fons": 453688899
                     },
                     {
-                        "HP_BAR": 646782243
-                    },
-                    {
-                        "SHIELD_BAR": 2197521170
+                        "HP_BAR": 91066402
                     },
                     {
                         "HP Texture": 1878122064
@@ -2986,10 +2770,7 @@
                         "HUD fons": 453688899
                     },
                     {
-                        "HP_BAR": 646782243
-                    },
-                    {
-                        "SHIELD_BAR": 2197521170
+                        "HP_BAR": 91066402
                     },
                     {
                         "HP Texture": 1878122064
@@ -2998,22 +2779,7 @@
                         "HUD fons": 453688899
                     },
                     {
-                        "HP_BAR": 646782243
-                    },
-                    {
-                        "SHIELD_BAR": 2197521170
-                    },
-                    {
-                        "HP Texture": 1878122064
-                    },
-                    {
-                        "HUD fons": 453688899
-                    },
-                    {
-                        "HP_BAR": 646782243
-                    },
-                    {
-                        "SHIELD_BAR": 2197521170
+                        "HP_BAR": 91066402
                     },
                     {
                         "HP Texture": 1878122064
@@ -3060,11 +2826,11 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "HP",
         "ParentUID": 453688899,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 2235803156,
         "UpdateWithBones": false
@@ -3100,11 +2866,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_HP",
         "ParentUID": 2235803156,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 1710001134,
         "UpdateWithBones": false
@@ -3140,11 +2906,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "HP",
         "ParentUID": 2235803156,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 646782243,
         "UpdateWithBones": false
@@ -3155,9 +2921,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.8899999856948853,
+                    -0.8999999761581421,
                     0.7649999856948853,
-                    -0.004999999888241291
+                    -0.014999999664723873
                 ],
                 "Rotation": [
                     0.0,
@@ -3180,13 +2946,53 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Regen_limit",
         "ParentUID": 2235803156,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 589050753,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.7649999856948853,
+                    0.7900000214576721,
+                    -0.0020000000949949026
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.23999999463558197,
+                    0.11999999731779099,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2602415947,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Regen_HP",
+        "ParentUID": 2235803156,
+        "PrefabUID": 3217397901,
+        "Tag": "UI",
+        "UID": 91066402,
         "UpdateWithBones": false
     },
     {
@@ -3249,11 +3055,11 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Shield",
         "ParentUID": 453688899,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 849388938,
         "UpdateWithBones": false
@@ -3266,7 +3072,7 @@
                 "Position": [
                     -0.7739999890327454,
                     0.8700000047683716,
-                    -0.0020000000949949026
+                    -0.003000000026077032
                 ],
                 "Rotation": [
                     0.0,
@@ -3289,11 +3095,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Shield",
         "ParentUID": 849388938,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 2482168701,
         "UpdateWithBones": false
@@ -3306,7 +3112,7 @@
                 "Position": [
                     -0.7739999890327454,
                     0.8799999952316284,
-                    -0.004000000189989805
+                    -0.004999999888241291
                 ],
                 "Rotation": [
                     0.0,
@@ -3329,11 +3135,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Shield",
         "ParentUID": 849388938,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 2197521170,
         "UpdateWithBones": false
@@ -3398,11 +3204,11 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Casete",
         "ParentUID": 453688899,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 91027448,
         "UpdateWithBones": false
@@ -3438,11 +3244,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Casete_Off",
         "ParentUID": 91027448,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 2345195608,
         "UpdateWithBones": false
@@ -3478,11 +3284,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Casete_On",
         "ParentUID": 91027448,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 2833527203,
         "UpdateWithBones": false
@@ -3513,52 +3319,52 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "HandgunsWeapons_On": 3076489896
+                        "HandgunsWeapons_On": 3687702775
                     },
                     {
-                        "HandgunsWeapons_Off": 3986648714
+                        "HandgunsWeapons_Off": 1994759480
                     },
                     {
-                        "Auto_On": 2067694486
+                        "Auto_On": 2005413572
                     },
                     {
-                        "Burst_On": 1186397666
+                        "Burst_On": 1423167825
                     },
                     {
                         "Semi_On": 953282997
                     },
                     {
-                        "Shotgun_On": 3011687056
+                        "Shotgun_On": 122711558
                     },
                     {
-                        "Handgun_On": 2485249494
+                        "Handgun_On": 2778457023
                     },
                     {
-                        "Auto_Off": 554082642
+                        "Auto_Off": 1249862100
                     },
                     {
-                        "Burst_Off": 2098528651
+                        "Burst_Off": 3578184408
                     },
                     {
                         "Semi_Off": 3008937367
                     },
                     {
-                        "Shotgun_Off": 1390408833
+                        "Shotgun_Off": 2484891554
                     },
                     {
                         "Handgun_Off": 732632770
                     },
                     {
-                        "FlameThrower_On 1": 2806950331
+                        "FlameThrower_On 1": 75585121
                     },
                     {
-                        "Ricochet_On 2": 4165763925
+                        "Ricochet_On 2": 598249919
                     },
                     {
-                        "FlameThrower_Off 1": 2148606541
+                        "FlameThrower_Off 1": 3598463324
                     },
                     {
-                        "Ricochet_Off 2": 852787717
+                        "Ricochet_Off 2": 1403126444
                     },
                     {
                         "Material Weapon 1 on": 4011895908
@@ -3594,52 +3400,52 @@
                         "Text_Dash_off": 3089702664
                     },
                     {
-                        "HandgunsWeapons_On": 3076489896
+                        "HandgunsWeapons_On": 3687702775
                     },
                     {
-                        "HandgunsWeapons_Off": 3986648714
+                        "HandgunsWeapons_Off": 1994759480
                     },
                     {
-                        "Auto_On": 2067694486
+                        "Auto_On": 2005413572
                     },
                     {
-                        "Burst_On": 1186397666
+                        "Burst_On": 1423167825
                     },
                     {
                         "Semi_On": 953282997
                     },
                     {
-                        "Shotgun_On": 3011687056
+                        "Shotgun_On": 122711558
                     },
                     {
-                        "Handgun_On": 2485249494
+                        "Handgun_On": 2778457023
                     },
                     {
-                        "Auto_Off": 554082642
+                        "Auto_Off": 1249862100
                     },
                     {
-                        "Burst_Off": 2098528651
+                        "Burst_Off": 3578184408
                     },
                     {
                         "Semi_Off": 3008937367
                     },
                     {
-                        "Shotgun_Off": 1390408833
+                        "Shotgun_Off": 2484891554
                     },
                     {
                         "Handgun_Off": 732632770
                     },
                     {
-                        "FlameThrower_On 1": 2806950331
+                        "FlameThrower_On 1": 75585121
                     },
                     {
-                        "Ricochet_On 2": 4165763925
+                        "Ricochet_On 2": 598249919
                     },
                     {
-                        "FlameThrower_Off 1": 2148606541
+                        "FlameThrower_Off 1": 3598463324
                     },
                     {
-                        "Ricochet_Off 2": 852787717
+                        "Ricochet_Off 2": 1403126444
                     },
                     {
                         "Material Weapon 1 on": 4011895908
@@ -3922,11 +3728,11 @@
                 "Type": 5
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Weapons",
         "ParentUID": 453688899,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 3466085910,
         "UpdateWithBones": false
@@ -3954,11 +3760,11 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Weapon_1",
         "ParentUID": 3466085910,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 1603251113,
         "UpdateWithBones": false
@@ -3994,11 +3800,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Bar_off_1",
         "ParentUID": 1603251113,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 3924581646,
         "UpdateWithBones": false
@@ -4034,11 +3840,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Bar_on_1",
         "ParentUID": 1603251113,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 2335649725,
         "UpdateWithBones": false
@@ -4066,11 +3872,11 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Infinit_Weapon",
         "ParentUID": 1603251113,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 775139412,
         "UpdateWithBones": false
@@ -4106,11 +3912,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Infinit_Weapon_icon_On",
         "ParentUID": 775139412,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 4011895908,
         "UpdateWithBones": false
@@ -4146,11 +3952,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Infinit_Weapon_icon_Off",
         "ParentUID": 775139412,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 751758158,
         "UpdateWithBones": false
@@ -4178,11 +3984,11 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Weapon_2",
         "ParentUID": 3466085910,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 2140010461,
         "UpdateWithBones": false
@@ -4218,11 +4024,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Bar_off_2",
         "ParentUID": 2140010461,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 1547774336,
         "UpdateWithBones": false
@@ -4258,11 +4064,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Bar_on_2",
         "ParentUID": 2140010461,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 4038823307,
         "UpdateWithBones": false
@@ -4290,11 +4096,11 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Normal_Weapon",
         "ParentUID": 2140010461,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 2274371012,
         "UpdateWithBones": false
@@ -4330,11 +4136,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Normal_Weapon_icon_On",
         "ParentUID": 2274371012,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 1424924819,
         "UpdateWithBones": false
@@ -4370,11 +4176,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Normal_Weapon_icon_Off",
         "ParentUID": 2274371012,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 777897338,
         "UpdateWithBones": false
@@ -4402,11 +4208,11 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Weapon_3",
         "ParentUID": 3466085910,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 2803087037,
         "UpdateWithBones": false
@@ -4442,11 +4248,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Bar_off_3",
         "ParentUID": 2803087037,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 3293574625,
         "UpdateWithBones": false
@@ -4482,11 +4288,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Background_Bar_on_3",
         "ParentUID": 2803087037,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 3076441956,
         "UpdateWithBones": false
@@ -4514,11 +4320,11 @@
                 "Type": 1
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Special_Weapon_icon",
         "ParentUID": 2803087037,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "Default",
         "UID": 3159266986,
         "UpdateWithBones": false
@@ -4554,11 +4360,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Special_Weapon_icon_On",
         "ParentUID": 3159266986,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 1756636849,
         "UpdateWithBones": false
@@ -4594,11 +4400,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Special_Weapon_icon_Off",
         "ParentUID": 3159266986,
-        "PrefabUID": 0,
+        "PrefabUID": 3217397901,
         "Tag": "UI",
         "UID": 1170008488,
         "UpdateWithBones": false
@@ -4635,16 +4441,10 @@
                         "Infinit munition off": 2596827792
                     },
                     {
-                        "Normal munition on": 1394349007
+                        "Infinit munition on": 1124720208
                     },
                     {
-                        "Normal munition off": 1121392154
-                    },
-                    {
-                        "Special munition on": 2822614242
-                    },
-                    {
-                        "Special munition off": 1292481097
+                        "Infinit munition off": 2596827792
                     },
                     {
                         "Infinit munition on": 1124720208
@@ -4653,70 +4453,16 @@
                         "Infinit munition off": 2596827792
                     },
                     {
-                        "Normal munition on": 1394349007
-                    },
-                    {
-                        "Normal munition off": 1121392154
-                    },
-                    {
-                        "Special munition on": 2822614242
-                    },
-                    {
-                        "Special munition off": 1292481097
-                    },
-                    {
                         "Infinit munition on": 1124720208
                     },
                     {
                         "Infinit munition off": 2596827792
                     },
                     {
-                        "Normal munition on": 1394349007
-                    },
-                    {
-                        "Normal munition off": 1121392154
-                    },
-                    {
-                        "Special munition on": 2822614242
-                    },
-                    {
-                        "Special munition off": 1292481097
-                    },
-                    {
                         "Infinit munition on": 1124720208
                     },
                     {
                         "Infinit munition off": 2596827792
-                    },
-                    {
-                        "Normal munition on": 1394349007
-                    },
-                    {
-                        "Normal munition off": 1121392154
-                    },
-                    {
-                        "Special munition on": 2822614242
-                    },
-                    {
-                        "Special munition off": 1292481097
-                    },
-                    {
-                        "Infinit munition on": 1124720208
-                    },
-                    {
-                        "Infinit munition off": 2596827792
-                    },
-                    {
-                        "Normal munition on": 1394349007
-                    },
-                    {
-                        "Normal munition off": 1121392154
-                    },
-                    {
-                        "Special munition on": 2822614242
-                    },
-                    {
-                        "Special munition off": 1292481097
                     }
                 ],
                 "Script Resource": 392201209,
@@ -4727,13 +4473,13 @@
         "IsStatic": false,
         "Name": "Munition",
         "ParentUID": 570587173,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "Default",
         "UID": 3396396909,
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -4767,7 +4513,7 @@
         "IsStatic": false,
         "Name": "Infinit_Munition_ON",
         "ParentUID": 3396396909,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 1124720208,
         "UpdateWithBones": false
@@ -4807,7 +4553,7 @@
         "IsStatic": false,
         "Name": "Infinit_Munition_OFF",
         "ParentUID": 3396396909,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 2596827792,
         "UpdateWithBones": false
@@ -4853,13 +4599,13 @@
         "IsStatic": false,
         "Name": "Normal_Munition_ON",
         "ParentUID": 3396396909,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 1394349007,
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -4887,7 +4633,7 @@
                     0.5058823823928833,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.7799999713897705,
                 "PositionY": 0.6800000071525574,
                 "Scale": 0.10000000149011612,
@@ -4899,7 +4645,7 @@
         "IsStatic": false,
         "Name": "Normal_Munition_Off",
         "ParentUID": 3396396909,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 1121392154,
         "UpdateWithBones": false
@@ -4945,13 +4691,13 @@
         "IsStatic": false,
         "Name": "Special_Munition_On",
         "ParentUID": 3396396909,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 2822614242,
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -4979,7 +4725,7 @@
                     0.5058823823928833,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": -0.6899999976158142,
                 "PositionY": 0.6899999976158142,
                 "Scale": 0.10000000149011612,
@@ -4991,65 +4737,19 @@
         "IsStatic": false,
         "Name": "Special_Munition_Off",
         "ParentUID": 3396396909,
-        "PrefabUID": 3202643080,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 1292481097,
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.5400000214576721,
-                    0.7099999785423279,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.5,
-                    0.5,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Color": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Enabled": false,
-                "PositionX": -0.5400000214576721,
-                "PositionY": 0.7099999785423279,
-                "Scale": 0.20000000298023224,
-                "Text": "+100",
-                "Type": 17
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "More_Munition_text",
-        "ParentUID": 3396396909,
-        "PrefabUID": 0,
-        "Tag": "UI",
-        "UID": 3278993731,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.5600000023841858,
-                    0.7400000095367432,
+                    -0.550000011920929,
+                    0.8399999737739563,
                     0.0
                 ],
                 "Rotation": [
@@ -5073,11 +4773,11 @@
                 "Type": 15
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "More_Munition_GO",
         "ParentUID": 3396396909,
-        "PrefabUID": 0,
+        "PrefabUID": 579797539,
         "Tag": "UI",
         "UID": 373225517,
         "UpdateWithBones": false

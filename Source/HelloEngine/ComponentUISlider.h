@@ -21,6 +21,7 @@ public:
 
 	SliderState State;
 
+	int perCent = 0;
 
 private:
 
@@ -37,8 +38,6 @@ private:
 
 	float widthBar;
 	float widthBarAux;
-
-	int perCent = 0;
 
 	float NormalizedPos = 0;
 

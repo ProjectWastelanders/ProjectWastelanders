@@ -88,3 +88,8 @@ bool API::API_UISlider::OnHovered()
         return _UICheckBox->State == CheckboxState::HOVERED;
     }*/
 }
+
+int API::API_UISlider::GetValue()
+{
+    return _UISlider->perCent;
+}

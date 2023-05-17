@@ -46,8 +46,19 @@ void UIAudioManager::Update()
 		}
 	}
 
-	if (masterSlider.OnHovered())
+	if (masterSlider.OnPress())
 	{
+		Console::Log("HOVER PEPE");
 		masterText.SetText(std::to_string(masterSlider.GetValue()).c_str());
+	}
+
+	if (sfxSlider.OnPress())
+	{
+		sfxText.SetText(std::to_string(sfxSlider.GetValue()).c_str());
+	}
+
+	if (musicSlider.OnPress())
+	{
+		musicText.SetText(std::to_string(musicSlider.GetValue()).c_str());
 	}
 }

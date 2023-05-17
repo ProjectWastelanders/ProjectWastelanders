@@ -176,6 +176,7 @@
     <ClCompile Include="..\..\Assets\Scripts\Level2EndTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Level2FinalText.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\LevelEndTrigger.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\OrbitalTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Player\PlayerMove.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Player\PlayerStats.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Player\Temp_Teleporter.cpp" />
@@ -288,7 +289,7 @@
     <ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
     <ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.cpp" />
     <ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
-		<ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
+    <ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -312,6 +313,7 @@
     <ClInclude Include="..\..\Assets\Scripts\Level2EndTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\Level2FinalText.h" />
     <ClInclude Include="..\..\Assets\Scripts\LevelEndTrigger.h" />
+    <ClInclude Include="..\..\Assets\Scripts\OrbitalTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\Player\PlayerMove.h" />
     <ClInclude Include="..\..\Assets\Scripts\Player\PlayerStats.h" />
     <ClInclude Include="..\..\Assets\Scripts\Player\Temp_Teleporter.h" />
@@ -444,7 +446,7 @@
     <ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
     <ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.h" />
     <ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
-		<ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
+    <ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

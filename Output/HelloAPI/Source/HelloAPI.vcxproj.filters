@@ -152,6 +152,9 @@
     <ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.cpp" />
+    <ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
+    <ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\OrbitalTrigger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -306,5 +309,8 @@
     <ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.h" />
+    <ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
+    <ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
+    <ClInclude Include="..\..\Assets\Scripts\OrbitalTrigger.h" />
   </ItemGroup>
 </Project>

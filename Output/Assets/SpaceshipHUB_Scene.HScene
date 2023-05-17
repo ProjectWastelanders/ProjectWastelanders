@@ -11510,7 +11510,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.745519757270813,
+                "Aspect ratio": 1.6573426723480225,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -25321,8 +25321,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    1.0653032460801055e-38,
-                    9.642843404361616e-39,
+                    0.7099999785423279,
+                    0.6100000143051147,
                     0.0
                 ],
                 "Rotation": [
@@ -25345,10 +25345,10 @@
                     8.449026795858589e-39
                 ],
                 "Enabled": false,
-                "PositionX": 1.0653032460801055e-38,
-                "PositionY": 9.642843404361616e-39,
-                "Scale": 1.0561226391910815e-38,
-                "Text": "",
+                "PositionX": 0.7099999785423279,
+                "PositionY": 0.6100000143051147,
+                "Scale": 0.4000000059604645,
+                "Text": "0",
                 "Type": 17
             },
             {
@@ -28351,8 +28351,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    9.091861255979884e-39,
-                    2.938905434169902e-39,
+                    0.7699999809265137,
+                    0.699999988079071,
                     0.0
                 ],
                 "Rotation": [
@@ -28375,10 +28375,10 @@
                     9.918389129192591e-39
                 ],
                 "Enabled": false,
-                "PositionX": 9.091861255979884e-39,
-                "PositionY": 2.938905434169902e-39,
-                "Scale": 8.9081510273069e-39,
-                "Text": "",
+                "PositionX": 0.7699999809265137,
+                "PositionY": 0.699999988079071,
+                "Scale": 0.4000000059604645,
+                "Text": "0",
                 "Type": 17
             },
             {
@@ -31298,167 +31298,6 @@
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "CheckCompleted",
-        "ParentUID": 2279618498,
-        "PrefabUID": 2862542295,
-        "Tag": "UI",
-        "UID": 387500800,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.3880000114440918,
-                    0.07999999821186066,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.05000000074505806,
-                    0.08500000089406967,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 1200263952,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Check_Main",
-        "ParentUID": 387500800,
-        "PrefabUID": 2862542295,
-        "Tag": "UI",
-        "UID": 1503610624,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.30000001192092896,
-                    -0.1899999976158142,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.05000000074505806,
-                    0.08500000089406967,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 1200263952,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Check_S1",
-        "ParentUID": 387500800,
-        "PrefabUID": 2862542295,
-        "Tag": "UI",
-        "UID": 1637348096,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.30000001192092896,
-                    -0.4099999964237213,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.05000000074505806,
-                    0.08500000089406967,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 1200263952,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Check_S2",
-        "ParentUID": 387500800,
-        "PrefabUID": 2862542295,
-        "Tag": "UI",
-        "UID": 1084788479,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "MaterialResource": 0,
-                "MeshEnabled": false,
-                "Type": 16,
-                "listButtons": [
-                    0
-                ]
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
         "Name": "Select",
         "ParentUID": 2279618498,
         "PrefabUID": 2862542295,
@@ -32783,6 +32622,189 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Checks parent": 1567987248
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level1_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": "mision_LikeThe80"
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": "mision_RageMonster"
+                    },
+                    {
+                        "Checks parent": 1567987248
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level1_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": "mision_LikeThe80"
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": "mision_RageMonster"
+                    }
+                ],
+                "Script Resource": 611088795,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "CheckCompleted",
+        "ParentUID": 1326207992,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 1567987248,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.3880000114440918,
+                    0.07999999821186066,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_Main",
+        "ParentUID": 1567987248,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3951397872,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.1899999976158142,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S1",
+        "ParentUID": 1567987248,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3320970415,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.4099999964237213,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S2",
+        "ParentUID": 1567987248,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 2601784442,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
             }
         ],
         "FirstOnPrefab": false,
@@ -33244,6 +33266,189 @@
         "PrefabUID": 3894184214,
         "Tag": "UIUpgrade",
         "UID": 3331909748,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Checks parent": 933343332
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level2_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": "mision_Masacre"
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": "mision_Personal"
+                    },
+                    {
+                        "Checks parent": 933343332
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level2_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": "mision_Masacre"
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": "mision_Personal"
+                    }
+                ],
+                "Script Resource": 611088795,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "CheckCompleted",
+        "ParentUID": 705605687,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 933343332,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.3880000114440918,
+                    0.07999999821186066,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_Main",
+        "ParentUID": 933343332,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 1735895988,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.1899999976158142,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S1",
+        "ParentUID": 933343332,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3024805700,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.4099999964237213,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S2",
+        "ParentUID": 933343332,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3456149524,
         "UpdateWithBones": false
     },
     {
@@ -33751,6 +33956,189 @@
                     1.0
                 ],
                 "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Checks parent": 1571907291
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level3_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": "mision_TheRule"
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": "mision_FirstClassTurbulence"
+                    },
+                    {
+                        "Checks parent": 1571907291
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level3_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": "mision_TheRule"
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": "mision_FirstClassTurbulence"
+                    }
+                ],
+                "Script Resource": 611088795,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "CheckCompleted",
+        "ParentUID": 3130613017,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 1571907291,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.3880000114440918,
+                    0.07999999821186066,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_Main",
+        "ParentUID": 1571907291,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 1990804631,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.1899999976158142,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S1",
+        "ParentUID": 1571907291,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3214572931,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.4099999964237213,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S2",
+        "ParentUID": 1571907291,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3921136479,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
             }
         ],
         "FirstOnPrefab": false,
@@ -34132,6 +34520,189 @@
         "PrefabUID": 3894184214,
         "Tag": "UIUpgrade",
         "UID": 1707507289,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Checks parent": 2057577890
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level4_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": ""
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": ""
+                    },
+                    {
+                        "Checks parent": 2057577890
+                    },
+                    {
+                        "Principal Mission quicksave Name": "level4_completed"
+                    },
+                    {
+                        "Secondary Mission 1 quicksave Name": ""
+                    },
+                    {
+                        "Secondary Mission 2 quicksave Name": ""
+                    }
+                ],
+                "Script Resource": 611088795,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "CheckCompleted",
+        "ParentUID": 3297149726,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 2057577890,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.3880000114440918,
+                    0.07999999821186066,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_Main",
+        "ParentUID": 2057577890,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 586056201,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.1899999976158142,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S1",
+        "ParentUID": 2057577890,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 3924425117,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30000001192092896,
+                    -0.4099999964237213,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.05000000074505806,
+                    0.08500000089406967,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1200263952,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Check_S2",
+        "ParentUID": 2057577890,
+        "PrefabUID": 1401573232,
+        "Tag": "UI",
+        "UID": 2351502912,
         "UpdateWithBones": false
     },
     {

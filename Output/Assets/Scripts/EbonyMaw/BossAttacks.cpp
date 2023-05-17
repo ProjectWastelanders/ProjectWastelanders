@@ -56,7 +56,9 @@ void BossAttacks::Start()
 {
 	for (int i = 0; i < 15; i++) {
 		rockPositions[i] = rocks[i].GetTransform().GetGlobalPosition();
+		rocks[i].GetRigidBody().SetVelocity({ 0, 0, 0 });
 	}
+	
 	srand(time(NULL));
 	bLoop = (BossLoop*)boss.GetScript("BossLoop");
 	pStats = (PlayerStats*)player.GetScript("PlayerStats");

@@ -1,4 +1,5 @@
 #include "Stone.h"
+#include "RockDivider.h"
 #include "../Player/PlayerStats.h"
 #include "../EbonyMaw/BossAttacks.h"
 //Pau Olmos
@@ -13,6 +14,7 @@ HELLO_ENGINE_API_C Stone* CreateStone(ScriptToInspectorInterface* script)
 void Stone::Start()
 {
 	bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
+	
 	gameObject.GetTransform().SetScale(gameObject.GetTransform().GetGlobalScale() / 2);
 
 }

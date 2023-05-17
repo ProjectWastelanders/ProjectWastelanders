@@ -27,6 +27,7 @@ void RockDivider::Start()
 		stone.AddMaterial();
 		stone.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.3f, 0.3f, 0.3f), false);
 		stone.AddScript("Stone");
+		stone.GetRigidBody().SetVelocity({ 0,0,0 });
 		if(whichRockAmI < 5) stone.SetActive(true);
 		else  stone.SetActive(false);
 		

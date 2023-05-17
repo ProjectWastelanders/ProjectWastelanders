@@ -16,5 +16,7 @@ public:
 	API_GameObject shipHUD;
 	API_UIImage shipHpBar;
 	uint hpShipTex;
+
+	bool uwu = false;
 };
 

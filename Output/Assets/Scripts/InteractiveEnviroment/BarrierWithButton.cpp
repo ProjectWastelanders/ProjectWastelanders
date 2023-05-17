@@ -26,7 +26,7 @@ void BarrierWithButton::Update()
 {
     if (!button) return;
 
-    if (button->picked && !opened)
+    if (button->isOver && !opened)
     {
         lamp1.GetMaterialCompoennt().ChangeAlbedoTexture(materialLamp1);
         lamp2.GetMaterialCompoennt().ChangeAlbedoTexture(materialLamp2);

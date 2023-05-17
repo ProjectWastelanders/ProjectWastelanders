@@ -12,7 +12,20 @@ public:
     void Update() override;
 
     void OnCollisionStay(API::API_RigidBody other) override;
+    void OnCollisionEnter(API::API_RigidBody other) override;
+    void OnCollisionExit(API::API_RigidBody other) override;
 
     bool picked = false;
+    bool isOver = false;
+    float openBarrierTime;
+    float maxOpenBarrierTime = 1.0f;
+    
+
+    //Button
+    API_UIImage HoldButton;
+
+    float openBarrierTimeBar;
+    
+
 };
 

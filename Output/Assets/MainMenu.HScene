@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.9408766031265259,
+                "Aspect ratio": 1.6573426723480225,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -117,42 +117,6 @@
                     },
                     {
                         "Panel Settings Menu": 793174522
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Panel Main Menu": 2377698017
-                    },
-                    {
-                        "Panel Settings Menu": 793174522
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
-                    },
-                    {
-                        "Panel Main Menu": 2377698017
-                    },
-                    {
-                        "Panel Settings Menu": 793174522
                     }
                 ],
                 "Script Resource": 2459103775,
@@ -169,7 +133,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -213,7 +177,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -253,7 +217,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -298,24 +262,6 @@
                     },
                     {
                         "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -332,7 +278,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -377,24 +323,6 @@
                     },
                     {
                         "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -411,7 +339,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -456,24 +384,6 @@
                     },
                     {
                         "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -490,7 +400,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -535,24 +445,6 @@
                     },
                     {
                         "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -569,7 +461,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -609,7 +501,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -643,12 +535,6 @@
                 "Inspector Fields": [
                     {
                         "Velocity": 0.0
-                    },
-                    {
-                        "Velocity": 0.0
-                    },
-                    {
-                        "Velocity": 0.0
                     }
                 ],
                 "Script Resource": 3877120418,
@@ -665,7 +551,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -750,114 +636,6 @@
                     },
                     {
                         "Speed Rotation": 0.0
-                    },
-                    {
-                        "Move X animation repeat": 0
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": false
-                    },
-                    {
-                        "Move animation active": false
-                    },
-                    {
-                        "Distance move X": 0.0
-                    },
-                    {
-                        "Speed move X": 0.0
-                    },
-                    {
-                        "Distance move Y": 0.0
-                    },
-                    {
-                        "Speed move Y": 0.0
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.0
-                    },
-                    {
-                        "Speed Scale": 0.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0
-                    },
-                    {
-                        "Speed Rotation": 0.0
-                    },
-                    {
-                        "Move X animation repeat": 0
-                    },
-                    {
-                        "Move Y animation repeat": 0
-                    },
-                    {
-                        "Move animation in loop": false
-                    },
-                    {
-                        "Move animation active": false
-                    },
-                    {
-                        "Distance move X": 0.0
-                    },
-                    {
-                        "Speed move X": 0.0
-                    },
-                    {
-                        "Distance move Y": 0.0
-                    },
-                    {
-                        "Speed move Y": 0.0
-                    },
-                    {
-                        "Scale animation repeat": 0
-                    },
-                    {
-                        "Scale animation in loop": false
-                    },
-                    {
-                        "Scale animation active": false
-                    },
-                    {
-                        "Scale max": 0.0
-                    },
-                    {
-                        "Speed Scale": 0.0
-                    },
-                    {
-                        "Rotate animation repeat": 0
-                    },
-                    {
-                        "Rotate animation in loop": false
-                    },
-                    {
-                        "Rotate animation active": false
-                    },
-                    {
-                        "Rotate distance": 0.0
-                    },
-                    {
-                        "Speed Rotation": 0.0
                     }
                 ],
                 "Script Resource": 148961927,
@@ -874,7 +652,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -918,7 +696,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -958,7 +736,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -990,7 +768,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1032,7 +810,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1074,7 +852,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1114,7 +892,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1146,7 +924,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1188,7 +966,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1230,7 +1008,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1270,7 +1048,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1302,7 +1080,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1344,7 +1122,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1386,7 +1164,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1426,7 +1204,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1458,7 +1236,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1498,7 +1276,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1543,7 +1321,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1575,7 +1353,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1615,7 +1393,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1643,7 +1421,7 @@
                     0.686274528503418,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 0.4000000059604645,
                 "PositionY": 0.3400000035762787,
                 "Scale": 0.30000001192092896,
@@ -1661,7 +1439,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1689,7 +1467,7 @@
                     0.686274528503418,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 0.4000000059604645,
                 "PositionY": 0.03999999910593033,
                 "Scale": 0.30000001192092896,
@@ -1707,7 +1485,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1735,7 +1513,7 @@
                     0.686274528503418,
                     1.0
                 ],
-                "Enabled": true,
+                "Enabled": false,
                 "PositionX": 0.4000000059604645,
                 "PositionY": -0.36000001430511475,
                 "Scale": 0.30000001192092896,
@@ -1753,7 +1531,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -1777,150 +1555,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Text Master Volume": 1698258805
-                    },
-                    {
-                        "Text SFX Volume": 1941273593
-                    },
-                    {
-                        "Text Music Volume": 1696567407
-                    },
-                    {
-                        "Slider Master": 1288501553
-                    },
-                    {
-                        "Slider SFX": 4014868040
-                    },
-                    {
-                        "Slider Music": 2063935289
-                    },
-                    {
-                        "Master Ojbect": 1095714396
-                    },
-                    {
-                        "SFX Ojbect": 3466812801
-                    },
-                    {
-                        "Music Ojbect": 2727264771
-                    },
-                    {
-                        "Master Idle": 3301740551
-                    },
-                    {
-                        "Master Hover": 306170160
-                    },
-                    {
-                        "SFX Idle": 973979197
-                    },
-                    {
-                        "SFX Hover": 2826068840
-                    },
-                    {
-                        "Music Idle": 1640090254
-                    },
-                    {
-                        "Music Hover": 3827949153
-                    },
-                    {
-                        "VSync CheckBox": 3314231203
-                    },
-                    {
-                        "Text Master Volume": 1698258805
-                    },
-                    {
-                        "Text SFX Volume": 1941273593
-                    },
-                    {
-                        "Text Music Volume": 1696567407
-                    },
-                    {
-                        "Slider Master": 1288501553
-                    },
-                    {
-                        "Slider SFX": 4014868040
-                    },
-                    {
-                        "Slider Music": 2063935289
-                    },
-                    {
-                        "Master Ojbect": 1095714396
-                    },
-                    {
-                        "SFX Ojbect": 3466812801
-                    },
-                    {
-                        "Music Ojbect": 2727264771
-                    },
-                    {
-                        "Master Idle": 3301740551
-                    },
-                    {
-                        "Master Hover": 306170160
-                    },
-                    {
-                        "SFX Idle": 973979197
-                    },
-                    {
-                        "SFX Hover": 2826068840
-                    },
-                    {
-                        "Music Idle": 1640090254
-                    },
-                    {
-                        "Music Hover": 3827949153
-                    },
-                    {
-                        "VSync CheckBox": 3314231203
-                    },
-                    {
-                        "Text Master Volume": 1698258805
-                    },
-                    {
-                        "Text SFX Volume": 1941273593
-                    },
-                    {
-                        "Text Music Volume": 1696567407
-                    },
-                    {
-                        "Slider Master": 1288501553
-                    },
-                    {
-                        "Slider SFX": 4014868040
-                    },
-                    {
-                        "Slider Music": 2063935289
-                    },
-                    {
-                        "Master Ojbect": 1095714396
-                    },
-                    {
-                        "SFX Ojbect": 3466812801
-                    },
-                    {
-                        "Music Ojbect": 2727264771
-                    },
-                    {
-                        "Master Idle": 3301740551
-                    },
-                    {
-                        "Master Hover": 306170160
-                    },
-                    {
-                        "SFX Idle": 973979197
-                    },
-                    {
-                        "SFX Hover": 2826068840
-                    },
-                    {
-                        "Music Idle": 1640090254
-                    },
-                    {
-                        "Music Hover": 3827949153
-                    },
-                    {
-                        "VSync CheckBox": 3314231203
-                    },
                     {
                         "Text Master Volume": 1698258805
                     },

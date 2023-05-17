@@ -48,6 +48,17 @@ void UIAudioManager::Update()
 
 	if (masterSlider.OnHovered())
 	{
+		Console::Log(std::to_string(masterSlider.GetValue()).c_str());
 		masterText.SetText(std::to_string(masterSlider.GetValue()).c_str());
+	}
+
+	if (sfxSlider.OnHovered())
+	{
+		sfxText.SetText(std::to_string(sfxSlider.GetValue()).c_str());
+	}
+
+	if (musicSlider.OnHovered())
+	{
+		musicText.SetText(std::to_string(musicSlider.GetValue()).c_str());
 	}
 }

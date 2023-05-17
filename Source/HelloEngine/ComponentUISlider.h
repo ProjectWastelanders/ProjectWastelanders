@@ -19,6 +19,9 @@ public:
 
 	void UpdateGamePadInput(bool selected) override;
 
+	void CalculPerCent();
+	void CalculNormalize();
+
 	SliderState State;
 
 	int perCent = 0;

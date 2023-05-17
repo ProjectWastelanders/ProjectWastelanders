@@ -282,6 +282,7 @@
 		<ClCompile Include="../../Assets/Scripts/Audio/MusicManager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/EbonyMaw/BossCinematic.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
 	</ItemGroup>
 	<ItemGroup>
@@ -432,6 +433,7 @@
 		<ClInclude Include="../../Assets/Scripts/Audio/MusicManager.h" />
 		<ClInclude Include="../../Assets/Scripts/EbonyMaw/BossCinematic.h" />
 		<ClInclude Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

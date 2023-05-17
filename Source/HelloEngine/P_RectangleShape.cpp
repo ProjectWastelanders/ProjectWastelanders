@@ -35,6 +35,7 @@ float3 P_RectangleShape::GetRandomPos()
 	float z = random.Float() * c2;
 
 	x += center.x;
+	y += center.y;
 	z += center.z;
 
 	return float3(x, y, z);

@@ -8,6 +8,8 @@ HELLO_ENGINE_API_C StealTheDivinerAgain* CreateStealTheDivinerAgain(ScriptToInsp
     script->AddDragBoxGameObject("Player Storage GO", &classInstance->playerStorageGO);
     script->AddDragBoxGameObject("Final Text Panel", &classInstance->finalText);
     script->AddDragBoxGameObject("Reach The Spaceship GO", &classInstance->reachTheSpaceShipGO);
+    script->AddCheckBox("aaaaaaa", &classInstance->uwu);
+
     return classInstance;
 }
 
@@ -18,11 +20,17 @@ void StealTheDivinerAgain::Start()
 
     reachTheSpaceShip = (ReachTheSpaceship*)reachTheSpaceShipGO.GetScript("ReachTheSpaceship");
     if (reachTheSpaceShip == nullptr) Console::Log("ReachTheSpaceship missing in StealTheDivinerAgain Script.");
+
+
+    Game::FindGameObjectsWithTag("Camera", &camObj, 1);
+    cam = (CamMov*)camObj.GetScript("CamMov");
+    if (cam == nullptr) Console::Log("CamMov missing in StealTheDivinerAgain Script.");
 }
 
 void StealTheDivinerAgain::Update()
 {
-
+    //if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN) if (cam) cam->Earthquake(3), uwu = true;
+   
 }
 
 void StealTheDivinerAgain::OnCollisionStay(API_RigidBody other)
@@ -41,6 +49,7 @@ void StealTheDivinerAgain::OnCollisionStay(API_RigidBody other)
             API_QuickSave::SetBool("IsInMiddleOfLevel", false);
             finalText.SetActive(true);
             if (reachTheSpaceShip) reachTheSpaceShip->EnableMision();
+            if (cam) cam->Earthquake(4), uwu = true;
         }
     }
 }

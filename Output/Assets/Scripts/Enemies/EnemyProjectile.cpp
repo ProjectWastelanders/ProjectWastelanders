@@ -1,5 +1,6 @@
 #include "EnemyProjectile.h"
 #include "../Player/PlayerStats.h"
+#include "../Missions/LVL3/AttackingShip.h"
 HELLO_ENGINE_API_C EnemyProjectile* CreateEnemyProjectile(ScriptToInspectorInterface* script)
 {
     EnemyProjectile* classInstance = new EnemyProjectile();
@@ -48,5 +49,17 @@ void EnemyProjectile::OnCollisionEnter(API::API_RigidBody other)
     {
         Destroy();
     }
+    /*else if (detectionTag == "Milano")
+    {
+        AttackingShip* shipScript = (AttackingShip*)other.GetGameObject().GetScript("AttackingShip");
+        if (shipScript)
+        {
+            shipScript->TakeDamage(damage);
+        }
+        Destroy();
+
+    }*/
+
+
 
 }

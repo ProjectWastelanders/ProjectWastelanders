@@ -281,6 +281,7 @@
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Audio/MusicManager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/EbonyMaw/BossCinematic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -429,6 +430,7 @@
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.h" />
 		<ClInclude Include="../../Assets/Scripts/Audio/MusicManager.h" />
 		<ClInclude Include="../../Assets/Scripts/EbonyMaw/BossCinematic.h" />
+		<ClInclude Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

@@ -26,8 +26,7 @@ void PlayerShotgun::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("shotgun_level")); // read from save file
+    SetGunStatsPerLevel(API_QuickSave::GetInt("shotgun_level")); // read from save file
 
     if (cadence == 0)
     {

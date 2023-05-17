@@ -23,6 +23,8 @@ public:
 
     API_GameObject GetFirstInactiveProjectile();
     API_GameObject GetFirstInactiveShotgunBomb();
+    API_GameObject GetFirstInactiveElectricityChain();
+    uint GetFirstEmptyElectricityChainExeption();
     void LauchProjectileNORMAL(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, PROJECTILE_ACTION projectileAction);
     void LauchProjectileSEMI(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale);
     void LauchProjectileSECONDARY_SEMI(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, float rotateY, uint ignoreGO);
@@ -59,6 +61,4 @@ public:
     uint burstTex = 0;
     uint shotgunTex = 0;
     uint ricochetTex = 0;
-
-    bool testing = false;
 };

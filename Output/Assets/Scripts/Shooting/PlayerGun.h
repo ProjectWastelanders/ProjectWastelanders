@@ -31,7 +31,6 @@ public:
     PlayerStats* playerStats;
 
     API_GameObject projectilePull;
-    ProjectilePull* pull;
 
     float projectileSpeed;
     float projectileDamage;

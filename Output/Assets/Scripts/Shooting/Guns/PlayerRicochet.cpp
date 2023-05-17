@@ -24,8 +24,7 @@ void PlayerRicochet::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(0);
+    SetGunStatsPerLevel(0);
 
     if (cadence == 0)
     {

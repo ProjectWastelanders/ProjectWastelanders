@@ -177,10 +177,7 @@ void Mesh::DefaultDraw()
 			smComp->UpdateBones();
 		}
 
-		for (int i = 0; i < smComp->goBonesArr.size(); ++i)
-		{
-			boneMeshShader->shader.SetMatFloat4v("finalBonesMatrices[" + std::to_string(i) + "]", &smComp->goBonesArr[i].Transposed().v[0][0]);
-		}
+		boneMeshShader->shader.SetMatFloat4v("finalBonesMatrices", smComp->goBonesArr[0].ptr(), smComp->goBonesArr.size(), true);
 
 	}
 	else if (!is2D)
@@ -201,6 +198,19 @@ void Mesh::UniformDraw(Material material)
 	{
 		if (component->_hasBones)
 		{	
+			depthBoneShader->shader.Bind();
+			depthBoneShader->shader.SetMatFloat4v("dirLightSpaceMatrix",
+				&Lighting::GetLightMap().directionalLight.lightSpaceMatrix.v[0][0]);
+			depthBoneShader->shader.SetMatFloat4v("model", &modelMatrix.v[0][0]);
+			
+			//Bones
+			SkinnedMeshRenderComponent* smComp = (SkinnedMeshRenderComponent*)component;
+
+			for (int i = 0; i < smComp->goBonesArr.size(); ++i)
+			{
+				depthBoneShader->shader.SetMatFloat4v("finalBonesMatrices[" + std::to_string(i) + "]", &smComp->goBonesArr[i].Transposed().v[0][0]);
+			}
+			
 			return;
 		}
 		depthShader->shader.Bind();
@@ -393,11 +403,6 @@ void Mesh::BonesStep(Material& material)
 	if (component->_hasBones)
 	{
 		SkinnedMeshRenderComponent* smComp = (SkinnedMeshRenderComponent*)component;
-
-		if (!smComp->hasAnim)
-		{
-			/*smComp->UpdateBones();*/
-		}
 
 		material.UpdateBones(smComp->goBonesArr);
 	}

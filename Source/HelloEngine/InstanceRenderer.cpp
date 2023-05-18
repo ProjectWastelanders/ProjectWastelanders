@@ -141,7 +141,7 @@ void InstanceRenderer::DrawMaterial()
         glBindVertexArray(0);
     }
 
-    //depthDraw = !depthDraw;
+    depthDraw = !depthDraw;
 
     resMat->material.UnbindAllTextures();
     // Reset model matrices.

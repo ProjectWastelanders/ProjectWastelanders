@@ -47,7 +47,7 @@ void Mision_TheRuleOfFive::Update()
         }
 
 
-        if (ruleOfFiveTimer < 5.0f && EnemyDieEvent::numOfEnemiesDead >= 2)
+        if (ruleOfFiveTimer < 5.0f && EnemyDieEvent::numOfEnemiesDead >= 5)
         {
 
             misionCompleted = true;

@@ -149,6 +149,8 @@ void ThanosAttacks::Update()
 			sword.SetActive(false);
 			melee1.SetActive(false);
 			thanosState = THANOS_STATE::PULSE;
+			explosionWave.GetTransform().Translate(0, 10, 0);
+
 			thanosAnimationPlayer.ChangeAnimation(thanosPulseAnimation);
 			thanosAnimationPlayer.SetLoop(false);
 			thanosAnimationPlayer.Play();
@@ -189,15 +191,14 @@ void ThanosAttacks::Update()
 			distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
 			explosionTime += Time::GetDeltaTime();
-			explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
+			//explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
-			explosionWave.GetTransform().Translate(0, 10, 0);
 			explosionWave.GetParticleSystem().Play();
-			if (explosionTime < 2.9f && distSA < 15.0 && explosionWave1HasArrived == false) {
-				pStats->TakeDamage(50, 0);
+			if (explosionTime > 2.8f && distSA < 15.0 && explosionWave1HasArrived == false) {
+				pStats->TakeDamage(25, 0);
 				explosionWave1HasArrived = true;
 			}
-			if (explosionTime >= 2.9f && distSA > 15.0 && distSA < 30.0 && explosionWave2HasArrived == false) {
+			else if (explosionTime >= 2.9f && distSA > 15.0 && distSA < 30.0 && explosionWave2HasArrived == false) {
 
 				//pStats->TakeDamage(1, 0);
 

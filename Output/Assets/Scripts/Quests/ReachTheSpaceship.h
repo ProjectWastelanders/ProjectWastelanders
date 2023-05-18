@@ -30,5 +30,8 @@ public:
     API_GameObject enebledEnemies[8];
 
     bool uwu = false;
+
+    float cooldownHit=0.0f;
+    float timeHit = 3.0f;
 };
 

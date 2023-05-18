@@ -49,16 +49,16 @@ void EnemyProjectile::OnCollisionEnter(API::API_RigidBody other)
     {
         Destroy();
     }
-    /*else if (detectionTag == "Milano")
+    else if (detectionTag == "Milano")
     {
-        AttackingShip* shipScript = (AttackingShip*)other.GetGameObject().GetScript("AttackingShip");
-        if (shipScript)
+       // AttackingShip* shipScript = (AttackingShip*)other.GetGameObject().GetScript("AttackingShip");
+        /*if (shipScript)
         {
             shipScript->TakeDamage(damage);
-        }
+        }*/
         Destroy();
 
-    }*/
+    }
 
 
 

@@ -79,7 +79,8 @@ void BossCinematic::Update()
 
 
         if (activeCinematic) {            
-
+            playerMov->openingChest = true;
+            playerMov->PlayIdleAnim();
             switch (currentDialog)
             {
             case 1:

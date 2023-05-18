@@ -456,6 +456,16 @@ void PlayerMove::StopSwapGunAnim()
     isSwapingGun = false;
 }
 
+void PlayerMove::PlayIdleAnim()
+{
+    if (currentAnim != PlayerAnims::IDLE)
+    {
+        playerAnimator.ChangeAnimation(idle1Anim);
+        playerAnimator.Play();
+        currentAnim = PlayerAnims::IDLE;
+    }
+}
+
 void PlayerMove::PlayHittedAnim()
 {
     if (currentAnim != PlayerAnims::HITTED)

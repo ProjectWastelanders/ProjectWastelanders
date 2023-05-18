@@ -95,6 +95,7 @@ public:
     void StopSwapGunAnim();
     bool isSwapingGun = false;
     uint hittedAnim = 0;
+    void PlayIdleAnim();
     void PlayHittedAnim();
     uint openChestAnim = 0;
     bool openingChest = false;

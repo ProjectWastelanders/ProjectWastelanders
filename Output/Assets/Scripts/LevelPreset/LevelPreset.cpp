@@ -9,5 +9,5 @@ HELLO_ENGINE_API_C LevelPreset* CreateLevelPreset(ScriptToInspectorInterface* sc
 
 void LevelPreset::Start()
 {
-	API_QuickSave::SetInt("currentSelectedLevel", lvlToSpawn);
+	API_QuickSave::SetInt("currentSelectedLevel", lvlToSpawn-1);
 }

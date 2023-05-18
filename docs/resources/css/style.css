@@ -135,7 +135,7 @@ h4{
 /*=====================================*/
 
 header {
-    background: linear-gradient(rgba(163, 50, 142, 0.9),rgba(151, 136, 136, 0.9)), url(img/cutscene_1.png);
+    background: linear-gradient(rgba(163, 50, 142, 0.9),rgba(151, 136, 136, 0.9)), url(img/travel.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -145,17 +145,20 @@ header {
 }
 
 .logo {
-    height: 3.5rem;
+    height: 5rem;
     width: auto;
     float: left;
-    margin-top: 3.5rem;
+    display: block;
+    margin-top: 2rem;
 }
 .logo_2 {
-    height: 20rem;
-    width: auto;
-    margin-top: 20rem;
-    position: absolute;
-    transform: translate(-30%, -150%);
+    height: auto;
+    width: 90%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+    
 }
 /* Sticky Navigation */
 .sticky{
@@ -179,17 +182,14 @@ header {
 
 .main-nav {
     float: right;
-    background: rgba(58, 46, 63, 0.9);
-    padding-left: 5%;
-    padding-right: 5%;
-    height: 10vh;
-    transform: translateX(+25%);
+    background: rgba(56, 47, 59, 0.9);
+    padding: 2rem;
 }
 
 .main-nav li {
     display: inline-block;
-    margin-left: 10rem;
-    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .main-nav li:first-child {

@@ -15,11 +15,14 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragBoxUIImage("Dialog 5", &classInstance->Dialog_5);
     script->AddDragBoxUIImage("Dialog 6", &classInstance->Dialog_6);
 
-    /*script->AddDragBoxUIImage("Dialog Start Battle", &classInstance->Dialog_StartBattle);
+    script->AddDragBoxUIImage("Dialog Start Battle", &classInstance->Dialog_StartBattle);
     script->AddDragBoxUIImage("Dialog End Battle", &classInstance->Dialog_EndBattle);
 
     script->AddDragFloat("Dialog start battle timer", &classInstance->timerSB);
-    script->AddDragFloat("Dialog end battle timer", &classInstance->timerEB);*/
+    script->AddDragFloat("Dialog end battle timer", &classInstance->timerEB);
+
+    script->AddDragFloat("Dialog start battle _timer", &classInstance->_timerSB);
+    script->AddDragFloat("Dialog end battle _timer", &classInstance->_timerEB);
 
 	return classInstance;
 }
@@ -30,11 +33,6 @@ void BossCinematic::Start()
     bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
     camMov = (CamMov*)camera.GetScript("CamMov");
     playerMov = (PlayerMove*)player.GetScript("PlayerMove");
-   
-    timerSBCpy = timerSB;
-    timerSB = 0;
-    timerEBCpy = timerEB;
-    timerEB = 0;
 
     activeCinematic = false;
     nextDialog = false;
@@ -64,11 +62,11 @@ void BossCinematic::Start()
     Dialog_6.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_6.GetGameObject().SetActive(false);
 
-   /* Dialog_StartBattle.GetGameObject().GetTransform().SetPosition(initalPos);
+    Dialog_StartBattle.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_StartBattle.GetGameObject().SetActive(false);
 
     Dialog_EndBattle.GetGameObject().GetTransform().SetPosition(initalPos);
-    Dialog_EndBattle.GetGameObject().SetActive(false);*/
+    Dialog_EndBattle.GetGameObject().SetActive(false);
 }
 void BossCinematic::Update()
 {
@@ -114,10 +112,11 @@ void BossCinematic::Update()
             }
         }
 
-       /* if (bLoop->battle)
+        if (bLoop->battle && !bLoop->endBattle)
         {
-            if (timerSB >= timerSBCpy)
+            if (_timerSB >= timerSB)
             {
+                Console::Log("UnPrint start battle");
                 if (Dialog_StartBattle.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
                 {
                     movingPos.y -= 1 * Time::GetDeltaTime();
@@ -127,6 +126,7 @@ void BossCinematic::Update()
                 }
             }
             else {
+                Console::Log("Print start battle");
                 Dialog_StartBattle.GetGameObject().SetActive(true);
 
                 if (Dialog_StartBattle.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
@@ -134,7 +134,7 @@ void BossCinematic::Update()
                     movingPos.y += 1 * Time::GetDeltaTime();
                 }
                 else {
-                    timerSB += Time::GetDeltaTime();
+                    _timerSB += Time::GetDeltaTime();
                 }
             }
 
@@ -143,8 +143,10 @@ void BossCinematic::Update()
 
         if (bLoop->endBattle)
         {
-            if (timerEB >= timerEBCpy)
+            
+            if (_timerEB >= timerEB)
             {
+                Console::Log("UnPrint end battle");
                 if (Dialog_EndBattle.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
                 {
                     movingPos.y -= 1 * Time::GetDeltaTime();
@@ -154,19 +156,22 @@ void BossCinematic::Update()
                 }
             }
             else {
+                Console::Log("Print end battle");
                 Dialog_EndBattle.GetGameObject().SetActive(true);
 
                 if (Dialog_EndBattle.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
                 {
+                    Console::Log("Moving");
                     movingPos.y += 1 * Time::GetDeltaTime();
                 }
                 else {
-                    timerEB += Time::GetDeltaTime();
+                    Console::Log("Showing");
+                    _timerEB += Time::GetDeltaTime();
                 }
             }
 
             Dialog_EndBattle.GetGameObject().GetTransform().SetPosition(movingPos);
-        }*/
+        }
     }
 }
 

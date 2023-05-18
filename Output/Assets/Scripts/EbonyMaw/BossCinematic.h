@@ -42,9 +42,9 @@ public:
 	bool activeCinematic, nextDialog, animBoss;
 	int currentDialog;
 	float timerSB = 0.0f;
-	float timerSBCpy = 0.0f;
+	float _timerSB = 0.0f;
 	float timerEB = 0.0f;
-	float timerEBCpy = 0.0f;
+	float _timerEB = 0.0f;
 
 };
 

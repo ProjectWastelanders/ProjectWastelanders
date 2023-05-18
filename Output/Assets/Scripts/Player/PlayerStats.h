@@ -40,9 +40,8 @@ public:
     void Heal(float amount);
     API_ShaderComponent material;
     float blinkTime = 0.0f;
-    API_ParticleSystem healParticles;
-    bool playingHealParticles;
-    API_ParticleSystem aidKitParticles;
+    bool positiveBlink = false;
+    bool healingFromDeathline;
 
     int GetAmmonByType(int type);
     void GetAmmo(int type, int amount);

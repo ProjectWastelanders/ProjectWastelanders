@@ -20,8 +20,6 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragFloat("Aid Kit Heal Amount", &classInstance->aidKitHeal);
     script->AddDragFloat("Upgraded Aid Kit Heal Amount", &classInstance->upgradedAidKitHeal);
     script->AddDragBoxShaderComponent("Material Component", &classInstance->material);
-    script->AddDragBoxParticleSystem("Passive Heal Particles", &classInstance->healParticles);
-    script->AddDragBoxParticleSystem("Kid Heal Particles", &classInstance->aidKitParticles);
     script->AddDragBoxGameObject("Player GO", &classInstance->playerGO);
     script->AddDragBoxGameObject("Power Ups Managers (HUD)", &classInstance->hudPowerUpGO);
     script->AddDragBoxGameObject("Hud Munition GO", &classInstance->ammo_ScriptGO);
@@ -43,7 +41,7 @@ void PlayerStats::Start()
     else currentMaxHp = maxHp;
     currentHp = currentMaxHp;
     currentResistance = maxResistance;
-    playingHealParticles = false;
+    healingFromDeathline = false;
 
     detected = false;
 
@@ -95,19 +93,19 @@ void PlayerStats::Update()
             {
                 currentHp = deathlineHp;
                 lastHitTime = 0.0f;
-                if (playingHealParticles)
+                if (healingFromDeathline)
                 {
-                    healParticles.StopEmitting();
-                    playingHealParticles = false;
+                    material.SetColor(1, 1, 1, 1);
+                    healingFromDeathline = false;
                 }
             }
             else
             {
                 lastHitTime = 1.0f; // heal each second
-                if (!playingHealParticles)
+                if (!healingFromDeathline)
                 {
-                    healParticles.Play();
-                    playingHealParticles = true;
+                    material.SetColor(0, 1, 0, 1);
+                    healingFromDeathline = true;
                 }
             }
         }
@@ -140,7 +138,14 @@ void PlayerStats::Update()
         }
         else if (blinkTime < 0.15f)
         {
-            material.SetColor(1, 0, 0, 1);
+            if (positiveBlink)
+            {
+                material.SetColor(0, 1, 0, 1);
+            }
+            else
+            {
+                material.SetColor(1, 0, 0, 1);
+            }
         }
         else if (blinkTime < 0.3f)
         {
@@ -311,6 +316,7 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
     {
         Audio::Event("starlord_damaged");
         blinkTime = 0.5f;
+        positiveBlink = false;
         material.SetColor(1, 0, 0, 1);
     }
 
@@ -324,17 +330,19 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
     }
 
     lastHitTime = 3.0f; // 3 seg to auto heal after a hit
-    if (playingHealParticles)
+    if (healingFromDeathline)
     {
-        healParticles.StopEmitting();
-        playingHealParticles = false;
+        material.SetColor(1, 1, 1, 1);
+        healingFromDeathline = false;
     }
 }
 
 void PlayerStats::Heal(float amount)
 {
     currentHp += amount;
-    aidKitParticles.Play();
+    blinkTime = 0.5f;
+    positiveBlink = true;
+    material.SetColor(0, 1, 0, 1);
 
     Audio::Event("heal");
 

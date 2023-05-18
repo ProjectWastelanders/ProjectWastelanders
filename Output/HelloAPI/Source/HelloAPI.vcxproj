@@ -201,6 +201,7 @@
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\DashUI.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HpBar.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.cpp" />
@@ -338,6 +339,7 @@
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\DashUI.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HpBar.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.h" />
+    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.h" />

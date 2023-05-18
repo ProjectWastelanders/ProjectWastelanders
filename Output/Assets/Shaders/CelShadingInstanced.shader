@@ -216,7 +216,7 @@
 		
 		if (theta > light.Cutoff)
 		{
-			float dist = length(lightDir - FragPos);
+			float dist = length(light.Position - FragPos);
 		
 			if (light.Distance > dist)
 			{
@@ -257,6 +257,7 @@
 		
 	}
 #endif
+
 
 
 

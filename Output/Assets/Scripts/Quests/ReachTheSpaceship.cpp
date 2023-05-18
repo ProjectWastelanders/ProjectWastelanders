@@ -29,7 +29,7 @@ void ReachTheSpaceship::Start()
 
 void ReachTheSpaceship::Update()
 {
-    Console::Log(std::to_string(currentHp));
+    //Console::Log(std::to_string(currentHp));
     
 
     //if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN) currentHp -= 100;
@@ -38,6 +38,20 @@ void ReachTheSpaceship::Update()
     //    //Mision Failed
     //    Scene::LoadScene("LoseMenu.HScene");
     //}
+   /* for (size_t i = 0; i < 8; i++)
+    {
+        enebledEnemies[i].SetActive(false);
+    }*/
+
+    if (enabled)
+    {
+        cooldownHit += Time::GetDeltaTime();
+        if (cooldownHit >= timeHit)
+        {
+            currentHp -= damagePerProjectile*8;
+            cooldownHit = 0;
+        }
+    }
 }
 
 void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
@@ -45,17 +59,20 @@ void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
     if (!enabled) return;
    //if(( Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN) currentHp -=100;
 
-       if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN) currentHp -= 100;
+      // if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN) currentHp -= 100;
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "EnemyProjectile")
     {
         currentHp -= damagePerProjectile;
+
+       //other.GetGameObject().
 
         if (currentHp <= 0.0f)
         {
             //Mision Failed
             Scene::LoadScene("LoseMenu.HScene");
         }
+
     }
     else if (detectionTag == "Player")
     {

@@ -4,7 +4,7 @@ HELLO_ENGINE_API_C SimpleAutoDialog* CreateSimpleAutoDialog(ScriptToInspectorInt
 	SimpleAutoDialog* classInstance = new SimpleAutoDialog();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 
-	script->AddDragBoxUIImage("Dialog 1", &classInstance->Dialog);
+	script->AddDragBoxUIImage("Dialog", &classInstance->Dialog);
 
 	script->AddDragFloat("Dialog timer", &classInstance->timer);
 
@@ -40,8 +40,6 @@ void SimpleAutoDialog::PrintDialog(API_UIImage& Dialog)
         }
         else {
             Dialog.GetGameObject().SetActive(false);
-           /* activeDialog = false;
-            _timer = 0;*/
         }
     }
     else {

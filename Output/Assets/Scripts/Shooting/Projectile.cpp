@@ -39,6 +39,7 @@ void Projectile::Update()
 void Projectile::Destroy()
 {
     gameObject.GetTransform().SetPosition(0, 9999, 0);
+    reflected = false;
     gameObject.SetActive(false);
 }
 

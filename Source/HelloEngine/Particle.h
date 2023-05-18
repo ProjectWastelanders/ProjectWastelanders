@@ -21,9 +21,9 @@ struct ParticleTexture
 {
 
 	//Texture id
-	uint _textureID;
+	uint _textureID = -1;
 	//Number of Rows
-	int numOfRows;
+	int numOfRows = 1;
 
 };
 

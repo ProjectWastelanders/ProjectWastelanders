@@ -40,6 +40,9 @@ void Emitter::SetParticlePoolSize(uint size)
 	currentparticle = size - 1;
 
 	ParticleList.resize(size);
+
+	component->_resourceUID = component->_resource->UID;
+	component->CreateEmitterMesh(component->_resourceUID);
 }
 
 void Emitter::ResetEmitter()

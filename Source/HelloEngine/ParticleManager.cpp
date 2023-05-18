@@ -134,7 +134,7 @@ void ParticleManager::Draw()
 
 
 			emitter->UpdateParticles();
-			if (!emitter->manager->sortedAndDrawn && emitter->emitterTexture.numOfRows > 1)
+			if (!emitter->manager->sortedAndDrawn && emitter->manager->isParticleAnimated)
 			{
 				emitter->manager->DrawInstancedSortingAnimated();
 			}

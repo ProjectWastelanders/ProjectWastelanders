@@ -454,8 +454,8 @@ void InstanceRenderer::DrawInstancedSortingAnimated()
         // Update PARTICLE Buffer
 
         glBindBuffer(GL_ARRAY_BUFFER, PBO);
-        void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-        memcpy(ptr2, &particleAnimInfos.front(), particleAnimInfos.size() * sizeof(ParticleAnimInfo));
+        void* ptr3 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+        memcpy(ptr3, &particleAnimInfos.front(), particleAnimInfos.size() * sizeof(ParticleAnimInfo));
         glUnmapBuffer(GL_ARRAY_BUFFER);
 
         // Draw instanced
@@ -518,9 +518,13 @@ void InstanceRenderer::CreateBuffers()
     {
         CreateDynamicBuffers();
     }
-    else 
+    else if (isParticleAnimated)
     {
         CreateDynamicBuffersParticles();
+    }
+    else
+    {
+        CreateDynamicBuffers();
     }
     
 }
@@ -566,10 +570,15 @@ void InstanceRenderer::ReallocateMoreMemory()
         DestroyDynamicBuffers();
         CreateDynamicBuffers();
     }
-    else
+    else if(this->isParticleAnimated)
     {
         DestroyDynamicBuffersParticles();
         CreateDynamicBuffersParticles();
+    }
+    else
+    {
+        DestroyDynamicBuffers();
+        CreateDynamicBuffers();
     }
     
 }

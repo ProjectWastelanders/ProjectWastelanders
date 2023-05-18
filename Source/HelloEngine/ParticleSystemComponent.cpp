@@ -52,7 +52,7 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 
 	particleProps.Lifetime = 5.0f;
 
-	ParticleEmitter.SetParticlePoolSize(size);
+	//ParticleEmitter.SetParticlePoolSize(size);
 }
 
 ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, ParticleSystemComponent& copy) : Component(gameObject)
@@ -102,7 +102,7 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, Particl
 	ParticleEmitter.enableEmissionModule = copy.ParticleEmitter.enableEmissionModule;
 	ParticleEmitter.ParticlesPerSecond = copy.ParticleEmitter.ParticlesPerSecond;
 
-	ParticleEmitter.SetParticlePoolSize(size);
+	//ParticleEmitter.SetParticlePoolSize(size);
 
 	CreateEmitterMesh(copy._resource->UID);
 	if (copy._resourceText != nullptr)
@@ -278,7 +278,6 @@ void ParticleSystemComponent::OnEditor()
 			{
 				ParticleEmitter.SetParticlePoolSize(size);
 				sizeCpy = size;
-				CreateEmitterMesh(_resourceUID);
 				//ChangeEmitterMeshTexture((ResourceTexture*)ModuleResourceManager::S_LoadResource(_resourceTextUID));
 			}
 			else
@@ -351,7 +350,7 @@ void ParticleSystemComponent::OnEditor()
 			ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 			imageName = "None";
 		}
-		if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText->isTransparent)
+		if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent)
 		{
 			if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
 			{

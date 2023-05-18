@@ -21,9 +21,6 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragFloat("Dialog start battle timer", &classInstance->timerSB);
     script->AddDragFloat("Dialog end battle timer", &classInstance->timerEB);
 
-    script->AddDragFloat("Dialog start battle _timer", &classInstance->_timerSB);
-    script->AddDragFloat("Dialog end battle _timer", &classInstance->_timerEB);
-
 	return classInstance;
 }
 

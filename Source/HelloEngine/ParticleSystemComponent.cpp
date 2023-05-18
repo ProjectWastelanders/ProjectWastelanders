@@ -52,7 +52,7 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 
 	particleProps.Lifetime = 5.0f;
 
-	//ParticleEmitter.SetParticlePoolSize(size);
+	ParticleEmitter.SetParticlePoolSize(size);
 }
 
 ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, ParticleSystemComponent& copy) : Component(gameObject)
@@ -102,7 +102,7 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, Particl
 	ParticleEmitter.enableEmissionModule = copy.ParticleEmitter.enableEmissionModule;
 	ParticleEmitter.ParticlesPerSecond = copy.ParticleEmitter.ParticlesPerSecond;
 
-	//ParticleEmitter.SetParticlePoolSize(size);
+	ParticleEmitter.SetParticlePoolSize(size);
 
 	CreateEmitterMesh(copy._resource->UID);
 	if (copy._resourceText != nullptr)
@@ -290,6 +290,9 @@ void ParticleSystemComponent::OnEditor()
 
 		if (ParticleEmitter._meshID == -1)
 		{
+			ImGui::Checkbox("Particle Animated", &ParticleEmitter.manager->isParticleAnimated);
+
+			ImGui::TextWrapped("First ensure yourself that if you want an animated particle the checkbox above is marked");
 			ImGui::TextWrapped("No mesh loaded! Drag an .hmesh file below to load a mesh ");
 
 			ImGui::TextColored(ImVec4(1, 1, 0, 1), "Drag .hmesh here"); ImGui::SameLine();
@@ -332,86 +335,90 @@ void ParticleSystemComponent::OnEditor()
 				LayerEditor::S_AddPopUpMessage(popUpmessage);
 
 			}
-		}
 
-		std::string imageName;
-		int width = 0;
-		int height = 0;
-		if (ParticleEmitter.emitterTexture._textureID != -1.0f && _resourceText != nullptr)
-		{
-			ImGui::Image((ImTextureID)(uint)ParticleEmitter.emitterTexture._textureID, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
-
-			imageName = _resourceText->debugName;
-			width = _resourceText->width;
-			height = _resourceText->height;
-		}
-		else
-		{
-			ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
-			imageName = "None";
-		}
-		if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent)
-		{
-			if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
+			std::string imageName;
+			int width = 0;
+			int height = 0;
+			if (ParticleEmitter.emitterTexture._textureID != -1.0f && _resourceText != nullptr)
 			{
-				for (Particle& var : ParticleEmitter.ParticleList)
+				ImGui::Image((ImTextureID)(uint)ParticleEmitter.emitterTexture._textureID, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+
+				imageName = _resourceText->debugName;
+				width = _resourceText->width;
+				height = _resourceText->height;
+			}
+			else
+			{
+				ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+				imageName = "None";
+			}
+			if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent)
+			{
+				if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
 				{
-					var.texture = ParticleEmitter.emitterTexture;
+					if (ParticleEmitter.manager->isParticleAnimated)
+					{
+						for (Particle& var : ParticleEmitter.ParticleList)
+						{
+							var.texture = ParticleEmitter.emitterTexture;
+						}
+					}
 				}
 			}
-		}
 
-		if (ParticleEmitter.emitterTexture._textureID == -1)
-		{
-			ImGui::TextWrapped("No texture loaded! Drag an .htext file below to load a texture ");
-
-			ImGui::TextColored(ImVec4(1, 1, 0, 1), "Drag .htext here"); ImGui::SameLine();
-
-			if (ImGui::BeginDragDropTarget())
+			if (ParticleEmitter.emitterTexture._textureID == -1)
 			{
-				if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+				ImGui::TextWrapped("No texture loaded! Drag an .htext file below to load a texture ");
+
+				ImGui::TextColored(ImVec4(1, 1, 0, 1), "Drag .htext here"); ImGui::SameLine();
+
+				if (ImGui::BeginDragDropTarget())
 				{
-					//Drop asset from Asset window to scene window
-					const uint* drop = (uint*)payload->Data;
+					if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+					{
+						//Drop asset from Asset window to scene window
+						const uint* drop = (uint*)payload->Data;
 
-					ResourceTexture* resource = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+						ResourceTexture* resource = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
 
-					ChangeEmitterMeshTexture(resource);
+						ChangeEmitterMeshTexture(resource);
 
-					std::string popUpmessage = "Loaded Texture: ";
+						std::string popUpmessage = "Loaded Texture: ";
+						LayerEditor::S_AddPopUpMessage(popUpmessage);
+					}
+					ImGui::EndDragDropTarget();
+				}
+
+			}
+			else
+			{
+				if (_resourceText)
+				{
+					if (ImGui::Checkbox("Transparent", &_resourceText->isTransparent))
+					{
+						std::string popUpmessage = "Texture in the emitter set as transparent";
+						LayerEditor::S_AddPopUpMessage(popUpmessage);
+					}
+				}
+
+				if (ImGui::Button("Delete Emitter Texture"))
+				{
+
+					DestroyEmitterMeshTexture();
+
+					std::string popUpmessage = "Texture in the emitter Destroyed ";
 					LayerEditor::S_AddPopUpMessage(popUpmessage);
-				}
-				ImGui::EndDragDropTarget();
-			}
 
-		}
-		else
-		{
-			if (_resourceText)
-			{
-				if (ImGui::Checkbox("Transparent", &_resourceText->isTransparent))
-				{
-					std::string popUpmessage = "Texture in the emitter set as transparent";
-					LayerEditor::S_AddPopUpMessage(popUpmessage);
 				}
 			}
-
-			if (ImGui::Button("Delete Emitter Texture"))
+			ImGui::NewLine();
+			for (int i = 0; i < ParticleModules.size(); i++)
 			{
-
-				DestroyEmitterMeshTexture();
-
-				std::string popUpmessage = "Texture in the emitter Destroyed ";
-				LayerEditor::S_AddPopUpMessage(popUpmessage);
-
+				ParticleModules[i]->OnEditor();
 			}
 		}
-		ImGui::NewLine();
-		for (int i = 0; i < ParticleModules.size(); i++)
-		{
-			ParticleModules[i]->OnEditor(); 
-		}		
-	}
+		}
+
 	if (!created)
 		this->_gameObject->DestroyComponent(this);
 }

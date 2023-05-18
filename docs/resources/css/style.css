@@ -135,12 +135,12 @@ h4{
 /*=====================================*/
 
 header {
-    background: linear-gradient(rgba(135, 80, 156, 0.9),rgba(135, 80, 156, 0.9)), url(img/hero-bg.jpg);
+    background: linear-gradient(rgba(163, 50, 142, 0.9),rgba(151, 136, 136, 0.9)), url(img/cutscene_1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;    
-    height: 85vh;
+    height: 120vh;
     position: relative;
 }
 
@@ -149,6 +149,13 @@ header {
     width: auto;
     float: left;
     margin-top: 3.5rem;
+}
+.logo_2 {
+    height: 20rem;
+    width: auto;
+    margin-top: 20rem;
+    position: absolute;
+    transform: translate(-30%, -150%);
 }
 /* Sticky Navigation */
 .sticky{
@@ -172,12 +179,17 @@ header {
 
 .main-nav {
     float: right;
-    margin-top: 4rem;
+    background: rgba(58, 46, 63, 0.9);
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 10vh;
+    transform: translateX(+25%);
 }
 
 .main-nav li {
     display: inline-block;
-    margin-left: 1rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
 }
 
 .main-nav li:first-child {
@@ -213,10 +225,12 @@ header {
     width: 114rem;
 }
 
-.btn-hero:link, 
-.btn-hero:visited {
+.btn-hero:link, .btn-hero:visited {
     background: #eb7d4b;
     border-bottom: #c86a40;
+    
+    margin-top: 10rem;
+    
 }
 
 /*=====================================*/

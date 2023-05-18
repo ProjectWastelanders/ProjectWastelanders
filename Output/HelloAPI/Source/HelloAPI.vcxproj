@@ -292,6 +292,8 @@
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/FeedbackChest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -451,6 +453,8 @@
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
 		<ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/FeedbackChest.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

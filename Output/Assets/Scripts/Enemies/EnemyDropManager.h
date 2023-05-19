@@ -36,23 +36,14 @@ public:
     float BoxAmmoDropRate;
     float BoxAidKitDropRate;
 
-    // meshes
-    uint mesh0;
-    uint mesh1;
-    uint mesh2;
-    uint mesh3;
-    uint mesh4;
-    uint mesh5;
-    uint mesh6;
-
-    // materials
-    uint material0;
-    uint material1;
-    uint material2;
-    uint material3;
-    uint material4;
-    uint material5;
-    uint material6;
+    // prefabs
+    uint prefab0;
+    uint prefab1;
+    uint prefab2;
+    uint prefab3;
+    uint prefab4;
+    uint prefab5;
+    uint prefab6;
 
     // pull
     int pullSize;

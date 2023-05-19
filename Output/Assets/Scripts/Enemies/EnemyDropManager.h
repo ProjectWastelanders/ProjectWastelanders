@@ -19,6 +19,7 @@ public:
     API_GameObject GetFirstInactiveObject(int index);
 
     void BoxSpinDropRate(API_Vector3 position);
+    void BossSpinDropRate(API_Vector3 position);
 
     //Drop chances
 

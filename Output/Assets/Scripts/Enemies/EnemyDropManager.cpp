@@ -220,3 +220,35 @@ void EnemyDropManager::BoxSpinDropRate(API_Vector3 position)
         return;
     }
 }
+
+void EnemyDropManager::BossSpinDropRate(API_Vector3 position)
+{
+    float powerUpDrop = rand() % 5;
+
+    API_GameObject go;
+
+    if (powerUpDrop < 1.0f)
+    {
+        go = GetFirstInactiveObject(2);
+    }
+    else if (powerUpDrop < 2.0f)
+    {
+        go = GetFirstInactiveObject(3);
+    }
+    else if (powerUpDrop < 3.0f)
+    {
+        go = GetFirstInactiveObject(4);
+    }
+    else if (powerUpDrop < 4.0f)
+    {
+        go = GetFirstInactiveObject(5);
+    }
+    else if (powerUpDrop < 5.0f)
+    {
+        go = GetFirstInactiveObject(6);
+    }
+
+    go.SetActive(true);
+    API_Vector3 newPos = { position.x, position.y + 1.0f, position.z };
+    go.GetTransform().SetPosition(newPos);
+}

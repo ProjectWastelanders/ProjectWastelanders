@@ -32,6 +32,9 @@ void EnemyDropManager::Start()
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
+
         enemyDrop->dropIndex = 0;
         newDrop.SetActive(false);
         pull0.push_back(newDrop);
@@ -40,6 +43,8 @@ void EnemyDropManager::Start()
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 1;
         newDrop.SetActive(false);
         pull1.push_back(newDrop);
@@ -48,6 +53,8 @@ void EnemyDropManager::Start()
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 2;
         newDrop.SetActive(false);
         pull2.push_back(newDrop);
@@ -56,6 +63,8 @@ void EnemyDropManager::Start()
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 3;
         newDrop.SetActive(false);
         pull3.push_back(newDrop);
@@ -64,6 +73,8 @@ void EnemyDropManager::Start()
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 4;
         newDrop.SetActive(false);
         pull4.push_back(newDrop);
@@ -72,6 +83,8 @@ void EnemyDropManager::Start()
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab5, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 5;
         newDrop.SetActive(false);
         pull5.push_back(newDrop);

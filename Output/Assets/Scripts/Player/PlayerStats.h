@@ -29,10 +29,7 @@ public:
     void TakeDamage(float amount, float resistanceDamage);
     bool PlayerAlive() { return currentHp > 0.0f; }
     float shield;
-    float maxResistance = 100.0f;
-    float currentResistance;
     float inmunityTime = 2.0f;
-    float hittedTime = 0.0f;
     float reducedDamageTime = 0.0f;
     bool secondLife;
     float lastHitTime;

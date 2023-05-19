@@ -87,7 +87,6 @@ void PlayerGunManager::Update()
     else dt = Time::GetDeltaTime();
 
     if (playerMove && playerMove->openingChest) return; // return if opening chest
-    if (playerStats && playerStats->hittedTime > 0.0f) return; // return if hitted
 
     // Keyboard
     if (Input::GetKey(KeyCode::KEY_1) == KeyState::KEY_DOWN) UnequipGun(gunOnHandIndex1);

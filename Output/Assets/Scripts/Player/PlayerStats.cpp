@@ -12,7 +12,6 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragFloat("Max HP", &classInstance->maxHp);
     script->AddDragFloat("Current HP", &classInstance->currentHp);
     script->AddDragFloat("Upgraded Max HP", &classInstance->upgradedMaxHp);
-    script->AddDragFloat("Resistance", &classInstance->maxResistance);
     script->AddDragFloat("Deadline Percentage", &classInstance->deadlinePart);
     script->AddDragFloat("Upgraded Deadline Percentage", &classInstance->upgradedDeadlinePart);
     script->AddDragFloat("Deadline Heal Amount", &classInstance->deadlineHeal);
@@ -40,7 +39,6 @@ void PlayerStats::Start()
     if (healthTreeLvl > 0) currentMaxHp = upgradedMaxHp;
     else currentMaxHp = maxHp;
     currentHp = currentMaxHp;
-    currentResistance = maxResistance;
     healingFromDeathline = false;
 
     detected = false;
@@ -109,11 +107,6 @@ void PlayerStats::Update()
                 }
             }
         }
-    }
-
-    if (hittedTime > 0.0f)
-    {
-        hittedTime -= dt;
     }
     if (deathTime > 0.0f)
     {
@@ -318,15 +311,6 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
         blinkTime = 0.5f;
         positiveBlink = false;
         material.SetColor(1, 0, 0, 1);
-    }
-
-    // Resistance damage
-    currentResistance -= resistanceDamage;
-    if (currentResistance <= 0.0f)
-    {
-        currentResistance = maxResistance;
-        hittedTime = 0.5f;
-        if (playerMove) playerMove->PlayHittedAnim();
     }
 
     lastHitTime = 3.0f; // 3 seg to auto heal after a hit

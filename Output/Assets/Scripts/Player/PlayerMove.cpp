@@ -35,7 +35,6 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxAnimationResource("Shoot Ricochet Animation", &classInstance->shootAnim[6]);
     script->AddDragBoxAnimationResource("Swap Duals Animation", &classInstance->swapGunAnim[0]);
     script->AddDragBoxAnimationResource("Swap Gun Animation", &classInstance->swapGunAnim[1]);
-    script->AddDragBoxAnimationResource("Hit Animation", &classInstance->hittedAnim);
     script->AddDragBoxAnimationResource("Open Chest Animation", &classInstance->openChestAnim);
     script->AddDragBoxAnimationResource("Dead Animation", &classInstance->deathAnim);
     script->AddDragBoxAnimationResource("Jumper Animation", &classInstance->jumperAnim);
@@ -96,7 +95,7 @@ void PlayerMove::Update()
         }
     }
 
-    if (openingChest || (playerStats && playerStats->hittedTime > 0.0f)) return; // can't do other actions while is opening a chest or been hitted
+    if (openingChest) return; // can't do other actions while is opening a chest
 
     if (Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERRIGHT) < 5000 || isSwapingGun)
     {
@@ -463,16 +462,6 @@ void PlayerMove::PlayIdleAnim()
         playerAnimator.ChangeAnimation(idle1Anim);
         playerAnimator.Play();
         currentAnim = PlayerAnims::IDLE;
-    }
-}
-
-void PlayerMove::PlayHittedAnim()
-{
-    if (currentAnim != PlayerAnims::HITTED)
-    {
-        playerAnimator.ChangeAnimation(hittedAnim);
-        playerAnimator.Play();
-        currentAnim = PlayerAnims::HITTED;
     }
 }
 

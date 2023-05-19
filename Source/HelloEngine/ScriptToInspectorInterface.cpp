@@ -1290,6 +1290,11 @@ void DragBoxPrefabResource::OnEditor()
 			std::string text = "(" + gameObjectName + ")" + ": Prefab Resource";
 			ImGui::TextColored(ImVec4(1, 1, 0, 1), text.c_str());
 		}
+		else
+		{
+			std::string text = "Cannot find resource!";
+			ImGui::TextColored(ImVec4(1, 1, 0, 1), text.c_str());
+		}
 	}
 
 	if (ImGui::BeginDragDropTarget())
@@ -1329,6 +1334,11 @@ void DragBoxPrefabResource::OnDeserialize(json& j)
 		if (j[i].find(valueName) != j[i].end())
 		{
 			*(uint*)value = j[i][valueName.c_str()];
+			uint v = j[i][valueName.c_str()];
+			if (!ModuleResourceManager::S_IsResourceCreated(v))
+			{
+				Console::S_Log("Cannot find resource! at " + this->className);
+			}
 		}
 	}
 }

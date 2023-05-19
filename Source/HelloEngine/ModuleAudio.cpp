@@ -16,8 +16,13 @@
 #include "LayerGame.h"
 #include "Wwise_IDs.h"
 
+#include "GameObject.h"
+#include "ModuleLayers.h"
+#include "CameraComponent.h"
+
 AkGameObjectID ModuleAudio::defaultListener;
 AkGameObjectID ModuleAudio::defaultSource;
+GameObject* ModuleAudio::defaultListenerGameObject = nullptr;
 
 ModuleAudio::ModuleAudio(bool start_enabled)
 {
@@ -49,6 +54,20 @@ bool ModuleAudio::Start()
 
 UpdateStatus ModuleAudio::PreUpdate()
 {
+    if (defaultListenerGameObject != nullptr)
+    {
+        float3 pos = defaultListenerGameObject->transform->GetGlobalMatrix().TranslatePart();
+
+        AkSoundPosition position;
+        AkVector64 akPos;
+        akPos.X = pos.x;
+        akPos.Y = pos.y;
+        akPos.Z = pos.z;
+        position.SetPosition(akPos);
+
+        AK::SoundEngine::SetPosition(defaultListener, position);
+    }
+
     ProcessAudio();
     return UpdateStatus::UPDATE_CONTINUE;
 }
@@ -113,6 +132,19 @@ void ModuleAudio::SetDefaultListener(const AkGameObjectID id)
 void ModuleAudio::StopAllAudioEvents()
 {
     AK::SoundEngine::StopAll();
+}
+
+void ModuleAudio::SetDefaultListener()
+{
+    for (auto& gameObject : ModuleLayers::gameObjects)
+    {
+        CameraComponent* camera = gameObject.second->GetComponent<CameraComponent>(); 
+        if (camera != nullptr) // we asume that there is only 1 camera component per level.
+        {
+            defaultListenerGameObject = gameObject.second;
+            break;
+        }
+    }
 }
 
 bool ModuleAudio::InitSoundEngine()

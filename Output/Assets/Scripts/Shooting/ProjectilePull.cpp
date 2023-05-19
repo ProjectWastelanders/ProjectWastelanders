@@ -38,6 +38,8 @@ void ProjectilePull::Start()
     {
         API_GameObject newProjectile = Game::InstancePrefab(projectilePrefab, API_GameObject());
         Projectile* projectileScript = (Projectile*)newProjectile.GetScript("Projectile");
+        if (projectileScript == nullptr)
+            break;
         projectileScript->pull = this;
         pull.push_back(newProjectile);
     }
@@ -46,9 +48,15 @@ void ProjectilePull::Start()
     {
         API_GameObject newBomb = Game::InstancePrefab(shotgunBombPrefab, API_GameObject());
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
+        if (bombScript == nullptr)
+            break;
+
         API_GameObject explosion[1];
         newBomb.GetChildren(explosion);
         bombScript->explosion = (ShotgunBombExplosion*)explosion->GetScript("ShotgunBombExplosion");
+        if (bombScript->explosion == nullptr)
+            break;
+
         bombScript->explosion->shotgunBomb = newBomb;
         shotgunBombPull.push_back(newBomb);
     }

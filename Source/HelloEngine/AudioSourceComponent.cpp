@@ -25,6 +25,7 @@ void FinishedEvent(AkCallbackType in_eType, AkCallbackInfo* in_pCallbackInfo)
 AudioSourceComponent::AudioSourceComponent(GameObject* go) : Component(go)
 {
 	_type = Component::Type::AUDIO_SOURCE;
+	_needsTransformCallback = true;
 
 	// Create AKGameObject and get ID
 	akID = ModuleAudio::RegisterGameObject(_gameObject->GetID());
@@ -96,6 +97,20 @@ void AudioSourceComponent::SetGameParameter(const char* paramName, float value)
 {
 	AK::SoundEngine::SetRTPCValue(paramName, value, this->akID);
 	
+}
+
+void AudioSourceComponent::OnTransformCallback(float4x4 matrix)
+{
+	float3 pos = matrix.TranslatePart();
+
+	AkSoundPosition position;
+	AkVector64 akPos;
+	akPos.X = pos.x;
+	akPos.Y = pos.y;
+	akPos.Z = pos.z;
+	position.SetPosition(akPos);
+
+	AK::SoundEngine::SetPosition(akID, position);
 }
 
 

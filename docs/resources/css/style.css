@@ -86,14 +86,35 @@ h2{
     text-align: left;
 }
 
-h2::after{
+h2b{
+    font-size: 4rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+h2b::after{
+    font-size: 4rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+h2::after{         /*barrita junto al header2: after abajo, before arriba*/
     content:"";
     display: block;
     height: .4rem;
-    background: #fff;
-    width: 8.5rem;
-    margin: auto;
-    margin-top: 2rem;
+    background: #000000;
+    width: 25rem;
+    position:absolute;
 }
 
 h3{

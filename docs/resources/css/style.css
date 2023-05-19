@@ -83,7 +83,7 @@ h2{
     margin-top: 0;
     margin-bottom: 2rem;
     font-weight: 600;
-    text-align: center;
+    text-align: left;
 }
 
 h2::after{
@@ -111,9 +111,10 @@ h4{
 
 /* Paragraph */
 .little-description{
+    text-align: left;
     font-size: 1.8rem;
     width: 60%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     line-height: 3rem;
     font-weight: 500;
 }

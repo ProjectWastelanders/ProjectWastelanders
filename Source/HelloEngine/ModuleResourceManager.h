@@ -245,7 +245,7 @@ public:
 class ResourcePrefab : public Resource
 {
 public:
-    ResourcePrefab() { _type == ResourceType::PREFAB; };
+    ResourcePrefab() { _type = ResourceType::PREFAB; };
 
     std::string path;
 };

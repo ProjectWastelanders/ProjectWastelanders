@@ -15,5 +15,5 @@ void AidKitRotation::Start()
 }
 void AidKitRotation::Update()
 {
-    gameObject.GetTransform().Rotate(rorationX, rorationY, rorationZ);
+    gameObject.GetTransform().Rotate(rorationX * Time::GetDeltaTime(), rorationY * Time::GetDeltaTime(), rorationZ * Time::GetDeltaTime());
 }

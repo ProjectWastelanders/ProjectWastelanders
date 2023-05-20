@@ -45,6 +45,7 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 	particleProps.startsize = float3::one;
 	particleProps.endsize = float3::zero;
 	particleProps.speed = float3(0.0f, 1.0f, 0.0f);
+	particleProps.rotation = float3(0.0f, 0.0f, 360.0f);
 	particleProps.acceleration = float3(1.0f, 1.0f, 1.0f);
 	particleProps.speedVariation = float3(1.0f, 1.0f, 1.0f);
 	particleProps.startColor = float4(255.0f, 255.0f, 255.0f, 1.0f); //r g b a
@@ -352,7 +353,7 @@ void ParticleSystemComponent::OnEditor()
 				ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 				imageName = "None";
 			}
-			if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent)
+			if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent && ParticleEmitter.manager->isParticleAnimated)
 			{
 				if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
 				{
@@ -528,6 +529,7 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleMain"]["Speed"] = { particleProps.speed.x, particleProps.speed.y, particleProps.speed.z };
 		_j["ParticleModules"]["ModuleMain"]["SpeedVariation"] = { particleProps.speedVariation.x, particleProps.speedVariation.y, particleProps.speedVariation.z };
 		_j["ParticleModules"]["ModuleMain"]["acceleration"] = { particleProps.acceleration.x, particleProps.acceleration.y, particleProps.acceleration.z };
+		_j["ParticleModules"]["ModuleMain"]["rotation"] = { particleProps.rotation.x, particleProps.rotation.y, particleProps.rotation.z };
 		_j["ParticleModules"]["ModuleMain"]["LifeTime"] = particleProps.Lifetime;
 		_j["ParticleModules"]["ModuleMain"]["Duration"] = ParticleEmitter.Duration;
 		_j["ParticleModules"]["ModuleMain"]["Delay"] = ParticleEmitter.StartDelay;
@@ -544,6 +546,7 @@ void ParticleSystemComponent::Serialization(json& j)
 			GetCurrentShape()->Serialization(_j);
 		}		
 	}
+	_j["IsParticleAnimated"] = ParticleEmitter.manager->isParticleAnimated;
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
 
@@ -590,6 +593,8 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	particleProps.speedVariation = { tempspeedVariation[0],tempspeedVariation[1],tempspeedVariation[2] };
 	std::vector<float> tempacceleration = j["ParticleModules"]["ModuleMain"]["acceleration"];
 	particleProps.acceleration = { tempacceleration[0],tempacceleration[1],tempacceleration[2] };
+	std::vector<float> temprotation = j["ParticleModules"]["ModuleMain"]["rotation"];
+	particleProps.rotation = { temprotation[0],temprotation[1],temprotation[2] };
 	particleProps.Lifetime = j["ParticleModules"]["ModuleMain"]["LifeTime"];
 	ParticleEmitter.Duration = j["ParticleModules"]["ModuleMain"]["Duration"];
 	ParticleEmitter.DurationCpy = ParticleEmitter.Duration;
@@ -600,6 +605,9 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	size = j["ParticleVectorSize"];
 	sizeCpy = j["ParticleVectorSize"];
+	ParticleEmitter.manager->isParticleAnimated = j["IsParticleAnimated"];
+
+	ParticleEmitter.SetParticlePoolSize(size);
 
 	ShapeType shape = ShapeType::NONE;
 

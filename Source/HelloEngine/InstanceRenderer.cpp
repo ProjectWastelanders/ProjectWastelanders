@@ -423,12 +423,12 @@ void InstanceRenderer::DrawInstancedSortingAnimated()
         // Update View and Projection matrices
         particleShader->shader.Bind();
 
-        if (!particleShader->shader.data.hasUpdatedCamera)
-        {
+        /*if (!particleShader->shader.data.hasUpdatedCamera)
+        {*/
             particleShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
             particleShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
             particleShader->shader.data.hasUpdatedCamera = true;
-        }
+        /*}*/
 
         // Draw using Dynamic Geometrys
         glBindVertexArray(VAO);

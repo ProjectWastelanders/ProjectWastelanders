@@ -46,6 +46,14 @@ void Emitter::SetParticlePoolSize(uint size)
 		component->_resourceUID = component->_resource->UID;
 	}
 	component->CreateEmitterMesh(component->_resourceUID);
+
+	if (manager && manager->isParticleAnimated)
+	{
+		for (Particle& var : this->ParticleList)
+		{
+			var.texture = this->emitterTexture;
+		}
+	}
 }
 
 void Emitter::ResetEmitter()
@@ -87,6 +95,9 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 	particle.speed.x += particleProps.speedVariation.x * (random.Float() - 0.5f);
 	particle.speed.y += particleProps.speedVariation.y * (random.Float() - 0.5f);
 	particle.speed.z += particleProps.speedVariation.z * (random.Float() - 0.5f);
+
+	
+	particle.rotation.z = particleProps.rotation.z * (random.Float() - 0.5f);
 
 	// Acceleration
 	particle.acceleration = particleProps.acceleration;
@@ -193,7 +204,7 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
 
-	if (ParticleList[i].texture.numOfRows > 1)
+	if (manager->isParticleAnimated)
 	{
 		manager->particleAnimInfos.push_back(ParticleList[i].particleAnim);
 	}
@@ -212,7 +223,10 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 void Emitter::UpdateParticlesOnScene(int i)
 {
 	
-	ParticleList[i].UpdateTextureCoords();
+	if (manager->isParticleAnimated)
+	{
+		ParticleList[i].UpdateTextureCoords();
+	}
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt
@@ -231,8 +245,11 @@ void Emitter::UpdateParticlesOnScene(int i)
 
 void Emitter::UpdateParticlesOnGame(int i)
 {
+	if (manager->isParticleAnimated)
+	{
+		ParticleList[i].UpdateTextureCoords();
+	}
 	
-	ParticleList[i].UpdateTextureCoords();
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt

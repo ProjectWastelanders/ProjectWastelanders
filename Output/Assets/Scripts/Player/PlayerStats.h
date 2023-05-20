@@ -49,6 +49,9 @@ public:
     int specialAmmo;
     int maxSpecialAmmo; // index 2
     float ultPercentage = 0.0f;
+
+    bool showTpDialog = false;
+    bool showedTpDialog = false;
      
     bool detected; //if the player is being detected somehow
     bool inCombat = false;

@@ -11,6 +11,7 @@ HELLO_ENGINE_API_C TP_Cabin* CreateTP_Cabin(ScriptToInspectorInterface* script)
 	script->AddDragBoxPrefabResource("Sphere Prefab", &classInstance->effectSpherePrefab);
 	script->AddDragFloat("Scale Value", &classInstance->scaleValue);
 	script->AddDragBoxUIImage("Tp Button", &classInstance->tpButton);
+
 	return classInstance;
 }
 
@@ -165,12 +166,19 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 					destinationSmoke.StopEmitting();
 					Audio::Event("teleport_2");
 
+					if (!playerStats->showedTpDialog)
+					{
+						playerStats->showTpDialog = true;
+					}
+
 					canTp = false;
 				}
 			}
 		}
 	}
 }
+
+
 
 void TP_Cabin::OnCollisionEnter(API_RigidBody other)
 {

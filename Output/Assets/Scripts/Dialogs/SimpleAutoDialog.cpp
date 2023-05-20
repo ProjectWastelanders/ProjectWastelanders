@@ -8,6 +8,10 @@ HELLO_ENGINE_API_C SimpleAutoDialog* CreateSimpleAutoDialog(ScriptToInspectorInt
 
 	script->AddDragFloat("Dialog timer", &classInstance->timer);
 
+    script->AddDragFloat("Dialog Pos X", &classInstance->finalPos.x);
+    script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
+    script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
+
 	return classInstance;
 }
 
@@ -17,7 +21,7 @@ void SimpleAutoDialog::Start()
 
 	initalPos = { 0, -1.500, 0 };
 	movingPos = { 0, -1.500, 0 };
-	finalPos = { 0, -0.500, 0 };
+	//finalPos = { 0, -0.500, 0 };
 
 	Dialog.GetGameObject().GetTransform().SetPosition(initalPos);
 	Dialog.GetGameObject().SetActive(false);

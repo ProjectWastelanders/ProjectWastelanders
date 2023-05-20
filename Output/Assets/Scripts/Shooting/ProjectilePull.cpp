@@ -44,7 +44,7 @@ void ProjectilePull::Start()
         pull.push_back(newProjectile);
     }
 
-    for (size_t i = 0; i < shotgunBombPullSize; i++)
+    /*for (size_t i = 0; i < shotgunBombPullSize; i++)
     {
         API_GameObject newBomb = Game::InstancePrefab(shotgunBombPrefab, API_GameObject());
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
@@ -56,10 +56,10 @@ void ProjectilePull::Start()
         bombScript->explosion = (ShotgunBombExplosion*)explosion->GetScript("ShotgunBombExplosion");
         if (bombScript->explosion == nullptr)
             break;
-
+             
         bombScript->explosion->shotgunBomb = newBomb;
         shotgunBombPull.push_back(newBomb);
-    }
+    }*/
 
     ricochetDetector = Game::InstancePrefab(checkRicochetTargetsPrefab, API_GameObject());
     ricochetTargets = (CheckRicochetTargets*)ricochetDetector.GetScript("CheckRicochetTargets");

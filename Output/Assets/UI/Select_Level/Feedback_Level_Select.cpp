@@ -257,7 +257,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             casettesNumber++;
         }
 
-        if (API_QuickSave::GetBool("mision_LikeThe80", false))
+        if (API_QuickSave::GetBool("mision_LikeThe80"))
         {
             checkSecundaryMision1.SetActive(true);
         }
@@ -266,7 +266,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             checkSecundaryMision1.SetActive(false);
         }
 
-        if (API_QuickSave::GetBool("mision_RageMonster", false))
+        if (API_QuickSave::GetBool("mision_RageMonster"))
         {
             checkSecundaryMision2.SetActive(true);
         }
@@ -309,7 +309,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             casettesNumber++;
         }
 
-        if (API_QuickSave::GetBool("mision_Masacre", false))
+        if (API_QuickSave::GetBool("mision_Masacre"))
         {
             checkSecundaryMision1.SetActive(true);
         }
@@ -318,7 +318,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             checkSecundaryMision1.SetActive(false);
         }
 
-        if (API_QuickSave::GetBool("mision_Personal", false))
+        if (API_QuickSave::GetBool("mision_Personal"))
         {
             checkSecundaryMision2.SetActive(true);
         }
@@ -361,7 +361,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             casettesNumber++;
         }
 
-        if (API_QuickSave::GetBool("mision_TheRule", false))
+        if (API_QuickSave::GetBool("mision_TheRule"))
         {
             checkSecundaryMision1.SetActive(true);
         }

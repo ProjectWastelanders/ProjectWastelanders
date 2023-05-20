@@ -14,6 +14,10 @@ HELLO_ENGINE_API_C Mision_TheRuleOfFive* CreateMision_TheRuleOfFive(ScriptToInsp
     script->AddDragBoxUIImage("Dialog", &classInstance->Dialog);
     script->AddDragFloat("Dialog timer", &classInstance->dialogTimer);
 
+    script->AddDragFloat("Dialog Pos X", &classInstance->finalPos.x);
+    script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
+    script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
+
     return classInstance;
 }
 
@@ -25,7 +29,7 @@ void Mision_TheRuleOfFive::Start()
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
-    finalPos = { 0, -0.500, 0 };
+    //finalPos = { 0, -0.500, 0 };
 
     misionCompleted = false;
     EnemyDieEvent::numOfEnemiesDead = 0;

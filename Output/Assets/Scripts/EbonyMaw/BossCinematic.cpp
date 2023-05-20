@@ -21,6 +21,10 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragFloat("Dialog start battle timer", &classInstance->timerSB);
     script->AddDragFloat("Dialog end battle timer", &classInstance->timerEB);
 
+    script->AddDragFloat("Dialog Pos X", &classInstance->finalPos.x);
+    script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
+    script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
+
 	return classInstance;
 }
 
@@ -37,7 +41,7 @@ void BossCinematic::Start()
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
-    finalPos = { 0, -0.500, 0 };
+    //finalPos = { 0, -0.500, 0 };
 
     currentDialog = 1;
 

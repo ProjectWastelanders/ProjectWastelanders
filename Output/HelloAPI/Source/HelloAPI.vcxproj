@@ -296,6 +296,7 @@
 		<ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/KillEnemiesZone2.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -459,6 +460,7 @@
 		<ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.h" />
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/KillEnemiesZone2.h" />
+		<ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

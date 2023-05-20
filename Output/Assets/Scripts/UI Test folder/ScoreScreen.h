@@ -15,7 +15,5 @@ public:
 	API_UIButton returnButton;
 
 	int lvlToSpawn = 1;
-
-	bool hasToStart;
 };
 

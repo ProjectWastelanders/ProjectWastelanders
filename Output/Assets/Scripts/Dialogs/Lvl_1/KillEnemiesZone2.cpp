@@ -3,7 +3,7 @@ HELLO_ENGINE_API_C KillEnemiesZone2* CreateKillEnemiesZone2(ScriptToInspectorInt
 {
 	KillEnemiesZone2* classInstance = new KillEnemiesZone2();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
-    /*script->AddDragBoxGameObject("Enemy 1", &classInstance->enemy_1);
+    script->AddDragBoxGameObject("Enemy 1", &classInstance->enemy_1);
     script->AddDragBoxGameObject("Enemy 2", &classInstance->enemy_2);
     script->AddDragBoxGameObject("Enemy 3", &classInstance->enemy_3);
     script->AddDragBoxGameObject("Enemy 4", &classInstance->enemy_4);
@@ -13,7 +13,7 @@ HELLO_ENGINE_API_C KillEnemiesZone2* CreateKillEnemiesZone2(ScriptToInspectorInt
     script->AddDragBoxGameObject("Enemy 8", &classInstance->enemy_8);
     script->AddDragBoxGameObject("Enemy 9", &classInstance->enemy_9);
     script->AddDragBoxGameObject("Enemy 10", &classInstance->enemy_10);
-    script->AddDragBoxGameObject("Enemy 11", &classInstance->enemy_11);*/
+    script->AddDragBoxGameObject("Enemy 11", &classInstance->enemy_11);
 
     script->AddDragBoxUIImage("Dialog", &classInstance->Dialog);
 
@@ -27,8 +27,6 @@ HELLO_ENGINE_API_C KillEnemiesZone2* CreateKillEnemiesZone2(ScriptToInspectorInt
 
 void KillEnemiesZone2::Start()
 {
-    //Game::FindGameObjectsWithTag("EnemiesZone2", enemies[0], 11);
-
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
     //finalPos = { 0, -0.500, 0 };
@@ -41,25 +39,24 @@ void KillEnemiesZone2::Start()
 }
 void KillEnemiesZone2::Update()
 {
-    //CheckEnemies();
-    if (EnemyCount == 0) {
-        printDialog = true;
-    }
+    CheckEnemies();
 
     if (printDialog && !printedDialog) {
         PrintDialog(Dialog);
     }
 }
 
-//void KillEnemiesZone2::CheckEnemies()
-//{
-//    if (enemy_1.IsAlive() == false && enemy_1.IsAlive() == false && enemy_1.IsAlive() == false && enemy_1.IsAlive() == false &&
-//        enemy_1.IsAlive() == false && enemy_1.IsAlive() == false && enemy_1.IsAlive() == false && enemy_1.IsAlive() == false &&
-//        enemy_1.IsAlive() == false && enemy_1.IsAlive() == false && enemy_1.IsAlive() == false)
-//    {
-//        printDialog = true;
-//    }
-//}
+void KillEnemiesZone2::CheckEnemies()
+{
+    //Es una guarrada, pero si no tengo que ir cambiando tags y asi tardo menos, lo siento.
+
+    if (enemy_1.IsAlive() == false && enemy_2.IsAlive() == false && enemy_3.IsAlive() == false && enemy_4.IsAlive() == false &&
+        enemy_5.IsAlive() == false && enemy_6.IsAlive() == false && enemy_7.IsAlive() == false && enemy_8.IsAlive() == false &&
+        enemy_9.IsAlive() == false && enemy_10.IsAlive() == false && enemy_11.IsAlive() == false)
+    {
+        printDialog = true;
+    }
+}
 
 void KillEnemiesZone2::PrintDialog(API_UIImage& Dialog)
 {
@@ -87,14 +84,4 @@ void KillEnemiesZone2::PrintDialog(API_UIImage& Dialog)
     }
 
     Dialog.GetGameObject().GetTransform().SetPosition(movingPos);
-}
-
-void KillEnemiesZone2::OnCollisionEnter(API::API_RigidBody other)
-{
-    std::string detectionTag = other.GetGameObject().GetTag();
-    if (detectionTag == "Enemy")
-    {
-        //printDialog = true;
-        EnemyCount++;
-    }
 }

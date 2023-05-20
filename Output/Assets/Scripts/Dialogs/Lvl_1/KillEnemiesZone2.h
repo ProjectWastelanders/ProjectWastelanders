@@ -10,23 +10,20 @@ class KillEnemiesZone2 : HelloBehavior
 public:
 	void Start() override; 
 	void Update() override;
-	//void CheckEnemies();
+	void CheckEnemies();
 	void PrintDialog(API_UIImage& Dialog);
-	void OnCollisionEnter(API::API_RigidBody other) override;
 
-	//API_GameObject enemy_1;
-	//API_GameObject enemy_2;
-	//API_GameObject enemy_3;
-	//API_GameObject enemy_4;
-	//API_GameObject enemy_5;
-	//API_GameObject enemy_6;
-	//API_GameObject enemy_7;
-	//API_GameObject enemy_8;
-	//API_GameObject enemy_9;
-	//API_GameObject enemy_10;
-	//API_GameObject enemy_11;
-
-	//vector<API_GameObject*> enemies;
+	API_GameObject enemy_1;
+	API_GameObject enemy_2;
+	API_GameObject enemy_3;
+	API_GameObject enemy_4;
+	API_GameObject enemy_5;
+	API_GameObject enemy_6;
+	API_GameObject enemy_7;
+	API_GameObject enemy_8;
+	API_GameObject enemy_9;
+	API_GameObject enemy_10;
+	API_GameObject enemy_11;
 
 	int EnemyCount = 0;
 

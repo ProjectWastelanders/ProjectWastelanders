@@ -16,6 +16,7 @@ public:
 	API_GameObject bossGO;
 	BossLoop* bossloopref;
 
-	API_GameObject collider;
+	API_GameObject colliderEntry;
+	API_GameObject colliderExit;
 };
 

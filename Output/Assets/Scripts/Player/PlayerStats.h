@@ -49,6 +49,9 @@ public:
     int specialAmmo;
     int maxSpecialAmmo; // index 2
     float ultPercentage = 0.0f;
+
+    bool showTpDialog = false;
+    bool showedTpDialog = false;
      
     // number of enemies who detect player
     int detectedCount = 0;

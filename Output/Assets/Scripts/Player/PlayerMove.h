@@ -33,6 +33,8 @@ public:
     void DashSetup();
     void Dash();
     bool DashInput();
+    void StopPlayer();
+    bool onHUB = false;
 
     void LookAt(API_Vector3 target);
 

@@ -104,7 +104,7 @@ void EnemyMeleeMovement::Update()
 			enemy->isHit ? _hitOutCooldown += dt : _hitOutCooldown = 0;
 
 			if (_hitOutCooldown >= hitOutTime)
-				enemy->isHit = false, enemy->hitParticles.Stop();
+				//enemy->isHit = false, enemy->hitParticles.Stop();
 
 			if (enemy->isTargIn)
 			{

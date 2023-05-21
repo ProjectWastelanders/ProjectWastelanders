@@ -16,6 +16,8 @@ HELLO_ENGINE_API_C CamMov* CreateCamMov(ScriptToInspectorInterface* script)
 
 	script->AddDragFloat("Orbital Multiplier", &classInstance->orbitalMult);
 	script->AddDragFloat("Earthquake Multiplier", &classInstance->earthquakeMult);
+	script->AddDragFloat("Earthquake Force", &classInstance->earthquakeForce);
+	script->AddCheckBox("TEST EARTHQUAKE", &classInstance->testEarthquake); //ERASE THIS
 
 	script->AddDragFloat("SafeZone_Distance", &classInstance->safeZoneDistance);
 	script->AddCheckBox("Use safe zone", &classInstance->safeZone);
@@ -37,6 +39,8 @@ void CamMov::Start()
 
 void CamMov::Update()
 {
+	if (testEarthquake) Earthquake(0.5f);	//ERASE THIS
+
 	gameObject.GetTransform().SetRotation(camRot);
 	desiredPosition = target.GetTransform().GetGlobalPosition();
 	
@@ -76,8 +80,9 @@ void CamMov::Update()
 	//Vibration
 	if (shakingTime > 0.0f)
 	{
-		smoothedPosition.x += (float(rand() % 20)/10.0f - 1.0f);
-		smoothedPosition.z += (float(rand() % 20)/10.0f - 1.0f);
+		float divisor = 1.0f / currentForce;
+		smoothedPosition.x += (float(rand() % 20)/(divisor * 10.0f) - currentForce);
+		smoothedPosition.z += (float(rand() % 20)/(divisor * 10.0f) - currentForce);
 		shakingTime -= Time::GetDeltaTime();
 	}
 
@@ -89,9 +94,10 @@ void CamMov::SetOrbital(bool orbital)
 	this->orbital = orbital;
 }
 
-void CamMov::Shake(float time)
+void CamMov::Shake(float time, float force)
 {
 	shakingTime = time;
+	currentForce = force;
 }
 
 void CamMov::Zoom(float time)
@@ -102,5 +108,5 @@ void CamMov::Zoom(float time)
 void CamMov::Earthquake(float time)
 {
 	Zoom(time);
-	Shake(time);
+	Shake(time, earthquakeForce);
 }

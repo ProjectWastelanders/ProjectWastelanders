@@ -13,7 +13,7 @@ public:
 	void Update() override;
 
 	void SetOrbital(bool orbital);
-	void Shake(float time = 0.1f);
+	void Shake(float time = 0.1f, float force = 0.5f);
 	void Zoom(float time);
 	void Earthquake(float time);
 
@@ -36,4 +36,8 @@ public:
 	float shakingTime = 0.0f;
 	float zoomTime = 0.0f;
 	float earthquakeMult = 0.2f;
+	float earthquakeForce = 1.0f;
+	float currentForce = 1.0f;
+
+	bool testEarthquake = false;  //ERASE THIS
 };

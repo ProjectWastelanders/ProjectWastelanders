@@ -19,6 +19,7 @@ public:
 	void OnCollisionExit(API_RigidBody other);
 	void SpawnSphere();
 	void DestroySphere();
+	
 
 	API_Transform destination;
 	API_ParticleSystem smoke;
@@ -46,5 +47,6 @@ public:
 	API_UIImage tpButton;
 
 	bool canTp;
+
 };
 

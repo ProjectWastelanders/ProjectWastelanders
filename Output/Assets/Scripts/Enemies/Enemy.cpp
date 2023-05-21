@@ -207,9 +207,9 @@ void Enemy::TakeDamage(float damage, float resistanceDamage)
 	if (currentHp <= 0)
 	{
 		currentHp = 0;
-		hitParticles.Stop();
+		/*hitParticles.Stop();
 		hitParticles.StopEmitting();
-		hitParticles.Pause();
+		hitParticles.Pause();*/
 		Die();
 	}
 
@@ -225,7 +225,7 @@ void Enemy::TakeDamage(float damage, float resistanceDamage)
 		// reaction
 	}
 
-	hitParticles.Play();
+	/*hitParticles.Play();*/
 }
 
 void Enemy::Die()
@@ -236,7 +236,7 @@ void Enemy::Die()
 	// some animation
 	if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(gameObject.GetTransform().GetGlobalPosition());
 
-	hitParticles.StopEmitting();
+	//hitParticles.StopEmitting();
 	if (!meleeScript && !rangeScript && !tankScript)
 	{
 		gameObject.SetActive(false);

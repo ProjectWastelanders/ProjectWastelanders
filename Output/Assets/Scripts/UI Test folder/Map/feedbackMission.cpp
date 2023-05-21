@@ -47,7 +47,7 @@ void feedbackMission::Update()
 	mision_LikeThe->misionCompleted = m1check;
 	mision_RageMonster->misionCompleted = m2check;
 
-	if (mision_LikeThe->misionCompleted && misionCompleted_1_1)
+	/*if (mision_LikeThe->misionCompleted && misionCompleted_1_1)
 	{
 		visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
 		viusalFeedbackScript->ResetAnimationMoveX();
@@ -65,7 +65,7 @@ void feedbackMission::Update()
 		missionPostit2.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
 		misionCompleted_2_1 = false;
 		API_QuickSave::SetBool("mision_RageMonster", true);
-	}
+	}*/
 
 	switch (playerStorage->levelIndex)
 	{

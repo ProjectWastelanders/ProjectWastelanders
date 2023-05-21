@@ -72,7 +72,7 @@ void PlayerStats::Update()
 
     if (Input::GetKey(KeyCode::KEY_K) == KeyState::KEY_DOWN)
     {
-        TakeDamage(0, 0);
+        TakeDamage(50, 0);
     }
 
     // deadline healing

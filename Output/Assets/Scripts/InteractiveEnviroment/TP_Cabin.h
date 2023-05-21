@@ -15,8 +15,6 @@ public:
 	void Update() override;
 
 	void OnCollisionStay(API_RigidBody other);
-	void OnCollisionEnter(API_RigidBody other);
-	void OnCollisionExit(API_RigidBody other);
 	void SpawnSphere();
 	void DestroySphere();
 	
@@ -44,7 +42,6 @@ public:
 	float endParticles;
 	float tpTime;
 
-	API_UIImage tpButton;
 
 	bool canTp;
 

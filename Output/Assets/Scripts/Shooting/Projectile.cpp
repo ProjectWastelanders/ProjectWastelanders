@@ -15,6 +15,7 @@ HELLO_ENGINE_API_C Projectile* CreateProjectile(ScriptToInspectorInterface* scri
 void Projectile::Start()
 {
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
+    rigidBody = gameObject.GetRigidBody();
 }
 
 void Projectile::Update()
@@ -33,7 +34,9 @@ void Projectile::Update()
         gameObject.GetRigidBody().SetBoxScale({ 0.1f + scaleMultiply, 0.1f + scaleMultiply, 0.1f + scaleMultiply });
     }
 
-    gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
+    rigidBody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 10.0f });
+
+   // gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 
 void Projectile::Destroy()

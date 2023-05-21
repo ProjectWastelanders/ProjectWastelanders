@@ -40,6 +40,7 @@ void ProjectilePull::Start()
         Projectile* projectileScript = (Projectile*)newProjectile.GetScript("Projectile");
         if (projectileScript == nullptr)
             break;
+        projectileScript->Start();
         projectileScript->pull = this;
         pull.push_back(newProjectile);
     }

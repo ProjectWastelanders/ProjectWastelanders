@@ -295,8 +295,9 @@
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.cpp" />
-		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/KillEnemiesZone2.cpp" />
 		<ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -459,8 +460,9 @@
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.h" />
 		<ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.h" />
-		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/KillEnemiesZone2.h" />
 		<ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

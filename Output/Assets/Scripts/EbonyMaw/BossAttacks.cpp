@@ -69,6 +69,8 @@ void BossAttacks::Start()
 	takeobjTimer = 0;
 	explosionWave1.GetTransform().Translate(0, -10, 0);
 	orbitingRocks.SetActive(false);
+	rocks[1].GetParticleSystem().Stop();
+	rocks[1].GetParticleSystem().StopEmitting();
 }
 
 void BossAttacks::Update()
@@ -275,7 +277,6 @@ void BossAttacks::Update()
 
 					if (rocks[1].GetTransform().GetGlobalScale().x >= 6.0f) {
 
-
 						Seek(&rocks[currentRock[1]], lastPlayerPosition, speed / 5, 1, false, 60.0f);
 
 						returnFireRockTime += Time::GetDeltaTime();
@@ -286,6 +287,9 @@ void BossAttacks::Update()
 							groundFire.GetGameObject().GetTransform().SetPosition(lastPlayerPosition);
 							groundFire.GetGameObject().SetActive(true);
 							groundFire.Play();
+							rocks[1].GetParticleSystem().Stop();
+							rocks[1].GetParticleSystem().StopEmitting();
+
 							isFireOn = true;
 						}
 
@@ -293,6 +297,8 @@ void BossAttacks::Update()
 					else {
 						rocks[1].GetTransform().Scale(10 * Time::GetDeltaTime());
 						lastPlayerPosition = player.GetTransform().GetGlobalPosition();
+						rocks[1].GetParticleSystem().Play();
+
 					}
 
 					if (bLoop->animState != BossLoop::AnimationState::SPECIAL)
@@ -351,6 +357,7 @@ void BossAttacks::Update()
 				{
 				case 0:
 					speed = 1.0f;
+					difficultySetter = 110;
 					if (difficultySetter <= 60) attackType = 0;
 					else if (difficultySetter > 60 && difficultySetter <= 90) attackType = 1;
 					else if (difficultySetter > 90 && difficultySetter < 101) attackType = 2;

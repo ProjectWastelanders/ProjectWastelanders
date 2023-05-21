@@ -33441,8 +33441,8 @@
                     0.0
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
+                    2.0,
+                    2.0,
                     1.0
                 ],
                 "Type": 1
@@ -33490,7 +33490,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 1272529237,
+                "MaterialResource": 1855458553,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -33589,6 +33589,46 @@
         "PrefabUID": 3632537577,
         "Tag": "UI",
         "UID": 3772303224,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.30000001192092896,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 258232105,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BackGround",
+        "ParentUID": 3515385126,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1094212140,
         "UpdateWithBones": false
     },
     {

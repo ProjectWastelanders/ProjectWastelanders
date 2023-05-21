@@ -1,5 +1,6 @@
 #include "stealDivinerDialog.h"
 #include "../../Quests/StealTheDivinerAgain.h"
+#include "../../Quests/ReachTheSpaceship.h"
 HELLO_ENGINE_API_C stealDivinerDialog* CreatestealDivinerDialog(ScriptToInspectorInterface* script)
 {
 	stealDivinerDialog* classInstance = new stealDivinerDialog();
@@ -23,11 +24,15 @@ HELLO_ENGINE_API_C stealDivinerDialog* CreatestealDivinerDialog(ScriptToInspecto
     script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
     script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
 
+    script->AddDragBoxGameObject("Reach The Spaceship GO", &classInstance->reachTheSpaceShipGO);
+
 	return classInstance;
 }
 
 void stealDivinerDialog::Start()
 {
+    reachTheSpaceShip = (ReachTheSpaceship*)reachTheSpaceShipGO.GetScript("ReachTheSpaceship");
+    if (reachTheSpaceShip == nullptr) Console::Log("ReachTheSpaceship missing in StealTheDivinerAgain Script.");
 
     activeDialogs = false;
 
@@ -135,6 +140,7 @@ void stealDivinerDialog::PrintDialog(API_UIImage& Dialog)
             if (currentDialog == 12) {
                 Dialog.GetGameObject().SetActive(false);
                 activeDialogs = false;
+                if (reachTheSpaceShip) reachTheSpaceShip->EnableMision();
             }
             else {
                 currentDialog += 1;

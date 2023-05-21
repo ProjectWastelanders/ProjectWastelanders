@@ -5,6 +5,8 @@
 
 #include "API/API.h"
 
+class ReachTheSpaceship;
+
 class stealDivinerDialog : HelloBehavior
 {
 public:
@@ -31,6 +33,9 @@ public:
 
     bool activeDialogs;
     int currentDialog;
+
+    API_GameObject reachTheSpaceShipGO;
+    ReachTheSpaceship* reachTheSpaceShip;
 
     float timer = 0.0f;
     float _timer = 0.0f;

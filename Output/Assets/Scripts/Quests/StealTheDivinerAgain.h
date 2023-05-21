@@ -6,7 +6,6 @@
 #include "API/API.h"
 
 class PlayerStorage;
-class ReachTheSpaceship;
 class stealDivinerDialog;
 
 class StealTheDivinerAgain : HelloBehavior
@@ -22,9 +21,6 @@ public:
 
     API_GameObject Dialog;
     stealDivinerDialog* stealDiviner_Dialog;
-
-    API_GameObject reachTheSpaceShipGO;
-    ReachTheSpaceship* reachTheSpaceShip;
 
     CamMov* cam;
     API_GameObject camObj;

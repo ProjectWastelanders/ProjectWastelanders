@@ -11,7 +11,7 @@
 		<drawNavMesh value="false" />
 	</renderer>
 	<scene>
-		<currentScene value="Assets/Level1.HScene" />
+		<currentScene value="Assets/Level2.HScene" />
 	</scene>
 	<openGL>
 		<blend value="true" tag="0x0BE2" />

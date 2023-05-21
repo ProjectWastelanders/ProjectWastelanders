@@ -80,7 +80,6 @@ void Enemy::Start()
 	initialPos.x = gameObject.GetTransform().GetGlobalPosition().x;
 	initialPos.z = gameObject.GetTransform().GetGlobalPosition().z;
 	enemyAgent = gameObject.GetAgent();
-	isAgent = true;
 }
 
 void Enemy::Update()

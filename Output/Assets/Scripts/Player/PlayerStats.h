@@ -53,6 +53,9 @@ public:
     bool showTpDialog = false;
     bool showedTpDialog = false;
      
+    // number of enemies who detect player
+    int detectedCount = 0;
+
     bool detected; //if the player is being detected somehow
     bool inCombat = false;
     API_RigidBody actualZone;//the zone where the player is

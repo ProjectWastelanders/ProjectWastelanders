@@ -44,7 +44,7 @@ void ProjectilePull::Start()
         pull.push_back(newProjectile);
     }
 
-    /*for (size_t i = 0; i < shotgunBombPullSize; i++)
+    for (size_t i = 0; i < shotgunBombPullSize; i++)
     {
         API_GameObject newBomb = Game::InstancePrefab(shotgunBombPrefab, API_GameObject());
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
@@ -59,7 +59,7 @@ void ProjectilePull::Start()
              
         bombScript->explosion->shotgunBomb = newBomb;
         shotgunBombPull.push_back(newBomb);
-    }*/
+    }
 
     ricochetDetector = Game::InstancePrefab(checkRicochetTargetsPrefab, API_GameObject());
     ricochetTargets = (CheckRicochetTargets*)ricochetDetector.GetScript("CheckRicochetTargets");
@@ -113,7 +113,7 @@ void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projecti
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(dualsTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
@@ -135,7 +135,7 @@ void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectile
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
@@ -157,7 +157,7 @@ void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float 
     go.GetTransform().Rotate(0, rotateY, 0);
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
@@ -178,7 +178,7 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(autoTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
@@ -218,7 +218,7 @@ void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectil
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(burstTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
@@ -239,7 +239,7 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(shotgunTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
 
@@ -267,7 +267,7 @@ void ProjectilePull::LauchProjectileSHOTGUN_BOMB(float projectileLifetime, API_T
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetMeshRenderer().ChangeMesh(normalMesh);
 
     float offsetY = rand() % 360;
     go.GetTransform().Rotate(0, offsetY, 0);
@@ -304,7 +304,7 @@ void ProjectilePull::LauchProjectileRICOCHET(float projectileSpeed, float projec
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
     go.GetTransform().SetScale(projectileScale);
     go.GetMeshRenderer().SetActive(true);
-    go.GetMeshRenderer().ChangeMesh(ricochetMesh);
+    //go.GetMeshRenderer().ChangeMesh(ricochetMesh);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(ricochetTex);
     go.GetRigidBody().SetBoxScale({ 0.5f, 0.5f, 0.5f });
 

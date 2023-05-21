@@ -4,7 +4,7 @@ HELLO_ENGINE_API_C EnemyProjectilePull* CreateEnemyProjectilePull(ScriptToInspec
     EnemyProjectilePull* classInstance = new EnemyProjectilePull();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     script->AddDragInt("Pull Size", &classInstance->pullSize);
-    script->AddDragBoxParticleSystem("Particles", &classInstance->particleTest);
+    //script->AddDragBoxParticleSystem("Particles", &classInstance->particleTest);
     return classInstance;
 }
 
@@ -17,7 +17,7 @@ void EnemyProjectilePull::Start()
         newProjectile.AddMaterial();
         API_RigidBody rb = newProjectile.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.3f, 0.3f, 0.3f), false);
         rb.SetTrigger(true);
-        newProjectile.AddParticleSystem(particleTest);
+        //newProjectile.AddParticleSystem(particleTest);
         newProjectile.AddScript("EnemyProjectile");
         newProjectile.SetActive(false);
         pull.push_back(newProjectile);

@@ -50,6 +50,9 @@ public:
     int maxSpecialAmmo; // index 2
     float ultPercentage = 0.0f;
      
+    // number of enemies who detect player
+    int detectedCount = 0;
+
     bool detected; //if the player is being detected somehow
     bool inCombat = false;
     API_RigidBody actualZone;//the zone where the player is

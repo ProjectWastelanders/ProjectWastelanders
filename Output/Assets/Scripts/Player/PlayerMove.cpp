@@ -41,6 +41,7 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
     script->AddDragBoxParticleSystem("Walk Particles", &classInstance->walkParticles);
     script->AddDragBoxParticleSystem("Shoot Particles", &classInstance->shootParticles);
+    script->AddCheckBox("On HUB", &classInstance->onHUB);
     return classInstance;
 }
 
@@ -103,7 +104,7 @@ void PlayerMove::Update()
         shootParticles.StopEmitting();
     }
 
-    if (dashesAvailable > 0)
+    if (dashesAvailable > 0 && !onHUB)
     {
         if (DashInput())
         {
@@ -304,6 +305,11 @@ bool PlayerMove::DashInput()
     return Input::GetKey(KeyCode::KEY_SPACE) == KeyState::KEY_DOWN;
 }
 
+void PlayerMove::StopPlayer()
+{
+    rigidBody.SetVelocity({ 0, 0, 0 });
+}
+
 void PlayerMove::LookAt(API_Vector3 target)
 {
     API_Vector2 movDir = {target.x, target.z};
@@ -489,6 +495,7 @@ void PlayerMove::PlayDeathAnim()
         playerAnimator.Play();
         currentAnim = PlayerAnims::DEATH;
     }
+    StopPlayer();
 }
 
 void PlayerMove::PlayJumperAnim()

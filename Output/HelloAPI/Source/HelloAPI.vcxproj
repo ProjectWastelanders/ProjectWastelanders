@@ -298,6 +298,7 @@
 		<ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
@@ -463,6 +464,7 @@
 		<ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.h" />
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

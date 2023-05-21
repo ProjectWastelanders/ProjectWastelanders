@@ -257,7 +257,8 @@ h4 {
     padding: 1%;
 }
 
-.box p {   /*paragrafo*/
+.box p {
+    /*paragrafo*/
     font-size: 1.6rem;
     font-weight: 300;
     margin-top: 2rem;
@@ -269,7 +270,7 @@ h4 {
 /*=====================================*/
 
 .game-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(img/travel.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -294,7 +295,7 @@ h4 {
     color: #3c4761;
     padding-left: 5rem;
     padding-right: 5rem;
-    
+
 }
 
 .btn-game:link,
@@ -386,19 +387,63 @@ h4 {
 /*=====================================*/
 
 header {
-    background: linear-gradient(rgba(163, 50, 142, 0.9), rgba(151, 136, 136, 0.9)), url(img/travel.png);
+    /* background: linear-gradient(rgba(202, 202, 202, 0.1), rgba(255, 255, 255, 0.9));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100%;
-    position: relative;
+    height: 100rem;
+    z-index: -2;
+    top:0; */
+}
+
+#myVideo {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #myVideo {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #myVideo { 
+        width:auto;
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    #myVideo {
+        display: none;
+    }
+    body {
+        background: url('poster.jpg');
+        background-size: cover;
+    }
+}
+
+.content {
+    bottom: 0;
+    /* background: rgba(0, 0, 0, 0.5);  */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
 }
 
 header h1 {
     color: #3c4761;
     transform: translatey(-20%);
 }
+
+
 
 .logo {
     height: 5rem;
@@ -415,6 +460,7 @@ header h1 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
+    
 }
 
 .logo_3 {

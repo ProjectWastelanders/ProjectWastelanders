@@ -2,8 +2,7 @@
 /*  Basic Setup */
 /*=======================================*/
 
-
-
+/* 
 * {
     box-sizing: border-box;
 }
@@ -18,13 +17,11 @@ body {
 
 img {
     vertical-align: middle;
-}
-
+} */
 
 
 
 /*-------------------------------------------NavigationBar---------------------------------*/
-
 /* By Dominik Biedebach @domobch */
 
 body {
@@ -47,32 +44,21 @@ h1 {
     color: inherit;
     font-size: 40px;
 }
-h_description {
-    text-align: center;
-    padding: 50px 0;
-    font-weight: 800;
-    margin: 0;
-    letter-spacing: -1px;
-    color: #000;
-    font-size: 20px;
-}
 
-/* By Dominik Biedebach @domobch */
 
-h2 {
+
+/* h2 {
     text-align: center;
     font-size: 30px;
     margin: 0;
     font-weight: 300;
     color: inherit;
     padding: 50px;
-}
+} */
 
 .center {
     text-align: center;
 }
-
-/* By Dominik Biedebach @domobch */
 
 section {
     height: 100vh;
@@ -230,27 +216,7 @@ h2 {
     text-align: left;
 }
 
-h2b {
-    font-size: 4rem;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-align: left;
-}
 
-h2b::after {
-    font-size: 4rem;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-align: left;
-}
 
 h2::after {
     /*barrita junto al header2: after abajo, before arriba*/
@@ -284,36 +250,23 @@ h4 {
     /* margin-left: 20%; */
     line-height: 3rem;
     font-weight: 500;
-    color:#000
+
 }
-
-
 
 .box {
     padding: 1%;
 }
 
-.box p {
+.box p {   /*paragrafo*/
     font-size: 1.6rem;
     font-weight: 300;
     margin-top: 2rem;
-    color: #d74680;/* this changes color of all little boxes */
 }
 
 
 /*=====================================*/
 /* Game Section*/
 /*=====================================*/
-/*-------------------------------------------SlideShow---------------------------------*/
-
-.btn-game:link,
-.btn-game:visited {
-    background: #d63c3c;
-    border-bottom: #c84040;
-
-    margin-top: 10rem;
-
-}
 
 .game-section {
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
@@ -321,28 +274,50 @@ h4 {
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
-    color: #000000;
+    height: 100%;
 }
 
-.service-section h2::after {
-    background: #ffffff;
+
+
+.game-section h2 {
+    color: #3c4761;
+    margin-left: 5rem;
+
 }
 
-.services-icon {
-    height: 12rem;
-    margin-top: 4.5rem;
-    margin-bottom: 3.5rem;
+.game-section h2::after {
+    background: #3c4761;
+    width: 20%;
 }
 
+.game-section p {
+    color: #3c4761;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    
+}
+
+.btn-game:link,
+.btn-game:visited {
+    background: #d63c3c;
+    border-bottom: #c84040;
+    margin-top: 5rem;
+    margin-left: 6rem;
+
+}
+
+/*-------------------------------------------SlideShow---------------------------------*/
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 2000px;
     padding-top: 2rem;
     position: relative;
-    left: 10;
-    margin-left: 10rem;
+    left: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
     color: #fff;
+    width: 100%;
+    height: auto;
 }
 
 /* Caption text */
@@ -416,8 +391,13 @@ header {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 120vh;
+    height: 100%;
     position: relative;
+}
+
+header h1 {
+    color: #3c4761;
+    transform: translatey(-20%);
 }
 
 .logo {
@@ -429,14 +409,14 @@ header {
 }
 
 .logo_2 {
+    width: 100%;
     height: auto;
-    width: 90%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-
+    margin-top: 10rem;
 }
+
 .logo_3 {
     height: auto;
     width: 50%;
@@ -505,14 +485,14 @@ header {
     background: #643a70;
 }
 
-.home_title {
+/* .home_title {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 114rem;
-}
+} */
 .game_title {
     position: absolute;
     top: 80%;
@@ -526,10 +506,10 @@ header {
 
 
 /*=====================================*/
-/* Services Section*/
+/* Home Team Section*/
 /*=====================================*/
 
-.service-section {
+.hometeam-section {
     text-align: center;
     background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 194, 163, 0.9)), url(img/services-bg.jpg);
     background-repeat: no-repeat;
@@ -537,20 +517,93 @@ header {
     background-position: top center;
     background-attachment: fixed;
     color: #fff;
+    height: 100%;
 }
 
-.service-section h2::after {
+.hometeam-section p {
+    color: #3c4761;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: left;
+}
+
+.hometeam-section h2 {
+    color: #3c4761;
+    margin-left: 5rem;
+}
+
+.hometeam-section h2::after {
     background: #14a58c;
 }
 
-.services-icon {
-    height: 12rem;
-    margin-top: 4.5rem;
-    margin-bottom: 3.5rem;
+.hometeam-icon {
+    height: 20rem;
+    width: auto;
+    margin-top: 1.5rem;
+    /* margin-bottom: 3.5rem; */
+}
+
+
+.btn-hometeam:link,
+.btn-hometeam:visited {
+    background: #815f5f;
+    border-bottom: #926060;
+    margin-top: 5rem;
+    margin-right: 20rem;
+
+}
+
+
+/*=====================================*/
+/* Production Section*/
+/*=====================================*/
+
+.production-section {
+    text-align: center;
+    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/services-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100%;
+}
+
+.production-section p {
+    color: #3c4761;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: left;
+}
+
+.production-section h2 {
+    color: #3c4761;
+    margin-left: 5rem;
+}
+
+.production-section h2::after {
+    background: #14a58c;
+}
+
+.production-icon {
+    height: 20rem;
+    width: auto;
+    margin-top: 1.5rem;
+    /* margin-bottom: 3.5rem; */
+}
+
+
+.btn-production:link,
+.btn-production:visited {
+    background: #815f5f;
+    border-bottom: #926060;
+    margin-top: 5rem;
+    margin-right: 20rem;
+
 }
 
 /*=====================================*/
-/* Team Section*/
+/* Old Team Section*/
 /*=====================================*/
 
 .team-section {
@@ -560,6 +613,8 @@ header {
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
+    text-align: left;
+    height: 100%;
 }
 
 .team-section h2 {
@@ -687,14 +742,20 @@ svg.ui-ux circle {
     background-attachment: fixed;
     background-position: center center;
     text-align: center;
+    height: 100%;
 }
 
 .portfolio-section h2 {
     color: #3c4761;
+    padding-top: 1rem;
+    text-align: center;
 }
 
 .portfolio-section h2:after {
     background: #e5c37f;
+    width: 50%;
+    position: absolute;
+    left: 25%;
 }
 
 .portfolio-filter {
@@ -741,7 +802,7 @@ svg.ui-ux circle {
 /* Testimonial Section*/
 /*=====================================*/
 
-.testimonial-section {
+/* .testimonial-section {
     background: linear-gradient(rgba(215, 70, 128, 0.9), rgba(215, 70, 128, 0.9)), url(img/testimonial-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -798,14 +859,14 @@ svg.ui-ux circle {
 
 .testimonial-section .role {
     color: #ffdd99;
-}
+} */
 
 
 /*=====================================*/
 /* Contact Section*/
 /*=====================================*/
 
-.contact-section {
+/* .contact-section {
     background: linear-gradient(rgba(60, 83, 153, 0.9), rgba(60, 83, 153, 0.9)), url('img/contact-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -861,7 +922,7 @@ svg.ui-ux circle {
 
 .btn-submit:hover {
     cursor: pointer;
-}
+} */
 
 
 /*=====================================*/
@@ -873,6 +934,7 @@ svg.ui-ux circle {
     padding: 3rem 0;
     text-align: center;
     border-top: .1rem solid rgba(255, 255, 255, 0.4);
+    height: auto;
 }
 
 .footer-section li {

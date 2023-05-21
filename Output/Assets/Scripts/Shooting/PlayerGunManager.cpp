@@ -86,6 +86,7 @@ void PlayerGunManager::Update()
     if (playerStats && playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
 
+    if (playerStats && !playerStats->PlayerAlive()) return;
     if (playerMove && playerMove->openingChest) return; // return if opening chest
 
     // Keyboard

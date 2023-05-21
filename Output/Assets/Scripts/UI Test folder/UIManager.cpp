@@ -53,10 +53,13 @@ void UIManager::Update()
 			//CloseSettings();
 		}
 	}
-	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_REPEAT)
 	{
+		//Console::Log("ITS B");
+		settingsPanel.SetActive(false);
 		if (currentPanel == CurrentPanel::SETTINGS)
 		{
+			//Console::Log("ITS B && SETTINGS");
 			CloseSettings();
 		}
 	}

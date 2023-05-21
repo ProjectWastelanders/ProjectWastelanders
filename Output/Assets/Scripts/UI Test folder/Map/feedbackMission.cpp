@@ -36,7 +36,7 @@ void feedbackMission::Start()
 	mision_Masacre = (Mision_Masacre*)missionsGO.GetScript("Mision_Masacre");
 	mision_Personal = (Mision_SomethingPersonal*)missionsGO.GetScript("Mision_SomethingPersonal");
 	mision_RageMonster = (Mision_RageMonster*)missionsGO.GetScript("Mision_RageMonster");
-	mision_TheRule = (Mision_TheRuleOfFive*)missionsGO.GetScript("Mision_RageMonster");
+	mision_TheRule = (Mision_TheRuleOfFive*)missionsGO.GetScript("Mision_TheRuleOfFive");
 	//mision_FirstClassTurbulence = (Mision_FirstClassTurbulence*)missionsGO.GetScript("Mision_FirstClassTurbulence");
 
 	viusalFeedbackScript = (AnimationMove*)visualFeedback.GetScript("AnimationMove");
@@ -44,8 +44,8 @@ void feedbackMission::Start()
 
 void feedbackMission::Update()
 {
-	mision_LikeThe->misionCompleted = m1check;
-	mision_RageMonster->misionCompleted = m2check;
+	//mision_LikeThe->misionCompleted = m1check;
+	//mision_RageMonster->misionCompleted = m2check;
 
 	/*if (mision_LikeThe->misionCompleted && misionCompleted_1_1)
 	{

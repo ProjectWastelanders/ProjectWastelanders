@@ -71,11 +71,11 @@ void RockDivider::OnCollisionEnter(API::API_RigidBody other)
 
 	if (detectionName == "Player") {
 		PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-		if (whichRockAmI < 16) {	
+		if (whichRockAmI < 16 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING) {	
 			pStats->TakeDamage(bAttacks->rockDmg, 0);
 			bAttacks->ReturnRock(&gameObject, whichRockAmI, false);
 		}
-		else {
+		else if (whichRockAmI > 15){
 			pStats->TakeDamage(bAttacks->orbitingRockDmg, 0);
 		}
 	}

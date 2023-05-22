@@ -131,7 +131,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.5714285373687744,
+                "Aspect ratio": 1.6137725114822388,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 4000.0,
@@ -8083,7 +8083,7 @@
                 "Enabled": true,
                 "Position": [
                     -189.98629760742188,
-                    6.894787311553955,
+                    6.894999980926514,
                     43.994720458984375
                 ],
                 "Rotation": [
@@ -8173,7 +8173,7 @@
         "Name": "FloorThanosThrone",
         "ParentUID": 497197544,
         "PrefabUID": 0,
-        "Tag": "Default",
+        "Tag": "Floor",
         "UID": 4188319040,
         "UpdateWithBones": false
     },
@@ -18998,7 +18998,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,

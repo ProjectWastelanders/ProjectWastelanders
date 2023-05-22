@@ -35,8 +35,12 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxGameObject("BeamTarget4", &classInstance->beamTarget4);
 
 	script->AddDragBoxGameObject("Laser Aim Position", &classInstance->laserPosition);
-	script->AddDragBoxParticleSystem("Laser Particle System", &classInstance->laserPS);
-	script->AddDragBoxGameObject("Laser GameObject", &classInstance->laserGO);
+	script->AddDragBoxParticleSystem("Laser Particle System 1", &classInstance->laserPS);
+	script->AddDragBoxParticleSystem("Laser Particle System 2", &classInstance->laserPS2);
+	script->AddDragBoxParticleSystem("Laser Particle System 3", &classInstance->laserPS3);
+	script->AddDragBoxGameObject("Laser GameObject 1", &classInstance->laserGO);
+	script->AddDragBoxGameObject("Laser GameObject 2", &classInstance->laserGO2);
+	script->AddDragBoxGameObject("Laser GameObject 3", &classInstance->laserGO3);
 
 	script->AddDragBoxGameObject("Meteor 0", &classInstance->meteors[0]);
 	script->AddDragBoxGameObject("Meteor 1", &classInstance->meteors[1]);
@@ -115,6 +119,8 @@ void ThanosAttacks::Start()
 	bullet3.SetActive(false);
 	area.SetActive(false);
 	laserGO.SetActive(false);
+	laserGO2.SetActive(false);
+	laserGO3.SetActive(false);
 
 	bullets[0] = bullet1;
 	bullets[1] = bullet2;
@@ -231,6 +237,8 @@ void ThanosAttacks::Update()
 		case THANOS_STATE::IDLE:
 
 			laserPS.Stop();
+			laserPS2.Stop();
+			laserPS3.Stop();
 
 			for (int i = 0; i < 4; i++) {
 				beams[i].SetActive(false);
@@ -391,20 +399,39 @@ void ThanosAttacks::Update()
 			
 			charge += Time::GetDeltaTime();
 
-			Seek2(&laserPosition, player.GetTransform().GetGlobalPosition(), laserSpeed / 6);
+			Seek2(&laserPosition, player.GetTransform().GetGlobalPosition(), laserSpeed / 4);
 
 			if (charge > 0.5f) {
 
 				//Rotate2(laserPosition.GetTransform().GetGlobalPosition(), 0, &laserGO);
 				laserPS.Play();
 				laserPS.SetInitialSpeed(boss.GetTransform().GetForward() * 40.0f);
+				laserPS2.Play();
+				laserPS2.SetInitialSpeed(laserGO2.GetTransform().GetForward() * 40.0f);
+				laserPS3.Play();
+				laserPS3.SetInitialSpeed(laserGO3.GetTransform().GetForward() * 40.0f);
 				laserGO.SetActive(true);
+				laserGO2.SetActive(true);
+				laserGO3.SetActive(true);
 			}
 			if (charge > 0.75f) {
 				thanosAnimationPlayer.Pause();
 
 			}
+
+			if (charge > 8.5f && laserExpanded == false) {
+				laserGO2.GetTransform().Rotate(0, -Time::GetDeltaTime() * 100, 0);
+				laserGO3.GetTransform().Rotate(0, Time::GetDeltaTime() * 100 , 0);
+			}
+
+			if (charge > 9.0f) {
+				laserExpanded = true;
+				laserGO2.GetTransform().Rotate(0, Time::GetDeltaTime() * 100, 0);
+				laserGO3.GetTransform().Rotate(0, -Time::GetDeltaTime() * 100, 0);
+			}
+
 			if (charge > 10.5f) {
+				laserExpanded = false;
 				thanosAnimationPlayer.Resume();
 				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
 				thanosAnimationPlayer.SetLoop(true);
@@ -412,8 +439,16 @@ void ThanosAttacks::Update()
 				thanosState = THANOS_STATE::IDLE;
 				laserPS.StopEmitting();
 				laserPS.Stop();
+				laserPS2.StopEmitting();
+				laserPS2.Stop();
+				laserPS3.StopEmitting();
+				laserPS3.Stop();
 				charge = 0.0f;
 				laserGO.SetActive(false);
+				laserGO2.GetTransform().SetRotation(0.0f, 53.4f, 0.0f);
+				laserGO2.SetActive(false);
+				laserGO3.GetTransform().SetRotation(0.0f, -53.4f, 0.0f);
+				laserGO3.SetActive(false);
 				isAttacking = false;
 			}
 

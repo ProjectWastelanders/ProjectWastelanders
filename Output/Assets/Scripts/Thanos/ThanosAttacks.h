@@ -141,7 +141,11 @@ public:
 	API_GameObject laserPosition;
 	float laserSpeed = 1.5f;
 	API_GameObject laserGO;
+	API_GameObject laserGO2;
+	API_GameObject laserGO3;
 	API_ParticleSystem laserPS;
+	API_ParticleSystem laserPS2;
+	API_ParticleSystem laserPS3;
 
 	API_GameObject meteors[30];
 	API_Vector3 meteorsPosition[30];
@@ -184,5 +188,8 @@ public:
 
 	bool anotherTimer = 0.0f;
 
+	float laserDirectionTimer = 0.0f;
+
+	bool laserExpanded = false;
 };
 

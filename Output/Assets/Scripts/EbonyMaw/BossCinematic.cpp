@@ -36,6 +36,8 @@ void BossCinematic::Start()
     playerMov = (PlayerMove*)player.GetScript("PlayerMove");
 
     activeCinematic = false;
+    showedCinematic = false;
+    showedStartDialog = false;
     nextDialog = false;
     animBoss = false;
 
@@ -114,7 +116,7 @@ void BossCinematic::Update()
             }
         }
 
-        if (bLoop->battle && !bLoop->endBattle)
+        if (bLoop->battle && !bLoop->endBattle && !showedStartDialog)
         {
             if (_timerSB >= timerSB)
             {
@@ -125,6 +127,7 @@ void BossCinematic::Update()
                 }
                 else {
                     Dialog_StartBattle.GetGameObject().SetActive(false);
+                    showedStartDialog = true;
                 }
             }
             else {
@@ -220,9 +223,9 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
 void BossCinematic::OnCollisionEnter(API::API_RigidBody other)
 {
     std::string detectionTag = other.GetGameObject().GetTag();
-    if (detectionTag == "Player")
+    if (detectionTag == "Player" && !showedCinematic)
     {
         activeCinematic = true;
-        //playerMov->openingChest = true;
+        showedCinematic = true;
     }
 }

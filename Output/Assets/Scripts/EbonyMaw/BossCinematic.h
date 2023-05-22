@@ -40,6 +40,7 @@ public:
 	PlayerMove* playerMov;
 
 	bool activeCinematic, nextDialog, animBoss;
+	bool showedCinematic, showedStartDialog;
 	int currentDialog;
 	float timerSB = 0.0f;
 	float _timerSB = 0.0f;

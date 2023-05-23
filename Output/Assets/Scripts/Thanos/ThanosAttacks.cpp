@@ -14,6 +14,7 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxGameObject("Player", &classInstance->player);
 
 	script->AddDragBoxGameObject("Melee Attack 1", &classInstance->melee1); 
+	script->AddDragBoxGameObject("Area", &classInstance->area); 
 	script->AddDragBoxGameObject("SWORD", &classInstance->sword);
 	script->AddDragBoxGameObject("DeflectProjectiles", &classInstance->defenseSword);
 	script->AddDragBoxGameObject("BoomerangTarget", &classInstance->bTarget);
@@ -255,7 +256,6 @@ void ThanosAttacks::Update()
 			attackType = rand() % 100 + 1;
 
 			isAttacking = true;
-			attackType = 77.0f;
 			charge += Time::GetDeltaTime();
 			if (charge > 2.0f) {
 				charge = 0.0f;

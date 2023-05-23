@@ -31,12 +31,16 @@ public:
 	float sphereGrowing = 0.0f;
 	float sphereGrowingTime = 0.0f;
 
-	uint effectSpherePrefab;
+	uint big_effectSpherePrefab;
+	uint small_effectSpherePrefab;
 	API_GameObject effectSphere;
 	API_GameObject effectSphere2;
+	API_GameObject childSphere;
+	API_GameObject childSphere2;
 
 	bool hasSpawnedSphere;
-	float scaleValue;
+	float scaleValue_big;
+	float scaleValue_small;
 
 	float startParticles;
 	float endParticles;

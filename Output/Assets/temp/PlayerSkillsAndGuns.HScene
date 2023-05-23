@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.4600591659545898,
+                "Aspect ratio": 1.6360946893692017,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -86,14 +86,14 @@
                     0.0
                 ],
                 "Rotation": [
-                    0.0,
-                    -90.0,
-                    0.0
+                    -180.0,
+                    -89.98020935058594,
+                    -179.99911499023438
                 ],
                 "Scale": [
-                    1.000001072883606,
+                    1.0000011920928955,
                     1.0,
-                    1.000001072883606
+                    1.0000011920928955
                 ],
                 "Type": 1
             },
@@ -126,7 +126,7 @@
                 "Enabled": true,
                 "Gravity": [
                     0.0,
-                    0.0,
+                    -20.0,
                     0.0
                 ],
                 "HasPhysBody": true,
@@ -185,25 +185,25 @@
                         "Y tp limit": -20.0
                     },
                     {
-                        "Rigid Body": 1475165862
+                        "Rigid Body": 4002359204
                     },
                     {
                         "Dash Time": 0.5
                     },
                     {
-                        "Dash Distance": 6.0
+                        "Dash Distance": 9.0
                     },
                     {
-                        "Upgrade Dash Distance": 8.0
+                        "Upgrade Dash Distance": 11.0
                     },
                     {
-                        "Dash Cooldown": 6.0
+                        "Dash Cooldown": 2.0
                     },
                     {
-                        "Upgrade Dash Cooldown": 3.0
+                        "Upgrade Dash Cooldown": 1.0
                     },
                     {
-                        "AnimationPlayer": 3800139251
+                        "AnimationPlayer": 2214707443
                     },
                     {
                         "Dash Animation": 686365920
@@ -218,19 +218,28 @@
                         "Idle Animation 3": 1590499778
                     },
                     {
-                        "Shoot Duals Animation": 2706901869
+                        "Run Animation": 781813718
                     },
                     {
-                        "Shoot SemiAuto Animation": 2946562888
+                        "Shoot Duals Animation": 3136277923
                     },
                     {
-                        "Shoot Automatic Animation": 3917491268
+                        "Shoot SemiAuto Animation": 4096767242
                     },
                     {
-                        "Shoot Burst Animation": 3917491268
+                        "Shoot Automatic Animation": 1198071227
                     },
                     {
-                        "Shoot Shotgun Animation": 2946562888
+                        "Shoot Burst Animation": 4096767242
+                    },
+                    {
+                        "Shoot Shotgun Animation": 4155826996
+                    },
+                    {
+                        "Shoot Flamethrower Animation": 1198071227
+                    },
+                    {
+                        "Shoot Ricochet Animation": 4096767242
                     },
                     {
                         "Swap Gun Animation": 2774027618
@@ -242,7 +251,13 @@
                         "Dead Animation": 296001631
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
+                    },
+                    {
+                        "Walk Particles": 1790048447
+                    },
+                    {
+                        "Shoot Particles": 2191867851
                     },
                     {
                         "On HUB": false
@@ -263,25 +278,25 @@
                         "Y tp limit": -20.0
                     },
                     {
-                        "Rigid Body": 1475165862
+                        "Rigid Body": 4002359204
                     },
                     {
                         "Dash Time": 0.5
                     },
                     {
-                        "Dash Distance": 6.0
+                        "Dash Distance": 9.0
                     },
                     {
-                        "Upgrade Dash Distance": 8.0
+                        "Upgrade Dash Distance": 11.0
                     },
                     {
-                        "Dash Cooldown": 6.0
+                        "Dash Cooldown": 2.0
                     },
                     {
-                        "Upgrade Dash Cooldown": 3.0
+                        "Upgrade Dash Cooldown": 1.0
                     },
                     {
-                        "AnimationPlayer": 3800139251
+                        "AnimationPlayer": 2214707443
                     },
                     {
                         "Dash Animation": 686365920
@@ -296,19 +311,28 @@
                         "Idle Animation 3": 1590499778
                     },
                     {
-                        "Shoot Duals Animation": 2706901869
+                        "Run Animation": 781813718
                     },
                     {
-                        "Shoot SemiAuto Animation": 2946562888
+                        "Shoot Duals Animation": 3136277923
                     },
                     {
-                        "Shoot Automatic Animation": 3917491268
+                        "Shoot SemiAuto Animation": 4096767242
                     },
                     {
-                        "Shoot Burst Animation": 3917491268
+                        "Shoot Automatic Animation": 1198071227
                     },
                     {
-                        "Shoot Shotgun Animation": 2946562888
+                        "Shoot Burst Animation": 4096767242
+                    },
+                    {
+                        "Shoot Shotgun Animation": 4155826996
+                    },
+                    {
+                        "Shoot Flamethrower Animation": 1198071227
+                    },
+                    {
+                        "Shoot Ricochet Animation": 4096767242
                     },
                     {
                         "Swap Gun Animation": 2774027618
@@ -320,7 +344,13 @@
                         "Dead Animation": 296001631
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
+                    },
+                    {
+                        "Walk Particles": 1790048447
+                    },
+                    {
+                        "Shoot Particles": 2191867851
                     },
                     {
                         "On HUB": false
@@ -360,7 +390,10 @@
                         "Upgraded Aid Kit Heal Amount": 60.0
                     },
                     {
-                        "Player GO": 1475165862
+                        "Material Component": 2214707443
+                    },
+                    {
+                        "Player GO": 4002359204
                     },
                     {
                         "Max HP": 100.0
@@ -390,7 +423,10 @@
                         "Upgraded Aid Kit Heal Amount": 60.0
                     },
                     {
-                        "Player GO": 1475165862
+                        "Material Component": 2214707443
+                    },
+                    {
+                        "Player GO": 4002359204
                     }
                 ],
                 "Script Resource": 486374105,
@@ -400,37 +436,37 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Base Gun": 0
                     },
                     {
-                        "Normal Gun": 3
+                        "Normal Gun": 2
                     },
                     {
-                        "Special Gun": 6
+                        "Special Gun": -1
                     },
                     {
-                        "Duals": 1764362837
+                        "Duals": 2257186364
                     },
                     {
-                        "Semiautomatic": 640409176
+                        "Semiautomatic": 846666331
                     },
                     {
-                        "Automatic": 4166709816
+                        "Automatic": 2369541379
                     },
                     {
-                        "Burst": 4117960599
+                        "Burst": 3780968054
                     },
                     {
-                        "Shotgun": 3172887682
+                        "Shotgun": 4276942289
                     },
                     {
-                        "Flamethrower": 3579561625
+                        "Flamethrower": 2097790931
                     },
                     {
-                        "Ricochet": 2767080449
+                        "Ricochet": 2206378498
                     },
                     {
                         "Swap Delay": 1.0
@@ -439,37 +475,37 @@
                         "Fast Swap Delay": 0.5
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Base Gun": 0
                     },
                     {
-                        "Normal Gun": 3
+                        "Normal Gun": 2
                     },
                     {
-                        "Special Gun": 6
+                        "Special Gun": -1
                     },
                     {
-                        "Duals": 1764362837
+                        "Duals": 2257186364
                     },
                     {
-                        "Semiautomatic": 640409176
+                        "Semiautomatic": 846666331
                     },
                     {
-                        "Automatic": 4166709816
+                        "Automatic": 2369541379
                     },
                     {
-                        "Burst": 4117960599
+                        "Burst": 3780968054
                     },
                     {
-                        "Shotgun": 3172887682
+                        "Shotgun": 4276942289
                     },
                     {
-                        "Flamethrower": 3579561625
+                        "Flamethrower": 2097790931
                     },
                     {
-                        "Ricochet": 2767080449
+                        "Ricochet": 2206378498
                     },
                     {
                         "Swap Delay": 1.0
@@ -499,9 +535,9 @@
         "IsStatic": false,
         "Name": "Player",
         "ParentUID": 2066812041,
-        "PrefabUID": 3594397937,
+        "PrefabUID": 2413255802,
         "Tag": "Player",
-        "UID": 1475165862,
+        "UID": 4002359204,
         "UpdateWithBones": false
     },
     {
@@ -530,10 +566,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RootJoint",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1264496349,
+        "UID": 3656879091,
         "UpdateWithBones": false
     },
     {
@@ -562,10 +598,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_Translation",
-        "ParentUID": 1264496349,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3656879091,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1555647617,
+        "UID": 2802789518,
         "UpdateWithBones": false
     },
     {
@@ -594,10 +630,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_PreRotation",
-        "ParentUID": 1555647617,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2802789518,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3847407221,
+        "UID": 4054840806,
         "UpdateWithBones": false
     },
     {
@@ -626,10 +662,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg1_$AssimpFbx$_Rotation",
-        "ParentUID": 3847407221,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4054840806,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 407750904,
+        "UID": 2461323037,
         "UpdateWithBones": false
     },
     {
@@ -658,10 +694,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg1",
-        "ParentUID": 407750904,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2461323037,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2586828120,
+        "UID": 3460950465,
         "UpdateWithBones": false
     },
     {
@@ -690,10 +726,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee1_$AssimpFbx$_Translation",
-        "ParentUID": 2586828120,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3460950465,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 991886647,
+        "UID": 2872050868,
         "UpdateWithBones": false
     },
     {
@@ -722,10 +758,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee1_$AssimpFbx$_PreRotation",
-        "ParentUID": 991886647,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2872050868,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1656065699,
+        "UID": 2851015747,
         "UpdateWithBones": false
     },
     {
@@ -754,10 +790,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee1",
-        "ParentUID": 1656065699,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2851015747,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2847936255,
+        "UID": 2948704543,
         "UpdateWithBones": false
     },
     {
@@ -786,10 +822,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightAnkle1_$AssimpFbx$_Translation",
-        "ParentUID": 2847936255,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2948704543,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3299756811,
+        "UID": 912173994,
         "UpdateWithBones": false
     },
     {
@@ -818,10 +854,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightAnkle1_$AssimpFbx$_PreRotation",
-        "ParentUID": 3299756811,
-        "PrefabUID": 3594397937,
+        "ParentUID": 912173994,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3158210182,
+        "UID": 1079197618,
         "UpdateWithBones": false
     },
     {
@@ -850,10 +886,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightAnkle1",
-        "ParentUID": 3158210182,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1079197618,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1195329597,
+        "UID": 2954453850,
         "UpdateWithBones": false
     },
     {
@@ -882,10 +918,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFoot1_$AssimpFbx$_Translation",
-        "ParentUID": 1195329597,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2954453850,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 755545440,
+        "UID": 1752718113,
         "UpdateWithBones": false
     },
     {
@@ -914,10 +950,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFoot1_$AssimpFbx$_PreRotation",
-        "ParentUID": 755545440,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1752718113,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1364604128,
+        "UID": 1671898516,
         "UpdateWithBones": false
     },
     {
@@ -946,10 +982,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFoot1",
-        "ParentUID": 1364604128,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1671898516,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 427407967,
+        "UID": 1337893539,
         "UpdateWithBones": false
     },
     {
@@ -978,10 +1014,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_Translation",
-        "ParentUID": 427407967,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1337893539,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1036643819,
+        "UID": 530330366,
         "UpdateWithBones": false
     },
     {
@@ -1010,10 +1046,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_PreRotation",
-        "ParentUID": 1036643819,
-        "PrefabUID": 3594397937,
+        "ParentUID": 530330366,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3843847911,
+        "UID": 2591534870,
         "UpdateWithBones": false
     },
     {
@@ -1042,10 +1078,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip1_$AssimpFbx$_Rotation",
-        "ParentUID": 3843847911,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2591534870,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1713132562,
+        "UID": 2263013901,
         "UpdateWithBones": false
     },
     {
@@ -1074,10 +1110,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip1",
-        "ParentUID": 1713132562,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2263013901,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3055256378,
+        "UID": 1005482352,
         "UpdateWithBones": false
     },
     {
@@ -1106,10 +1142,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackLow_$AssimpFbx$_Translation",
-        "ParentUID": 1264496349,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3656879091,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1748958337,
+        "UID": 3309838384,
         "UpdateWithBones": false
     },
     {
@@ -1138,10 +1174,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackLow_$AssimpFbx$_PreRotation",
-        "ParentUID": 1748958337,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3309838384,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1905538677,
+        "UID": 672767471,
         "UpdateWithBones": false
     },
     {
@@ -1170,10 +1206,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackLow",
-        "ParentUID": 1905538677,
-        "PrefabUID": 3594397937,
+        "ParentUID": 672767471,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2558392569,
+        "UID": 2125735611,
         "UpdateWithBones": false
     },
     {
@@ -1202,10 +1238,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackMid_$AssimpFbx$_Translation",
-        "ParentUID": 2558392569,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2125735611,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1260313932,
+        "UID": 4150855159,
         "UpdateWithBones": false
     },
     {
@@ -1234,10 +1270,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackMid_$AssimpFbx$_PreRotation",
-        "ParentUID": 1260313932,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4150855159,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2429369788,
+        "UID": 4107480674,
         "UpdateWithBones": false
     },
     {
@@ -1266,10 +1302,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackMid",
-        "ParentUID": 2429369788,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4107480674,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3636861164,
+        "UID": 3694469577,
         "UpdateWithBones": false
     },
     {
@@ -1298,10 +1334,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackHigh_$AssimpFbx$_Translation",
-        "ParentUID": 3636861164,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3694469577,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 704097755,
+        "UID": 4254932061,
         "UpdateWithBones": false
     },
     {
@@ -1330,10 +1366,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackHigh_$AssimpFbx$_PreRotation",
-        "ParentUID": 704097755,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4254932061,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1528051607,
+        "UID": 140679168,
         "UpdateWithBones": false
     },
     {
@@ -1362,10 +1398,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "BackHigh",
-        "ParentUID": 1528051607,
-        "PrefabUID": 3594397937,
+        "ParentUID": 140679168,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2435976323,
+        "UID": 1698920448,
         "UpdateWithBones": false
     },
     {
@@ -1394,10 +1430,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftChest_$AssimpFbx$_Translation",
-        "ParentUID": 2435976323,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1698920448,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4028933727,
+        "UID": 1436145663,
         "UpdateWithBones": false
     },
     {
@@ -1426,10 +1462,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftChest_$AssimpFbx$_PreRotation",
-        "ParentUID": 4028933727,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1436145663,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2670840298,
+        "UID": 3353520139,
         "UpdateWithBones": false
     },
     {
@@ -1458,10 +1494,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftChest",
-        "ParentUID": 2670840298,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3353520139,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 258274033,
+        "UID": 1003386758,
         "UpdateWithBones": false
     },
     {
@@ -1490,10 +1526,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftShoulder_$AssimpFbx$_Translation",
-        "ParentUID": 258274033,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1003386758,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2563350437,
+        "UID": 3441376574,
         "UpdateWithBones": false
     },
     {
@@ -1522,10 +1558,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftShoulder_$AssimpFbx$_PreRotation",
-        "ParentUID": 2563350437,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3441376574,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2834658281,
+        "UID": 1622818389,
         "UpdateWithBones": false
     },
     {
@@ -1554,10 +1590,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftShoulder",
-        "ParentUID": 2834658281,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1622818389,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2291897596,
+        "UID": 3124339289,
         "UpdateWithBones": false
     },
     {
@@ -1586,10 +1622,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftElbow_$AssimpFbx$_Translation",
-        "ParentUID": 2291897596,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3124339289,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1872517419,
+        "UID": 1006933548,
         "UpdateWithBones": false
     },
     {
@@ -1618,10 +1654,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftElbow_$AssimpFbx$_PreRotation",
-        "ParentUID": 1872517419,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1006933548,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1392892710,
+        "UID": 1264339996,
         "UpdateWithBones": false
     },
     {
@@ -1650,10 +1686,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftElbow",
-        "ParentUID": 1392892710,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1264339996,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2811753822,
+        "UID": 3555097292,
         "UpdateWithBones": false
     },
     {
@@ -1682,10 +1718,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_Translation",
-        "ParentUID": 2811753822,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3555097292,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1093424373,
+        "UID": 3348199739,
         "UpdateWithBones": false
     },
     {
@@ -1714,10 +1750,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_PreRotation",
-        "ParentUID": 1093424373,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3348199739,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1297918329,
+        "UID": 4253973111,
         "UpdateWithBones": false
     },
     {
@@ -1746,10 +1782,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftWrist_$AssimpFbx$_Rotation",
-        "ParentUID": 1297918329,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4253973111,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 555042764,
+        "UID": 2097097954,
         "UpdateWithBones": false
     },
     {
@@ -1778,10 +1814,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftWrist",
-        "ParentUID": 555042764,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2097097954,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 811510332,
+        "UID": 3233362506,
         "UpdateWithBones": false
     },
     {
@@ -1810,10 +1846,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftHand_$AssimpFbx$_Translation",
-        "ParentUID": 811510332,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3233362506,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2161012588,
+        "UID": 2105112273,
         "UpdateWithBones": false
     },
     {
@@ -1842,10 +1878,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftHand_$AssimpFbx$_PreRotation",
-        "ParentUID": 2161012588,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2105112273,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3447977564,
+        "UID": 2852517125,
         "UpdateWithBones": false
     },
     {
@@ -1874,10 +1910,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftHand",
-        "ParentUID": 3447977564,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2852517125,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1628842507,
+        "UID": 101959880,
         "UpdateWithBones": true
     },
     {
@@ -1906,10 +1942,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftThumb_$AssimpFbx$_Translation",
-        "ParentUID": 1628842507,
-        "PrefabUID": 3594397937,
+        "ParentUID": 101959880,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1622663558,
+        "UID": 3262832488,
         "UpdateWithBones": false
     },
     {
@@ -1938,10 +1974,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftThumb_$AssimpFbx$_PreRotation",
-        "ParentUID": 1622663558,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3262832488,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 934784829,
+        "UID": 840361607,
         "UpdateWithBones": false
     },
     {
@@ -1970,10 +2006,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftThumb",
-        "ParentUID": 934784829,
-        "PrefabUID": 3594397937,
+        "ParentUID": 840361607,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3310110817,
+        "UID": 770934834,
         "UpdateWithBones": false
     },
     {
@@ -2002,10 +2038,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMIdThumb_$AssimpFbx$_Translation",
-        "ParentUID": 3310110817,
-        "PrefabUID": 3594397937,
+        "ParentUID": 770934834,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2459956180,
+        "UID": 3342747098,
         "UpdateWithBones": false
     },
     {
@@ -2034,10 +2070,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMIdThumb_$AssimpFbx$_PreRotation",
-        "ParentUID": 2459956180,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3342747098,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2788279780,
+        "UID": 2592776097,
         "UpdateWithBones": false
     },
     {
@@ -2066,10 +2102,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMIdThumb",
-        "ParentUID": 2788279780,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2592776097,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3189686068,
+        "UID": 2779132949,
         "UpdateWithBones": false
     },
     {
@@ -2098,10 +2134,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipThumb_$AssimpFbx$_Translation",
-        "ParentUID": 3189686068,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2779132949,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2144667843,
+        "UID": 2033324824,
         "UpdateWithBones": false
     },
     {
@@ -2130,10 +2166,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipThumb_$AssimpFbx$_PreRotation",
-        "ParentUID": 2144667843,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2033324824,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3676819359,
+        "UID": 4280462840,
         "UpdateWithBones": false
     },
     {
@@ -2162,10 +2198,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipThumb",
-        "ParentUID": 3676819359,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4280462840,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3789751339,
+        "UID": 3797550679,
         "UpdateWithBones": false
     },
     {
@@ -2194,10 +2230,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftLittle_$AssimpFbx$_Translation",
-        "ParentUID": 1628842507,
-        "PrefabUID": 3594397937,
+        "ParentUID": 101959880,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2142011942,
+        "UID": 3973982787,
         "UpdateWithBones": false
     },
     {
@@ -2226,10 +2262,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 2142011942,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3973982787,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3453929566,
+        "UID": 3747307294,
         "UpdateWithBones": false
     },
     {
@@ -2258,10 +2294,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftLittle",
-        "ParentUID": 3453929566,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3747307294,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3696313334,
+        "UID": 2082654645,
         "UpdateWithBones": false
     },
     {
@@ -2290,10 +2326,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartLittle_$AssimpFbx$_Translation",
-        "ParentUID": 3696313334,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2082654645,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3770119278,
+        "UID": 2698093881,
         "UpdateWithBones": false
     },
     {
@@ -2322,10 +2358,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 3770119278,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2698093881,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1137893189,
+        "UID": 3599398541,
         "UpdateWithBones": false
     },
     {
@@ -2354,10 +2390,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartLittle",
-        "ParentUID": 1137893189,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3599398541,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 589936648,
+        "UID": 3858937841,
         "UpdateWithBones": false
     },
     {
@@ -2386,10 +2422,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidLittle_$AssimpFbx$_Translation",
-        "ParentUID": 589936648,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3858937841,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3502086056,
+        "UID": 22161572,
         "UpdateWithBones": false
     },
     {
@@ -2418,10 +2454,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 3502086056,
-        "PrefabUID": 3594397937,
+        "ParentUID": 22161572,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2029845447,
+        "UID": 1017544948,
         "UpdateWithBones": false
     },
     {
@@ -2450,10 +2486,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidLittle",
-        "ParentUID": 2029845447,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1017544948,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2560925299,
+        "UID": 1306244484,
         "UpdateWithBones": false
     },
     {
@@ -2482,10 +2518,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LerftTipLittle_$AssimpFbx$_Translation",
-        "ParentUID": 2560925299,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1306244484,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1497850126,
+        "UID": 409695059,
         "UpdateWithBones": false
     },
     {
@@ -2514,10 +2550,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LerftTipLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 1497850126,
-        "PrefabUID": 3594397937,
+        "ParentUID": 409695059,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 17675365,
+        "UID": 501889903,
         "UpdateWithBones": false
     },
     {
@@ -2546,10 +2582,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LerftTipLittle",
-        "ParentUID": 17675365,
-        "PrefabUID": 3594397937,
+        "ParentUID": 501889903,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2215940009,
+        "UID": 2517983803,
         "UpdateWithBones": false
     },
     {
@@ -2578,10 +2614,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftRing_$AssimpFbx$_Translation",
-        "ParentUID": 1628842507,
-        "PrefabUID": 3594397937,
+        "ParentUID": 101959880,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 734094268,
+        "UID": 1165195126,
         "UpdateWithBones": false
     },
     {
@@ -2610,10 +2646,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 734094268,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1165195126,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2561177324,
+        "UID": 3002547694,
         "UpdateWithBones": false
     },
     {
@@ -2642,10 +2678,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftRing",
-        "ParentUID": 2561177324,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3002547694,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1864213467,
+        "UID": 19740357,
         "UpdateWithBones": false
     },
     {
@@ -2674,10 +2710,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartRing_$AssimpFbx$_Translation",
-        "ParentUID": 1864213467,
-        "PrefabUID": 3594397937,
+        "ParentUID": 19740357,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3084035479,
+        "UID": 4248827273,
         "UpdateWithBones": false
     },
     {
@@ -2706,10 +2742,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 3084035479,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4248827273,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3923989123,
+        "UID": 320996124,
         "UpdateWithBones": false
     },
     {
@@ -2738,10 +2774,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartRing",
-        "ParentUID": 3923989123,
-        "PrefabUID": 3594397937,
+        "ParentUID": 320996124,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2061935710,
+        "UID": 1356307916,
         "UpdateWithBones": false
     },
     {
@@ -2770,10 +2806,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidRing_$AssimpFbx$_Translation",
-        "ParentUID": 2061935710,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1356307916,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3334131702,
+        "UID": 2657417276,
         "UpdateWithBones": false
     },
     {
@@ -2802,10 +2838,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 3334131702,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2657417276,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4075712622,
+        "UID": 2036929899,
         "UpdateWithBones": false
     },
     {
@@ -2834,10 +2870,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidRing",
-        "ParentUID": 4075712622,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2036929899,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3879078725,
+        "UID": 1866318950,
         "UpdateWithBones": false
     },
     {
@@ -2866,10 +2902,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipRing_$AssimpFbx$_Translation",
-        "ParentUID": 3879078725,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1866318950,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2091308040,
+        "UID": 3640979358,
         "UpdateWithBones": false
     },
     {
@@ -2898,10 +2934,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 2091308040,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3640979358,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3860685736,
+        "UID": 3949040694,
         "UpdateWithBones": false
     },
     {
@@ -2930,10 +2966,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipRing",
-        "ParentUID": 3860685736,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3949040694,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1453275079,
+        "UID": 2420638125,
         "UpdateWithBones": false
     },
     {
@@ -2962,10 +2998,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMiddle_$AssimpFbx$_Translation",
-        "ParentUID": 1628842507,
-        "PrefabUID": 3594397937,
+        "ParentUID": 101959880,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1919683187,
+        "UID": 1320140176,
         "UpdateWithBones": false
     },
     {
@@ -2994,10 +3030,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMiddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 1919683187,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1320140176,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3765812495,
+        "UID": 1474026192,
         "UpdateWithBones": false
     },
     {
@@ -3026,10 +3062,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMiddle",
-        "ParentUID": 3765812495,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1474026192,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1943064666,
+        "UID": 3523909904,
         "UpdateWithBones": false
     },
     {
@@ -3058,10 +3094,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartMIddle_$AssimpFbx$_Translation",
-        "ParentUID": 1943064666,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3523909904,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3815156770,
+        "UID": 1009544271,
         "UpdateWithBones": false
     },
     {
@@ -3090,10 +3126,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartMIddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 3815156770,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1009544271,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1366997641,
+        "UID": 2636859547,
         "UpdateWithBones": false
     },
     {
@@ -3122,10 +3158,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartMIddle",
-        "ParentUID": 1366997641,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2636859547,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3857419293,
+        "UID": 1011388758,
         "UpdateWithBones": false
     },
     {
@@ -3154,10 +3190,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidMiddle_$AssimpFbx$_Translation",
-        "ParentUID": 3857419293,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1011388758,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1673513664,
+        "UID": 2202870094,
         "UpdateWithBones": false
     },
     {
@@ -3186,10 +3222,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidMiddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 1673513664,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2202870094,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2116962752,
+        "UID": 1326608805,
         "UpdateWithBones": false
     },
     {
@@ -3218,10 +3254,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidMiddle",
-        "ParentUID": 2116962752,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1326608805,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3260994752,
+        "UID": 854879720,
         "UpdateWithBones": false
     },
     {
@@ -3250,10 +3286,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipMiddle_$AssimpFbx$_Translation",
-        "ParentUID": 3260994752,
-        "PrefabUID": 3594397937,
+        "ParentUID": 854879720,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1744362431,
+        "UID": 2219165448,
         "UpdateWithBones": false
     },
     {
@@ -3282,10 +3318,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipMiddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 1744362431,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2219165448,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4056514251,
+        "UID": 1954083495,
         "UpdateWithBones": false
     },
     {
@@ -3314,10 +3350,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipMiddle",
-        "ParentUID": 4056514251,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1954083495,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3004120390,
+        "UID": 2157904595,
         "UpdateWithBones": false
     },
     {
@@ -3346,10 +3382,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftIndex_$AssimpFbx$_Translation",
-        "ParentUID": 1628842507,
-        "PrefabUID": 3594397937,
+        "ParentUID": 101959880,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2138226173,
+        "UID": 1814761710,
         "UpdateWithBones": false
     },
     {
@@ -3378,10 +3414,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 2138226173,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1814761710,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1877911072,
+        "UID": 472065477,
         "UpdateWithBones": false
     },
     {
@@ -3410,10 +3446,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftIndex",
-        "ParentUID": 1877911072,
-        "PrefabUID": 3594397937,
+        "ParentUID": 472065477,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3242253472,
+        "UID": 580825225,
         "UpdateWithBones": false
     },
     {
@@ -3442,10 +3478,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartIndex_$AssimpFbx$_Translation",
-        "ParentUID": 3242253472,
-        "PrefabUID": 3594397937,
+        "ParentUID": 580825225,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2627765535,
+        "UID": 515897884,
         "UpdateWithBones": false
     },
     {
@@ -3474,10 +3510,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 2627765535,
-        "PrefabUID": 3594397937,
+        "ParentUID": 515897884,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3532339115,
+        "UID": 2810052812,
         "UpdateWithBones": false
     },
     {
@@ -3506,10 +3542,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftStartIndex",
-        "ParentUID": 3532339115,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2810052812,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3744091047,
+        "UID": 2926491452,
         "UpdateWithBones": false
     },
     {
@@ -3538,10 +3574,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidIndex_$AssimpFbx$_Translation",
-        "ParentUID": 3744091047,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2926491452,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1502621650,
+        "UID": 602792043,
         "UpdateWithBones": false
     },
     {
@@ -3570,10 +3606,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 1502621650,
-        "PrefabUID": 3594397937,
+        "ParentUID": 602792043,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1503465978,
+        "UID": 859376487,
         "UpdateWithBones": false
     },
     {
@@ -3602,10 +3638,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftMidIndex",
-        "ParentUID": 1503465978,
-        "PrefabUID": 3594397937,
+        "ParentUID": 859376487,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 156883521,
+        "UID": 1755968147,
         "UpdateWithBones": false
     },
     {
@@ -3634,10 +3670,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipIndex_$AssimpFbx$_Translation",
-        "ParentUID": 156883521,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1755968147,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 285781813,
+        "UID": 309248942,
         "UpdateWithBones": false
     },
     {
@@ -3666,10 +3702,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 285781813,
-        "PrefabUID": 3594397937,
+        "ParentUID": 309248942,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2127087801,
+        "UID": 3844503430,
         "UpdateWithBones": false
     },
     {
@@ -3698,10 +3734,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "LeftTipIndex",
-        "ParentUID": 2127087801,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3844503430,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3802394637,
+        "UID": 106380605,
         "UpdateWithBones": false
     },
     {
@@ -3715,9 +3751,9 @@
                     0.09099999815225601
                 ],
                 "Rotation": [
-                    176.03599548339844,
-                    19.009000778198242,
-                    88.2959976196289
+                    177.15499877929688,
+                    34.5629997253418,
+                    81.41500091552734
                 ],
                 "Scale": [
                     0.10000000149011612,
@@ -3746,10 +3782,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Dual Left",
-        "ParentUID": 1628842507,
-        "PrefabUID": 3594397937,
+        "ParentUID": 101959880,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 419460321,
+        "UID": 1800482401,
         "UpdateWithBones": false
     },
     {
@@ -3778,10 +3814,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Dual Left",
-        "ParentUID": 419460321,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1800482401,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1140484082,
+        "UID": 2764706261,
         "UpdateWithBones": false
     },
     {
@@ -3810,10 +3846,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightChest_$AssimpFbx$_Translation",
-        "ParentUID": 2435976323,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1698920448,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3242952240,
+        "UID": 2655226840,
         "UpdateWithBones": false
     },
     {
@@ -3842,10 +3878,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightChest_$AssimpFbx$_PreRotation",
-        "ParentUID": 3242952240,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2655226840,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4032052208,
+        "UID": 4155407800,
         "UpdateWithBones": false
     },
     {
@@ -3874,10 +3910,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightChest",
-        "ParentUID": 4032052208,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4155407800,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 739273903,
+        "UID": 3239319831,
         "UpdateWithBones": false
     },
     {
@@ -3906,10 +3942,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightShoulder_$AssimpFbx$_Translation",
-        "ParentUID": 739273903,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3239319831,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2395292795,
+        "UID": 248208386,
         "UpdateWithBones": false
     },
     {
@@ -3938,10 +3974,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightShoulder_$AssimpFbx$_PreRotation",
-        "ParentUID": 2395292795,
-        "PrefabUID": 3594397937,
+        "ParentUID": 248208386,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1984478902,
+        "UID": 1862609898,
         "UpdateWithBones": false
     },
     {
@@ -3970,10 +4006,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightShoulder",
-        "ParentUID": 1984478902,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1862609898,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 897658413,
+        "UID": 3111107826,
         "UpdateWithBones": false
     },
     {
@@ -4002,10 +4038,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightElbow_$AssimpFbx$_Translation",
-        "ParentUID": 897658413,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3111107826,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4102214673,
+        "UID": 3237216666,
         "UpdateWithBones": false
     },
     {
@@ -4034,10 +4070,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightElbow_$AssimpFbx$_PreRotation",
-        "ParentUID": 4102214673,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3237216666,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2142434116,
+        "UID": 4147613282,
         "UpdateWithBones": false
     },
     {
@@ -4066,10 +4102,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightElbow",
-        "ParentUID": 2142434116,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4147613282,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2781334548,
+        "UID": 1743061449,
         "UpdateWithBones": false
     },
     {
@@ -4098,10 +4134,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightWrist_$AssimpFbx$_Translation",
-        "ParentUID": 2781334548,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1743061449,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 692026147,
+        "UID": 3675159645,
         "UpdateWithBones": false
     },
     {
@@ -4130,10 +4166,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightWrist_$AssimpFbx$_PreRotation",
-        "ParentUID": 692026147,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3675159645,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2904221055,
+        "UID": 4202919937,
         "UpdateWithBones": false
     },
     {
@@ -4162,10 +4198,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightWrist",
-        "ParentUID": 2904221055,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4202919937,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 598676362,
+        "UID": 3956991988,
         "UpdateWithBones": false
     },
     {
@@ -4194,10 +4230,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightHand_$AssimpFbx$_Translation",
-        "ParentUID": 598676362,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3956991988,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2084358418,
+        "UID": 1946896515,
         "UpdateWithBones": false
     },
     {
@@ -4226,10 +4262,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightHand_$AssimpFbx$_PreRotation",
-        "ParentUID": 2084358418,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1946896515,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1057389625,
+        "UID": 9376350,
         "UpdateWithBones": false
     },
     {
@@ -4258,10 +4294,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightHand",
-        "ParentUID": 1057389625,
-        "PrefabUID": 3594397937,
+        "ParentUID": 9376350,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 783628684,
+        "UID": 4250801654,
         "UpdateWithBones": true
     },
     {
@@ -4290,10 +4326,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightThumb_$AssimpFbx$_Translation",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2338014972,
+        "UID": 340422253,
         "UpdateWithBones": false
     },
     {
@@ -4322,10 +4358,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightThumb_$AssimpFbx$_PreRotation",
-        "ParentUID": 2338014972,
-        "PrefabUID": 3594397937,
+        "ParentUID": 340422253,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4269781804,
+        "UID": 908136785,
         "UpdateWithBones": false
     },
     {
@@ -4354,10 +4390,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightThumb",
-        "ParentUID": 4269781804,
-        "PrefabUID": 3594397937,
+        "ParentUID": 908136785,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3202485531,
+        "UID": 3472511365,
         "UpdateWithBones": false
     },
     {
@@ -4386,10 +4422,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMIdThumb_$AssimpFbx$_Translation",
-        "ParentUID": 3202485531,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3472511365,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4197851095,
+        "UID": 299618120,
         "UpdateWithBones": false
     },
     {
@@ -4418,10 +4454,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMIdThumb_$AssimpFbx$_PreRotation",
-        "ParentUID": 4197851095,
-        "PrefabUID": 3594397937,
+        "ParentUID": 299618120,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3246461378,
+        "UID": 3351943144,
         "UpdateWithBones": false
     },
     {
@@ -4450,10 +4486,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMIdThumb",
-        "ParentUID": 3246461378,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3351943144,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3528613034,
+        "UID": 2880567559,
         "UpdateWithBones": false
     },
     {
@@ -4482,10 +4518,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipThumb_$AssimpFbx$_Translation",
-        "ParentUID": 3528613034,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2880567559,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2028643505,
+        "UID": 3086073011,
         "UpdateWithBones": false
     },
     {
@@ -4514,10 +4550,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipThumb_$AssimpFbx$_PreRotation",
-        "ParentUID": 2028643505,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3086073011,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 484899940,
+        "UID": 4045083727,
         "UpdateWithBones": false
     },
     {
@@ -4546,10 +4582,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipThumb",
-        "ParentUID": 484899940,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4045083727,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 775776180,
+        "UID": 1768558746,
         "UpdateWithBones": false
     },
     {
@@ -4578,10 +4614,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLittle_$AssimpFbx$_Translation",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1099680580,
+        "UID": 706013537,
         "UpdateWithBones": false
     },
     {
@@ -4610,10 +4646,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 1099680580,
-        "PrefabUID": 3594397937,
+        "ParentUID": 706013537,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3069608980,
+        "UID": 1762724053,
         "UpdateWithBones": false
     },
     {
@@ -4642,10 +4678,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLittle",
-        "ParentUID": 3069608980,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1762724053,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 264082211,
+        "UID": 2510745305,
         "UpdateWithBones": false
     },
     {
@@ -4674,10 +4710,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartLittle_$AssimpFbx$_Translation",
-        "ParentUID": 264082211,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2510745305,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3207585151,
+        "UID": 4019866797,
         "UpdateWithBones": false
     },
     {
@@ -4706,10 +4742,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 3207585151,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4019866797,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2756209546,
+        "UID": 2782299280,
         "UpdateWithBones": false
     },
     {
@@ -4738,10 +4774,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartLittle",
-        "ParentUID": 2756209546,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2782299280,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3810918674,
+        "UID": 3433123280,
         "UpdateWithBones": false
     },
     {
@@ -4770,10 +4806,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidLittle_$AssimpFbx$_Translation",
-        "ParentUID": 3810918674,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3433123280,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2659259449,
+        "UID": 2545854479,
         "UpdateWithBones": false
     },
     {
@@ -4802,10 +4838,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 2659259449,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2545854479,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1441837452,
+        "UID": 224311130,
         "UpdateWithBones": false
     },
     {
@@ -4834,10 +4870,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidLittle",
-        "ParentUID": 1441837452,
-        "PrefabUID": 3594397937,
+        "ParentUID": 224311130,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 189603579,
+        "UID": 264093474,
         "UpdateWithBones": false
     },
     {
@@ -4866,10 +4902,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipLittle_$AssimpFbx$_Translation",
-        "ParentUID": 189603579,
-        "PrefabUID": 3594397937,
+        "ParentUID": 264093474,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1956272951,
+        "UID": 3991726474,
         "UpdateWithBones": false
     },
     {
@@ -4898,10 +4934,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipLittle_$AssimpFbx$_PreRotation",
-        "ParentUID": 1956272951,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3991726474,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4266165411,
+        "UID": 2129958673,
         "UpdateWithBones": false
     },
     {
@@ -4930,10 +4966,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipLittle",
-        "ParentUID": 4266165411,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2129958673,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 533691646,
+        "UID": 1811911236,
         "UpdateWithBones": false
     },
     {
@@ -4962,10 +4998,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightRing_$AssimpFbx$_Translation",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 384008469,
+        "UID": 3882678036,
         "UpdateWithBones": false
     },
     {
@@ -4994,10 +5030,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 384008469,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3882678036,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3177169945,
+        "UID": 3570836003,
         "UpdateWithBones": false
     },
     {
@@ -5026,10 +5062,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightRing",
-        "ParentUID": 3177169945,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3570836003,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2638029548,
+        "UID": 3876337791,
         "UpdateWithBones": false
     },
     {
@@ -5058,10 +5094,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartRing_$AssimpFbx$_Translation",
-        "ParentUID": 2638029548,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3876337791,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 863649755,
+        "UID": 243303050,
         "UpdateWithBones": false
     },
     {
@@ -5090,10 +5126,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 863649755,
-        "PrefabUID": 3594397937,
+        "ParentUID": 243303050,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2912416151,
+        "UID": 3945595922,
         "UpdateWithBones": false
     },
     {
@@ -5122,10 +5158,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartRing",
-        "ParentUID": 2912416151,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3945595922,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4213771907,
+        "UID": 3110335289,
         "UpdateWithBones": false
     },
     {
@@ -5154,10 +5190,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidRing_$AssimpFbx$_Translation",
-        "ParentUID": 4213771907,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3110335289,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3567751262,
+        "UID": 992025740,
         "UpdateWithBones": false
     },
     {
@@ -5186,10 +5222,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 3567751262,
-        "PrefabUID": 3594397937,
+        "ParentUID": 992025740,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3861949430,
+        "UID": 2749924860,
         "UpdateWithBones": false
     },
     {
@@ -5218,10 +5254,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidRing",
-        "ParentUID": 3861949430,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2749924860,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3533569133,
+        "UID": 56491563,
         "UpdateWithBones": false
     },
     {
@@ -5250,10 +5286,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipRing_$AssimpFbx$_Translation",
-        "ParentUID": 3533569133,
-        "PrefabUID": 3594397937,
+        "ParentUID": 56491563,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3479828304,
+        "UID": 3104031783,
         "UpdateWithBones": false
     },
     {
@@ -5282,10 +5318,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipRing_$AssimpFbx$_PreRotation",
-        "ParentUID": 3479828304,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3104031783,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2906087311,
+        "UID": 222298706,
         "UpdateWithBones": false
     },
     {
@@ -5314,10 +5350,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipRing",
-        "ParentUID": 2906087311,
-        "PrefabUID": 3594397937,
+        "ParentUID": 222298706,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1680266458,
+        "UID": 1891042938,
         "UpdateWithBones": false
     },
     {
@@ -5346,10 +5382,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMiddle_$AssimpFbx$_Translation",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4101798562,
+        "UID": 2667862210,
         "UpdateWithBones": false
     },
     {
@@ -5378,10 +5414,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMiddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 4101798562,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2667862210,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3237141257,
+        "UID": 3374206890,
         "UpdateWithBones": false
     },
     {
@@ -5410,10 +5446,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMiddle",
-        "ParentUID": 3237141257,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3374206890,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3192530588,
+        "UID": 2421633969,
         "UpdateWithBones": false
     },
     {
@@ -5442,10 +5478,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartMIddle_$AssimpFbx$_Translation",
-        "ParentUID": 3192530588,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2421633969,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2614499147,
+        "UID": 1932318564,
         "UpdateWithBones": false
     },
     {
@@ -5474,10 +5510,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartMIddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 2614499147,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1932318564,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3331108807,
+        "UID": 2985098932,
         "UpdateWithBones": false
     },
     {
@@ -5506,10 +5542,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartMIddle",
-        "ParentUID": 3331108807,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2985098932,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4072137331,
+        "UID": 695225923,
         "UpdateWithBones": false
     },
     {
@@ -5538,10 +5574,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidMiddle_$AssimpFbx$_Translation",
-        "ParentUID": 4072137331,
-        "PrefabUID": 3594397937,
+        "ParentUID": 695225923,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4071847182,
+        "UID": 2337526559,
         "UpdateWithBones": false
     },
     {
@@ -5570,10 +5606,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidMiddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 4071847182,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2337526559,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1051252837,
+        "UID": 330751402,
         "UpdateWithBones": false
     },
     {
@@ -5602,10 +5638,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidMiddle",
-        "ParentUID": 1051252837,
-        "PrefabUID": 3594397937,
+        "ParentUID": 330751402,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3031040937,
+        "UID": 1923684786,
         "UpdateWithBones": false
     },
     {
@@ -5634,10 +5670,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipMiddle_$AssimpFbx$_Translation",
-        "ParentUID": 3031040937,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1923684786,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3767887805,
+        "UID": 3188262234,
         "UpdateWithBones": false
     },
     {
@@ -5666,10 +5702,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipMiddle_$AssimpFbx$_PreRotation",
-        "ParentUID": 3767887805,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3188262234,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 399334112,
+        "UID": 1800168737,
         "UpdateWithBones": false
     },
     {
@@ -5698,10 +5734,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipMiddle",
-        "ParentUID": 399334112,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1800168737,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 716904544,
+        "UID": 2401941397,
         "UpdateWithBones": false
     },
     {
@@ -5730,10 +5766,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightIndex_$AssimpFbx$_Translation",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4091278304,
+        "UID": 1010330776,
         "UpdateWithBones": false
     },
     {
@@ -5762,10 +5798,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 4091278304,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1010330776,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 950699359,
+        "UID": 1559549304,
         "UpdateWithBones": false
     },
     {
@@ -5794,10 +5830,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightIndex",
-        "ParentUID": 950699359,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1559549304,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3194041579,
+        "UID": 608850903,
         "UpdateWithBones": false
     },
     {
@@ -5826,10 +5862,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartIndex_$AssimpFbx$_Translation",
-        "ParentUID": 3194041579,
-        "PrefabUID": 3594397937,
+        "ParentUID": 608850903,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 437021158,
+        "UID": 1776473539,
         "UpdateWithBones": false
     },
     {
@@ -5858,10 +5894,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 437021158,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1776473539,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 301716253,
+        "UID": 1986003103,
         "UpdateWithBones": false
     },
     {
@@ -5890,10 +5926,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightStartIndex",
-        "ParentUID": 301716253,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1986003103,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3397172673,
+        "UID": 3934841131,
         "UpdateWithBones": false
     },
     {
@@ -5922,10 +5958,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidIndex_$AssimpFbx$_Translation",
-        "ParentUID": 3397172673,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3934841131,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3594578101,
+        "UID": 1675340582,
         "UpdateWithBones": false
     },
     {
@@ -5954,10 +5990,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 3594578101,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1675340582,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3262533688,
+        "UID": 459801949,
         "UpdateWithBones": false
     },
     {
@@ -5986,10 +6022,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightMidIndex",
-        "ParentUID": 3262533688,
-        "PrefabUID": 3594397937,
+        "ParentUID": 459801949,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1512443287,
+        "UID": 1480234241,
         "UpdateWithBones": false
     },
     {
@@ -6018,10 +6054,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipIndex_$AssimpFbx$_Translation",
-        "ParentUID": 1512443287,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1480234241,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2395855491,
+        "UID": 1942792437,
         "UpdateWithBones": false
     },
     {
@@ -6050,10 +6086,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipIndex_$AssimpFbx$_PreRotation",
-        "ParentUID": 2395855491,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1942792437,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2505231455,
+        "UID": 2042170745,
         "UpdateWithBones": false
     },
     {
@@ -6082,10 +6118,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightTipIndex",
-        "ParentUID": 2505231455,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2042170745,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2392205290,
+        "UID": 1667038156,
         "UpdateWithBones": false
     },
     {
@@ -6099,9 +6135,9 @@
                     -0.05700000002980232
                 ],
                 "Rotation": [
-                    12.611000061035156,
-                    25.090999603271484,
-                    94.10299682617188
+                    14.61400032043457,
+                    34.12200164794922,
+                    95.7750015258789
                 ],
                 "Scale": [
                     0.10000000149011612,
@@ -6143,25 +6179,25 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 40.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 20.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 20.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.800000011920929
                     },
                     {
-                        "Projectile Spawn": 1461530439
+                        "Projectile Spawn": 3308421996
                     },
                     {
-                        "Second Projectile Spawn": 1140484082
+                        "Second Projectile Spawn": 2764706261
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6170,19 +6206,19 @@
                         "Projectile ScaleY": 0.10000000149011612
                     },
                     {
-                        "Projectile ScaleZ": 1.5
+                        "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.5
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Burst Space": 0.0
+                        "Burst Space": 0.10000000149011612
                     },
                     {
-                        "Second Gun GO": 419460321
+                        "Second Gun GO": 1800482401
                     },
                     {
                         "Slow %": 0.0
@@ -6191,7 +6227,7 @@
                         "Freeze %": 0.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 0
@@ -6200,25 +6236,25 @@
                         "Audio Event String": "w_basic"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 40.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 20.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 20.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.800000011920929
                     },
                     {
-                        "Projectile Spawn": 1461530439
+                        "Projectile Spawn": 3308421996
                     },
                     {
-                        "Second Projectile Spawn": 1140484082
+                        "Second Projectile Spawn": 2764706261
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6227,19 +6263,19 @@
                         "Projectile ScaleY": 0.10000000149011612
                     },
                     {
-                        "Projectile ScaleZ": 1.5
+                        "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.5
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Burst Space": 0.0
+                        "Burst Space": 0.10000000149011612
                     },
                     {
-                        "Second Gun GO": 419460321
+                        "Second Gun GO": 1800482401
                     },
                     {
                         "Slow %": 0.0
@@ -6248,7 +6284,7 @@
                         "Freeze %": 0.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 0
@@ -6264,10 +6300,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Dual Right",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1764362837,
+        "UID": 2257186364,
         "UpdateWithBones": false
     },
     {
@@ -6296,10 +6332,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Dual Right",
-        "ParentUID": 1764362837,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2257186364,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1461530439,
+        "UID": 3308421996,
         "UpdateWithBones": false
     },
     {
@@ -6313,9 +6349,9 @@
                     0.03500000014901161
                 ],
                 "Rotation": [
-                    -162.63699340820313,
-                    -19.406999588012695,
-                    -88.15299987792969
+                    -159.00799560546875,
+                    -32.35200119018555,
+                    -89.0530014038086
                 ],
                 "Scale": [
                     0.05000000074505806,
@@ -6357,22 +6393,22 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 80.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 60.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 60.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.30000001192092896
                     },
                     {
-                        "Projectile Spawn": 581871769
+                        "Projectile Spawn": 1625460247
                     },
                     {
                         "Projectile ScaleX": 0.20000000298023224
@@ -6384,13 +6420,13 @@
                         "Projectile ScaleZ": 0.4000000059604645
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6399,22 +6435,22 @@
                         "Audio Event String": "w_semi"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 80.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 60.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 60.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.30000001192092896
                     },
                     {
-                        "Projectile Spawn": 581871769
+                        "Projectile Spawn": 1625460247
                     },
                     {
                         "Projectile ScaleX": 0.20000000298023224
@@ -6426,13 +6462,13 @@
                         "Projectile ScaleZ": 0.4000000059604645
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6448,10 +6484,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Semiauto",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 640409176,
+        "UID": 846666331,
         "UpdateWithBones": false
     },
     {
@@ -6480,10 +6516,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Semiauto",
-        "ParentUID": 640409176,
-        "PrefabUID": 3594397937,
+        "ParentUID": 846666331,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 581871769,
+        "UID": 1625460247,
         "UpdateWithBones": false
     },
     {
@@ -6494,12 +6530,12 @@
                 "Position": [
                     -0.0989999994635582,
                     0.24300000071525574,
-                    -0.2930000126361847
+                    -0.02930000051856041
                 ],
                 "Rotation": [
-                    177.2449951171875,
-                    -32.229000091552734,
-                    -87.9209976196289
+                    177.08299255371094,
+                    -41.57600021362305,
+                    -93.5510025024414
                 ],
                 "Scale": [
                     0.07000000029802322,
@@ -6541,22 +6577,22 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 40.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 3.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 3.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.5
                     },
                     {
-                        "Projectile Spawn": 362893676
+                        "Projectile Spawn": 146507998
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6568,13 +6604,13 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 20.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6583,22 +6619,22 @@
                         "Audio Event String": "w_automatic"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 40.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 3.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 3.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.5
                     },
                     {
-                        "Projectile Spawn": 362893676
+                        "Projectile Spawn": 146507998
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6610,13 +6646,13 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 20.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6632,10 +6668,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Automatic",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4166709816,
+        "UID": 2369541379,
         "UpdateWithBones": false
     },
     {
@@ -6664,10 +6700,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Automatic",
-        "ParentUID": 4166709816,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2369541379,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 362893676,
+        "UID": 146507998,
         "UpdateWithBones": false
     },
     {
@@ -6681,9 +6717,9 @@
                     0.0430000014603138
                 ],
                 "Rotation": [
-                    25.285999298095703,
-                    32.85100173950195,
-                    72.74400329589844
+                    28.56599998474121,
+                    41.8129997253418,
+                    71.92500305175781
                 ],
                 "Scale": [
                     0.029999999329447746,
@@ -6725,22 +6761,22 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 35.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 1.0
                     },
                     {
-                        "Projectile Spawn": 2022981724
+                        "Projectile Spawn": 526282989
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6752,19 +6788,19 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Burst Space": 0.0
+                        "Burst Space": 0.10000000149011612
                     },
                     {
-                        "Projectiles per burst": 0
+                        "Projectiles per burst": 2
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6773,22 +6809,22 @@
                         "Audio Event String": "w_burst"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 35.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 1.0
                     },
                     {
-                        "Projectile Spawn": 2022981724
+                        "Projectile Spawn": 526282989
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6800,19 +6836,19 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 1.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Burst Space": 0.0
+                        "Burst Space": 0.10000000149011612
                     },
                     {
-                        "Projectiles per burst": 0
+                        "Projectiles per burst": 2
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6828,10 +6864,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Burst",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4117960599,
+        "UID": 3780968054,
         "UpdateWithBones": false
     },
     {
@@ -6860,10 +6896,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Burst",
-        "ParentUID": 4117960599,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3780968054,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2022981724,
+        "UID": 526282989,
         "UpdateWithBones": false
     },
     {
@@ -6877,9 +6913,9 @@
                     0.052000001072883606
                 ],
                 "Rotation": [
-                    33.96799850463867,
-                    16.427000045776367,
-                    67.25
+                    39.08100128173828,
+                    28.570999145507813,
+                    64.03800201416016
                 ],
                 "Scale": [
                     0.05000000074505806,
@@ -6921,22 +6957,22 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 80.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.4000000059604645
                     },
                     {
-                        "Projectile Spawn": 1443036171
+                        "Projectile Spawn": 3506405380
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6948,19 +6984,19 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 2.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Pellets per shot": 0
+                        "Pellets per shot": 3
                     },
                     {
-                        "Pellets Dispersion": 0.0
+                        "Pellets Dispersion": 0.30000001192092896
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -6969,22 +7005,22 @@
                         "Audio Event String": "w_shotgun"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 80.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 15.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 15.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.4000000059604645
                     },
                     {
-                        "Projectile Spawn": 1443036171
+                        "Projectile Spawn": 3506405380
                     },
                     {
                         "Projectile ScaleX": 0.10000000149011612
@@ -6996,19 +7032,19 @@
                         "Projectile ScaleZ": 0.10000000149011612
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 2.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Pellets per shot": 0
+                        "Pellets per shot": 3
                     },
                     {
-                        "Pellets Dispersion": 0.0
+                        "Pellets Dispersion": 0.30000001192092896
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 1
@@ -7024,10 +7060,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Shotgun",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3172887682,
+        "UID": 4276942289,
         "UpdateWithBones": false
     },
     {
@@ -7056,10 +7092,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Shotgun",
-        "ParentUID": 3172887682,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4276942289,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1443036171,
+        "UID": 3506405380,
         "UpdateWithBones": false
     },
     {
@@ -7068,14 +7104,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.02800000086426735,
-                    76.0,
-                    0.0560000017285347
+                    -0.0560000017285347,
+                    0.09099999815225601,
+                    0.0729999989271164
                 ],
                 "Rotation": [
-                    18.586999893188477,
-                    8.876999855041504,
-                    74.01200103759766
+                    376.0,
+                    12.232999801635742,
+                    84.39600372314453
                 ],
                 "Scale": [
                     0.05000000074505806,
@@ -7166,25 +7202,25 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 30.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 10.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 10.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.800000011920929
                     },
                     {
-                        "Projectile Spawn": 2041240455
+                        "Projectile Spawn": 4234473967
                     },
                     {
-                        "Fire Particles": 3953853900
+                        "Fire Particles": 1756859066
                     },
                     {
                         "Projectile ScaleX": 0.0
@@ -7196,13 +7232,13 @@
                         "Projectile ScaleZ": 0.0
                     },
                     {
-                        "Ticks per second": 0.0
+                        "Ticks per second": 20.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 2
@@ -7211,25 +7247,25 @@
                         "Audio Event String": "w_basic"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 30.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 10.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 10.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 0.800000011920929
                     },
                     {
-                        "Projectile Spawn": 2041240455
+                        "Projectile Spawn": 4234473967
                     },
                     {
-                        "Fire Particles": 3953853900
+                        "Fire Particles": 1756859066
                     },
                     {
                         "Projectile ScaleX": 0.0
@@ -7241,13 +7277,13 @@
                         "Projectile ScaleZ": 0.0
                     },
                     {
-                        "Ticks per second": 0.0
+                        "Ticks per second": 20.0
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 2
@@ -7263,10 +7299,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Flamethrower",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3579561625,
+        "UID": 2097790931,
         "UpdateWithBones": false
     },
     {
@@ -7295,10 +7331,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Flamethrower",
-        "ParentUID": 3579561625,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2097790931,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2041240455,
+        "UID": 4234473967,
         "UpdateWithBones": false
     },
     {
@@ -7376,10 +7412,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Fire Origin",
-        "ParentUID": 3579561625,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2097790931,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3953853900,
+        "UID": 1756859066,
         "UpdateWithBones": false
     },
     {
@@ -7393,9 +7429,9 @@
                     -0.3709999918937683
                 ],
                 "Rotation": [
-                    -72.36499786376953,
-                    11.432999610900879,
-                    -150.39999389648438
+                    -71.55999755859375,
+                    10.800000190734863,
+                    -143.0019989013672
                 ],
                 "Scale": [
                     0.030000003054738045,
@@ -7437,22 +7473,22 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 15.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 65.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 65.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 3.0
                     },
                     {
-                        "Projectile Spawn": 1323827506
+                        "Projectile Spawn": 772067817
                     },
                     {
                         "Projectile ScaleX": 0.4000000059604645
@@ -7464,13 +7500,13 @@
                         "Projectile ScaleZ": 0.4000000059604645
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 0.3499999940395355
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 2
@@ -7479,22 +7515,22 @@
                         "Audio Event String": "w_basic"
                     },
                     {
-                        "Projectile Pull": 3715485205
+                        "Projectile Pull": 4918976
                     },
                     {
-                        "Projectile Speed": 0.0
+                        "Projectile Speed": 15.0
                     },
                     {
-                        "Projectile Damage": 0.0
+                        "Projectile Damage": 65.0
                     },
                     {
-                        "Projectile Resistance Damage": 0.0
+                        "Projectile Resistance Damage": 65.0
                     },
                     {
-                        "Projectile Lifetime": 0.0
+                        "Projectile Lifetime": 3.0
                     },
                     {
-                        "Projectile Spawn": 1323827506
+                        "Projectile Spawn": 772067817
                     },
                     {
                         "Projectile ScaleX": 0.4000000059604645
@@ -7506,13 +7542,13 @@
                         "Projectile ScaleZ": 0.4000000059604645
                     },
                     {
-                        "Projectiles per second": 0.0
+                        "Projectiles per second": 0.3499999940395355
                     },
                     {
                         "Extra % firerate": 15.0
                     },
                     {
-                        "Player Stats GO": 1475165862
+                        "Player Stats GO": 4002359204
                     },
                     {
                         "Ammo Type": 2
@@ -7528,10 +7564,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Ricochet",
-        "ParentUID": 783628684,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4250801654,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2767080449,
+        "UID": 2206378498,
         "UpdateWithBones": false
     },
     {
@@ -7560,10 +7596,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "(O) Ricochet",
-        "ParentUID": 2767080449,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2206378498,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1323827506,
+        "UID": 772067817,
         "UpdateWithBones": false
     },
     {
@@ -7592,10 +7628,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Neck_$AssimpFbx$_Translation",
-        "ParentUID": 2435976323,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1698920448,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1964584307,
+        "UID": 617777916,
         "UpdateWithBones": false
     },
     {
@@ -7624,10 +7660,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Neck_$AssimpFbx$_PreRotation",
-        "ParentUID": 1964584307,
-        "PrefabUID": 3594397937,
+        "ParentUID": 617777916,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3090496527,
+        "UID": 513787691,
         "UpdateWithBones": false
     },
     {
@@ -7656,10 +7692,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Neck",
-        "ParentUID": 3090496527,
-        "PrefabUID": 3594397937,
+        "ParentUID": 513787691,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2777045850,
+        "UID": 1925194023,
         "UpdateWithBones": false
     },
     {
@@ -7688,10 +7724,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Head_$AssimpFbx$_Translation",
-        "ParentUID": 2777045850,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1925194023,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2756293409,
+        "UID": 888669010,
         "UpdateWithBones": false
     },
     {
@@ -7720,10 +7756,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Head_$AssimpFbx$_PreRotation",
-        "ParentUID": 2756293409,
-        "PrefabUID": 3594397937,
+        "ParentUID": 888669010,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1059610004,
+        "UID": 1021246330,
         "UpdateWithBones": false
     },
     {
@@ -7752,10 +7788,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Head",
-        "ParentUID": 1059610004,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1021246330,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 749812387,
+        "UID": 1302122946,
         "UpdateWithBones": false
     },
     {
@@ -7784,10 +7820,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Hair_$AssimpFbx$_Translation",
-        "ParentUID": 749812387,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1302122946,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1655679743,
+        "UID": 1226906793,
         "UpdateWithBones": false
     },
     {
@@ -7816,10 +7852,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Hair_$AssimpFbx$_PreRotation",
-        "ParentUID": 1655679743,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1226906793,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1747097355,
+        "UID": 168252604,
         "UpdateWithBones": false
     },
     {
@@ -7848,10 +7884,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Hair",
-        "ParentUID": 1747097355,
-        "PrefabUID": 3594397937,
+        "ParentUID": 168252604,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1191129734,
+        "UID": 1538726892,
         "UpdateWithBones": false
     },
     {
@@ -7880,10 +7916,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_Translation",
-        "ParentUID": 1264496349,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3656879091,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 414659645,
+        "UID": 2630651100,
         "UpdateWithBones": false
     },
     {
@@ -7912,10 +7948,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_PreRotation",
-        "ParentUID": 414659645,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2630651100,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2543948129,
+        "UID": 2564797067,
         "UpdateWithBones": false
     },
     {
@@ -7944,10 +7980,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg_$AssimpFbx$_Rotation",
-        "ParentUID": 2543948129,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2564797067,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 646303956,
+        "UID": 471270406,
         "UpdateWithBones": false
     },
     {
@@ -7976,10 +8012,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightLeg",
-        "ParentUID": 646303956,
-        "PrefabUID": 3594397937,
+        "ParentUID": 471270406,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2250327780,
+        "UID": 1061761982,
         "UpdateWithBones": false
     },
     {
@@ -8008,10 +8044,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_Translation",
-        "ParentUID": 2250327780,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1061761982,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2548315188,
+        "UID": 248817365,
         "UpdateWithBones": false
     },
     {
@@ -8040,10 +8076,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_PreRotation",
-        "ParentUID": 2548315188,
-        "PrefabUID": 3594397937,
+        "ParentUID": 248817365,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 4037607876,
+        "UID": 1310663897,
         "UpdateWithBones": false
     },
     {
@@ -8072,10 +8108,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee_$AssimpFbx$_Rotation",
-        "ParentUID": 4037607876,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1310663897,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 983379091,
+        "UID": 3150969517,
         "UpdateWithBones": false
     },
     {
@@ -8104,10 +8140,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightKnee",
-        "ParentUID": 983379091,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3150969517,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2056996271,
+        "UID": 3899132561,
         "UpdateWithBones": false
     },
     {
@@ -8136,10 +8172,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightAnkle_$AssimpFbx$_Translation",
-        "ParentUID": 2056996271,
-        "PrefabUID": 3594397937,
+        "ParentUID": 3899132561,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3042832763,
+        "UID": 2395052996,
         "UpdateWithBones": false
     },
     {
@@ -8168,10 +8204,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightAnkle_$AssimpFbx$_PreRotation",
-        "ParentUID": 3042832763,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2395052996,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 92884918,
+        "UID": 2469301908,
         "UpdateWithBones": false
     },
     {
@@ -8200,10 +8236,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightAnkle",
-        "ParentUID": 92884918,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2469301908,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2815095598,
+        "UID": 612179875,
         "UpdateWithBones": false
     },
     {
@@ -8232,10 +8268,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFoot_$AssimpFbx$_Translation",
-        "ParentUID": 2815095598,
-        "PrefabUID": 3594397937,
+        "ParentUID": 612179875,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1822977285,
+        "UID": 1614599167,
         "UpdateWithBones": false
     },
     {
@@ -8264,10 +8300,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFoot_$AssimpFbx$_PreRotation",
-        "ParentUID": 1822977285,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1614599167,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1217962184,
+        "UID": 2124534795,
         "UpdateWithBones": false
     },
     {
@@ -8296,10 +8332,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFoot",
-        "ParentUID": 1217962184,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2124534795,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 205887335,
+        "UID": 2153223047,
         "UpdateWithBones": false
     },
     {
@@ -8328,10 +8364,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip_$AssimpFbx$_Translation",
-        "ParentUID": 205887335,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2153223047,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1776283283,
+        "UID": 2298222899,
         "UpdateWithBones": false
     },
     {
@@ -8360,10 +8396,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip_$AssimpFbx$_PreRotation",
-        "ParentUID": 1776283283,
-        "PrefabUID": 3594397937,
+        "ParentUID": 2298222899,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 1625092014,
+        "UID": 4159773391,
         "UpdateWithBones": false
     },
     {
@@ -8392,10 +8428,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "RightFootTip",
-        "ParentUID": 1625092014,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4159773391,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2502595462,
+        "UID": 2233452826,
         "UpdateWithBones": false
     },
     {
@@ -8424,10 +8460,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_Translation",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3555330366,
+        "UID": 223214561,
         "UpdateWithBones": false
     },
     {
@@ -8456,10 +8492,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_RotationPivot",
-        "ParentUID": 3555330366,
-        "PrefabUID": 3594397937,
+        "ParentUID": 223214561,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2395175509,
+        "UID": 1229274453,
         "UpdateWithBones": false
     },
     {
@@ -8488,10 +8524,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_RotationPivotInverse",
-        "ParentUID": 2395175509,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1229274453,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2408844889,
+        "UID": 1798352217,
         "UpdateWithBones": false
     },
     {
@@ -8520,10 +8556,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_ScalingPivot",
-        "ParentUID": 2408844889,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1798352217,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 602010156,
+        "UID": 488054060,
         "UpdateWithBones": false
     },
     {
@@ -8552,10 +8588,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_Scaling",
-        "ParentUID": 602010156,
-        "PrefabUID": 3594397937,
+        "ParentUID": 488054060,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2258196508,
+        "UID": 1325432604,
         "UpdateWithBones": false
     },
     {
@@ -8584,10 +8620,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6_$AssimpFbx$_ScalingPivotInverse",
-        "ParentUID": 2258196508,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1325432604,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 621213387,
+        "UID": 570968523,
         "UpdateWithBones": false
     },
     {
@@ -8616,10 +8652,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "pCube6",
-        "ParentUID": 621213387,
-        "PrefabUID": 3594397937,
+        "ParentUID": 570968523,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3471512903,
+        "UID": 1477215303,
         "UpdateWithBones": false
     },
     {
@@ -8648,7 +8684,7 @@
                 "Enabled": true,
                 "Index inside model": 11,
                 "ModelUID": 462479228,
-                "RootBoneUuid": 1264496349,
+                "RootBoneUuid": 3656879091,
                 "ShowAABB": false,
                 "ShowFaceNormals": false,
                 "ShowOBB": false,
@@ -8672,10 +8708,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Node",
-        "ParentUID": 3471512903,
-        "PrefabUID": 3594397937,
+        "ParentUID": 1477215303,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3800139251,
+        "UID": 2214707443,
         "UpdateWithBones": false
     },
     {
@@ -8753,10 +8789,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "ParticleHit",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3804327567,
+        "UID": 820962702,
         "UpdateWithBones": false
     },
     {
@@ -8827,17 +8863,17 @@
                     }
                 },
                 "ParticleVectorSize": 60,
-                "ResourceTextUID": 3747444347,
+                "ResourceTextUID": 1932847831,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "ParticleHealKid",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3341299674,
+        "UID": 3114468070,
         "UpdateWithBones": false
     },
     {
@@ -8908,17 +8944,17 @@
                     }
                 },
                 "ParticleVectorSize": 60,
-                "ResourceTextUID": 3747444347,
+                "ResourceTextUID": 1932847831,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "ParticleHealPassive",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 605917601,
+        "UID": 957562909,
         "UpdateWithBones": false
     },
     {
@@ -8996,10 +9032,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Player": 1475165862
+                        "Player": 4002359204
                     },
                     {
-                        "Pull Size": 40
+                        "Pull Size": 60
                     },
                     {
                         "Projectile Prefab": 633942339
@@ -9014,16 +9050,35 @@
                         "Check Ricochet Traget Prefab": 3306111952
                     },
                     {
-                        "Duals Projectile Texture": 3663622624
+                        "Duals Projectile Texture": 3431661267
+                    },
+                    {
+                        "Semi Projectile Texture": 3172180060
+                    },
+                    {
+                        "Auto Projectile Texture": 3172180060
+                    },
+                    {
+                        "Burst Projectile Texture": 3172180060
+                    },
+                    {
+                        "Shotgun Projectile Texture": 3172180060
+                    },
+                    {
+                        "Ricochet Projectile Texture": 2519216544
+                    },
+                    {
+                        "Normal Projectile MeshIndexInsideModel": 0,
+                        "Normal Projectile MeshModelUID": 3507717495
                     },
                     {
                         "Testing": false
                     },
                     {
-                        "Player": 1475165862
+                        "Player": 4002359204
                     },
                     {
-                        "Pull Size": 40
+                        "Pull Size": 60
                     },
                     {
                         "Projectile Prefab": 633942339
@@ -9038,7 +9093,26 @@
                         "Check Ricochet Traget Prefab": 3306111952
                     },
                     {
-                        "Duals Projectile Texture": 3663622624
+                        "Duals Projectile Texture": 3431661267
+                    },
+                    {
+                        "Semi Projectile Texture": 3172180060
+                    },
+                    {
+                        "Auto Projectile Texture": 3172180060
+                    },
+                    {
+                        "Burst Projectile Texture": 3172180060
+                    },
+                    {
+                        "Shotgun Projectile Texture": 3172180060
+                    },
+                    {
+                        "Ricochet Projectile Texture": 2519216544
+                    },
+                    {
+                        "Normal Projectile MeshIndexInsideModel": 0,
+                        "Normal Projectile MeshModelUID": 3507717495
                     },
                     {
                         "Testing": false
@@ -9051,10 +9125,10 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "ProjectilePull",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 3715485205,
+        "UID": 4918976,
         "UpdateWithBones": false
     },
     {
@@ -9150,7 +9224,14 @@
             },
             {
                 "Enabled": true,
-                "Inspector Fields": null,
+                "Inspector Fields": [
+                    {
+                        "Player Stats GO": 4002359204
+                    },
+                    {
+                        "Player Stats GO": 4002359204
+                    }
+                ],
                 "Script Resource": 1943578344,
                 "Type": 5
             }
@@ -9158,297 +9239,24 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "Ultimate",
-        "ParentUID": 1475165862,
-        "PrefabUID": 3594397937,
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Default",
-        "UID": 2800121112,
+        "UID": 3161611712,
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
+                    2.672131813596934e-07,
                     0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Meteorite",
-        "ParentUID": 2066812041,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 749618750,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    40.11640167236328,
-                    0.0
+                    -0.800000011920929
                 ],
                 "Rotation": [
                     -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "StartPoint",
-        "ParentUID": 749618750,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1059380054,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "EndPoint",
-        "ParentUID": 749618750,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1920332622,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    7777.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 3935105939,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "ResourceUID": 240240,
-                "Type": 3
-            },
-            {
-                "AngularFactor": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "ColPosition": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "ColRotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "ColScale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "CylVerSlices": 16,
-                "CylinderRadiusHeight": [
-                    1.0,
-                    1.0
-                ],
-                "Enabled": true,
-                "Gravity": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "HasPhysBody": true,
-                "IsKinematic": false,
-                "IsRenderingCol": true,
-                "IsRenderingRayCast": false,
-                "IsShapeCreated": [
-                    false,
-                    true,
-                    false
-                ],
-                "IsShapeSelected": [
-                    false,
-                    true,
-                    false
-                ],
-                "IsStatic": false,
-                "IsTrigger": true,
-                "Mass": 0.0,
-                "RayCastColor": [
-                    0.5,
-                    0.0,
-                    0.5,
-                    1.0
-                ],
-                "RayCastSize": 1.0,
-                "RenderColColor": [
-                    0.5,
-                    0.0,
-                    0.5,
-                    1.0
-                ],
-                "ShapeSelected": 1,
-                "SphereHorSlices": 16,
-                "SphereRadius": 5.0,
-                "SphereVerSlices": 16,
-                "Type": 8,
-                "WireframeSize": 1.0
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Initial Center Point": 1059380054
-                    },
-                    {
-                        "Initial Radius": 3
-                    },
-                    {
-                        "Final Center Point": 1920332622
-                    },
-                    {
-                        "Final Radius": 3
-                    },
-                    {
-                        "Speed": 2.0
-                    },
-                    {
-                        "Falling Time": 3.0
-                    },
-                    {
-                        "Min Time": 5
-                    },
-                    {
-                        "Max Time": 10
-                    },
-                    {
-                        "Indicator": 259600388
-                    },
-                    {
-                        "Initial Center Point": 1059380054
-                    },
-                    {
-                        "Initial Radius": 3
-                    },
-                    {
-                        "Final Center Point": 1920332622
-                    },
-                    {
-                        "Final Radius": 3
-                    },
-                    {
-                        "Speed": 2.0
-                    },
-                    {
-                        "Falling Time": 3.0
-                    },
-                    {
-                        "Min Time": 5
-                    },
-                    {
-                        "Max Time": 10
-                    },
-                    {
-                        "Indicator": 259600388
-                    }
-                ],
-                "Script Resource": 3284358092,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Rock",
-        "ParentUID": 749618750,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 276803560,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -90.0,
                     0.0,
                     -0.0
                 ],
@@ -9463,20 +9271,234 @@
                 "Enabled": true,
                 "Index inside model": 0,
                 "ModelUID": 13,
+                "ParticleModules": {
+                    "ModuleEmission": {
+                        "Enable": true,
+                        "ParticlesPerSecond": 10
+                    },
+                    "ModuleMain": {
+                        "BeginScale": [
+                            0.44999998807907104,
+                            0.44999998807907104,
+                            0.44999998807907104
+                        ],
+                        "Delay": 0.0,
+                        "Duration": 0.0,
+                        "EndScale": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "LifeTime": 0.30000001192092896,
+                        "Looping": true,
+                        "PlayOnAwake": false,
+                        "Speed": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "SpeedVariation": [
+                            6.0,
+                            0.0,
+                            6.0
+                        ],
+                        "acceleration": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
+                    }
+                },
+                "ParticleVectorSize": 60,
+                "ResourceTextUID": 212775054,
+                "Type": 6
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Walk_Particles",
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
+        "Tag": "Default",
+        "UID": 1790048447,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    2.1709638531319797e-07,
+                    0.20000000298023224,
+                    -0.6700000166893005
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ParticleModules": {
+                    "ModuleEmission": {
+                        "Enable": true,
+                        "ParticlesPerSecond": 12
+                    },
+                    "ModuleMain": {
+                        "BeginScale": [
+                            0.3499999940395355,
+                            0.3499999940395355,
+                            0.3499999940395355
+                        ],
+                        "Delay": 0.0,
+                        "Duration": 0.0,
+                        "EndScale": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "LifeTime": 0.20000000298023224,
+                        "Looping": true,
+                        "PlayOnAwake": false,
+                        "Speed": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "SpeedVariation": [
+                            0.0,
+                            0.10000000149011612,
+                            0.0
+                        ],
+                        "acceleration": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
+                    }
+                },
+                "ParticleVectorSize": 60,
+                "ResourceTextUID": 4115384647,
+                "Type": 6
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Shot_Particle",
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
+        "Tag": "Default",
+        "UID": 2191867851,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    9.929644875228405e-07,
+                    0.05000019073486328,
+                    -0.39337158203125
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    40.099998474121094
+                ],
+                "Scale": [
+                    1.0,
+                    0.999991238117218,
+                    0.9999918341636658
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
                 "ShowAABB": false,
                 "ShowFaceNormals": false,
                 "ShowOBB": false,
                 "ShowVertexNormals": false,
                 "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 1530578747,
+                "Type": 3
             }
         ],
-        "FirstOnPrefab": true,
+        "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Indicator",
-        "ParentUID": 749618750,
-        "PrefabUID": 0,
+        "Name": "BasePlayer",
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
         "Tag": "Primitive",
-        "UID": 259600388,
+        "UID": 4138594887,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    4.1350722312927246e-05,
+                    1.365248680114746,
+                    1.6413726806640625
+                ],
+                "Rotation": [
+                    -90.0,
+                    0.0,
+                    -90.0
+                ],
+                "Scale": [
+                    1.0,
+                    0.5,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 4053392123,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "GuidePlayer",
+        "ParentUID": 4002359204,
+        "PrefabUID": 2413255802,
+        "Tag": "Primitive",
+        "UID": 938608370,
         "UpdateWithBones": false
     }
 ]

@@ -81,8 +81,8 @@ void Chest::Update()
                 break;
             case 6: // Get Ricochet
                 playerGunManager->GetGun(3, 6);
-                playerStats->specialAmmo = 20;
-                playerStats->maxSpecialAmmo = 20;
+                playerStats->specialAmmo = 50;
+                playerStats->maxSpecialAmmo = 50;
                 playerStats->SaveChestData(7, chestIndex); // save game
                 if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(6);
                 break;

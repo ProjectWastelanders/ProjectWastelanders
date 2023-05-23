@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config>
 	<window>
-		<width value="2560" />
-		<height value="1377" />
+		<width value="1920" />
+		<height value="1017" />
 		<brightness value="1" />
 	</window>
 	<renderer>
@@ -11,7 +11,7 @@
 		<drawNavMesh value="false" />
 	</renderer>
 	<scene>
-		<currentScene value="Assets/Level4.HScene" />
+		<currentScene value="Assets/temp/PlayerSkillsAndGuns.HScene" />
 	</scene>
 	<openGL>
 		<blend value="true" tag="0x0BE2" />

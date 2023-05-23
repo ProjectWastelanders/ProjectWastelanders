@@ -14,20 +14,23 @@ void ThanosDmg::Start()
 }
 void ThanosDmg::Update()
 {
-
+	gameObject.GetRigidBody().SetVelocity({ 0,0,0 });
 }
 
 void ThanosDmg::OnCollisionEnter(API::API_RigidBody other)
 {
 	std::string detectionName = other.GetGameObject().GetName();
 	std::string detectionTag = other.GetGameObject().GetTag();
+	std::string detectionTag2 = gameObject.GetTag();
 	if (detectionName == "Player")
 	{
 		PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
+		if(detectionTag2 == "ThanosBullet") gameObject.SetActive(false);
+
 		pStats->TakeDamage(dmg, 0);
 
 	}
-	if (detectionTag == "Column") {
+	if (detectionTag == "Column" && detectionTag2 == "ThanosBullet") {
 		Console::Log("laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		gameObject.SetActive(false);
 

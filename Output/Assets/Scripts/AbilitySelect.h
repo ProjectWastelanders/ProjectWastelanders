@@ -2,11 +2,12 @@
 #include "API/HelloBehavior.h"
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
-
 #include "API/API.h"
 #include "API/API_UIInput.h"
+#include "../Scripts/AbilityTreeScript.h"
 
 class AbilitySelect : HelloBehavior
+
 {
 public:
     void Start() override;
@@ -22,6 +23,6 @@ public:
     API_GameObject description4;
     API_GameObject description5;
 
+    AbilityTreeScript* abilityTreeScript;
     bool waitFrame = false;
 };
-

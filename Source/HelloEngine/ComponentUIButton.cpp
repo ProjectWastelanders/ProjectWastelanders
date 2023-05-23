@@ -216,6 +216,14 @@ ButtonState ComponentUIButton::ChangeState(ButtonState State)
     return State;
 }
 
+void ComponentUIButton::OnEnable()
+{
+    if (!isBlocked)
+        State = ButtonState::NORMAL;
+    else
+        State = ButtonState::NORMALBLOCKED;
+}
+
 void ComponentUIButton::UpdateGamePadInput(bool selected)
 {
     isPress = false;

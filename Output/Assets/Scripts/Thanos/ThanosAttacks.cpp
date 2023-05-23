@@ -255,7 +255,7 @@ void ThanosAttacks::Update()
 			attackType = rand() % 100 + 1;
 
 			isAttacking = true;
-
+			attackType = 77.0f;
 			charge += Time::GetDeltaTime();
 			if (charge > 2.0f) {
 				charge = 0.0f;
@@ -265,6 +265,8 @@ void ThanosAttacks::Update()
 					thanosAnimationPlayer.ChangeAnimation(thanosShootAnimation);
 					thanosAnimationPlayer.SetLoop(true);
 					thanosAnimationPlayer.Play();
+
+					
 				
 				}
 				if (attackType <= 75 && attackType > 50) {
@@ -304,8 +306,15 @@ void ThanosAttacks::Update()
 				if (busrstTime > burstTimes[i]) {
 					if (bulletThrown[i] == false) {
 						bulletThrown[i] = true;
-						playerPositions[i] = player.GetTransform().GetGlobalPosition();
+						API_Vector3 normalizedvector = boss.GetTransform().GetGlobalPosition() - player.GetTransform().GetGlobalPosition();
+						float x = normalizedvector.x * normalizedvector.x;
+						float y = 0;
+						float z = normalizedvector.z * normalizedvector.z;
+						float sum = x + y + z;
+						API_Vector3 direction = { normalizedvector.x / sum, 0, normalizedvector.z / sum };
+						playerPositions[i] = player.GetTransform().GetGlobalPosition() - direction * 100;
 						bullets[i].SetActive(true);
+						bullets[i].GetTransform().SetRotation(0, gameObject.GetTransform().GetLocalRotation().y - 90, 0);
 					}
 					BulletSeek(&bullets[i], playerPositions[i], bulletSpeed, i);
 				}
@@ -321,6 +330,8 @@ void ThanosAttacks::Update()
 				busrstTime = 0.0f;
 				for (int i = 0; i < 3; i++) {
 					bulletThrown[i] = false;
+					bullets[i].SetActive(false);
+					bullets[i].GetTransform().SetRotation(0,0,0);
 				}
 
 			}
@@ -670,7 +681,7 @@ void ThanosAttacks::BulletSeek(API_GameObject* seeker, API_Vector3 target, float
 	API_Vector3 direction = target - seeker->GetTransform().GetGlobalPosition();
 	seeker->GetTransform().Translate(direction * speed * Time::GetDeltaTime());
 
-	if (direction.x < 0.3 && direction.x > -0.3 && direction.y < 0.3 && direction.y && direction.z < 0.3 && direction.z) {
+	if (direction.x < 0.9 && direction.x > -0.9 && direction.y < 0.9 && direction.y && direction.z < 0.9 && direction.z) {
 		seeker->SetActive(false);
 	}
 

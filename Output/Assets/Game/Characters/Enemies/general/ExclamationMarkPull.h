@@ -5,16 +5,13 @@
 
 #include "API/API.h"
 
-class ExclamationMark : HelloBehavior
+class ExclamationMarkPull : HelloBehavior
 {
 public:
 	void Start() override; 
 	void Update() override;
-	void OnEnable() override;
-	void OnDisable() override;
 
 private:
-
-	float _count = 3.0f;
+	std::vector<API_GameObject> marks;
 };
 

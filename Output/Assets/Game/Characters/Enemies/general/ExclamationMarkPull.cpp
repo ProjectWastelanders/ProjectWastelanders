@@ -8,9 +8,14 @@ HELLO_ENGINE_API_C ExclamationMarkPull* CreateExclamationMarkPull(ScriptToInspec
 
 void ExclamationMarkPull::Start()
 {
-	//gameObject.GetChildren();
+	_marksCount = gameObject.GetChildren(_marks);
 }
 void ExclamationMarkPull::Update()
 {
 
+}
+
+void ExclamationMarkPull::ActivateMark(API_GameObject parent)
+{
+	//_marks[_currentMark]
 }

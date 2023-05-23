@@ -127,16 +127,17 @@ API::API_GameObject API::API_GameObject::GetParent()
     return parent;
 }
 
-API::API_GameObject API::API_GameObject::GetParent()
+bool API::API_GameObject::SetParent(API_GameObject parent)
 {
     if (_gameObject == nullptr)
     {
         Console::S_Log("Trying to acces a NULLPTR GameObject! GetParent()");
-        return API_GameObject();
+        return false;
     }
-    API_GameObject parent;
-    parent.SetGameObject(_gameObject->GetParent());
-    return parent;
+
+    _gameObject->SetParent(parent._gameObject);
+
+    return false;
 }
 
 HelloBehavior* API::API_GameObject::AddScript(const char* className)

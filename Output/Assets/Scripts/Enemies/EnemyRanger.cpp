@@ -75,6 +75,11 @@ void EnemyRanger::Start()
 	detectionDis = 10.0f;
 	lossingDis = 12.0f;
 	disPlayer = 8.0f;
+
+	// SetUp for Exclamation effect;
+	// 
+	// There have problem
+	//_exclamationPool = (ExclamationMarkPool*)Game::FindGameObject("ExclamationMarkPool").GetScript("ExclamationMarkPool");
 }
 
 void EnemyRanger::Update()
@@ -134,7 +139,7 @@ void EnemyRanger::Update()
 					break;
 				}
 			}
-			
+
 			// Not in the zone
 			float targDisZone = target.GetTransform().GetGlobalPosition().Distance(actionZone.GetTransform().GetGlobalPosition());
 			targDisZone < (zoneRb.GetRadius() / 2) ? enemy->isTargIn = true : enemy->isTargIn = false;
@@ -167,13 +172,17 @@ void EnemyRanger::Update()
 				// If enemy is out of his wonder range, _outCooldown never will be reset by followDistance
 				if (enemy->isOut)
 					break;
-					
+
 				_outCooldown = 0;
 
 				if (!playerEnterInFollowDis && enemy->isTargIn)
 				{
 					playerEnterInFollowDis = true;
 					targStats->detectedCount++;
+					// For The Mark Effect
+
+					//if (_exclamationPool)
+					//	_exclamationPool->ActivateMark(gameObject);
 				}
 				break;
 			}

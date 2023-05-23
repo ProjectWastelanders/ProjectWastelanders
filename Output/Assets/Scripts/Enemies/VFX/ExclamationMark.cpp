@@ -1,4 +1,5 @@
 #include "ExclamationMark.h"
+
 HELLO_ENGINE_API_C ExclamationMark* CreateExclamationMark(ScriptToInspectorInterface* script)
 {
 	ExclamationMark* classInstance = new ExclamationMark();
@@ -9,6 +10,8 @@ HELLO_ENGINE_API_C ExclamationMark* CreateExclamationMark(ScriptToInspectorInter
 void ExclamationMark::Start()
 {
 	_count = 3.0f;
+
+	_pull = gameObject.GetParent();
 }
 
 void ExclamationMark::Update()
@@ -23,11 +26,10 @@ void ExclamationMark::Update()
 
 void ExclamationMark::OnEnable()
 {
-	_count = 3.0f;
-	//gameObject.GetTransform().SetPosition(API_Vector3(1, 1, 1));
+	_count = 2.0f;
 }
 
 void ExclamationMark::OnDisable()
 {
-	//gameObject.GetTransform().SetPosition(API_Vector3(0, 0, 0));
+	gameObject.SetParent(_pull);
 }

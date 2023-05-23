@@ -5,16 +5,16 @@
 
 #include "API/API.h"
 
-class ExclamationMark : HelloBehavior
+class ExclamationMarkPool : HelloBehavior
 {
 public:
 	void Start() override; 
-	void Update() override;
-	void OnEnable() override;
-	void OnDisable() override;
+
+	void ActivateMark(API_GameObject parent);
 
 private:
-
-	float _count = 3.0f;
+	API_GameObject* _marks;
+	int _marksCount = 0;
+	int _currentMark = 0;
 };
 

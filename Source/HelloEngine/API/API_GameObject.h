@@ -47,6 +47,7 @@ namespace API
         /// <param name="count">Number of children to get. -1 = All children.</param>
         int GetChildren(API_GameObject* buffer, int count = -1);
         API_GameObject GetParent();
+        bool SetParent(API_GameObject parent);
 
         HelloBehavior* AddScript(const char* className);
         HelloBehavior* GetScript(const char* className);

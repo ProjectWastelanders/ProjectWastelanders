@@ -6,6 +6,10 @@
 #include "API/API.h"
 #include "API/API_UIInput.h"
 
+#include "../Scripts/AbilityTreeScript.h"
+
+
+
 class AbilitySelect : HelloBehavior
 {
 public:
@@ -21,6 +25,8 @@ public:
     API_GameObject description3;
     API_GameObject description4;
     API_GameObject description5;
+
+    AbilityTreeScript* abilityTreeScript;
 
     bool waitFrame = false;
 };

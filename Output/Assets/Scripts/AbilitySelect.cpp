@@ -20,6 +20,7 @@ HELLO_ENGINE_API_C AbilitySelect* CreateAbilitySelect(ScriptToInspectorInterface
 void AbilitySelect::Start()
 {
     abilityPanel.SetEnable(false);
+    abilityTreeScript = (AbilityTreeScript*)mainPanel.GetGameObject().GetScript("AbilityTreeScript");
 }
 
 void AbilitySelect::Update()
@@ -33,7 +34,7 @@ void AbilitySelect::Update()
         description5.SetActive(false);
         waitFrame = false;
     }
-    else if (abilitySelect.OnPress() && !waitFrame)
+    else if (abilitySelect.OnPress() && !waitFrame && !abilityTreeScript->tutorialActive)
     {
         Audio::Event("click");
 

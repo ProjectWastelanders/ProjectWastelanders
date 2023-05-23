@@ -11423,7 +11423,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.6573426723480225,
+                "Aspect ratio": 1.6615043878555298,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -21883,7 +21883,7 @@
                 "Position": [
                     -0.6000000238418579,
                     0.30000001192092896,
-                    0.0
+                    -0.20000000298023224
                 ],
                 "Rotation": [
                     0.0,
@@ -21956,7 +21956,7 @@
                 "Position": [
                     -0.6000000238418579,
                     0.0,
-                    0.0
+                    -0.20000000298023224
                 ],
                 "Rotation": [
                     0.0,
@@ -22029,7 +22029,7 @@
                 "Position": [
                     -0.6050000190734863,
                     -0.2800000011920929,
-                    0.0
+                    -0.20000000298023224
                 ],
                 "Rotation": [
                     0.0,
@@ -22105,7 +22105,7 @@
                 "Position": [
                     -0.6000000238418579,
                     -0.5600000023841858,
-                    0.0
+                    -0.20000000298023224
                 ],
                 "Rotation": [
                     0.0,
@@ -22280,7 +22280,7 @@
                 "Position": [
                     0.75,
                     0.6399999856948853,
-                    0.0
+                    -0.20000000298023224
                 ],
                 "Rotation": [
                     0.0,
@@ -23796,7 +23796,7 @@
                 "Enabled": true,
                 "Position": [
                     0.3700000047683716,
-                    0.4399999976158142,
+                    0.5,
                     0.0
                 ],
                 "Rotation": [
@@ -32484,7 +32484,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -32523,7 +32523,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.4000000059604645
                 ],
                 "Rotation": [
                     0.0,
@@ -32540,7 +32540,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 392558115,
+                "MaterialResource": 3192236639,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -32563,7 +32563,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.4000000059604645
                 ],
                 "Rotation": [
                     0.0,
@@ -32580,7 +32580,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 858008163,
+                "MaterialResource": 2414958581,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -32603,7 +32603,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.30000001192092896
                 ],
                 "Rotation": [
                     0.0,
@@ -32620,7 +32620,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 2823118474,
+                "MaterialResource": 3660095553,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15

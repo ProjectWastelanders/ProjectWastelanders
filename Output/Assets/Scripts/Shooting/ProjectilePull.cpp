@@ -51,7 +51,7 @@ void ProjectilePull::Start()
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
         if (bombScript == nullptr)
             break;
-
+        bombScript->Start();
         API_GameObject explosion[1];
         newBomb.GetChildren(explosion);
         bombScript->explosion = (ShotgunBombExplosion*)explosion->GetScript("ShotgunBombExplosion");

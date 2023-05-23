@@ -10,7 +10,7 @@ HELLO_ENGINE_API_C EnemyProjectile* CreateEnemyProjectile(ScriptToInspectorInter
 
 void EnemyProjectile::Start()
 {
-
+    rigidbody = gameObject.GetRigidBody();
 }
 
 void EnemyProjectile::Update()
@@ -23,7 +23,8 @@ void EnemyProjectile::Update()
         return;
     }
 
-    gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
+    rigidbody.SetVelocity(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 10.0f);
+    //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 
 void EnemyProjectile::Destroy()

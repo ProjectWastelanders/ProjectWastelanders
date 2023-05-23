@@ -539,15 +539,7 @@ header h1 {
     text-align: center;
     width: 114rem;
 } */
-.game_title {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    width: 10%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 114rem;
-}
+
 
 
 
@@ -599,6 +591,75 @@ header h1 {
 
 }
 
+
+/*=====================================*/
+/* Production Page Section*/
+/*=====================================*/
+
+.productionpage-section {
+    text-align: center;
+    background: linear-gradient(rgba(37, 194, 23, 0.9), rgba(23, 194, 32, 0.9)), url(img/services-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100%;
+}
+
+.productionpage-section p {
+    color: #3c4761;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: center;
+}
+
+.productionpage-section h1 {
+    color: #3c4761;
+    margin-left: 5rem;
+    text-align: center;
+}
+
+.productionpage-section h2 {
+    color: #3c4761;
+    margin-left: 5rem;
+}
+
+.productionpage-section h2::after {
+    background: #14a58c;
+}
+
+.productionpage-section h3 {
+    color: #3c4761;
+    margin-left: 5rem;
+    text-align: center;
+    font-size: 1.8rem;
+
+    line-height: 3rem;
+    font-weight: 500;
+}
+
+.productionpage-icon {
+    height: 20rem;
+    width: auto;
+    margin-top: 1.5rem;
+    /* margin-bottom: 3.5rem; */
+}
+
+
+.btn-productionpage:link,
+.btn-productionpage:visited {
+    background: #815f5f;
+    border-bottom: #926060;
+    margin-top: 5rem;
+    margin-right: 20rem;
+
+}
+
+
+
+
+
 /*=====================================*/
 /* Main Game Section*/
 /*=====================================*/
@@ -619,7 +680,7 @@ header h1 {
     padding-left: 5rem;
     padding-right: 5rem;
     text-align: justify;
-   ;
+    ;
 }
 
 
@@ -670,7 +731,102 @@ header h1 {
     height: 100%;
 }
 
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
 
 /*=====================================*/
 /* Production Section*/
@@ -721,7 +877,8 @@ header h1 {
 }
 
 /*=====================================*/
-/* Old Team Section*/ /*Game Features*/
+/* Old Team Section*/
+/*Game Features*/
 /*=====================================*/
 
 .team-section {
@@ -749,14 +906,14 @@ header h1 {
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
-    
+
 }
 
 .container {
     position: relative;
-  }
-  
-  .image {
+}
+
+.image {
     opacity: 1;
     display: block;
     margin-top: 4.5rem;
@@ -765,9 +922,9 @@ header h1 {
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
-  }
-  
-  .middle {
+}
+
+.middle {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -776,22 +933,22 @@ header h1 {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: left;
-  }
-  
-  .container:hover .image {
+}
+
+.container:hover .image {
     opacity: 0.3;
-  }
-  
-  .container:hover .middle {
+}
+
+.container:hover .middle {
     opacity: 1;
-  }
-  
-  .text {
+}
+
+.text {
     /* background-color: #04AA6D; */
     color: black;
     font-size: 15px;
-    
-  }
+
+}
 
 .team-section h3 {
     color: #27283d;
@@ -812,7 +969,8 @@ header h1 {
     font-weight: 500;
     text-align: center;
 }
-/* 
+
+
 .social-link {
     margin-top: 4.5rem;
 }
@@ -840,7 +998,7 @@ header h1 {
 .social-link ul li a:hover i::before {
     background: #393939;
     transform: rotate(360deg);
-} */
+} 
 
 
 /*=====================================*/
@@ -959,6 +1117,74 @@ svg.ui-ux circle {
 .portfolio-section .mixitup-control-active {
     background: #fff;
 }
+
+
+.portfolio-section li {
+    display: fixed;
+    list-style-type: none
+}
+
+.portfolio-section li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 2.4rem;
+    color: #000000;
+}
+
+.portfolio-section li:hover a {
+    color: #30bae7;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 0;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 /*=====================================*/
 /* Testimonial Section*/

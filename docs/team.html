@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
-    <meta charset= "UTF-8">
-    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE-Edge">
     <title>Cuda - A Owesome Html Template</title>
     <link rel="shortcut icon" type="image/x-icon" href="resources/img/logo.png">
     <!-- Google Fonts ================================================== -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Font Awesome ================================================== -->
-    <script src="https://kit.fontawesome.com/e768f44d60.js" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e768f44d60.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <!--Vendors File ===================================================-->
     <link rel="stylesheet" href="vendors/css/animated-circle.css">
     <link rel="stylesheet" href="vendors/css/normalize.css">
     <link rel="stylesheet" href="vendors/css/grid.css">
     <!--Resource File ==================================================-->
-    <link rel= "stylesheet"  href= "resources/css/style.css"/>
+    <link rel="stylesheet" href="resources/css/style.css" />
     <link rel="stylesheet" href="resources/css/responsive.css">
 </head>
+
 <body>
 
     <!-- Started Header Menu -->
-    
+
     <nav class="stroke">
         <ul>
             <li><a href="./index.html">Home</a></li>
@@ -34,7 +38,7 @@
     <section class="portfolio-section" id="portfolio">
         <div class="row">
             <h2>Here is the team</h2>
-            <p class= "litte-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet
+            <p class="litte-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet
                 consectetur, adipisci velit, sed quia non numquam</p>
         </div>
         <div class="row">
@@ -49,34 +53,166 @@
         <div class="row container">
             <div class="col span_1_of_2 mix design box">
                 <img src="resources/img/1.jpg" alt="Name 1" class="team-member">
-                <h3>Name 1</h3>
-                
+                <li><a class="myBtn_multi">Name 1</a></li>
             </div>
             <div class="col span_1_of_2 mix code leads box">
                 <img src="resources/img/2.jpg" alt="Name 2" class="team-member">
-                <h3>Name 2</h3>
+                <li><a class="myBtn_multi">Name 2</a></li>
+                <span class="role">Creative Director</span>
+            </div>
+            <div class="col span_1_of_2 mix art leads box">
+                <img src="resources/img/3.jpg" alt="Name 3" class="team-member">
+                <li><a class="myBtn_multi">Name 3</a></li>
                 <span class="role">Creative Director</span>
             </div>
             <div class="col span_1_of_2 mix art box">
-                <img src="resources/img/3.jpg" alt="Name 3" class="team-member">
-                <h3>Name 3</h3>
-            </div>
-            <div class="col span_1_of_2 mix art leads box">
                 <img src="resources/img/4.jpg" alt="Name 4" class="team-member">
-                <h3>Name 4</h3>
-                <span class="role">Creative Director</span>
+                <li><a class="myBtn_multi">Name 4</a></li>
             </div>
+
+
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">×</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4> General Info</h4>
+                            <p>We are working with both individuals and businesses from all over the
+                                globe
+                                to create awesome games.</p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>Task 1</p>
+                                </li>
+                                <li>
+                                    <p>Task 1</p>
+                                </li>
+                                <li>
+                                    <p>Task 1</p>
+                                </li>
+                                <li>
+                                    <p>Task 1</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/4.jpg" alt="Name 4" class="team-member">
+                            <h3>Name 1</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- The Modal 2-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">×</span>
+                    <p>Some text in the Modal..2</p>
+                </div>
+
+            </div>
+
+            <!-- The Modal 3-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">×</span>
+                    <p>Some text in the Modal..3</p>
+                </div>
+
+            </div>
+
+            <!-- The Modal 4-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">×</span>
+                    <p>Some text in the Modal..4</p>
+                </div>
+
+            </div>
+
         </div>
-        
+
     </section>
 
+
+    <!-- Modal Script ------------------------------------------------------------->
+    <script>
+        // Get the modal
+
+        var modalparent = document.getElementsByClassName("modal_multi");
+
+        // Get the button that opens the modal
+
+        var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+
+        // Get the <span> element that closes the modal
+        var span_close_multi = document.getElementsByClassName("close_multi");
+
+        // When the user clicks the button, open the modal
+        function setDataIndex() {
+
+            for (i = 0; i < modal_btn_multi.length; i++) {
+                modal_btn_multi[i].setAttribute('data-index', i);
+                modalparent[i].setAttribute('data-index', i);
+                span_close_multi[i].setAttribute('data-index', i);
+            }
+        }
+
+
+
+        for (i = 0; i < modal_btn_multi.length; i++) {
+            modal_btn_multi[i].onclick = function () {
+                var ElementIndex = this.getAttribute('data-index');
+                modalparent[ElementIndex].style.display = "block";
+            };
+
+            // When the user clicks on <span> (x), close the modal
+            span_close_multi[i].onclick = function () {
+                var ElementIndex = this.getAttribute('data-index');
+                modalparent[ElementIndex].style.display = "none";
+            };
+
+        }
+
+        window.onload = function () {
+
+            setDataIndex();
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+                modalparent[event.target.getAttribute('data-index')].style.display = "none";
+            }
+        }
+    </script>
 
     <!-- Ended Portfolio Section here-->
 
 
     <!-- Started testimonial Section here-->
 
-        <!-- <section class="testimonial-section" id="testimonial">
+    <!-- <section class="testimonial-section" id="testimonial">
             <div class="row">
                 <h2>What People say about us</h2>
                 <p class="little-description">Our clients love us!</p>
@@ -130,30 +266,31 @@
 
     <!-- Ended Footer Section here-->
 
-        <footer class="footer-section">
-            <div class="row">
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Google</a></li>
-                    <li><a href="#">Linkdin</a></li>
-                    <li><a href="#">Behance</a></li>
-                    <li><a href="#">Dribble</a></li>
-                    <li><a href="#">Github</a></li>
-                </ul>
-            </div>
-        </footer>
+    <footer class="footer-section">
+        <div class="row">
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Google</a></li>
+                <li><a href="#">Linkdin</a></li>
+                <li><a href="#">Behance</a></li>
+                <li><a href="#">Dribble</a></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <!-- Ended Footer Section here-->
 
-<!--JavaScript Vendors File ===========================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="vendors/js/jquery.waypoints.min.js"></script>
-<script src= "vendors/js/animated-circle.js"></script>
-<script src="vendors/js/html5shiv.min.js"></script>
-<script src="vendors/js/respond.min.js"></script>
-<script src="vendors/js/selectivizr.js"></script>
-<script src="vendors/js/mixitup.min.js"></script>
-<script src= "resources/js/main.js"></script>
+    <!--JavaScript Vendors File ===========================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="vendors/js/animated-circle.js"></script>
+    <script src="vendors/js/html5shiv.min.js"></script>
+    <script src="vendors/js/respond.min.js"></script>
+    <script src="vendors/js/selectivizr.js"></script>
+    <script src="vendors/js/mixitup.min.js"></script>
+    <script src="resources/js/main.js"></script>
 </body>
+
 </html>

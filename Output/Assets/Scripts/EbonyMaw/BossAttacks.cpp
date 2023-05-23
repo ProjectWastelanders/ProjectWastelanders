@@ -357,7 +357,6 @@ void BossAttacks::Update()
 				{
 				case 0:
 					speed = 1.0f;
-					difficultySetter = 110;
 					if (difficultySetter <= 60) attackType = 0;
 					else if (difficultySetter > 60 && difficultySetter <= 90) attackType = 1;
 					else if (difficultySetter > 90 && difficultySetter < 101) attackType = 2;

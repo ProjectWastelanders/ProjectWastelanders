@@ -19,7 +19,7 @@ HELLO_ENGINE_API_C RockDivider* CreateRockDivider(ScriptToInspectorInterface* sc
 void RockDivider::Start()
 {
 	bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
-	gameObject.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.6f, 0.6f, 0.6f), false);
+	//gameObject.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.6f, 0.6f, 0.6f), false); 
 	for (size_t i = 0; i < 8; i++)
 	{
 		API_GameObject stone = Game::CreateGameObject("Stone", "Stone");
@@ -79,7 +79,7 @@ void RockDivider::OnCollisionEnter(API::API_RigidBody other)
 			pStats->TakeDamage(bAttacks->orbitingRockDmg, 0);
 		}
 	}
-	else if ((detectionTag == "Default" || detectionTag == "Wall") && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {
+	else if (detectionTag == "Wall" && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {
 		rockDivided = true;
 	}
 

@@ -206,10 +206,7 @@ void Mesh::UniformDraw(Material material)
 			//Bones
 			SkinnedMeshRenderComponent* smComp = (SkinnedMeshRenderComponent*)component;
 
-			for (int i = 0; i < smComp->goBonesArr.size(); ++i)
-			{
-				depthBoneShader->shader.SetMatFloat4v("finalBonesMatrices[" + std::to_string(i) + "]", &smComp->goBonesArr[i].Transposed().v[0][0]);
-			}
+			depthBoneShader->shader.SetMatFloat4v("finalBonesMatrices", smComp->goBonesArr[0].ptr(), smComp->goBonesArr.size(), true);
 			
 			return;
 		}

@@ -4,7 +4,7 @@ HELLO_ENGINE_API_C EnemyProjectilePull* CreateEnemyProjectilePull(ScriptToInspec
     EnemyProjectilePull* classInstance = new EnemyProjectilePull();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     script->AddDragInt("Pull Size", &classInstance->pullSize);
-    //script->AddDragBoxParticleSystem("Particles", &classInstance->particleTest);
+    script->AddDragBoxParticleSystem("Particles", &classInstance->particleTest);
     return classInstance;
 }
 

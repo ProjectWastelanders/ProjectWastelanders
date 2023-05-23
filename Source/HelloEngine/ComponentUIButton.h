@@ -28,6 +28,8 @@ class ComponentUIButton : public ComponentUI
 
 	ButtonState ChangeState(ButtonState State);
 
+	void OnEnable();
+
 	ButtonState State;
 	ButtonState lastState;
 	bool IsHold = false;

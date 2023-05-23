@@ -19,6 +19,13 @@ HELLO_ENGINE_API_C HUB_LevelSelect* CreateHUB_LevelSelect(ScriptToInspectorInter
 	script->AddDragBoxGameObject("Level3 Info", &classInstance->levelInfo[2]);
 	script->AddDragBoxGameObject("Level4 Info", &classInstance->levelInfo[3]);
 
+	script->AddDragBoxGameObject("Hala1", &classInstance->Hala1);
+	script->AddDragBoxGameObject("Hala2", &classInstance->Hala2);
+	script->AddDragBoxGameObject("Santuary", &classInstance->Santuary);
+	script->AddDragBoxGameObject("Thanos", &classInstance->Thanos);
+
+
+
 	return classInstance;
 }
 
@@ -38,6 +45,11 @@ void HUB_LevelSelect::Start()
 				holdBarsSelectedLevel[i] = image;
 		}
 	}
+
+	Hala1.SetActive(false);
+	Hala2.SetActive(false);
+	Santuary.SetActive(false);
+	Thanos.SetActive(false);
 
 	levels[currentSelectedLevel].SetBlocked(true);
 }
@@ -118,5 +130,33 @@ void HUB_LevelSelect::SelectLevel(uint level)
 	for (int i = 0; i < 4; ++i)
 	{
 		levels[i].SetBlocked(level == i);
+	}
+	if (level == 0)
+	{
+		Hala1.SetActive(true);
+		Hala2.SetActive(false);
+		Santuary.SetActive(false);
+		Thanos.SetActive(false);
+	}
+	if (level == 1)
+	{
+		Hala1.SetActive(false);
+		Hala2.SetActive(true);
+		Santuary.SetActive(false);
+		Thanos.SetActive(false);
+	}
+	if (level == 2)
+	{
+		Hala1.SetActive(false);
+		Hala2.SetActive(false);
+		Santuary.SetActive(true);
+		Thanos.SetActive(false);
+	}
+	if (level == 3)
+	{
+		Hala1.SetActive(false);
+		Hala2.SetActive(false);
+		Santuary.SetActive(false);
+		Thanos.SetActive(true);
 	}
 }

@@ -4178,14 +4178,14 @@
                     0.0
                 ],
                 "Rotation": [
-                    0.0,
-                    90.0,
-                    0.0
+                    -180.0,
+                    89.98020935058594,
+                    -180.0
                 ],
                 "Scale": [
+                    1.0000001192092896,
                     1.0,
-                    1.0,
-                    1.0
+                    1.0000001192092896
                 ],
                 "Type": 1
             }
@@ -11281,6 +11281,194 @@
             {
                 "Enabled": true,
                 "Position": [
+                    -1.1084070205688477,
+                    0.0999998077750206,
+                    -0.00038292063982225955
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    3.5418747795779026e-11,
+                    4.0720570903922393e-13
+                ],
+                "Scale": [
+                    2.0,
+                    0.999997079372406,
+                    0.9999948143959045
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 1913571262,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Hala 1",
+        "ParentUID": 3337184046,
+        "PrefabUID": 86129869,
+        "Tag": "Primitive",
+        "UID": 3130351643,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.1084070205688477,
+                    0.0999998077750206,
+                    -0.00038292063982225955
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    3.5418747795779026e-11,
+                    4.0720570903922393e-13
+                ],
+                "Scale": [
+                    2.0,
+                    0.999997079372406,
+                    0.9999948143959045
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2342344047,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Hala 2",
+        "ParentUID": 3337184046,
+        "PrefabUID": 86129869,
+        "Tag": "Primitive",
+        "UID": 673264433,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.1084070205688477,
+                    0.0999998077750206,
+                    -0.00038292063982225955
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    3.5418747795779026e-11,
+                    4.0720570903922393e-13
+                ],
+                "Scale": [
+                    2.0,
+                    0.999997079372406,
+                    0.9999948143959045
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2802908232,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Santuary",
+        "ParentUID": 3337184046,
+        "PrefabUID": 86129869,
+        "Tag": "Primitive",
+        "UID": 117860098,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.1084070205688477,
+                    0.0999998077750206,
+                    -0.00038292063982225955
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    3.5418747795779026e-11,
+                    4.0720570903922393e-13
+                ],
+                "Scale": [
+                    2.0,
+                    0.999997079372406,
+                    0.9999948143959045
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 119137469,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Thanos",
+        "ParentUID": 3337184046,
+        "PrefabUID": 86129869,
+        "Tag": "Primitive",
+        "UID": 3963088882,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.08513391017913818,
                     2.0452969074249268,
                     -3.0
@@ -11423,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.6573426723480225,
+                "Aspect ratio": 1.535398244857788,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -27280,6 +27468,18 @@
                     },
                     {
                         "Level4 Info": 3297149726
+                    },
+                    {
+                        "Hala1": 3130351643
+                    },
+                    {
+                        "Hala2": 673264433
+                    },
+                    {
+                        "Santuary": 117860098
+                    },
+                    {
+                        "Thanos": 3963088882
                     }
                 ],
                 "Script Resource": 3730914407,

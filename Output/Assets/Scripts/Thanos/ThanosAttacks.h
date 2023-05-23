@@ -86,7 +86,7 @@ public:
 	API_GameObject bullet3;
 
 	API_GameObject bullets[3];
-	float bulletSpeed = 3.0f;
+	float bulletSpeed = 2.0f;
 
 	bool bulletThrown[3] = { false,false,false };
 

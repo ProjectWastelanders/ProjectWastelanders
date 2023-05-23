@@ -45,7 +45,7 @@ namespace API
         /// WARNING: Do not call this function with an array too small!
         /// <param name="buffer">An API_GameObject array to fill with this gameobject's children</param>
         /// <param name="count">Number of children to get. -1 = All children.</param>
-        void GetChildren(API_GameObject* buffer, int count = -1);
+        int GetChildren(API_GameObject* buffer, int count = -1);
         API_GameObject GetParent();
 
         HelloBehavior* AddScript(const char* className);

@@ -37,12 +37,12 @@ void ComponentUIInput::InputUpdate()
 			isPress = true;
 		}
 
-		if (_listButtons[ButtonSelected]->IsEnabled())
+		if (_listButtons[ButtonSelected]->IsEnabled() && _listButtons[ButtonSelected]->GetGameObject()->IsActive())
 			_listButtons[ButtonSelected]->UpdateGamePadInput(true);
 
 		for (int i = 0; i < _listButtons.size(); ++i)
 		{
-			if (i == ButtonSelected || !_listButtons[i]->IsEnabled())
+			if (i == ButtonSelected || !_listButtons[i]->IsEnabled() || !_listButtons[i]->GetGameObject()->IsActive())
 				continue;
 			_listButtons[i]->UpdateGamePadInput(false);
 		}

@@ -34,7 +34,7 @@ void Projectile::Update()
         gameObject.GetRigidBody().SetBoxScale({ 0.1f + scaleMultiply, 0.1f + scaleMultiply, 0.1f + scaleMultiply });
     }
 
-    rigidBody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 10.0f });
+    rigidBody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 60.0f });
 
    // gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }

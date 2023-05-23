@@ -22,8 +22,8 @@ void EnemyProjectile::Update()
         Destroy();
         return;
     }
-
-    rigidbody.SetVelocity(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 10.0f);
+    
+    rigidbody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 10.0f });
     //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 

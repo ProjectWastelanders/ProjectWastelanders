@@ -21,6 +21,8 @@
 #include "NavAgentComponent.h"
 #include "API_UIButton.h"
 #include "ComponentUIButton.h"
+#include "ComponentUIImage.h"
+#include "API_UIImage.h"
 
 API::API_GameObject::API_GameObject()
 {
@@ -94,7 +96,7 @@ void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
 {
     if (_gameObject == nullptr)
     {
-        Console::S_Log("Trying to acces a NULLPTR GameObject! AddScript()");
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetChildren()");
         return;
     }
     std::vector<GameObject*>* children = _gameObject->GetChildren();
@@ -110,6 +112,18 @@ void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
         if (currentCount == count)
             return;
     }
+}
+
+API::API_GameObject API::API_GameObject::GetParent()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetParent()");
+        return API_GameObject();
+    }
+    API_GameObject parent;
+    parent.SetGameObject(_gameObject->GetParent());
+    return parent;
 }
 
 HelloBehavior* API::API_GameObject::AddScript(const char* className)
@@ -353,6 +367,18 @@ API::API_UIButton API::API_GameObject::GetUIButton()
     return ret;
 }
 
+API::API_UIImage API::API_GameObject::GetUIImage()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetButton()");
+        return API::API_UIImage();
+    }
+    API_UIImage ret;
+    ret.SetComponent(_gameObject->GetComponent<ComponentUIImage>());
+    return ret;
+}
+
 void API::API_GameObject::SetActive(bool active)
 {
     if (_gameObject == nullptr)
@@ -409,15 +435,15 @@ API::API_RigidBody API::API_GameObject::CreateRigidBodyBox(API::API_Vector3 pos,
     physComponent->_physBody->colPos = { pos.x, pos.y, pos.z };
     physComponent->_physBody->colRot = { rotation.x, rotation.y, rotation.z };
     physComponent->_physBody->colScl = { scale.x, scale.y, scale.z };
+    physComponent->_physBody->mass = 1.0f;
     physComponent->CallUpdatePos();
     physComponent->CallUpdateRotation();
     physComponent->CallUpdateScale();
     if (isStatic)
     {
         physComponent->_physBody->isStatic = true;
-        physComponent->CallUpdateMass();
     }
-
+    physComponent->CallUpdateMass();
     API_RigidBody ret;
     ret.SetComponent(physComponent);
     return ret;

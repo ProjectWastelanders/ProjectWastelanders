@@ -9,7 +9,7 @@ HELLO_ENGINE_API_C ShotgunBomb* CreateShotgunBomb(ScriptToInspectorInterface* sc
 
 void ShotgunBomb::Start()
 {
-    rb = gameObject.GetRigidBody();
+
 }
 
 void ShotgunBomb::Update()
@@ -24,8 +24,7 @@ void ShotgunBomb::Update()
         return;
     }
 
-    rb.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 10.0f });
-    //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
+    gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 
 void ShotgunBomb::Destroy()

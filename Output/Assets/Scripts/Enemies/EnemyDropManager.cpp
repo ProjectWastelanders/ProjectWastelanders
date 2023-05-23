@@ -41,7 +41,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab1, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
@@ -51,7 +51,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab2, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
@@ -61,7 +61,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab3, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
@@ -71,7 +71,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab4, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;

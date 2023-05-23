@@ -46,11 +46,6 @@ void HUB_LevelSelect::Start()
 		}
 	}
 
-	Hala1.SetActive(false);
-	Hala2.SetActive(false);
-	Santuary.SetActive(false);
-	Thanos.SetActive(false);
-
 	levels[currentSelectedLevel].SetBlocked(true);
 }
 

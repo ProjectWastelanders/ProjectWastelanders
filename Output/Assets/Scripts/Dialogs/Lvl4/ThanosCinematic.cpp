@@ -39,6 +39,7 @@ void ThanosCinematic::Start()
     if (playerMov == nullptr) Console::Log("PlayerMove missing in ThanosCinematic Script.");
 
     activeCinematic = false;
+    showedDialog = false;
     nextDialog = false;
 
     initalPos = { 0, -1.500, 0 };
@@ -76,7 +77,7 @@ void ThanosCinematic::Start()
 }
 void ThanosCinematic::Update()
 {
-    if (activeCinematic) {
+    if (activeCinematic && !showedDialog) {
         playerMov->openingChest = true;
         player.GetRigidBody().SetVelocity((0, 0, 0));
         playerMov->PlayIdleAnim();
@@ -137,6 +138,7 @@ void ThanosCinematic::PrintDialog(API_UIImage& Dialog)
                 camMov->target = player;
                 tMovement->cinematic = false;
                 activeCinematic = false;
+                showedDialog = true;
                 playerMov->openingChest = false;
 
             }

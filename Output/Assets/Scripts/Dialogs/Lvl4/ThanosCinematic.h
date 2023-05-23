@@ -40,7 +40,7 @@ public:
 	CamMov* camMov;
 	PlayerMove* playerMov;
 
-	bool activeCinematic, nextDialog;
+	bool activeCinematic, nextDialog, showedDialog;
 	int currentDialog;
 };
 

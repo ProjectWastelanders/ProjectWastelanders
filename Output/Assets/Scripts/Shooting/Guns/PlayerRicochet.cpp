@@ -99,9 +99,9 @@ void PlayerRicochet::EnableGuns(bool enable)
 
 void PlayerRicochet::SetGunStatsPerLevel(int level)
 {
-    projectileSpeed = 30.0f;
-    projectileDamage = 80.0f;
-    projectileResistanceDamage = 80.0f;
-    projectileLifetime = 1.0f;
-    cadence = 0.5f;
+    projectileSpeed = 15.0f;
+    projectileDamage = 65.0f;
+    projectileResistanceDamage = 65.0f;
+    projectileLifetime = 5.0f;
+    cadence = 0.35f;
 }

@@ -86,12 +86,12 @@ public:
 	API_GameObject bullet3;
 
 	API_GameObject bullets[3];
-	float bulletSpeed = 8.0f;
+	float bulletSpeed = 3.0f;
 
 	bool bulletThrown[3] = { false,false,false };
 
 	API_Vector3 playerPositions[3] = { 0,0,0 };
-	float burstTimes[4] = { 0.01f,0.25f,0.5f,1.0f };
+	float burstTimes[4] = { 0.05f,1.25f,0.5f,2.0f };
 	float busrstTime = 0.0f;
 
 	float attackType = 0.0f;

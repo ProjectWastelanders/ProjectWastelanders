@@ -13,13 +13,13 @@ HELLO_ENGINE_API_C EnemyDropManager* CreateEnemyDropManager(ScriptToInspectorInt
     script->AddDragFloat("Box Aid Kit Drop Rate", &classInstance->BoxAidKitDropRate);
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
     script->AddDragInt("Pull Size per Drop Type", &classInstance->pullSize);
-    script->AddDragBoxMeshResource("Lase Ammo Drop Mesh", &classInstance->prefab0);
-    script->AddDragBoxMeshResource("First Aid Kit Drop Mesh", &classInstance->prefab1);
-    script->AddDragBoxMeshResource("Speed Power Up Drop Mesh", &classInstance->prefab2);
-    script->AddDragBoxMeshResource("Firearte Power Up Drop Mesh", &classInstance->prefab3);
-    script->AddDragBoxMeshResource("Shield Drop Mesh", &classInstance->prefab4);
-    script->AddDragBoxMeshResource("Max Ammo Drop Mesh", &classInstance->prefab5);
-    script->AddDragBoxMeshResource("Slow Time Drop Mesh", &classInstance->prefab6);
+    script->AddDragBoxPrefabResource("Lase Ammo Drop Mesh", &classInstance->prefab0);
+    script->AddDragBoxPrefabResource("First Aid Kit Drop Mesh", &classInstance->prefab1);
+    script->AddDragBoxPrefabResource("Speed Power Up Drop Mesh", &classInstance->prefab2);
+    script->AddDragBoxPrefabResource("Firearte Power Up Drop Mesh", &classInstance->prefab3);
+    script->AddDragBoxPrefabResource("Shield Drop Mesh", &classInstance->prefab4);
+    script->AddDragBoxPrefabResource("Max Ammo Drop Mesh", &classInstance->prefab5);
+    script->AddDragBoxPrefabResource("Slow Time Drop Mesh", &classInstance->prefab6);
     return classInstance;
 }
 
@@ -41,7 +41,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab1, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
@@ -51,7 +51,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab2, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
@@ -61,7 +61,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab3, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
@@ -71,7 +71,7 @@ void EnemyDropManager::Start()
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        API_GameObject newDrop = Game::InstancePrefab(prefab4, API_GameObject());
         EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;

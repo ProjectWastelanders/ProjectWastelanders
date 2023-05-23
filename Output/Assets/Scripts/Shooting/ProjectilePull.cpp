@@ -51,7 +51,7 @@ void ProjectilePull::Start()
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
         if (bombScript == nullptr)
             break;
-
+        bombScript->Start();
         API_GameObject explosion[1];
         newBomb.GetChildren(explosion);
         bombScript->explosion = (ShotgunBombExplosion*)explosion->GetScript("ShotgunBombExplosion");
@@ -194,16 +194,16 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     switch (automaticLevel)
     {
     case 0:
-        if (autoForce <= 6.0f) autoForce += 0.1f;
+        if (autoForce <= 8.0f) autoForce += 0.1f;
         break;
     case 1:
-        if (autoForce <= 6.0f) autoForce += 0.1f;
+        if (autoForce <= 8.0f) autoForce += 0.1f;
         break;
     case 2:
-        if (autoForce <= 9.0f) autoForce += 0.15f;
+        if (autoForce <= 12.0f) autoForce += 0.15f;
         break;
     case 3:
-        if (autoForce <= 9.0f) autoForce += 0.225f;
+        if (autoForce <= 12.0f) autoForce += 0.225f;
         break;
     default:
         break;

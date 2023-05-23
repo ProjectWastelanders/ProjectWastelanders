@@ -18,7 +18,8 @@ void EnemyProjectilePull::Start()
         API_RigidBody rb = newProjectile.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.3f, 0.3f, 0.3f), false);
         rb.SetTrigger(true);
         //newProjectile.AddParticleSystem(particleTest);
-        newProjectile.AddScript("EnemyProjectile");
+        EnemyProjectile* bullet = (EnemyProjectile*)newProjectile.AddScript("EnemyProjectile");
+        bullet->Start();
         newProjectile.SetActive(false);
         pull.push_back(newProjectile);
     }

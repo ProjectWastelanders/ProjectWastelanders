@@ -15,6 +15,6 @@ public:
 
     int pullSize;
     std::vector<API_GameObject> pull;
-    //API_ParticleSystem particleTest;
+    API_ParticleSystem particleTest;
 };
 

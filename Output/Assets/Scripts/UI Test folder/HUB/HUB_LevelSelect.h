@@ -18,6 +18,11 @@ public:
 
 	API_GameObject levelInfo[4];
 
+	API_GameObject Hala1;
+	API_GameObject Hala2;
+	API_GameObject Santuary;
+	API_GameObject Thanos;
+
 	// Progress bar
 	float totalTime = 1.5f;
 	float currentTime = 0.0f;

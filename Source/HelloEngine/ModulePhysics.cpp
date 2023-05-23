@@ -610,18 +610,28 @@ void ModulePhysics::IterateSecond()
 			{
 				//stay
 				objectA->OnCollisionStay(pBodyB);
-				//stay
-				objectB->OnCollisionStay(pBodyA);
+				pBodyA->thisFrameCollidingBodies.insert(pBodyB->gameObjectUID);
 			}
 			else
 			{
 				//enter
 				objectA->OnCollisionEnter(pBodyB);
 				pBodyA->thisFrameCollidingBodies.insert(pBodyB->gameObjectUID);
+			}
+
+			if (pBodyB->lastFrameCollidingBodies.count(pBodyA->gameObjectUID) != 0)
+			{
+				//stay
+				objectB->OnCollisionStay(pBodyA);
+				pBodyB->thisFrameCollidingBodies.insert(pBodyA->gameObjectUID);
+			}
+			else
+			{
 				//enter
 				objectB->OnCollisionEnter(pBodyA);
 				pBodyB->thisFrameCollidingBodies.insert(pBodyA->gameObjectUID);
 			}
+
 		}
 	}
 }

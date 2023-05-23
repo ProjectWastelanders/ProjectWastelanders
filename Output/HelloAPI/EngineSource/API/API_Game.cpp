@@ -44,7 +44,10 @@ API::API_GameObject API::Game::CreateGameObject(const char* name, const char* ta
 TO_API API::API_GameObject API::Game::InstancePrefab(uint uid, API_GameObject parent)
 {
 	ResourcePrefab* prefabResource = (ResourcePrefab*)ModuleResourceManager::S_LoadResource(uid);
-
+	if (prefabResource && prefabResource->_type != ResourceType::PREFAB)
+	{
+		return API_GameObject();
+	}
 	// Get prefab
 	if (prefabResource != nullptr)
 	{

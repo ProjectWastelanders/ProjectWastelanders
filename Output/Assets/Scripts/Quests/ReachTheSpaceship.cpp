@@ -25,8 +25,8 @@ HELLO_ENGINE_API_C ReachTheSpaceship* CreateReachTheSpaceship(ScriptToInspectorI
 void ReachTheSpaceship::Start()
 {
     currentHp = maxHp;
-    playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
-    if (!playerStorage) Console::Log("Storage Missing in ReachSpaceShip Script.");
+    /*playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
+    if (!playerStorage) Console::Log("Storage Missing in ReachSpaceShip Script.");*/
 }
 
 void ReachTheSpaceship::Update()

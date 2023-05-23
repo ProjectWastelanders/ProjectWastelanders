@@ -101,7 +101,7 @@ void TP_Cabin::SpawnSphere()
 	childSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	childSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	
-	childSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 2, playerGO.GetTransform().GetGlobalPosition().z);
+	childSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
 	API_Vector3 playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
 	childSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
 	//if (childSphere != nullptr && childSphere2 != nullptr)

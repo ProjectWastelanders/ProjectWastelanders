@@ -77,6 +77,8 @@ void PlayerGunManager::Start()
         break;
     }
     
+    saveNullWeapon = equipedNormalGun;
+
     UnequipGun(0); // start with base gun selected
 }
 
@@ -158,6 +160,29 @@ void PlayerGunManager::Update()
             // no ammo sound?
         }
     }
+
+    if (swapWeapon->material_Special_Weapon_on.IsTextureNull() == true)
+    {
+      switch (saveNullWeapon)
+      {
+      case 1: // semiautomatic
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
+          break;
+      case 2: // automatic
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
+          break;
+      case 3: // burst
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
+          break;
+      case 4: // shotgun
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+          break;
+      default:
+          break;
+      }
+      Console::Log("   FFFFFFFFFFFFFFFFFFFFFFUCK");
+  }
+
 }
 
 void PlayerGunManager::GetGun(int slot, int gunIndex)

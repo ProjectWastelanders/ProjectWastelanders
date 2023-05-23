@@ -11,7 +11,11 @@ public:
 	void Start() override; 
 	void Update() override;
 
+	void ActivateMark(API_GameObject parent);
+
 private:
-	std::vector<API_GameObject> marks;
+	API_GameObject* _marks;
+	int _marksCount = 0;
+	int _currentMark = 0;
 };
 

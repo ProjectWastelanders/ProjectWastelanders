@@ -10,7 +10,7 @@ HELLO_ENGINE_API_C ThanosDmg* CreateThanosDmg(ScriptToInspectorInterface* script
 
 void ThanosDmg::Start()
 {
-
+	gameObject.GetRigidBody().SetVelocity({ 0,0,0 });
 }
 void ThanosDmg::Update()
 {
@@ -25,6 +25,11 @@ void ThanosDmg::OnCollisionEnter(API::API_RigidBody other)
 	{
 		PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
 		pStats->TakeDamage(dmg, 0);
+
+	}
+	if (detectionTag == "Column") {
+		Console::Log("laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		gameObject.SetActive(false);
 
 	}
 }

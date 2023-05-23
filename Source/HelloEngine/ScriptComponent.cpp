@@ -58,13 +58,21 @@ void ScriptComponent::OnEditor()
 void ScriptComponent::OnEnable()
 {
 	if (scriptUID != 0)
+	{
 		LayerGame::_behaviorScripts[scriptUID].active = true;
+		if (LayerGame::S_IsPlaying())
+			LayerGame::_behaviorScripts[scriptUID].script->OnEnable();
+	}
 }
 
 void ScriptComponent::OnDisable()
 {
 	if (scriptUID != 0)
+	{
 		LayerGame::_behaviorScripts[scriptUID].active = false;
+		if (LayerGame::S_IsPlaying())
+			LayerGame::_behaviorScripts[scriptUID].script->OnDisable();
+	}
 }
 
 void ScriptComponent::OnCollisionEnter(PhysBody3D* other)

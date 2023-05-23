@@ -92,12 +92,12 @@ void API::API_GameObject::SetName(const char name)
     _gameObject->name = name;
 }
 
-void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
+int API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
 {
     if (_gameObject == nullptr)
     {
         Console::S_Log("Trying to acces a NULLPTR GameObject! GetChildren()");
-        return;
+        return 0;
     }
     std::vector<GameObject*>* children = _gameObject->GetChildren();
     int currentCount = 0;
@@ -110,8 +110,9 @@ void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
         ++buffer;
         ++currentCount;
         if (currentCount == count)
-            return;
+            return count;
     }
+    return children->size();
 }
 
 API::API_GameObject API::API_GameObject::GetParent()

@@ -51,6 +51,9 @@ void HUD_BluePrints::Start()
 	Background_upgrade_position_save = material_Background_1.GetGameObject().GetTransform().GetLocalPosition();
 	Background_new_weapon_position_save = material_Background_2.GetGameObject().GetTransform().GetLocalPosition();
  	Background_special_weapon_position_save = material_Background_3.GetGameObject().GetTransform().GetLocalPosition();
+	material_upgrade.GetGameObject().GetTransform().SetPosition(upgrade_position_save);
+		text_upgrade.GetGameObject().GetTransform().SetPosition(text_upgrade_position_save);
+		material_Background_1.GetGameObject().GetTransform().SetPosition(Background_upgrade_position_save);
 
 }
 void HUD_BluePrints::Update()

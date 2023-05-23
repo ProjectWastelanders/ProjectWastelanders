@@ -414,8 +414,8 @@ header {
 }
 
 @media (max-aspect-ratio: 16/9) {
-    #myVideo { 
-        width:auto;
+    #myVideo {
+        width: auto;
         height: 100%;
     }
 }
@@ -424,6 +424,7 @@ header {
     #myVideo {
         display: none;
     }
+
     body {
         background: url('poster.jpg');
         background-size: cover;
@@ -460,17 +461,16 @@ header h1 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
-    
+
 }
 
 .logo_3 {
-    height: auto;
     width: 50%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-
+    margin-top: 2rem;
 }
 
 /* Sticky Navigation */
@@ -599,6 +599,78 @@ header h1 {
 
 }
 
+/*=====================================*/
+/* Main Game Section*/
+/*=====================================*/
+
+.maingame-section {
+    text-align: center;
+    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/services-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100%;
+}
+
+.maingame-section p {
+    color: #3c4761;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: justify;
+   ;
+}
+
+
+.maingame-section h1 {
+    color: #3c4761;
+    margin-left: 5rem;
+}
+
+.maingame-section h2 {
+    color: #3c4761;
+    margin-left: 5rem;
+}
+
+.maingame-section h2::after {
+    background: #14a58c;
+}
+
+.maingame-icon {
+    height: 20rem;
+    width: auto;
+    margin-top: 1.5rem;
+    /* margin-bottom: 3.5rem; */
+}
+
+
+.btn-maingame:link,
+.btn-maingame:visited {
+    background: #815f5f;
+    border-bottom: #926060;
+    margin-top: 5rem;
+}
+
+.videoResponsive {
+    padding-bottom: 56.25%;
+    height: 0;
+    position: relative;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.videoResponsive iframe,
+.videoResponsive object,
+.videoResponsive embed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 
 /*=====================================*/
 /* Production Section*/
@@ -649,7 +721,7 @@ header h1 {
 }
 
 /*=====================================*/
-/* Old Team Section*/
+/* Old Team Section*/ /*Game Features*/
 /*=====================================*/
 
 .team-section {
@@ -677,10 +749,53 @@ header h1 {
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
+    
 }
+
+.container {
+    position: relative;
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    margin-top: 4.5rem;
+    margin-bottom: 3.5rem;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: left;
+  }
+  
+  .container:hover .image {
+    opacity: 0.3;
+  }
+  
+  .container:hover .middle {
+    opacity: 1;
+  }
+  
+  .text {
+    /* background-color: #04AA6D; */
+    color: black;
+    font-size: 15px;
+    
+  }
 
 .team-section h3 {
     color: #27283d;
+    text-align: center;
 }
 
 .role {
@@ -695,8 +810,9 @@ header h1 {
 .team-section .box p {
     color: #3c4761;
     font-weight: 500;
+    text-align: center;
 }
-
+/* 
 .social-link {
     margin-top: 4.5rem;
 }
@@ -724,7 +840,7 @@ header h1 {
 .social-link ul li a:hover i::before {
     background: #393939;
     transform: rotate(360deg);
-}
+} */
 
 
 /*=====================================*/

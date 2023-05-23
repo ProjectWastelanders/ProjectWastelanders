@@ -3,11 +3,9 @@
 HELLO_ENGINE_API_C AbilitySelect* CreateAbilitySelect(ScriptToInspectorInterface* script)
 {
     AbilitySelect* classInstance = new AbilitySelect();
-
     script->AddDragBoxUIInput("Main Panel", &classInstance->mainPanel);
     script->AddDragBoxUIInput("Current Panel", &classInstance->abilityPanel);
     script->AddDragBoxUIButton("AbilityButton", &classInstance->abilitySelect);
-
     script->AddDragBoxGameObject("Description 1", &classInstance->description1);
     script->AddDragBoxGameObject("Description 2", &classInstance->description2);
     script->AddDragBoxGameObject("Description 3", &classInstance->description3);
@@ -16,12 +14,11 @@ HELLO_ENGINE_API_C AbilitySelect* CreateAbilitySelect(ScriptToInspectorInterface
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     return classInstance;
 }
-
 void AbilitySelect::Start()
 {
     abilityPanel.SetEnable(false);
+    abilityTreeScript = (AbilityTreeScript*)mainPanel.GetGameObject().GetScript("AbilityTreeScript");
 }
-
 void AbilitySelect::Update()
 {
     if (abilitySelect.OnHovered() && mainPanel.IsEnabled())
@@ -33,13 +30,11 @@ void AbilitySelect::Update()
         description5.SetActive(false);
         waitFrame = false;
     }
-    else if (abilitySelect.OnPress() && !waitFrame)
+    else if (abilitySelect.OnPress() && !waitFrame && !abilityTreeScript->tutorialActive)
     {
         Audio::Event("click");
-
         mainPanel.SetEnable(false);
         abilityPanel.SetEnable(true);
-
         AbilityTreeUpgrades* panelScript = (AbilityTreeUpgrades*)abilityPanel.GetGameObject().GetScript("AbilityTreeUpgrades");
         panelScript->isOn = true;
         waitFrame = true;

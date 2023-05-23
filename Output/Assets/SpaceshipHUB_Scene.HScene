@@ -23796,7 +23796,7 @@
                 "Enabled": true,
                 "Position": [
                     0.3700000047683716,
-                    0.4399999976158142,
+                    0.5,
                     0.0
                 ],
                 "Rotation": [
@@ -32484,7 +32484,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -32523,7 +32523,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.30000001192092896
                 ],
                 "Rotation": [
                     0.0,
@@ -32540,7 +32540,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 392558115,
+                "MaterialResource": 3192236639,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -32563,7 +32563,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.30000001192092896
                 ],
                 "Rotation": [
                     0.0,
@@ -32580,7 +32580,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 858008163,
+                "MaterialResource": 2414958581,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -32603,7 +32603,7 @@
                 "Position": [
                     0.0,
                     0.0,
-                    0.0
+                    -0.30000001192092896
                 ],
                 "Rotation": [
                     0.0,
@@ -32620,7 +32620,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 2823118474,
+                "MaterialResource": 3660095553,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15

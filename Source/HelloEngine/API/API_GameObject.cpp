@@ -435,15 +435,15 @@ API::API_RigidBody API::API_GameObject::CreateRigidBodyBox(API::API_Vector3 pos,
     physComponent->_physBody->colPos = { pos.x, pos.y, pos.z };
     physComponent->_physBody->colRot = { rotation.x, rotation.y, rotation.z };
     physComponent->_physBody->colScl = { scale.x, scale.y, scale.z };
+    physComponent->_physBody->mass = 1.0f;
     physComponent->CallUpdatePos();
     physComponent->CallUpdateRotation();
     physComponent->CallUpdateScale();
     if (isStatic)
     {
         physComponent->_physBody->isStatic = true;
-        physComponent->CallUpdateMass();
     }
-
+    physComponent->CallUpdateMass();
     API_RigidBody ret;
     ret.SetComponent(physComponent);
     return ret;

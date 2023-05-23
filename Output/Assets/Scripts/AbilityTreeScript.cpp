@@ -119,11 +119,31 @@ void AbilityTreeScript::Update()
         if (tutorial1 == true) 
         {
             Tutorial_1.GetGameObject().SetActive(true);
-            if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
+            if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
             {
                 Tutorial_1.GetGameObject().SetActive(false);
                 tutorial2 = true;
                 tutorial1 = false;
+            }
+        }
+        else if (tutorial2 == true)
+        {
+            Tutorial_2.GetGameObject().SetActive(true);
+            if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+            {
+                Tutorial_2.GetGameObject().SetActive(false);
+                tutorial2 = false;
+                tutorial3 = true;
+            }
+        }
+        else if (tutorial3 == true)
+        {
+            Tutorial_3.GetGameObject().SetActive(true);
+            if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+            {
+                Tutorial_3.GetGameObject().SetActive(false);
+                tutorial3 = false;
+                tutorialActive = false;
             }
         }
     }

@@ -240,4 +240,6 @@ void PlayerGunManager::UnequipGun(int index)
     if (playerStats && playerStats->armoryTreeLvl > 0) swapDelay = maxFastSwapDelay + 0.001f;
     else swapDelay = maxSwapDelay + 0.001f;
     swapToIndex = index;
+
+    Audio::Event("w_switch");
 }

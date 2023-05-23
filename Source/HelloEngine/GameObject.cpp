@@ -130,6 +130,7 @@ void GameObject::SetActive(bool active)
 {
 	if (_isActive == active)
 		return;
+
 	_isActive = active;
 
 	for (auto* component : _components)

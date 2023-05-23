@@ -60,8 +60,8 @@ public:
 	void Enable();
 	void Disable();
 
-	virtual void OnEnable() {};
-	virtual void OnDisable() {};
+	virtual void OnEnable();
+	virtual void OnDisable();
 
 	virtual void OnPositionUpdate(float3 pos) {}
 	virtual void OnScaleUpdate(float3 scale) {}

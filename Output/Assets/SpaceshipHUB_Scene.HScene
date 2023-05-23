@@ -23934,6 +23934,15 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Tutorial 1": 3655468472
+                    },
+                    {
+                        "Tutorial 2": 36317908
+                    },
+                    {
+                        "Tutorial 3": 2966601267
                     }
                 ],
                 "Script Resource": 1486068309,
@@ -34595,6 +34604,158 @@
         "PrefabUID": 4076827353,
         "Tag": "Default",
         "UID": 934678569,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tutorials",
+        "ParentUID": 3502382728,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2329181875,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 392558115,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Tutorial 1 Abilities",
+        "ParentUID": 2329181875,
+        "PrefabUID": 1730186368,
+        "Tag": "UI",
+        "UID": 3655468472,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 858008163,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Tutorial 2 Abilities",
+        "ParentUID": 2329181875,
+        "PrefabUID": 1730186368,
+        "Tag": "UI",
+        "UID": 36317908,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2823118474,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Tutorial 3 Abilities",
+        "ParentUID": 2329181875,
+        "PrefabUID": 1730186368,
+        "Tag": "UI",
+        "UID": 2966601267,
         "UpdateWithBones": false
     },
     {

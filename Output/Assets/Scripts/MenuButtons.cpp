@@ -34,6 +34,11 @@ void MenuButtons::Update()
     {
         API_QuickSave::ResetAll();
         API_QuickSave::SetInt("equipedNormalGun", 2); // starter weapon
+
+        API_QuickSave::SetFloat("PlayerPosX", 110.5f);
+        API_QuickSave::SetFloat("PlayerPosY", 0.0f);
+        API_QuickSave::SetFloat("PlayerPosZ", -29.2f);
+
         Scene::LoadScene("Level1.HScene");
 
         API_QuickSave::SetBool("level1_completed", false);

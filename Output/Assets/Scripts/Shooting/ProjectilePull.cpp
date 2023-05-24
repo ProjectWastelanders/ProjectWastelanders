@@ -190,7 +190,7 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
     projectile->damage = projectileDamage + (autoForce * 1.5f);
-    projectile->resistanceDamage = projectileResistanceDamage + (autoForce * 4.8f);
+    projectile->resistanceDamage = projectileResistanceDamage + (autoForce * 1.5f);
     projectile->lifeTime = projectileLifetime;
     projectile->type = PROJECTILE_TYPE::AUTO;
     projectile->ignoreGO = 0;

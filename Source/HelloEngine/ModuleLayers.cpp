@@ -26,6 +26,7 @@ std::string ModuleLayers:: _requestScenePath = "null";
 std::string ModuleLayers::_sceneBeginPath = "null";
 std::vector<GameObject*> ModuleLayers::_deletedGameObjects;
 std::map<uint, API::API_GameObject*> ModuleLayers::apiGameObjects;
+std::map<uint, API::API_RigidBody*> ModuleLayers::apiRigidBodies;
 
 API::API_Transform* ModuleLayers::emptyAPITransform = nullptr;
 API::API_GameObject* ModuleLayers::emptyAPIGameObject = nullptr;
@@ -250,4 +251,10 @@ void ModuleLayers::RequestReimportAllScenes(std::vector<std::string>& scenes)
 {
     allScenesInAssets = scenes;
     reimportAllScenes = true;
+}
+
+void ModuleLayers::RemoveRigidBody(uint gameObjectUID)
+{
+    if (apiRigidBodies.count(gameObjectUID) != 0)
+        apiRigidBodies[gameObjectUID]->_rigidBody = nullptr;
 }

@@ -5,6 +5,7 @@
 #include "Component.h"
 #include "ModuleRenderer3D.h"
 #include "RenderManager.h"
+#include "ModuleLayers.h"
 
 PhysicsComponent::PhysicsComponent(GameObject* gameObject) : Component(gameObject)
 {
@@ -56,6 +57,7 @@ PhysicsComponent::~PhysicsComponent()
 {
 	if (_physBody)
 		RemoveCollider();
+	ModuleLayers::RemoveRigidBody(_gameObject->GetID());
 }
 
 void PhysicsComponent::SetVelocity(float3 vec)

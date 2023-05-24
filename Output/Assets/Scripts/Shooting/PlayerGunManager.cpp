@@ -161,7 +161,7 @@ void PlayerGunManager::Update()
         }
     }
 
-    if (swapWeapon->material_Special_Weapon_on.IsTextureNull() == true)
+    if (swapWeapon && swapWeapon->material_Special_Weapon_on.IsTextureNull() == true)
     {
       switch (saveNullWeapon)
       {

@@ -444,8 +444,6 @@ header h1 {
     transform: translatey(-20%);
 }
 
-
-
 .logo {
     height: 5rem;
     width: auto;
@@ -1016,8 +1014,8 @@ svg.ui-ux circle {
 .portfolio-section .box p {
     color: #1d47aa;
     font-weight: 500;
-    max-width: 50rem;
-    margin-left: 10%;
+    /* max-width: 100rem; */
+    margin-left: 15%;
     text-align: justify;
 }
 

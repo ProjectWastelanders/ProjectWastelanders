@@ -167,6 +167,7 @@
     <ClCompile Include="../../Assets/Scripts/EbonyMaw/TpBossZone.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.cpp" />
+    <ClCompile Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -336,5 +337,6 @@
     <ClInclude Include="../../Assets/Scripts/EbonyMaw/TpBossZone.h" />
     <ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.h" />
     <ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.h" />
+    <ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
   </ItemGroup>
 </Project>

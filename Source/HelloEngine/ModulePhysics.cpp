@@ -99,7 +99,7 @@ UpdateStatus ModulePhysics::PreUpdate()
 #ifdef _DEBUG
 	if (LayerGame::S_IsPlaying() && !LayerGame::S_IsPause())
 	{
-		world->stepSimulation(EngineTime::GameDeltaTime(), 4);
+		world->stepSimulation(EngineTime::GameDeltaTime(), 6);
 	}
 	else
 	{
@@ -108,14 +108,14 @@ UpdateStatus ModulePhysics::PreUpdate()
 #elif STANDALONE
 	if (LayerGame::S_IsPlaying() && !LayerGame::S_IsPause())
 	{
-		world->stepSimulation(EngineTime::GameDeltaTime(), 4);
+		world->stepSimulation(EngineTime::GameDeltaTime(), 6);
 }
 	else
 	{
 		world->stepSimulation(0);
 	}
 #else
-	world->stepSimulation(EngineTime::GameDeltaTime(), 4);
+	world->stepSimulation(EngineTime::GameDeltaTime(), 6);
 #endif	
 
 

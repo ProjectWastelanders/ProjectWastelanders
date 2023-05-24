@@ -9,11 +9,10 @@ HELLO_ENGINE_API_C TpRotateSphere* CreateTpRotateSphere(ScriptToInspectorInterfa
 
 void TpRotateSphere::Start()
 {
-	trans = gameObject.GetTransform();
 	timeCount = 0.0f;
 }
 void TpRotateSphere::Update()
 {
 	timeCount += Time::GetDeltaTime();
-	trans.Rotate( 0, timeCount * timeMult, 0 );
+	gameObject.GetTransform().Rotate( 0, timeCount * timeMult, 0 );
 }

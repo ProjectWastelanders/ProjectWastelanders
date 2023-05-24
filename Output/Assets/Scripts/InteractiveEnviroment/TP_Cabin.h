@@ -45,7 +45,7 @@ public:
 	float startParticles;
 	float endParticles;
 	float tpTime;
-
+	float enableCanTp;
 
 	bool canTp;
 

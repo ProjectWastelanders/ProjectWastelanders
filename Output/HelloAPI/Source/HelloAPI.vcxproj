@@ -156,6 +156,7 @@
     <ClCompile Include="../../Assets/Scripts/UI Test folder/SwapWeapon.cpp" />
     <ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar_HP.cpp" />
     <ClCompile Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Armory_Tutorial.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Coleccionable_buttons.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.cpp" />
@@ -306,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Armory_Tutorial.h" />
     <ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.h" />

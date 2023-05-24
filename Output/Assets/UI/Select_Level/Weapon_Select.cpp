@@ -170,9 +170,9 @@ void Weapon_Select::Update()
                 Scene::LoadScene(scene.c_str());
                 break;
             case 2:
-                API_QuickSave::SetFloat("PlayerPosX", 120.0f);
-                API_QuickSave::SetFloat("PlayerPosY", -4.5f);
-                API_QuickSave::SetFloat("PlayerPosZ", -1.0);
+                API_QuickSave::SetFloat("PlayerPosX", 90.866f);
+                API_QuickSave::SetFloat("PlayerPosY", -4.099f);
+                API_QuickSave::SetFloat("PlayerPosZ", -0.718f);
                 API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
                 API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
                 API_QuickSave::SetBool("IsInMiddleOfLevel", false);

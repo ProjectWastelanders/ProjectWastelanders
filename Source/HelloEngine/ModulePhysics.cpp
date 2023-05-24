@@ -651,9 +651,9 @@ void ModulePhysics::IterateThird()
 				//exit
 				GameObject* obj = ModuleLayers::gameObjects[pbody->gameObjectUID];
 
-				PhysBody3D* pb = ModuleLayers::gameObjects[*it1]->GetComponent<PhysicsComponent>()->GetPhysBody();
-
-				obj->OnCollisionExit(pb);
+				PhysicsComponent* pb = ModuleLayers::gameObjects[*it1]->GetComponent<PhysicsComponent>();
+				if (pb != nullptr)
+					obj->OnCollisionExit(pb->GetPhysBody());
 			}
 		}
 

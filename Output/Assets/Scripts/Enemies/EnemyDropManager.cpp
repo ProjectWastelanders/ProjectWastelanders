@@ -92,6 +92,11 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab6, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
+        enemyDrop->dropIndex = 6;
+        newDrop.SetActive(false);
         pull6.push_back(newDrop);
     }
 }

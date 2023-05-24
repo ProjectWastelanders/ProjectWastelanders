@@ -45,6 +45,7 @@ public:
     float acceleration = 1.2f;
     float currentSpeed = 0.0f;
     bool hasShield = false;
+    bool staticWand = false;//wander dont move the enemy
    // API_GameObject target;
 
     // Test Code, delete later
@@ -57,6 +58,7 @@ public:
     bool meleeIsAtking = false;
     
     API_Vector3 baseRot;//base rotation object
+    API_Vector3 basePos;//base pos object
 
     float stunVel;
     float slowVel;

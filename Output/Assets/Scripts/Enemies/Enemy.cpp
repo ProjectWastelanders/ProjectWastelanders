@@ -34,6 +34,7 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
 	script->AddDragFloat("Ult Gain", &classInstance->ultGain);
 	// script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
 	 //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
+	 script->AddCheckBox("Static Wander", &classInstance->staticWand);
 	return classInstance;
 }
 
@@ -53,6 +54,7 @@ void Enemy::Start()
 	currentResistance = minResistence;
 	actSlow = actStun = false;
 	baseRot = gameObject.GetTransform().GetGlobalRotation();
+	basePos = gameObject.GetTransform().GetGlobalPosition();
 	slowVel = stunVel = 1;
 
 	enemyRb = gameObject.GetRigidBody();

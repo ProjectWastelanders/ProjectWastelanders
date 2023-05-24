@@ -29,8 +29,8 @@
 	}
 #endif
 #ifdef FRAGMENT_PROGRAM
-	const uint MAX_POINT = 32;
-	const uint MAX_SPOT = 32;
+	const uint MAX_POINT = 64;
+	const uint MAX_SPOT = 64;
 
 	struct Light
 	{
@@ -256,6 +256,8 @@
 		FragColor = texture(albedo_texture, TextureCoords) * result * ColourTest;
 	}
 #endif
+
+
 
 
 

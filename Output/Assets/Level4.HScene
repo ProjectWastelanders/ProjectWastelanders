@@ -1916,46 +1916,6 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.7649999856948853,
-                    0.7900000214576721,
-                    -0.0010000000474974513
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.23999999463558197,
-                    0.11999999731779099,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2602415947,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Regen_HP",
-        "ParentUID": 1815485455,
-        "PrefabUID": 3349850819,
-        "Tag": "UI",
-        "UID": 3946763621,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
                     0.0,
                     0.0,
                     0.0
@@ -3203,6 +3163,308 @@
         "PrefabUID": 3349850819,
         "Tag": "UI",
         "UID": 1916179662,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    -0.10165002942085266,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Boss Stats GO": 256946375
+                    },
+                    {
+                        "HUD BOSS BAR MINI": 4198369515
+                    },
+                    {
+                        "HP BOSS UI IMAGE": 253750935
+                    },
+                    {
+                        "Boss Stats GO": 256946375
+                    },
+                    {
+                        "HUD BOSS BAR MINI": 4198369515
+                    },
+                    {
+                        "HP BOSS UI IMAGE": 253750935
+                    }
+                ],
+                "Script Resource": 3315044126,
+                "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Bar": 4198369515
+                    },
+                    {
+                        "Bar": 4198369515
+                    }
+                ],
+                "Script Resource": 2563255136,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HUD_Boss_Bar",
+        "ParentUID": 1686578891,
+        "PrefabUID": 2461165536,
+        "Tag": "Default",
+        "UID": 1085507935,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.5,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.699999988079071,
+                    0.699999988079071,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Boss_Bar_Mini",
+        "ParentUID": 1085507935,
+        "PrefabUID": 2461165536,
+        "Tag": "Default",
+        "UID": 4198369515,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.44999998807907104,
+                    1.850000023841858,
+                    -0.004999999888241291
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.15000000596046448,
+                    0.12999999523162842,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3486422757,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Boss_Name_Image",
+        "ParentUID": 4198369515,
+        "PrefabUID": 2461165536,
+        "Tag": "UI",
+        "UID": 857444789,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.699999988079071,
+                    1.9500000476837158,
+                    -0.004000000189989805
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.25,
+                    0.25,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 994940722,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Boss_Image/Icon",
+        "ParentUID": 4198369515,
+        "PrefabUID": 2461165536,
+        "Tag": "UI",
+        "UID": 413207864,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.11599999666213989,
+                    1.6399999856948853,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    0.8399999737739563,
+                    0.18000000715255737,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2911723293,
+                "MeshEnabled": true,
+                "OpacityDirection": 1,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Boss_HP",
+        "ParentUID": 4198369515,
+        "PrefabUID": 2461165536,
+        "Tag": "UI",
+        "UID": 253750935,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.11699999868869781,
+                    1.600000023841858,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.824999988079071,
+                    0.17000000178813934,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Boss_Bar_Bachground_HP",
+        "ParentUID": 4198369515,
+        "PrefabUID": 2461165536,
+        "Tag": "UI",
+        "UID": 1193357187,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.11999999731779099,
+                    1.6699999570846558,
+                    -0.003000000026077032
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.9599999785423279,
+                    0.4000000059604645,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 280758888,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Boss_Bar_Background",
+        "ParentUID": 4198369515,
+        "PrefabUID": 2461165536,
+        "Tag": "UI",
+        "UID": 873342302,
         "UpdateWithBones": false
     },
     {

@@ -106,14 +106,21 @@ void TP_Cabin::SpawnSphere()
 	childSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	
 
-	effectSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
-	API_Vector3 playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
-	effectSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
-
-	childSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
+	//effectSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
 	//API_Vector3 playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
-	playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
-	childSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
+	//effectSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
+
+	//childSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
+	////API_Vector3 playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
+	//playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
+	//childSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
+
+
+	effectSphere.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+	effectSphere2.GetTransform().SetPosition(destination.GetGlobalPosition());
+	childSphere.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+	childSphere2.GetTransform().SetPosition(destination.GetGlobalPosition());
+
 	//if (childSphere != nullptr && childSphere2 != nullptr)
 	//{
 	//	
@@ -170,7 +177,7 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 
 			if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
 			{
-				timeHoldButton = 0.0f;
+				//timeHoldButton = 0.0f;
 				smoke.StopEmitting();
 				destinationSmoke.StopEmitting();
 				canTp = true;
@@ -205,8 +212,8 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 				{
 					if (timeHoldButton > startParticles && timeHoldButton < endParticles)
 					{
-						smoke.Play();
-						destinationSmoke.Play();
+						//smoke.Play();
+						//destinationSmoke.Play();
 						Audio::Event("teleport_1");
 					}
 					else if (timeHoldButton > tpTime)

@@ -13,6 +13,8 @@ HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script
 
 	script->AddDragBoxGameObject("Settings Panel", &classInstance->settingsPanel);
 
+	script->AddDragBoxUIButton("Go Back Button", &classInstance->goBack);
+
 	return classInstance;
 }
 
@@ -67,6 +69,12 @@ void UIManager::Update()
 	if (initialTextConinue.OnPress())
 	{
 		initialText.SetActive(false);
+	}
+
+	if (goBack.OnPress())
+	{
+		settingsPanel.SetActive(false);
+		CloseSettings();
 	}
 
 }

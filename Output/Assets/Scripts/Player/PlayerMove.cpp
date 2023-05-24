@@ -12,7 +12,6 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragFloat("SecToZeroVel", &classInstance->secToZeroVel);
     //script->AddDragFloat("Current Velocity", &classInstance->currentVel);
     script->AddDragFloat("Y tp limit", &classInstance->yTpLimit);
-    script->AddDragBoxRigidBody("Rigid Body", &classInstance->rigidBody);
 
     script->AddDragFloat("Dash Time", &classInstance->dashTime);
     script->AddDragFloat("Dash Distance", &classInstance->dashDistance);
@@ -47,6 +46,8 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
 
 void PlayerMove::Start()
 {
+    rigidBody = gameObject.GetRigidBody();
+
     transform = gameObject.GetTransform();
     initialPos = transform.GetGlobalPosition();
     departureTime = 0.0f;

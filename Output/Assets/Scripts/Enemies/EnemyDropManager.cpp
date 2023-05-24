@@ -31,7 +31,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
 
@@ -42,7 +42,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab1, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
         enemyDrop->dropIndex = 1;
@@ -52,7 +52,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab2, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
         enemyDrop->dropIndex = 2;
@@ -62,7 +62,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab3, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
         enemyDrop->dropIndex = 3;
@@ -72,7 +72,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab4, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
         enemyDrop->dropIndex = 4;
@@ -82,7 +82,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab5, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
         enemyDrop->dropIndex = 5;
@@ -92,7 +92,7 @@ void EnemyDropManager::Start()
     for (size_t i = 0; i < pullSize; i++)
     {
         API_GameObject newDrop = Game::InstancePrefab(prefab6, API_GameObject());
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
         if (enemyDrop == nullptr)
             break;
         enemyDrop->dropIndex = 6;

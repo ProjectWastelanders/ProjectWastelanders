@@ -16,6 +16,7 @@
 #include "API/API_Material.h"
 #include "API/API_ShaderComponent.h"
 #include "API/API_AudioSource.h"
+#include "API/API_VideoPlayer.h"
 
 #include "PhysicsComponent.h"
 #include "MeshRenderComponent.h"
@@ -32,6 +33,7 @@
 #include "MeshRenderComponent.h"
 #include "MaterialComponent.h"
 #include "AudioSourceComponent.h"
+#include "VideoPlayerComponent.h"
 
 void DragFieldFloat::OnEditor()
 {
@@ -1641,6 +1643,82 @@ void DragBoxAudioSourceComponent::OnDeserialize(json& j)
 			{
 				API::API_AudioSourceComponent* audioSource = (API::API_AudioSourceComponent*)value;
 				audioSource->SetComponent(component);
+			}
+		}
+	}
+}
+
+void DragBoxVideoPlayerComponent::OnEditor()
+{
+	API::API_VideoPlayer* video = (API::API_VideoPlayer*)value;
+
+	std::string buttonName = "X##" + std::to_string(UID);
+	if (ImGui::Button(buttonName.c_str()))
+	{
+		video->SetComponent(nullptr);
+
+	}
+	ImGui::SameLine();
+
+	ImGui::TextWrapped((valueName + ": ").c_str()); ImGui::SameLine();
+
+	if (video->_videoPlayer == nullptr)
+	{
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), "NULL (Drag a Video player Here)");
+	}
+	else
+	{
+		std::string gameObjectName(video->GetGameObject().GetName());
+		std::string text = "(" + gameObjectName + ")" + ": VideoPlayer";
+		ImGui::TextColored(ImVec4(1, 1, 0, 1), text.c_str());
+	}
+
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("GameObject"))
+		{
+			const uint* drop = (uint*)payload->Data;
+
+			GameObject* droppedGO = ModuleLayers::S_GetGameObject(*drop);
+			VideoPlayerComponent* component = nullptr;
+			
+			if (droppedGO != nullptr)
+				component = droppedGO->GetComponent<VideoPlayerComponent>();
+
+			video->SetComponent(component);
+		}
+		ImGui::EndDragDropTarget();
+	}
+}
+
+void DragBoxVideoPlayerComponent::OnSerialize(json& j)
+{
+	json _j;
+
+	API::API_VideoPlayer* video = (API::API_VideoPlayer*)value;
+
+	if (video->_videoPlayer != nullptr)
+	{
+		_j[valueName.c_str()] = video->_videoPlayer->GetGameObject()->GetID();
+		j.push_back(_j);
+	}
+}
+
+void DragBoxVideoPlayerComponent::OnDeserialize(json& j)
+{
+	for (int i = 0; i < j.size(); i++)
+	{
+		if (j[i].find(valueName) != j[i].end())
+		{
+			uint id = j[i][valueName.c_str()];
+			GameObject* gameObject = ModuleLayers::S_GetGameObject(id);
+			VideoPlayerComponent* component = nullptr;
+			if (gameObject != nullptr)
+				component = gameObject->GetComponent<VideoPlayerComponent>();
+			if (component != nullptr)
+			{
+				API::API_VideoPlayer* video = (API::API_VideoPlayer*)value;
+				video->SetComponent(component);
 			}
 		}
 	}

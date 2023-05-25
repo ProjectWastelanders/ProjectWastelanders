@@ -255,6 +255,9 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
+                        "Button": 1741124431
+                    },
+                    {
                         "minY": 0.0
                     },
                     {
@@ -315,6 +318,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Button": 351199318
+                    },
                     {
                         "minY": 0.0
                     },
@@ -377,6 +383,9 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
+                        "Button": 3765630460
+                    },
+                    {
                         "minY": 0.0
                     },
                     {
@@ -437,6 +446,9 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
+                    {
+                        "Button": 1551021094
+                    },
                     {
                         "minY": 0.0
                     },
@@ -534,7 +546,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Velocity": 0.0
+                        "Velocity": 1.0
                     }
                 ],
                 "Script Resource": 3877120418,

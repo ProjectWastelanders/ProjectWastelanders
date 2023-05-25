@@ -414,6 +414,16 @@ void ScriptComponent::AddDragBoxAudioSourceComponent(const char* name, API::API_
 	inspectorFields.push_back(dragBoxField);
 }
 
+void ScriptComponent::AddDragBoxVideoPlayerComponent(const char* name, API::API_VideoPlayer* value)
+{
+	DragBoxVideoPlayerComponent* dragBoxField = new DragBoxVideoPlayerComponent();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
 uint ScriptComponent::GetResourceUID()
 {
 	if (scriptResource != nullptr)

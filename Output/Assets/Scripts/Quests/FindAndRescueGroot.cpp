@@ -32,6 +32,7 @@ void FindAndRescueGroot::OnCollisionStay(API_RigidBody other)
 
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
         {
+            fadeToBlackRef->blackToFade = false;
             fadeToBlackRef->fadeToBlack = true;
 
             if (playerStorage)
@@ -42,6 +43,13 @@ void FindAndRescueGroot::OnCollisionStay(API_RigidBody other)
             API_QuickSave::SetBool("level2_completed", true);
 
         }
+        else if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
+        {
+            fadeToBlackRef->fadeToBlack = false;
+            fadeToBlackRef->blackToFade = true;
+            timerToTp = 0.0f;
+        }
+
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
         {
             timerToTp += Time::GetDeltaTime();
@@ -53,6 +61,7 @@ void FindAndRescueGroot::OnCollisionStay(API_RigidBody other)
                 timerToTp = 0.0f;
             }
         }
+        
 
     }
 }

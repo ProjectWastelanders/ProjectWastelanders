@@ -216,8 +216,8 @@ uint ModuleLayers::S_AddGameObject(GameObject* go, uint ID)
 
 void ModuleLayers::S_RemoveGameObject(uint ID)
 {
-    if (apiGameObjects.count(ID) != 0)
-        apiGameObjects[ID]->_gameObject = nullptr;
+   /* if (apiGameObjects.count(ID) != 0)
+        apiGameObjects[ID]->_gameObject = nullptr;*/
 
     gameObjects.erase(ID);
 }

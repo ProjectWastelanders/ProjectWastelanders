@@ -57,7 +57,7 @@ PhysicsComponent::~PhysicsComponent()
 {
 	if (_physBody)
 		RemoveCollider();
-	ModuleLayers::RemoveRigidBody(_gameObject->GetID());
+	/*ModuleLayers::RemoveRigidBody(_gameObject->GetID());*/
 }
 
 void PhysicsComponent::SetVelocity(float3 vec)

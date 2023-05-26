@@ -12,11 +12,14 @@ void FinishedEvent(AkCallbackType in_eType, AkCallbackInfo* in_pCallbackInfo)
 		if (ModuleLayers::gameObjects.count(in_pCallbackInfo->gameObjID) != 0)
 		{
 			Console::S_Log("Found GO", LogType::WARNING);
-			GameObject* go = ModuleLayers::gameObjects[in_pCallbackInfo->gameObjID];
-			AudioSourceComponent* audio = go->GetComponent<AudioSourceComponent>();
-			if (audio != nullptr)
+			if (ModuleLayers::gameObjects.count(in_pCallbackInfo->gameObjID) != 0)
 			{
-				audio->isPlaying = false;
+				GameObject* go = ModuleLayers::gameObjects[in_pCallbackInfo->gameObjID];
+				AudioSourceComponent* audio = go->GetComponent<AudioSourceComponent>();
+				if (audio != nullptr)
+				{
+					audio->isPlaying = false;
+				}
 			}
 		}
 	}

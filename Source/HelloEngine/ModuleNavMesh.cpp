@@ -26,6 +26,7 @@ InputGeom* ModuleNavMesh::_geometry = nullptr;
 BuildSettings* ModuleNavMesh::_buildSettings = nullptr;
 std::vector<std::pair<ComponentAgent*, PhysicsComponent*>> ModuleNavMesh::_agents;
 std::stack<int> ModuleNavMesh::_freeSpace;
+bool ModuleNavMesh::availableNavMesh = true;
 
 inline bool InRange(const float* v1, const float* v2, const float r, const float h)
 {
@@ -279,8 +280,11 @@ void ModuleNavMesh::S_Load(std::string navMeshPath)
 	if (!NavMeshImporter::LoadNavMesh(navMeshPath.c_str(), _buildSettings, _geometry))
 	{
 		Console::S_Log("PROBLEM LOADING THE NAVMESH: There isn't a NavMesh baked for this scene!", LogType::WARNING);
+		availableNavMesh = false;
 		return;
 	}
+	else
+		availableNavMesh = true;
 
 	//dtFreeNavMesh(navMesh);
 

@@ -1,5 +1,6 @@
 #include "Headers.h"
 #include "FfmpegVideoPlayer.h"
+#include "LayerGame.h"
 
 FfmpegVideoPlayer::FfmpegVideoPlayer(const char* filename)
 {
@@ -205,7 +206,7 @@ void FfmpegVideoPlayer::CleanUp()
 
 void FfmpegVideoPlayer::Update()
 {
-	currentTime += EngineTime::EngineTimeDeltaTime();
+	currentTime += LayerGame::S_IsPlaying() ? EngineTime::RealTimeDeltaTime() : EngineTime::EngineTimeDeltaTime();
 
 	if (currentTime >= frameRate)
 	{

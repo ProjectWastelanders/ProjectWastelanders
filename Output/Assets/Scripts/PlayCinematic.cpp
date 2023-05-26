@@ -17,7 +17,10 @@ void PlayCinematic::Start()
 	audio.Play();
 	MusicManager* music = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");
 	if (music != nullptr)
+	{
 		music->playingCinematic = true;
+		music->mainMusic.Stop();
+	}
 }
 void PlayCinematic::Update()
 {

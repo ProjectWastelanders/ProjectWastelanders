@@ -395,6 +395,8 @@ void ModuleResourceManager::S_UpdateFileTree()
 
 void ModuleResourceManager::S_SerializeScene(GameObject*& g)
 {
+#ifdef STANDALONE // We do not alow to serialize scenes in Runtime
+
 	if (!g)
 		return;
 
@@ -418,11 +420,13 @@ void ModuleResourceManager::S_SerializeScene(GameObject*& g)
 	std::string buffer = j.dump(4);
 
 	ModuleFiles::S_Save(savePath, &buffer[0], buffer.size(), false);
+#endif
 }
 
 // Ruben Ayora
 void ModuleResourceManager::S_SerializeToPrefab(GameObject* g, const std::string& folderPath)
 {
+
 	if (!g)
 		return;
 
@@ -444,6 +448,7 @@ void ModuleResourceManager::S_SerializeToPrefab(GameObject* g, const std::string
 
 void ModuleResourceManager::S_SerializeScene(GameObject*& g, const std::string& path)
 {
+#ifdef STANDALONE // We do not alow to serialize scenes in Runtime
 	if (!g)
 		return;
 	// Create json
@@ -454,6 +459,7 @@ void ModuleResourceManager::S_SerializeScene(GameObject*& g, const std::string& 
 	std::string buffer = j.dump(4);
 
 	ModuleFiles::S_Save(path, &buffer[0], buffer.size(), false);
+#endif // STANDALONE
 }
 
 // Ruben Ayora

@@ -22,6 +22,7 @@ void UIManager::Start()
 {
 	currentPanel = CurrentPanel::NONE;
 	isPaused = true;
+	settingsPanel.SetActive(false);
 	HUB_UIManager::ClosePanel(); // Do this in case the static state of the panel is blocked.
 }
 

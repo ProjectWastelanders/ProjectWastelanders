@@ -547,7 +547,7 @@ header h1 {
 
 .hometeam-section {
     text-align: center;
-    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 194, 163, 0.9)), url(img/services-bg.jpg);
+    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 194, 163, 0.9)), url(img/group.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -670,7 +670,7 @@ header h1 {
 
 .maingame-section {
     text-align: center;
-    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/services-bg.jpg);
+    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/peter.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -780,7 +780,7 @@ header h1 {
 
 .production-section {
     text-align: center;
-    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/services-bg.jpg);
+    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/racoon.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -829,7 +829,7 @@ header h1 {
 
 .team-section {
     text-align: center;
-    background: linear-gradient(rgba(231, 241, 248, 0.9), rgba(231, 241, 248, 0.9)), url(img/team-bg.jpg);
+    background: linear-gradient(rgba(231, 241, 248, 0.9), rgba(231, 241, 248, 0.9)), url(img/gamora.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -1002,7 +1002,7 @@ svg.ui-ux circle {
 /*=====================================*/
 
 .portfolio-section {
-    background: linear-gradient(rgba(255, 221, 153, 0.9), rgba(255, 221, 153, 0.9)), url(img/portfolio-bg.jpg);
+    background: linear-gradient(rgba(255, 237, 200, 0.9), rgba(248, 227, 185, 0.5)), url(img/captura.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

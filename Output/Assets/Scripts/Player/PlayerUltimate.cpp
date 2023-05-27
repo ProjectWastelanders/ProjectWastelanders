@@ -17,8 +17,6 @@ void PlayerUltimate::Start()
 
 void PlayerUltimate::Update()
 {
-    if (playerStats && playerStats->specialTreeLvl < 3) return;
-
     if (endUlt)
     {
         triggerUlt = false;

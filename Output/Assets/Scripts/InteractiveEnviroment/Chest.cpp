@@ -10,6 +10,7 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
     script->AddCheckBox("Tutorial Weapon Blueprint", &classInstance->tutorialWeaponBlueprint);
     script->AddDragInt("Chest Index", &classInstance->chestIndex);
     script->AddDragInt("Item Index", &classInstance->itemIndex);
+    script->AddCheckBox("Can Get Special Gun", &classInstance->canGetGun);
 
     script->AddDragBoxUIImage("Guide Button", &classInstance->guideButton);
 

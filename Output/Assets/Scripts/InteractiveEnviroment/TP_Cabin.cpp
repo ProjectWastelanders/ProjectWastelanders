@@ -1,5 +1,6 @@
 #include "TP_Cabin.h"
 #include "../Player/PlayerStats.h"
+#include "../../Game/Prefabs/Environment/TP_Sphere/TpRotateSphere.h"
 
 HELLO_ENGINE_API_C TP_Cabin* CreateTP_Cabin(ScriptToInspectorInterface* script)
 {
@@ -94,6 +95,9 @@ void TP_Cabin::SpawnSphere()
 		childSphere = Game::InstancePrefab(small_effectSpherePrefab, API_GameObject());
 		childSphere2 = Game::InstancePrefab(small_effectSpherePrefab, API_GameObject());
 
+		rotateSphere1 = (TpRotateSphere*)childSphere.GetScript("TpRotateSphere");
+		rotateSphere2 = (TpRotateSphere*)childSphere2.GetScript("TpRotateSphere");
+
 		hasSpawnedSphere = true;
 	}
 
@@ -102,8 +106,16 @@ void TP_Cabin::SpawnSphere()
 	effectSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	effectSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	tempScale = sphereGrowing * scaleValue_small;
-	childSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
-	childSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
+	if (rotateSphere1) 
+	{
+		rotateSphere1->sphereSize = tempScale;
+	}
+	if (rotateSphere2)
+	{
+		rotateSphere2->sphereSize = tempScale;
+	}
+	//childSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
+	//childSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	
 
 	//effectSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);

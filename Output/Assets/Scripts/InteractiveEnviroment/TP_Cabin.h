@@ -7,6 +7,7 @@
 
 class PlayerStats;
 class PlayerBeingTargeted;
+class TpRotateSphere;
 
 class TP_Cabin : HelloBehavior
 {
@@ -48,6 +49,7 @@ public:
 	float enableCanTp;
 
 	bool canTp;
-
+	TpRotateSphere* rotateSphere1;
+	TpRotateSphere* rotateSphere2;
 };
 

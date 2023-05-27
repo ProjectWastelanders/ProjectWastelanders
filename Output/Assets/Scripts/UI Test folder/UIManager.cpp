@@ -41,6 +41,10 @@ void UIManager::Update()
 
 			HUB_UIManager::OpenPanel();
 		}
+		else if (currentPanel == CurrentPanel::PAUSE)
+		{
+			ContinueGame();
+		}
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN)
 	{
@@ -56,7 +60,7 @@ void UIManager::Update()
 			//CloseSettings();
 		}
 	}
-	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_REPEAT)
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_UP)
 	{
 		//Console::Log("ITS B");
 		settingsPanel.SetActive(false);
@@ -64,6 +68,10 @@ void UIManager::Update()
 		{
 			//Console::Log("ITS B && SETTINGS");
 			CloseSettings();
+		}
+		else if (currentPanel == CurrentPanel::PAUSE)
+		{
+			ContinueGame();
 		}
 	}
 

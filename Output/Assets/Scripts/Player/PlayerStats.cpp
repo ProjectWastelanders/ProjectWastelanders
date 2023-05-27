@@ -22,7 +22,7 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragBoxGameObject("Player GO", &classInstance->playerGO);
     script->AddDragBoxGameObject("Power Ups Managers (HUD)", &classInstance->hudPowerUpGO);
     script->AddDragBoxGameObject("Hud Munition GO", &classInstance->ammo_ScriptGO);
-    //script->AddDragInt("movement tree lvl", &classInstance->movementTreeLvl); // use it only for playtesting
+    script->AddDragInt("movement tree lvl", &classInstance->movementTreeLvl); // use it only for playtesting
     //script->AddDragInt("armory tree lvl", &classInstance->armoryTreeLvl);
     //script->AddDragInt("health tree lvl", &classInstance->healthTreeLvl);
     //script->AddDragInt("special tree lvl", &classInstance->specialTreeLvl);
@@ -31,7 +31,7 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
 
 void PlayerStats::Start()
 {
-    movementTreeLvl = API_QuickSave::GetInt("tree0_level");
+    //movementTreeLvl = API_QuickSave::GetInt("tree0_level");
     armoryTreeLvl = API_QuickSave::GetInt("tree1_level");
     healthTreeLvl = API_QuickSave::GetInt("tree2_level");
     specialTreeLvl = API_QuickSave::GetInt("tree3_level");
@@ -74,12 +74,20 @@ void PlayerStats::Update()
     {
         TakeDamage(50, 0);
     }
+    if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
+    {
+        GetAmmo(1, 100);
+    }
+    if (Input::GetKey(KeyCode::KEY_H) == KeyState::KEY_DOWN)
+    {
+        UseAmmo(1, 100);
+    }
 
     // deadline healing
     float deathlineHp;
     if (healthTreeLvl > 1) deathlineHp = currentMaxHp * (upgradedDeadlinePart / 100.0f);
     else deathlineHp = currentMaxHp * (deadlinePart / 100.0f);
-    if (currentHp < deathlineHp)
+    if (currentHp < deathlineHp && PlayerAlive())
     {
         lastHitTime -= dt;
         if (lastHitTime <= 0.0f)

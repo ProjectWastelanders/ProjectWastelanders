@@ -22,7 +22,7 @@ void Mision_RageMonster::Update()
     {
         bool completed = true;
 
-        for (size_t i = 0; i < 16; i++)
+        for (size_t i = 0; i <= 16; i++)
         {
             if (boxes[i].IsActive())
             {

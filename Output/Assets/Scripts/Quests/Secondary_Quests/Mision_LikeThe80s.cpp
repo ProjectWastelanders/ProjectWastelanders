@@ -6,6 +6,7 @@ HELLO_ENGINE_API_C Mision_LikeThe80s* CreateMision_LikeThe80s(ScriptToInspectorI
     Mision_LikeThe80s* classInstance = new Mision_LikeThe80s();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     script->AddDragBoxGameObject("PlayerStorage", &classInstance->playerStorageGO);
+    script->AddCheckBox("Mision Completed", &classInstance->misionCompleted);
 
     return classInstance;
 }

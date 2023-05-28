@@ -3,6 +3,7 @@
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
 #include "BossLoop.h"
+#include "BossAttacks.h"
 #include "../CamMov.h"
 #include "../Player/PlayerMove.h"
 
@@ -14,7 +15,6 @@ public:
 	void Start() override; 
 	void Update() override;
 	void PrintDialog(API_UIImage &Dialog);
-	void PrintTempDialog(API_UIImage& Dialog, float temp);
 	void OnCollisionEnter(API::API_RigidBody other) override;
 
 	API_UIImage Dialog_1;
@@ -35,12 +35,17 @@ public:
 	API_Vector3 movingPos;
 	
 	BossLoop* bLoop;
+	BossAttacks* bAttacks;
 	CamMov* camMov;
 	PlayerMove* playerMov;
 
 	bool activeCinematic, nextDialog, animBoss;
+	bool showedCinematic, showedStartDialog;
 	int currentDialog;
-	float timer = 0.0f;
+	float timerSB = 0.0f;
+	float _timerSB = 0.0f;
+	float timerEB = 0.0f;
+	float _timerEB = 0.0f;
 
 };
 

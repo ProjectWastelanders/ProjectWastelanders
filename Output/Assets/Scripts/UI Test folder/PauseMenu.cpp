@@ -1,5 +1,6 @@
 #include "PauseMenu.h"
 #include "UIManager.h"
+#include "HUB/HUB_UIManager.h"
 HELLO_ENGINE_API_C PauseMenu* CreatePauseMenu(ScriptToInspectorInterface* script)
 {
 	PauseMenu* classInstance = new PauseMenu();
@@ -28,6 +29,7 @@ void PauseMenu::Update()
 	}
 	else if (mainMenuButton.OnPress())
 	{
+		HUB_UIManager::ClosePanel();
 		Time::ChangeTimeScale(1.0f);
 		Scene::LoadScene("MainMenu.HScene");
 	}

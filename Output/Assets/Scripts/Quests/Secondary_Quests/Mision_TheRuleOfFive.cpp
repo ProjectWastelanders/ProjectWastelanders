@@ -11,6 +11,13 @@ HELLO_ENGINE_API_C Mision_TheRuleOfFive* CreateMision_TheRuleOfFive(ScriptToInsp
     script->AddCheckBox("misioncompled", &classInstance->misionCompleted);
     script->AddDragFloat("ruleof5timer", &classInstance->ruleOfFiveTimer);
 
+    script->AddDragBoxUIImage("Dialog", &classInstance->Dialog);
+    script->AddDragFloat("Dialog timer", &classInstance->dialogTimer);
+
+    script->AddDragFloat("Dialog Pos X", &classInstance->finalPos.x);
+    script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
+    script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
+
     return classInstance;
 }
 
@@ -19,6 +26,10 @@ void Mision_TheRuleOfFive::Start()
 
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in GetDiviner Script.");
+
+    initalPos = { 0, -1.500, 0 };
+    movingPos = { 0, -1.500, 0 };
+    //finalPos = { 0, -0.500, 0 };
 
     misionCompleted = false;
     EnemyDieEvent::numOfEnemiesDead = 0;
@@ -29,9 +40,8 @@ void Mision_TheRuleOfFive::Update()
 
     if (misionCompleted)
     {
-
+        PrintDialog(Dialog);
         Console::Log("MISSION 4 COMPLETED CONGRATULATIONS!");
-
     }
     else
     {
@@ -41,7 +51,7 @@ void Mision_TheRuleOfFive::Update()
         }
 
 
-        if (ruleOfFiveTimer < 5.0f && EnemyDieEvent::numOfEnemiesDead >= 2)
+        if (ruleOfFiveTimer < 5.0f && EnemyDieEvent::numOfEnemiesDead >= 5)
         {
 
             misionCompleted = true;
@@ -60,4 +70,31 @@ void Mision_TheRuleOfFive::Update()
         }
     }
 
+}
+
+void Mision_TheRuleOfFive::PrintDialog(API_UIImage& Dialog)
+{
+    Dialog.GetGameObject().SetActive(true);
+
+    if (_dialogTimer >= dialogTimer) {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
+        {
+            movingPos.y -= 1 * Time::GetDeltaTime();
+        }
+        else {
+            Dialog.GetGameObject().SetActive(false);
+        }
+    }
+    else {
+        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
+        {
+            movingPos.y += 1 * Time::GetDeltaTime();
+        }
+        else
+        {
+            _dialogTimer += Time::GetDeltaTime();
+        }
+    }
+
+    Dialog.GetGameObject().GetTransform().SetPosition(movingPos);
 }

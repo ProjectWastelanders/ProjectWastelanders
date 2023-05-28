@@ -29,10 +29,7 @@ public:
     void TakeDamage(float amount, float resistanceDamage);
     bool PlayerAlive() { return currentHp > 0.0f; }
     float shield;
-    float maxResistance = 100.0f;
-    float currentResistance;
     float inmunityTime = 2.0f;
-    float hittedTime = 0.0f;
     float reducedDamageTime = 0.0f;
     bool secondLife;
     float lastHitTime;
@@ -40,9 +37,8 @@ public:
     void Heal(float amount);
     API_ShaderComponent material;
     float blinkTime = 0.0f;
-    API_ParticleSystem healParticles;
-    bool playingHealParticles;
-    API_ParticleSystem aidKitParticles;
+    bool positiveBlink = false;
+    bool healingFromDeathline;
 
     int GetAmmonByType(int type);
     void GetAmmo(int type, int amount);
@@ -53,7 +49,13 @@ public:
     int specialAmmo;
     int maxSpecialAmmo; // index 2
     float ultPercentage = 0.0f;
+
+    bool showTpDialog = false;
+    bool showedTpDialog = false;
      
+    // number of enemies who detect player
+    int detectedCount = 0;
+
     bool detected; //if the player is being detected somehow
     bool inCombat = false;
     API_RigidBody actualZone;//the zone where the player is

@@ -1,6 +1,8 @@
 #include "ArmoryWeaponSelect.h"
 #include "InteractiveEnviroment/OpenMenuInterruptor.h"
 #include "Player/PlayerMove.h"
+#include "UI Test folder/HUB/HUB_UIManager.h"
+
 HELLO_ENGINE_API_C ArmoryWeaponSelect* CreateArmoryWeaponSelect(ScriptToInspectorInterface* script)
 {
     ArmoryWeaponSelect* classInstance = new ArmoryWeaponSelect();
@@ -37,7 +39,8 @@ void ArmoryWeaponSelect::Start()
 {
     nextW = (ArmoryWeaponSelect*)NextWeapon.GetScript("ArmoryWeaponSelect");
     PrevW = (ArmoryWeaponSelect*)PrevtWeapon.GetScript("ArmoryWeaponSelect");
-    CurrentPanelUnlock.SetEnable(false);
+    /*CurrentPanelUnlock.SetEnable(false);*/
+    CurrentPanelUpgrate.GetGameObject().SetActive(true);
 
     playerMove = (PlayerMove*)playerGO.GetScript("PlayerMove");
     if (playerMove == nullptr && gunIndex == 0) Console::Log("PlayerMove missing in ArmoryWeaponSelect Script with gunIndex 0.");
@@ -62,10 +65,11 @@ void ArmoryWeaponSelect::Update()
         {
             allPanels[i].SetActive(false);
         }
+        HUB_UIManager::ClosePanel();
 
         return;
     }
-   
+
     if ((CurrentWeapon.OnHovered() || CurrentWeapon.OnPress()) && SelectWeaponList.IsEnabled() && findUnlock)
     {
         FindUnlock();
@@ -111,6 +115,14 @@ void ArmoryWeaponSelect::Update()
     else if (!CurrentWeapon.OnHovered())
     {
         findUnlock = true;
+    }
+
+    if (CurrentWeapon.OnHovered() || CurrentWeapon.OnPress())
+    {
+        if (isUnlocked)
+            CurrentPanelUpgrate.GetGameObject().SetActive(true);
+        else
+            CurrentPanelUnlock.GetGameObject().SetActive(true);
     }
 }
 

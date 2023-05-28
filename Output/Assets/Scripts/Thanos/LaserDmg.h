@@ -2,6 +2,8 @@
 #include "API/HelloBehavior.h"
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
+#include "ThanosAttacks.h"
+#include "ThanosMovement.h"
 
 #include "API/API.h"
 
@@ -16,5 +18,9 @@ public:
 
 	float dmg = 5.0f;
 	float dmgCooldown = 0.0f;
+
+	API_GameObject boss;
+	ThanosAttacks* Tattack;
+	ThanosMovement* Tmov;
 };
 

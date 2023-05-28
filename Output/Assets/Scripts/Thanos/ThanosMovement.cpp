@@ -28,7 +28,7 @@ void ThanosMovement::Update()
 {
     distBP = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
     if (Tloop->phase < 3 && Tloop->hp>0) {
-        if (distBP < 20.0f && Tloop->phase == 0) {
+        if (Tloop->phase == 0 && !cinematic) {
             letsFight = true;
             //Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosWakeUp);
             //Tattack->thanosAnimationPlayer.SetLoop(false);
@@ -43,7 +43,7 @@ void ThanosMovement::Update()
             Tattack->thanosAnimationPlayer.Resume();
             startFightTimer += Time::GetDeltaTime();
 
-            if (startFightTimer > 6.25f) {
+            if (startFightTimer > 6.1f) {
                 letsFight = false;
                 Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosRunAnimation);
                 Tattack->thanosAnimationPlayer.SetLoop(true);

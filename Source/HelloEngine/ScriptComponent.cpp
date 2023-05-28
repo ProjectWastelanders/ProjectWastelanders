@@ -58,13 +58,21 @@ void ScriptComponent::OnEditor()
 void ScriptComponent::OnEnable()
 {
 	if (scriptUID != 0)
+	{
 		LayerGame::_behaviorScripts[scriptUID].active = true;
+		if (LayerGame::S_IsPlaying())
+			LayerGame::_behaviorScripts[scriptUID].script->OnEnable();
+	}
 }
 
 void ScriptComponent::OnDisable()
 {
 	if (scriptUID != 0)
+	{
 		LayerGame::_behaviorScripts[scriptUID].active = false;
+		if (LayerGame::S_IsPlaying())
+			LayerGame::_behaviorScripts[scriptUID].script->OnDisable();
+	}
 }
 
 void ScriptComponent::OnCollisionEnter(PhysBody3D* other)
@@ -399,6 +407,16 @@ void ScriptComponent::AddDragBoxShaderComponent(const char* name, API::API_Shade
 void ScriptComponent::AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value)
 {
 	DragBoxAudioSourceComponent* dragBoxField = new DragBoxAudioSourceComponent();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
+void ScriptComponent::AddDragBoxVideoPlayerComponent(const char* name, API::API_VideoPlayer* value)
+{
+	DragBoxVideoPlayerComponent* dragBoxField = new DragBoxVideoPlayerComponent();
 	dragBoxField->valueName = name;
 	dragBoxField->value = value;
 	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;

@@ -155,6 +155,8 @@
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/SwapWeapon.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar_HP.cpp" />
+		<ClCompile Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Armory_Tutorial.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Coleccionable_buttons.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.cpp" />
@@ -167,6 +169,8 @@
 		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyRanger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.cpp" />
@@ -176,6 +180,7 @@
 		<ClCompile Include="..\..\Assets\Scripts\Level2EndTrigger.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Level2FinalText.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\LevelEndTrigger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\OrbitalTrigger.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Player\PlayerMove.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Player\PlayerStats.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\Player\Temp_Teleporter.cpp" />
@@ -199,6 +204,9 @@
 		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\Armory\DisplayUpgradeBpAmount.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\DashUI.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HpBar.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.cpp" />
 		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.cpp" />
@@ -284,10 +292,23 @@
 		<ClCompile Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/FeedbackChest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/EbonyMaw/TpBossZone.cpp" />
+		<ClCompile Include="../../Assets/Scripts/PlayCinematic.cpp" />
 	</ItemGroup>
 	<ItemGroup>
+		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Armory_Tutorial.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
 		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
 		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.h" />
@@ -300,6 +321,8 @@
 		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyRanger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
 		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.h" />
 		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.h" />
@@ -309,6 +332,7 @@
 		<ClInclude Include="..\..\Assets\Scripts\Level2EndTrigger.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Level2FinalText.h" />
 		<ClInclude Include="..\..\Assets\Scripts\LevelEndTrigger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\OrbitalTrigger.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Player\PlayerMove.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Player\PlayerStats.h" />
 		<ClInclude Include="..\..\Assets\Scripts\Player\Temp_Teleporter.h" />
@@ -332,6 +356,9 @@
 		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\Armory\DisplayUpgradeBpAmount.h" />
 		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\DashUI.h" />
 		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HpBar.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.h" />
 		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.h" />
 		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.h" />
 		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.h" />
@@ -437,8 +464,19 @@
 		<ClInclude Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
 		<ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/FeedbackChest.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.h" />
+		<ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.h" />
+		<ClInclude Include="../../Assets/Scripts/EbonyMaw/TpBossZone.h" />
+		<ClInclude Include="../../Assets/Scripts/PlayCinematic.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

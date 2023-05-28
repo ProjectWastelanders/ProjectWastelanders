@@ -104,7 +104,7 @@ void EnemyMeleeMovement::Update()
 			enemy->isHit ? _hitOutCooldown += dt : _hitOutCooldown = 0;
 
 			if (_hitOutCooldown >= hitOutTime)
-				enemy->isHit = false, enemy->hitParticles.Stop();
+				//enemy->isHit = false, enemy->hitParticles.Stop();
 
 			if (enemy->isTargIn)
 			{
@@ -170,30 +170,61 @@ void EnemyMeleeMovement::Update()
 			attacking = false;
 			enemy->currentSpeed = enemy->speed * enemy->stunVel * enemy->slowVel /** dt*/;
 			enemy->enemyAgent.SetSpeed(enemy->currentSpeed);
-			//if ((gameObject.GetTransform().GetLocalPosition().Distance(actualPoint) < 5))
-			if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 5))
+			if (!enemy->staticWand)
 			{
-				// Console::Log("Change");
-				if (++numPoint >= _avalPoints)
-					numPoint = 0;
+
+				//if ((gameObject.GetTransform().GetLocalPosition().Distance(actualPoint) < 5))
+				if ((gameObject.GetTransform().GetGlobalPosition().Distance(actualPoint) < 5))
+				{
+					// Console::Log("Change");
+					if (++numPoint >= _avalPoints)
+						numPoint = 0;
+				}
+				actualPoint = listPoints[numPoint].GetTransform().GetGlobalPosition();
+				_agCooldown += dt;
+				if (_agCooldown >= _agTime)
+				{
+					_agCooldown = 0;
+					test = enemy->enemyAgent.SetDestination(API_Vector3(actualPoint.x, gameObject.GetTransform().GetGlobalPosition().y, actualPoint.z));
+					//enemy->enemyAgent.SetDestination(API_Vector3(-178.552,60, 16.905));
+					Console::Log("Vel: " + std::to_string(enemy->enemyAgent.GetSpeed()));
+				}
+				// Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
+				LoookAt(actualPoint);
+				if (animState != AnimationState::WALK && !enemy->takingDmg)
+				{
+					animState = AnimationState::WALK;
+					animationPlayer.ChangeAnimation(walkAnim);
+					animationPlayer.Play();
+					//  Console::Log("Walk");
+				}
 			}
-			actualPoint = listPoints[numPoint].GetTransform().GetGlobalPosition();
-			_agCooldown += dt;
-			if (_agCooldown >= _agTime)
+			else
 			{
-				_agCooldown = 0;
-				test = enemy->enemyAgent.SetDestination(API_Vector3(actualPoint.x, gameObject.GetTransform().GetGlobalPosition().y, actualPoint.z));
-				//enemy->enemyAgent.SetDestination(API_Vector3(-178.552,60, 16.905));
-				Console::Log("Vel: " + std::to_string(enemy->enemyAgent.GetSpeed()));
-			}
-			// Wander(enemy->currentSpeed, actualPoint, enemy->enemyRb);
-			LoookAt(actualPoint);
-			if (animState != AnimationState::WALK && !enemy->takingDmg)
-			{
-				animState = AnimationState::WALK;
-				animationPlayer.ChangeAnimation(walkAnim);
-				animationPlayer.Play();
-				//  Console::Log("Walk");
+				_agCooldown += dt;
+				if (_agCooldown >= _agTime)
+				{
+					_agCooldown = 0;
+					//Console::Log("vel:" + std::to_string(enemy->enemyAgent.GetSpeed()));
+					enemy->enemyAgent.SetDestination(API_Vector3(enemy->basePos.x, gameObject.GetTransform().GetGlobalPosition().y, enemy->basePos.z));
+				}
+
+				if (animState != AnimationState::WALK && !enemy->takingDmg && enemy->basePos != gameObject.GetTransform().GetGlobalPosition())
+				{
+					animState = AnimationState::WALK;
+					animationPlayer.ChangeAnimation(walkAnim);
+					animationPlayer.Play();
+					//Console::Log("Walk");
+				}
+				else if (animState != AnimationState::IDLE && !enemy->takingDmg)
+				{
+					animState = AnimationState::IDLE;
+					animationPlayer.ChangeAnimation(idleAnim);
+					animationPlayer.Play();
+					//Console::Log("Walk");
+				}
+
+
 			}
 		}
 		break;

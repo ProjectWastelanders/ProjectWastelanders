@@ -72,6 +72,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</IntDir>
+    <TargetName>ProjectWastelanders</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -427,6 +428,7 @@
     <ClCompile Include="API\API_Engine.cpp" />
     <ClCompile Include="API\API_Camera.cpp" />
     <ClCompile Include="API\API_ParticleSystem.cpp" />
+    <ClCompile Include="API\API_VideoPlayer.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AudioSourceComponent.cpp" />
     <ClCompile Include="BillBoardComponent.cpp" />
@@ -686,6 +688,7 @@
     <ClInclude Include="API\API_Engine.h" />
     <ClInclude Include="API\API_Camera.h" />
     <ClInclude Include="API\API_ParticleSystem.h" />
+    <ClInclude Include="API\API_VideoPlayer.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="AudioSourceComponent.h" />
     <ClInclude Include="BaseShader.h" />

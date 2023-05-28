@@ -55,4 +55,6 @@ public:
 
     API_GameObject swapWeaponGO;
     SwapWeapon* swapWeapon;
+
+    int saveNullWeapon;
 };

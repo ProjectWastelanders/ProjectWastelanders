@@ -4,6 +4,8 @@
 #include "btBulletDynamicsCommon.h"
 #include "ModulePhysics.h"
 
+#include <unordered_set>
+
 struct PhysBody3D
 {
 public:
@@ -52,8 +54,8 @@ public:
 	Quat colRotationOffset = Quat::identity;
 	float3 colScl = { 1,1,1 };
 
-	ColliderShape colShape;
+	ColliderShape colShape;	
 
-	std::map<uint, PhysBody3D*> lastFrameCollidingBodies;
-	std::map<uint, PhysBody3D*> thisFrameCollidingBodies;
+	std::unordered_set<uint> lastFrameCollidingBodies;
+	std::unordered_set<uint> thisFrameCollidingBodies;
 };

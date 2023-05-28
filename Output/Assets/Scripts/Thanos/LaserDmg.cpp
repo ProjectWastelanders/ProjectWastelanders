@@ -1,16 +1,20 @@
 #include "LaserDmg.h"
 #include "../Player/PlayerStats.h"
+#include "ThanosAttacks.h"
+#include "ThanosMovement.h"
 HELLO_ENGINE_API_C LaserDmg* CreateLaserDmg(ScriptToInspectorInterface* script)
 {
 	LaserDmg* classInstance = new LaserDmg();
 	script->AddDragFloat("Dmg", &classInstance->dmg);
+	script->AddDragBoxGameObject("Boss", &classInstance->boss);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
 
 void LaserDmg::Start()
 {
-
+	Tattack = (ThanosAttacks*)boss.GetScript("ThanosAttacks");
+	Tmov = (ThanosMovement*)boss.GetScript("ThanosMovement");
 }
 void LaserDmg::Update()
 {
@@ -22,7 +26,7 @@ void LaserDmg::OnCollisionStay(API::API_RigidBody other)
 	std::string detectionName = other.GetGameObject().GetName();
 	
 
-	if (detectionName == "Player")
+	if (detectionName == "Player" && Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER && Tmov->distBP < 25.0f)
 	{
 
 		dmgCooldown += Time::GetDeltaTime();

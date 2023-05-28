@@ -17,6 +17,8 @@ namespace API
 
 		void ChangeAlbedoTexture(uint textureUID);
 
+		bool IsTextureNull();
+
 	private:
 		TextureComponent* GetComponent();
 		void SetComponent(TextureComponent* component);

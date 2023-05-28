@@ -29,6 +29,8 @@ public:
 
     virtual void ReImport(const std::string& filePath) {}
 
+    ResourceType _type = ResourceType::UNDEFINED;
+
 protected:
     virtual void UnLoad() {}
 
@@ -243,7 +245,7 @@ public:
 class ResourcePrefab : public Resource
 {
 public:
-    ResourcePrefab() {};
+    ResourcePrefab() { _type = ResourceType::PREFAB; };
 
     std::string path;
 };

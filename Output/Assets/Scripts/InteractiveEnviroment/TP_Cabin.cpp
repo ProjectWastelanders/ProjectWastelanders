@@ -1,5 +1,6 @@
 #include "TP_Cabin.h"
 #include "../Player/PlayerStats.h"
+#include "../../Game/Prefabs/Environment/TP_Sphere/TpRotateSphere.h"
 
 HELLO_ENGINE_API_C TP_Cabin* CreateTP_Cabin(ScriptToInspectorInterface* script)
 {
@@ -8,8 +9,11 @@ HELLO_ENGINE_API_C TP_Cabin* CreateTP_Cabin(ScriptToInspectorInterface* script)
 
 	script->AddDragBoxTransform("Destination: ", &classInstance->destination);
 	script->AddDragBoxParticleSystem("Smoke Particle", &classInstance->smoke);
-	script->AddDragBoxPrefabResource("Sphere Prefab", &classInstance->effectSpherePrefab);
-	script->AddDragFloat("Scale Value", &classInstance->scaleValue);
+	script->AddDragBoxPrefabResource("Big Sphere Prefab", &classInstance->big_effectSpherePrefab);
+	script->AddDragBoxPrefabResource("Small Sphere Prefab", &classInstance->small_effectSpherePrefab);
+	script->AddDragFloat("Scale Value Big", &classInstance->scaleValue_big);
+	script->AddDragFloat("Scale Value Small", &classInstance->scaleValue_small);
+
 	return classInstance;
 }
 
@@ -29,6 +33,7 @@ void TP_Cabin::Start()
 	tpTime = 1.2f;
 
 	canTp = true;
+	enableCanTp = false;
 }
 
 void TP_Cabin::Update()
@@ -39,6 +44,7 @@ void TP_Cabin::Update()
 	}
 
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_X) != KeyState::KEY_REPEAT)
+	//if (Input::GetKey(KeyCode::KEY_E) != KeyState::KEY_REPEAT)
 	{
 		sphereGrowingTime -= Time::GetDeltaTime();
 	}
@@ -76,15 +82,62 @@ void TP_Cabin::SpawnSphere()
 	{
 		//effectSphere = Game::InstancePrefab(effectSpherePrefab, API_GameObject());
 		//effectSphere2 = Game::InstancePrefab(effectSpherePrefab, API_GameObject());
-		effectSphere = Game::InstancePrefab(effectSpherePrefab, gameObject);
-		effectSphere2 = Game::InstancePrefab(effectSpherePrefab, destination.GetGameObject());
+		
+		//effectSphere.GetChildren(&childSphere[0], 1);
+
+
+		//effectSphere = Game::InstancePrefab(big_effectSpherePrefab, gameObject);
+		//effectSphere2 = Game::InstancePrefab(big_effectSpherePrefab, destination.GetGameObject())
+
+		effectSphere = Game::InstancePrefab(big_effectSpherePrefab, API_GameObject());
+		effectSphere2 = Game::InstancePrefab(big_effectSpherePrefab, API_GameObject());
+
+		childSphere = Game::InstancePrefab(small_effectSpherePrefab, API_GameObject());
+		childSphere2 = Game::InstancePrefab(small_effectSpherePrefab, API_GameObject());
+
+		rotateSphere1 = (TpRotateSphere*)childSphere.GetScript("TpRotateSphere");
+		rotateSphere2 = (TpRotateSphere*)childSphere2.GetScript("TpRotateSphere");
+
 		hasSpawnedSphere = true;
 	}
 
 	//effectSphere.GetTransform().SetScale(pow(timeHoldButton,scaleValue), pow(timeHoldButton, scaleValue), pow(timeHoldButton, scaleValue));
-	effectSphere.GetTransform().SetScale(sphereGrowing * scaleValue, sphereGrowing * scaleValue, sphereGrowing * scaleValue);
-	effectSphere2.GetTransform().SetScale(sphereGrowing * scaleValue, sphereGrowing * scaleValue, sphereGrowing * scaleValue);
+	float tempScale = sphereGrowing * scaleValue_big;
+	effectSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
+	effectSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
+	tempScale = sphereGrowing * scaleValue_small;
+	if (rotateSphere1) 
+	{
+		rotateSphere1->sphereSize = tempScale;
+	}
+	if (rotateSphere2)
+	{
+		rotateSphere2->sphereSize = tempScale;
+	}
+	//childSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
+	//childSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
+	
 
+	//effectSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
+	//API_Vector3 playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
+	//effectSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
+
+	//childSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 0.9f, playerGO.GetTransform().GetGlobalPosition().z);
+	////API_Vector3 playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
+	//playerDiff = childSphere.GetTransform().GetGlobalPosition() - gameObject.GetTransform().GetGlobalPosition();
+	//childSphere2.GetTransform().SetPosition((destination.GetGameObject().GetTransform().GetGlobalPosition() + playerDiff));
+
+
+	effectSphere.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+	effectSphere2.GetTransform().SetPosition(destination.GetGlobalPosition());
+	childSphere.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+	childSphere2.GetTransform().SetPosition(destination.GetGlobalPosition());
+
+	//if (childSphere != nullptr && childSphere2 != nullptr)
+	//{
+	//	
+	//	//childSphere->GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 2, playerGO.GetTransform().GetGlobalPosition().z);
+	//}
 	//effectSphere.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 2, playerGO.GetTransform().GetGlobalPosition().z);
 	//effectSphere2.GetTransform().SetPosition(playerGO.GetTransform().GetGlobalPosition().x, playerGO.GetTransform().GetGlobalPosition().y + 2, playerGO.GetTransform().GetGlobalPosition().z);
 	
@@ -105,6 +158,8 @@ void TP_Cabin::DestroySphere()
 	{ 
 		effectSphere.Destroy();
 		effectSphere2.Destroy();
+		childSphere.Destroy();
+		childSphere2.Destroy();
 		hasSpawnedSphere = false;
 	}
 }
@@ -125,48 +180,85 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 		}
 		else
 		{
+			//if (Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_UP)
+
+			if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+			{
+				enableCanTp = true;
+			}
+
 			if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
 			{
+				//timeHoldButton = 0.0f;
+				smoke.StopEmitting();
+				destinationSmoke.StopEmitting();
 				canTp = true;
+				enableCanTp = false;
+				
+				
 			}
 
 			//Console::Log("PLAYER NOT BEING DETECTED");
 			
-			if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
+			if (enableCanTp == true)
 			{
-				timeHoldButton += Time::GetDeltaTime();
-				sphereGrowingTime += Time::GetDeltaTime();
-				//SpawnSphere();
-			}
-			else
-			{
-				timeHoldButton -= Time::GetDeltaTime();
-				//sphereGrowingTime -= Time::GetDeltaTime();
-				smoke.StopEmitting();
-				destinationSmoke.StopEmitting();
-
-				//DestroySphere();
-			}
-
-			if (canTp == true)
-			{
-				if (timeHoldButton > startParticles && timeHoldButton < endParticles )
+				
+				if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
+				//if (Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_REPEAT)
 				{
-					smoke.Play();
-					destinationSmoke.Play();
-					Audio::Event("teleport_1");
+					timeHoldButton += Time::GetDeltaTime();
+					sphereGrowingTime += Time::GetDeltaTime();
+					//SpawnSphere();
 				}
-				else if (timeHoldButton > tpTime)
+				else
 				{
-					other.GetGameObject().GetTransform().SetPosition(destination.GetGlobalPosition());
+					timeHoldButton -= Time::GetDeltaTime();
+					//sphereGrowingTime -= Time::GetDeltaTime();
+					smoke.StopEmitting();
+					destinationSmoke.StopEmitting();
+
+					//DestroySphere();
+				}
+
+				if (canTp == true)
+				{
+					if (timeHoldButton > startParticles && timeHoldButton < endParticles)
+					{
+						//smoke.Play();
+						//destinationSmoke.Play();
+						Audio::Event("teleport_1");
+					}
+					else if (timeHoldButton > tpTime)
+					{
+						other.GetGameObject().GetTransform().SetPosition(destination.GetGlobalPosition());
+						timeHoldButton = 0.0f;
+						smoke.StopEmitting();
+						destinationSmoke.StopEmitting();
+						Audio::Event("teleport_2");
+
+						if (!playerStats->showedTpDialog)
+						{
+							playerStats->showTpDialog = true;
+						}
+
+						canTp = false;
+					}
+				}
+				else
+				{
+					//other.GetGameObject().GetTransform().SetPosition(destination.GetGlobalPosition());
 					timeHoldButton = 0.0f;
 					smoke.StopEmitting();
 					destinationSmoke.StopEmitting();
-					Audio::Event("teleport_2");
+					//Audio::Event("teleport_2");
 
-					canTp = false;
+					/*if (!playerStats->showedTpDialog)
+					{
+						playerStats->showTpDialog = true;
+					}*/
 				}
 			}
 		}
 	}
 }
+

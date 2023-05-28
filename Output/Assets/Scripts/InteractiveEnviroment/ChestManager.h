@@ -13,7 +13,7 @@ public:
     void Start() override;
     void Update() override;
 
-    int GetRandomLoot();
+    int GetRandomLoot(bool canGetGun);
     int GetGunBlueprint();
     int GetSpecialGun();
 

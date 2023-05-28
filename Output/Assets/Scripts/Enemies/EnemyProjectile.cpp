@@ -10,7 +10,7 @@ HELLO_ENGINE_API_C EnemyProjectile* CreateEnemyProjectile(ScriptToInspectorInter
 
 void EnemyProjectile::Start()
 {
-
+    rigidbody = gameObject.GetRigidBody();
 }
 
 void EnemyProjectile::Update()
@@ -22,8 +22,9 @@ void EnemyProjectile::Update()
         Destroy();
         return;
     }
-
-    gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
+    
+    rigidbody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 60.0f });
+    //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 
 void EnemyProjectile::Destroy()
@@ -49,16 +50,16 @@ void EnemyProjectile::OnCollisionEnter(API::API_RigidBody other)
     {
         Destroy();
     }
-    /*else if (detectionTag == "Milano")
+    else if (detectionTag == "Milano")
     {
-        AttackingShip* shipScript = (AttackingShip*)other.GetGameObject().GetScript("AttackingShip");
-        if (shipScript)
+       // AttackingShip* shipScript = (AttackingShip*)other.GetGameObject().GetScript("AttackingShip");
+        /*if (shipScript)
         {
             shipScript->TakeDamage(damage);
-        }
+        }*/
         Destroy();
 
-    }*/
+    }
 
 
 

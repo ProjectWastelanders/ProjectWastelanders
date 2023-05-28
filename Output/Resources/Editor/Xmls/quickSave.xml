@@ -2,24 +2,27 @@
 <QuickSave>
 	<Bool>
 		<default value="0" />
-		<level1_casette1 value="false" />
+		<level1_casette1 value="true" />
 		<level1_casette2 value="false" />
 		<level1_casette3 value="false" />
+		<level1_chest4 value="true" />
 	</Bool>
 	<String>
 		<default value="nothing" />
 	</String>
 	<Int>
 		<default value="0" />
-		<skillPointsAmount value="0" />
-		<upgradeBlueprintAmount value="0" />
+		<skillPointsAmount value="3112" />
+		<upgradeBlueprintAmount value="1" />
+		<currentSelectedLevel value="0" />
+		<level1_chest4_content value="2" />
 	</Int>
 	<Float>
 		<default value="0.0" />
-		<PlayerPosX value="-33.295254f" />
-		<PlayerPosY value="-12.891784f" />
-		<PlayerPosZ value="-18.668676f" />
-		<PlayerIndicatorPosX value="0.133368f" />
-		<PlayerIndicatorPosY value="-0.152360f" />
+		<PlayerPosX value="-56.338600f" />
+		<PlayerPosY value="-13.966529f" />
+		<PlayerPosZ value="-17.465769f" />
+		<PlayerIndicatorPosX value="1.038921f" />
+		<PlayerIndicatorPosY value="1.020792f" />
 	</Float>
 </QuickSave>

@@ -113,44 +113,44 @@ void PlayerShotgun::SetGunStatsPerLevel(int level)
     switch (level)
     {
     case 0:
-        projectileSpeed = 40.0f;
+        projectileSpeed = 80.0f;
         projectileDamage = 5.0f;
         projectileResistanceDamage = 5.0f;
         projectileLifetime = 0.2f;
-        cadence = 1.3f;
+        cadence = 3.0f;
         pellets = 3;
         pelletsDisersion = 0.2f;
         // explosion damage 10
         // bomb num 2
         break;
     case 1:
-        projectileSpeed = 40.0f;
+        projectileSpeed = 80.0f;
         projectileDamage = 5.0f;
         projectileResistanceDamage = 5.0f;
-        projectileLifetime = 0.2f;
-        cadence = 1.3f;
+        projectileLifetime = 0.4f;
+        cadence = 3.0f;
         pellets = 4;
         pelletsDisersion = 0.2f;
         // explosion damage 10
         // bomb num 2
         break;
     case 2:
-        projectileSpeed = 40.0f;
+        projectileSpeed = 80.0f;
         projectileDamage = 5.0f;
         projectileResistanceDamage = 5.0f;
-        projectileLifetime = 0.2f;
-        cadence = 1.3f;
+        projectileLifetime = 0.4f;
+        cadence = 3.0f;
         pellets = 4;
         pelletsDisersion = 0.2f;
         // explosion damage 10
         // bomb num 3
         break;
     case 3:
-        projectileSpeed = 40.0f;
+        projectileSpeed = 80.0f;
         projectileDamage = 10.0f;
         projectileResistanceDamage = 10.0f;
-        projectileLifetime = 0.2f;
-        cadence = 1.3f;
+        projectileLifetime = 0.4f;
+        cadence = 3.0f;
         pellets = 4;
         pelletsDisersion = 0.2f;
         // explosion damage 15

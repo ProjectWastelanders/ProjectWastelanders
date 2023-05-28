@@ -24,7 +24,11 @@ void Mision_RageMonster::Update()
 
         for (size_t i = 0; i < 16; i++)
         {
-            if (boxes[i].IsActive()) completed = false;
+            if (boxes[i].IsActive())
+            {
+                completed = false;
+                return;
+            }
         }
 
         misionCompleted = completed;

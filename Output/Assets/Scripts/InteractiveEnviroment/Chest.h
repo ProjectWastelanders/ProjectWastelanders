@@ -37,6 +37,7 @@ public:
 
     int chestIndex;
     int itemIndex;
+    bool canGetGun = true;
 
     API_UIImage Tutorial_Img;
 

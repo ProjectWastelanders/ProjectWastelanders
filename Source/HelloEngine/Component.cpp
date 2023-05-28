@@ -18,3 +18,11 @@ void Component::Disable()
 	if (_gameObject->IsActive())
 		OnDisable();
 }
+
+void Component::OnEnable()
+{
+}
+
+void Component::OnDisable()
+{
+}

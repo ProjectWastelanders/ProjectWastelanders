@@ -419,6 +419,7 @@
     </ClCompile>
     <ClCompile Include="API\API_AudioSource.cpp" />
     <ClCompile Include="API\API_UISlider.cpp" />
+    <ClCompile Include="API\API_VideoPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\External\ImGuiColorTextEdit\TextEditor.h" />
@@ -867,6 +868,7 @@
     </ClInclude>
     <ClInclude Include="API\API_AudioSource.h" />
     <ClInclude Include="API\API_UISlider.h" />
+    <ClInclude Include="API\API_VideoPlayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HelloEngine.rc" />

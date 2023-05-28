@@ -12,7 +12,6 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragFloat("SecToZeroVel", &classInstance->secToZeroVel);
     //script->AddDragFloat("Current Velocity", &classInstance->currentVel);
     script->AddDragFloat("Y tp limit", &classInstance->yTpLimit);
-    script->AddDragBoxRigidBody("Rigid Body", &classInstance->rigidBody);
 
     script->AddDragFloat("Dash Time", &classInstance->dashTime);
     script->AddDragFloat("Dash Distance", &classInstance->dashDistance);
@@ -35,18 +34,20 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxAnimationResource("Shoot Ricochet Animation", &classInstance->shootAnim[6]);
     script->AddDragBoxAnimationResource("Swap Duals Animation", &classInstance->swapGunAnim[0]);
     script->AddDragBoxAnimationResource("Swap Gun Animation", &classInstance->swapGunAnim[1]);
-    script->AddDragBoxAnimationResource("Hit Animation", &classInstance->hittedAnim);
     script->AddDragBoxAnimationResource("Open Chest Animation", &classInstance->openChestAnim);
     script->AddDragBoxAnimationResource("Dead Animation", &classInstance->deathAnim);
     script->AddDragBoxAnimationResource("Jumper Animation", &classInstance->jumperAnim);
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
     script->AddDragBoxParticleSystem("Walk Particles", &classInstance->walkParticles);
     script->AddDragBoxParticleSystem("Shoot Particles", &classInstance->shootParticles);
+    script->AddCheckBox("On HUB", &classInstance->onHUB);
     return classInstance;
 }
 
 void PlayerMove::Start()
 {
+    rigidBody = gameObject.GetRigidBody();
+
     transform = gameObject.GetTransform();
     initialPos = transform.GetGlobalPosition();
     departureTime = 0.0f;
@@ -65,6 +66,11 @@ void PlayerMove::Start()
 void PlayerMove::Update()
 {
     usingGamepad = Input::UsingGamepad();
+
+    if (!dashTriggerIdle && Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) < 5000)
+    {
+        dashTriggerIdle = true;
+    }
 
     if (playerStats && !playerStats->PlayerAlive()) return;
 
@@ -96,21 +102,23 @@ void PlayerMove::Update()
         }
     }
 
-    if (openingChest || (playerStats && playerStats->hittedTime > 0.0f)) return; // can't do other actions while is opening a chest or been hitted
+    if (openingChest) return; // can't do other actions while is opening a chest
 
     if (Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERRIGHT) < 5000 || isSwapingGun)
     {
         isShooting = false;
         shootParticles.StopEmitting();
     }
-
-    if (dashesAvailable > 0)
+    
+    if (dashesAvailable > 0 && !onHUB)
     {
         if (DashInput())
         {
+            dashTriggerIdle = false;
             if (isDashing)
             {
                 dashBuffer = true;
+                bufferDashDirection = GetMoveInput();
             }
             else
             {
@@ -119,7 +127,7 @@ void PlayerMove::Update()
         }
         else if (dashBuffer && !isDashing)
         {
-            DashSetup();
+            DashSetup(true);
             dashBuffer = false;
         }
     }
@@ -254,7 +262,7 @@ float PlayerMove::Lerp(float a, float b, float time)
     return a + time * (b - a);
 }
 
-void PlayerMove::DashSetup()
+void PlayerMove::DashSetup(bool isBuffered)
 {
     isDashing = true;
 
@@ -262,6 +270,12 @@ void PlayerMove::DashSetup()
     dashesAvailable--;
     if (playerStats && playerStats->movementTreeLvl > 1) dashCooldown = maxFastDashCooldown + 0.0001f;
     else dashCooldown = maxDashCooldown + 0.0001f;
+
+    // direction
+    if (isBuffered)
+    {
+        lastMovInput = bufferDashDirection;
+    }
     
     dashDepartTime = 0.0f;
     float norm = sqrt(pow(lastMovInput.x, 2) + pow(lastMovInput.y, 2));
@@ -300,9 +314,16 @@ void PlayerMove::Dash()
 bool PlayerMove::DashInput()
 {
     if (usingGamepad)
-        return Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) > 20000;
+    {
+        return (Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) > 20000 && dashTriggerIdle);
+    }
 
     return Input::GetKey(KeyCode::KEY_SPACE) == KeyState::KEY_DOWN;
+}
+
+void PlayerMove::StopPlayer()
+{
+    rigidBody.SetVelocity({ 0, 0, 0 });
 }
 
 void PlayerMove::LookAt(API_Vector3 target)
@@ -456,13 +477,13 @@ void PlayerMove::StopSwapGunAnim()
     isSwapingGun = false;
 }
 
-void PlayerMove::PlayHittedAnim()
+void PlayerMove::PlayIdleAnim()
 {
-    if (currentAnim != PlayerAnims::HITTED)
+    if (currentAnim != PlayerAnims::IDLE)
     {
-        playerAnimator.ChangeAnimation(hittedAnim);
+        playerAnimator.ChangeAnimation(idle1Anim);
         playerAnimator.Play();
-        currentAnim = PlayerAnims::HITTED;
+        currentAnim = PlayerAnims::IDLE;
     }
 }
 
@@ -490,6 +511,7 @@ void PlayerMove::PlayDeathAnim()
         playerAnimator.Play();
         currentAnim = PlayerAnims::DEATH;
     }
+    StopPlayer();
 }
 
 void PlayerMove::PlayJumperAnim()

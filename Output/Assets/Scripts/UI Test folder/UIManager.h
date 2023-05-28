@@ -36,6 +36,7 @@ public:
 
 	API_UIButton initialTextConinue;
 	API_UIButton finalTextConinue;
+	API_UIButton goBack;
 
 	CurrentPanel currentPanel;
 

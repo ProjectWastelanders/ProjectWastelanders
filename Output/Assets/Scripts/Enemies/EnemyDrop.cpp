@@ -26,5 +26,6 @@ void EnemyDrop::Update()
 void EnemyDrop::Destroy()
 {
     lifeTime = 5.0f;
+    gameObject.GetParticleSystem().StopEmitting();
     gameObject.SetActive(false);
 }

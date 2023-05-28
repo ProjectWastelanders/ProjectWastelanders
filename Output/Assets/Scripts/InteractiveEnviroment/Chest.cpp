@@ -10,6 +10,7 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
     script->AddCheckBox("Tutorial Weapon Blueprint", &classInstance->tutorialWeaponBlueprint);
     script->AddDragInt("Chest Index", &classInstance->chestIndex);
     script->AddDragInt("Item Index", &classInstance->itemIndex);
+    script->AddCheckBox("Can Get Special Gun", &classInstance->canGetGun);
 
     script->AddDragBoxUIImage("Guide Button", &classInstance->guideButton);
 
@@ -51,6 +52,7 @@ void Chest::Update()
         if (openChestTime <= 0.0f)
         {
             opening = false;
+            guideButton.GetGameObject().SetActive(false);
 
             if (!playerGunManager || !playerStats || !playerMove)
             {
@@ -80,8 +82,8 @@ void Chest::Update()
                 break;
             case 6: // Get Ricochet
                 playerGunManager->GetGun(3, 6);
-                playerStats->specialAmmo = 20;
-                playerStats->maxSpecialAmmo = 20;
+                playerStats->specialAmmo = 50;
+                playerStats->maxSpecialAmmo = 50;
                 playerStats->SaveChestData(7, chestIndex); // save game
                 if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(6);
                 break;
@@ -102,7 +104,7 @@ void Chest::Update()
 
         }
     }
-    guideButton.FillImage(openChestTime/maxOpenChestTime);
+    //guideButton.FillImage(openChestTime/maxOpenChestTime);
 
 
     if (activeTutorial == true && endTutorial == false && hideChest == false)

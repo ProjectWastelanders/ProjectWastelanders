@@ -8,10 +8,10 @@
 	<renderer>
 		<vsync value="false" />
 		<framerate value="120" />
-		<drawNavMesh value="true" />
+		<drawNavMesh value="false" />
 	</renderer>
 	<scene>
-		<currentScene value="Assets/temp/Hud_Scene.HScene" />
+		<currentScene value="Assets/temp/PlayerSkillsAndGuns.HScene" />
 	</scene>
 	<openGL>
 		<blend value="true" tag="0x0BE2" />

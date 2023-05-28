@@ -56,7 +56,9 @@ void BossAttacks::Start()
 {
 	for (int i = 0; i < 15; i++) {
 		rockPositions[i] = rocks[i].GetTransform().GetGlobalPosition();
+		rocks[i].GetRigidBody().SetVelocity({ 0, 0, 0 });
 	}
+	
 	srand(time(NULL));
 	bLoop = (BossLoop*)boss.GetScript("BossLoop");
 	pStats = (PlayerStats*)player.GetScript("PlayerStats");
@@ -65,6 +67,10 @@ void BossAttacks::Start()
 		Console::Log("BossLoop is nullptr in BOSSATTACK script");
 	}
 	takeobjTimer = 0;
+	explosionWave1.GetTransform().Translate(0, -10, 0);
+	orbitingRocks.SetActive(false);
+	rocks[1].GetParticleSystem().Stop();
+	rocks[1].GetParticleSystem().StopEmitting();
 }
 
 void BossAttacks::Update()
@@ -220,7 +226,6 @@ void BossAttacks::Update()
 				break;
 			case 4:
 				explosionTime += Time::GetDeltaTime();
-				//explosionWave1.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 				if (explosionTime < 0.5 && distSA < 15.0 && explosionWave1HasArrived == false) {
 					pStats->TakeDamage(50,0);
 					explosionWave1HasArrived = true;
@@ -243,6 +248,7 @@ void BossAttacks::Update()
 				if (explosionTime > 0.6) {
 					bLoop->exploting = false;
 					explosionWave1.SetActive(false);
+					explosionWave1.GetTransform().Translate(0, -10, 0);
 					explosionWave1.GetParticleSystem().Stop();
 					explosionWave1.GetParticleSystem().StopEmitting();
 					bossState = BOSS_STATE::IDLE;
@@ -271,7 +277,6 @@ void BossAttacks::Update()
 
 					if (rocks[1].GetTransform().GetGlobalScale().x >= 6.0f) {
 
-
 						Seek(&rocks[currentRock[1]], lastPlayerPosition, speed / 5, 1, false, 60.0f);
 
 						returnFireRockTime += Time::GetDeltaTime();
@@ -282,6 +287,9 @@ void BossAttacks::Update()
 							groundFire.GetGameObject().GetTransform().SetPosition(lastPlayerPosition);
 							groundFire.GetGameObject().SetActive(true);
 							groundFire.Play();
+							rocks[1].GetParticleSystem().Stop();
+							rocks[1].GetParticleSystem().StopEmitting();
+
 							isFireOn = true;
 						}
 
@@ -289,6 +297,8 @@ void BossAttacks::Update()
 					else {
 						rocks[1].GetTransform().Scale(10 * Time::GetDeltaTime());
 						lastPlayerPosition = player.GetTransform().GetGlobalPosition();
+						rocks[1].GetParticleSystem().Play();
+
 					}
 
 					if (bLoop->animState != BossLoop::AnimationState::SPECIAL)
@@ -400,6 +410,7 @@ void BossAttacks::Update()
 					explosionWave2HasArrived = false;
 					bossState = BOSS_STATE::EXPLOSIONWAVE;
 					explosionWave1.SetActive(true);
+					explosionWave1.GetTransform().Translate(0, 10, 0);
 					explosionWave1.GetParticleSystem().Play();
 				}
 

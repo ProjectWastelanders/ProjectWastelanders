@@ -24,6 +24,8 @@ public:
 
 	void SetAngularFactor(float3 angle);
 
+	PhysBody3D* GetPhysBody() { return _physBody; }
+
 private:
 #ifdef STANDALONE
 	void OnEditor() override;

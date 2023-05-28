@@ -17,33 +17,64 @@ HELLO_ENGINE_API_C ReachTheSpaceship* CreateReachTheSpaceship(ScriptToInspectorI
     script->AddDragBoxGameObject("Enemy to Active 5", &classInstance->enebledEnemies[5]);
     script->AddDragBoxGameObject("Enemy to Active 6", &classInstance->enebledEnemies[6]);
     script->AddDragBoxGameObject("Enemy to Active 7", &classInstance->enebledEnemies[7]);
+    script->AddCheckBox("aaaaaaaaaaaaaaaa", &classInstance->enabled);
+
     return classInstance;
 }
 
 void ReachTheSpaceship::Start()
 {
     currentHp = maxHp;
+    playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
+    if (!playerStorage) Console::Log("Storage Missing in ReachSpaceShip Script.");
 }
 
 void ReachTheSpaceship::Update()
 {
-    Console::Log(std::to_string(currentHp));
+    //Console::Log(std::to_string(currentHp));
+    
+
+    //if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN) currentHp -= 100;
+    //if (currentHp <= 0.0f)
+    //{
+    //    //Mision Failed
+    //    Scene::LoadScene("LoseMenu.HScene");
+    //}
+   /* for (size_t i = 0; i < 8; i++)
+    {
+        enebledEnemies[i].SetActive(false);
+    }*/
+
+    if (enabled)
+    {
+        cooldownHit += Time::GetDeltaTime();
+        if (cooldownHit >= timeHit)
+        {
+            currentHp -= damagePerProjectile*8;
+            cooldownHit = 0;
+        }
+    }
 }
 
 void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
 {
     if (!enabled) return;
+   //if(( Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN) currentHp -=100;
 
+      // if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN) currentHp -= 100;
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "EnemyProjectile")
     {
         currentHp -= damagePerProjectile;
+
+       //other.GetGameObject().
 
         if (currentHp <= 0.0f)
         {
             //Mision Failed
             Scene::LoadScene("LoseMenu.HScene");
         }
+
     }
     else if (detectionTag == "Player")
     {
@@ -58,6 +89,8 @@ void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
         }
         API_QuickSave::SetBool("level3_completed", true);
         API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+        Scene::LoadScene("SpaceshipHUB_Scene.HScene");
+        uwu = true;
         finalText.SetActive(true);
     }
 }

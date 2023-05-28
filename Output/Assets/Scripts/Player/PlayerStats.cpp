@@ -12,7 +12,6 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragFloat("Max HP", &classInstance->maxHp);
     script->AddDragFloat("Current HP", &classInstance->currentHp);
     script->AddDragFloat("Upgraded Max HP", &classInstance->upgradedMaxHp);
-    script->AddDragFloat("Resistance", &classInstance->maxResistance);
     script->AddDragFloat("Deadline Percentage", &classInstance->deadlinePart);
     script->AddDragFloat("Upgraded Deadline Percentage", &classInstance->upgradedDeadlinePart);
     script->AddDragFloat("Deadline Heal Amount", &classInstance->deadlineHeal);
@@ -20,8 +19,6 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragFloat("Aid Kit Heal Amount", &classInstance->aidKitHeal);
     script->AddDragFloat("Upgraded Aid Kit Heal Amount", &classInstance->upgradedAidKitHeal);
     script->AddDragBoxShaderComponent("Material Component", &classInstance->material);
-    script->AddDragBoxParticleSystem("Passive Heal Particles", &classInstance->healParticles);
-    script->AddDragBoxParticleSystem("Kid Heal Particles", &classInstance->aidKitParticles);
     script->AddDragBoxGameObject("Player GO", &classInstance->playerGO);
     script->AddDragBoxGameObject("Power Ups Managers (HUD)", &classInstance->hudPowerUpGO);
     script->AddDragBoxGameObject("Hud Munition GO", &classInstance->ammo_ScriptGO);
@@ -42,8 +39,7 @@ void PlayerStats::Start()
     if (healthTreeLvl > 0) currentMaxHp = upgradedMaxHp;
     else currentMaxHp = maxHp;
     currentHp = currentMaxHp;
-    currentResistance = maxResistance;
-    playingHealParticles = false;
+    healingFromDeathline = false;
 
     detected = false;
 
@@ -76,14 +72,22 @@ void PlayerStats::Update()
 
     if (Input::GetKey(KeyCode::KEY_K) == KeyState::KEY_DOWN)
     {
-        TakeDamage(0, 0);
+        TakeDamage(50, 0);
+    }
+    if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
+    {
+        GetAmmo(1, 100);
+    }
+    if (Input::GetKey(KeyCode::KEY_H) == KeyState::KEY_DOWN)
+    {
+        UseAmmo(1, 100);
     }
 
     // deadline healing
     float deathlineHp;
     if (healthTreeLvl > 1) deathlineHp = currentMaxHp * (upgradedDeadlinePart / 100.0f);
     else deathlineHp = currentMaxHp * (deadlinePart / 100.0f);
-    if (currentHp < deathlineHp)
+    if (currentHp < deathlineHp && PlayerAlive())
     {
         lastHitTime -= dt;
         if (lastHitTime <= 0.0f)
@@ -95,27 +99,22 @@ void PlayerStats::Update()
             {
                 currentHp = deathlineHp;
                 lastHitTime = 0.0f;
-                if (playingHealParticles)
+                if (healingFromDeathline)
                 {
-                    healParticles.StopEmitting();
-                    playingHealParticles = false;
+                    material.SetColor(1, 1, 1, 1);
+                    healingFromDeathline = false;
                 }
             }
             else
             {
                 lastHitTime = 1.0f; // heal each second
-                if (!playingHealParticles)
+                if (!healingFromDeathline)
                 {
-                    healParticles.Play();
-                    playingHealParticles = true;
+                    material.SetColor(0, 1, 0, 1);
+                    healingFromDeathline = true;
                 }
             }
         }
-    }
-
-    if (hittedTime > 0.0f)
-    {
-        hittedTime -= dt;
     }
     if (deathTime > 0.0f)
     {
@@ -140,7 +139,14 @@ void PlayerStats::Update()
         }
         else if (blinkTime < 0.15f)
         {
-            material.SetColor(1, 0, 0, 1);
+            if (positiveBlink)
+            {
+                material.SetColor(0, 1, 0, 1);
+            }
+            else
+            {
+                material.SetColor(1, 0, 0, 1);
+            }
         }
         else if (blinkTime < 0.3f)
         {
@@ -311,30 +317,24 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
     {
         Audio::Event("starlord_damaged");
         blinkTime = 0.5f;
+        positiveBlink = false;
         material.SetColor(1, 0, 0, 1);
     }
 
-    // Resistance damage
-    currentResistance -= resistanceDamage;
-    if (currentResistance <= 0.0f)
-    {
-        currentResistance = maxResistance;
-        hittedTime = 0.5f;
-        if (playerMove) playerMove->PlayHittedAnim();
-    }
-
     lastHitTime = 3.0f; // 3 seg to auto heal after a hit
-    if (playingHealParticles)
+    if (healingFromDeathline)
     {
-        healParticles.StopEmitting();
-        playingHealParticles = false;
+        material.SetColor(1, 1, 1, 1);
+        healingFromDeathline = false;
     }
 }
 
 void PlayerStats::Heal(float amount)
 {
     currentHp += amount;
-    aidKitParticles.Play();
+    blinkTime = 0.5f;
+    positiveBlink = true;
+    material.SetColor(0, 1, 0, 1);
 
     Audio::Event("heal");
 

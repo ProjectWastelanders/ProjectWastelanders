@@ -28,8 +28,8 @@
 	}
 #endif
 #ifdef FRAGMENT_PROGRAM
-	const uint MAX_POINT = 32;
-	const uint MAX_SPOT = 32;
+	const uint MAX_POINT = 48;
+	const uint MAX_SPOT = 48;
 
 	struct Light
 	{
@@ -257,8 +257,3 @@
 		
 	}
 #endif
-
-
-
-
-

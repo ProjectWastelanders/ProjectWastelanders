@@ -41,42 +41,44 @@ void PlayerGunManager::Start()
     guns.push_back(ricochet);
 
     // get start guns
-    //GetGun(1, 0);
-    //int equipedNormalGun = API_QuickSave::GetInt("equipedNormalGun");
-    //if (equipedNormalGun < -1 || equipedNormalGun > 4) equipedNormalGun = -1;
-    //GetGun(2, equipedNormalGun);
-    //GetGun(3, -1);
-    GetGun(1, gunOnHandIndex1);
-    GetGun(2, gunOnHandIndex2);
-    GetGun(3, gunOnHandIndex3);
-    playerStats->laserAmmo = 99999;
-    playerStats->specialAmmo = 99999;
-    //switch (equipedNormalGun)
-    //{
-    //case 1: // semiautomatic
-    //    playerStats->maxLaserAmmo = 150;
-    //    playerStats->laserAmmo = 150;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
-    //    break;
-    //case 2: // automatic
-    //    playerStats->maxLaserAmmo = 350;
-    //    playerStats->laserAmmo = 350;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
-    //    break;
-    //case 3: // burst
-    //    playerStats->maxLaserAmmo = 100;
-    //    playerStats->laserAmmo = 100;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
-    //    break;
-    //case 4: // shotgun
-    //    playerStats->maxLaserAmmo = 70;
-    //    playerStats->laserAmmo = 70;
-    //    if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
-    //    break;
-    //default:
-    //    break;
-    //}
+    GetGun(1, 0);
+    int equipedNormalGun = API_QuickSave::GetInt("equipedNormalGun");
+    if (equipedNormalGun < -1 || equipedNormalGun > 4) equipedNormalGun = -1;
+    GetGun(2, equipedNormalGun);
+    GetGun(3, -1);
+    //GetGun(1, gunOnHandIndex1);
+    //GetGun(2, gunOnHandIndex2);
+    //GetGun(3, gunOnHandIndex3);
+    //playerStats->laserAmmo = 99999;
+    //playerStats->specialAmmo = 99999;
+    switch (equipedNormalGun)
+    {
+    case 1: // semiautomatic
+        playerStats->maxLaserAmmo = 100;
+        playerStats->laserAmmo = 100;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
+        break;
+    case 2: // automatic
+        playerStats->maxLaserAmmo = 350;
+        playerStats->laserAmmo = 350;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
+        break;
+    case 3: // burst
+        playerStats->maxLaserAmmo = 100;
+        playerStats->laserAmmo = 100;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
+        break;
+    case 4: // shotgun
+        playerStats->maxLaserAmmo = 100;
+        playerStats->laserAmmo = 100;
+        if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+        break;
+    default:
+        break;
+    }
     
+    saveNullWeapon = equipedNormalGun;
+
     UnequipGun(0); // start with base gun selected
 }
 
@@ -86,8 +88,8 @@ void PlayerGunManager::Update()
     if (playerStats && playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
 
+    if (playerStats && !playerStats->PlayerAlive()) return;
     if (playerMove && playerMove->openingChest) return; // return if opening chest
-    if (playerStats && playerStats->hittedTime > 0.0f) return; // return if hitted
 
     // Keyboard
     if (Input::GetKey(KeyCode::KEY_1) == KeyState::KEY_DOWN) UnequipGun(gunOnHandIndex1);
@@ -158,6 +160,29 @@ void PlayerGunManager::Update()
             // no ammo sound?
         }
     }
+
+    if (swapWeapon && swapWeapon->material_Special_Weapon_on.IsTextureNull() == true)
+    {
+      switch (saveNullWeapon)
+      {
+      case 1: // semiautomatic
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
+          break;
+      case 2: // automatic
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
+          break;
+      case 3: // burst
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
+          break;
+      case 4: // shotgun
+          if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+          break;
+      default:
+          break;
+      }
+      Console::Log("   FFFFFFFFFFFFFFFFFFFFFFUCK");
+  }
+
 }
 
 void PlayerGunManager::GetGun(int slot, int gunIndex)
@@ -240,4 +265,6 @@ void PlayerGunManager::UnequipGun(int index)
     if (playerStats && playerStats->armoryTreeLvl > 0) swapDelay = maxFastSwapDelay + 0.001f;
     else swapDelay = maxSwapDelay + 0.001f;
     swapToIndex = index;
+
+    Audio::Event("w_switch");
 }

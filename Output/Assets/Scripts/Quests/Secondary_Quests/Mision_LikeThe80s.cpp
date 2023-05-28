@@ -24,7 +24,7 @@ void Mision_LikeThe80s::Update()
     {
         Console::Log("MISSION 3 COMPLETED CONGRATULATIONS!");
     }
-    else
+    else if (playerStorage)
     {
         if (playerStorage->casette1Picked && playerStorage->casette2Picked && playerStorage->casette3Picked)
         {

@@ -30,7 +30,7 @@ public:
     bool Aim();
     API_Vector2 GetMoveInput();
     float Lerp(float a, float b, float time);
-    void DashSetup();
+    void DashSetup(bool isBuffered = false);
     void Dash();
     bool DashInput();
     void StopPlayer();
@@ -53,6 +53,7 @@ public:
     API_Transform transform;
     API_RigidBody rigidBody;
     float moveSoundCooldown = 0.0f;
+    API_Vector2 bufferDashDirection = { 1.0f, 1.0f };
 
     //Void Tp
     API_Vector3 initialPos;

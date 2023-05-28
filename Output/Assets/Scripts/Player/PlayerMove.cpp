@@ -104,7 +104,7 @@ void PlayerMove::Update()
         isShooting = false;
         shootParticles.StopEmitting();
     }
-
+    
     if (dashesAvailable > 0 && !onHUB)
     {
         if (DashInput())
@@ -112,6 +112,7 @@ void PlayerMove::Update()
             if (isDashing)
             {
                 dashBuffer = true;
+                bufferDashDirection = GetMoveInput();
             }
             else
             {
@@ -120,7 +121,7 @@ void PlayerMove::Update()
         }
         else if (dashBuffer && !isDashing)
         {
-            DashSetup();
+            DashSetup(true);
             dashBuffer = false;
         }
     }
@@ -255,7 +256,7 @@ float PlayerMove::Lerp(float a, float b, float time)
     return a + time * (b - a);
 }
 
-void PlayerMove::DashSetup()
+void PlayerMove::DashSetup(bool isBuffered)
 {
     isDashing = true;
 
@@ -263,6 +264,12 @@ void PlayerMove::DashSetup()
     dashesAvailable--;
     if (playerStats && playerStats->movementTreeLvl > 1) dashCooldown = maxFastDashCooldown + 0.0001f;
     else dashCooldown = maxDashCooldown + 0.0001f;
+
+    // direction
+    if (isBuffered)
+    {
+        lastMovInput = bufferDashDirection;
+    }
     
     dashDepartTime = 0.0f;
     float norm = sqrt(pow(lastMovInput.x, 2) + pow(lastMovInput.y, 2));

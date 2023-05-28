@@ -19,7 +19,8 @@ HELLO_ENGINE_API_C EnemyTank* CreateEnemyTank(ScriptToInspectorInterface* script
 	script->AddDragBoxGameObject("Enemy gun", &classInstance->gunObj);
 
 	//script->AddDragBoxGameObject("Target", &classInstance->target);
-	script->AddDragBoxRigidBody("Action Rb zone", &classInstance->zoneRb);
+	//script->AddDragBoxRigidBody("Action Rb zone", &classInstance->zoneRb);
+	script->AddDragBoxGameObject("Action  zone", &classInstance->zone);
 	script->AddDragFloat("Attack Range", &classInstance->attackRange);
 	script->AddDragFloat("Approximate Range", &classInstance->approximateRange);
 	script->AddDragFloat("Separate Range", &classInstance->separateRange);
@@ -41,6 +42,7 @@ void EnemyTank::Start()
 {
 	Game::FindGameObjectsWithTag("Player", &target, 1);
 	
+	zoneRb = zone.GetRigidBody();
 	isReturning = false;
 	currentShield = maxShield;
 	isRecoveringShield = false;

@@ -69,6 +69,7 @@ public:
 	API_GameObject target;
 
 	API_GameObject actionZone;
+	API_GameObject zone;
 	API_RigidBody zoneRb;
 
 	float attackRange;

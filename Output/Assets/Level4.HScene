@@ -155,7 +155,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.6429752111434937,
+                "Aspect ratio": 1.5946745872497559,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 4000.0,
@@ -19445,10 +19445,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Hp": 2000.0
+                        "Hp": 2250.0
                     },
                     {
-                        "Hp": 2000.0
+                        "Hp": 2250.0
                     }
                 ],
                 "Script Resource": 84377673,

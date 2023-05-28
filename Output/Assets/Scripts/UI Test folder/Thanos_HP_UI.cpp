@@ -33,7 +33,7 @@ void Thanos_HP_UI::Update()
                 shield_Fight_On = true;
             }
 
-           Thanos_Boss_Bar(thanosStats->hp / 3000.0f);
+           Thanos_Boss_Bar(thanosStats->hp / 2250.0f);
         }
         else
         {

@@ -67,6 +67,11 @@ void PlayerMove::Update()
 {
     usingGamepad = Input::UsingGamepad();
 
+    if (!dashTriggerIdle && Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) < 5000)
+    {
+        dashTriggerIdle = true;
+    }
+
     if (playerStats && !playerStats->PlayerAlive()) return;
 
     //Void tp
@@ -109,6 +114,7 @@ void PlayerMove::Update()
     {
         if (DashInput())
         {
+            dashTriggerIdle = false;
             if (isDashing)
             {
                 dashBuffer = true;
@@ -308,7 +314,9 @@ void PlayerMove::Dash()
 bool PlayerMove::DashInput()
 {
     if (usingGamepad)
-        return Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) > 20000;
+    {
+        return (Input::GetGamePadAxis(GamePadAxis::AXIS_TRIGGERLEFT) > 20000 && dashTriggerIdle);
+    }
 
     return Input::GetKey(KeyCode::KEY_SPACE) == KeyState::KEY_DOWN;
 }

@@ -35,6 +35,7 @@ public:
     bool DashInput();
     void StopPlayer();
     bool onHUB = false;
+    bool dashTriggerIdle = true;
 
     void LookAt(API_Vector3 target);
 

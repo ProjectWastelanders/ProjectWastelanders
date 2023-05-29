@@ -54,6 +54,6 @@ public:
 	TpRotateSphere* rotateSphere2;
 
 	bool isNotHolding = true;
-	float testVar = 0.0f;
+
 };
 

@@ -16,10 +16,7 @@ void TpBossZone::Start()
 
 	bossloopref = (BossLoop*)bossGO.GetScript("BossLoop");
 	if (bossloopref == nullptr) Console::Log("Boss GO missing in TPBOSSZONE Script.");
-	colliderEntry.SetActive(false);
-	colliderEntry.GetRigidBody().SetVelocity({ 0.0f,0.0,0.0f });
 	colliderExit.SetActive(true);
-	colliderExit.GetRigidBody().SetVelocity({ 0.0f,0.0,0.0f });
 }
 void TpBossZone::Update()
 {
@@ -28,7 +25,6 @@ void TpBossZone::Update()
 	{
 		Console::Log("COLLIDER TRUE");
 		colliderEntry.SetActive(true);
-		colliderEntry.GetRigidBody().SetVelocity({ 0.0f,0.0,0.0f });
 	}
 
 	if (bossloopref->endBattle)

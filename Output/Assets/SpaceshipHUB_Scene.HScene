@@ -2456,7 +2456,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -7.578603267669678,
+                    -6.779537200927734,
                     1.0229049921035767,
                     -8.712851524353027
                 ],
@@ -2557,7 +2557,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -5.665398120880127,
+                    -5.3954315185546875,
                     0.0,
                     -6.9613142013549805
                 ],
@@ -2860,9 +2860,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -11.274595260620117,
+                    -11.438169479370117,
                     0.9671145081520081,
-                    -7.075735092163086
+                    -7.135366439819336
                 ],
                 "Rotation": [
                     -0.0,
@@ -2889,13 +2889,13 @@
                 ],
                 "ColRotation": [
                     0.0,
-                    90.0,
+                    60.900001525878906,
                     0.0
                 ],
                 "ColScale": [
                     1.5,
                     2.0,
-                    1.5
+                    1.2000000476837158
                 ],
                 "CylVerSlices": 16,
                 "CylinderRadiusHeight": [
@@ -4072,9 +4072,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -10.717885971069336,
-                    0.8728080987930298,
-                    6.756332874298096
+                    -10.949361801147461,
+                    0.8725576996803284,
+                    6.973684787750244
                 ],
                 "Rotation": [
                     -0.0,
@@ -4354,9 +4354,9 @@
                     -2.7382009029388428
                 ],
                 "Rotation": [
-                    -90.00099182128906,
-                    -2.7320755179971457e-05,
-                    89.99995422363281
+                    -90.0,
+                    0.10000000149011612,
+                    90.0
                 ],
                 "Scale": [
                     100.00007629394531,
@@ -5560,8 +5560,8 @@
                 ],
                 "Scale": [
                     100.0,
-                    100.0,
-                    100.0
+                    99.99999237060547,
+                    99.99999237060547
                 ],
                 "Type": 1
             },
@@ -5741,19 +5741,19 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -11.501262664794922,
+                    -11.501337051391602,
                     0.03565549850463867,
-                    -4.795283317565918
+                    -4.795162677764893
                 ],
                 "Rotation": [
                     -90.00000762939453,
-                    0.0,
-                    0.0
+                    1.710783692487894e-08,
+                    5.884026176451035e-14
                 ],
                 "Scale": [
                     100.0,
-                    100.0,
-                    100.0
+                    99.99934387207031,
+                    99.99934387207031
                 ],
                 "Type": 1
             },
@@ -6413,9 +6413,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -11.501262664794922,
+                    -11.501263618469238,
                     0.03565549850463867,
-                    -6.737194061279297
+                    -6.737193584442139
                 ],
                 "Rotation": [
                     -90.00000762939453,
@@ -6424,8 +6424,8 @@
                 ],
                 "Scale": [
                     100.0,
-                    100.0,
-                    100.0
+                    99.99999237060547,
+                    99.99999237060547
                 ],
                 "Type": 1
             },
@@ -10168,19 +10168,19 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -10.710455894470215,
-                    0.699999988079071,
-                    6.760838508605957
+                    -10.916642189025879,
+                    0.7000012993812561,
+                    6.935965061187744
                 ],
                 "Rotation": [
                     0.00013768463395535946,
-                    77.48882293701172,
-                    -0.00012871911167167127
+                    77.48886108398438,
+                    -0.00012871903891209513
                 ],
                 "Scale": [
+                    100.0000228881836,
                     100.0,
-                    100.0,
-                    100.0
+                    100.0000228881836
                 ],
                 "Type": 1
             },
@@ -10216,19 +10216,19 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -11.243346214294434,
-                    0.699999988079071,
-                    -7.049661159515381
+                    -11.476784706115723,
+                    0.7002530097961426,
+                    -7.061314105987549
                 ],
                 "Rotation": [
-                    3.44392865372356e-05,
-                    -30.000001907348633,
-                    1.721966873446945e-05
+                    3.443934110691771e-05,
+                    -30.000030517578125,
+                    1.721969965728931e-05
                 ],
                 "Scale": [
+                    100.00000762939453,
                     100.0,
-                    100.0,
-                    100.0
+                    100.00000762939453
                 ],
                 "Type": 1
             },
@@ -10595,19 +10595,19 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -9.563959121704102,
-                    1.006612777709961,
-                    -8.724720001220703
+                    -8.594694137573242,
+                    1.0150690078735352,
+                    -8.724756240844727
                 ],
                 "Rotation": [
-                    -90.00001525878906,
-                    -0.5,
-                    -89.99998474121094
+                    -90.00028228759766,
+                    -0.49962952733039856,
+                    -90.00028228759766
                 ],
                 "Scale": [
-                    100.0000228881836,
-                    100.0000228881836,
-                    100.0000228881836
+                    100.00049591064453,
+                    80.34182739257813,
+                    100.00054931640625
                 ],
                 "Type": 1
             },
@@ -11353,14 +11353,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -1.1084070205688477,
-                    0.0999998077750206,
-                    -0.00038292063982225955
+                    -2.0,
+                    0.10024534910917282,
+                    -0.5
                 ],
                 "Rotation": [
-                    -90.00000762939453,
-                    3.5418747795779026e-11,
-                    4.0720570903922393e-13
+                    -90.0,
+                    0.0,
+                    90.0
                 ],
                 "Scale": [
                     2.0,
@@ -11400,14 +11400,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -1.1084070205688477,
+                    -2.0,
                     0.0999998077750206,
-                    -0.00038292063982225955
+                    -0.5
                 ],
                 "Rotation": [
                     -90.00000762939453,
                     3.5418747795779026e-11,
-                    4.0720570903922393e-13
+                    90.0
                 ],
                 "Scale": [
                     2.0,
@@ -11447,14 +11447,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -1.1084070205688477,
+                    -2.0,
                     0.0999998077750206,
-                    -0.00038292063982225955
+                    -0.10000000149011612
                 ],
                 "Rotation": [
                     -90.00000762939453,
                     3.5418747795779026e-11,
-                    4.0720570903922393e-13
+                    90.0
                 ],
                 "Scale": [
                     2.0,
@@ -11494,14 +11494,14 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -1.1084070205688477,
+                    -2.0,
                     0.0999998077750206,
-                    -0.00038292063982225955
+                    -0.10000000149011612
                 ],
                 "Rotation": [
                     -90.00000762939453,
                     3.5418747795779026e-11,
-                    4.0720570903922393e-13
+                    90.0
                 ],
                 "Scale": [
                     2.0,
@@ -11698,7 +11698,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.535398244857788,
+                "Aspect ratio": 1.5055866241455078,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -12999,9 +12999,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    8.663601875305176,
-                    1.556624412536621,
-                    9.319341659545898
+                    8.518647193908691,
+                    1.556624174118042,
+                    12.19236946105957
                 ],
                 "Rotation": [
                     -0.0,
@@ -13034,7 +13034,7 @@
                 "ColScale": [
                     3.0,
                     3.0,
-                    3.0
+                    6.0
                 ],
                 "CylVerSlices": 16,
                 "CylinderRadiusHeight": [
@@ -21461,9 +21461,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -7.399309158325195,
-                    1.726096749305725,
-                    11.232738494873047
+                    -8.135066032409668,
+                    1.725609302520752,
+                    12.740535736083984
                 ],
                 "Rotation": [
                     -0.0,
@@ -21490,13 +21490,13 @@
                 ],
                 "ColRotation": [
                     0.0,
-                    -24.200000762939453,
+                    90.0,
                     0.0
                 ],
                 "ColScale": [
-                    2.5,
-                    3.0,
-                    4.400000095367432
+                    3.700000047683716,
+                    3.299999952316284,
+                    5.0
                 ],
                 "CylVerSlices": 16,
                 "CylinderRadiusHeight": [
@@ -34749,9 +34749,9 @@
                     0.0
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -34975,7 +34975,7 @@
                     0.6086462736129761,
                     1.0
                 ],
-                "Diffuse Intensity": 0.75,
+                "Diffuse Intensity": 5.25,
                 "Distance": 18.0,
                 "Enabled": true,
                 "Exp": 0.44999998807907104,
@@ -35091,8 +35091,8 @@
                 "Enabled": true,
                 "Position": [
                     0.0,
-                    0.0,
-                    -0.13745135068893433
+                    1.5903266668319702,
+                    -0.030447423458099365
                 ],
                 "Rotation": [
                     -0.0,
@@ -35107,17 +35107,17 @@
                 "Type": 1
             },
             {
-                "Ambient Intensity": 17.75,
+                "Ambient Intensity": 3.0,
                 "Color": [
                     1.0,
                     1.0,
                     1.0
                 ],
-                "Diffuse Intensity": 5.75,
-                "Distance": 44.0,
+                "Diffuse Intensity": 6.5,
+                "Distance": 46.5,
                 "Enabled": true,
                 "Exp": 0.6000000238418579,
-                "Linear": 0.15000000596046448,
+                "Linear": 0.20000000298023224,
                 "Type": 21
             }
         ],
@@ -35136,9 +35136,9 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.18837463855743408,
                     0.0,
-                    0.0,
-                    9.545616149902344
+                    8.629644393920898
                 ],
                 "Rotation": [
                     -0.0,
@@ -35169,9 +35169,9 @@
                     0.0
                 ],
                 "ColScale": [
-                    5.0,
+                    2.299999952316284,
                     2.799999952316284,
-                    5.0
+                    3.0
                 ],
                 "CylVerSlices": 16,
                 "CylinderRadiusHeight": [
@@ -35256,9 +35256,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.36513638496398926,
-                    0.000244140625,
-                    -0.43743205070495605
+                    0.242026686668396,
+                    1.850907096923038e-06,
+                    0.013549447059631348
                 ],
                 "Rotation": [
                     -0.0,
@@ -35289,7 +35289,7 @@
                     0.0
                 ],
                 "ColScale": [
-                    4.900000095367432,
+                    2.0,
                     3.0,
                     1.399999976158142
                 ],
@@ -35431,6 +35431,1418 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 3574015608,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "_FloorLineDetails",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3341876164,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    8.330965042114258,
+                    0.05008523911237717,
+                    7.645341873168945
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.75,
+                    0.09999947249889374,
+                    0.9999912977218628
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 1691954049,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    6.594710350036621,
+                    0.05026019364595413,
+                    7.6421895027160645
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.75,
+                    0.0999995544552803,
+                    0.9999631643295288
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 3486615870,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    5.631386756896973,
+                    0.05021634325385094,
+                    8.83222770690918
+                ],
+                "Rotation": [
+                    -90.0000228881836,
+                    2.7320755179971457e-05,
+                    90.0000228881836
+                ],
+                "Scale": [
+                    0.7500001788139343,
+                    0.09999960660934448,
+                    0.9999940991401672
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 193680859,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    5.64362907409668,
+                    0.05000138282775879,
+                    10.7560396194458
+                ],
+                "Rotation": [
+                    -90.0000228881836,
+                    2.7320755179971457e-05,
+                    90.0000228881836
+                ],
+                "Scale": [
+                    0.7500001788139343,
+                    0.1000000461935997,
+                    0.9999979734420776
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 3103552643,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    5.6387104988098145,
+                    0.049999721348285675,
+                    12.621591567993164
+                ],
+                "Rotation": [
+                    -90.00017547607422,
+                    0.00010928302071988583,
+                    90.00021362304688
+                ],
+                "Scale": [
+                    0.7500020861625671,
+                    0.10000046342611313,
+                    1.0000014305114746
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 786162165,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -4.9442667961120605,
+                    0.04999479651451111,
+                    12.614017486572266
+                ],
+                "Rotation": [
+                    -90.0000228881836,
+                    2.7320755179971457e-05,
+                    90.0000228881836
+                ],
+                "Scale": [
+                    0.5,
+                    0.09999992698431015,
+                    0.9999963045120239
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 4180602061,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -4.946738243103027,
+                    0.04975460469722748,
+                    11.309118270874023
+                ],
+                "Rotation": [
+                    -90.00020599365234,
+                    0.000300528306979686,
+                    90.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.10000000149011612,
+                    1.0000066757202148
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "YellowLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1871431775,
+        "Tag": "Primitive",
+        "UID": 1942931392,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -5.610556125640869,
+                    0.04975888505578041,
+                    10.516324996948242
+                ],
+                "Rotation": [
+                    -90.00013732910156,
+                    0.0002458866802044213,
+                    1.3027551259980896e-11
+                ],
+                "Scale": [
+                    0.5,
+                    0.10000000149011612,
+                    1.0000050067901611
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "YellowLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1871431775,
+        "Tag": "Primitive",
+        "UID": 2000418197,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -5.360381126403809,
+                    0.04975151643157005,
+                    13.761248588562012
+                ],
+                "Rotation": [
+                    -90.00013732910156,
+                    0.0002458867966197431,
+                    45.000003814697266
+                ],
+                "Scale": [
+                    0.5,
+                    0.10000001639127731,
+                    1.0000051259994507
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "YellowLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1871431775,
+        "Tag": "Primitive",
+        "UID": 64762732,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.8204385638237,
+                    0.05024448782205582,
+                    7.313204765319824
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.75,
+                    0.09999816864728928,
+                    0.9999832510948181
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 1425341680,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    1.0275992155075073,
+                    0.050014179199934006,
+                    7.322720527648926
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.75,
+                    0.09999890625476837,
+                    0.9999891519546509
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 982998116,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    2.0147056579589844,
+                    0.049998052418231964,
+                    7.973328590393066
+                ],
+                "Rotation": [
+                    -90.00016021728516,
+                    0.00016392453107982874,
+                    90.00016021728516
+                ],
+                "Scale": [
+                    0.5000001192092896,
+                    0.10000038892030716,
+                    1.0000003576278687
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 2246650692,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.8008146286010742,
+                    0.0500015951693058,
+                    7.966021537780762
+                ],
+                "Rotation": [
+                    -90.0000228881836,
+                    2.7320755179971457e-05,
+                    90.0000228881836
+                ],
+                "Scale": [
+                    0.5,
+                    0.1000000461935997,
+                    0.9999973773956299
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 3152016163,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.3915328979492188,
+                    0.050229065120220184,
+                    16.539478302001953
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    45.000038146972656
+                ],
+                "Scale": [
+                    0.4999999701976776,
+                    0.09999994188547134,
+                    0.9999963045120239
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 2089274250,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -3.4261221885681152,
+                    0.04999799281358719,
+                    14.439740180969238
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    1.0245283192489296e-05,
+                    45.000003814697266
+                ],
+                "Scale": [
+                    0.5,
+                    0.10000006854534149,
+                    0.9999979138374329
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 1057093595,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.5049569606781006,
+                    0.049992334097623825,
+                    15.51548957824707
+                ],
+                "Rotation": [
+                    -90.00001525878906,
+                    0.0,
+                    -45.0000114440918
+                ],
+                "Scale": [
+                    0.5,
+                    0.09999991208314896,
+                    0.9999971985816956
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 21956226,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -2.4458892345428467,
+                    0.05024063214659691,
+                    14.588356018066406
+                ],
+                "Rotation": [
+                    -90.00001525878906,
+                    -3.415094397496432e-06,
+                    -45.0000114440918
+                ],
+                "Scale": [
+                    0.5,
+                    0.10000009089708328,
+                    0.9999964833259583
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 674976625,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -6.8302083015441895,
+                    0.049989841878414154,
+                    10.503846168518066
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.09999950230121613,
+                    0.9999931454658508
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2341938179,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteLine",
+        "ParentUID": 3341876164,
+        "PrefabUID": 1266596709,
+        "Tag": "Primitive",
+        "UID": 1691954049,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "_FloorNames",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 485075198,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -6.687729358673096,
+                    0.05051407963037491,
+                    10.496959686279297
+                ],
+                "Rotation": [
+                    -90.00009155273438,
+                    -5.464152854983695e-05,
+                    -179.99989318847656
+                ],
+                "Scale": [
+                    2.0000109672546387,
+                    0.5,
+                    1.0000489950180054
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 22342182,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "AbilitiesName",
+        "ParentUID": 485075198,
+        "PrefabUID": 3091839952,
+        "Tag": "Primitive",
+        "UID": 2587791385,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    6.305582046508789,
+                    0.04929817095398903,
+                    8.696975708007813
+                ],
+                "Rotation": [
+                    -90.00009155273438,
+                    -1.3660358490596991e-05,
+                    -179.99989318847656
+                ],
+                "Scale": [
+                    2.0000176429748535,
+                    0.5000003576278687,
+                    1.000000238418579
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 2541521914,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "ArmoryName",
+        "ParentUID": 485075198,
+        "PrefabUID": 3878086549,
+        "Tag": "Primitive",
+        "UID": 1689957722,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.3482961058616638,
+                    0.05000000074505806,
+                    7.893287658691406
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    -2.8497768589375028e-09,
+                    179.99989318847656
+                ],
+                "Scale": [
+                    3.1999542713165283,
+                    0.49998727440834045,
+                    0.9999706745147705
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 3677433601,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "LevelsName",
+        "ParentUID": 485075198,
+        "PrefabUID": 1845869265,
+        "Tag": "Primitive",
+        "UID": 2733667647,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -2.300257682800293,
+                    0.05000000074505806,
+                    15.405320167541504
+                ],
+                "Rotation": [
+                    -90.0,
+                    -6.830188794992864e-06,
+                    134.99998474121094
+                ],
+                "Scale": [
+                    1.399999976158142,
+                    0.5,
+                    0.9999982714653015
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 614512029,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "CollectiblesName",
+        "ParentUID": 485075198,
+        "PrefabUID": 613564346,
+        "Tag": "Primitive",
+        "UID": 48159955,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "_FloorBoxesDetails",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2142364291,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    8.060565948486328,
+                    0.03999796137213707,
+                    11.346784591674805
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    3.5,
+                    3.5,
+                    0.9999889135360718
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 1553465532,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "TranslucidBox",
+        "ParentUID": 2142364291,
+        "PrefabUID": 3537455239,
+        "Tag": "Primitive",
+        "UID": 2215015519,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -7.6023077964782715,
+                    0.03999999910593033,
+                    13.603897094726563
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    3.0,
+                    3.9999358654022217,
+                    0.9999820590019226
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 1553465532,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "TranslucidBox",
+        "ParentUID": 2142364291,
+        "PrefabUID": 3537455239,
+        "Tag": "Primitive",
+        "UID": 3451474482,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.07393305003643036,
+                    0.03999794274568558,
+                    9.302282333374023
+                ],
+                "Rotation": [
+                    -90.00000762939453,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    2.4000000953674316,
+                    2.099947929382324,
+                    0.999977707862854
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 1553465532,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "TranslucidBox",
+        "ParentUID": 2142364291,
+        "PrefabUID": 3537455239,
+        "Tag": "Primitive",
+        "UID": 820880079,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -3.6450181007385254,
+                    0.039990831166505814,
+                    16.804302215576172
+                ],
+                "Rotation": [
+                    -90.00007629394531,
+                    -1.707547198748216e-05,
+                    45.000064849853516
+                ],
+                "Scale": [
+                    3.000002145767212,
+                    2.000000476837158,
+                    0.9999935030937195
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 1553465532,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "TranslucidBox",
+        "ParentUID": 2142364291,
+        "PrefabUID": 3537455239,
+        "Tag": "Primitive",
+        "UID": 296440790,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.049999434500932693,
+                    0.049999482929706573,
+                    -0.4530523717403412
+                ],
+                "Rotation": [
+                    -90.00016021728516,
+                    0.00010928302071988583,
+                    90.00016021728516
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    1.0000065565109253,
+                    1.0000065565109253
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 3632300031,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteArrow",
+        "ParentUID": 2830428646,
+        "PrefabUID": 826441827,
+        "Tag": "Primitive",
+        "UID": 2324540351,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.053044676780700684,
+                    0.34999731183052063,
+                    0.4494229555130005
+                ],
+                "Rotation": [
+                    -90.00016021728516,
+                    8.196226553991437e-05,
+                    90.00016021728516
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.9999989867210388,
+                    0.999998927116394
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 13,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 2
+            },
+            {
+                "Enabled": true,
+                "ResourceUID": 3632300031,
+                "Type": 3
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WhiteArrow",
+        "ParentUID": 2830428646,
+        "PrefabUID": 826441827,
+        "Tag": "Primitive",
+        "UID": 3355148098,
         "UpdateWithBones": false
     }
 ]

@@ -13,6 +13,7 @@ HELLO_ENGINE_API_C TP_Cabin* CreateTP_Cabin(ScriptToInspectorInterface* script)
 	script->AddDragBoxPrefabResource("Small Sphere Prefab", &classInstance->small_effectSpherePrefab);
 	script->AddDragFloat("Scale Value Big", &classInstance->scaleValue_big);
 	script->AddDragFloat("Scale Value Small", &classInstance->scaleValue_small);
+	script->AddDragFloat("Test Var", &classInstance->testVar);
 
 	return classInstance;
 }
@@ -34,16 +35,22 @@ void TP_Cabin::Start()
 
 	canTp = true;
 	enableCanTp = false;
+
+	testVar = 0.0f;
 }
 
 void TP_Cabin::Update()
 {
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
+	{
+		canTp = true;
+	}
+
 	if (canTp == false)
 	{
 		sphereGrowingTime -= Time::GetDeltaTime();
 	}
-
-	if (Input::GetGamePadButton(GamePadButton::BUTTON_X) != KeyState::KEY_REPEAT)
+	else if (Input::GetGamePadButton(GamePadButton::BUTTON_X) != KeyState::KEY_REPEAT)
 	//if (Input::GetKey(KeyCode::KEY_E) != KeyState::KEY_REPEAT)
 	{
 		sphereGrowingTime -= Time::GetDeltaTime();
@@ -98,7 +105,27 @@ void TP_Cabin::SpawnSphere()
 		rotateSphere1 = (TpRotateSphere*)childSphere.GetScript("TpRotateSphere");
 		rotateSphere2 = (TpRotateSphere*)childSphere2.GetScript("TpRotateSphere");
 
+		if (rotateSphere1)
+		{
+			rotateSphere1->timeCount = 0.0f;
+			rotateSphere1->deformationTime = 0.0f;
+			rotateSphere1->deformationTimeMid = 0.0f;
+			rotateSphere1->deformedVer = false;
+			rotateSphere1->inInFirstPart = true;
+			rotateSphere1->partsCount = 0;
+		}
+		if (rotateSphere2)
+		{
+			rotateSphere2->timeCount = 0.0f;
+			rotateSphere2->deformationTime = 0.0f;
+			rotateSphere2->deformationTimeMid = 0.0f;
+			rotateSphere2->deformedVer = false;
+			rotateSphere2->inInFirstPart = true;
+			rotateSphere2->partsCount = 0;
+		}
+
 		hasSpawnedSphere = true;
+		testVar++;
 	}
 
 	//effectSphere.GetTransform().SetScale(pow(timeHoldButton,scaleValue), pow(timeHoldButton, scaleValue), pow(timeHoldButton, scaleValue));
@@ -106,6 +133,7 @@ void TP_Cabin::SpawnSphere()
 	effectSphere.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	effectSphere2.GetTransform().SetScale(tempScale, tempScale, tempScale);
 	tempScale = sphereGrowing * scaleValue_small;
+
 	if (rotateSphere1) 
 	{
 		rotateSphere1->sphereSize = tempScale;
@@ -160,9 +188,24 @@ void TP_Cabin::DestroySphere()
 		effectSphere2.Destroy();
 		childSphere.Destroy();
 		childSphere2.Destroy();
+		rotateSphere1 = nullptr;
+		rotateSphere2 = nullptr;
 		hasSpawnedSphere = false;
 	}
 }
+
+void TP_Cabin::OnCollisionExit(API_RigidBody other)
+{
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if (detectionTag == "Player")
+	{
+		canTp = false;
+		enableCanTp = false;
+		timeHoldButton = 0.0f;
+	}
+}
+
 
 void TP_Cabin::OnCollisionStay(API_RigidBody other)
 {
@@ -190,9 +233,9 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 			if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
 			{
 				//timeHoldButton = 0.0f;
-				smoke.StopEmitting();
-				destinationSmoke.StopEmitting();
-				canTp = true;
+				//smoke.StopEmitting();
+				//destinationSmoke.StopEmitting();
+				//canTp = true;
 				enableCanTp = false;
 				
 				
@@ -214,8 +257,8 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 				{
 					timeHoldButton -= Time::GetDeltaTime();
 					//sphereGrowingTime -= Time::GetDeltaTime();
-					smoke.StopEmitting();
-					destinationSmoke.StopEmitting();
+					//smoke.StopEmitting();
+					//destinationSmoke.StopEmitting();
 
 					//DestroySphere();
 				}
@@ -240,7 +283,7 @@ void TP_Cabin::OnCollisionStay(API_RigidBody other)
 						{
 							playerStats->showTpDialog = true;
 						}
-
+						enableCanTp = false;
 						canTp = false;
 					}
 				}

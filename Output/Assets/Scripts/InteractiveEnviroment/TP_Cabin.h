@@ -16,6 +16,7 @@ public:
 	void Update() override;
 
 	void OnCollisionStay(API_RigidBody other);
+	void OnCollisionExit(API_RigidBody other);
 	void SpawnSphere();
 	void DestroySphere();
 	
@@ -51,5 +52,8 @@ public:
 	bool canTp;
 	TpRotateSphere* rotateSphere1;
 	TpRotateSphere* rotateSphere2;
+
+	bool isNotHolding = true;
+	float testVar = 0.0f;
 };
 

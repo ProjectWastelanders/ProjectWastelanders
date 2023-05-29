@@ -114775,5 +114775,116 @@
         "Tag": "Default",
         "UID": 811625056,
         "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -190.9199981689453,
+                    17.66802215576172,
+                    48.768798828125
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    108.19999694824219,
+                    58.5,
+                    108.5999984741211
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": false,
+                "IsTrigger": true,
+                "Mass": 0.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 13.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 9.0
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Camera": 1929231542
+                    }
+                ],
+                "Script Resource": 3283375034,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "OrbitalTrigger",
+        "ParentUID": 1957540640,
+        "PrefabUID": 2128957273,
+        "Tag": "Default",
+        "UID": 4106564113,
+        "UpdateWithBones": false
     }
 ]

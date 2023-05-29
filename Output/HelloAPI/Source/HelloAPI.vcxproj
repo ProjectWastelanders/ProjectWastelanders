@@ -305,6 +305,8 @@
 		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.cpp" />
 		<ClCompile Include="../../Assets/Scripts/EbonyMaw/TpBossZone.cpp" />
 		<ClCompile Include="../../Assets/Scripts/PlayCinematic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
@@ -477,6 +479,8 @@
 		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.h" />
 		<ClInclude Include="../../Assets/Scripts/EbonyMaw/TpBossZone.h" />
 		<ClInclude Include="../../Assets/Scripts/PlayCinematic.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

@@ -63,21 +63,21 @@ void ShipInLevel::OnCollisionStay(API::API_RigidBody other)
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "Player")
     {
-		if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
-		{
-			fadeToBlackRef->fadeToBlack = true;
 
-		}
 		if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
 		{
 			timerTotp += Time::GetDeltaTime();
 
-			if (timerTotp >= 1.2f)
+			if (timerTotp >= 0.98f)
 			{
 
 				Scene::LoadScene("SpaceshipHUB_Scene.HScene");
 				API_QuickSave::SetBool("IsInMiddleOfLevel", true);
-				timerTotp = 0.0f;
+				
+			}
+			else
+			{
+				fadeToBlackRef->fadeToBlack = true;
 			}
 		}
 		else if (API_QuickSave::GetBool("ComesFromHub"))
@@ -85,7 +85,17 @@ void ShipInLevel::OnCollisionStay(API::API_RigidBody other)
 			fadeToBlackRef->blackToFade = true;
 
 			API_QuickSave::SetBool("ComesFromHub", false);
+			 
 
+		}
+		else if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
+		{
+			if (timerTotp <= 0.98f)
+			{
+				fadeToBlackRef->fadeToBlack = false;
+				fadeToBlackRef->blackToFade = true;
+				timerTotp = 0.0f;
+			}
 
 		}
     }

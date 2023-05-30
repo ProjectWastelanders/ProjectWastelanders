@@ -180,6 +180,16 @@ h1 {
     margin: 0 auto;
 }
 
+/* Rounded border */
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
 /* Button */
 
 .btn:link,
@@ -596,6 +606,7 @@ header h1 {
 }
 
 
+
 /*=====================================*/
 /* Production Page Section*/
 /*=====================================*/
@@ -627,6 +638,7 @@ header h1 {
 .productionpage-section h2 {
     color: #3c4761;
     margin-left: 5rem;
+    margin-top: 5rem;
 }
 
 .productionpage-section h2::after {
@@ -1120,7 +1132,7 @@ svg.ui-ux circle {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
 }
 
 /* The Close Button */

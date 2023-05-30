@@ -116,7 +116,7 @@ void BossCinematic::Update()
             }
         }
 
-        if (bLoop->battle && !bLoop->endBattle && !showedStartDialog)
+        if (bLoop->draxDialog && !showedStartDialog)
         {
             if (_timerSB >= timerSB)
             {

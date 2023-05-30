@@ -60,6 +60,8 @@ void BossLoop::Start()
     recoverTimer = 0;
     DieTimer = 0;
     knockUpTimer = 0;
+
+    draxDialog = false;
 }
 
 void BossLoop::Update()
@@ -77,6 +79,8 @@ void BossLoop::Update()
                 dt = Time::GetDeltaTime();
                 weakTime += dt;
                 rockShield.SetActive(false);
+
+                draxDialog = true;
 
                 if (knockUpTimer <= 1) {
                     if (animState != AnimationState::KNOCKUP)

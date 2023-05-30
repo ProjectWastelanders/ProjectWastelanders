@@ -84,6 +84,8 @@ public:
     float recoverTimer;
     float knockUpTimer;
 
+    bool draxDialog;
+
     enum class AnimationState
     {
         NONE,

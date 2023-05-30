@@ -45,7 +45,7 @@ void ProjectilePull::Start()
         pull.push_back(newProjectile);
     }
 
-    for (size_t i = 0; i < shotgunBombPullSize; i++)
+    /*for (size_t i = 0; i < shotgunBombPullSize; i++)
     {
         API_GameObject newBomb = Game::InstancePrefab(shotgunBombPrefab, API_GameObject());
         ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
@@ -60,7 +60,7 @@ void ProjectilePull::Start()
              
         bombScript->explosion->shotgunBomb = newBomb;
         shotgunBombPull.push_back(newBomb);
-    }
+    }*/
 
     ricochetDetector = Game::InstancePrefab(checkRicochetTargetsPrefab, API_GameObject());
     ricochetTargets = (CheckRicochetTargets*)ricochetDetector.GetScript("CheckRicochetTargets");
@@ -268,22 +268,22 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
 
 void ProjectilePull::LauchProjectileSHOTGUN_BOMB(float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, uint ignoreGO)
 {
-    API_GameObject go = GetFirstInactiveShotgunBomb();
-    go.SetActive(true);
-    go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
-    go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
-    go.GetTransform().SetScale(projectileScale);
-    go.GetMeshRenderer().SetActive(true);
-    //go.GetMeshRenderer().ChangeMesh(normalMesh);
-    go.GetParticleSystem().Play();
+    //API_GameObject go = GetFirstInactiveShotgunBomb();
+    //go.SetActive(true);
+    //go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
+    //go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
+    //go.GetTransform().SetScale(projectileScale);
+    //go.GetMeshRenderer().SetActive(true);
+    ////go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetParticleSystem().Play();
 
-    float offsetY = rand() % 360;
-    go.GetTransform().Rotate(0, offsetY, 0);
+    //float offsetY = rand() % 360;
+    //go.GetTransform().Rotate(0, offsetY, 0);
 
-    ShotgunBomb* bomb = (ShotgunBomb*)go.GetScript("ShotgunBomb");
-    bomb->lifeTime = projectileLifetime;
-    bomb->ResetExposion();
-    bomb->ignoreGO = ignoreGO;
+    //ShotgunBomb* bomb = (ShotgunBomb*)go.GetScript("ShotgunBomb");
+    //bomb->lifeTime = projectileLifetime;
+    //bomb->ResetExposion();
+    //bomb->ignoreGO = ignoreGO;
 }
 
 void ProjectilePull::LauchProjectileFLAMETHROWER(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn)

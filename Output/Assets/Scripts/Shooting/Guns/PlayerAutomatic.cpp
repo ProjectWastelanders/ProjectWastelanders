@@ -63,7 +63,7 @@ void PlayerAutomatic::Update()
     }
 }
 
-void PlayerAutomatic::Shoot()
+bool PlayerAutomatic::Shoot()
 {
     if (canShoot)
     {
@@ -73,7 +73,11 @@ void PlayerAutomatic::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
+
+    return false;
 }
 
 void PlayerAutomatic::EnableGuns(bool enable)

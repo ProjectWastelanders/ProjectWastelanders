@@ -100,7 +100,7 @@ void PlayerBurst::Update()
     }
 }
 
-void PlayerBurst::Shoot()
+bool PlayerBurst::Shoot()
 {
     if (canShoot)
     {
@@ -112,11 +112,15 @@ void PlayerBurst::Shoot()
         shotCount = 1;
         burstDelay = fullBurstDelay;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 

@@ -81,7 +81,7 @@ void PlayerShotgun::Update()
     }
 }
 
-void PlayerShotgun::Shoot()
+bool PlayerShotgun::Shoot()
 {
     if (canShoot)
     {
@@ -94,11 +94,15 @@ void PlayerShotgun::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 
@@ -114,7 +118,7 @@ void PlayerShotgun::SetGunStatsPerLevel(int level)
     {
     case 0:
         projectileSpeed = 80.0f;
-        projectileDamage = 5.0f;
+        projectileDamage =0.0f;
         projectileResistanceDamage = 5.0f;
         projectileLifetime = 0.2f;
         cadence = 3.0f;

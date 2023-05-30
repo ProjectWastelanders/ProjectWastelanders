@@ -99,7 +99,7 @@ void PlayerDuals::Update()
     }
 }
 
-void PlayerDuals::Shoot()
+bool PlayerDuals::Shoot()
 {
     if (canShoot)
     {
@@ -110,11 +110,15 @@ void PlayerDuals::Shoot()
         else shotCooldown = fullShotCooldown;
         nextShot = true;
         burstDelay = fullBurstDelay;
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 

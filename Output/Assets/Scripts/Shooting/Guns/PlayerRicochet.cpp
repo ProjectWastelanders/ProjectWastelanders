@@ -73,7 +73,7 @@ void PlayerRicochet::Update()
     }
 }
 
-void PlayerRicochet::Shoot()
+bool PlayerRicochet::Shoot()
 {
     if (canShoot)
     {
@@ -83,11 +83,15 @@ void PlayerRicochet::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 

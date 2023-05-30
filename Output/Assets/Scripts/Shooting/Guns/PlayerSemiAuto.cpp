@@ -79,7 +79,7 @@ void PlayerSemiAuto::Update()
     }
 }
 
-void PlayerSemiAuto::Shoot()
+bool PlayerSemiAuto::Shoot()
 {
     if (canShoot)
     {
@@ -91,11 +91,15 @@ void PlayerSemiAuto::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 

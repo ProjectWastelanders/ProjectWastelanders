@@ -93,6 +93,8 @@ public:
     uint shootAnim[7];
     void PlayShootAnim(int gunIndex);
     bool isShooting = false;
+    int currentShootAnim = -1;
+    float dualsDelay = 0.8f;
     uint swapGunAnim[2];
     void PlaySwapGunAnim(int animationIndex);
     void StopSwapGunAnim();

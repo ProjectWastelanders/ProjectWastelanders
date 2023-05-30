@@ -72,7 +72,7 @@ void PlayerFlamethrower::Update()
     }
 }
 
-void PlayerFlamethrower::Shoot()
+bool PlayerFlamethrower::Shoot()
 {
     if (canShoot)
     {
@@ -85,7 +85,11 @@ void PlayerFlamethrower::Shoot()
 
         if (playingParticlesCd <= 0.0f) fireParticles.Play();
         playingParticlesCd = 0.2f;
+
+        return true;
     }
+
+    return false;
 }
 
 void PlayerFlamethrower::EnableGuns(bool enable)

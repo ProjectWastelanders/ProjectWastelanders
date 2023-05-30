@@ -18,7 +18,7 @@ public:
     void Start() override;
     void Update() override;
 
-    virtual void Shoot();
+    virtual bool Shoot();
     virtual void EnableGuns(bool enable);
     virtual void SetGunStatsPerLevel(int level);
 

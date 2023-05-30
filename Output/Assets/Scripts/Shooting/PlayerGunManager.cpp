@@ -152,8 +152,8 @@ void PlayerGunManager::Update()
     {
         if (playerStats && playerStats->GetAmmonByType(equipedGun->ammoType) > 0)
         {
-            equipedGun->Shoot();
-            if (playerMove) playerMove->PlayShootAnim(equipedIndex);
+            bool shooted = equipedGun->Shoot();
+            if (shooted && playerMove) playerMove->PlayShootAnim(equipedIndex);
         }
         else
         {

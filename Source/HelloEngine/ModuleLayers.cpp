@@ -255,6 +255,6 @@ void ModuleLayers::RequestReimportAllScenes(std::vector<std::string>& scenes)
 
 void ModuleLayers::RemoveRigidBody(uint gameObjectUID)
 {
-   /* if (apiRigidBodies.count(gameObjectUID) != 0)
-        apiRigidBodies[gameObjectUID]->_rigidBody = nullptr;*/
+    if (apiRigidBodies.count(gameObjectUID) != 0)
+        apiRigidBodies[gameObjectUID]->_rigidBody = nullptr;
 }

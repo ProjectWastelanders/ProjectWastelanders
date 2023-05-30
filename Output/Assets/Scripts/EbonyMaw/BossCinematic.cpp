@@ -86,6 +86,7 @@ void BossCinematic::Update()
 
         if (activeCinematic) {            
             playerMov->openingChest = true;
+            player.GetRigidBody().SetVelocity((0, 0, 0));
             playerMov->PlayIdleAnim();
             switch (currentDialog)
             {

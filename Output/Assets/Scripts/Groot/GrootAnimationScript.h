@@ -12,6 +12,6 @@ public:
 	void Update() override;
 
 	API_AnimationPlayer grootAnimationPlayer;
-	uint grootDance;
+	uint grootEscape;
 };
 

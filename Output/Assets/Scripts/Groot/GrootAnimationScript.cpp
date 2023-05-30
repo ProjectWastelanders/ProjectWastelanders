@@ -3,14 +3,14 @@ HELLO_ENGINE_API_C GrootAnimationScript* CreateGrootAnimationScript(ScriptToInsp
 {
 	GrootAnimationScript* classInstance = new GrootAnimationScript();
 	script->AddDragBoxAnimationPlayer("AnimationPlayer", &classInstance->grootAnimationPlayer);
-	script->AddDragBoxAnimationResource("Groot Dance", &classInstance->grootDance);
+	script->AddDragBoxAnimationResource("Groot Escape", &classInstance->grootEscape);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
 
 void GrootAnimationScript::Start()
 {
-	grootAnimationPlayer.ChangeAnimation(grootDance);
+	grootAnimationPlayer.ChangeAnimation(grootEscape);
 	grootAnimationPlayer.SetLoop(true);
 	grootAnimationPlayer.Play();
 }

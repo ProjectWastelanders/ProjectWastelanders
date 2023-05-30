@@ -231,17 +231,10 @@ void BossLoop::CheckBombs()
 {
     if (currentBombNum > 0)
     {
-        StickBomb* stickBomb = (StickBomb*)bomb.GetScript("StickBomb");
-        if (stickBomb == nullptr) Console::Log("StickyBomb missing in Bomb from enemy.");
-        else
-        {
-            stickBomb->triggerActive = true;
-            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
-            else stickBomb->damage = 10.0f * currentBombNum;
-        }
+        if (shotgunLevel > 2) TakeDamage(15.0f * currentBombNum);
+        else TakeDamage(10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
-        bombShield.SetActive(false);
     }
 }
 

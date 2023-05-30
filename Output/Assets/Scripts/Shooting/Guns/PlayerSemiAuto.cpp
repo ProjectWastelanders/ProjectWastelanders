@@ -25,7 +25,7 @@ void PlayerSemiAuto::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("semiauto_level")); // read from save file
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("semiauto_level")); // read from save file
 
     if (cadence == 0)
     {

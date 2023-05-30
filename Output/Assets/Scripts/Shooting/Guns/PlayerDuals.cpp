@@ -30,7 +30,7 @@ void PlayerDuals::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
 
     if (cadence == 0)
     {

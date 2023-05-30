@@ -27,7 +27,7 @@ void PlayerShotgun::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("shotgun_level")); // read from save file
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("shotgun_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -122,7 +122,7 @@ void PlayerShotgun::SetGunStatsPerLevel(int level)
         projectileResistanceDamage = 5.0f;
         projectileLifetime = 0.2f;
         cadence = 3.0f;
-        pellets = 3;
+        pellets = 1;
         pelletsDisersion = 0.2f;
         // explosion damage 10
         // bomb num 2

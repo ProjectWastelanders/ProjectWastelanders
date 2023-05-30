@@ -131,6 +131,8 @@ private:
 	ResourceShader* depthShader = nullptr;
 	ResourceShader* depthBoneShader = nullptr;
 
+	Application* _app = nullptr;
+
 	friend class RenderManager;
 	friend class MeshRenderComponent;
 	friend class InstanceRenderer;

@@ -302,6 +302,9 @@ void ImWindowConfiguration::Update()
 					_moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
 			}
 
+			ImGui::Checkbox("Max Render Distance On Inspector", &_app->renderer3D->hasMaxRenderDistanceOnInspector);
+			ImGui::DragFloat("Max Render Distance", &_app->renderer3D->maxRenderDistance, 1.0f, 0.0f);
+
 			ImGui::Checkbox("Show Colliders", &_app->renderer3D->isRenderingColliders);
 		}
 

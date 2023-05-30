@@ -14,6 +14,8 @@ InstanceRenderer::InstanceRenderer()
     instancedShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced.shader", 102, "Instanced");
     perMeshShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/basic.shader", 103, "Basic");
     mesh2DShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/instanced2D.shader", 104, "Instanced 2D");
+
+    _app = Application::Instance();
 }
 
 InstanceRenderer::~InstanceRenderer()
@@ -40,6 +42,8 @@ InstanceRenderer::~InstanceRenderer()
     glDeleteVertexArrays(1, &BasicVAO);
     glDeleteBuffers(1, &BasicVBO);
     glDeleteBuffers(1, &BasicIBO);
+
+    _app = nullptr;
 }
 
 void InstanceRenderer::SetMeshInformation(ResourceMesh* resMesh, ResourceMaterial* resMat)
@@ -109,7 +113,22 @@ void InstanceRenderer::DrawMaterial()
             Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second);
         }
 
-        modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
+        if (_app->renderer3D->hasMaxRenderDistance)
+        {
+            float2 modPos(mesh.second.mesh.modelMatrix.Transposed().TranslatePart().x, mesh.second.mesh.modelMatrix.Transposed().TranslatePart().z);
+            float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
+
+            float dist = modPos.Distance(camPos);
+
+            if (dist < _app->renderer3D->maxRenderDistance)
+            {
+                modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
+            }
+        }
+        else
+        {
+            modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
+        }
     }
 
     if (!modelMatrices.empty())
@@ -161,8 +180,8 @@ void InstanceRenderer::DrawRaw()
     uint totalMeshes = meshes.size();
     uint drawingMeshes = 0;
 
-    modelMatrices.resize(totalMeshes);
-    textureIDs.resize(totalMeshes);
+    //modelMatrices.resize(totalMeshes);
+    //textureIDs.resize(totalMeshes);
 
     for (auto& mesh : meshes)
     {
@@ -176,9 +195,31 @@ void InstanceRenderer::DrawRaw()
             renderManger.SetSelectedMesh(&currentMesh);
         }
 
-        modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
-        textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
-        currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+
+        if (_app->renderer3D->hasMaxRenderDistance)
+        {
+            float2 modPos(mesh.second.mesh.modelMatrix.Transposed().TranslatePart().x, mesh.second.mesh.modelMatrix.Transposed().TranslatePart().z);
+            float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
+
+            float dist = modPos.Distance(camPos);
+
+            if (dist < _app->renderer3D->maxRenderDistance)
+            {
+                modelMatrices.push_back(currentMesh.modelMatrix);
+                textureIDs.push_back(currentMesh.OpenGLTextureID);
+                //modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
+                //textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
+                currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+            }
+        }
+        else
+        {
+            modelMatrices.push_back(currentMesh.modelMatrix);
+            textureIDs.push_back(currentMesh.OpenGLTextureID);
+            //modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
+            //textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
+            currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
+        }
     }
 
     if (!modelMatrices.empty())

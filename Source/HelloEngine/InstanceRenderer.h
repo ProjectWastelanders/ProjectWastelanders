@@ -94,6 +94,8 @@ private:
 
 	bool depthDraw = true;
 
+	Application* _app = nullptr;
+
 	friend class RenderManager;
 	friend class MeshRenderComponent;
 };

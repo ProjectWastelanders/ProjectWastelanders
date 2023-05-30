@@ -1,0 +1,1261 @@
+
+            <div class="col span_1_of_2 mix Code, Production box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Rabasa Galan, Biel</a></li>
+                <span class="role">Code, Production</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- Team organisation
+- Production plan
+- Player movement & camera code
+- Playtesting sessions</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/bielrabasa"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/biel-rabasa-galan-0bb636264"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="bielrabasa@gmail.com
+
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Rabasa Galan, Biel</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Design, Production box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Albalà Vizcaino, Marina</a></li>
+                <span class="role">Design, Production</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/Vizalt"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/marina-albala-vizcaino/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="
+marinavizalt@gmail.com
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Albalà Vizcaino, Marina</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art, Production box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Pachón Pérez, Laia</a></li>
+                <span class="role">Art, Production</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Pachón Pérez, Laia</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code, Production box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Sellarés Salvador, Adrià</a></li>
+                <span class="role">Code, Production</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Sellarés Salvador, Adrià</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Design box">
+                <img src="resources/img/crayon.png" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Boces Obis, David</a></li>
+                <span class="role">Design</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p>After working on this project, I finally can say I learned a lot. From design, build and iterate entire levels and create a complete story inside the great's Marvel universe to organise and lead an entire team after being appointed leader of the design team. 
+To conclude, I must say it's been amazing to work with the people involved and all the hard work done to achieve this final result.</p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- Team & tasks organisation
+- Narrative writer
+- Level design
+- Playtesting sessions</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="
+https://github.com/VoZeS"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/david-boces-obis-474196238/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="davidboces16@gmail.com
+
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/crayon.png" alt="Name 4" class="team-member">
+                            <h3>Boces Obis, David</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Design box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Giralt Silván, Alejandro</a></li>
+                <span class="role">Design</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- UI & Menus Design
+- Web Design and Code
+- Level Contruction
+- Worldbuilding</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/zapper163"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/alejandro-giralt/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="zapingero163@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Giralt Silván, Alejandro</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Design box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Landa Muñoz, Andreu</a></li>
+                <span class="role">Design</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p>As a game designer I was focused on the combat mechanics, I have been designing and balancing all weapons and enemies to finish with a solid gameplay that can keep players engagment. 
+I also worked in the bosses design, designing Ebony and Thanos mechanics, statistics and behaviours.
+Now that this project is almost done I feel like I have improved my designer qualities and enhanced a lot the teamwork.</p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- Weapons Design
+- Enemies Design
+- Boss Design
+- Playtesting & balancing</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/Landama01"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/andreulanda"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="landa.andreu@gmail.com
+
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Landa Muñoz, Andreu</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Design box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Martin Garzon, Erik</a></li>
+                <span class="role">Design</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/eriik1212"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/erik-martin-b20b21276/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="
+erikmarting1200@gmail.com
+
+
+
+
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Martin Garzon, Erik</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Design box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Ramón Catasus, Gerard Josep</a></li>
+                <span class="role">Design</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Ramón Catasus, Gerard Josep</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Ao, Yunqian</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Ao, Yunqian</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Cónsola López, Angel</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Cónsola López, Angel</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">García Salguero, Juan de Dios</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>García Salguero, Juan de Dios</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Martin Lucena, Albert</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Martin Lucena, Albert</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Toledo Rodríguez, Daniel</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p>🎵 Apples are red.
+🎵 The sky is blue.
+🎵 And this subject is a bad joke. </p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- Concept Artist
+- 3D Modeler
+- Disruptor team member
+- 🗿</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/Dani-24"><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="dani.toledo.23@hotmail.com"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Toledo Rodríguez, Daniel</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Rodríguez Torrente, Miguel</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="
+https://github.com/Bankaster"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/miguel-rodríguez-torrente/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="
+miguelroto1998@gmail.com
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Rodríguez Torrente, Miguel</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Damià Rosal, Joan</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Damià Rosal, Joan</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Art box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Isaac Digon Donaire</a></li>
+                <span class="role">Art</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Isaac Digon Donaire</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Ayora Alcañiz, Rubén</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- Player weapons, skills and power ups
+- Chests and Loot system
+- Enemy guns
+- General gameplay bug-fixing</p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/RubokiReuchi"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/rubén-ayora-alcañiz-6010a7244/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="ruben.ayora@gmail.com
+
+"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Ayora Alcañiz, Rubén</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Chen, Zhida</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Chen, Zhida</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Recordà Illas, Robert</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Recordà Illas, Robert</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Rius Banús, Pol</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Rius Banús, Pol</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Salas Bernadó, Roger</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Salas Bernadó, Roger</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Olmos Serrano, Pau</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Olmos Serrano, Pau</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Maresch Marxuach, Pol</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Maresch Marxuach, Pol</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Casadó Benítez, Xavier</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Casadó Benítez, Xavier</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">García Selma, Àlex</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>García Selma, Àlex</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Martín Murillo, Adrián</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Martín Murillo, Adrián</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">Benages Calzada, David</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>Benages Calzada, David</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    
+
+            <div class="col span_1_of_2 mix Code box">
+                <img src="resources/img/" alt="Name 2" class="team-member">
+                <li><a class="myBtn_multi">López Martín, Xavier</a></li>
+                <span class="role">Code</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi">�</span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p></p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p></p>
+                                </li>
+                            </ul>
+
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                                    <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href=""><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/" alt="Name 4" class="team-member">
+                            <h3>López Martín, Xavier</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    

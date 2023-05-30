@@ -236,7 +236,8 @@ void Enemy::Die()
     EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
     EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
     // some animation
-    if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(gameObject.GetTransform().GetGlobalPosition());
+    API_Vector3 dropPos = { gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y + 1.0f, gameObject.GetTransform().GetGlobalPosition().z };
+    if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(dropPos);
 
     //hitParticles.StopEmitting();
     if (!meleeScript && !rangeScript && !tankScript)

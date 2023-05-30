@@ -6,23 +6,31 @@
 		<level1_casette2 value="false" />
 		<level1_casette3 value="false" />
 		<level1_chest4 value="true" />
+		<level2_casette1 value="false" />
+		<level2_casette2 value="false" />
+		<level2_casette3 value="false" />
+		<level2_completed value="true" />
+		<mision_RageMonster value="true" />
+		<level1_chest1 value="true" />
+		<burstGunBlueprint value="true" />
 	</Bool>
 	<String>
 		<default value="nothing" />
 	</String>
 	<Int>
 		<default value="0" />
-		<skillPointsAmount value="3112" />
+		<skillPointsAmount value="3120" />
 		<upgradeBlueprintAmount value="1" />
-		<currentSelectedLevel value="0" />
+		<currentSelectedLevel value="1" />
 		<level1_chest4_content value="2" />
+		<level1_chest1_content value="1" />
 	</Int>
 	<Float>
 		<default value="0.0" />
-		<PlayerPosX value="-56.338600f" />
-		<PlayerPosY value="-13.966529f" />
-		<PlayerPosZ value="-17.465769f" />
-		<PlayerIndicatorPosX value="1.038921f" />
-		<PlayerIndicatorPosY value="1.020792f" />
+		<PlayerPosX value="-109.756807f" />
+		<PlayerPosY value="92.126419f" />
+		<PlayerPosZ value="31.299412f" />
+		<PlayerIndicatorPosX value="-0.174767f" />
+		<PlayerIndicatorPosY value="0.520932f" />
 	</Float>
 </QuickSave>

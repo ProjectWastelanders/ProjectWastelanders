@@ -137,7 +137,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
     {
     case 0:
         projectileSpeed = 35.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 1.0f;
         cadence = 1.0f;
@@ -147,7 +147,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
         break;
     case 1:
         projectileSpeed = 35.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 1.0f;
         cadence = 1.0f;
@@ -157,7 +157,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
         break;
     case 2:
         projectileSpeed = 45.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 0.78f;
         cadence = 1.0f;
@@ -167,7 +167,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
         break;
     case 3:
         projectileSpeed = 45.0f;
-        projectileDamage = 5.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 0.78f;
         cadence = 1.0f;

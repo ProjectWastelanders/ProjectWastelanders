@@ -95,6 +95,7 @@ void Chest::Update()
             Audio::Event("open_chest");
             playerMove->StopOpenChestAnim();
             chestAnimatorPlayer.Play();
+            opened = true;
             if (endTutorial == true || bluprintTutorial == false)
             {
                 Tutorial_Img.GetGameObject().SetActive(false);
@@ -211,6 +212,7 @@ void Chest::OpenChestOnStart()
 {
     chestAnimatorPlayer.Play();
     gameObject.SetActive(false);
+    opened = true;
 }
 
 void Chest::OnCollisionEnter(API::API_RigidBody other)

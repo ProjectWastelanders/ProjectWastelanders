@@ -270,6 +270,9 @@
                         "Pause Panel": 272764564
                     },
                     {
+                        "Map Panel": 2448178164
+                    },
+                    {
                         "HUD Panel": 947839935
                     },
                     {
@@ -5488,6 +5491,323 @@
         "PrefabUID": 3514198105,
         "Tag": "UI",
         "UID": 2433470058,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Level Index": 1
+                    }
+                ],
+                "Script Resource": 2344407423,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Map Parent",
+        "ParentUID": 1378353130,
+        "PrefabUID": 2412455051,
+        "Tag": "UI",
+        "UID": 1060312996,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    0
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Map",
+        "ParentUID": 1060312996,
+        "PrefabUID": 2412455051,
+        "Tag": "UI",
+        "UID": 2448178164,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.8999999761581421
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.024999976158142,
+                    1.024999976158142,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1325560194,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "BackGround",
+        "ParentUID": 2448178164,
+        "PrefabUID": 2412455051,
+        "Tag": "UI",
+        "UID": 3129781380,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.699999988079071,
+                    -0.38999998569488525,
+                    -0.9100000262260437
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.014999999664723873,
+                    0.029999999329447746,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3336653725,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Level Index": 1
+                    },
+                    {
+                        "Movement Reduction X": 1000.0
+                    },
+                    {
+                        "Movement Reduction Y": 1000.0
+                    }
+                ],
+                "Script Resource": 3185844118,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Indicator",
+        "ParentUID": 2448178164,
+        "PrefabUID": 2412455051,
+        "Tag": "UI",
+        "UID": 182061827,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -1.100000023841858,
+                    0.25,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.10000000149011612,
+                    0.05000000074505806,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 1561918590,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Player": 2252131494
+                    },
+                    {
+                        "Material mission 1 Finished": 1561918590
+                    },
+                    {
+                        "Material mission 2 Finished": 3990715488
+                    },
+                    {
+                        "Object visual feedback": 1215156070
+                    },
+                    {
+                        "mision1 active": false
+                    },
+                    {
+                        "mision2 active": false
+                    }
+                ],
+                "Script Resource": 2730713786,
+                "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button Guide": 1215156070
+                    },
+                    {
+                        "Move X animation repeat": 1
+                    },
+                    {
+                        "Move Y animation repeat": 0
+                    },
+                    {
+                        "Move animation in loop": false
+                    },
+                    {
+                        "Move animation active": false
+                    },
+                    {
+                        "Distance move X": 0.20000000298023224
+                    },
+                    {
+                        "Speed move X": 2.0
+                    },
+                    {
+                        "Distance move Y": 0.0
+                    },
+                    {
+                        "Speed move Y": 0.0
+                    },
+                    {
+                        "Scale animation repeat": 0
+                    },
+                    {
+                        "Scale animation in loop": false
+                    },
+                    {
+                        "Scale animation active": false
+                    },
+                    {
+                        "Scale max": 0.0
+                    },
+                    {
+                        "Speed Scale": 0.0
+                    },
+                    {
+                        "Rotate animation repeat": 0
+                    },
+                    {
+                        "Rotate animation in loop": false
+                    },
+                    {
+                        "Rotate animation active": false
+                    },
+                    {
+                        "Rotate distance": 0.0
+                    },
+                    {
+                        "Speed Rotation": 0.0
+                    }
+                ],
+                "Script Resource": 148961927,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "MisionNotification",
+        "ParentUID": 1060312996,
+        "PrefabUID": 2412455051,
+        "Tag": "UI",
+        "UID": 1215156070,
         "UpdateWithBones": false
     },
     {

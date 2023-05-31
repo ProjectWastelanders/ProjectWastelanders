@@ -308,6 +308,7 @@
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Groot/GrootAnimationScript.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
@@ -483,6 +484,7 @@
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.h" />
 		<ClInclude Include="../../Assets/Scripts/Groot/GrootAnimationScript.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

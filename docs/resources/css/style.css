@@ -102,7 +102,7 @@ nav ul li a:before {
 }
 
 nav ul li a:hover {
-    color: #555;
+    color: #30bae7;
 }
 
 
@@ -557,7 +557,7 @@ header h1 {
 
 .hometeam-section {
     text-align: center;
-    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 194, 163, 0.9)), url(img/group.png); /*Foto Gamora*/
+    background: linear-gradient(rgba(42, 54, 59, 0.9), rgba(82, 82, 82, 0.9)), url(img/group.png); /*Foto Gamora*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;

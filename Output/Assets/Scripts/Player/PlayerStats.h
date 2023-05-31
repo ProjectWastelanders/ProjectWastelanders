@@ -13,6 +13,7 @@ class PlayerMove;
 class HpBar;
 class HUD_Power_Up_Scrip;
 class UI_Municion;
+class CamMov;
 
 class PlayerStats : HelloBehavior
 {
@@ -99,4 +100,8 @@ public:
 
     API_GameObject ammo_ScriptGO;
     UI_Municion* ammo_Script;
+
+    API_GameObject cameraGameObject;
+    CamMov* cam;
+
 };

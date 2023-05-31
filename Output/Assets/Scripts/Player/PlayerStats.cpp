@@ -5,6 +5,8 @@
 #include "../UsefulScripts/IndexContainer.h"
 #include "../UI Test folder/HUD_Power_Up_Scrip.h"
 #include "../UI Test folder/UI_Municion.h"
+#include "../CamMov.h"
+
 HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* script)
 {
     PlayerStats* classInstance = new PlayerStats();
@@ -22,6 +24,7 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragBoxGameObject("Player GO", &classInstance->playerGO);
     script->AddDragBoxGameObject("Power Ups Managers (HUD)", &classInstance->hudPowerUpGO);
     script->AddDragBoxGameObject("Hud Munition GO", &classInstance->ammo_ScriptGO);
+    script->AddDragBoxGameObject("Camera", &classInstance->cameraGameObject);
     //script->AddDragInt("movement tree lvl", &classInstance->movementTreeLvl); // use it only for playtesting
     //script->AddDragInt("armory tree lvl", &classInstance->armoryTreeLvl);
     //script->AddDragInt("health tree lvl", &classInstance->healthTreeLvl);
@@ -62,6 +65,9 @@ void PlayerStats::Start()
     
     ammo_Script = (UI_Municion*)ammo_ScriptGO.GetScript("UI_Municion");
     if (!ammo_Script) Console::Log("UI_Municion Missing in PlayerStats. Only needed in levels.");
+
+    cam = (CamMov*)cameraGameObject.GetScript("CamMov");
+    if (!cam) Console::Log("CamMov Missing in PlayerStats. Only needed in levels.");
 }
 
 void PlayerStats::Update()
@@ -319,6 +325,11 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
         blinkTime = 0.5f;
         positiveBlink = false;
         material.SetColor(1, 0, 0, 1);
+        if (cam != nullptr) 
+        {
+            cam->Shake(0.1f, 0.5f);
+        }
+
     }
 
     lastHitTime = 3.0f; // 3 seg to auto heal after a hit

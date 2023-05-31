@@ -210,6 +210,36 @@ bool ModuleLayers::CleanUp()
 uint ModuleLayers::S_AddGameObject(GameObject* go, uint ID)
 {
     ID = ID == 0 ? HelloUUID::GenerateUUID() : ID;
+    if (gameObjects.count(ID) == 1)
+        Console::S_Log("Game object of name" + go->GetName() + " has a duplicated ID with: " + gameObjects[ID]->GetName() + "The second has been substitued by the first.");
+
+    //while (gameObjects.count(ID) == 1) // If the given ID already exists
+    //{
+    //    std::cout << "Game object of name" << go->GetName() << " has a duplicated ID with: " << gameObjects[ID]->GetName() << std::endl;
+    //    int num = -1;
+    //    std::cin >> num;
+    //    if (num == 1)
+    //    {
+    //        GameObject* gameo = gameObjects[ID];
+    //        uint newID =0;
+    //        do
+    //        {
+    //            newID = HelloUUID::GenerateUUID();
+    //            gameo->ChangeID(newID);
+    //        } 
+    //        while (gameObjects.count(gameo->GetID()) == 1);
+    //        gameObjects[newID] = gameo;
+    //        break;
+    //    }
+    //    else
+    //    {
+    //        while (gameObjects.count(ID) == 1)
+    //        {
+    //            ID = HelloUUID::GenerateUUID();
+    //            go->ChangeID(ID);
+    //        }
+    //    }
+    //}
     gameObjects[ID] = go;
     return ID;
 }

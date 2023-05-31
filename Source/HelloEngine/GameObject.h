@@ -99,6 +99,9 @@ public:
 	bool GetBonesUpdate() { return _updateTransformWithBones; }
 	void SetUpdateWithBones(bool active) { _updateTransformWithBones = active; }
 
+	// Only for debugging purposes, DO NOT USE!
+	void ChangeID(uint ID);
+
 #ifdef STANDALONE
 	void OnEditor();
 	bool MarkAsDead();

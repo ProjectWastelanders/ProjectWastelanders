@@ -80,8 +80,6 @@ void BossLoop::Update()
                 weakTime += dt;
                 rockShield.SetActive(false);
 
-                draxDialog = true;
-
                 if (knockUpTimer <= 1) {
                     if (animState != AnimationState::KNOCKUP)
                     {
@@ -98,13 +96,14 @@ void BossLoop::Update()
                 }
             }
             else {
-                rockShield.SetActive(true);
+                rockShield.SetActive(true);                
             }
             if (weakTime >= time[phase]) {
                 weakTime = 0;
                 phase--;
                 shield[phase] = maxShield[phase];
                 canTakeDamage = false;
+                draxDialog = true;
                 dt = Time::GetDeltaTime();
                 if (recoverTimer <= 6) {
                     if (animState != AnimationState::RECOVER)

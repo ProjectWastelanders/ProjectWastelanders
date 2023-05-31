@@ -557,7 +557,7 @@ header h1 {
 
 .hometeam-section {
     text-align: center;
-    background: linear-gradient(rgba(248, 169, 80, 0.9), rgba(255, 207, 128, 0.9)), url(img/group.png); /*Foto Gamora*/
+    background: linear-gradient(rgba(252, 193, 126, 0.9), rgba(255, 207, 128, 0.9)), url(img/group.png); /*Foto Gamora*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -630,7 +630,7 @@ header h1 {
 }
 
 .productionpage-section h1 {
-    color: #9ba5bd;
+    color: #ffffff;
     margin-left: 5rem;
     text-align: center;
 }

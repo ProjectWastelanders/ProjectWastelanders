@@ -755,7 +755,7 @@ header h1 {
 
 .production-section {
     text-align: center;
-    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 91, 194, 0.9)), url(img/racoon.png);
+    background: linear-gradient(rgba(255, 207, 128, 0.9), rgba(146, 139, 133, 0.9)), url(img/racoon.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;

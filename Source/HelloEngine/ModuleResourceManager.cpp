@@ -31,6 +31,7 @@
 std::map<std::string, Resource*> ModuleResourceManager::loadedResources;
 std::map<uint, Resource*> ModuleResourceManager::resources;
 FileTree* ModuleResourceManager::_fileTree = nullptr;
+bool ModuleResourceManager::changingScene = false;
 
 ModuleResourceManager::ModuleResourceManager()
 {
@@ -606,6 +607,7 @@ void ModuleResourceManager::S_OverridePrefab(GameObject* g, const std::string& f
 
 bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 {
+	changingScene = true;
 	// Deselect current selected game object
 	LayerEditor::S_SetSelectGameObject(nullptr);
 	Application::Instance()->renderer3D->renderManager.RemoveSelectedMesh();
@@ -743,6 +745,8 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 	ModuleLayers::rootGameObject = temp[0].first;
 
 	Application::Instance()->xml->GetConfigXML().FindChildBreadth("currentScene").node.attribute("value").set_value(filePath.c_str());
+
+	changingScene = false;
 
 	if (LayerGame::S_IsPlaying())
 		LayerGame::StartAllScripts();

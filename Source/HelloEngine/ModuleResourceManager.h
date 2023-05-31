@@ -342,6 +342,7 @@ private:
 
 public:
     static std::map<std::string, Resource*> loadedResources;
+    static bool changingScene;
 
     static std::map<uint, Resource*> resources;
     static FileTree* _fileTree;

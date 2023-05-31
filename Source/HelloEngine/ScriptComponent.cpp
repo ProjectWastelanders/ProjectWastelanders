@@ -60,7 +60,7 @@ void ScriptComponent::OnEnable()
 	if (scriptUID != 0)
 	{
 		LayerGame::_behaviorScripts[scriptUID].active = true;
-		if (LayerGame::S_IsPlaying())
+		if (LayerGame::S_IsPlaying() && !ModuleResourceManager::changingScene)
 			LayerGame::_behaviorScripts[scriptUID].script->OnEnable();
 	}
 }
@@ -70,7 +70,7 @@ void ScriptComponent::OnDisable()
 	if (scriptUID != 0)
 	{
 		LayerGame::_behaviorScripts[scriptUID].active = false;
-		if (LayerGame::S_IsPlaying())
+		if (LayerGame::S_IsPlaying() && !ModuleResourceManager::changingScene)
 			LayerGame::_behaviorScripts[scriptUID].script->OnDisable();
 	}
 }

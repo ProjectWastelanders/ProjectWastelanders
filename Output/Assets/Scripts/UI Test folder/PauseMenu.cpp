@@ -44,5 +44,6 @@ void PauseMenu::Update()
 }
 void PauseMenu::OnDisable() 
 {
-	blockMovement->openingChest = false;
+	if (blockMovement)
+		blockMovement->openingChest = false;
 }

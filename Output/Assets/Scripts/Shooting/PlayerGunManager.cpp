@@ -1,5 +1,7 @@
 #include "PlayerGunManager.h"
 #include "../UI Test folder/SwapWeapon.h"
+#include "Guns/PlayerFlamethrower.h"
+
 HELLO_ENGINE_API_C PlayerGunManager* CreatePlayerGunManager(ScriptToInspectorInterface* script)
 {
     PlayerGunManager* classInstance = new PlayerGunManager();
@@ -30,6 +32,9 @@ void PlayerGunManager::Start()
 
     swapWeapon = (SwapWeapon*)swapWeaponGO.GetScript("SwapWeapon");
     if (swapWeapon == nullptr) Console::Log("Missing SwapWeapon on PlayerGunManager Script.");
+
+    playerFlamethrower = (PlayerFlamethrower*)flamethrower.GetScript("PlayerFlamethrower");
+    if (swapWeapon == nullptr) Console::Log("Missing flamethrower on PlayerGunManager Script.");
 
     // add guns to the array in order
     guns.push_back(duals);
@@ -211,26 +216,33 @@ void PlayerGunManager::EquipGun(int index)
     PlayerGunType* gunType = (PlayerGunType*)guns[index].GetScript("PlayerGunType");
     if (gunType == nullptr) return;
 
+    
+
     switch (gunType->gunType)
     {
     case 0: // duals
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerDuals");
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 1: // semiautomatic
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerSemiAuto");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 2: // automatic
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerAutomatic");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 3: // burst
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerBurst");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 4: // shotgun
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerShotgun");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 5: // flamethrower
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerFlamethrower");
@@ -239,6 +251,7 @@ void PlayerGunManager::EquipGun(int index)
     case 6: // ricochet
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerRicochet");
         if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::RICOCHET);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     default:
         equipedGun = nullptr;
@@ -252,6 +265,8 @@ void PlayerGunManager::EquipGun(int index)
 void PlayerGunManager::UnequipGun(int index)
 {
     if (index == -1) return;
+    playerFlamethrower->fireParticles.StopEmitting();
+    playerFlamethrower->playingParticlesCd = 0.0f;
 
     if (playerMove)
     {

@@ -41,7 +41,7 @@ public:
 	bool isRenderingColliders;
 	bool hasShadows = false;
 
-	float maxRenderDistance = 65.0f;
+	float maxRenderDistance = 75.0f;
 
 private:
 	void ShadowRenderPass();

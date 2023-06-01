@@ -18,5 +18,7 @@ public:
 
 	API_GameObject colliderEntry;
 	API_GameObject colliderExit;
+
+	int cont = 0;
 };
 

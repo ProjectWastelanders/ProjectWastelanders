@@ -227,12 +227,6 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
             return;
         }
 
-        // check casette amount
-        int casettesPicked = 0;
-        if (storage->casette1Picked) casettesPicked++;
-        if (storage->casette2Picked) casettesPicked++;
-        if (storage->casette3Picked) casettesPicked++;
-
         /*switch (casettesPicked)
         {
         case 0:
@@ -252,12 +246,15 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         {
         case 1:
             storage->casette1Picked = true;
+            storage->SaveData();
             break;
         case 2:
             storage->casette2Picked = true;
+            storage->SaveData();
             break;
         case 3:
             storage->casette3Picked = true;
+            storage->SaveData();
             break;
         default:
             Console::Log("Casette index only can be 1, 2 or 3.");

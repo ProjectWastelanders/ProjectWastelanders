@@ -24,6 +24,7 @@ void UIManager::Start()
 	isPaused = true;
 	settingsPanel.SetActive(false);
 	HUB_UIManager::ClosePanel(); // Do this in case the static state of the panel is blocked.
+	map = (Map*)mapPanel.GetParent().GetScript("Map");
 }
 
 void UIManager::Update()
@@ -51,7 +52,20 @@ void UIManager::Update()
 		if (currentPanel != CurrentPanel::PAUSE && currentPanel != CurrentPanel::SETTINGS)
 		{
 			bool hasMap = currentPanel != CurrentPanel::MAP;
-			mapPanel.SetActive(hasMap);
+
+			if (hasMap)
+			{
+				mapPanel.SetActive(hasMap);
+				if (map != nullptr)
+					map->MissionsEnable(hasMap);
+			}
+			else
+			{
+				if (map != nullptr)
+					map->MissionsEnable(hasMap);
+
+				mapPanel.SetActive(hasMap);
+			}
 			HUDPanel.SetActive(!hasMap);
 			currentPanel = hasMap ? CurrentPanel::MAP : CurrentPanel::NONE;
 		}

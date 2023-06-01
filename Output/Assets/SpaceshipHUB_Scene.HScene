@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.5055866241455078,
+                "Aspect ratio": 1.431952714920044,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -21116,13 +21116,13 @@
                         "level": 4189256898
                     },
                     {
-                        "Song 1 texture": 2567139457
+                        "Song 1 texture": 327255597
                     },
                     {
-                        "Song 2 texture": 2897026285
+                        "Song 2 texture": 2363840146
                     },
                     {
-                        "Song 3 texture": 2650772861
+                        "Song 3 texture": 3892646585
                     },
                     {
                         "Casete 1 GO": 2016975482
@@ -21385,7 +21385,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 541810789,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -21425,7 +21425,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 1822770307,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -21465,7 +21465,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 0,
+                "MaterialResource": 4213129316,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -21545,7 +21545,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 3109240396,
+                "MaterialResource": 2102445078,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15
@@ -21649,7 +21649,7 @@
             {
                 "Enabled": true,
                 "FillImage": 1.0,
-                "MaterialResource": 436178991,
+                "MaterialResource": 2083724339,
                 "MeshEnabled": true,
                 "OpacityDirection": 0,
                 "Type": 15

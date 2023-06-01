@@ -94,7 +94,7 @@ void BossAttacks::Update()
 
 		if (bLoop && bLoop->weakTime > 0) {
 			bossState = BOSS_STATE::KO;
-			for (int i = 0; i < numRocks[attackType]; i++) {
+			for (int i = 0; i < 5; i++) {
 				ReturnRock(&rocks[currentRock[i]], i, true);
 			}
 		}

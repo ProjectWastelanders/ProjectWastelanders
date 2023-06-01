@@ -8,6 +8,7 @@
 class HUB_LevelSelect : HelloBehavior
 {
 public:
+	void Init() override;
 	void Start() override; 
 	void Update() override;
 
@@ -19,10 +20,7 @@ public:
 
 	API_GameObject levelInfo[4];
 
-	API_GameObject Hala1;
-	API_GameObject Hala2;
-	API_GameObject Santuary;
-	API_GameObject Thanos;
+	API_GameObject floorTexts[4];
 
 	// Progress bar
 	float totalTime = 1.5f;

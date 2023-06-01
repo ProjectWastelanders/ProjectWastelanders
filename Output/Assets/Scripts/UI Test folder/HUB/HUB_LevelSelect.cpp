@@ -19,20 +19,27 @@ HELLO_ENGINE_API_C HUB_LevelSelect* CreateHUB_LevelSelect(ScriptToInspectorInter
 	script->AddDragBoxGameObject("Level3 Info", &classInstance->levelInfo[2]);
 	script->AddDragBoxGameObject("Level4 Info", &classInstance->levelInfo[3]);
 
-	script->AddDragBoxGameObject("Hala1", &classInstance->Hala1);
-	script->AddDragBoxGameObject("Hala2", &classInstance->Hala2);
-	script->AddDragBoxGameObject("Santuary", &classInstance->Santuary);
-	script->AddDragBoxGameObject("Thanos", &classInstance->Thanos);
+	script->AddDragBoxGameObject("Hala1", &classInstance->floorTexts[0]);
+	script->AddDragBoxGameObject("Hala2", &classInstance->floorTexts[1]);
+	script->AddDragBoxGameObject("Santuary", &classInstance->floorTexts[2]);
+	script->AddDragBoxGameObject("Thanos", &classInstance->floorTexts[3]);
 
 	script->AddCheckBox("Unlocked levels", &classInstance->lockedLevels);
 
 	return classInstance;
 }
 
-void HUB_LevelSelect::Start()
+void HUB_LevelSelect::Init()
 {
 	currentSelectedLevel = API_QuickSave::GetInt("currentSelectedLevel"); // Default value = 0 = LVL1
+	for (int i = 0; i < 4; ++i)
+	{
+		floorTexts[i].SetActive(currentSelectedLevel == i);
+	}
+}
 
+void HUB_LevelSelect::Start()
+{
 	for (int i = 0; i < 4; ++i)
 	{
 		// initialize images
@@ -150,33 +157,6 @@ void HUB_LevelSelect::SelectLevel(uint level)
 	for (int i = 0; i < 4; ++i)
 	{
 		levels[i].SetBlocked(level == i);
-	}
-	if (level == 0)
-	{
-		Hala1.SetActive(true);
-		Hala2.SetActive(false);
-		Santuary.SetActive(false);
-		Thanos.SetActive(false);
-	}
-	if (level == 1)
-	{
-		Hala1.SetActive(false);
-		Hala2.SetActive(true);
-		Santuary.SetActive(false);
-		Thanos.SetActive(false);
-	}
-	if (level == 2)
-	{
-		Hala1.SetActive(false);
-		Hala2.SetActive(false);
-		Santuary.SetActive(true);
-		Thanos.SetActive(false);
-	}
-	if (level == 3)
-	{
-		Hala1.SetActive(false);
-		Hala2.SetActive(false);
-		Santuary.SetActive(false);
-		Thanos.SetActive(true);
+		floorTexts[i].SetActive(level == i);
 	}
 }

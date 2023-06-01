@@ -28,14 +28,14 @@ with open('Test.csv', 'r') as file:
             brief=row['Comentari general (1 parÃ\xa0graf)'],
             contributions=row['Tasques principals (4 punts)'],)
         data.append(entry.__dict__)
-with open('team_data.json', 'w', encoding='utf-8') as f:
+with open('team_data.json', 'w', encoding='utf-16') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
 #
 html = []
 def fill_html(member):
     entry = '''
             <div class="col span_1_of_2 mix entry4role box">
-                <img src="resources/img/entry4photo" alt="Name 2" class="team-member">
+                <img src="resources/img/entry4photo" alt="Name 1" class="team-member">
                 <li><a class="myBtn_multi">entry4name</a></li>
                 <span class="role">entry4role</span>
             </div>
@@ -82,13 +82,13 @@ def fill_html(member):
     entry = entry.replace('entry4linkedin', member['linkedin'])
     entry = entry.replace('entry4photo', member['photo'])
     entry = entry.replace('entry4name', member['name'])
-    entry = entry.replace('entry4role', member['role']).lower().replace(",", "").replace(" ", " ")
+    entry = entry.replace('entry4role', member['role'].lower().replace(",", "").replace(" ", " "))
     html.append(entry)
 #
 for member in data:
     fill_html(member)
 #
-with open('fillhtml.txt', 'w') as file:
+with open('fillhtml.txt', 'w', encoding='utf-16') as file:
     content = '\n'.join(html)
     file.write(content)
 #

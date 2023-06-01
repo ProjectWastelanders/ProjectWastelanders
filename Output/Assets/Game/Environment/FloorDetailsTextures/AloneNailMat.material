@@ -1,5 +1,5 @@
 {
-    "Shader resource UID": 3576356457,
+    "Shader resource UID": 1280200565,
     "Uniforms": [
         {
             "Index": 0,
@@ -24,12 +24,13 @@
             "Name": "ColourTest",
             "Read": 10,
             "Size": 1,
-            "String Type": "vec3",
-            "Type": 35665,
+            "String Type": "vec4",
+            "Type": 35666,
             "Value": [
                 1.0,
                 1.0,
-                1.0
+                1.0,
+                -6.260125527835673e+18
             ]
         },
         {
@@ -40,7 +41,7 @@
             "Size": 1,
             "String Type": "sampler2D",
             "Type": 35678,
-            "Value": 135143857
+            "Value": 806367883
         },
         {
             "Index": 824,
@@ -69,7 +70,7 @@
             ]
         },
         {
-            "Index": 826,
+            "Index": 827,
             "Layer": 31,
             "Name": "shadowMap",
             "Read": 9,

@@ -11,6 +11,7 @@ public:
 	void Start() override; 
 	void Update() override;
 
+	void UpdateInfoAndProgressBar();
 
 	API_UIButton levels[4];
 	API_GameObject selectedLevelImage[4];
@@ -29,6 +30,11 @@ public:
 
 	uint currentSelectedLevel = 0;
 
+	bool lockedLevels = false;
+
+	bool unlockedLevels[4]; // List of unlocked levels.
+	bool pressedButtonThisFrame = false;
+	int currentHoveredLevel = -1;
 private:
 	void SelectLevel(uint level);
 };

@@ -93,7 +93,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.3f;
+        projectileLifetime = 0.5f;
         cadence = 20.0f;
         // max damage 10
         // damage aument speed 0%
@@ -102,7 +102,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.7f;
         cadence = 20.0f;
         // max damage 10
         // damage aument speed 0%
@@ -111,7 +111,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.7f;
         cadence = 20.0f;
         // max damage 20
         // damage aument speed 0%
@@ -120,7 +120,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.7f;
         cadence = 20.0f;
         // max damage 10
         // damage aument speed 50%

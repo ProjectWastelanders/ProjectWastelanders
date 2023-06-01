@@ -102,6 +102,6 @@ void PlayerFlamethrower::SetGunStatsPerLevel(int level)
     projectileSpeed = 30.0f;
     projectileDamage = 10.0f;
     projectileResistanceDamage = 5.0f;
-    projectileLifetime = 0.8f;
+    projectileLifetime = 0.3f;
     cadence = 20.0f;
 }

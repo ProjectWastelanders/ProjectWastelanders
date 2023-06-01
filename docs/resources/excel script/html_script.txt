@@ -1,0 +1,60 @@
+<div class="col span_1_of_2 mix code production box">
+                <img src="resources/img/Biel_Rabasa.png" alt="Name 1" class="team-member">
+                <li><a class="myBtn_multi">Biel Rabasa Galan</a></li>
+                <span class="role">code production</span>
+            </div>
+            <!-- The Modal 1-->
+            <div class="modal modal_multi">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close close_multi"></span>
+                    <div class="row">
+                        <div class="col span_1_of_2 box">
+                            <h4>General Info</h4>
+                            <p>Assuming the role of producer in this project, I learned the basics of team building,
+                                time management and task management. In addition, being part of a video game development
+                                team has taught me the importance of playtesting.
+                            </p>
+                            <p>
+                                During the project, I still wanted to keep in touch with the code, as code optimisation
+                                has always been my favorite part of video game development.
+                            </p>
+
+                            <h4> Tasks Overview</h4>
+                            <ul>
+                                <li>
+                                    <p>- Team organisation</p>
+                                </li>
+                                <li>
+                                    <p>-  Production plan</p>
+                                </li>
+                                <li>
+                                    <p>-  Player movement & camera code</p>
+                                </li>
+                                <li>
+                                    <p>- Playtesting sessions</p>
+                                </li>
+                            </ul>
+                           
+                            
+                        </div>
+                        <div class="col span_1_of_2 box">
+                            <img src="resources/img/Biel_Rabasa.png" alt="Name 4" class="team-member">
+                            <h3>Biel Rabasa Galan</h3>
+                            <span class="role">Code, Production</span>
+                            
+                            <div class="social-link">
+                                <ul>
+                                    <li><a href="https://github.com/bielrabasa"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/biel-rabasa-galan-0bb636264"><i
+                                                class="fab fa-linkedin-in"></i></a></li>
+                                    
+                                </ul>
+                                <span class="mail">bielrabasa@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>

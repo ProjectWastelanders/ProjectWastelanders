@@ -155,7 +155,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.6175214052200317,
+                "Aspect ratio": 1.431952714920044,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 4000.0,
@@ -21297,6 +21297,43 @@
                     }
                 ],
                 "Script Resource": 404657982,
+                "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "R (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "G (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "B (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "Fade In time": 3.0
+                    },
+                    {
+                        "Fade out Time": 3.0
+                    },
+                    {
+                        "R (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "G (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "B (MIN 1.0F)": 2.0
+                    },
+                    {
+                        "Fade In time": 3.0
+                    },
+                    {
+                        "Fade out Time": 3.0
+                    }
+                ],
+                "Script Resource": 1596565582,
                 "Type": 5
             }
         ],

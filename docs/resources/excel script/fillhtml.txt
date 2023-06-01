@@ -1,27 +1,27 @@
 
-            <div class="col span_1_of_2 mix Code, Production box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Rabasa Galan, Biel</a></li>
-                <span class="role">Code, Production</span>
+            <div class="col span_1_of_2 mix code production box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">rabasa galan biel</a></li>
+                <span class="role">code production</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
-                                    <p>- Team organisation
-- Production plan
-- Player movement & camera code
-- Playtesting sessions</p>
+                                    <p>- team organisation
+- production plan
+- player movement & camera code
+- playtesting sessions</p>
                                 </li>
                             </ul>
 
@@ -36,8 +36,8 @@
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Rabasa Galan, Biel</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>rabasa galan biel</h3>
                         </div>
                     </div>
                 </div>
@@ -46,23 +46,23 @@
 
     
 
-            <div class="col span_1_of_2 mix Design, Production box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">AlbalÃ  Vizcaino, Marina</a></li>
-                <span class="role">Design, Production</span>
+            <div class="col span_1_of_2 mix design production box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">albalã  vizcaino marina</a></li>
+                <span class="role">design production</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -71,7 +71,7 @@
 
                             <div class="social-link">
                                 <ul>
-                                    <li><a href="https://github.com/Vizalt"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://github.com/vizalt"><i class="fab fa-github"></i></a></li>
                                     <li><a href="https://www.linkedin.com/in/marina-albala-vizcaino/"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="
 marinavizalt@gmail.com
@@ -80,8 +80,8 @@ marinavizalt@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>AlbalÃ  Vizcaino, Marina</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>albalã  vizcaino marina</h3>
                         </div>
                     </div>
                 </div>
@@ -90,23 +90,23 @@ marinavizalt@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art, Production box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">PachÃ³n PÃ©rez, Laia</a></li>
-                <span class="role">Art, Production</span>
+            <div class="col span_1_of_2 mix art production box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">pachã³n pã©rez laia</a></li>
+                <span class="role">art production</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -122,8 +122,8 @@ marinavizalt@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>PachÃ³n PÃ©rez, Laia</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>pachã³n pã©rez laia</h3>
                         </div>
                     </div>
                 </div>
@@ -132,23 +132,23 @@ marinavizalt@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code, Production box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">SellarÃ©s Salvador, AdriÃ </a></li>
-                <span class="role">Code, Production</span>
+            <div class="col span_1_of_2 mix code production box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">sellarã©s salvador adriã </a></li>
+                <span class="role">code production</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -164,8 +164,8 @@ marinavizalt@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>SellarÃ©s Salvador, AdriÃ </h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>sellarã©s salvador adriã </h3>
                         </div>
                     </div>
                 </div>
@@ -174,37 +174,37 @@ marinavizalt@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Design box">
-                <img src="resources/img/crayon.png" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Boces Obis, David</a></li>
-                <span class="role">Design</span>
+            <div class="col span_1_of_2 mix design box">
+                <img src="resources/img/crayon.png" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">boces obis david</a></li>
+                <span class="role">design</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
-                            <p>After working on this project, I finally can say I learned a lot. From design, build and iterate entire levels and create a complete story inside the great's Marvel universe to organise and lead an entire team after being appointed leader of the design team. 
-To conclude, I must say it's been amazing to work with the people involved and all the hard work done to achieve this final result.</p>
+                            <h4>general info</h4>
+                            <p>after working on this project i finally can say i learned a lot. from design build and iterate entire levels and create a complete story inside the great's marvel universe to organise and lead an entire team after being appointed leader of the design team. 
+to conclude i must say it's been amazing to work with the people involved and all the hard work done to achieve this final result.</p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
-                                    <p>- Team & tasks organisation
-- Narrative writer
-- Level design
-- Playtesting sessions</p>
+                                    <p>- team & tasks organisation
+- narrative writer
+- level design
+- playtesting sessions</p>
                                 </li>
                             </ul>
 
                             <div class="social-link">
                                 <ul>
                                     <li><a href="
-https://github.com/VoZeS"><i class="fab fa-github"></i></a></li>
+https://github.com/vozes"><i class="fab fa-github"></i></a></li>
                                     <li><a href="https://www.linkedin.com/in/david-boces-obis-474196238/"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="davidboces16@gmail.com
 
@@ -213,8 +213,8 @@ https://github.com/VoZeS"><i class="fab fa-github"></i></a></li>
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/crayon.png" alt="Name 4" class="team-member">
-                            <h3>Boces Obis, David</h3>
+                            <img src="resources/img/crayon.png" alt="name 4" class="team-member">
+                            <h3>boces obis david</h3>
                         </div>
                     </div>
                 </div>
@@ -223,29 +223,29 @@ https://github.com/VoZeS"><i class="fab fa-github"></i></a></li>
 
     
 
-            <div class="col span_1_of_2 mix Design box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Giralt SilvÃ¡n, Alejandro</a></li>
-                <span class="role">Design</span>
+            <div class="col span_1_of_2 mix design box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">giralt silvã¡n alejandro</a></li>
+                <span class="role">design</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
-                                    <p>- UI & Menus Design
-- Web Design and Code
-- Level Contruction
-- Worldbuilding</p>
+                                    <p>- ui & menus design
+- web design and code
+- level contruction
+- worldbuilding</p>
                                 </li>
                             </ul>
 
@@ -258,8 +258,8 @@ https://github.com/VoZeS"><i class="fab fa-github"></i></a></li>
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Giralt SilvÃ¡n, Alejandro</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>giralt silvã¡n alejandro</h3>
                         </div>
                     </div>
                 </div>
@@ -268,37 +268,37 @@ https://github.com/VoZeS"><i class="fab fa-github"></i></a></li>
 
     
 
-            <div class="col span_1_of_2 mix Design box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Landa MuÃ±oz, Andreu</a></li>
-                <span class="role">Design</span>
+            <div class="col span_1_of_2 mix design box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">landa muã±oz andreu</a></li>
+                <span class="role">design</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
-                            <p>As a game designer I was focused on the combat mechanics, I have been designing and balancing all weapons and enemies to finish with a solid gameplay that can keep players engagment. 
-I also worked in the bosses design, designing Ebony and Thanos mechanics, statistics and behaviours.
-Now that this project is almost done I feel like I have improved my designer qualities and enhanced a lot the teamwork.</p>
+                            <h4>general info</h4>
+                            <p>as a game designer i was focused on the combat mechanics i have been designing and balancing all weapons and enemies to finish with a solid gameplay that can keep players engagment. 
+i also worked in the bosses design designing ebony and thanos mechanics statistics and behaviours.
+now that this project is almost done i feel like i have improved my designer qualities and enhanced a lot the teamwork.</p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
-                                    <p>- Weapons Design
-- Enemies Design
-- Boss Design
-- Playtesting & balancing</p>
+                                    <p>- weapons design
+- enemies design
+- boss design
+- playtesting & balancing</p>
                                 </li>
                             </ul>
 
                             <div class="social-link">
                                 <ul>
-                                    <li><a href="https://github.com/Landama01"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://github.com/landama01"><i class="fab fa-github"></i></a></li>
                                     <li><a href="https://www.linkedin.com/in/andreulanda"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="landa.andreu@gmail.com
 
@@ -307,8 +307,8 @@ Now that this project is almost done I feel like I have improved my designer qua
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Landa MuÃ±oz, Andreu</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>landa muã±oz andreu</h3>
                         </div>
                     </div>
                 </div>
@@ -317,23 +317,23 @@ Now that this project is almost done I feel like I have improved my designer qua
 
     
 
-            <div class="col span_1_of_2 mix Design box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Martin Garzon, Erik</a></li>
-                <span class="role">Design</span>
+            <div class="col span_1_of_2 mix design box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">martin garzon erik</a></li>
+                <span class="role">design</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -355,8 +355,8 @@ erikmarting1200@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Martin Garzon, Erik</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>martin garzon erik</h3>
                         </div>
                     </div>
                 </div>
@@ -365,23 +365,23 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Design box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">RamÃ³n Catasus, Gerard Josep</a></li>
-                <span class="role">Design</span>
+            <div class="col span_1_of_2 mix design box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">ramã³n catasus gerard josep</a></li>
+                <span class="role">design</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -397,8 +397,8 @@ erikmarting1200@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>RamÃ³n Catasus, Gerard Josep</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>ramã³n catasus gerard josep</h3>
                         </div>
                     </div>
                 </div>
@@ -407,23 +407,23 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Ao, Yunqian</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">ao yunqian</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -439,8 +439,8 @@ erikmarting1200@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Ao, Yunqian</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>ao yunqian</h3>
                         </div>
                     </div>
                 </div>
@@ -449,23 +449,23 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">CÃ³nsola LÃ³pez, Angel</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">cã³nsola lã³pez angel</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -481,8 +481,8 @@ erikmarting1200@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>CÃ³nsola LÃ³pez, Angel</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>cã³nsola lã³pez angel</h3>
                         </div>
                     </div>
                 </div>
@@ -491,23 +491,23 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">GarcÃ­a Salguero, Juan de Dios</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">garcã­a salguero juan de dios</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -523,8 +523,8 @@ erikmarting1200@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>GarcÃ­a Salguero, Juan de Dios</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>garcã­a salguero juan de dios</h3>
                         </div>
                     </div>
                 </div>
@@ -533,23 +533,23 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Martin Lucena, Albert</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">martin lucena albert</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -565,8 +565,8 @@ erikmarting1200@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Martin Lucena, Albert</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>martin lucena albert</h3>
                         </div>
                     </div>
                 </div>
@@ -575,45 +575,45 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Toledo RodrÃ­guez, Daniel</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">toledo rodrã­guez daniel</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
-                            <p>ðŸŽµ Apples are red.
-ðŸŽµ The sky is blue.
-ðŸŽµ And this subject is a bad joke. </p>
+                            <h4>general info</h4>
+                            <p>ðÿžµ apples are red.
+ðÿžµ the sky is blue.
+ðÿžµ and this subject is a bad joke. </p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
-                                    <p>- Concept Artist
-- 3D Modeler
-- Disruptor team member
-- ðŸ—¿</p>
+                                    <p>- concept artist
+- 3d modeler
+- disruptor team member
+- ðÿ—¿</p>
                                 </li>
                             </ul>
 
                             <div class="social-link">
                                 <ul>
-                                    <li><a href="https://github.com/Dani-24"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://github.com/dani-24"><i class="fab fa-github"></i></a></li>
                                     <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="dani.toledo.23@hotmail.com"><i class="fas fa-envelope"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Toledo RodrÃ­guez, Daniel</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>toledo rodrã­guez daniel</h3>
                         </div>
                     </div>
                 </div>
@@ -622,23 +622,23 @@ erikmarting1200@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">RodrÃ­guez Torrente, Miguel</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">rodrã­guez torrente miguel</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -648,8 +648,8 @@ erikmarting1200@gmail.com
                             <div class="social-link">
                                 <ul>
                                     <li><a href="
-https://github.com/Bankaster"><i class="fab fa-github"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/in/miguel-rodrÃ­guez-torrente/"><i class="fab fa-linkedin-in"></i></a></li>
+https://github.com/bankaster"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/miguel-rodrã­guez-torrente/"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="
 miguelroto1998@gmail.com
 "><i class="fas fa-envelope"></i></a></li>
@@ -657,8 +657,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>RodrÃ­guez Torrente, Miguel</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>rodrã­guez torrente miguel</h3>
                         </div>
                     </div>
                 </div>
@@ -667,23 +667,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">DamiÃ  Rosal, Joan</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">damiã  rosal joan</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -699,8 +699,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>DamiÃ  Rosal, Joan</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>damiã  rosal joan</h3>
                         </div>
                     </div>
                 </div>
@@ -709,23 +709,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Art box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Isaac Digon Donaire</a></li>
-                <span class="role">Art</span>
+            <div class="col span_1_of_2 mix art box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">isaac digon donaire</a></li>
+                <span class="role">art</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -741,8 +741,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Isaac Digon Donaire</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>isaac digon donaire</h3>
                         </div>
                     </div>
                 </div>
@@ -751,36 +751,36 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Ayora AlcaÃ±iz, RubÃ©n</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">ayora alcaã±iz rubã©n</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
-                                    <p>- Player weapons, skills and power ups
-- Chests and Loot system
-- Enemy guns
-- General gameplay bug-fixing</p>
+                                    <p>- player weapons skills and power ups
+- chests and loot system
+- enemy guns
+- general gameplay bug-fixing</p>
                                 </li>
                             </ul>
 
                             <div class="social-link">
                                 <ul>
-                                    <li><a href="https://github.com/RubokiReuchi"><i class="fab fa-github"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/in/rubÃ©n-ayora-alcaÃ±iz-6010a7244/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://github.com/rubokireuchi"><i class="fab fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/rubã©n-ayora-alcaã±iz-6010a7244/"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="ruben.ayora@gmail.com
 
 "><i class="fas fa-envelope"></i></a></li>
@@ -788,8 +788,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Ayora AlcaÃ±iz, RubÃ©n</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>ayora alcaã±iz rubã©n</h3>
                         </div>
                     </div>
                 </div>
@@ -798,23 +798,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Chen, Zhida</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">chen zhida</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -830,8 +830,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Chen, Zhida</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>chen zhida</h3>
                         </div>
                     </div>
                 </div>
@@ -840,23 +840,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">RecordÃ  Illas, Robert</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">recordã  illas robert</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -872,8 +872,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>RecordÃ  Illas, Robert</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>recordã  illas robert</h3>
                         </div>
                     </div>
                 </div>
@@ -882,23 +882,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Rius BanÃºs, Pol</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">rius banãºs pol</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -914,8 +914,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Rius BanÃºs, Pol</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>rius banãºs pol</h3>
                         </div>
                     </div>
                 </div>
@@ -924,23 +924,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Salas BernadÃ³, Roger</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">salas bernadã³ roger</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -956,8 +956,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Salas BernadÃ³, Roger</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>salas bernadã³ roger</h3>
                         </div>
                     </div>
                 </div>
@@ -966,23 +966,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Olmos Serrano, Pau</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">olmos serrano pau</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -998,8 +998,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Olmos Serrano, Pau</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>olmos serrano pau</h3>
                         </div>
                     </div>
                 </div>
@@ -1008,23 +1008,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Maresch Marxuach, Pol</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">maresch marxuach pol</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -1040,8 +1040,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Maresch Marxuach, Pol</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>maresch marxuach pol</h3>
                         </div>
                     </div>
                 </div>
@@ -1050,23 +1050,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">CasadÃ³ BenÃ­tez, Xavier</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">casadã³ benã­tez xavier</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -1082,8 +1082,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>CasadÃ³ BenÃ­tez, Xavier</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>casadã³ benã­tez xavier</h3>
                         </div>
                     </div>
                 </div>
@@ -1092,23 +1092,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">GarcÃ­a Selma, Ã€lex</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">garcã­a selma ã€lex</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -1124,8 +1124,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>GarcÃ­a Selma, Ã€lex</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>garcã­a selma ã€lex</h3>
                         </div>
                     </div>
                 </div>
@@ -1134,23 +1134,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">MartÃ­n Murillo, AdriÃ¡n</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">martã­n murillo adriã¡n</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -1166,8 +1166,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>MartÃ­n Murillo, AdriÃ¡n</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>martã­n murillo adriã¡n</h3>
                         </div>
                     </div>
                 </div>
@@ -1176,23 +1176,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">Benages Calzada, David</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">benages calzada david</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -1208,8 +1208,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>Benages Calzada, David</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>benages calzada david</h3>
                         </div>
                     </div>
                 </div>
@@ -1218,23 +1218,23 @@ miguelroto1998@gmail.com
 
     
 
-            <div class="col span_1_of_2 mix Code box">
-                <img src="resources/img/" alt="Name 2" class="team-member">
-                <li><a class="myBtn_multi">LÃ³pez MartÃ­n, Xavier</a></li>
-                <span class="role">Code</span>
+            <div class="col span_1_of_2 mix code box">
+                <img src="resources/img/" alt="name 2" class="team-member">
+                <li><a class="mybtn_multi">lã³pez martã­n xavier</a></li>
+                <span class="role">code</span>
             </div>
-            <!-- The Modal 1-->
+            <!-- the modal 1-->
             <div class="modal modal_multi">
 
-                <!-- Modal content -->
+                <!-- modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
-                            <h4>General Info</h4>
+                            <h4>general info</h4>
                             <p></p>
 
-                            <h4> Tasks Overview</h4>
+                            <h4> tasks overview</h4>
                             <ul>
                                 <li>
                                     <p></p>
@@ -1250,8 +1250,8 @@ miguelroto1998@gmail.com
                             </div>
                         </div>
                         <div class="col span_1_of_2 box">
-                            <img src="resources/img/" alt="Name 4" class="team-member">
-                            <h3>LÃ³pez MartÃ­n, Xavier</h3>
+                            <img src="resources/img/" alt="name 4" class="team-member">
+                            <h3>lã³pez martã­n xavier</h3>
                         </div>
                     </div>
                 </div>

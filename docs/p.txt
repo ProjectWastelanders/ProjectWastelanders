@@ -1,0 +1,9 @@
+game:
+    xd
+team:
+    Our team of developers is composed by over 30 students, all of them from the 3rd year of the degree in Videogame Design and Development in CITM - UPC.
+    We split into 3 main roles,- that is to say Design, Art and Code - and also some of us carried the leadership of groups and production as a whole.
+    We have all worked very hard and a great amount of hours are behind the game that has been released.
+    The biggest weight has mostly been on the shoulders of the programmers.
+production:
+    xd

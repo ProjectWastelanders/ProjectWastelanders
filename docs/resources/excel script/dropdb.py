@@ -44,7 +44,7 @@ def fill_html(member):
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close close_multi">×</span>
+                    <span class="close close_multi"></span>
                     <div class="row">
                         <div class="col span_1_of_2 box">
                             <h4>General Info</h4>
@@ -82,7 +82,7 @@ def fill_html(member):
     entry = entry.replace('entry4linkedin', member['linkedin'])
     entry = entry.replace('entry4photo', member['photo'])
     entry = entry.replace('entry4name', member['name'])
-    entry = entry.replace('entry4role', member['role'])
+    entry = entry.replace('entry4role', member['role']).lower().replace(",", "").replace(" ", " ")
     html.append(entry)
 #
 for member in data:

@@ -260,7 +260,7 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
         else if (detectionTag == "Thanos")
         {
             ThanosLoop* boss = (ThanosLoop*)other.GetGameObject().GetScript("ThanosLoop");
-            if (boss) boss->TakeDamage(damage);
+            if (boss) boss->AddBomb();
             Destroy();
         }
         break;

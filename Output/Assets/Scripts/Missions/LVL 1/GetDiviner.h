@@ -14,9 +14,12 @@ public:
     void Update() override;
 
     void OnCollisionStay(API_RigidBody other);
+    void OnCollisionEnter(API_RigidBody other);
+    void OnCollisionExit(API_RigidBody other);
 
     API_GameObject playerStorageGO;
     PlayerStorage* playerStorage;
     API_GameObject finalText;
+    API_GameObject PressButton;
 };
 

@@ -751,3 +751,38 @@ void ThanosAttacks::LookAt(API_Vector3 tarPos, API_GameObject* go)
 
 	go->GetTransform().SetRotation(0.0f, atan2(movDir.x, movDir.z), 0.0f);
 }
+
+void ThanosAttacks::OnCollisionStay(API::API_RigidBody other)
+{
+	std::string detectionName = other.GetGameObject().GetName();
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+		//other.GetGameObject().SetActive(false);
+		other.GetGameObject().GetRigidBody().SetTrigger(true);
+
+	}
+}
+
+void ThanosAttacks::OnCollisionEnter(API::API_RigidBody other)
+{
+	std::string detectionName = other.GetGameObject().GetName();
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if ((detectionTag == "Column"|| detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+		other.GetGameObject().GetRigidBody().SetTrigger(true);
+	}
+}
+
+void ThanosAttacks::OnCollisionExit(API::API_RigidBody other)
+{
+	std::string detectionName = other.GetGameObject().GetName();
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+		other.GetGameObject().GetRigidBody().SetTrigger(false);
+	}
+	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box")) {
+		other.GetGameObject().GetRigidBody().SetTrigger(false);
+	}
+}

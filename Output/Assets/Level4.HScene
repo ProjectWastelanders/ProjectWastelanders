@@ -131,7 +131,7 @@
             {
                 "Active camera": true,
                 "Active culling": false,
-                "Aspect ratio": 1.501396656036377,
+                "Aspect ratio": 1.6175214052200317,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 4000.0,
@@ -9296,8 +9296,8 @@
                 "Enabled": true,
                 "Position": [
                     -1138.406005859375,
-                    49.16660690307617,
-                    5717.70166015625
+                    49.1666259765625,
+                    5717.7021484375
                 ],
                 "Rotation": [
                     -90.00000762939453,
@@ -9306,8 +9306,8 @@
                 ],
                 "Scale": [
                     100.0,
-                    100.0,
-                    100.0
+                    99.99999237060547,
+                    99.99999237060547
                 ],
                 "Type": 1
             },
@@ -11455,7 +11455,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -11562,7 +11562,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -11669,7 +11669,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -11776,7 +11776,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -11883,7 +11883,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -11990,7 +11990,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -12097,7 +12097,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -12204,7 +12204,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -12311,7 +12311,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -12418,7 +12418,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -12525,7 +12525,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -12632,7 +12632,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -36590,7 +36590,7 @@
                 "Position": [
                     -185.6796112060547,
                     68.81492614746094,
-                    57.85190200805664
+                    64.40907287597656
                 ],
                 "Rotation": [
                     -0.0,
@@ -36780,7 +36780,7 @@
                 "Position": [
                     -180.65573120117188,
                     87.53217315673828,
-                    27.13903045654297
+                    19.685850143432617
                 ],
                 "Rotation": [
                     -0.0,
@@ -38298,9 +38298,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -179.775146484375,
-                    114.40087890625,
-                    31.69264030456543
+                    -178.93557739257813,
+                    114.400634765625,
+                    26.131515502929688
                 ],
                 "Rotation": [
                     -0.0,
@@ -39438,9 +39438,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -212.93341064453125,
+                    -213.73365783691406,
                     52.0010871887207,
-                    63.307613372802734
+                    68.85762023925781
                 ],
                 "Rotation": [
                     -0.0,
@@ -40008,9 +40008,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -208.0264434814453,
+                    -199.12713623046875,
                     78.29944610595703,
-                    56.649444580078125
+                    66.4905776977539
                 ],
                 "Rotation": [
                     -0.0,
@@ -41817,6 +41817,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.799999952316284,
+                    14.100000381469727,
+                    2.4000000953674316
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -41828,7 +41897,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 3912666207,
         "UpdateWithBones": false
     },
@@ -41865,6 +41934,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -41876,7 +42014,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 1695809882,
         "UpdateWithBones": false
     },
@@ -41913,6 +42051,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 1280587091,
@@ -41924,7 +42131,7 @@
         "Name": "Column B",
         "ParentUID": 3206487727,
         "PrefabUID": 1749674439,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 3235701641,
         "UpdateWithBones": false
     },
@@ -41961,6 +42168,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 1280587091,
@@ -41972,7 +42248,7 @@
         "Name": "Column B",
         "ParentUID": 3206487727,
         "PrefabUID": 1749674439,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 2328107980,
         "UpdateWithBones": false
     },
@@ -42009,6 +42285,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -42020,7 +42365,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 3918762274,
         "UpdateWithBones": false
     },
@@ -42057,6 +42402,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -42068,7 +42482,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 3639579511,
         "UpdateWithBones": false
     },
@@ -42105,6 +42519,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -42116,7 +42599,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 3376284490,
         "UpdateWithBones": false
     },
@@ -42153,6 +42636,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 1280587091,
@@ -42164,7 +42716,7 @@
         "Name": "Column B",
         "ParentUID": 3206487727,
         "PrefabUID": 1749674439,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 1037335505,
         "UpdateWithBones": false
     },
@@ -42201,6 +42753,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -42212,7 +42833,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 460111364,
         "UpdateWithBones": false
     },
@@ -42249,6 +42870,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 1280587091,
@@ -42260,7 +42950,7 @@
         "Name": "Column B",
         "ParentUID": 3206487727,
         "PrefabUID": 1749674439,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 389825219,
         "UpdateWithBones": false
     },
@@ -42297,6 +42987,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -42308,7 +43067,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 123228574,
         "UpdateWithBones": false
     },
@@ -42345,6 +43104,75 @@
                 "Type": 2
             },
             {
+                "AngularFactor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ColPosition": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColRotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ColScale": [
+                    2.5,
+                    14.0,
+                    2.5
+                ],
+                "CylVerSlices": 16,
+                "CylinderRadiusHeight": [
+                    1.0,
+                    1.0
+                ],
+                "Enabled": true,
+                "Gravity": [
+                    0.0,
+                    -9.800000190734863,
+                    0.0
+                ],
+                "HasPhysBody": true,
+                "IsKinematic": false,
+                "IsRenderingCol": true,
+                "IsRenderingRayCast": false,
+                "IsShapeCreated": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsShapeSelected": [
+                    true,
+                    false,
+                    false
+                ],
+                "IsStatic": true,
+                "IsTrigger": false,
+                "Mass": 1.0,
+                "RayCastColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "RayCastSize": 1.0,
+                "RenderColColor": [
+                    0.5,
+                    0.0,
+                    0.5,
+                    1.0
+                ],
+                "ShapeSelected": 0,
+                "SphereHorSlices": 16,
+                "SphereRadius": 1.0,
+                "SphereVerSlices": 16,
+                "Type": 8,
+                "WireframeSize": 1.0
+            },
+            {
                 "Enabled": true,
                 "IsInstanced": true,
                 "MaterialUID": 3504862085,
@@ -42356,7 +43184,7 @@
         "Name": "Column A",
         "ParentUID": 3206487727,
         "PrefabUID": 4279605112,
-        "Tag": "Default",
+        "Tag": "Column",
         "UID": 1659982765,
         "UpdateWithBones": false
     },
@@ -45944,9 +46772,9 @@
                     0.0
                 ],
                 "Rotation": [
+                    -0.0,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.0
                 ],
                 "Scale": [
                     1.0,
@@ -49123,7 +49951,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 1554579328,
         "UpdateWithBones": false
     },
@@ -49367,7 +50195,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 2845529995,
         "UpdateWithBones": false
     },
@@ -49611,7 +50439,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 3599262886,
         "UpdateWithBones": false
     },
@@ -49855,7 +50683,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 3524025995,
         "UpdateWithBones": false
     },
@@ -50099,7 +50927,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 1880129621,
         "UpdateWithBones": false
     },
@@ -50343,7 +51171,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 379194582,
         "UpdateWithBones": false
     },
@@ -50587,7 +51415,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 3250518653,
         "UpdateWithBones": false
     },
@@ -50831,7 +51659,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 2186525606,
         "UpdateWithBones": false
     },
@@ -51075,7 +51903,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 1912649208,
         "UpdateWithBones": false
     },
@@ -51319,7 +52147,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 1107586046,
         "UpdateWithBones": false
     },
@@ -51563,7 +52391,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 221059364,
         "UpdateWithBones": false
     },
@@ -51807,7 +52635,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 1644086255,
         "UpdateWithBones": false
     },
@@ -52051,7 +52879,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 2315741129,
         "UpdateWithBones": false
     },
@@ -52295,7 +53123,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 669990399,
         "UpdateWithBones": false
     },
@@ -52539,7 +53367,7 @@
         "Name": "LightTorch",
         "ParentUID": 2159297628,
         "PrefabUID": 3460288881,
-        "Tag": "Default",
+        "Tag": "Torch",
         "UID": 172471392,
         "UpdateWithBones": false
     },
@@ -108242,7 +109070,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 2353501102,
         "UpdateWithBones": false
     },
@@ -108252,19 +109080,19 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.000518798828125,
                     0.0,
-                    0.0,
-                    0.0
+                    -0.000335693359375
                 ],
                 "Rotation": [
-                    -0.0,
                     0.0,
-                    -0.0
+                    -4.2688751022978977e-07,
+                    0.0
                 ],
                 "Scale": [
                     1.0,
                     1.0,
-                    1.0
+                    0.9999983310699463
                 ],
                 "Type": 1
             },
@@ -108530,7 +109358,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 3627821554,
         "UpdateWithBones": false
     },
@@ -108818,7 +109646,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 3945391305,
         "UpdateWithBones": false
     },
@@ -109106,7 +109934,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 1036263141,
         "UpdateWithBones": false
     },
@@ -109394,7 +110222,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 2545146796,
         "UpdateWithBones": false
     },
@@ -109682,7 +110510,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 1589458579,
         "UpdateWithBones": false
     },
@@ -109970,7 +110798,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 2235190251,
         "UpdateWithBones": false
     },
@@ -110258,7 +111086,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 897229082,
         "UpdateWithBones": false
     },
@@ -110546,7 +111374,7 @@
         "Name": "Box",
         "ParentUID": 1223943030,
         "PrefabUID": 1883435120,
-        "Tag": "Default",
+        "Tag": "Box",
         "UID": 3583099450,
         "UpdateWithBones": false
     },

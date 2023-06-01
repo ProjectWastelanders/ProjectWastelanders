@@ -23,6 +23,13 @@ public:
 	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
 	void LookAt(API_Vector3 tarPos, API_GameObject* go);
 
+	void OnCollisionStay(API::API_RigidBody other);
+
+	void OnCollisionEnter(API::API_RigidBody other);
+
+	void OnCollisionExit(API::API_RigidBody other);
+
+
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
 	bool hasPulsed = false;

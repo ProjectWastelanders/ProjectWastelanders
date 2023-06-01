@@ -14,7 +14,7 @@ class MyCustomClass:
         self.contributions = contributions
 #
 data = []
-with open('Test.csv', 'r') as file:
+with open('test2.csv', 'r') as file:
     reader = csv.DictReader(file)
     print(reader.fieldnames)
     for row in reader:

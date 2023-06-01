@@ -11,6 +11,8 @@ namespace API
 		static bool hideMouse;
 		static bool centerMouse;
 
+		static void SetVSync(bool active);
+
 	private:
 		static void EnginePropertiesUpdate();
 		static void ApplyEngineProperties();

@@ -55,14 +55,15 @@ void API::API_VideoPlayer::Stop()
 
 bool API::API_VideoPlayer::IsPlaying()
 {
-    return false;
+    return _videoPlayer->GetVideoPlayer()->isPlaying;
 }
 
 VideoPlayerComponent* API::API_VideoPlayer::GetComponent()
 {
-    return nullptr;
+    return _videoPlayer;
 }
 
 void API::API_VideoPlayer::SetComponent(VideoPlayerComponent* component)
 {
+    _videoPlayer = component;
 }

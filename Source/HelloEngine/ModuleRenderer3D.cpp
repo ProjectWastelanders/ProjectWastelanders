@@ -281,6 +281,8 @@ void ModuleRenderer3D::OnResize(int width, int height)
 
 void ModuleRenderer3D::ToggleVSync(bool isOn)
 {
+	if (isOn == isVSync)
+		return; // Avoid unnecessary calls to SDL_GL functions.
 	isVSync = isOn;
 	SDL_GL_SetSwapInterval(isVSync);
 }

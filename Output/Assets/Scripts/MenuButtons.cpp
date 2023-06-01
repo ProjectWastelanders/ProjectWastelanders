@@ -1,4 +1,5 @@
 #include "MenuButtons.h"
+#include "Audio/S_AudioMixer.h"
 
 HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* script)
 {
@@ -12,6 +13,14 @@ HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* sc
     script->AddDragBoxGameObject("Panel Settings Menu", &classInstance->settingsPanel);
 
     return classInstance;
+}
+
+void MenuButtons::Init()
+{
+    // Initialize Audio quicksave parameters:
+    S_AudioMixer::SetMasterVolume(API_QuickSave::GetFloat("MasterVolume", 1.0f));
+    S_AudioMixer::SetMusicVolume(API_QuickSave::GetFloat("MusicVolume", 100.0f));
+    S_AudioMixer::SetSFXVolume(API_QuickSave::GetFloat("SFXVolume", 100.0f));
 }
 
 void MenuButtons::Start()
@@ -32,7 +41,16 @@ void MenuButtons::Update()
     }
     if (NewGame.OnPress())
     {
+        float tempSFX = API_QuickSave::GetFloat("SFXVolume", 100.0f);
+        float tempMus = API_QuickSave::GetFloat("MusicVolume", 100.0f);
+        float tempMas = API_QuickSave::GetFloat("MasterVolume", 1.0f);
+
         API_QuickSave::ResetAll();
+
+        S_AudioMixer::SetMasterVolume(tempMas);
+        S_AudioMixer::SetMusicVolume(tempMus);
+        S_AudioMixer::SetSFXVolume(tempSFX);
+
         API_QuickSave::SetInt("equipedNormalGun", 2); // starter weapon
 
         API_QuickSave::SetFloat("PlayerPosX", 110.5f);

@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.5244094133377075,
+                "Aspect ratio": 2.0817203521728516,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -11677,422 +11677,6 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 542657871,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    2.6637659072875977,
-                    1.3363304138183594,
-                    9.51931095123291
-                ],
-                "Rotation": [
-                    179.9990997314453,
-                    -50.100196838378906,
-                    179.9985809326172
-                ],
-                "Scale": [
-                    0.31000304222106934,
-                    0.3100000023841858,
-                    0.31000304222106934
-                ],
-                "Type": 1
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "Node",
-        "ParentUID": 2830428646,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 4176734161,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "branch",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1943214596,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 1,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "groot",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 1368531411,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 2,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "eye_r",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 3265838063,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.41575202345848083,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 3,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "eye_l",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 3933068475,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 4,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "teeth_up",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 2815308790,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 5,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "teeth_low",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 3780715630,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 6,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "armor",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 132140869,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    0.003000000026077032,
-                    0.003000000026077032,
-                    0.003000000026077032
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 7,
-                "ModelUID": 979777438,
-                "ShowAABB": false,
-                "ShowFaceNormals": false,
-                "ShowOBB": false,
-                "ShowVertexNormals": false,
-                "Type": 2
-            },
-            {
-                "Enabled": true,
-                "IsInstanced": true,
-                "MaterialUID": 664167925,
-                "Type": 18
-            }
-        ],
-        "FirstOnPrefab": true,
-        "IsStatic": false,
-        "Name": "belt",
-        "ParentUID": 4176734161,
-        "PrefabUID": 0,
-        "Tag": "Default",
-        "UID": 4254459913,
         "UpdateWithBones": false
     },
     {
@@ -31146,10 +30730,10 @@
                         "Weapon Image 2": 848934655
                     },
                     {
-                        "Weapon Image 3": 1286651376
+                        "Weapon Image 3": 1855458553
                     },
                     {
-                        "Weapon Image 4": 1855458553
+                        "Weapon Image 4": 1286651376
                     },
                     {
                         "Proceed Button": 3772303224
@@ -31450,16 +31034,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 2076270976,
+                "MaterialResource": 1464682521,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
                 "hoverBlockImage": 2095830797,
-                "hoverImage": 3614783493,
+                "hoverImage": 4025853218,
                 "idleBlockImage": 11587653,
-                "idleImage": 2076270976,
+                "idleImage": 1464682521,
                 "pressBlockImage": 3438711828,
-                "pressImage": 951282357
+                "pressImage": 2269006382
             }
         ],
         "FirstOnPrefab": false,
@@ -31495,16 +31079,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 1464682521,
+                "MaterialResource": 2076270976,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
                 "hoverBlockImage": 2095830797,
-                "hoverImage": 4025853218,
+                "hoverImage": 3614783493,
                 "idleBlockImage": 11587653,
-                "idleImage": 1464682521,
+                "idleImage": 2076270976,
                 "pressBlockImage": 3438711828,
-                "pressImage": 2269006382
+                "pressImage": 951282357
             }
         ],
         "FirstOnPrefab": false,
@@ -32853,6 +32437,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.699999988079071,
+                    -0.6549999713897705,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.30000001192092896,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2020410856,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "NextImage",
+        "ParentUID": 3655468472,
+        "PrefabUID": 3103935309,
+        "Tag": "UI",
+        "UID": 3928083701,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.0,
                     0.0,
                     -0.30000001192092896
@@ -32893,6 +32517,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    -0.699999988079071,
+                    -0.6549999713897705,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.30000001192092896,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2020410856,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "NextImage",
+        "ParentUID": 36317908,
+        "PrefabUID": 3103935309,
+        "Tag": "UI",
+        "UID": 2095616944,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.0,
                     0.0,
                     -0.30000001192092896
@@ -32925,6 +32589,46 @@
         "PrefabUID": 1730186368,
         "Tag": "UI",
         "UID": 2966601267,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.699999988079071,
+                    -0.6549999713897705,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.30000001192092896,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2020410856,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "NextImage",
+        "ParentUID": 2966601267,
+        "PrefabUID": 3103935309,
+        "Tag": "UI",
+        "UID": 1035718191,
         "UpdateWithBones": false
     },
     {
@@ -35011,6 +34715,1213 @@
         "PrefabUID": 826441827,
         "Tag": "Primitive",
         "UID": 3355148098,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    2.6789188385009766,
+                    0.7086426019668579,
+                    9.576092720031738
+                ],
+                "Rotation": [
+                    -179.99989318847656,
+                    -30.33820343017578,
+                    -179.99989318847656
+                ],
+                "Scale": [
+                    0.36960047483444214,
+                    0.36959996819496155,
+                    0.36960047483444214
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 3316025002,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Groot",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 801174862,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.006239378359168768,
+                    1.2497754096984863,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "RootJoint",
+        "ParentUID": 801174862,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4149761446,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.29950669407844543,
+                    -0.07647254317998886,
+                    -0.06793548166751862
+                ],
+                "Rotation": [
+                    0.20824375748634338,
+                    -5.348461151123047,
+                    0.009726672433316708
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftLeg",
+        "ParentUID": 4149761446,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 976531933,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.02288896217942238,
+                    -0.43578699231147766,
+                    0.06091393157839775
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftKnee",
+        "ParentUID": 976531933,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2092379009,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.011082414537668228,
+                    -0.4392673671245575,
+                    -0.06091393157839775
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftFoot",
+        "ParentUID": 2092379009,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1113207156,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.29950663447380066,
+                    -0.07647545635700226,
+                    -0.06793549656867981
+                ],
+                "Rotation": [
+                    0.21002574265003204,
+                    5.393999099731445,
+                    -0.009893550537526608
+                ],
+                "Scale": [
+                    0.9999999403953552,
+                    0.9999999403953552,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "RightLeg",
+        "ParentUID": 4149761446,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4205518852,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.022888999432325363,
+                    -0.4357840120792389,
+                    0.06091395020484924
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "RightKnee",
+        "ParentUID": 4205518852,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 212459475,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.011082000099122524,
+                    -0.43926700949668884,
+                    -0.06091395020484924
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "RightFoot",
+        "ParentUID": 212459475,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4068708847,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0002393781760474667,
+                    0.24090439081192017,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LowBack",
+        "ParentUID": 4149761446,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1600563898,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    8.673617379884035e-19,
+                    0.26629093289375305,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "MidLowBack",
+        "ParentUID": 1600563898,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4227615234,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -8.673617379884035e-19,
+                    0.2694183886051178,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "MidBack",
+        "ParentUID": 4227615234,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 986378729,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.3011358380317688,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Chest",
+        "ParentUID": 986378729,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 441395964,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.2356715202331543,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Neck",
+        "ParentUID": 441395964,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4232374060,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0004055266035720706,
+                    0.48443588614463806,
+                    2.168404344971009e-19
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Head",
+        "ParentUID": 4232374060,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1588121883,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.0007784087210893631,
+                    -0.2849999964237213,
+                    0.38455188274383545
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "FaceLow",
+        "ParentUID": 1588121883,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1290515414,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.20990510284900665,
+                    0.1336347907781601,
+                    0.3282018303871155
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "EyeLeft",
+        "ParentUID": 1588121883,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 552773069,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.2067835032939911,
+                    0.1336347907781601,
+                    0.335999995470047
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    1.0017911336035468e-05
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "EyeRight",
+        "ParentUID": 1588121883,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1706864689,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.007000000216066837,
+                    -0.10583162307739258,
+                    0.40700000524520874
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "TeethTop",
+        "ParentUID": 1588121883,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 471367140,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.18003185093402863,
+                    0.5740000009536743,
+                    0.37728923559188843
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tree",
+        "ParentUID": 1588121883,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3501512500,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.0007784087210893631,
+                    -0.2404673844575882,
+                    0.39978599548339844
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "TeethBottom",
+        "ParentUID": 1588121883,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 753008835,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.21748389303684235,
+                    -0.00042948973714374006,
+                    0.002635767450556159
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftChest",
+        "ParentUID": 441395964,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 857286559,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.16031895577907562,
+                    -0.0410374253988266,
+                    -0.07931022346019745
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftArm",
+        "ParentUID": 857286559,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2281978923,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.30098509788513184,
+                    -0.6169354319572449,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftElbow",
+        "ParentUID": 2281978923,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2814319143,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.06073595583438873,
+                    -0.2978954017162323,
+                    0.023918546736240387
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "LeftWrist",
+        "ParentUID": 2814319143,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3599978579,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.01911924034357071,
+                    -0.12072213739156723,
+                    0.040842246264219284
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Hand",
+        "ParentUID": 3599978579,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1292090478,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.23007096350193024,
+                    0.10784293711185455,
+                    0.06476078927516937
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Armor",
+        "ParentUID": 2281978923,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2836121414,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.2174839973449707,
+                    -0.00042500285780988634,
+                    0.002635770011693239
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "RightChest",
+        "ParentUID": 441395964,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1077465085,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.30937647819519043,
+                    -0.1269598752260208,
+                    -0.08476877212524414
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "RightArm",
+        "ParentUID": 1077465085,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2592858145,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.020458227023482323,
+                    -0.039000000804662704,
+                    -0.33500000834465027
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BeltBack",
+        "ParentUID": 986378729,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4196429461,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.020458227023482323,
+                    -0.039000000804662704,
+                    0.301535964012146
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BeltFront_$AssimpFbx$_Translation",
+        "ParentUID": 986378729,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3055128472,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.28647613525390625,
+                    90.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.9999999403953552,
+                    0.9999999403953552,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BeltFront_$AssimpFbx$_PreRotation",
+        "ParentUID": 3055128472,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1433949303,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BeltFront",
+        "ParentUID": 1433949303,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 764595938,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.10051380097866058,
+                    1.8784947395324707,
+                    0.045572180300951004
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "polySurface25_$AssimpFbx$_RotationPivot",
+        "ParentUID": 801174862,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 109132873,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.10051380097866058,
+                    -1.8784947395324707,
+                    -0.045572180300951004
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "polySurface25_$AssimpFbx$_RotationPivotInverse",
+        "ParentUID": 109132873,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 142604509,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.10051380097866058,
+                    1.8784947395324707,
+                    0.045572180300951004
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "polySurface25_$AssimpFbx$_ScalingPivot",
+        "ParentUID": 142604509,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2599100033,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.10051380097866058,
+                    -1.8784947395324707,
+                    -0.045572180300951004
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "polySurface25_$AssimpFbx$_ScalingPivotInverse",
+        "ParentUID": 2599100033,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 676249716,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Index inside model": 0,
+                "ModelUID": 4126967164,
+                "RootBoneUuid": 4149761446,
+                "ShowAABB": false,
+                "ShowFaceNormals": false,
+                "ShowOBB": false,
+                "ShowVertexNormals": false,
+                "Type": 9
+            },
+            {
+                "Enabled": true,
+                "IsInstanced": false,
+                "MaterialUID": 1505694717,
+                "Type": 18
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "polySurface25",
+        "ParentUID": 676249716,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4044946180,
         "UpdateWithBones": false
     }
 ]

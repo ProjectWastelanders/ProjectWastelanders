@@ -44,7 +44,11 @@ void ShipInLevel::Start()
 	if (API_QuickSave::GetBool("IsInMiddleOfLevel") == true)
 	{
 		controlPanelShipRef->ShipActivated = true;
-		API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+		
+	}
+	else
+	{
+		gameObject.SetActive(false);
 	}
 	
 

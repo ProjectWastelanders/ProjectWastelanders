@@ -8,6 +8,7 @@
 
 class UIManager;
 class PlayerMove;
+class PlayerStorage;
 
 class PauseMenu : HelloBehavior
 {
@@ -25,6 +26,7 @@ public:
 	API_UIButton mainMenuButton;
 	UIManager* manager;
 	PlayerMove* blockMovement;
-
+	PlayerStorage* saveLevel;
+	string currentLevel;
 };
 

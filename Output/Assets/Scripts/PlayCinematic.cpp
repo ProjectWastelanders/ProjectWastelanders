@@ -12,15 +12,22 @@ HELLO_ENGINE_API_C PlayCinematic* CreatePlayCinematic(ScriptToInspectorInterface
 
 void PlayCinematic::Start()
 {
-	video.GetGameObject().SetActive(true);
-	video.Play();
-	audio.Play();
-	MusicManager* music = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");
-	if (music != nullptr)
+	if (API_QuickSave::GetBool("Cinematic_Comlpeted"))
 	{
-		music->playingCinematic = true;
-		music->mainMusic.Stop();
+		video.GetGameObject().SetActive(true);
+		closeButton.GetGameObject().SetActive(true);
+		audio.GetGameObject().SetActive(true);
+		video.Play();
+		audio.Play();
+		MusicManager* music = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");
+		if (music != nullptr)
+		{
+			music->playingCinematic = true;
+			music->mainMusic.Stop();
+		}
 	}
+
+	
 }
 void PlayCinematic::Update()
 {
@@ -29,6 +36,9 @@ void PlayCinematic::Update()
 		audio.Stop();
 		video.Stop();
 		this->gameObject.SetActive(false);
+
+		API_QuickSave::SetBool("Cinematic_Comlpeted", true);
+
 		MusicManager* music = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");
 		if (music != nullptr)
 		{

@@ -281,7 +281,7 @@ h4 {
 /*=====================================*/
 
 .game-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(img/travel.png);
+    background: linear-gradient(rgba(222, 216, 216, 0.9), rgba(255, 255, 255, 0.9)), url(img/travel.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -558,7 +558,7 @@ header h1 {
 
 .hometeam-section {
     text-align: center;
-    background: linear-gradient(rgba(252, 193, 126, 0.9), rgba(255, 207, 128, 0.9)), url(img/group.png); /*Foto Gamora*/
+    background: linear-gradient(rgba(249, 204, 153, 0.9), rgba(254, 214, 149, 0.9)), url(img/group.png); /*Foto Gamora*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;

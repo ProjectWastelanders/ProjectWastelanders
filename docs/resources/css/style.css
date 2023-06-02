@@ -151,7 +151,7 @@ body {
 }
 
 ul li {
-    list-style: none;
+    list-style-type: circle;
 }
 
 /* Heading Line */
@@ -250,6 +250,7 @@ h4 {
     font-weight: 400;
     text-transform: uppercase;
     margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Paragraph */
@@ -874,6 +875,7 @@ header h1 {
 .team-section h3 {
     color: #27283d;
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .role {
@@ -884,6 +886,17 @@ header h1 {
     font-weight: 600;
     display: inline-block;
 }
+.mail {
+    color: #3c4761;
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+ul li {
+    list-style-type: circle;
+}
 
 .team-section .box p {
     color: #3c4761;
@@ -893,7 +906,8 @@ header h1 {
 
 
 .social-link {
-    margin-top: 4.5rem;
+    margin-top: 2rem;
+    
 }
 
 .social-link ul li {

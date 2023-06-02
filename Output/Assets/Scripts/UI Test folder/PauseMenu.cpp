@@ -38,6 +38,9 @@ void PauseMenu::Update()
 	{
 		switch (saveLevel->levelIndex)
 		{
+		case 0:
+			currentLevel = "SpaceshipHUB_Scene.HScene";
+			break;
 		case 1:
 			currentLevel = "Level1.HScene";
 			break;

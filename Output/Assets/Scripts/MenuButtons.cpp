@@ -63,6 +63,7 @@ void MenuButtons::Update()
         API_QuickSave::SetFloat("PlayerPosZ", -29.2f);
 
         API_QuickSave::SetBool("GameStart", true);
+        API_QuickSave::SetBool("Cinematic_Comlpeted", false);
 
         Scene::LoadScene("Level1.HScene");
 

@@ -12,11 +12,11 @@ HELLO_ENGINE_API_C PlayCinematic* CreatePlayCinematic(ScriptToInspectorInterface
 
 void PlayCinematic::Start()
 {
-	if (API_QuickSave::GetBool("Cinematic_Comlpeted"))
+	if (!API_QuickSave::GetBool("Cinematic_Comlpeted"))
 	{
 		video.GetGameObject().SetActive(true);
-		closeButton.GetGameObject().SetActive(true);
 		audio.GetGameObject().SetActive(true);
+		closeButton.GetGameObject().SetActive(true);
 		video.Play();
 		audio.Play();
 		MusicManager* music = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");

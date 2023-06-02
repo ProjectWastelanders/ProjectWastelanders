@@ -31,7 +31,18 @@ HELLO_ENGINE_API_C HUB_LevelSelect* CreateHUB_LevelSelect(ScriptToInspectorInter
 
 void HUB_LevelSelect::Init()
 {
-	currentSelectedLevel = API_QuickSave::GetInt("currentSelectedLevel"); // Default value = 0 = LVL1
+	for (int i = 0; i < 4; ++i)
+	{
+		std::string name = "level" + std::to_string(i + 1) + "_completed";
+		if (API_QuickSave::GetBool(name, false)) // Find which is the highest completed level
+		{
+			Console::Log("completed!");
+			currentSelectedLevel = i +1;
+			if (currentSelectedLevel > 3)
+				currentSelectedLevel = 3;
+		}
+	}
+
 	for (int i = 0; i < 4; ++i)
 	{
 		floorTexts[i].SetActive(currentSelectedLevel == i);

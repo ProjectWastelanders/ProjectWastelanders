@@ -75,6 +75,14 @@ void BossAttacks::Start()
 
 void BossAttacks::Update()
 {
+
+	if (bossState == BOSS_STATE::KO) {
+		gameObject.GetRigidBody().SetRadius(2.5f);
+	}
+	else {
+		gameObject.GetRigidBody().SetRadius(4.9f);
+	}
+
 	distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 	dt = Time::GetDeltaTime();
 	if (isFireOn == true) {

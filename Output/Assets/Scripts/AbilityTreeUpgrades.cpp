@@ -100,7 +100,7 @@ void AbilityTreeUpgrades::Update()
 
     if (Upgrate1.OnPress() && manteinTime == 0.0f)
     {
-        if (playerStorage->skillPoints >= skillPoints1)
+        if (playerStorage->skillPoints >= skillPoints1 && skillLevel < 1)
         {
             Audio::Event("click");
             manteinTime = 1.0f;
@@ -116,7 +116,7 @@ void AbilityTreeUpgrades::Update()
 
     if (Upgrate2.OnPress() && manteinTime == 0.0f)
     {
-        if (playerStorage->skillPoints >= skillPoints2)
+        if (playerStorage->skillPoints >= skillPoints2 && skillLevel < 2)
         {
             Audio::Event("click");
             manteinTime = 1.0f;
@@ -132,7 +132,7 @@ void AbilityTreeUpgrades::Update()
 
     if (Upgrate3.OnPress() && manteinTime == 0.0f)
     {
-        if (playerStorage->skillPoints >= skillPoints3)
+        if (playerStorage->skillPoints >= skillPoints3 && skillLevel < 3)
         {
             Audio::Event("click");
             manteinTime = 1.0f;
@@ -148,7 +148,7 @@ void AbilityTreeUpgrades::Update()
 
     if (Upgrate4.OnPress() && manteinTime == 0.0f)
     {
-        if (playerStorage->skillPoints >= skillPoints4)
+        if (playerStorage->skillPoints >= skillPoints4 && skillLevel < 4)
         {
             Audio::Event("click");
             manteinTime = 1.0f;
@@ -164,7 +164,7 @@ void AbilityTreeUpgrades::Update()
 
     if (Upgrate5.OnPress() && manteinTime == 0.0f)
     {
-        if (playerStorage->skillPoints >= skillPoints5)
+        if (playerStorage->skillPoints >= skillPoints5 && skillLevel < 5)
         {
             Audio::Event("click");
             manteinTime = 1.0f;

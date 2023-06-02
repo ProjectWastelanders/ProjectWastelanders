@@ -20,5 +20,7 @@ public:
 	API_GameObject mainPanel;
 
 	bool settingsActive;
+
+	string goLevel;
 };
 

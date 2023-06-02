@@ -20,8 +20,7 @@ void PauseMenu::Start()
 {
 	manager = (UIManager*)uiManager.GetScript("UIManager");
 	blockMovement = (PlayerMove*)player.GetScript("PlayerMove");
-	
-	
+	saveLevel = (PlayerStorage*)player.GetScript("PlayerStorage");
 }
 void PauseMenu::Update()
 {
@@ -37,6 +36,25 @@ void PauseMenu::Update()
 	}
 	else if (mainMenuButton.OnPress())
 	{
+		switch (saveLevel->levelIndex)
+		{
+		case 1:
+			currentLevel = "Level1.HScene";
+			break;
+
+		case 2:
+			currentLevel = "Level2.HScene";
+			break;
+
+		case 3:
+			currentLevel = "Level3.HScene";
+			break;
+
+		case 4:
+			currentLevel = "Level4.HScene";
+			break;
+		}
+		API_QuickSave::SetString("WhatLevel", currentLevel);
 		HUB_UIManager::ClosePanel();
 		Time::ChangeTimeScale(1.0f);
 		Scene::LoadScene("MainMenu.HScene");

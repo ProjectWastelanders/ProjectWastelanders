@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 2.0817203521728516,
+                "Aspect ratio": 1.431952714920044,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -21529,7 +21529,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -21561,7 +21561,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -21651,7 +21651,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -21691,12 +21691,12 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.6000000238418579,
+                    -0.4699999988079071,
                     0.30000001192092896,
                     0.0
                 ],
@@ -21714,9 +21714,9 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 142907651,
+                "MaterialResource": 1196243480,
                 "MeshEnabled": true,
-                "State": 1,
+                "State": 0,
                 "Type": 12,
                 "hoverBlockImage": 0,
                 "hoverImage": 142907651,
@@ -21764,12 +21764,12 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.6000000238418579,
+                    -0.5699999928474426,
                     0.0,
                     0.0
                 ],
@@ -21837,12 +21837,12 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.6050000190734863,
+                    -0.5550000071525574,
                     -0.2800000011920929,
                     0.0
                 ],
@@ -21913,12 +21913,12 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.6000000238418579,
+                    -0.4399999976158142,
                     -0.5600000023841858,
                     0.0
                 ],
@@ -21983,7 +21983,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22024,7 +22024,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22052,7 +22052,7 @@
                     1.0102040503330073e-38,
                     8.449026795858589e-39
                 ],
-                "Enabled": false,
+                "Enabled": true,
                 "PositionX": 0.7099999785423279,
                 "PositionY": 0.6100000143051147,
                 "Scale": 0.4000000059604645,
@@ -22088,7 +22088,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22128,12 +22128,12 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
+                    0.5,
                     0.0,
                     0.0
                 ],
@@ -22221,13 +22221,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.10000000149011612,
-                    0.44999998807907104,
+                    -0.07999999821186066,
+                    0.25,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -22288,13 +22288,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.10000000149011612,
-                    0.10000000149011612,
+                    0.0,
+                    0.0,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -22315,9 +22315,9 @@
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
-                "hoverBlockImage": 3102676701,
+                "hoverBlockImage": 697209591,
                 "hoverImage": 2063043809,
-                "idleBlockImage": 4254496951,
+                "idleBlockImage": 920919139,
                 "idleImage": 1654806533,
                 "pressBlockImage": 3629126910,
                 "pressImage": 2541473345
@@ -22355,13 +22355,13 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.10000000149011612,
-                    -0.25,
+                    -0.019999999552965164,
+                    -0.30000001192092896,
                     -0.0010000000474974513
                 ],
                 "Rotation": [
@@ -22382,9 +22382,9 @@
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
-                "hoverBlockImage": 2481370756,
+                "hoverBlockImage": 3155218864,
                 "hoverImage": 1077388208,
-                "idleBlockImage": 530420254,
+                "idleBlockImage": 4269788173,
                 "idleImage": 3754038098,
                 "pressBlockImage": 3629934470,
                 "pressImage": 715887939
@@ -22422,12 +22422,12 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
                 "Position": [
-                    -0.10000000149011612,
+                    -0.18000000715255737,
                     -0.6000000238418579,
                     -0.0010000000474974513
                 ],
@@ -22489,7 +22489,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22529,7 +22529,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22569,7 +22569,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22609,7 +22609,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -22654,7 +22654,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
+                    0.5,
                     0.0,
                     0.0
                 ],
@@ -23163,7 +23163,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
+                    0.5,
                     0.0,
                     0.0
                 ],
@@ -23810,7 +23810,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0,
+                    0.5,
                     0.0,
                     0.0
                 ],

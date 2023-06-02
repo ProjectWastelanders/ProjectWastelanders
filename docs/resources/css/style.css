@@ -879,7 +879,7 @@ header h1 {
 }
 
 .role {
-    color: #30bae7;
+    color: #171c1e;
     text-transform: capitalize;
     margin-top: .5rem;
     font-size: 1.6rem;
@@ -971,7 +971,7 @@ svg.radial-progress text {
 }
 
 svg.web-design circle {
-    stroke: #30bae7;
+    stroke: #171c1e;
 }
 
 svg.html-css circle {
@@ -1075,7 +1075,7 @@ svg.ui-ux circle {
 }
 
 .portfolio-section li:hover a {
-    color: #30bae7;
+    color: #171c1e;
 }
 
 
@@ -1281,5 +1281,5 @@ svg.ui-ux circle {
 }
 
 .footer-section li:hover a {
-    color: #30bae7;
+    color: #171c1e;
 }

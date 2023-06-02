@@ -162,9 +162,9 @@ void Weapon_Select::Update()
             case 1:
                 if (API_QuickSave::GetBool("IsInMiddleOfLevel") == true)
                 {
-                    API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
-                    API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
-                    API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+                    API_QuickSave::SetFloat("PlayerIndicatorPosX", -0.7f);
+                    API_QuickSave::SetFloat("PlayerIndicatorPosY", -0.39f);
+                    
                 }
                 else
                 {

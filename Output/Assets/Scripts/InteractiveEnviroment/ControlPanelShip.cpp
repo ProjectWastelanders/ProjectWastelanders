@@ -33,6 +33,9 @@ void ControlPanelShip::Start()
 }
 void ControlPanelShip::Update()
 {
+
+    
+
 }
 
 void ControlPanelShip::OnCollisionStay(API_RigidBody other)

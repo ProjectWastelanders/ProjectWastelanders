@@ -1,6 +1,7 @@
 #include "ShipInLevel.h"
 #include "../FadeToBlack.h"
 #include "../Player/PlayerStorage.h"
+#include "ControlPanelShip.h"
 
 HELLO_ENGINE_API_C ShipInLevel* CreateShipInLevel(ScriptToInspectorInterface* script)
 {
@@ -10,16 +11,25 @@ HELLO_ENGINE_API_C ShipInLevel* CreateShipInLevel(ScriptToInspectorInterface* sc
 	script->AddDragInt("LVL Index", &classInstance->lvlIndex);
 	script->AddDragBoxTransform("Position To Return", &classInstance->positionToReturn);
 	script->AddDragBoxGameObject("Player", &classInstance->playerGO);
+	script->AddDragBoxGameObject("ControlPanelShipGO", &classInstance->controlPanelShipGO);
 
 	return classInstance;
 }
 
+
+void ShipInLevel::Init()
+{
+	gameObject.SetActive(true);
+}
 
 void ShipInLevel::Start()
 {
 
 	fadeToBlackRef = (FadeToBlack*)fadeToBlackGO.GetScript("FadeToBlack");
 	if (!fadeToBlackRef) Console::Log("fadeToBlackRef Missing in Shipinlevel.");
+
+	controlPanelShipRef = (ControlPanelShip*)controlPanelShipGO.GetScript("ControlPanelShip");
+	if (!controlPanelShipRef) Console::Log("fadeToBlackRef Missing in StartingShipinlevel.");
 
 	playerStorageRef = (PlayerStorage*)playerGO.GetScript("PlayerStorage");
 	if (!playerStorageRef) Console::Log("playerStorageRef Missing in Shipinlevel.");
@@ -31,12 +41,18 @@ void ShipInLevel::Start()
 
 	playerStorageRef->levelIndex = lvlIndex;
 
+	if (API_QuickSave::GetBool("IsInMiddleOfLevel") == true)
+	{
+		controlPanelShipRef->ShipActivated = true;
+		API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+	}
+	
+
 }
 	
 void ShipInLevel::Update()
 {
-
-
+	
 
 }
 
@@ -49,10 +65,10 @@ void ShipInLevel::OnCollisionEnter(API::API_RigidBody other)
 		API_QuickSave::SetFloat("PlayerPosX", positionToReturn.GetGlobalPosition().x );
 		API_QuickSave::SetFloat("PlayerPosY", positionToReturn.GetGlobalPosition().y);
 		API_QuickSave::SetFloat("PlayerPosZ", positionToReturn.GetGlobalPosition().z);
-		//API_QuickSave::SetFloat("PlayerIndicatorPosX", -0.7f);
-		//API_QuickSave::SetFloat("PlayerIndicatorPosY", -0.39f);
+		API_QuickSave::SetFloat("PlayerIndicatorPosX", -0.7f);
+		API_QuickSave::SetFloat("PlayerIndicatorPosY", -0.39f);
 		API_QuickSave::SetBool("level1_completed", true);
-		
+		//API_QuickSave::SetBool("IsInMiddleOfLevel", false);
 	}
 
 }

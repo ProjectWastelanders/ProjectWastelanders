@@ -27,6 +27,7 @@ void ReachTheSpaceship::Start()
     currentHp = maxHp;
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
     if (!playerStorage) Console::Log("Storage Missing in ReachSpaceShip Script.");
+   // EnableMision();
 }
 
 void ReachTheSpaceship::Update()
@@ -45,7 +46,7 @@ void ReachTheSpaceship::Update()
         enebledEnemies[i].SetActive(false);
     }*/
 
-    if (enabled)
+   /* if (enabled)
     {
         cooldownHit += Time::GetDeltaTime();
         if (cooldownHit >= timeHit)
@@ -53,7 +54,7 @@ void ReachTheSpaceship::Update()
             currentHp -= damagePerProjectile*8;
             cooldownHit = 0;
         }
-    }
+    }*/
 }
 
 void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)

@@ -27,6 +27,18 @@
     <!-- Started Header Menu -->
 
     <header id="home">
+        <style>
+           .video-overlay::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        </style>       
         <nav class="stroke">
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -35,13 +47,14 @@
                 <li><a href="./production.html">production</a>
             </ul>
         </nav>
+        <div class="video-overlay"></div>
         <div class="content">
             <img class="logo_2" src="resources/img/title.png" alt="logo_2">
             <h1>An amazing top-down shooter based
                 on The Guardians of the Galaxy!
             </h1>
         </div>
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted loop id="myVideo" style="z-index: -2;">
             <!-- Poner aqui enlace al video -->
             <source src="resources/img/Beta Trailer.mp4" type="video/mp4">
         </video>

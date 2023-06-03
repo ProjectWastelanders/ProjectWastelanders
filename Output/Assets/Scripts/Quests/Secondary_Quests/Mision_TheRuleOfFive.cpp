@@ -23,7 +23,7 @@ HELLO_ENGINE_API_C Mision_TheRuleOfFive* CreateMision_TheRuleOfFive(ScriptToInsp
 
 void Mision_TheRuleOfFive::Start()
 {
-
+    misionCompleted = API_QuickSave::GetBool("Mision_TheRuleOfFive");
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in GetDiviner Script.");
 
@@ -41,7 +41,6 @@ void Mision_TheRuleOfFive::Update()
     if (misionCompleted)
     {
         PrintDialog(Dialog);
-        Console::Log("MISSION 4 COMPLETED CONGRATULATIONS!");
     }
     else
     {

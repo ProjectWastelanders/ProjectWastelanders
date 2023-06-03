@@ -17,7 +17,6 @@ public:
 	API_UIText goldPrint_text;
 
 	int levels = 0;
-	int casetes = 0;
-	
+
 };
 

@@ -558,7 +558,7 @@ header h1 {
 
 .hometeam-section {
     text-align: center;
-    background: linear-gradient(rgba(249, 204, 153, 0.9), rgba(254, 214, 149, 0.9)), url(img/group.png); /*Foto Gamora*/
+    background: linear-gradient(rgba(255, 237, 200, 0.9), rgba(248, 227, 185, 0.9)), url(img/group.png); /*Foto Gamora*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -586,7 +586,7 @@ header h1 {
 }
 
 .hometeam-section h2::after {
-    background: #14a58c;
+    background: #3c4761;
 }
 
 .hometeam-icon {
@@ -630,6 +630,10 @@ header h1 {
     text-align: center;
 }
 
+.productionpage-section .little-description {
+    color: #15171c;
+}
+
 .productionpage-section h1 {
     color: #ffffff;
     margin-left: 5rem;
@@ -643,7 +647,7 @@ header h1 {
 }
 
 .productionpage-section h2::after {
-    background: #14a58c;
+    background: #3c4761;
 }
 
 .productionpage-section h3 {
@@ -712,7 +716,7 @@ header h1 {
 }
 
 .maingame-section h2::after {
-    background: #14a58c;
+    background: #3c4761;
 }
 
 .maingame-icon {
@@ -778,7 +782,7 @@ header h1 {
 }
 
 .production-section h2::after {
-    background: #14a58c;
+    background: #3c4761;
 }
 
 .production-icon {
@@ -819,7 +823,7 @@ header h1 {
 }
 
 .team-section h2::after {
-    background: #9dbacf;
+    background: #3c4761;
 }
 
 .team-member {

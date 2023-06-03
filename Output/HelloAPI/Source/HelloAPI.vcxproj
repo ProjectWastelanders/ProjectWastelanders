@@ -313,6 +313,7 @@
 		<ClCompile Include="../../Assets/Scripts/Thanos/ThanosRecolor.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/StartingShipOnLevel.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Groot/HUB_Groot.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
@@ -493,6 +494,7 @@
 		<ClInclude Include="../../Assets/Scripts/Thanos/ThanosRecolor.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/StartingShipOnLevel.h" />
 		<ClInclude Include="../../Assets/Scripts/Groot/HUB_Groot.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

@@ -26972,10 +26972,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Max HP": 100.0
+                        "Max HP": 9999.0
                     },
                     {
-                        "Current HP": 100.0
+                        "Current HP": 9999.0
                     },
                     {
                         "Upgraded Max HP": 125.0
@@ -27011,10 +27011,10 @@
                         "Camera": 1929231542
                     },
                     {
-                        "Max HP": 100.0
+                        "Max HP": 9999.0
                     },
                     {
-                        "Current HP": 100.0
+                        "Current HP": 9999.0
                     },
                     {
                         "Upgraded Max HP": 125.0
@@ -50827,133 +50827,6 @@
             {
                 "Enabled": true,
                 "Position": [
-                    3.3952178955078125,
-                    2.9376468658447266,
-                    -0.22520828247070313
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Ambient Intensity": 150.0,
-                "Color": [
-                    0.37622785568237305,
-                    0.30653268098831177,
-                    1.0
-                ],
-                "Diffuse Intensity": 1.5,
-                "Distance": 12.5,
-                "Enabled": true,
-                "Exp": 1.0,
-                "Linear": 8.800000190734863,
-                "Type": 21
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Light",
-        "ParentUID": 3745744724,
-        "PrefabUID": 3460288881,
-        "Tag": "Default",
-        "UID": 669151075,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    3.1156463623046875,
-                    1.9954595565795898,
-                    0.028751373291015625
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 13,
-                "ParticleModules": {
-                    "ModuleEmission": {
-                        "Enable": true,
-                        "ParticlesPerSecond": 30
-                    },
-                    "ModuleMain": {
-                        "BeginScale": [
-                            0.4000000059604645,
-                            0.4000000059604645,
-                            0.4000000059604645
-                        ],
-                        "Delay": 0.0,
-                        "Duration": 0.0,
-                        "EndScale": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ],
-                        "LifeTime": 1.0,
-                        "Looping": true,
-                        "PlayOnAwake": true,
-                        "Speed": [
-                            0.0,
-                            0.75,
-                            0.0
-                        ],
-                        "SpeedVariation": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "acceleration": [
-                            0.0,
-                            1.0,
-                            0.0
-                        ]
-                    },
-                    "ShapeModule": {
-                        "ShapeType": 0
-                    }
-                },
-                "ParticleVectorSize": 60,
-                "ResourceTextUID": 4294056424,
-                "Type": 6
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Particles",
-        "ParentUID": 3745744724,
-        "PrefabUID": 3460288881,
-        "Tag": "Default",
-        "UID": 3751700159,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
                     -133.14100646972656,
                     11.046029090881348,
                     40.85100173950195
@@ -54243,133 +54116,6 @@
             {
                 "Enabled": true,
                 "Position": [
-                    3.3952178955078125,
-                    2.9376468658447266,
-                    -0.22520828247070313
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Ambient Intensity": 150.0,
-                "Color": [
-                    0.37622785568237305,
-                    0.30653268098831177,
-                    1.0
-                ],
-                "Diffuse Intensity": 1.5,
-                "Distance": 12.5,
-                "Enabled": true,
-                "Exp": 1.0,
-                "Linear": 8.800000190734863,
-                "Type": 21
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Light",
-        "ParentUID": 1644086255,
-        "PrefabUID": 3460288881,
-        "Tag": "Default",
-        "UID": 2050720955,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    3.1156463623046875,
-                    1.9954595565795898,
-                    0.028751373291015625
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 13,
-                "ParticleModules": {
-                    "ModuleEmission": {
-                        "Enable": true,
-                        "ParticlesPerSecond": 30
-                    },
-                    "ModuleMain": {
-                        "BeginScale": [
-                            0.4000000059604645,
-                            0.4000000059604645,
-                            0.4000000059604645
-                        ],
-                        "Delay": 0.0,
-                        "Duration": 0.0,
-                        "EndScale": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ],
-                        "LifeTime": 1.0,
-                        "Looping": true,
-                        "PlayOnAwake": true,
-                        "Speed": [
-                            0.0,
-                            0.75,
-                            0.0
-                        ],
-                        "SpeedVariation": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "acceleration": [
-                            0.0,
-                            1.0,
-                            0.0
-                        ]
-                    },
-                    "ShapeModule": {
-                        "ShapeType": 0
-                    }
-                },
-                "ParticleVectorSize": 60,
-                "ResourceTextUID": 4294056424,
-                "Type": 6
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Particles",
-        "ParentUID": 1644086255,
-        "PrefabUID": 3460288881,
-        "Tag": "Default",
-        "UID": 4235721719,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
                     -109.08399963378906,
                     11.046029090881348,
                     51.40999984741211
@@ -54967,133 +54713,6 @@
         "PrefabUID": 3460288881,
         "Tag": "Torch",
         "UID": 172471392,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    3.3952178955078125,
-                    2.9376468658447266,
-                    -0.22520828247070313
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Ambient Intensity": 150.0,
-                "Color": [
-                    0.37622785568237305,
-                    0.30653268098831177,
-                    1.0
-                ],
-                "Diffuse Intensity": 1.5,
-                "Distance": 12.5,
-                "Enabled": true,
-                "Exp": 1.0,
-                "Linear": 8.800000190734863,
-                "Type": 21
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Light",
-        "ParentUID": 172471392,
-        "PrefabUID": 3460288881,
-        "Tag": "Default",
-        "UID": 3197190112,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    3.1156463623046875,
-                    1.9954595565795898,
-                    0.028751373291015625
-                ],
-                "Rotation": [
-                    -0.0,
-                    0.0,
-                    -0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Index inside model": 0,
-                "ModelUID": 13,
-                "ParticleModules": {
-                    "ModuleEmission": {
-                        "Enable": true,
-                        "ParticlesPerSecond": 30
-                    },
-                    "ModuleMain": {
-                        "BeginScale": [
-                            0.4000000059604645,
-                            0.4000000059604645,
-                            0.4000000059604645
-                        ],
-                        "Delay": 0.0,
-                        "Duration": 0.0,
-                        "EndScale": [
-                            0.0,
-                            0.0,
-                            0.0
-                        ],
-                        "LifeTime": 1.0,
-                        "Looping": true,
-                        "PlayOnAwake": true,
-                        "Speed": [
-                            0.0,
-                            0.75,
-                            0.0
-                        ],
-                        "SpeedVariation": [
-                            1.0,
-                            1.0,
-                            1.0
-                        ],
-                        "acceleration": [
-                            0.0,
-                            1.0,
-                            0.0
-                        ]
-                    },
-                    "ShapeModule": {
-                        "ShapeType": 0
-                    }
-                },
-                "ParticleVectorSize": 60,
-                "ResourceTextUID": 4294056424,
-                "Type": 6
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Particles",
-        "ParentUID": 172471392,
-        "PrefabUID": 3460288881,
-        "Tag": "Default",
-        "UID": 597705055,
         "UpdateWithBones": false
     },
     {
@@ -131187,6 +130806,115 @@
         "PrefabUID": 670145093,
         "Tag": "Default",
         "UID": 3369644333,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -156.27342224121094,
+                    14.815265655517578,
+                    45.37349319458008
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "ThanosCinematicGO": 910076150
+                    },
+                    {
+                        "JumperGO": 4196205447
+                    },
+                    {
+                        "ThanosLoopGO": 256946375
+                    },
+                    {
+                        "Light": 2711440952
+                    },
+                    {
+                        "ThanosCinematicGO": 910076150
+                    },
+                    {
+                        "JumperGO": 4196205447
+                    },
+                    {
+                        "ThanosLoopGO": 256946375
+                    },
+                    {
+                        "Light": 2711440952
+                    }
+                ],
+                "Script Resource": 536240287,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "BossJumperLogic",
+        "ParentUID": 1957540640,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 84844127,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.04139232635498047,
+                    -0.05252838134765625
+                ],
+                "Rotation": [
+                    -0.0,
+                    0.0,
+                    -0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Ambient Intensity": 6.0,
+                "Color": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "Diffuse Intensity": 0.25,
+                "Distance": 5.25,
+                "Enabled": true,
+                "Exp": 0.0,
+                "Linear": 1.5499999523162842,
+                "Type": 21
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Light",
+        "ParentUID": 84844127,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2711440952,
         "UpdateWithBones": false
     }
 ]

@@ -26972,10 +26972,10 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Max HP": 9999.0
+                        "Max HP": 100.0
                     },
                     {
-                        "Current HP": 9999.0
+                        "Current HP": 100.0
                     },
                     {
                         "Upgraded Max HP": 125.0
@@ -27011,10 +27011,10 @@
                         "Camera": 1929231542
                     },
                     {
-                        "Max HP": 9999.0
+                        "Max HP": 100.0
                     },
                     {
-                        "Current HP": 9999.0
+                        "Current HP": 100.0
                     },
                     {
                         "Upgraded Max HP": 125.0

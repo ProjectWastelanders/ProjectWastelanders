@@ -26,25 +26,28 @@ void Jumper::Start()
 void Jumper::Update()
 {
 	//IterateJump
-	if (isJumping) {
-		API_Vector3 pos;
-		pos.x = Lerp(initialPos.x, finalPos.x, timeJumping / duration);
-		pos.z = Lerp(initialPos.z, finalPos.z, timeJumping / duration);
+	if (!Inactive)
+	{
+		if (isJumping) {
+			API_Vector3 pos;
+			pos.x = Lerp(initialPos.x, finalPos.x, timeJumping / duration);
+			pos.z = Lerp(initialPos.z, finalPos.z, timeJumping / duration);
 
 
-		float yMult = ((timeJumping / duration) - 0.5) * 2;
-		pos.y = Lerp(initialPos.y, finalPos.y, timeJumping / duration) - (yMult * yMult * height) + height;
+			float yMult = ((timeJumping / duration) - 0.5) * 2;
+			pos.y = Lerp(initialPos.y, finalPos.y, timeJumping / duration) - (yMult * yMult * height) + height;
 
-		player.GetTransform().SetPosition(pos);
-		timeJumping += Time::GetDeltaTime();
+			player.GetTransform().SetPosition(pos);
+			timeJumping += Time::GetDeltaTime();
 
-		//Finished Jumping
-		if (timeJumping > duration) {
-			isJumping = false;
-			
-			//Stun
-			if (playerMoveScript != nullptr)
-				playerMoveScript->openingChest = false;
+			//Finished Jumping
+			if (timeJumping > duration) {
+				isJumping = false;
+
+				//Stun
+				if (playerMoveScript != nullptr)
+					playerMoveScript->openingChest = false;
+			}
 		}
 	}
 }
@@ -65,6 +68,7 @@ float Jumper::Lerp(float a, float b, float t)
 void Jumper::SetupJump()
 {
 	if (isJumping) return;
+	if (Inactive) return;
 
 	initialPos = player.GetTransform().GetGlobalPosition();
 	finalPos = otherJumper.GetGlobalPosition();

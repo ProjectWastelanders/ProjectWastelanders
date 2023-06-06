@@ -88,7 +88,7 @@ public:
 
     // player reference
     PlayerStats* playerStats;
-    float ultGain = 0;
+    float ultGain = 15;
 
     float _tAnimDie;
     float _coldAnimDie;

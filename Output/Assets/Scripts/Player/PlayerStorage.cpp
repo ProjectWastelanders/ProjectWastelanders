@@ -1,5 +1,7 @@
 #include "PlayerStorage.h"
 #include "../UI Test folder/PlayerIndicator.h"
+#include "../InteractiveEnviroment/EnemyManager.h"
+#include "../InteractiveEnviroment/BoxManager.h"
 HELLO_ENGINE_API_C PlayerStorage* CreatePlayerStorage(ScriptToInspectorInterface* script)
 {
     PlayerStorage* classInstance = new PlayerStorage();
@@ -7,6 +9,8 @@ HELLO_ENGINE_API_C PlayerStorage* CreatePlayerStorage(ScriptToInspectorInterface
     script->AddDragInt("Level Index", &classInstance->levelIndex);
     script->AddDragBoxGameObject("Map Indicator", &classInstance->playerIndicatorGO);
     script->AddDragBoxGameObject("Hud BluePrint Indicator GO", &classInstance->hud_blueprintsGO);
+    script->AddDragBoxGameObject("Enemy Manager GO", &classInstance->enemyManagerGO);
+    script->AddDragBoxGameObject("Box Manager GO", &classInstance->boxManagerGO);
 
     return classInstance;
 }
@@ -62,6 +66,17 @@ void PlayerStorage::Start()
 
     hud_blueprints = (HUD_BluePrints*)hud_blueprintsGO.GetScript("HUD_BluePrints");
     if (hud_blueprints == nullptr) Console::Log("HUD_BluePrints missing in PlayerStorage.");
+    
+    hud_Alert_Prints = (Blue_Print_Screen_Alert*)hud_blueprintsGO.GetScript("Blue_Print_Screen_Alert");
+    if (hud_blueprints == nullptr) Console::Log("Blue_Print_Screen_Alert missing in PlayerStorage.");
+
+    enemyManager = (EnemyManager*)enemyManagerGO.GetScript("EnemyManager");
+    if (enemyManager == nullptr) Console::Log("EnemyManager missing in PlayerStorage.");
+    else enemyManager->LoadEnemiesState(levelIndex);
+
+    boxManager = (BoxManager*)boxManagerGO.GetScript("BoxManager");
+    if (boxManager == nullptr) Console::Log("BoxManager missing in PlayerStorage.");
+    else boxManager->LoadBoxesState(levelIndex);
 }
 
 void PlayerStorage::Update()
@@ -142,6 +157,12 @@ void PlayerStorage::SaveData()
         Console::Log("Wrong level index", API::Console::MessageType::ERR);
         break;
     }
+
+    //enemies
+    if (enemyManager) enemyManager->SaveEnemiesState(levelIndex);
+
+    //boxes
+    if (boxManager) boxManager->SaveBoxesState(levelIndex);
 }
 
 void PlayerStorage::SaveDataFromChest(int chestIndex, int chestContent)

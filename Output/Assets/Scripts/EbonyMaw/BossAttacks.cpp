@@ -54,6 +54,8 @@ HELLO_ENGINE_API_C BossAttacks* CreateBossAttacks(ScriptToInspectorInterface* sc
 
 void BossAttacks::Start()
 {
+
+
 	for (int i = 0; i < 15; i++) {
 		rockPositions[i] = rocks[i].GetTransform().GetGlobalPosition();
 		rocks[i].GetRigidBody().SetVelocity({ 0, 0, 0 });
@@ -69,12 +71,32 @@ void BossAttacks::Start()
 	takeobjTimer = 0;
 	explosionWave1.GetTransform().Translate(0, -10, 0);
 	orbitingRocks.SetActive(false);
-	rocks[1].GetParticleSystem().Stop();
-	rocks[1].GetParticleSystem().StopEmitting();
+
+	for (int i = 16; i < 20; i++) 
+	{
+		rocks[i].GetParticleSystem().Stop();
+		rocks[i].GetParticleSystem().StopEmitting(); 
+	}
 }
 
 void BossAttacks::Update()
 {
+
+	if (bLoop->canTakeDamage == true)
+	{
+		for (int i = 16; i < 20; i++)
+		{ 
+		rocks[i].GetParticleSystem().Stop();
+		rocks[i].GetParticleSystem().StopEmitting();
+		} 
+	}
+	else if (bLoop->phase > 0)
+	{
+		for (int i = 16; i < 20; i++) 
+		{ 
+			rocks[i].GetParticleSystem().Play(); 
+		} 
+	}
 
 	if (bossState == BOSS_STATE::KO) {
 		gameObject.GetRigidBody().SetRadius(2.5f);
@@ -158,6 +180,7 @@ void BossAttacks::Update()
 					bossPosition[3] = { gameObject.GetTransform().GetGlobalPosition().x + 6.0f,gameObject.GetTransform().GetGlobalPosition().y + 13.0f,gameObject.GetTransform().GetGlobalPosition().z };
 					bossPosition[4] = { gameObject.GetTransform().GetGlobalPosition().x - 6.0f,gameObject.GetTransform().GetGlobalPosition().y + 13.0f,gameObject.GetTransform().GetGlobalPosition().z };
 
+
 					for (int i = 0; i < numRocks[attackType]; i++) {
 						Seek(&rocks[currentRock[i]], bossPosition[i], speed / 3, i, false, 60.0f);
 					}			
@@ -208,6 +231,14 @@ void BossAttacks::Update()
 							dir[i] = player.GetTransform().GetGlobalPosition() - rocks[currentRock[i]].GetTransform().GetGlobalPosition();
 						}
 						if (currentTimeAttack > timeAttack[i] && hasReachedTarget[i] == false) Seek(&rocks[currentRock[i]], playerPosition[i], speed / 2, i, false, 60.0f);
+
+						else
+						{
+							for (int i = 0; i < numRocks[attackType]; i++)
+							{
+								rocks[currentRock[i]].GetTransform().Rotate(6 * dt, 12 * dt, 10 * dt);
+							}
+						}
 					}
 
 					if (currentTimeAttack >= timeAttack[numRocks[attackType]]) {
@@ -234,26 +265,14 @@ void BossAttacks::Update()
 				break;
 			case 4:
 				explosionTime += Time::GetDeltaTime();
-				if (explosionTime < 0.5 && distSA < 15.0 && explosionWave1HasArrived == false) {
+
+				if (explosionTime > 1.5 && explosionTime < 1.6 && distSA < 15.0 && explosionWave1HasArrived == false) {
 					pStats->TakeDamage(50,0);
 					explosionWave1HasArrived = true;
-				}
-				if (explosionTime >= 0.5 && distSA > 15.0 && distSA < 30.0 && explosionWave2HasArrived == false) {
-
-					pStats->TakeDamage(0,0);
-
-					API_Vector3 normalizedvector = boss.GetTransform().GetGlobalPosition() - player.GetTransform().GetGlobalPosition();
-					float x = normalizedvector.x * normalizedvector.x;
-					float y = 0;
-					float z = normalizedvector.z * normalizedvector.z;
-					float sum = x + y + z;
-					API_Vector3 direction = { normalizedvector.x / sum, 0, normalizedvector.z / sum };
-					pMove->RecieveImpulse(-direction, 0.25f, 50);
-
-					//KnockBack
 					explosionWave2HasArrived = true;
 				}
-				if (explosionTime > 0.6) {
+				
+				if (explosionTime > 1.6) {
 					bLoop->exploting = false;
 					explosionWave1.SetActive(false);
 					explosionWave1.GetTransform().Translate(0, -10, 0);
@@ -295,8 +314,9 @@ void BossAttacks::Update()
 							groundFire.GetGameObject().GetTransform().SetPosition(lastPlayerPosition);
 							groundFire.GetGameObject().SetActive(true);
 							groundFire.Play();
-							rocks[1].GetParticleSystem().Stop();
-							rocks[1].GetParticleSystem().StopEmitting();
+						
+
+
 
 							isFireOn = true;
 						}
@@ -541,4 +561,6 @@ void BossAttacks::OrbitingRocks(API_GameObject* orbitingRock1, API_GameObject* o
 	orbitingRock3->GetTransform().SetPosition(0, 0, radius);
 	orbitingRock4->GetTransform().SetPosition(0, 0, -radius);
 	orbitingRocks.GetTransform().Rotate(0, rotationSpeed, 0);
+
+	orbitingRocks.GetTransform().SetPosition(boss.GetTransform().GetGlobalPosition());
 }

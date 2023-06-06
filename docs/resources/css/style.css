@@ -71,7 +71,7 @@ nav {
     left: 0;
     width: 100%;
     padding: 1rem 0;
-    background: #2a363b;
+    background: #363636;
     box-shadow: 0 .2rem .5rem rgba(255, 255, 251, .9);
     z-index: 9999;
 }
@@ -311,8 +311,8 @@ h4 {
 
 .btn-game:link,
 .btn-game:visited {
-    background: #d63c3c;
-    border-bottom: #c84040;
+    background: #815f5f;
+    border-bottom: #926060;
     margin-top: 5rem;
     margin-left: 6rem;
 
@@ -489,7 +489,7 @@ header h1 {
     left: 0;
     width: 100%;
     padding: 1rem 0;
-    background: #2a363b;
+    background: #363636;
     box-shadow: 0 .2rem .5rem rgba(255, 255, 251, .9);
     z-index: 9999;
 }
@@ -670,7 +670,7 @@ header h1 {
 
 .btn-productionpage:link,
 .btn-productionpage:visited {
-    background: #815f5f;
+   background: #815f5f;
     border-bottom: #926060;
     margin-top: 5rem;
     margin-right: 20rem;
@@ -687,7 +687,7 @@ header h1 {
 
 .maingame-section {
     text-align: center;
-    background: linear-gradient(rgba(230, 230, 230, 0.9), rgba(247, 147, 30, 0.9)), url(img/peter.png);
+    background: linear-gradient(rgba(255, 237, 200, 0.9), rgba(248, 227, 185, 0.9)), url(img/peter.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -1265,7 +1265,7 @@ svg.ui-ux circle {
 /*=====================================*/
 
 .footer-section {
-    background: #2a363b;
+    background: #363636;
     padding: 3rem 0;
     text-align: center;
     border-top: .1rem solid rgba(255, 255, 255, 0.4);

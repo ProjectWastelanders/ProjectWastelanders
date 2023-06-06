@@ -98,6 +98,8 @@ public:
 
     API_Agent enemyAgent;
 
+    bool isTank;
+
 private:
 
     float _coldStun;
@@ -113,5 +115,6 @@ private:
     float _coldHitColor;
 
     bool _hitShader;
+
 };
 

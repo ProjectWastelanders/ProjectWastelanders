@@ -136,7 +136,10 @@ void Enemy::Update()
     }
     else
     {
-        enemyShader.SetColor(1, 1, 1, 255);
+        if (!isTank)
+        {
+            enemyShader.SetColor(1, 1, 1, 255);
+        }
     }
 }
 

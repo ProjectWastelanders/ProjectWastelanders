@@ -4,6 +4,7 @@
 #include "Macro.h"
 #include "../Scripts/Player/PlayerStorage.h"
 #include "API/API.h"
+#include "UI Test folder/UITutorial.h"
 
 class OpenMenuInterruptor;
 class PlayerMove;
@@ -39,5 +40,9 @@ public:
 	uint song3 = 3;
 
 	vector <bool> casetes_levels;
+
+	API_GameObject tutorialScreens[2];
+
+	UITutorial* tutorial = nullptr;
 };
 

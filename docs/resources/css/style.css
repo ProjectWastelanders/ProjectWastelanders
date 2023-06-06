@@ -126,9 +126,7 @@ nav.fill ul li a:after {
     height: 1px;
 }
 
-nav.stroke ul li a:hover:after {
-    width: 100%;
-}
+
 
 /* Default Font Change */
 

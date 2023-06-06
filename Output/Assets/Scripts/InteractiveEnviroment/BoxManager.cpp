@@ -53,7 +53,7 @@ void BoxManager::SaveBoxesState(int levelIndex)
     for (int i = 0; i < boxesAmount; i++)
     {
         std::string name = aux + std::to_string(i);
-        API_QuickSave::SetBool(name.c_str(), boxes[i].IsAlive());
+        API_QuickSave::SetBool(name.c_str(), boxes[i].IsActive());
     }
 }
 

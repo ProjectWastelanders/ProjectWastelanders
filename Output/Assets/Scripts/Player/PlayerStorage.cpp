@@ -9,6 +9,8 @@ HELLO_ENGINE_API_C PlayerStorage* CreatePlayerStorage(ScriptToInspectorInterface
     script->AddDragInt("Level Index", &classInstance->levelIndex);
     script->AddDragBoxGameObject("Map Indicator", &classInstance->playerIndicatorGO);
     script->AddDragBoxGameObject("Hud BluePrint Indicator GO", &classInstance->hud_blueprintsGO);
+    script->AddDragBoxGameObject("Enemy Manager GO", &classInstance->enemyManagerGO);
+    script->AddDragBoxGameObject("Box Manager GO", &classInstance->boxManagerGO);
 
     return classInstance;
 }
@@ -68,11 +70,11 @@ void PlayerStorage::Start()
     hud_Alert_Prints = (Blue_Print_Screen_Alert*)hud_blueprintsGO.GetScript("Blue_Print_Screen_Alert");
     if (hud_blueprints == nullptr) Console::Log("Blue_Print_Screen_Alert missing in PlayerStorage.");
 
-    enemyManager = (EnemyManager*)hud_blueprintsGO.GetScript("EnemyManager");
+    enemyManager = (EnemyManager*)enemyManagerGO.GetScript("EnemyManager");
     if (enemyManager == nullptr) Console::Log("EnemyManager missing in PlayerStorage.");
     else enemyManager->LoadEnemiesState(levelIndex);
 
-    boxManager = (BoxManager*)hud_blueprintsGO.GetScript("BoxManager");
+    boxManager = (BoxManager*)boxManagerGO.GetScript("BoxManager");
     if (boxManager == nullptr) Console::Log("BoxManager missing in PlayerStorage.");
     else boxManager->LoadBoxesState(levelIndex);
 }

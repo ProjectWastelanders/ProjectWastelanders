@@ -68,17 +68,17 @@ void EnemyManager::Update()
 
 void EnemyManager::SaveEnemiesState(int levelIndex)
 {
-    std::string aux = "lvl" + std::to_string(levelIndex) + "enemy";
+    std::string aux = "lvl" + std::to_string(levelIndex) + "_enemy";
     for (int i = 0; i < enemiesAmount; i++)
     {
         std::string name = aux + std::to_string(i);
-        API_QuickSave::SetBool(name.c_str(), enemies[i].IsAlive());
+        API_QuickSave::SetBool(name.c_str(), enemies[i].IsActive());
     }
 }
 
 void EnemyManager::LoadEnemiesState(int levelIndex)
 {
-    std::string aux = "lvl" + std::to_string(levelIndex) + "enemy";
+    std::string aux = "lvl" + std::to_string(levelIndex) + "_enemy";
     for (int i = 0; i < enemiesAmount; i++)
     {
         std::string name = aux + std::to_string(i);

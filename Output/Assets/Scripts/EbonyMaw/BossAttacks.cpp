@@ -54,7 +54,11 @@ HELLO_ENGINE_API_C BossAttacks* CreateBossAttacks(ScriptToInspectorInterface* sc
 
 void BossAttacks::Start()
 {
-
+	for (int i = 5; i < 14; i++)
+	{
+		rocks[i].GetParticleSystem().Stop();
+		rocks[i].GetParticleSystem().StopEmitting();
+	}
 
 	for (int i = 0; i < 15; i++) {
 		rockPositions[i] = rocks[i].GetTransform().GetGlobalPosition();
@@ -259,6 +263,13 @@ void BossAttacks::Update()
 				SpecialAttack();
 				if (currentTimeAttack >= specialTimeAttack[numRocks[attackType]] && bossState == BOSS_STATE::SPECIALATTACK) {
 					bossState = BOSS_STATE::IDLE;
+
+					for (int i = 5; i < 14; i++)
+					{ 
+						rocks[i].GetParticleSystem().Stop();
+						rocks[i].GetParticleSystem().StopEmitting();
+					}
+
 					specialAttackCooldown = 0.0f;
 					attacking = false;
 				}
@@ -415,6 +426,10 @@ void BossAttacks::Update()
 							specialAttackCooldown = 0.0f;
 						}
 					}
+					/*
+					attackType = 3;
+					specialAttackCooldown = 60.0f;
+					*/
 					break;
 
 				default:
@@ -425,6 +440,11 @@ void BossAttacks::Update()
 				}
 				else if (attackType == 3) {
 					bossState = BOSS_STATE::SPECIALATTACK;
+
+					for (int i = 5; i < 14; i++)
+					{ 
+						rocks[i].GetParticleSystem().Play();
+					}
 				}
 
 				if (bLoop->exploting == true) {
@@ -540,7 +560,7 @@ void BossAttacks::SpecialAttack()
 		}
 		if (currentTimeAttack > specialTimeAttack[i] && hasReachedTarget[i + 5] == false) 
 		{
-			Seek(&rocks[currentRock[i + 5]], playerPosition[i + 5], speed / 2, i + 5, false, 80.0f);
+			Seek(&rocks[currentRock[i + 5]], playerPosition[i + 5], speed / 4, i + 5, false, 80.0f);
 
 			if (bLoop->animState != BossLoop::AnimationState::SPECIAL2)
 			{

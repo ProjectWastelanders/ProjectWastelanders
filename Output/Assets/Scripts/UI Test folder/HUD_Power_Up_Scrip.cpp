@@ -52,23 +52,6 @@ void HUD_Power_Up_Scrip::Update()
             }
         }
     }
-
-    if (Input::GetKey(KeyCode::KEY_0) == KeyState::KEY_DOWN)
-    {
-        AddPowerUp(PowerUp_Type::SPEED_INCREASE, 5);
-    }
-    if (Input::GetKey(KeyCode::KEY_9) == KeyState::KEY_DOWN)
-    {
-        AddPowerUp(PowerUp_Type::FIRERATE_INCREASE, 5);
-    }
-    if (Input::GetKey(KeyCode::KEY_8) == KeyState::KEY_DOWN)
-    {
-        AddPowerUp(PowerUp_Type::SHIELD, 1);
-    }
-    if (Input::GetKey(KeyCode::KEY_7) == KeyState::KEY_DOWN)
-    {
-        AddPowerUp(PowerUp_Type::SLOW_TIME, 5);
-    }
 }
 
 void HUD_Power_Up_Scrip::RealocatePowerUps(int removedIndex)

@@ -28,11 +28,19 @@ HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToIn
 	script->AddDragBoxGameObject("Casete 3 GO", &classInstance->casetes[2]);
 
 	script->AddDragBoxGameObject("Player", &classInstance->playerStorageGO);
+
+	script->AddDragBoxGameObject("Tutorial Screen 1", &classInstance->tutorialScreens[0]);
+	script->AddDragBoxGameObject("Tutorial Screen 2", &classInstance->tutorialScreens[1]);
 	return classInstance;
 }
 
 void Coleccionable_buttons::Start()
 {
+	if (!API_QuickSave::GetBool("Colectables_Tutorial", true))
+		tutorial = new UITutorial(tutorialScreens, 2);
+	else
+		tutorial = nullptr;
+
 	for (int i = 0; i < 3; i++)
 	{
 		casetes[i].SetActive(false);
@@ -64,6 +72,19 @@ void Coleccionable_buttons::Start()
 
 void Coleccionable_buttons::Update()
 {
+	if (tutorial != nullptr)
+	{	
+		if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
+		{
+			if (!tutorial->NextScreen())
+			{
+				tutorial->Unable();
+				delete tutorial;
+				tutorial = nullptr;
+			}
+		}
+		return;
+	}
 
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN /* && coleccionable_panel.IsActive()*/)
 	{

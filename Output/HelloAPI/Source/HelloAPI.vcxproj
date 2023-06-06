@@ -320,6 +320,7 @@
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/ActiveEnmiesLvl3.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
@@ -507,6 +508,7 @@
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/ActiveEnmiesLvl3.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

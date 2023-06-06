@@ -317,6 +317,8 @@
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
@@ -501,6 +503,8 @@
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

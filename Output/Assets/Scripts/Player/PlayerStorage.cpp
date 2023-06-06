@@ -1,5 +1,7 @@
 #include "PlayerStorage.h"
 #include "../UI Test folder/PlayerIndicator.h"
+#include "../InteractiveEnviroment/EnemyManager.h"
+#include "../InteractiveEnviroment/BoxManager.h"
 HELLO_ENGINE_API_C PlayerStorage* CreatePlayerStorage(ScriptToInspectorInterface* script)
 {
     PlayerStorage* classInstance = new PlayerStorage();
@@ -65,6 +67,14 @@ void PlayerStorage::Start()
     
     hud_Alert_Prints = (Blue_Print_Screen_Alert*)hud_blueprintsGO.GetScript("Blue_Print_Screen_Alert");
     if (hud_blueprints == nullptr) Console::Log("Blue_Print_Screen_Alert missing in PlayerStorage.");
+
+    enemyManager = (EnemyManager*)hud_blueprintsGO.GetScript("EnemyManager");
+    if (enemyManager == nullptr) Console::Log("EnemyManager missing in PlayerStorage.");
+    else enemyManager->LoadEnemiesState(levelIndex);
+
+    boxManager = (BoxManager*)hud_blueprintsGO.GetScript("BoxManager");
+    if (boxManager == nullptr) Console::Log("BoxManager missing in PlayerStorage.");
+    else boxManager->LoadBoxesState(levelIndex);
 }
 
 void PlayerStorage::Update()
@@ -145,6 +155,12 @@ void PlayerStorage::SaveData()
         Console::Log("Wrong level index", API::Console::MessageType::ERR);
         break;
     }
+
+    //enemies
+    if (enemyManager) enemyManager->SaveEnemiesState(levelIndex);
+
+    //boxes
+    if (boxManager) boxManager->SaveBoxesState(levelIndex);
 }
 
 void PlayerStorage::SaveDataFromChest(int chestIndex, int chestContent)

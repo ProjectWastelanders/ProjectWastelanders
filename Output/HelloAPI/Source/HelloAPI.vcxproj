@@ -316,6 +316,7 @@
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.cpp" />
 		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
@@ -499,6 +500,7 @@
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.h" />
 		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

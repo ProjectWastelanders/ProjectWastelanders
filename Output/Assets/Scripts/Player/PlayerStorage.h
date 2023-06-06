@@ -3,6 +3,7 @@
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
 #include "../UI Test folder/HUD_BluePrints.h"
+#include "../UI Test folder/Blue_Print_Screen_Alert.h"
 #include "API/API.h"
 
 class PlayerIndicator;
@@ -36,6 +37,7 @@ public:
     //BluePrints
     API_GameObject hud_blueprintsGO;
     HUD_BluePrints* hud_blueprints;
+    Blue_Print_Screen_Alert* hud_Alert_Prints;
 
 };
 

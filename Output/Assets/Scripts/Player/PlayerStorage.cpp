@@ -62,6 +62,9 @@ void PlayerStorage::Start()
 
     hud_blueprints = (HUD_BluePrints*)hud_blueprintsGO.GetScript("HUD_BluePrints");
     if (hud_blueprints == nullptr) Console::Log("HUD_BluePrints missing in PlayerStorage.");
+    
+    hud_Alert_Prints = (Blue_Print_Screen_Alert*)hud_blueprintsGO.GetScript("Blue_Print_Screen_Alert");
+    if (hud_blueprints == nullptr) Console::Log("Blue_Print_Screen_Alert missing in PlayerStorage.");
 }
 
 void PlayerStorage::Update()

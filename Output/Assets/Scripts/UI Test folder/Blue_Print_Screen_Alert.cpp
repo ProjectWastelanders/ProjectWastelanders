@@ -21,62 +21,54 @@ void Blue_Print_Screen_Alert::Start()
 }
 void Blue_Print_Screen_Alert::Update()
 {
-	//if (timer_Active < 1.8f)
-	//{
-	//	prints_Alert.SetOpacity(1);
-	//
-	//	if (timer_Active < 1)
-	//	{
-	//		prints_Alert.SetOpacity(opacity_Alert = opacity_Alert - 0.005);
-	//	}
-	//	if (opacity_Alert == 0)
-	//	{
-	//		timer_Active = 1.8;
-	//	}
-	//
-	//}
-	
-	if (active == true)
+	if (timer_Active < 1.8f)
 	{
-		prints_Alert.SetOpacity(opacity_Alert = opacity_Alert + 0.05);
-	
-		if (opacity_Alert >= 1)
+		timer_Active -= Time::GetDeltaTime();
+		if (timer_Active < 1.8 && active == true)
 		{
-			prints_Alert.SetOpacity(opacity_Alert = opacity_Alert - 0.005);
+			prints_Alert.SetOpacity(opacity_Alert = opacity_Alert + 0.05);
 		}
-		else if (opacity_Alert == 0)
+	
+		if (timer_Active < 1.3)
 		{
 			active = false;
+			prints_Alert.SetOpacity(opacity_Alert = opacity_Alert - 0.007);
+		}
+
+		if (opacity_Alert <= 0)
+		{
+			timer_Active = 1.8;
 		}
 	
 	}
 }
 
-void Blue_Print_Screen_Alert::Swap_Texture(int Print)
+void Blue_Print_Screen_Alert::Swap_BluePrint_Texture(int Print)
 {
-	//timer_Active -= Time::GetDeltaTime();;
+	timer_Active -= Time::GetDeltaTime();
 	active = true;
+	//opacityFull = true;
 	switch (Print)
 	{
-	case 1:
+	case 0:
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[0]);
 		break;																	
-	case 2:																		
+	case 1:																		
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[1]);
 		break;																	
-	case 3:																		
+	case 2:																		
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[2]);
 		break;																	
-	case 4:																		
+	case 3:																		
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[3]);
 		break;																	
-	case 5:																		
+	case 4:																		
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[4]);
 		break;																	
-	case 6:																		
+	case 5:																		
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[5]);
 		break;																	
-	case 7:																		
+	case 6:																		
 		prints_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures[6]);
 		break;
 	default:

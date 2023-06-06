@@ -166,6 +166,11 @@ void Enemy::TakingDmgState()
 
 void Enemy::TakeDamage(float damage, float resistanceDamage)
 {
+
+    isHit = true;
+    enemyShader.SetColor(255, 0, 0, 0.5);
+    if (!_hitShader) _hitShader = true;
+
     if (currentHp <= 0.0f)
         return;
 
@@ -273,12 +278,12 @@ void Enemy::OnCollisionEnter(API::API_RigidBody other)
             if (meleeScript->enemState == EnemyMeleeMovement::States::ATTACKIG && meleeIsAtking) pStats->TakeDamage(10, 0), meleeIsAtking = false;
         }
     }
-    if (detectionTag == "Projectile")
+    /*if (detectionTag == "Projectile")
     {
         isHit = true;
         enemyShader.SetColor(255, 0, 0, 0.5);
         if (!_hitShader) _hitShader = true;
-    }
+    }*/
 }
 
 void Enemy::ActiveSlow(float q, float time)

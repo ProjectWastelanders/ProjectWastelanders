@@ -114,6 +114,7 @@ public:
     API_ParticleSystem walkParticles;
     bool playingWalkParticles = false;
     API_ParticleSystem shootParticles;
+    API_ParticleSystem dashParticles;
 
     // skills
     API_GameObject playerStatsGO;

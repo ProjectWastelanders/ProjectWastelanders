@@ -40,6 +40,7 @@ HELLO_ENGINE_API_C PlayerMove* CreatePlayerMove(ScriptToInspectorInterface* scri
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
     script->AddDragBoxParticleSystem("Walk Particles", &classInstance->walkParticles);
     script->AddDragBoxParticleSystem("Shoot Particles", &classInstance->shootParticles);
+    script->AddDragBoxParticleSystem("Dash Particles", &classInstance->dashParticles);
     script->AddCheckBox("On HUB", &classInstance->onHUB);
     return classInstance;
 }
@@ -280,6 +281,7 @@ float PlayerMove::Lerp(float a, float b, float time)
 void PlayerMove::DashSetup(bool isBuffered)
 {
     isDashing = true;
+    dashParticles.Play()
 
     // cooldown
     dashesAvailable--;

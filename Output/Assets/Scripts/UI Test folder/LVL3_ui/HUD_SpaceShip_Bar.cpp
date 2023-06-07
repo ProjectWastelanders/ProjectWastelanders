@@ -18,7 +18,7 @@ HELLO_ENGINE_API_C HUD_SpaceShip_Bar* CreateHUD_SpaceShip_Bar(ScriptToInspectorI
 void HUD_SpaceShip_Bar::Start()
 {
     ship = (ReachTheSpaceship*)shipGO.GetScript("ReachTheSpaceship");
-    if (!ship ) Console::Log("Missing BossStats on Boss_Bar_HUD Script.");
+    if (!ship ) Console::Log("Missing ReachTheSpaceship on HUD_SpaceShip_Bar Script.");
 
     //shipHpBar.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(hpShipTex);
 }

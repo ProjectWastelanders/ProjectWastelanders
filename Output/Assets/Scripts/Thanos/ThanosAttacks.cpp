@@ -389,8 +389,9 @@ void ThanosAttacks::Update()
 					if (beamThrown[i] == false) {
 						beamThrown[i] = true;
 						beams[i].SetActive(true);
+						beams[i].GetParticleSystem().Play();
 						beamPositions[i] = beamTargets[i].GetTransform().GetGlobalPosition();
-						angle = Rotate(beamPositions[i], angle, &beams[i]);
+						angle = Rotate(beamPositions[i], angle+180, &beams[i]);
 					}
 					if (i == 1 || i == 2) {
 						BulletSeek(&beams[i], beamPositions[i], beamSpeed * 1.2f , i);
@@ -401,6 +402,7 @@ void ThanosAttacks::Update()
 			}
 
 			if (beamTime > beamTimes[4]) {
+
 				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
 				thanosAnimationPlayer.SetLoop(true);
 				thanosAnimationPlayer.Play();
@@ -409,6 +411,9 @@ void ThanosAttacks::Update()
 				beamTime = 0.0f;
 				for (int i = 0; i < 4; i++) {
 					beamThrown[i] = false;
+
+					beams[i].GetParticleSystem().Stop();
+					beams[i].GetParticleSystem().StopEmitting();
 				}
 
 			}
@@ -736,6 +741,7 @@ void ThanosAttacks::BulletSeek(API_GameObject* seeker, API_Vector3 target, float
 
 	if (direction.x < 0.9 && direction.x > -0.9 && direction.y < 0.9 && direction.y && direction.z < 0.9 && direction.z) {
 		seeker->SetActive(false);
+
 	}
 
 }
@@ -751,7 +757,7 @@ float ThanosAttacks::Rotate(API_Vector3 target, float _angle, API_GameObject* ro
 	normLookDir.y = lookDir.y / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
 	_angle = 0;
 	_angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
-	rotator->GetTransform().SetRotation(0, -_angle - 90, 0);
+	rotator->GetTransform().SetRotation(0, -_angle, 0);
 
 	return _angle;
 }

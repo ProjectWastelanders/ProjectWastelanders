@@ -113,6 +113,9 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxGameObject("Column 9", &classInstance->columns[9]);
 	script->AddDragBoxGameObject("Column 10", &classInstance->columns[10]);
 	script->AddDragBoxGameObject("Column 11", &classInstance->columns[11]);
+
+
+	script->AddDragBoxGameObject("Explosion3D", &classInstance->areaImpact);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
@@ -155,6 +158,7 @@ void ThanosAttacks::Start()
 		meteorsPosition[i] = meteors[i].GetTransform().GetGlobalPosition();
 	}
 	explosionWave.GetTransform().Translate(0, 0, 0);
+	areaImpact.GetTransform().SetPosition(0, -1000, 0);
 
 }
 void ThanosAttacks::Update()
@@ -200,6 +204,8 @@ void ThanosAttacks::Update()
 			thanosState = THANOS_STATE::PULSE;
 			explosionWave.GetTransform().Translate(0, 10, 0);
 
+			areaImpact.SetActive(true);
+			areaImpact.GetTransform().SetPosition(0, -1, 0);
 			thanosAnimationPlayer.ChangeAnimation(thanosPulseAnimation);
 			thanosAnimationPlayer.SetLoop(false);
 			thanosAnimationPlayer.Play();
@@ -239,7 +245,11 @@ void ThanosAttacks::Update()
 			isAttacking = true;
 			distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
-			explosionTime += Time::GetDeltaTime();
+			explosionTime += Time::GetDeltaTime();				
+			areaImpact.GetTransform().Scale(3.5f * Time::GetDeltaTime());
+			areaImpact.GetTransform().Rotate(4000 * Time::GetDeltaTime(), 2600 * Time::GetDeltaTime(), 5800 * Time::GetDeltaTime());
+
+
 			//explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
 			explosionWave.GetParticleSystem().Play();
@@ -275,6 +285,9 @@ void ThanosAttacks::Update()
 				thanosAnimationPlayer.SetLoop(false);
 				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
+				areaImpact.GetTransform().SetScale(1, 1, 1);
+				areaImpact.GetTransform().SetPosition(0, -1000, 0);
+				areaImpact.SetActive(false);
 			}
 			break;
 		case THANOS_STATE::IDLE:
@@ -701,6 +714,9 @@ void ThanosAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed
 	if (direction.x < 0.15 && direction.x > -0.15 && direction.y < 0.15 && direction.y && direction.z < 0.15 && direction.z) {
 		if (tLoop->phase == 2) {
 			Console::Log("telodoyyyy");
+
+			areaImpact.SetActive(true);
+			areaImpact.GetTransform().SetPosition(0, -1, 0);
 			thanosState = THANOS_STATE::PULSE;
 			isAttacking = false;
 			finalSword = true;

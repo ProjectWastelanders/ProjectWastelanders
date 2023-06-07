@@ -34,7 +34,7 @@ HELLO_ENGINE_API_C EnemyTank* CreateEnemyTank(ScriptToInspectorInterface* script
 	script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
 
 	script->AddDragBoxAnimationPlayer("Animation", &classInstance->animationPlayer);
-
+	script->AddDragBoxParticleSystem("Heal Particles", &classInstance->healParticles);
 	//script->AddDragBoxShaderComponent("Material", &classInstance->material);
 
 	return classInstance;
@@ -288,6 +288,8 @@ void EnemyTank::BlinkHealth()
 			isBlinking = true;
 		}
 	}
+
+	
 }
 
 void EnemyTank::ReturnToZone() {
@@ -674,6 +676,7 @@ void EnemyTank::Recovering()
 		if (healthRestoreCounter >= healthRestoreCooldown) {
 			if (isRestoringHealth == false) {
 				isRestoringHealth = true;
+				healParticles.Play();
 			}
 		}
 	}
@@ -690,6 +693,7 @@ void EnemyTank::Recovering()
 			hasToRestoreHealth = false;
 			isRestoringHealth = false;
 			healthRestoreCounter = 0;
+			healParticles.Stop();
 		}
 	}
 }
@@ -708,7 +712,6 @@ float EnemyTank::TakeDamageTank(float life, float damage)
 		isRestoringHealth = false;
 		healthRestoreCounter = 0;
 	}
-
 
 	return life;
 }

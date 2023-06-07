@@ -73,12 +73,15 @@ void RockDivider::OnCollisionEnter(API::API_RigidBody other)
 
 	if (detectionName == "Player") {
 		PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-		if (whichRockAmI < 16 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING) {	
+		if (whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING) {	
 			pStats->TakeDamage(bAttacks->rockDmg, 0);
 			bAttacks->ReturnRock(&gameObject, whichRockAmI, false);
 		}
 		else if (whichRockAmI > 15){
 			pStats->TakeDamage(bAttacks->orbitingRockDmg, 0);
+		}
+		if (whichRockAmI > 5 && whichRockAmI < 15 && bAttacks->bossState == BossAttacks::BOSS_STATE::SPECIALATTACK) {
+			pStats->TakeDamage(bAttacks->rockDmg, 0);
 		}
 	}
 	else if (detectionTag == "Wall" && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {

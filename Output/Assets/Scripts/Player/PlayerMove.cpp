@@ -281,7 +281,7 @@ float PlayerMove::Lerp(float a, float b, float time)
 void PlayerMove::DashSetup(bool isBuffered)
 {
     isDashing = true;
-    dashParticles.Play()
+    dashParticles.Play();
 
     // cooldown
     dashesAvailable--;

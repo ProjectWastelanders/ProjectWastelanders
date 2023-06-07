@@ -50,7 +50,7 @@ HELLO_ENGINE_API_C BossLoop* CreateBossLoop(ScriptToInspectorInterface* script)
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
     //TEMPORAL FOR ALPHA 1
 
-    //script->AddDragBoxGameObject("BLOOD", &classInstance->blood);
+    script->AddDragBoxGameObject("BLOOD", &classInstance->blood);
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     return classInstance;
 
@@ -66,7 +66,7 @@ void BossLoop::Start()
 
     draxDialog = false;
 
-    //blood.GetTransform().SetPosition(0, -1000, 0);
+    blood.GetTransform().SetPosition(0, -1000, 0);
 
 }
 
@@ -74,11 +74,11 @@ void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
-    //if (damaged == true)
-   // {
+    if (damaged == true)
+    {
        
 
-        /*
+        
          bloodTimer += Time::GetDeltaTime();
          if (bloodTimer > 0.2f) 
         {
@@ -88,9 +88,9 @@ void BossLoop::Update()
            
            
         }
-        */
         
-  //  }
+        
+    }
     if (!battle)
     {
         rockShield.SetActive(false);
@@ -246,13 +246,13 @@ void BossLoop::TakeDamage(float damage)
     
     if (canTakeDamage == true) {
 
-        /*
+        
         
          bloodTimer = 0.0f;
         blood.GetTransform().SetPosition(0,0, 0);
 
         damaged = true;
-        */
+       
        
 
         hp -= damage;

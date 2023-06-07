@@ -31,7 +31,7 @@ public:
     API_GameObject cover11;
     API_GameObject cover12;
 
-    //API_GameObject blood;
+    API_GameObject blood;
 
     //TEMPORAL FOR ALPHA 1
     API_GameObject finalTextPanel;
@@ -46,8 +46,8 @@ public:
     float shield[3] = { 500.0f,750.0f,1000.0f };
     float maxShield[3] = { 500.0f,750.0f,1000.0f };
 
-    //bool damaged = false;
-    //float bloodTimer = 0;
+    bool damaged = false;
+    float bloodTimer = 0;
 
     float hp = 1500.0f;
 

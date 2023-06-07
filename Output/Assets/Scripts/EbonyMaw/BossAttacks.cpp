@@ -56,6 +56,8 @@ HELLO_ENGINE_API_C BossAttacks* CreateBossAttacks(ScriptToInspectorInterface* sc
 
 void BossAttacks::Start()
 {
+	areaImpact.GetTransform().SetPosition(0, -1000, 0);
+
 	for (int i = 5; i < 14; i++)
 	{
 		rocks[i].GetParticleSystem().Stop();
@@ -297,7 +299,9 @@ void BossAttacks::Update()
 					attacking = false;
 
 					areaImpact.GetTransform().SetScale(1,1,1);
+					areaImpact.GetTransform().SetPosition(0, -1000, 0);
 					areaImpact.SetActive(false);
+					
 				}
 				break;
 			case 5: 
@@ -468,6 +472,7 @@ void BossAttacks::Update()
 					explosionWave1.GetTransform().Translate(0, 10, 0);
 					explosionWave1.GetParticleSystem().Play();
 					areaImpact.SetActive(true);
+					areaImpact.GetTransform().SetPosition(0, -1, 0);
 				}
 
 				if (attackType == 5) {

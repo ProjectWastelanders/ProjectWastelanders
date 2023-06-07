@@ -21,7 +21,7 @@ public:
 
 	API_UICheckBox checkBox[3];
 
-	API_GameObject coleccionable_panel;
+	API_UIInput coleccionable_panel;
 
 	API_UIImage level_selected;
 

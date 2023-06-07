@@ -10,7 +10,7 @@ HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToIn
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	script->AddDragBoxGameObject("interruptor_Colec_GO", &classInstance->interruptor_Colec_GO);
 
-	script->AddDragBoxGameObject("Colleccionable Panel", &classInstance->coleccionable_panel);
+	script->AddDragBoxUIInput("Colleccionable Panel", &classInstance->coleccionable_panel);
 
 
 	script->AddDragBoxUICheckBox("CheckBox 1", &classInstance->checkBox[0]);
@@ -36,10 +36,18 @@ HELLO_ENGINE_API_C Coleccionable_buttons* CreateColeccionable_buttons(ScriptToIn
 
 void Coleccionable_buttons::Start()
 {
-	if (!API_QuickSave::GetBool("Colectables_Tutorial", true))
+	if (!API_QuickSave::GetBool("Colectables_Tutorial", false))
+	{
 		tutorial = new UITutorial(tutorialScreens, 2);
-	else
+		tutorialScreens[0].SetActive(true);
+		tutorialScreens[1].SetActive(false);
+	}
+	else 
+	{
 		tutorial = nullptr;
+		tutorialScreens[0].SetActive(false);
+		tutorialScreens[1].SetActive(false);
+	}
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -74,6 +82,8 @@ void Coleccionable_buttons::Update()
 {
 	if (tutorial != nullptr)
 	{	
+		coleccionable_panel.SetEnable(false);
+		Console::Log("Turotial");
 		if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
 		{
 			if (!tutorial->NextScreen())
@@ -81,8 +91,12 @@ void Coleccionable_buttons::Update()
 				tutorial->Unable();
 				delete tutorial;
 				tutorial = nullptr;
+				coleccionable_panel.SetEnable(true);
+				API_QuickSave::SetBool("Colectables_Tutorial", true);
 			}
+			
 		}
+
 		return;
 	}
 

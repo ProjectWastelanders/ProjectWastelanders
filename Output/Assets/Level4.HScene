@@ -6227,7 +6227,7 @@
                         "Speed move X": 2.0
                     },
                     {
-                        "Time Stoped X": 0.0
+                        "Time Stoped X": 1.0
                     },
                     {
                         "Distance move Y": 0.0
@@ -6290,7 +6290,7 @@
                         "Speed move X": 2.0
                     },
                     {
-                        "Time Stoped X": 0.0
+                        "Time Stoped X": 1.0
                     },
                     {
                         "Distance move Y": 0.0
@@ -36637,7 +36637,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 806284914,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -36817,7 +36817,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 806284914,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -36997,7 +36997,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 806284914,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -37177,7 +37177,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 806284914,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -116511,7 +116511,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -116641,7 +116641,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -116771,7 +116771,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -116901,7 +116901,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117031,7 +117031,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117193,7 +117193,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117323,7 +117323,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117453,7 +117453,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117583,7 +117583,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117713,7 +117713,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -117875,7 +117875,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -118005,7 +118005,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -118135,7 +118135,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -118265,7 +118265,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -118395,7 +118395,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -118525,7 +118525,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {
@@ -118655,7 +118655,7 @@
             {
                 "Enabled": true,
                 "IsInstanced": true,
-                "MaterialUID": 526244848,
+                "MaterialUID": 0,
                 "Type": 18
             },
             {

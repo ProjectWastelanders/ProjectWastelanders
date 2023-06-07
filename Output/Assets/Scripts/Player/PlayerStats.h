@@ -89,7 +89,7 @@ public:
     API_GameObject playerGO;
     PlayerStorage* storage;
     void SaveInStorage(int index);
-    void SaveChestData(int chestContent, int chestIndex);
+    void SaveChestData(int chestContent, int chestIndex, bool saveChest);
 
     // move
     PlayerMove* playerMove;

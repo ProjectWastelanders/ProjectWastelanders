@@ -38,5 +38,14 @@ public:
     bool timerTutorial = false;
     bool hideChest = false;
     float showTutorial = 0;
+
+    bool isDestroyed;
+
+    API_AnimationPlayer animationPlayer1;
+    API_AnimationPlayer animationPlayer2;
+    API_AnimationPlayer animationPlayer3;
+
+    uint breakAnim;
+
 };
 

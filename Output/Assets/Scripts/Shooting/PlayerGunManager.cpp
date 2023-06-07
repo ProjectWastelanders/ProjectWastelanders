@@ -50,7 +50,9 @@ void PlayerGunManager::Start()
     int equipedNormalGun = API_QuickSave::GetInt("equipedNormalGun");
     if (equipedNormalGun < -1 || equipedNormalGun > 4) equipedNormalGun = -1;
     GetGun(2, equipedNormalGun);
-    GetGun(3, -1);
+    int equipedSpecialGun = API_QuickSave::GetInt("equipedNormalGun");
+    if (equipedSpecialGun < 5 || equipedSpecialGun > 6) equipedSpecialGun = -1;
+    GetGun(3, equipedSpecialGun);
     //GetGun(1, gunOnHandIndex1);
     //GetGun(2, gunOnHandIndex2);
     //GetGun(3, gunOnHandIndex3);
@@ -60,23 +62,39 @@ void PlayerGunManager::Start()
     {
     case 1: // semiautomatic
         playerStats->maxLaserAmmo = 100;
-        playerStats->laserAmmo = 100;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 100);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
         break;
     case 2: // automatic
         playerStats->maxLaserAmmo = 350;
-        playerStats->laserAmmo = 350;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 350);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
         break;
     case 3: // burst
         playerStats->maxLaserAmmo = 100;
-        playerStats->laserAmmo = 100;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 100);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
         break;
     case 4: // shotgun
         playerStats->maxLaserAmmo = 100;
-        playerStats->laserAmmo = 100;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 100);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+        break;
+    default:
+        break;
+    }
+
+    switch (equipedSpecialGun)
+    {
+    case 5: // flame
+        playerStats->maxLaserAmmo = 600;
+        playerStats->laserAmmo = API_QuickSave::GetInt("specialAmmo", 600);
+        if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::FLAMETHROWER);
+        break;
+    case 6: // rico
+        playerStats->maxLaserAmmo = 50;
+        playerStats->laserAmmo = API_QuickSave::GetInt("specialAmmo", 50);
+        if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::RICOCHET);
         break;
     default:
         break;

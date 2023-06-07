@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.6191247701644897,
+                "Aspect ratio": 1.6805555820465088,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -21822,18 +21822,6 @@
                     },
                     {
                         "AbilityButton": 1137202544
-                    },
-                    {
-                        "Description 1": 6080464
-                    },
-                    {
-                        "Description 2": 3286644510
-                    },
-                    {
-                        "Description 3": 762428728
-                    },
-                    {
-                        "Description 4": 197488503
                     }
                 ],
                 "Script Resource": 792501851,
@@ -21895,18 +21883,6 @@
                     },
                     {
                         "AbilityButton": 4046148656
-                    },
-                    {
-                        "Description 1": 886436084
-                    },
-                    {
-                        "Description 2": 2362856287
-                    },
-                    {
-                        "Description 3": 4085303271
-                    },
-                    {
-                        "Description 4": 2653277242
                     }
                 ],
                 "Script Resource": 792501851,
@@ -21968,21 +21944,6 @@
                     },
                     {
                         "AbilityButton": 2895536623
-                    },
-                    {
-                        "Description 1": 3020994421
-                    },
-                    {
-                        "Description 2": 1888929368
-                    },
-                    {
-                        "Description 3": 855224226
-                    },
-                    {
-                        "Description 4": 2425893789
-                    },
-                    {
-                        "Description 5": 3732501824
                     }
                 ],
                 "Script Resource": 792501851,
@@ -22044,15 +22005,6 @@
                     },
                     {
                         "AbilityButton": 1570224826
-                    },
-                    {
-                        "Description 1": 1387223882
-                    },
-                    {
-                        "Description 2": 2835375609
-                    },
-                    {
-                        "Description 3": 2861744828
                     }
                 ],
                 "Script Resource": 792501851,
@@ -22074,9 +22026,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.7599999904632568,
-                    -0.05999999865889549,
-                    0.0
+                    0.0,
+                    -0.10000000149011612,
+                    -0.699999988079071
                 ],
                 "Rotation": [
                     0.0,
@@ -22084,29 +22036,28 @@
                     0.0
                 ],
                 "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    0.4000000059604645,
+                    0.6700000166893005,
+                    0.5
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "MaterialResource": 0,
-                "MeshEnabled": false,
-                "Type": 16,
-                "listButtons": [
-                    0
-                ]
+                "FillImage": 1.0,
+                "MaterialResource": 3496466602,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "SkillPoints Amount",
+        "Name": "Rotator",
         "ParentUID": 2937841997,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 820025857,
+        "UID": 2089604895,
         "UpdateWithBones": false
     },
     {
@@ -22115,8 +22066,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.8100000023841858,
-                    0.49000000953674316,
+                    -0.05000000074505806,
+                    0.5400000214576721,
                     0.0
                 ],
                 "Rotation": [
@@ -22139,8 +22090,8 @@
                     8.449026795858589e-39
                 ],
                 "Enabled": false,
-                "PositionX": -1.5699999332427979,
-                "PositionY": 0.4300000071525574,
+                "PositionX": -0.05000000074505806,
+                "PositionY": 0.5400000214576721,
                 "Scale": 0.4000000059604645,
                 "Text": "0",
                 "Type": 17
@@ -22167,7 +22118,7 @@
         "FirstOnPrefab": false,
         "IsStatic": false,
         "Name": "SkillPoints Amount (T)",
-        "ParentUID": 820025857,
+        "ParentUID": 2937841997,
         "PrefabUID": 3943484743,
         "Tag": "UI",
         "UID": 2314891765,
@@ -22247,10 +22198,28 @@
                         "Current Panel": 726755960
                     },
                     {
+                        "Current Bought Panel": 2754418861
+                    },
+                    {
                         "Tree Index": 0
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Blocked ability Image": 3105619378
+                    },
+                    {
+                        "Bought upgrade 1": 2495736329
+                    },
+                    {
+                        "Bought upgrade 2": 3121954369
+                    },
+                    {
+                        "Bought upgrade 3": 3319397572
+                    },
+                    {
+                        "Bought upgrade 4": 1403119791
                     }
                 ],
                 "Script Resource": 477126565,
@@ -22305,18 +22274,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 6080464
-                    },
-                    {
-                        "Next Description": 3286644510
-                    },
-                    {
-                        "Description 4": 762428728
-                    },
-                    {
-                        "Description 5": 197488503
-                    },
-                    {
                         "Button": 2761944280
                     }
                 ],
@@ -22328,7 +22285,7 @@
         "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 726755960,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 2500914594,
         "Tag": "UI",
         "UID": 2761944280,
         "UpdateWithBones": false
@@ -22372,18 +22329,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 3286644510
-                    },
-                    {
-                        "Next Description": 762428728
-                    },
-                    {
-                        "Previous Description": 6080464
-                    },
-                    {
-                        "Description 4": 197488503
-                    },
-                    {
                         "Button": 3636875960
                     }
                 ],
@@ -22395,7 +22340,7 @@
         "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 726755960,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 2757001629,
         "Tag": "UI",
         "UID": 3636875960,
         "UpdateWithBones": false
@@ -22439,18 +22384,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 762428728
-                    },
-                    {
-                        "Next Description": 197488503
-                    },
-                    {
-                        "Previous Description": 3286644510
-                    },
-                    {
-                        "Description 4": 6080464
-                    },
-                    {
                         "Button": 1734210071
                     }
                 ],
@@ -22462,7 +22395,7 @@
         "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 726755960,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 2470142772,
         "Tag": "UI",
         "UID": 1734210071,
         "UpdateWithBones": false
@@ -22506,18 +22439,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 197488503
-                    },
-                    {
-                        "Previous Description": 762428728
-                    },
-                    {
-                        "Description 4": 6080464
-                    },
-                    {
-                        "Description 5": 3286644510
-                    },
-                    {
                         "Button": 1613695234
                     }
                 ],
@@ -22529,7 +22450,7 @@
         "IsStatic": false,
         "Name": "Ability 4",
         "ParentUID": 726755960,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 473064339,
         "Tag": "UI",
         "UID": 1613695234,
         "UpdateWithBones": false
@@ -22540,8 +22461,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    0.3799999952316284,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 "Rotation": [
@@ -22550,28 +22471,32 @@
                     0.0
                 ],
                 "Scale": [
-                    0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    1.0,
+                    1.0,
+                    1.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2273897285,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    2495736329,
+                    3121954369,
+                    3319397572,
+                    1403119791
+                ]
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Image_1",
+        "Name": "Bought Panel",
         "ParentUID": 726755960,
-        "PrefabUID": 3568942337,
+        "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 6080464,
+        "UID": 2754418861,
         "UpdateWithBones": false
     },
     {
@@ -22580,9 +22505,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    0.05999999865889549,
-                    0.0
+                    -0.019999999552965164,
+                    0.3400000035762787,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -22591,27 +22516,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 905996620,
+                "MaterialResource": 2599615273,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 2204455621,
+                "hoverImage": 1455574380,
+                "idleBlockImage": 3466576953,
+                "idleImage": 2599615273,
+                "pressBlockImage": 3767728819,
+                "pressImage": 3827151612
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 2761944280
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_2",
-        "ParentUID": 726755960,
-        "PrefabUID": 1511050084,
+        "Name": "Ability 1 Bought",
+        "ParentUID": 2754418861,
+        "PrefabUID": 2500914594,
         "Tag": "UI",
-        "UID": 3286644510,
+        "UID": 2495736329,
         "UpdateWithBones": false
     },
     {
@@ -22620,9 +22560,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    -0.2800000011920929,
-                    0.0
+                    0.10000000149011612,
+                    0.07999999821186066,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -22631,27 +22571,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3954282524,
+                "MaterialResource": 398460794,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 1223215809,
+                "hoverImage": 1223215809,
+                "idleBlockImage": 398460794,
+                "idleImage": 398460794,
+                "pressBlockImage": 3629126910,
+                "pressImage": 3570960102
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 3636875960
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_3",
-        "ParentUID": 726755960,
-        "PrefabUID": 1511050084,
+        "Name": "Ability 2 Bought",
+        "ParentUID": 2754418861,
+        "PrefabUID": 2757001629,
         "Tag": "UI",
-        "UID": 762428728,
+        "UID": 3121954369,
         "UpdateWithBones": false
     },
     {
@@ -22660,9 +22615,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    -0.6200000047683716,
-                    0.0
+                    0.10999999940395355,
+                    -0.20000000298023224,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -22671,27 +22626,97 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3349744550,
+                "MaterialResource": 116788097,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 3155218864,
+                "hoverImage": 4261630852,
+                "idleBlockImage": 4269788173,
+                "idleImage": 116788097,
+                "pressBlockImage": 3629934470,
+                "pressImage": 4075148250
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 1734210071
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_4",
-        "ParentUID": 726755960,
-        "PrefabUID": 1511050084,
+        "Name": "Ability 3 Bought",
+        "ParentUID": 2754418861,
+        "PrefabUID": 2470142772,
         "Tag": "UI",
-        "UID": 197488503,
+        "UID": 3319397572,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.009999999776482582,
+                    -0.5,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 3844307165,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 2024540632,
+                "hoverImage": 1522364512,
+                "idleBlockImage": 3265449754,
+                "idleImage": 3844307165,
+                "pressBlockImage": 2013464412,
+                "pressImage": 476979792
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 1613695234
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Ability 4 Bought",
+        "ParentUID": 2754418861,
+        "PrefabUID": 473064339,
+        "Tag": "UI",
+        "UID": 1403119791,
         "UpdateWithBones": false
     },
     {
@@ -22768,10 +22793,28 @@
                         "Current Panel": 3616324842
                     },
                     {
+                        "Current Bought Panel": 3014480708
+                    },
+                    {
                         "Tree Index": 1
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Blocked ability Image": 3105619378
+                    },
+                    {
+                        "Bought upgrade 1": 2005686967
+                    },
+                    {
+                        "Bought upgrade 2": 1340162174
+                    },
+                    {
+                        "Bought upgrade 3": 3153476493
+                    },
+                    {
+                        "Bought upgrade 4": 1415656879
                     }
                 ],
                 "Script Resource": 477126565,
@@ -22826,18 +22869,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 886436084
-                    },
-                    {
-                        "Next Description": 2362856287
-                    },
-                    {
-                        "Description 4": 4085303271
-                    },
-                    {
-                        "Description 5": 2653277242
-                    },
-                    {
                         "Button": 1168933361
                     }
                 ],
@@ -22849,7 +22880,7 @@
         "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 3616324842,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 1866788987,
         "Tag": "UI",
         "UID": 1168933361,
         "UpdateWithBones": false
@@ -22893,15 +22924,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 2362856287
-                    },
-                    {
-                        "Next Description": 4085303271
-                    },
-                    {
-                        "Previous Description": 886436084
-                    },
-                    {
                         "Button": 1269201573
                     }
                 ],
@@ -22913,7 +22935,7 @@
         "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 3616324842,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 4250569251,
         "Tag": "UI",
         "UID": 1269201573,
         "UpdateWithBones": false
@@ -22957,15 +22979,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 4085303271
-                    },
-                    {
-                        "Next Description": 2653277242
-                    },
-                    {
-                        "Previous Description": 2362856287
-                    },
-                    {
                         "Button": 2720533225
                     }
                 ],
@@ -22977,7 +22990,7 @@
         "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 3616324842,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 3856145046,
         "Tag": "UI",
         "UID": 2720533225,
         "UpdateWithBones": false
@@ -23021,12 +23034,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 2653277242
-                    },
-                    {
-                        "Previous Description": 4085303271
-                    },
-                    {
                         "Button": 2480871420
                     }
                 ],
@@ -23038,7 +23045,7 @@
         "IsStatic": false,
         "Name": "Ability 4",
         "ParentUID": 3616324842,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 2343649520,
         "Tag": "UI",
         "UID": 2480871420,
         "UpdateWithBones": false
@@ -23049,8 +23056,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    0.3799999952316284,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 "Rotation": [
@@ -23059,28 +23066,32 @@
                     0.0
                 ],
                 "Scale": [
-                    0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    1.0,
+                    1.0,
+                    1.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2252456834,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    2005686967,
+                    1340162174,
+                    3153476493,
+                    1415656879
+                ]
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Image_1",
+        "Name": "Bought Panel",
         "ParentUID": 3616324842,
-        "PrefabUID": 3568942337,
+        "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 886436084,
+        "UID": 3014480708,
         "UpdateWithBones": false
     },
     {
@@ -23089,9 +23100,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    0.05999999865889549,
-                    0.0
+                    -0.019999999552965164,
+                    0.3499999940395355,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -23100,27 +23111,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2838532628,
+                "MaterialResource": 204539219,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 983788303,
+                "hoverImage": 4051481788,
+                "idleBlockImage": 3625591785,
+                "idleImage": 204539219,
+                "pressBlockImage": 1309917340,
+                "pressImage": 4270345813
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 1168933361
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_2",
-        "ParentUID": 3616324842,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 1 Bought",
+        "ParentUID": 3014480708,
+        "PrefabUID": 1866788987,
         "Tag": "UI",
-        "UID": 2362856287,
+        "UID": 2005686967,
         "UpdateWithBones": false
     },
     {
@@ -23129,9 +23155,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    -0.2800000011920929,
-                    0.0
+                    0.09000000357627869,
+                    0.10000000149011612,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -23140,27 +23166,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2386175289,
+                "MaterialResource": 3217302591,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 2665209209,
+                "hoverImage": 22138383,
+                "idleBlockImage": 3041891450,
+                "idleImage": 3217302591,
+                "pressBlockImage": 3103968547,
+                "pressImage": 891665453
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 1269201573
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_3",
-        "ParentUID": 3616324842,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 2 Bought",
+        "ParentUID": 3014480708,
+        "PrefabUID": 4250569251,
         "Tag": "UI",
-        "UID": 4085303271,
+        "UID": 1340162174,
         "UpdateWithBones": false
     },
     {
@@ -23169,9 +23210,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    -0.6200000047683716,
-                    0.0
+                    0.09000000357627869,
+                    -0.30000001192092896,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -23180,27 +23221,97 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3388626774,
+                "MaterialResource": 3217302591,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 82627552,
+                "hoverImage": 22138383,
+                "idleBlockImage": 3343364781,
+                "idleImage": 3217302591,
+                "pressBlockImage": 3778361191,
+                "pressImage": 891665453
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 2720533225
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_4",
-        "ParentUID": 3616324842,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 3 Bought",
+        "ParentUID": 3014480708,
+        "PrefabUID": 3856145046,
         "Tag": "UI",
-        "UID": 2653277242,
+        "UID": 3153476493,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.05999999865889549,
+                    -0.6000000238418579,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 3217302591,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 1190378918,
+                "hoverImage": 22138383,
+                "idleBlockImage": 986295648,
+                "idleImage": 3217302591,
+                "pressBlockImage": 2464491423,
+                "pressImage": 891665453
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 2480871420
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Ability 4 Bought",
+        "ParentUID": 3014480708,
+        "PrefabUID": 2343649520,
+        "Tag": "UI",
+        "UID": 1415656879,
         "UpdateWithBones": false
     },
     {
@@ -23281,10 +23392,31 @@
                         "Current Panel": 2934290476
                     },
                     {
+                        "Current Bought Panel": 915786542
+                    },
+                    {
                         "Tree Index": 2
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Blocked ability Image": 3105619378
+                    },
+                    {
+                        "Bought upgrade 1": 706199478
+                    },
+                    {
+                        "Bought upgrade 2": 972774661
+                    },
+                    {
+                        "Bought upgrade 3": 1853495132
+                    },
+                    {
+                        "Bought upgrade 4": 833522299
+                    },
+                    {
+                        "Bought upgrade 5": 1904497699
                     }
                 ],
                 "Script Resource": 477126565,
@@ -23324,35 +23456,20 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 962993018,
+                "MaterialResource": 18640436,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
                 "hoverBlockImage": 2246531119,
-                "hoverImage": 2942853897,
+                "hoverImage": 1816090980,
                 "idleBlockImage": 1487730403,
-                "idleImage": 962993018,
+                "idleImage": 18640436,
                 "pressBlockImage": 964319235,
-                "pressImage": 1573633164
+                "pressImage": 2927959955
             },
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 3020994421
-                    },
-                    {
-                        "Next Description": 1888929368
-                    },
-                    {
-                        "Previous Description": 855224226
-                    },
-                    {
-                        "Description 4": 2425893789
-                    },
-                    {
-                        "Description 5": 3732501824
-                    },
                     {
                         "Button": 2412762651
                     }
@@ -23365,7 +23482,7 @@
         "IsStatic": false,
         "Name": "Ability 1",
         "ParentUID": 2934290476,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 2833031547,
         "Tag": "UI",
         "UID": 2412762651,
         "UpdateWithBones": false
@@ -23409,21 +23526,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 1888929368
-                    },
-                    {
-                        "Next Description": 855224226
-                    },
-                    {
-                        "Previous Description": 3020994421
-                    },
-                    {
-                        "Description 4": 2425893789
-                    },
-                    {
-                        "Description 5": 3732501824
-                    },
-                    {
                         "Button": 2777578711
                     }
                 ],
@@ -23435,7 +23537,7 @@
         "IsStatic": false,
         "Name": "Ability 2",
         "ParentUID": 2934290476,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 1823220526,
         "Tag": "UI",
         "UID": 2777578711,
         "UpdateWithBones": false
@@ -23479,21 +23581,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 855224226
-                    },
-                    {
-                        "Next Description": 2425893789
-                    },
-                    {
-                        "Previous Description": 1888929368
-                    },
-                    {
-                        "Description 4": 3020994421
-                    },
-                    {
-                        "Description 5": 3732501824
-                    },
-                    {
                         "Button": 1199903426
                     }
                 ],
@@ -23505,7 +23592,7 @@
         "IsStatic": false,
         "Name": "Ability 3",
         "ParentUID": 2934290476,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 2500350153,
         "Tag": "UI",
         "UID": 1199903426,
         "UpdateWithBones": false
@@ -23549,21 +23636,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 2425893789
-                    },
-                    {
-                        "Next Description": 3732501824
-                    },
-                    {
-                        "Previous Description": 855224226
-                    },
-                    {
-                        "Description 4": 1888929368
-                    },
-                    {
-                        "Description 5": 3020994421
-                    },
-                    {
                         "Button": 1362514346
                     }
                 ],
@@ -23575,7 +23647,7 @@
         "IsStatic": false,
         "Name": "Ability 4",
         "ParentUID": 2934290476,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 4187143948,
         "Tag": "UI",
         "UID": 1362514346,
         "UpdateWithBones": false
@@ -23619,21 +23691,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 3732501824
-                    },
-                    {
-                        "Next Description": 3020994421
-                    },
-                    {
-                        "Previous Description": 2425893789
-                    },
-                    {
-                        "Description 4": 1888929368
-                    },
-                    {
-                        "Description 5": 855224226
-                    },
-                    {
                         "Button": 963583409
                     }
                 ],
@@ -23645,7 +23702,7 @@
         "IsStatic": false,
         "Name": "Ability 5",
         "ParentUID": 2934290476,
-        "PrefabUID": 3943484743,
+        "PrefabUID": 1352842423,
         "Tag": "UI",
         "UID": 963583409,
         "UpdateWithBones": false
@@ -23656,8 +23713,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    0.5,
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 "Rotation": [
@@ -23666,28 +23723,33 @@
                     0.0
                 ],
                 "Scale": [
-                    0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    1.0,
+                    1.0,
+                    1.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3489440989,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    706199478,
+                    972774661,
+                    1853495132,
+                    833522299,
+                    1904497699
+                ]
             }
         ],
-        "FirstOnPrefab": false,
+        "FirstOnPrefab": true,
         "IsStatic": false,
-        "Name": "Image_1",
+        "Name": "Bought Panel",
         "ParentUID": 2934290476,
-        "PrefabUID": 3568942337,
+        "PrefabUID": 0,
         "Tag": "UI",
-        "UID": 3020994421,
+        "UID": 915786542,
         "UpdateWithBones": false
     },
     {
@@ -23696,9 +23758,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    0.1899999976158142,
-                    0.0
+                    -0.019999999552965164,
+                    0.3499999940395355,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -23707,27 +23769,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3618652193,
+                "MaterialResource": 1652741118,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 2246531119,
+                "hoverImage": 3966207148,
+                "idleBlockImage": 1487730403,
+                "idleImage": 1652741118,
+                "pressBlockImage": 964319235,
+                "pressImage": 4189665120
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 2412762651
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_2",
-        "ParentUID": 2934290476,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 1 Bought",
+        "ParentUID": 915786542,
+        "PrefabUID": 2833031547,
         "Tag": "UI",
-        "UID": 1888929368,
+        "UID": 706199478,
         "UpdateWithBones": false
     },
     {
@@ -23736,9 +23813,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    -0.10000000149011612,
-                    0.0
+                    0.10000000149011612,
+                    0.09000000357627869,
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -23747,27 +23824,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 2788796334,
+                "MaterialResource": 1948854205,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 3067472483,
+                "hoverImage": 258941557,
+                "idleBlockImage": 1658656476,
+                "idleImage": 1948854205,
+                "pressBlockImage": 370833931,
+                "pressImage": 1054655216
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 2777578711
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_3",
-        "ParentUID": 2934290476,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 2 Bought",
+        "ParentUID": 915786542,
+        "PrefabUID": 1823220526,
         "Tag": "UI",
-        "UID": 855224226,
+        "UID": 972774661,
         "UpdateWithBones": false
     },
     {
@@ -23776,9 +23868,64 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
+                    0.11999999731779099,
+                    -0.1599999964237213,
+                    -0.0010000000474974513
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.15000000596046448,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 250540909,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 950433155,
+                "hoverImage": 2886924904,
+                "idleBlockImage": 2095876669,
+                "idleImage": 250540909,
+                "pressBlockImage": 379827194,
+                "pressImage": 650752243
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 1199903426
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Ability 3 Bought",
+        "ParentUID": 915786542,
+        "PrefabUID": 2500350153,
+        "Tag": "UI",
+        "UID": 1853495132,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.05999999865889549,
                     -0.4000000059604645,
-                    0.0
+                    -0.0010000000474974513
                 ],
                 "Rotation": [
                     0.0,
@@ -23787,27 +23934,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3985176159,
+                "MaterialResource": 2483720286,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 998650191,
+                "hoverImage": 4035772898,
+                "idleBlockImage": 163643360,
+                "idleImage": 2483720286,
+                "pressBlockImage": 2623950227,
+                "pressImage": 619318048
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 1362514346
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_4",
-        "ParentUID": 2934290476,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 4 Bought",
+        "ParentUID": 915786542,
+        "PrefabUID": 4187143948,
         "Tag": "UI",
-        "UID": 2425893789,
+        "UID": 833522299,
         "UpdateWithBones": false
     },
     {
@@ -23816,9 +23978,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.3700000047683716,
-                    -0.6499999761581421,
-                    0.0
+                    -0.03999999910593033,
+                    -0.5799999833106995,
+                    0.0989999994635582
                 ],
                 "Rotation": [
                     0.0,
@@ -23827,27 +23989,42 @@
                 ],
                 "Scale": [
                     0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
+                    0.15000000596046448,
+                    0.0
                 ],
                 "Type": 1
             },
             {
                 "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 1810078887,
+                "MaterialResource": 2623192227,
                 "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 1843429432,
+                "hoverImage": 3188612942,
+                "idleBlockImage": 1750194025,
+                "idleImage": 2623192227,
+                "pressBlockImage": 1187623283,
+                "pressImage": 567396762
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Button": 963583409
+                    }
+                ],
+                "Script Resource": 911506408,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
         "IsStatic": false,
-        "Name": "Image_5",
-        "ParentUID": 2934290476,
-        "PrefabUID": 3568942337,
+        "Name": "Ability 5 Bought",
+        "ParentUID": 915786542,
+        "PrefabUID": 1352842423,
         "Tag": "UI",
-        "UID": 3732501824,
+        "UID": 1904497699,
         "UpdateWithBones": false
     },
     {
@@ -23924,6 +24101,9 @@
                     },
                     {
                         "Player": 1862169540
+                    },
+                    {
+                        "Blocked ability Image": 3105619378
                     }
                 ],
                 "Script Resource": 477126565,
@@ -23977,15 +24157,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Current Description": 1387223882
-                    },
-                    {
-                        "Next Description": 2835375609
-                    },
-                    {
-                        "Description 4": 2861744828
-                    },
                     {
                         "Button": 2692458665
                     }
@@ -24042,15 +24213,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 2835375609
-                    },
-                    {
-                        "Next Description": 2861744828
-                    },
-                    {
-                        "Previous Description": 1387223882
-                    },
-                    {
                         "Button": 2112049340
                     }
                 ],
@@ -24106,15 +24268,6 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Current Description": 2861744828
-                    },
-                    {
-                        "Previous Description": 2835375609
-                    },
-                    {
-                        "Description 4": 1387223882
-                    },
-                    {
                         "Button": 486754283
                     }
                 ],
@@ -24129,126 +24282,6 @@
         "PrefabUID": 3943484743,
         "Tag": "UI",
         "UID": 486754283,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.3700000047683716,
-                    0.30000001192092896,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 1148531627,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Image_1",
-        "ParentUID": 2546321765,
-        "PrefabUID": 3568942337,
-        "Tag": "UI",
-        "UID": 1387223882,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.3700000047683716,
-                    -0.14000000059604645,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 460361881,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Image_2",
-        "ParentUID": 2546321765,
-        "PrefabUID": 3568942337,
-        "Tag": "UI",
-        "UID": 2835375609,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.3700000047683716,
-                    -0.5699999928474426,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.30000001192092896,
-                    0.17000000178813934,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3465753681,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Image_3",
-        "ParentUID": 2546321765,
-        "PrefabUID": 3568942337,
-        "Tag": "UI",
-        "UID": 2861744828,
         "UpdateWithBones": false
     },
     {
@@ -24289,6 +24322,46 @@
         "PrefabUID": 446200265,
         "Tag": "UI",
         "UID": 3776264602,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    -0.10000000149011612,
+                    -1.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 292138170,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Blocked",
+        "ParentUID": 1310414073,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3105619378,
         "UpdateWithBones": false
     },
     {

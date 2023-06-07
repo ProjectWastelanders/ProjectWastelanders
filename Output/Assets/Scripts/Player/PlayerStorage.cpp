@@ -2,6 +2,8 @@
 #include "../UI Test folder/PlayerIndicator.h"
 #include "../InteractiveEnviroment/EnemyManager.h"
 #include "../InteractiveEnviroment/BoxManager.h"
+#include "../Shooting/PlayerGunManager.h"
+#include "../Player/PlayerStats.h"
 HELLO_ENGINE_API_C PlayerStorage* CreatePlayerStorage(ScriptToInspectorInterface* script)
 {
     PlayerStorage* classInstance = new PlayerStorage();
@@ -77,6 +79,11 @@ void PlayerStorage::Start()
     boxManager = (BoxManager*)boxManagerGO.GetScript("BoxManager");
     if (boxManager == nullptr) Console::Log("BoxManager missing in PlayerStorage.");
     else boxManager->LoadBoxesState(levelIndex);
+
+    // save guns
+    PlayerStats* stats = (PlayerStats*)gameObject.GetScript("PlayerStats");
+    if (stats) API_QuickSave::SetInt("normalAmmo", stats->laserAmmo);
+    if (stats) API_QuickSave::SetInt("specialAmmo", stats->specialAmmo);
 }
 
 void PlayerStorage::Update()
@@ -157,6 +164,13 @@ void PlayerStorage::SaveData()
         Console::Log("Wrong level index", API::Console::MessageType::ERR);
         break;
     }
+
+    // save guns
+    PlayerGunManager* gunManager = (PlayerGunManager*)gameObject.GetScript("PlayerGunManager");
+    if (gunManager) API_QuickSave::SetInt("equipedSpecialGun", gunManager->gunOnHandIndex3);
+    PlayerStats* stats = (PlayerStats*)gameObject.GetScript("PlayerStats");
+    if (stats) API_QuickSave::SetInt("normalAmmo", stats->laserAmmo);
+    if (stats) API_QuickSave::SetInt("specialAmmo", stats->specialAmmo);
 
     //enemies
     if (enemyManager) enemyManager->SaveEnemiesState(levelIndex);

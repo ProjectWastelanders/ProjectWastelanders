@@ -181,7 +181,7 @@ void ThanosAttacks::Update()
 		case 9:
 		case 10:
 		case 11:
-			columns[whichColumn].GetTransform().Translate(0, -1 * Time::GetDeltaTime(), 0);
+			columns[whichColumn].GetTransform().Translate(0, -2 * Time::GetDeltaTime(), 0);
 
 			break;
 		default:
@@ -819,6 +819,7 @@ void ThanosAttacks::OnCollisionStay(API::API_RigidBody other)
 			whichColumn = ColumnaScript->numColumn;
 			ColumnaScript->isDestroying = true;
 			columnsStates[whichColumn] = ColumnaScript->isDestroying;
+			columns[whichColumn].GetParticleSystem().Play();
 			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });
 		}
 
@@ -838,6 +839,7 @@ void ThanosAttacks::OnCollisionEnter(API::API_RigidBody other)
 			whichColumn = ColumnaScript->numColumn;
 			ColumnaScript->isDestroying = true;
 			columnsStates[whichColumn] = ColumnaScript->isDestroying;
+			columns[whichColumn].GetParticleSystem().Play();
 			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });
 		}
 	}

@@ -216,10 +216,13 @@ float EnemyTank::Lerp(float a, float b, float time)
 
 void EnemyTank::BlinkShield() 
 {
+	r_blink = 0;
+	g_blink = 0;
+	b_blink = 1;
+
 	if (isBlinking) 
 	{
 		fading_blink ? FadeIn() : FadeOut();
-		//material.SetColor(_r, _g, _b, 255);
 		material.SetColor(_r, _g, _b, 255);
 
 		blinkingTimer += Time::GetDeltaTime();
@@ -251,8 +254,40 @@ void EnemyTank::BlinkShield()
 
 void EnemyTank::BlinkHealth()
 {
+	r_blink = 0;
+	g_blink = 1;
+	b_blink = 0;
 
+	if (isBlinking)
+	{
+		fading_blink ? FadeIn() : FadeOut();
+		material.SetColor(_r, _g, _b, 255);
 
+		blinkingTimer += Time::GetDeltaTime();
+		nonBlinkingTimer = 0.0f;
+
+		if (blinkingTimer >= blinkingTime)
+		{
+			_r = 1;
+			_g = 1;
+			_b = 1;
+			material.SetColor(1, 1, 1, 1);
+			isBlinking = false;
+		}
+	}
+	else
+	{
+		nonBlinkingTimer += Time::GetDeltaTime();
+		blinkingTimer = 0.0f;
+
+		if (nonBlinkingTimer >= nonBlinkingTime)
+		{
+			fading_blink = true;
+			_fadeOutCooldown_blink = 0;
+			_fadeInCooldown_blink = 0;
+			isBlinking = true;
+		}
+	}
 }
 
 void EnemyTank::ReturnToZone() {
@@ -629,6 +664,10 @@ void EnemyTank::Recovering()
 			hasToRestoreHealth = true;
 		}
 	}
+	else 
+	{
+		hasToBlinkHealing = false;
+	}
 
 	if (hasToRestoreHealth == true) {
 		healthRestoreCounter += Time::GetDeltaTime();
@@ -640,6 +679,8 @@ void EnemyTank::Recovering()
 	}
 
 	if (isRestoringHealth == true) {
+
+		hasToBlinkHealing = true;
 
 		if (enemyScript->currentHp + Time::GetDeltaTime() * healthRestorePerSecond < enemyScript->maxHp) {
 			enemyScript->currentHp += Time::GetDeltaTime() * healthRestorePerSecond;

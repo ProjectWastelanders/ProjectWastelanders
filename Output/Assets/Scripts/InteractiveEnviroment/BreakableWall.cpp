@@ -13,6 +13,13 @@ HELLO_ENGINE_API_C BreakableWall* CreateBreakableWall(ScriptToInspectorInterface
 
     script->AddDragBoxUIImage("Tutorial_Img", &classInstance->Tutorial_Img);
 
+    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer1);
+    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer2);
+    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer3);
+
+    script->AddDragBoxAnimationResource("Break Animation", &classInstance->breakAnim);
+
+
     return classInstance;
 }
 
@@ -27,7 +34,15 @@ void BreakableWall::Start()
     Tutorial_Img.GetGameObject().GetTransform().SetPosition(initalPos);
     Tutorial_Img.GetGameObject().SetActive(false);
 
-    fenceDestroyed.SetActive(false);
+    //fenceDestroyed.SetActive(false);
+
+    animationPlayer1.ChangeAnimation(breakAnim);
+    animationPlayer2.ChangeAnimation(breakAnim);
+    animationPlayer3.ChangeAnimation(breakAnim);
+
+  
+
+    isDestroyed = false;
 }
 
 void BreakableWall::Update()
@@ -64,7 +79,9 @@ void BreakableWall::OnCollisionEnter(API_RigidBody other)
 
 void BreakableWall::ShootWall(float projectileDamage)
 {
-    if (fenceDestroyed.IsActive())return;
+    //if (fenceDestroyed.IsActive())return;
+    if (isDestroyed) return;
+
     // Health damage
     currentHp -= projectileDamage;
     if (currentHp <= 0)
@@ -78,17 +95,22 @@ void BreakableWall::ShootWall(float projectileDamage)
 
 void BreakableWall::DestroyWall()
 {
-    if (fenceDestroyed.IsActive())return;
+   // if (fenceDestroyed.IsActive())return;
+    if (isDestroyed) return;
 
     wallDestroyed.Play();
 
     Audio::Event("fence_breaking");
 
-    fenceDestroyed.SetActive(true);
-    fenceEntire.SetActive(false);
+   // fenceDestroyed.SetActive(true);
+   // fenceEntire.SetActive(false);
     fenceRigidbody.SetTrigger(true);
     tutorial_active = true;
-    
+    isDestroyed = true;
+
+    animationPlayer1.Play();
+    animationPlayer2.Play();
+    animationPlayer3.Play();
 
 }
 

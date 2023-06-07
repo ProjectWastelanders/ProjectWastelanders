@@ -55,7 +55,7 @@
             <div class="col span_1_of_2 box">
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
+                        <!-- <div class="numbertext">1 / 3</div> -->
                         <img id="myImg2" src="resources/img/hala.png" class="hometeam-icon">
                     </div>
                     <div id="myModal2" class="modal2">
@@ -64,13 +64,21 @@
                     </div>
 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="resources/img/hub.png" style="width:100%">
+                        <!-- <div class="numbertext">2 / 3</div> -->
+                        <img id="myImg3" src="resources/img/hub.png" class="hometeam-icon">
+                    </div>
+                    <div id="myModal3" class="modal2">
+                        <span class="close close_multi"></span>
+                        <img class="modal2-content" id="img03">
                     </div>
 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="resources/img/arena_thanos.png" style="width:100%">
+                        <!-- <div class="numbertext">3 / 3</div> -->
+                        <img id="myImg4" src="resources/img/arena_thanos.png" class="hometeam-icon">
+                    </div>
+                    <div id="myModal4" class="modal2">
+                        <span class="close close_multi"></span>
+                        <img class="modal2-content" id="img04">
                     </div>
 
                     <div style="text-align:center">
@@ -114,36 +122,98 @@
             }
         </script>
 
-    </section>
+        <!-- Script Modal Slideshow 1 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal2");
 
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal2");
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg2");
+            var modalImg = document.getElementById("img02");
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg2");
-        var modalImg = document.getElementById("img02");
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
 
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        }
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close close_multi");
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
                 modal.style.display = "none";
             }
-        }
-    </script>
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Script Modal Slideshow 2 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal3");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg3");
+            var modalImg = document.getElementById("img03");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Script Modal Slideshow 3 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal4");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg4");
+            var modalImg = document.getElementById("img04");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </section>
+
+
 
     <!--Started Team Section-->
 
@@ -205,7 +275,7 @@
                 <h2>Production</h2>
                 <p class="little-description">We have created this videogame using the Scrum methodology, meeting all
                     the deadlines proposed and using the self made "Hello Engine".</p>
-                <a href="./game.html" class="btn btn-production">Learn More!</a>
+                <a href="./production.html" class="btn btn-production">Learn More!</a>
             </div>
         </div>
 

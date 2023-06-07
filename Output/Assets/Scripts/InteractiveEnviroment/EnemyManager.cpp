@@ -53,6 +53,26 @@ HELLO_ENGINE_API_C EnemyManager* CreateEnemyManager(ScriptToInspectorInterface* 
     script->AddDragBoxGameObject("Enemy 47", &classInstance->enemies[46]);
     script->AddDragBoxGameObject("Enemy 48", &classInstance->enemies[47]);
     script->AddDragBoxGameObject("Enemy 49", &classInstance->enemies[48]);
+    script->AddDragBoxGameObject("Enemy 50", &classInstance->enemies[49]);
+    script->AddDragBoxGameObject("Enemy 51", &classInstance->enemies[50]);
+    script->AddDragBoxGameObject("Enemy 52", &classInstance->enemies[51]);
+    script->AddDragBoxGameObject("Enemy 53", &classInstance->enemies[52]);
+    script->AddDragBoxGameObject("Enemy 54", &classInstance->enemies[53]);
+    script->AddDragBoxGameObject("Enemy 55", &classInstance->enemies[54]);
+    script->AddDragBoxGameObject("Enemy 56", &classInstance->enemies[55]);
+    script->AddDragBoxGameObject("Enemy 57", &classInstance->enemies[56]);
+    script->AddDragBoxGameObject("Enemy 58", &classInstance->enemies[57]);
+    script->AddDragBoxGameObject("Enemy 59", &classInstance->enemies[58]);
+    script->AddDragBoxGameObject("Enemy 60", &classInstance->enemies[59]);
+    script->AddDragBoxGameObject("Enemy 61", &classInstance->enemies[50]);
+    script->AddDragBoxGameObject("Enemy 62", &classInstance->enemies[51]);
+    script->AddDragBoxGameObject("Enemy 63", &classInstance->enemies[52]);
+    script->AddDragBoxGameObject("Enemy 64", &classInstance->enemies[53]);
+    script->AddDragBoxGameObject("Enemy 65", &classInstance->enemies[54]);
+    script->AddDragBoxGameObject("Enemy 66", &classInstance->enemies[55]);
+    script->AddDragBoxGameObject("Enemy 67", &classInstance->enemies[56]);
+    script->AddDragBoxGameObject("Enemy 68", &classInstance->enemies[57]);
+    script->AddDragBoxGameObject("Enemy 69", &classInstance->enemies[58]);
     return classInstance;
 }
 

@@ -77,6 +77,7 @@ void ThanosCinematic::Start()
 }
 void ThanosCinematic::Update()
 {
+    
     if (activeCinematic && !showedDialog) {
         playerMov->openingChest = true;
         player.GetRigidBody().SetVelocity((0, 0, 0));
@@ -159,7 +160,6 @@ void ThanosCinematic::PrintDialog(API_UIImage& Dialog)
             nextDialog = true;
         }
     }
-
     Dialog.GetGameObject().GetTransform().SetPosition(movingPos);
 }
 

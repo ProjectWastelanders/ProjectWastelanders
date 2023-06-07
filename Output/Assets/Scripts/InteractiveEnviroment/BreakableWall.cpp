@@ -13,9 +13,7 @@ HELLO_ENGINE_API_C BreakableWall* CreateBreakableWall(ScriptToInspectorInterface
 
     script->AddDragBoxUIImage("Tutorial_Img", &classInstance->Tutorial_Img);
 
-    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer1);
-    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer2);
-    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer3);
+    script->AddDragBoxAnimationPlayer("Animation Player", &classInstance->animationPlayer);
 
     script->AddDragBoxAnimationResource("Break Animation", &classInstance->breakAnim);
 
@@ -36,11 +34,7 @@ void BreakableWall::Start()
 
     //fenceDestroyed.SetActive(false);
 
-    animationPlayer1.ChangeAnimation(breakAnim);
-    animationPlayer2.ChangeAnimation(breakAnim);
-    animationPlayer3.ChangeAnimation(breakAnim);
-
-  
+    animationPlayer.ChangeAnimation(breakAnim);
 
     isDestroyed = false;
 }
@@ -108,9 +102,7 @@ void BreakableWall::DestroyWall()
     tutorial_active = true;
     isDestroyed = true;
 
-    animationPlayer1.Play();
-    animationPlayer2.Play();
-    animationPlayer3.Play();
+    animationPlayer.Play();
 
 }
 

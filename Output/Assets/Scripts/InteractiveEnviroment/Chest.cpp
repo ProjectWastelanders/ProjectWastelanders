@@ -11,6 +11,7 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
     script->AddDragInt("Chest Index", &classInstance->chestIndex);
     script->AddDragInt("Item Index", &classInstance->itemIndex);
     script->AddCheckBox("Can Get Special Gun", &classInstance->canGetGun);
+    script->AddCheckBox("Save Chest Interaction", &classInstance->saveChest);
 
     script->AddDragBoxUIImage("Guide Button", &classInstance->guideButton);
 
@@ -60,40 +61,43 @@ void Chest::Update()
                 return;
             }
 
-            switch (itemIndex)
+            if (saveChest)
             {
-            case 0: // Upgrade Blueprint
-                playerStats->SaveChestData(itemIndex, chestIndex);
-                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->UpgradeAlert(itemIndex);
-                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(itemIndex);
-                break;
-            case 1: // Unlock Gun
-            case 2:
-            case 3:
-            case 4:
-                playerStats->SaveChestData(itemIndex, chestIndex);
-                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->New_WeaponAlert(itemIndex);
-                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(itemIndex);
-                break;
-            case 5: // Get Flamethrower
-                playerGunManager->GetGun(3, 5);
-                playerStats->specialAmmo = 600;
-                playerStats->maxSpecialAmmo = 600;
-                playerStats->SaveChestData(6, chestIndex); // save game
-                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(5);
-                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(5);
-                break;
-            case 6: // Get Ricochet
-                playerGunManager->GetGun(3, 6);
-                playerStats->specialAmmo = 50;
-                playerStats->maxSpecialAmmo = 50;
-                playerStats->SaveChestData(7, chestIndex); // save game
-                if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(6);
-                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(6);
-                break;
-            default:
-                Console::Log("Item Index is not between 0 and 7.");
-                break;
+                switch (itemIndex)
+                {
+                case 0: // Upgrade Blueprint
+                    playerStats->SaveChestData(itemIndex, chestIndex);
+                    if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->UpgradeAlert(itemIndex);
+                    if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(itemIndex);
+                    break;
+                case 1: // Unlock Gun
+                case 2:
+                case 3:
+                case 4:
+                    playerStats->SaveChestData(itemIndex, chestIndex);
+                    if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->New_WeaponAlert(itemIndex);
+                    if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(itemIndex);
+                    break;
+                case 5: // Get Flamethrower
+                    playerGunManager->GetGun(3, 5);
+                    playerStats->specialAmmo = 600;
+                    playerStats->maxSpecialAmmo = 600;
+                    playerStats->SaveChestData(6, chestIndex); // save game
+                    if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(5);
+                    if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(5);
+                    break;
+                case 6: // Get Ricochet
+                    playerGunManager->GetGun(3, 6);
+                    playerStats->specialAmmo = 50;
+                    playerStats->maxSpecialAmmo = 50;
+                    playerStats->SaveChestData(7, chestIndex); // save game
+                    if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(6);
+                    if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(6);
+                    break;
+                default:
+                    Console::Log("Item Index is not between 0 and 7.");
+                    break;
+                }
             }
             
             Audio::Event("open_chest");

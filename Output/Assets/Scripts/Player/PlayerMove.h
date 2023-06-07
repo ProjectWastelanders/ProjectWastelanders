@@ -8,6 +8,7 @@
 #include "PlayerStats.h"
 
 class SwapWeapon;
+class PlayerStorage;
 
 class PlayerMove : HelloBehavior
 {
@@ -119,5 +120,6 @@ public:
     // skills
     API_GameObject playerStatsGO;
     PlayerStats* playerStats;
+    PlayerStorage* playerStorage;
 };
 

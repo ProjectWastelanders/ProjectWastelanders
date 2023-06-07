@@ -30,23 +30,45 @@ void ActiveEnmiesLvl3::Start()
 {
 	Game::FindGameObjectsWithTag("Milano", &spaceShipGO,1);
 	spaceShip = (ReachTheSpaceship*)spaceShipGO.GetScript("ReachTheSpaceship");
+	//for (size_t i = 0; i < 18; i++)
+	//{
+	//	//enebledEnemies[i].SetActive(true);
+	//	//enebledEnemies[i].GetTransform().SetPosition();
+	//	enemyScript[i] = (Enemy*)enebledEnemies[i].GetScript("Enemy");
+	//}
+
+	for (size_t i = 0; i < 18; i++)
+	{
+		spawnPosShip[i].x = enebledEnemies[i].GetTransform().GetGlobalPosition().x;
+		spawnPosShip[i].y = enebledEnemies[i].GetTransform().GetGlobalPosition().y;
+		spawnPosShip[i].z = enebledEnemies[i].GetTransform().GetGlobalPosition().z;
+	}
+
+	for (size_t i = 0; i < 18; i++)
+	{
+		enebledEnemies[i].GetTransform().SetPosition(10000, 0, 10000);
+	}
 	//EnableEnemies();
 }
 void ActiveEnmiesLvl3::Update()
 {
-	if (!spaceShip)
+	if (spaceShip && spaceShip->enabled&& !actived)
 	{
-		if (spaceShip->enabled)
-		{
-			EnableEnemies();
-		}
+		EnableEnemies();
 	}
 }
 
 void ActiveEnmiesLvl3::EnableEnemies()
 {
+	actived = true;
 	for (size_t i = 0; i < 18; i++)
 	{
-		enebledEnemies[i].SetActive(true);
+		//enebledEnemies[i].SetActive(true);
+			enebledEnemies[i].GetTransform().SetPosition(spawnPosShip[i]);
+		//if(enemyScript[i])
+		//{
+		//	Console::Log("uwuuuuuuuuuuuuuuuuuuuuu");
+		//	//enebledEnemies[i].GetTransform().SetPosition((enemyScript[i]->spawnPos.x, enemyScript[i]->spawnPos.y, enemyScript[i]->spawnPos.z));
+		//}
 	}
 }

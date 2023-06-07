@@ -5,6 +5,7 @@
 
 #include "API/API.h"
 
+#include "../Enemies/Enemy.h"
 class PlayerStorage;
 
 class ReachTheSpaceship : HelloBehavior
@@ -27,11 +28,18 @@ public:
     PlayerStorage* playerStorage;
     API_GameObject finalText;
 
-    API_GameObject enebledEnemies[8];
+    API_GameObject enebledEnemies[4];
 
+    Enemy* enemyScript[4];
+    /*Enemy* enemyScript1;
+    Enemy* enemyScript2;
+    Enemy* enemyScript3;
+    Enemy* enemyScript4;*/
     bool uwu = false;
 
     float cooldownHit=0.0f;
     float timeHit = 3.0f;
+
+    API_Vector3 spawnPosShip[4];
 };
 

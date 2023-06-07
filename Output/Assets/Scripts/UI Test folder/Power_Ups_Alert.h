@@ -13,9 +13,10 @@ public:
 	void Swap_PowerUp_Texture(int Power_Up);
 
 	API_UIImage power_up_Alert;
-	uint textures_Power_up[4];
+	uint textures_Power_up[5];
 
 	float timer_Active = 1.8;
+	bool Reset = false;
 	float opacity_Alert = 0;
 	bool active = false;
 };

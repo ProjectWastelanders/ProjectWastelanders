@@ -54,6 +54,8 @@ void PlayerMove::Start()
     departureTime = 0.0f;
     playerStats = (PlayerStats*)playerStatsGO.GetScript("PlayerStats");
     if (playerStats == nullptr) Console::Log("Missing PlayerStats on PlayerMove Script.");
+    playerStorage = (PlayerStorage*)playerStatsGO.GetScript("PlayerStorage");
+    if (playerStorage == nullptr) Console::Log("Missing PlayerStorage on PlayerMove Script.");
 
     if (playerStats && playerStats->movementTreeLvl > 3) dashesAvailable = 2;
     else dashesAvailable = 1;
@@ -211,7 +213,22 @@ void PlayerMove::Update()
         if (moveSoundCooldown == 0.0f)
         {
             moveSoundCooldown = 0.5f;
-            Audio::Event("starlord_walk");
+            if (playerStorage)
+            {
+                switch (playerStorage->levelIndex)
+                {
+                case 0: Audio::Event("walk_on_metal1");
+                    break;
+                case 1: 
+                case 2: Audio::Event("walk_on_metal2");
+                    break;
+                case 3: 
+                case 4: Audio::Event("starlord_footsteps_rock");
+                    break;
+                default:
+                    break;
+                }
+            }
         }
         if (!playingWalkParticles && !isShooting)
         {

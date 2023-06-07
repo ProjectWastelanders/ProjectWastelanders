@@ -4,6 +4,7 @@
 #include "../UI Test folder/HpBar.h"
 #include "../UsefulScripts/IndexContainer.h"
 #include "../UI Test folder/HUD_Power_Up_Scrip.h"
+#include "../UI Test folder/Power_Ups_Alert.h"
 #include "../UI Test folder/UI_Municion.h"
 #include "../CamMov.h"
 
@@ -62,6 +63,9 @@ void PlayerStats::Start()
 
     hudPowerUp = (HUD_Power_Up_Scrip*)hudPowerUpGO.GetScript("HUD_Power_Up_Scrip");
     if (!hudPowerUp) Console::Log("HUD_Power_Up_Scrip Missing in PlayerStats. Only needed in levels.");
+    
+    hudPowerUp_Alert = (Power_Ups_Alert*)hudPowerUpGO.GetScript("Power_Ups_Alert");
+    if (!hudPowerUp_Alert) Console::Log("Power_Ups_Alert Missing in PlayerStats. Only needed in levels.");
     
     ammo_Script = (UI_Municion*)ammo_ScriptGO.GetScript("UI_Municion");
     if (!ammo_Script) Console::Log("UI_Municion Missing in PlayerStats. Only needed in levels.");
@@ -436,14 +440,20 @@ void PlayerStats::GetPowerUp(int index)
     case 0:
         speedPowerUp = 5.0f;
         hudPowerUp->AddPowerUp(PowerUp_Type::SPEED_INCREASE, speedPowerUp);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(0);
         break;
     case 1:
         fireratePowerUp = 5.0f;
         hudPowerUp->AddPowerUp(PowerUp_Type::FIRERATE_INCREASE, fireratePowerUp);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(1);
         break;
     case 2:
         shield = 50.0f;
         hudPowerUp->AddPowerUp(PowerUp_Type::SHIELD, 1);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(2);
         break;
     case 3:
         GetAmmo(1, maxLaserAmmo);
@@ -453,6 +463,8 @@ void PlayerStats::GetPowerUp(int index)
         slowTimePowerUp = 5.0f;
         Time::ChangeTimeScale(0.5f);
         hudPowerUp->AddPowerUp(PowerUp_Type::SLOW_TIME, slowTimePowerUp);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(4);
         break;
     default:
         Console::Log("Invalid powe up index, can only be 0, 1, 2 or 3.");

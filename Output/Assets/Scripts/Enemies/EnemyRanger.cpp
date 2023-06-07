@@ -90,7 +90,7 @@ void EnemyRanger::Update()
 
 	if (targStats && !scriptedForQuest)
 	{
-		float distanceBeetweenPlayerEnemy = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
+		 distanceBeetweenPlayerEnemy = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
 
 		// Change States 
 		do
@@ -354,6 +354,7 @@ void EnemyRanger::Update()
 		break;
 		case EnemyRanger::States::DYING:
 		{
+			
 			enemy->_coldAnimDie += dt;
 			// enemy->dying = true;
 			enemy->enemyAgent.Stop();
@@ -380,6 +381,7 @@ void EnemyRanger::Update()
 	}
 	if (scriptedForQuest)
 	{
+		distanceBeetweenPlayerEnemy = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
 		enemyGun->Shoot();
 		enemy->enemyRb.SetVelocity(0);
 	}

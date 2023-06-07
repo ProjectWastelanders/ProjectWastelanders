@@ -54,7 +54,7 @@ public:
     float attackEscapeDis = 6.0f;
     bool playerEnterInFollowDis = false;
     //----------------------------------------------------------
-
+    float distanceBeetweenPlayerEnemy;
     bool wander = false;
     bool targeting = false;
 

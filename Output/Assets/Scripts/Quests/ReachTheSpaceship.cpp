@@ -137,7 +137,7 @@ void ReachTheSpaceship::EnableMision()
     {
         //enebledEnemies[i].SetActive(true);
     
-        Console::Log("Obamaaaaaa");
+       // Console::Log("Obamaaaaaa");
             enebledEnemies[i].GetTransform().SetPosition(spawnPosShip[i]);
         //if (enemyScript[i])
         //{

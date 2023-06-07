@@ -97,10 +97,12 @@ public:
 
     float _tHitColor = 0.35f;
     API_Vector3 initialPos;
+    API_Vector3 spawnPos;
 
     API_Agent enemyAgent;
 
     bool isTank;
+    bool isEQEnemy = false;// if is enemy on lvl3 who appears after stealing the diviner
 
 private:
 

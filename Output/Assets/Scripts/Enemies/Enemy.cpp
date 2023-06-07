@@ -36,6 +36,7 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     // script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
      //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
     script->AddCheckBox("Static Wander", &classInstance->staticWand);
+    script->AddCheckBox("Appears after diviner?(LVL3)", &classInstance->isEQEnemy);
     return classInstance;
 }
 

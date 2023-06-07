@@ -571,6 +571,16 @@ void ThanosAttacks::Update()
 					dashing = true;
 					DashAttack();
 
+					dashTimer += Time::GetDeltaTime();
+
+					if (dashTimer > 1.5f) {
+						thanosAnimationPlayer.ChangeAnimation(thanosMeleeAnimation);
+						thanosAnimationPlayer.SetLoop(false);
+						thanosAnimationPlayer.Play();
+						thanosState = THANOS_STATE::MELEEATTACK;
+						dashTimer = 0.0f;
+					}
+
 				break;
 			case THANOS_STATE::THROWINGATTACK:
 
@@ -631,6 +641,7 @@ void ThanosAttacks::MeleeAttack() {
 
 	meleeAttackTime += Time::GetDeltaTime();
 	if (meleeAttackTime >= 0.75f) {
+		dashTimer = 0.0f;
 		melee1.SetActive(false);
 		meleeAttackTime = 0.0f;
 		isAttacking = false;
@@ -838,9 +849,6 @@ void ThanosAttacks::OnCollisionExit(API::API_RigidBody other)
 	std::string detectionTag = other.GetGameObject().GetTag();
 
 	if ((detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
-		other.GetGameObject().GetRigidBody().SetTrigger(false);
-	}
-	if ((detectionTag == "Torch" || detectionTag == "Box")) {
 		other.GetGameObject().GetRigidBody().SetTrigger(false);
 	}
 }

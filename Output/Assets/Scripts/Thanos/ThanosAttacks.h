@@ -202,5 +202,7 @@ public:
 	bool laserExpanded = false;
 
 	int whichColumn = -1;
+
+	float dashTimer = 0.0f;
 };
 

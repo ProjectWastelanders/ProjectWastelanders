@@ -48,6 +48,8 @@ HELLO_ENGINE_API_C BossAttacks* CreateBossAttacks(ScriptToInspectorInterface* sc
 	script->AddDragBoxGameObject("Rock19", &classInstance->rocks[18]);
 	script->AddDragBoxGameObject("Rock20", &classInstance->rocks[19]);
 
+	script->AddDragBoxGameObject("Explosion3D", &classInstance->areaImpact);
+
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
@@ -277,6 +279,8 @@ void BossAttacks::Update()
 			case 4:
 				explosionTime += Time::GetDeltaTime();
 
+				areaImpact.GetTransform().Scale(3.5f * Time::GetDeltaTime());
+
 				if (explosionTime > 1.5 && explosionTime < 1.6 && distSA < 15.0 && explosionWave1HasArrived == false) {
 					pStats->TakeDamage(50,0);
 					explosionWave1HasArrived = true;
@@ -291,6 +295,9 @@ void BossAttacks::Update()
 					explosionWave1.GetParticleSystem().StopEmitting();
 					bossState = BOSS_STATE::IDLE;
 					attacking = false;
+
+					areaImpact.GetTransform().SetScale(1,1,1);
+					areaImpact.SetActive(false);
 				}
 				break;
 			case 5: 
@@ -460,6 +467,7 @@ void BossAttacks::Update()
 					explosionWave1.SetActive(true);
 					explosionWave1.GetTransform().Translate(0, 10, 0);
 					explosionWave1.GetParticleSystem().Play();
+					areaImpact.SetActive(true);
 				}
 
 				if (attackType == 5) {

@@ -74,6 +74,75 @@ void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
+    
+
+    if (destroyHighCover == true) {
+        highCoverTime += Time::GetDeltaTime();
+
+        cover1.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover2.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover3.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover4.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover5.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover6.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover7.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover8.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover9.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover10.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover11.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover12.GetTransform().Scale(-2 * Time::GetDeltaTime());
+
+        if (highCoverTime > 1.0f)
+        {
+
+
+       
+
+            cover1.GetTransform().SetPosition(0, -1000, 0);
+            cover2.GetTransform().SetPosition(0, -1000, 0);
+            cover3.GetTransform().SetPosition(0, -1000, 0);
+            cover4.GetTransform().SetPosition(0, -1000, 0);
+            cover5.GetTransform().SetPosition(0, -1000, 0);
+            cover6.GetTransform().SetPosition(0, -1000, 0);
+            cover7.GetTransform().SetPosition(0, -1000, 0);
+            cover8.GetTransform().SetPosition(0, -1000, 0);
+            cover9.GetTransform().SetPosition(0, -1000, 0);
+            cover10.GetTransform().SetPosition(0, -1000, 0);
+            cover11.GetTransform().SetPosition(0, -1000, 0);
+            cover12.GetTransform().SetPosition(0, -1000, 0);
+
+
+            cover1.SetActive(false);
+           
+           
+            cover2.SetActive(false);
+
+            cover3.SetActive(false);
+
+            cover4.SetActive(false);
+
+            cover5.SetActive(false);
+
+            cover6.SetActive(false);
+
+            cover7.SetActive(false);
+
+            cover8.SetActive(false);
+
+            cover9.SetActive(false);
+
+            cover10.SetActive(false);
+
+            cover11.SetActive(false);
+
+            cover12.SetActive(false);
+
+            destroyHighCover = false;
+
+
+        }
+
+    }
     if (damaged == true)
     {
        
@@ -151,40 +220,22 @@ void BossLoop::Update()
 
                 if (phase == 2) {
                     
-                    cover1.SetActive(false);
+                    destroyHighCover = true;
 
-                   
-                    cover2.SetActive(false);
-
-                    
-                    cover3.SetActive(false);
-
-
-                    cover4.SetActive(false);
-
-                    
-                    cover5.SetActive(false);
-
-                    
-                    cover6.SetActive(false);
-
-                   
-                    cover7.SetActive(false);
-
-                    
-                    cover8.SetActive(false);
-
-                   
-                    cover9.SetActive(false);
-
-                   
-                    cover10.SetActive(false);
-
-                   
-                    cover11.SetActive(false);
+                    cover1.GetParticleSystem().Play();
+                    cover2.GetParticleSystem().Play();
+                    cover3.GetParticleSystem().Play();
+                    cover4.GetParticleSystem().Play();
+                    cover5.GetParticleSystem().Play();
+                    cover6.GetParticleSystem().Play();
+                    cover7.GetParticleSystem().Play();
+                    cover8.GetParticleSystem().Play();
+                    cover9.GetParticleSystem().Play();
+                    cover10.GetParticleSystem().Play();
+                    cover11.GetParticleSystem().Play();
+                    cover12.GetParticleSystem().Play();
 
 
-                    cover12.SetActive(false);
                 }
             }
         }

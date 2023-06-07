@@ -4,6 +4,7 @@
 #include "Macro.h"
 
 #include "ThanosAttacks.h"
+#include "ThanosLoop.h"
 
 #include "API/API.h"
 
@@ -26,6 +27,7 @@ public:
 	float fadeOutTime = 3.0f;
 
 	ThanosAttacks* thanosAttacks = nullptr;
+	ThanosLoop* thanosLoop = nullptr;
 
 private:
 	float _fadeInCooldown;

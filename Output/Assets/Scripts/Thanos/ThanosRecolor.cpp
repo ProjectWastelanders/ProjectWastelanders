@@ -1,10 +1,11 @@
 #include "ThanosRecolor.h"
+#include "ThanosLoop.h"
 HELLO_ENGINE_API_C ThanosRecolor* CreateThanosRecolor(ScriptToInspectorInterface* script)
 {
 	ThanosRecolor* classInstance = new ThanosRecolor();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	
-	//script->AddDragBoxShaderComponent("Thanos Material", &classInstance->recolor);
+	script->AddDragBoxShaderComponent("Thanos Material", &classInstance->recolor);
 	script->AddDragFloat("R (MIN 1.0F)", &classInstance->r);
 	script->AddDragFloat("G (MIN 1.0F)", &classInstance->g);
 	script->AddDragFloat("B (MIN 1.0F)", &classInstance->b);
@@ -17,6 +18,7 @@ HELLO_ENGINE_API_C ThanosRecolor* CreateThanosRecolor(ScriptToInspectorInterface
 void ThanosRecolor::Start()
 {
 	thanosAttacks = (ThanosAttacks*)gameObject.GetScript("ThanosAttacks");
+	thanosLoop = (ThanosLoop*)gameObject.GetScript("ThanosLoop");
 
 	_fadeInCooldown = _fadeOutCooldown = 0;
 	fading = false;
@@ -26,17 +28,23 @@ void ThanosRecolor::Update()
 {
 	if (thanosAttacks != nullptr)
 	{
-		if (thanosAttacks->isAttacking)
-		{
-			recolor.SetColor(1, 1, 1, 255);
+		if (thanosLoop != nullptr) {
+			if (thanosLoop->phase < 2) {
+				if (!thanosAttacks->isAttacking)
+				{
+					recolor.SetColor(1, 1, 1, 255);
+				}
+				else if (thanosAttacks->isAttacking)
+				{
+					fading ? FadeIn() : FadeOut();
+					//recolor.SetColor(r, g, b, 255);
+					recolor.SetColor(_r, _g, _b, 255);
+				}
+			}
+
 		}
-		else if (!thanosAttacks->isAttacking)
-		{
-			fading ? FadeIn() : FadeOut();
-			//recolor.SetColor(r, g, b, 255);
-			recolor.SetColor(_r, _g, _b, 255);
-		}
-	}	
+
+	}
 }
 
 void ThanosRecolor::FadeIn()

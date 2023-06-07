@@ -3,6 +3,7 @@
 #include "ThanosLoop.h"
 #include "../Player/PlayerStats.h"
 #include "../Player/PlayerMove.h"
+#include "../../Assets/Game/Characters/Enemies/enemyThanos_Animations/ThanosAssets/Columna.h"
 
 HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface* script)
 {
@@ -99,6 +100,19 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxAnimationResource("Thanos Out Of Combat", &classInstance->thanosOutOfCombat);
 	script->AddDragBoxAnimationResource("Thanos Punch Attack", &classInstance->thanosPunchAttack);
 	script->AddDragBoxAnimationResource("Thanos Punch Attack 2", &classInstance->thanosPunchAttack2);
+
+	script->AddDragBoxGameObject("Column 0", &classInstance->columns[0]);
+	script->AddDragBoxGameObject("Column 1", &classInstance->columns[1]);
+	script->AddDragBoxGameObject("Column 2", &classInstance->columns[2]);
+	script->AddDragBoxGameObject("Column 3", &classInstance->columns[3]);
+	script->AddDragBoxGameObject("Column 4", &classInstance->columns[4]);
+	script->AddDragBoxGameObject("Column 5", &classInstance->columns[5]);
+	script->AddDragBoxGameObject("Column 6", &classInstance->columns[6]);
+	script->AddDragBoxGameObject("Column 7", &classInstance->columns[7]);
+	script->AddDragBoxGameObject("Column 8", &classInstance->columns[8]);
+	script->AddDragBoxGameObject("Column 9", &classInstance->columns[9]);
+	script->AddDragBoxGameObject("Column 10", &classInstance->columns[10]);
+	script->AddDragBoxGameObject("Column 11", &classInstance->columns[11]);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
@@ -145,8 +159,36 @@ void ThanosAttacks::Start()
 }
 void ThanosAttacks::Update()
 {
+	if (whichColumn > -1) {
 
-	
+		for (int i = 0; i < 12; i++) {
+			if (columnsStates[i] == true) {
+				columns[i].GetTransform().Translate(0, -1 * Time::GetDeltaTime(), 0);
+			}
+		}
+
+		switch (whichColumn)
+		{
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+			columns[whichColumn].GetTransform().Translate(0, -1 * Time::GetDeltaTime(), 0);
+
+			break;
+		default:
+			break;
+		}
+
+	}
 
 	//defenseSword.GetTransform().SetPosition(boss.GetTransform().GetGlobalPosition());
 	if (tLoop->phase == 2) {
@@ -760,6 +802,14 @@ void ThanosAttacks::OnCollisionStay(API::API_RigidBody other)
 	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
 		//other.GetGameObject().SetActive(false);
 		other.GetGameObject().GetRigidBody().SetTrigger(true);
+		if (detectionTag == "Column") {
+			Columna* ColumnaScript = (Columna*)other.GetGameObject().GetScript("Columna");
+
+			whichColumn = ColumnaScript->numColumn;
+			ColumnaScript->isDestroying = true;
+			columnsStates[whichColumn] = ColumnaScript->isDestroying;
+			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });
+		}
 
 	}
 }
@@ -771,6 +821,14 @@ void ThanosAttacks::OnCollisionEnter(API::API_RigidBody other)
 
 	if ((detectionTag == "Column"|| detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
 		other.GetGameObject().GetRigidBody().SetTrigger(true);
+		if (detectionTag == "Column") {
+			Columna* ColumnaScript = (Columna*)other.GetGameObject().GetScript("Columna");
+
+			whichColumn = ColumnaScript->numColumn;
+			ColumnaScript->isDestroying = true;
+			columnsStates[whichColumn] = ColumnaScript->isDestroying;
+			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });
+		}
 	}
 }
 
@@ -779,10 +837,10 @@ void ThanosAttacks::OnCollisionExit(API::API_RigidBody other)
 	std::string detectionName = other.GetGameObject().GetName();
 	std::string detectionTag = other.GetGameObject().GetTag();
 
-	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+	if ((detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
 		other.GetGameObject().GetRigidBody().SetTrigger(false);
 	}
-	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box")) {
+	if ((detectionTag == "Torch" || detectionTag == "Box")) {
 		other.GetGameObject().GetRigidBody().SetTrigger(false);
 	}
 }

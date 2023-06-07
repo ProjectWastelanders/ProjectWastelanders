@@ -155,6 +155,8 @@ public:
 	API_ParticleSystem laserPS3;
 
 	API_GameObject meteors[30];
+	API_GameObject columns[12];
+	bool columnsStates[12];
 	API_Vector3 meteorsPosition[30];
 
 	//ThanosAnimations
@@ -198,5 +200,7 @@ public:
 	float laserDirectionTimer = 0.0f;
 
 	bool laserExpanded = false;
+
+	int whichColumn = -1;
 };
 

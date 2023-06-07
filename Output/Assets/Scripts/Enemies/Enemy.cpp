@@ -5,6 +5,7 @@
 #include "EnemyMeleeMovement.h"
 #include "EnemyRanger.h"
 #include "../Shooting/StickBomb.h"
+#include "../InteractiveEnviroment/StickyBombParticle.h"
 #include "../Quests/Secondary_Quests/EnemyDieEvent.h"
 
 HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
@@ -370,6 +371,8 @@ void Enemy::CheckBombs()
         particles.SetActive(true);
         particles.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
         particles.GetParticleSystem().Play();
+        StickyBombParticle* script = (StickyBombParticle*)particles.GetScript("StickyBombParticle");
+        script->time = 0.1f;
     }
 }
 

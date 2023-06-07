@@ -490,9 +490,9 @@ void PlayerStats::SaveInStorage(int index)
     storage->SaveData();
 }
 
-void PlayerStats::SaveChestData(int chestContent, int chestIndex)
+void PlayerStats::SaveChestData(int chestContent, int chestIndex, bool saveChest)
 {
-    storage->SaveDataFromChest(chestIndex, chestContent);
+    if (saveChest) storage->SaveDataFromChest(chestIndex, chestContent);
 
     SaveInStorage(chestContent);
 }

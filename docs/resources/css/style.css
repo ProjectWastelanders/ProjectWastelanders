@@ -1052,7 +1052,7 @@ svg.ui-ux circle {
 /*=====================================*/
 
 .portfolio-section {
-    background: linear-gradient(rgba(255, 220, 170, 0.9), rgba(255, 200, 150, 0.5)), url(img/captura.PNG);
+    background: linear-gradient(rgba(255, 237, 200, 0.9), rgba(248, 227, 185, 0.5)), url(img/captura.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -1076,7 +1076,7 @@ svg.ui-ux circle {
 }
 
 .portfolio-section h2:after {
-    background: #feb342;
+    background: #e5c37f;
     width: 50%;
     position: absolute;
     left: 25%;
@@ -1087,7 +1087,7 @@ svg.ui-ux circle {
 }
 
 .portfolio-filter button {
-    background: #feb342;
+    background: #ebc985;
     font-size: 1.8rem;
     padding: 1rem 2rem;
     border: 0;

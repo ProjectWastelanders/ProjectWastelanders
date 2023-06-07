@@ -77,6 +77,8 @@ void Enemy::Start()
         _tAnimDie = 1.43f;
     }
 
+    Game::FindGameObjectsWithTag("StickyBombParticles", &bombParticles[0], 10);
+
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
 
     initialPos.x = gameObject.GetTransform().GetGlobalPosition().x;
@@ -364,7 +366,21 @@ void Enemy::CheckBombs()
         else TakeDamage(10.0f * currentBombNum, 10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
+        API_GameObject particles = GetFirstInactiveBombParticle();
+        particles.SetActive(true);
+        particles.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+        particles.GetParticleSystem().Play();
     }
+}
+
+API_GameObject Enemy::GetFirstInactiveBombParticle()
+{
+    for (size_t i = 0; i < 10; i++)
+    {
+        if (!bombParticles[i].IsActive()) return bombParticles[i];
+    }
+
+    return bombParticles[0];
 }
 
 void Enemy::AddBurn()

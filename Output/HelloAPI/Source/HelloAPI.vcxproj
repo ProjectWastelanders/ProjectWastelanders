@@ -1,519 +1,521 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Development|Win32">
-      <Configuration>Development</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-  </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
-    <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a5a13813-db02-41b7-bbb2-42b51ae43a1c}</ProjectGuid>
-    <RootNamespace>HelloAPI</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <PlatformToolset>v142</PlatformToolset>
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings" />
-  <ImportGroup Label="Shared" />
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Lib\Rel</OutDir>
-    <IntDir>$(SolutionDir)Lib-int\$(Configuration)</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Lib\Rel</OutDir>
-    <IntDir>$(SolutionDir)Lib-int\$(Configuration)</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Lib\Deb</OutDir>
-    <IntDir>$(SolutionDir)Lib-int\$(Configuration)</IntDir>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;HELLO_ENGINE_EXPORTS;GET_FROM_API;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\..\Source\HelloEngine</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\bin\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>HelloEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <PostBuildEvent>
-      <Command>cd. &gt; .checkR</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;HELLO_ENGINE_EXPORTS;GET_FROM_API;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\..\Source\HelloEngine</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)EngineSource;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>HelloEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <PostBuildEvent>
-      <Command>cd. &gt; .checkR</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\..\Source\HelloEngine</AdditionalIncludeDirectories>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;HELLO_ENGINE_EXPORTS;GET_FROM_API;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <WarningLevel>Level3</WarningLevel>
-      <ConformanceMode>true</ConformanceMode>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <SDLCheck>true</SDLCheck>
-    </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\bin\Debug\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>HelloEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-    </Link>
-    <PostBuildEvent>
-      <Command>cd. &gt; .checkD</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="../../Assets/Scripts/Enemies/Enemy.cpp" />
-    <ClCompile Include="../../Assets/Scripts/CamMov.cpp" />
-    <ClCompile Include="../../Assets/Scripts/SwapCam.cpp" />
-    <ClCompile Include="../../Assets/Scripts/StarShipCamMov.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/PlayerGunManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/PlayerGun.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/PlayerGunType.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/ProjectilePull.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/Projectile.cpp" />
-    <ClCompile Include="../../Assets/Scripts/RotateContiniously.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/ButtonActionsTest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/PauseMenu.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Rotation.cpp" />
-    <ClCompile Include="../../Assets/Scripts/MenuButtons.cpp" />
-    <ClCompile Include="../../Assets/Scripts/PauseButtons.cpp" />
-    <ClCompile Include="../../Assets/Scripts/GamepadButtons.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/SwapWeapon.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar_HP.cpp" />
-    <ClCompile Include="..\..\Assets\Game\Characters\Enemies\enemyThanos_Animations\ThanosAssets\Columna.cpp" />
-    <ClCompile Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Armory_Tutorial.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Audio\S_AudioMixer.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Coleccionable_buttons.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossMovement.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\RockDivider.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\EbonyMaw\Stone.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\AllyEnemiesDetection.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyGuns\EnemyAutomatic.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyMeleeMovement.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyRanger.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Level2EndTrigger.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Level2FinalText.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\LevelEndTrigger.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\OrbitalTrigger.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Player\PlayerMove.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Player\PlayerStats.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Player\Temp_Teleporter.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerAutomatic.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerBurst.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerDuals.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerFlamethrower.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerRicochet.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerSemiAuto.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerShotgun.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\LaserDmg.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\Meteor.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\SpinSword.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosAttacks.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Shooting\StickBomb.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosDmg.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosLoop.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosMeleeDmg.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosMovement.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\Animation\AnimationMove.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\Armory\DisplayUpgradeBpAmount.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\DashUI.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HpBar.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\UIManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/ArmoryUpgratteButtons.cpp" />
-    <ClCompile Include="../../Assets/Scripts/ArmoryWeaponSelect.cpp" />
-    <ClCompile Include="../../Assets/Scripts/AbilityTreeScript.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/HUD_Power_Up_Scrip.cpp" />
-    <ClCompile Include="../../Assets/Scripts/ArmoryBluePrints.cpp" />
-    <ClCompile Include="../../Assets/Scripts/AbilityTreeUpgrades.cpp" />
-    <ClCompile Include="../../Assets/Scripts/HUD_Ultimate.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/HUD_Shield_Indicator.cpp" />
-    <ClCompile Include="../../Assets/Scripts/ArmoryUnlock.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Player/PlayerUltimate.cpp" />
-    <ClCompile Include="../../Assets/temp/TestAPI.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UsefulScripts/SetAllChildsTag.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyDropManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyDrop.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_Masacre.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/Chest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyGun.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/TP_Cabin.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SmokeExtractorTrap.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BreakableBox.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BreakableWall.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Player/PlayerStorage.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyBurst.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyShotgun.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/UI_Municion.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyTank.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/CasetteManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ChestManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/AbilitySelect.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemyMeleeAttackZone.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BarrierSpawner.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.cpp" />
-    <ClCompile Include="../../Assets/temp/QuickSave/SaveTest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Armory/DisplaySkillPointsAmount.cpp" />
-    <ClCompile Include="../../Assets/Scripts/EbonyMaw/FireDamage.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Boss_Bar_HUD.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UsefulScripts\IndexContainer.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Map/Map.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Missions/LVL 1/GetDiviner.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/PlayAmbienceMusic.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/ChangeSceneButton.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/InitialText.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/HUBTextManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/ShotgunBomb.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/ShotgunBombExplosion.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/DamageTraker.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Shooting/CheckRicochetTargets.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_SomethingPersonal.cpp" />
-    <ClCompile Include="../../Assets/Scripts/AbilityDescription.cpp" />
-    <ClCompile Include="../../Assets/Scripts/OnCollisionTest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/EnemySniper.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/EnemyDieEvent.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_LikeThe80s.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_TheRuleOfFive.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/FindAndRescueGroot.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Player/PlayerInCombat.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Map/feedbackMission.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipInLevel.cpp" />
-    <ClCompile Include="../../Assets/Scripts/FadeToBlack.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ButtonBarrier.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BarrierWithButton.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.cpp" />
-    <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.cpp" />
-    <ClCompile Include="../../Assets/temp/NavMesh/testNavAgent.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Quests/ReachTheSpaceship.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.cpp" />
-    <ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
-    <ClCompile Include="..\..\Assets\UI\Select_Level\Weapon_Select.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.cpp" />
-    <ClCompile Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.cpp" />
-    <ClCompile Include="../../Assets/temp/PhysicsTesting/RayCastTest.cpp" />
-    <ClCompile Include="../../Assets/temp/BugPhysic/PhysicTest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Audio/MusicManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/EbonyMaw/BossCinematic.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/FeedbackChest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.cpp" />
-    <ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.cpp" />
-    <ClCompile Include="../../Assets/Scripts/EbonyMaw/TpBossZone.cpp" />
-    <ClCompile Include="../../Assets/Scripts/PlayCinematic.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Groot/GrootAnimationScript.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Thanos/ThanosRecolor.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/StartingShipOnLevel.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Groot/HUB_Groot.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/UITutorial.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Enemies/ActiveEnmiesLvl3.cpp" />
-    <ClCompile Include="../../Assets/Scripts/UI Test folder/Power_Ups_Alert.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Assets\Game\Characters\Enemies\enemyThanos_Animations\ThanosAssets\Columna.h" />
-    <ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Armory_Tutorial.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Audio\S_AudioMixer.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
-    <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
-    <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.h" />
-    <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossMovement.h" />
-    <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\RockDivider.h" />
-    <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\Stone.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\AllyEnemiesDetection.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyGuns\EnemyAutomatic.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyMeleeMovement.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyRanger.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
-    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.h" />
-    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.h" />
-    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.h" />
-    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.h" />
-    <ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Level2EndTrigger.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Level2FinalText.h" />
-    <ClInclude Include="..\..\Assets\Scripts\LevelEndTrigger.h" />
-    <ClInclude Include="..\..\Assets\Scripts\OrbitalTrigger.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Player\PlayerMove.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Player\PlayerStats.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Player\Temp_Teleporter.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerAutomatic.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerBurst.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerDuals.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerFlamethrower.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerRicochet.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerSemiAuto.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerShotgun.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\LaserDmg.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\Meteor.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\SpinSword.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosAttacks.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Shooting\StickBomb.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosDmg.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosLoop.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosMeleeDmg.h" />
-    <ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosMovement.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\Animation\AnimationMove.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\Armory\DisplayUpgradeBpAmount.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\DashUI.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HpBar.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\UIManager.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UsefulScripts\IndexContainer.h" />
-    <ClInclude Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.h" />
-    <ClInclude Include="..\..\Assets\UI\Select_Level\Weapon_Select.h" />
-    <ClInclude Include="Macro.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/Enemy.h" />
-    <ClInclude Include="../../Assets/Scripts/CamMov.h" />
-    <ClInclude Include="../../Assets/Scripts/SwapCam.h" />
-    <ClInclude Include="../../Assets/Scripts/StarShipCamMov.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/PlayerGunManager.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/PlayerGun.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/PlayerGunType.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/ProjectilePull.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/Projectile.h" />
-    <ClInclude Include="../../Assets/Scripts/RotateContiniously.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/ButtonActionsTest.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/PauseMenu.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Rotation.h" />
-    <ClInclude Include="../../Assets/Scripts/MenuButtons.h" />
-    <ClInclude Include="../../Assets/Scripts/PauseButtons.h" />
-    <ClInclude Include="../../Assets/Scripts/GamepadButtons.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Movment_Bar.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/SwapWeapon.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Movment_Bar_HP.h" />
-    <ClInclude Include="../../Assets/Scripts/ArmoryUpgratteButtons.h" />
-    <ClInclude Include="../../Assets/Scripts/ArmoryWeaponSelect.h" />
-    <ClInclude Include="../../Assets/Scripts/AbilityTreeScript.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/HUD_Power_Up_Scrip.h" />
-    <ClInclude Include="../../Assets/Scripts/ArmoryBluePrints.h" />
-    <ClInclude Include="../../Assets/Scripts/AbilityTreeUpgrades.h" />
-    <ClInclude Include="../../Assets/Scripts/HUD_Ultimate.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/HUD_Shield_Indicator.h" />
-    <ClInclude Include="../../Assets/Scripts/ArmoryUnlock.h" />
-    <ClInclude Include="../../Assets/Scripts/Player/PlayerUltimate.h" />
-    <ClInclude Include="../../Assets/temp/TestAPI.h" />
-    <ClInclude Include="../../Assets/Scripts/UsefulScripts/SetAllChildsTag.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyDropManager.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyDrop.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_Masacre.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/Chest.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyGun.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/TP_Cabin.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SmokeExtractorTrap.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BreakableBox.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BreakableWall.h" />
-    <ClInclude Include="../../Assets/Scripts/Player/PlayerStorage.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyBurst.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyShotgun.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/UI_Municion.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyTank.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/CasetteManager.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ChestManager.h" />
-    <ClInclude Include="../../Assets/Scripts/AbilitySelect.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemyMeleeAttackZone.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BarrierSpawner.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.h" />
-    <ClInclude Include="../../Assets/temp/QuickSave/SaveTest.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Armory/DisplaySkillPointsAmount.h" />
-    <ClInclude Include="../../Assets/Scripts/EbonyMaw/FireDamage.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Boss_Bar_HUD.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Map/Map.h" />
-    <ClInclude Include="../../Assets/Scripts/Missions/LVL 1/GetDiviner.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/PlayAmbienceMusic.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/ChangeSceneButton.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/InitialText.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/HUBTextManager.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/ShotgunBomb.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/ShotgunBombExplosion.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/DamageTraker.h" />
-    <ClInclude Include="../../Assets/Scripts/Shooting/CheckRicochetTargets.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_SomethingPersonal.h" />
-    <ClInclude Include="../../Assets/Scripts/AbilityDescription.h" />
-    <ClInclude Include="../../Assets/Scripts/OnCollisionTest.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/EnemySniper.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/EnemyDieEvent.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_LikeThe80s.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_TheRuleOfFive.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/FindAndRescueGroot.h" />
-    <ClInclude Include="../../Assets/Scripts/Player/PlayerInCombat.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Map/feedbackMission.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipInLevel.h" />
-    <ClInclude Include="../../Assets/Scripts/FadeToBlack.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ButtonBarrier.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BarrierWithButton.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.h" />
-    <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.h" />
-    <ClInclude Include="../../Assets/temp/NavMesh/testNavAgent.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.h" />
-    <ClInclude Include="../../Assets/Scripts/Quests/ReachTheSpaceship.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.h" />
-    <ClInclude Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.h" />
-    <ClInclude Include="../../Assets/temp/PhysicsTesting/RayCastTest.h" />
-    <ClInclude Include="../../Assets/temp/BugPhysic/PhysicTest.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.h" />
-    <ClInclude Include="../../Assets/Scripts/Audio/MusicManager.h" />
-    <ClInclude Include="../../Assets/Scripts/EbonyMaw/BossCinematic.h" />
-    <ClInclude Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
-    <ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/FeedbackChest.h" />
-    <ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
-    <ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.h" />
-    <ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
-    <ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.h" />
-    <ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.h" />
-    <ClInclude Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.h" />
-    <ClInclude Include="../../Assets/Scripts/EbonyMaw/TpBossZone.h" />
-    <ClInclude Include="../../Assets/Scripts/PlayCinematic.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.h" />
-    <ClInclude Include="../../Assets/Scripts/Groot/GrootAnimationScript.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.h" />
-    <ClInclude Include="../../Assets/Scripts/Thanos/ThanosRecolor.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/StartingShipOnLevel.h" />
-    <ClInclude Include="../../Assets/Scripts/Groot/HUB_Groot.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/UITutorial.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.h" />
-    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.h" />
-    <ClInclude Include="../../Assets/Scripts/Enemies/ActiveEnmiesLvl3.h" />
-    <ClInclude Include="../../Assets/Scripts/UI Test folder/Power_Ups_Alert.h" />
-  </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|Win32">
+			<Configuration>Debug</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Development|Win32">
+			<Configuration>Development</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|Win32">
+			<Configuration>Release</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<VCProjectVersion>16.0</VCProjectVersion>
+		<Keyword>Win32Proj</Keyword>
+		<ProjectGuid>{a5a13813-db02-41b7-bbb2-42b51ae43a1c}</ProjectGuid>
+		<RootNamespace>HelloAPI</RootNamespace>
+		<WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<UseDebugLibraries>false</UseDebugLibraries>
+		<PlatformToolset>v142</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<CharacterSet>Unicode</CharacterSet>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="Configuration">
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<UseDebugLibraries>false</UseDebugLibraries>
+		<PlatformToolset>v142</PlatformToolset>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<CharacterSet>Unicode</CharacterSet>
+	</PropertyGroup>
+	<PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<PlatformToolset>v142</PlatformToolset>
+		<ConfigurationType>DynamicLibrary</ConfigurationType>
+		<UseDebugLibraries>true</UseDebugLibraries>
+		<CharacterSet>MultiByte</CharacterSet>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings" />
+	<ImportGroup Label="Shared" />
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<LinkIncremental>false</LinkIncremental>
+		<OutDir>$(SolutionDir)Lib\Rel</OutDir>
+		<IntDir>$(SolutionDir)Lib-int\$(Configuration)</IntDir>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+		<LinkIncremental>false</LinkIncremental>
+		<OutDir>$(SolutionDir)Lib\Rel</OutDir>
+		<IntDir>$(SolutionDir)Lib-int\$(Configuration)</IntDir>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<OutDir>$(SolutionDir)Lib\Deb</OutDir>
+		<IntDir>$(SolutionDir)Lib-int\$(Configuration)</IntDir>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<ClCompile>
+			<WarningLevel>Level3</WarningLevel>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<SDLCheck>true</SDLCheck>
+			<PreprocessorDefinitions>WIN32;HELLO_ENGINE_EXPORTS;GET_FROM_API;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ConformanceMode>true</ConformanceMode>
+			<AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\..\Source\HelloEngine</AdditionalIncludeDirectories>
+			<LanguageStandard>stdcpp17</LanguageStandard>
+			<RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+		</ClCompile>
+		<Link>
+			<SubSystem>Console</SubSystem>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<OptimizeReferences>true</OptimizeReferences>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<AdditionalLibraryDirectories>$(SolutionDir)..\..\bin\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalDependencies>HelloEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<PostBuildEvent>
+			<Command>cd. &gt; .checkR</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+		<ClCompile>
+			<WarningLevel>Level3</WarningLevel>
+			<FunctionLevelLinking>true</FunctionLevelLinking>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<SDLCheck>true</SDLCheck>
+			<PreprocessorDefinitions>WIN32;HELLO_ENGINE_EXPORTS;GET_FROM_API;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<ConformanceMode>true</ConformanceMode>
+			<AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\..\Source\HelloEngine</AdditionalIncludeDirectories>
+			<LanguageStandard>stdcpp17</LanguageStandard>
+			<RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+		</ClCompile>
+		<Link>
+			<SubSystem>Console</SubSystem>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<OptimizeReferences>true</OptimizeReferences>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<AdditionalLibraryDirectories>$(SolutionDir)EngineSource;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalDependencies>HelloEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<PostBuildEvent>
+			<Command>cd. &gt; .checkR</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)..\..\Source\HelloEngine</AdditionalIncludeDirectories>
+			<Optimization>Disabled</Optimization>
+			<PreprocessorDefinitions>WIN32;HELLO_ENGINE_EXPORTS;GET_FROM_API;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<LanguageStandard>stdcpp17</LanguageStandard>
+			<WarningLevel>Level3</WarningLevel>
+			<ConformanceMode>true</ConformanceMode>
+			<RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+			<SDLCheck>true</SDLCheck>
+		</ClCompile>
+		<Link>
+			<AdditionalLibraryDirectories>$(SolutionDir)..\..\bin\Debug\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+			<AdditionalDependencies>HelloEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+		</Link>
+		<PostBuildEvent>
+			<Command>cd. &gt; .checkD</Command>
+		</PostBuildEvent>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClCompile Include="../../Assets/Scripts/Enemies/Enemy.cpp" />
+		<ClCompile Include="../../Assets/Scripts/CamMov.cpp" />
+		<ClCompile Include="../../Assets/Scripts/SwapCam.cpp" />
+		<ClCompile Include="../../Assets/Scripts/StarShipCamMov.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/PlayerGunManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/PlayerGun.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/PlayerGunType.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/ProjectilePull.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/Projectile.cpp" />
+		<ClCompile Include="../../Assets/Scripts/RotateContiniously.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/ButtonActionsTest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/PauseMenu.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Rotation.cpp" />
+		<ClCompile Include="../../Assets/Scripts/MenuButtons.cpp" />
+		<ClCompile Include="../../Assets/Scripts/PauseButtons.cpp" />
+		<ClCompile Include="../../Assets/Scripts/GamepadButtons.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/SwapWeapon.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Movment_Bar_HP.cpp" />
+		<ClCompile Include="..\..\Assets\Game\Characters\Enemies\enemyThanos_Animations\ThanosAssets\Columna.cpp" />
+		<ClCompile Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Armory_Tutorial.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Audio\S_AudioMixer.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Coleccionable_buttons.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\BossMovement.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\RockDivider.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\EbonyMaw\Stone.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\AllyEnemiesDetection.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyGuns\EnemyAutomatic.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyMeleeMovement.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\EnemyRanger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Extractor_FeedBack.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Level2EndTrigger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Level2FinalText.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\LevelEndTrigger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\OrbitalTrigger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Player\PlayerMove.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Player\PlayerStats.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Player\Temp_Teleporter.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerAutomatic.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerBurst.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerDuals.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerFlamethrower.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerRicochet.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerSemiAuto.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\Guns\PlayerShotgun.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\LaserDmg.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\Meteor.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\SpinSword.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosAttacks.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Shooting\StickBomb.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosDmg.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosLoop.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosMeleeDmg.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\Thanos\ThanosMovement.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\Animation\AnimationMove.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\Armory\DisplayUpgradeBpAmount.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\DashUI.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HpBar.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\UIManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/ArmoryUpgratteButtons.cpp" />
+		<ClCompile Include="../../Assets/Scripts/ArmoryWeaponSelect.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AbilityTreeScript.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUD_Power_Up_Scrip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/ArmoryBluePrints.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AbilityTreeUpgrades.cpp" />
+		<ClCompile Include="../../Assets/Scripts/HUD_Ultimate.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUD_Shield_Indicator.cpp" />
+		<ClCompile Include="../../Assets/Scripts/ArmoryUnlock.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Player/PlayerUltimate.cpp" />
+		<ClCompile Include="../../Assets/temp/TestAPI.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UsefulScripts/SetAllChildsTag.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyDropManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyDrop.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_Masacre.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/Chest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyGun.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/TP_Cabin.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SmokeExtractorTrap.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BreakableBox.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BreakableWall.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Player/PlayerStorage.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyBurst.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyShotgun.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/UI_Municion.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyTank.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/CasetteManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ChestManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AbilitySelect.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemyMeleeAttackZone.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BarrierSpawner.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.cpp" />
+		<ClCompile Include="../../Assets/temp/QuickSave/SaveTest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Armory/DisplaySkillPointsAmount.cpp" />
+		<ClCompile Include="../../Assets/Scripts/EbonyMaw/FireDamage.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Boss_Bar_HUD.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UsefulScripts\IndexContainer.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Map/Map.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Missions/LVL 1/GetDiviner.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/PlayAmbienceMusic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/ChangeSceneButton.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/InitialText.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUBTextManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/ShotgunBomb.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/ShotgunBombExplosion.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/DamageTraker.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Shooting/CheckRicochetTargets.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_SomethingPersonal.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AbilityDescription.cpp" />
+		<ClCompile Include="../../Assets/Scripts/OnCollisionTest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/EnemySniper.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/EnemyDieEvent.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_LikeThe80s.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_TheRuleOfFive.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/FindAndRescueGroot.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Player/PlayerInCombat.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Map/feedbackMission.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipInLevel.cpp" />
+		<ClCompile Include="../../Assets/Scripts/FadeToBlack.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ButtonBarrier.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BarrierWithButton.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.cpp" />
+		<ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.cpp" />
+		<ClCompile Include="../../Assets/temp/NavMesh/testNavAgent.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Quests/ReachTheSpaceship.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.cpp" />
+		<ClCompile Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.cpp" />
+		<ClCompile Include="..\..\Assets\UI\Select_Level\Weapon_Select.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.cpp" />
+		<ClCompile Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.cpp" />
+		<ClCompile Include="../../Assets/temp/PhysicsTesting/RayCastTest.cpp" />
+		<ClCompile Include="../../Assets/temp/BugPhysic/PhysicTest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Audio/MusicManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/EbonyMaw/BossCinematic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/LevelPreset/LevelPreset.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/FeedbackChest.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/EbonyMaw/TpBossZone.cpp" />
+		<ClCompile Include="../../Assets/Scripts/PlayCinematic.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Groot/GrootAnimationScript.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Thanos/ThanosRecolor.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/StartingShipOnLevel.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Groot/HUB_Groot.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/UITutorial.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.cpp" />
+		<ClCompile Include="../../Assets/Scripts/Enemies/ActiveEnmiesLvl3.cpp" />
+		<ClCompile Include="../../Assets/Scripts/UI Test folder/Power_Ups_Alert.cpp" />
+		<ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/StickyBombParticle.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\Assets\Game\Characters\Enemies\enemyThanos_Animations\ThanosAssets\Columna.h" />
+		<ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Armory_Tutorial.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Audio\S_AudioMixer.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Coleccionable_buttons.h" />
+		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
+		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossLoop.h" />
+		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossMovement.h" />
+		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\RockDivider.h" />
+		<ClInclude Include="..\..\Assets\Scripts\EbonyMaw\Stone.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\AllyEnemiesDetection.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyGuns\EnemyAutomatic.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyMeleeMovement.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectile.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyProjectilePull.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\EnemyRanger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMark.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Extractor_FeedBack.h" />
+		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\EnemyMeleeSpawner.h" />
+		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\GoToLevelTrigger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\IslandMovement.h" />
+		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\Jumper.h" />
+		<ClInclude Include="..\..\Assets\Scripts\InteractiveEnviroment\SmokeTrapProjectile.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Level2EndTrigger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Level2FinalText.h" />
+		<ClInclude Include="..\..\Assets\Scripts\LevelEndTrigger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\OrbitalTrigger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Player\PlayerMove.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Player\PlayerStats.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Player\Temp_Teleporter.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerAutomatic.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerBurst.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerDuals.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerFlamethrower.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerRicochet.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerSemiAuto.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\Guns\PlayerShotgun.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\LaserDmg.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\Meteor.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\SpinSword.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosAttacks.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Shooting\StickBomb.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosDmg.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosLoop.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosMeleeDmg.h" />
+		<ClInclude Include="..\..\Assets\Scripts\Thanos\ThanosMovement.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\Animation\AnimationMove.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\Armory\DisplayUpgradeBpAmount.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\DashUI.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HpBar.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_LevelSelect.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\OpenMenuTrigger.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_BluePrints.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\PlayerIndicator.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\ScoreScreen.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\UIManager.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UsefulScripts\IndexContainer.h" />
+		<ClInclude Include="..\..\Assets\UI\Select_Level\Feedback_Level_Select.h" />
+		<ClInclude Include="..\..\Assets\UI\Select_Level\Weapon_Select.h" />
+		<ClInclude Include="Macro.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/Enemy.h" />
+		<ClInclude Include="../../Assets/Scripts/CamMov.h" />
+		<ClInclude Include="../../Assets/Scripts/SwapCam.h" />
+		<ClInclude Include="../../Assets/Scripts/StarShipCamMov.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/PlayerGunManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/PlayerGun.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/PlayerGunType.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/ProjectilePull.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/Projectile.h" />
+		<ClInclude Include="../../Assets/Scripts/RotateContiniously.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/ButtonActionsTest.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/PauseMenu.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Rotation.h" />
+		<ClInclude Include="../../Assets/Scripts/MenuButtons.h" />
+		<ClInclude Include="../../Assets/Scripts/PauseButtons.h" />
+		<ClInclude Include="../../Assets/Scripts/GamepadButtons.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Movment_Bar.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/SwapWeapon.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Movment_Bar_HP.h" />
+		<ClInclude Include="../../Assets/Scripts/ArmoryUpgratteButtons.h" />
+		<ClInclude Include="../../Assets/Scripts/ArmoryWeaponSelect.h" />
+		<ClInclude Include="../../Assets/Scripts/AbilityTreeScript.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUD_Power_Up_Scrip.h" />
+		<ClInclude Include="../../Assets/Scripts/ArmoryBluePrints.h" />
+		<ClInclude Include="../../Assets/Scripts/AbilityTreeUpgrades.h" />
+		<ClInclude Include="../../Assets/Scripts/HUD_Ultimate.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUD_Shield_Indicator.h" />
+		<ClInclude Include="../../Assets/Scripts/ArmoryUnlock.h" />
+		<ClInclude Include="../../Assets/Scripts/Player/PlayerUltimate.h" />
+		<ClInclude Include="../../Assets/temp/TestAPI.h" />
+		<ClInclude Include="../../Assets/Scripts/UsefulScripts/SetAllChildsTag.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyDropManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyDrop.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_Masacre.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/Chest.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyGun.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/TP_Cabin.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SmokeExtractorTrap.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BreakableBox.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BreakableWall.h" />
+		<ClInclude Include="../../Assets/Scripts/Player/PlayerStorage.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyBurst.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyGuns/EnemyShotgun.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/UI_Municion.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyTank.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/CasetteManager.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ChestManager.h" />
+		<ClInclude Include="../../Assets/Scripts/AbilitySelect.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemyMeleeAttackZone.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BarrierSpawner.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/OpenMenuInterruptor.h" />
+		<ClInclude Include="../../Assets/temp/QuickSave/SaveTest.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Armory/DisplaySkillPointsAmount.h" />
+		<ClInclude Include="../../Assets/Scripts/EbonyMaw/FireDamage.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Boss_Bar_HUD.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Map/Map.h" />
+		<ClInclude Include="../../Assets/Scripts/Missions/LVL 1/GetDiviner.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/PlayAmbienceMusic.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/ChangeSceneButton.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/InitialText.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUBTextManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/ShotgunBomb.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/ShotgunBombExplosion.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/DamageTraker.h" />
+		<ClInclude Include="../../Assets/Scripts/Shooting/CheckRicochetTargets.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_SomethingPersonal.h" />
+		<ClInclude Include="../../Assets/Scripts/AbilityDescription.h" />
+		<ClInclude Include="../../Assets/Scripts/OnCollisionTest.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/EnemySniper.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/EnemyDieEvent.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_LikeThe80s.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_TheRuleOfFive.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/FindAndRescueGroot.h" />
+		<ClInclude Include="../../Assets/Scripts/Player/PlayerInCombat.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Map/feedbackMission.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipInLevel.h" />
+		<ClInclude Include="../../Assets/Scripts/FadeToBlack.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ButtonBarrier.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BarrierWithButton.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/Decoration/SpaceShip.h" />
+		<ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUD_SHIELD_BROKEN.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpawnerArea.h" />
+		<ClInclude Include="../../Assets/temp/NavMesh/testNavAgent.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/Secondary_Quests/Mision_RageMonster.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/StealTheDivinerAgain.h" />
+		<ClInclude Include="../../Assets/Scripts/Quests/ReachTheSpaceship.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ObjRemarcableColor.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/MeteoriteTrap.h" />
+		<ClInclude Include="../../Assets/temp/PhysicsTesting/ChangeBoxSize.h" />
+		<ClInclude Include="../../Assets/temp/PhysicsTesting/RayCastTest.h" />
+		<ClInclude Include="../../Assets/temp/BugPhysic/PhysicTest.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Audio/UIAudioManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Audio/MusicManager.h" />
+		<ClInclude Include="../../Assets/Scripts/EbonyMaw/BossCinematic.h" />
+		<ClInclude Include="../../Assets/Scripts/Missions/LVL3/AttackingShip.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Thanos_HP_UI.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/LVL3_ui/HUD_SpaceShip_Bar.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/HUB_UIManager.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Settings/Settings_Manager.h" />
+		<ClInclude Include="../../Assets/Scripts/LevelPreset/LevelPreset.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/FeedbackChest.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.h" />
+		<ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/StartOfLvl3.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_3/stealDivinerDialog.h" />
+		<ClInclude Include="../../Assets/Scripts/Dialogs/Lvl4/ThanosCinematic.h" />
+		<ClInclude Include="../../Assets/Scripts/EbonyMaw/TpBossZone.h" />
+		<ClInclude Include="../../Assets/Scripts/PlayCinematic.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Groot/GrootAnimationScript.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.h" />
+		<ClInclude Include="../../Assets/Scripts/Thanos/ThanosRecolor.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/StartingShipOnLevel.h" />
+		<ClInclude Include="../../Assets/Scripts/Groot/HUB_Groot.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/HUB/Levels_Information_Save.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/UITutorial.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/JumperDeactivateOnThanos.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipOnOtherLevels.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Blue_Print_Screen_Alert.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/BoxManager.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/EnemyManager.h" />
+		<ClInclude Include="../../Assets/Scripts/Enemies/ActiveEnmiesLvl3.h" />
+		<ClInclude Include="../../Assets/Scripts/UI Test folder/Power_Ups_Alert.h" />
+		<ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/StickyBombParticle.h" />
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets" />
 </Project>

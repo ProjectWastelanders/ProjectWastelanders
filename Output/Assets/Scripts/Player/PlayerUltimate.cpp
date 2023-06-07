@@ -17,6 +17,8 @@ void PlayerUltimate::Start()
 
 void PlayerUltimate::Update()
 {
+    return;
+
     if (endUlt)
     {
         triggerUlt = false;

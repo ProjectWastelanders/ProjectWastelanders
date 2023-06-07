@@ -154,7 +154,7 @@ void ThanosAttacks::Start()
 	for (int i = 0; i < 30; i++) {
 		meteorsPosition[i] = meteors[i].GetTransform().GetGlobalPosition();
 	}
-	explosionWave.GetTransform().Translate(0, -10, 0);
+	explosionWave.GetTransform().Translate(0, 0, 0);
 
 }
 void ThanosAttacks::Update()
@@ -373,7 +373,7 @@ void ThanosAttacks::Update()
 				for (int i = 0; i < 3; i++) {
 					bulletThrown[i] = false;
 					bullets[i].SetActive(false);
-					bullets[i].GetTransform().SetRotation(0,0,0);
+					bullets[i].GetTransform().SetPosition(0,0,0);
 				}
 
 			}
@@ -741,7 +741,8 @@ void ThanosAttacks::BulletSeek(API_GameObject* seeker, API_Vector3 target, float
 
 	if (direction.x < 0.9 && direction.x > -0.9 && direction.y < 0.9 && direction.y && direction.z < 0.9 && direction.z) {
 		seeker->SetActive(false);
-
+		//seeker->GetParticleSystem().Stop();
+		//seeker->GetParticleSystem().StopEmitting();
 	}
 
 }

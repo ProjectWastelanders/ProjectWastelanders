@@ -30,6 +30,7 @@ void ActiveEnmiesLvl3::Start()
 {
 	Game::FindGameObjectsWithTag("Milano", &spaceShipGO,1);
 	spaceShip = (ReachTheSpaceship*)spaceShipGO.GetScript("ReachTheSpaceship");
+	//EnableEnemies();
 }
 void ActiveEnmiesLvl3::Update()
 {
@@ -37,10 +38,15 @@ void ActiveEnmiesLvl3::Update()
 	{
 		if (spaceShip->enabled)
 		{
-			for (size_t i = 0; i < 17; i++)
-			{
-				enebledEnemies[i].SetActive(true);
-			}
+			EnableEnemies();
 		}
+	}
+}
+
+void ActiveEnmiesLvl3::EnableEnemies()
+{
+	for (size_t i = 0; i < 18; i++)
+	{
+		enebledEnemies[i].SetActive(true);
 	}
 }

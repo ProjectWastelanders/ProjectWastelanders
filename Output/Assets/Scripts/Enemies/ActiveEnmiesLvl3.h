@@ -11,6 +11,8 @@ public:
 	void Start() override; 
 	void Update() override;
 
+	void EnableEnemies();
+
 	API_GameObject enebledEnemies[18];
 	API_GameObject spaceShipGO;
 	ReachTheSpaceship* spaceShip = nullptr;

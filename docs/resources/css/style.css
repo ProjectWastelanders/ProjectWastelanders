@@ -1052,7 +1052,7 @@ svg.ui-ux circle {
 /*=====================================*/
 
 .portfolio-section {
-    background: linear-gradient(rgba(255, 237, 200, 0.9), rgba(248, 227, 185, 0.4)), url(img/captura.PNG);
+    background: linear-gradient(rgba(254, 237, 200, 0.9), rgba(248, 227, 185, 0.5)), url(img/captura.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

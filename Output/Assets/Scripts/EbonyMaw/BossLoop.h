@@ -49,6 +49,9 @@ public:
     bool damaged = false;
     float bloodTimer = 0;
 
+    bool destroyHighCover = false;
+    float highCoverTime = 0.0f;
+
     float hp = 1500.0f;
 
     bool battle = false;

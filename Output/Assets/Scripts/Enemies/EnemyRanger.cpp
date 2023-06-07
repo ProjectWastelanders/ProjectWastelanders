@@ -79,7 +79,6 @@ void EnemyRanger::Start()
 	// SetUp for Exclamation effect;
 	// 
 	// There have problem
-	//_exclamationPool = (ExclamationMarkPool*)Game::FindGameObject("ExclamationMarkPool").GetScript("ExclamationMarkPool");
 }
 
 void EnemyRanger::Update()
@@ -152,6 +151,7 @@ void EnemyRanger::Update()
 				enemState = States::ATTACKING_ESCAPE;
 				break;
 			}
+
 			// Attack Range
 			if (distanceBeetweenPlayerEnemy <= attackDis)
 			{
@@ -167,7 +167,8 @@ void EnemyRanger::Update()
 			// Follow Range
 			if (distanceBeetweenPlayerEnemy <= followDis || targStats->detectedCount > 0)
 			{
-				enemState = States::FOLLOWING;
+				if (enemState != States::FOLLOWING)
+					enemState = States::FOLLOWING;
 
 				// If enemy is out of his wonder range, _outCooldown never will be reset by followDistance
 				if (enemy->isOut)
@@ -181,8 +182,8 @@ void EnemyRanger::Update()
 					targStats->detectedCount++;
 					// For The Mark Effect
 
-					//if (_exclamationPool)
-					//	_exclamationPool->ActivateMark(gameObject);
+					//if (ExclamationPool::exist)
+					//	ExclamationPool::ActivateMark(gameObject);
 				}
 				break;
 			}
@@ -277,7 +278,7 @@ void EnemyRanger::Update()
 					enemy->enemyAgent.SetDestination(API_Vector3(enemy->basePos.x, gameObject.GetTransform().GetGlobalPosition().y, enemy->basePos.z));
 				}
 
-				if (animState != AnimationState::WALK && !enemy->takingDmg && _canWalk && enemy->basePos!=gameObject.GetTransform().GetGlobalPosition())
+				if (animState != AnimationState::WALK && !enemy->takingDmg && _canWalk && enemy->basePos != gameObject.GetTransform().GetGlobalPosition())
 				{
 					animState = AnimationState::WALK;
 					animationPlayer.ChangeAnimation(walkAnim);
@@ -291,8 +292,6 @@ void EnemyRanger::Update()
 					animationPlayer.Play();
 					//Console::Log("Walk");
 				}
-
-
 			}
 		}
 		break;

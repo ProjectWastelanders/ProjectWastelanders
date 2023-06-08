@@ -242,6 +242,10 @@ void BossLoop::Update()
             if (DieTimer >= 4) {
                 endBattle = true;
                 gameObject.SetActive(false);
+                blood.SetActive(false);
+                blood.GetParticleSystem().Stop();
+                blood.GetParticleSystem().StopEmitting();
+
                 gameObject.GetTransform().SetScale(0, 0, 0);
                 //TEMPORAL FOR ALPHA 1
                 finalTextPanel.SetActive(true);

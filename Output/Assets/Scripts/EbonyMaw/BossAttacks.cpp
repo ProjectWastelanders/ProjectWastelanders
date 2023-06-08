@@ -90,6 +90,12 @@ void BossAttacks::Start()
 void BossAttacks::Update()
 {
 
+	if (bLoop->hp < 0) {
+		for (int i = 0; i < 20; i++) {
+			rocks[i].SetActive(false);
+		}
+	}
+	
 	if (bLoop->canTakeDamage == true)
 	{
 		for (int i = 16; i < 20; i++)

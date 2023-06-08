@@ -850,7 +850,9 @@ void ThanosAttacks::OnCollisionStay(API::API_RigidBody other)
 		other.GetGameObject().GetRigidBody().SetTrigger(true);
 		if (detectionTag == "Column") {
 			Columna* ColumnaScript = (Columna*)other.GetGameObject().GetScript("Columna");
-
+			if (ColumnaScript->isDestroying == false) {
+				Audio::Event("column_breaking");
+			}
 			whichColumn = ColumnaScript->numColumn;
 			ColumnaScript->isDestroying = true;
 			columnsStates[whichColumn] = ColumnaScript->isDestroying;
@@ -873,6 +875,7 @@ void ThanosAttacks::OnCollisionEnter(API::API_RigidBody other)
 
 			whichColumn = ColumnaScript->numColumn;
 			ColumnaScript->isDestroying = true;
+			Audio::Event("column_breaking");
 			columnsStates[whichColumn] = ColumnaScript->isDestroying;
 			columns[whichColumn].GetParticleSystem().Play();
 			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });

@@ -19,6 +19,8 @@ public:
 	API_Vector3 finalPos;
 	API_Vector3 movingPos;
 
+	API_String audioEvent;
+
 	bool activeDialog;
 
 	float timer = 0.0f;

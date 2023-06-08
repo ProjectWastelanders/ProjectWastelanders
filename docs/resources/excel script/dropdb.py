@@ -47,7 +47,7 @@ def fill_html(member):
     clean_str(entry4commaRole)
     entry4blueRole = 'Lead' if 'production' in entry4role else ''
     clean_str(entry4blueRole)
-    entry4photo = 'resources/img/Profile_Pictures' + member['photo'].replace('\n','')
+    entry4photo = 'resources/img/Profile_Pictures/' + member['photo'].replace('\n','')
     clean_str(entry4photo)
     entry4email = member['email'].replace('\n','')
     clean_str(entry4email)
@@ -98,7 +98,7 @@ def fill_html(member):
     </div>
     '''
     #
-    entry = entry.replace('entry4name', entry4name)
+    entry = entry.replace('entry4name', entry4secondName)#last fix
     entry = entry.replace('entry4secondName', entry4secondName)
     entry = entry.replace('entry4role', entry4role)
     entry = entry.replace('entry4commaRole', entry4commaRole)

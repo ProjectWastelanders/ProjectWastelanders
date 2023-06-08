@@ -14,7 +14,7 @@ class MyCustomClass:
         self.contributions = contributions
 #
 data = []
-with open('test2.csv', 'r', encoding='utf-8') as file:
+with open('resources/excel script/final.csv', 'r', encoding='utf-8') as file:
     reader = csv.DictReader(file)
     print(reader.fieldnames)
     for row in reader:
@@ -31,17 +31,36 @@ with open('test2.csv', 'r', encoding='utf-8') as file:
 with open('team_data.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
 #
+def clean_str(str):
+    ''.join(str.replace('\t', ' ').split(' '))
+#
 html = []
 def fill_html(member):
     entry4name = member['name'].replace('\n','')
+    clean_str(entry4name)
+    name_parts = member['name'].split(', ')
+    entry4secondName = name_parts[1] + ' ' + name_parts[0]
+    clean_str(entry4secondName)
     entry4role = member['role'].replace('\n','').lower().replace(' ','').replace(',',' ')
+    clean_str(entry4role)
+    entry4commaRole = entry4role.title().join(', ')
+    clean_str(entry4commaRole)
     entry4blueRole = 'Lead' if 'production' in entry4role else ''
-    entry4photo = 'resources/img/' + member['photo'].replace('\n','')
+    clean_str(entry4blueRole)
+    entry4photo = 'resources/img/Profile_Pictures' + member['photo'].replace('\n','')
+    clean_str(entry4photo)
     entry4email = member['email'].replace('\n','')
+    clean_str(entry4email)
     entry4github = member['github'].replace('\n','')
+    clean_str(entry4github)
     entry4linkedin = member['linkedin'].replace('\n','')
+    clean_str(entry4linkedin)
     entry4brief = '\n'.join(['<p>\n'+p+'\n</p>' for p in member['brief'].split('\n') if p])
+    clean_str(entry4brief)
     entry4contributions = '\n'.join(['<li><p>'+p+'</p></li>' for p in member['contributions'].split('\n') if p])
+    clean_str(entry4contributions)
+    #
+    
     #
     entry = '''
     <div class="col span_1_of_2 mix entry4role box">
@@ -53,18 +72,18 @@ def fill_html(member):
         <div class="modal-content">
             <span class="close close_multi"></span>
             <div class="row">
-                <div class="col span_1_of_2 box">
+                <div class="col span_1_of_2 box" style="margin-bottom: 3rem;">
                     <h4>General Info</h4>
                     entry4brief
-                    <h4> Tasks Overview</h4>
+                    <h4 style="margin-top: 5rem;"> Tasks Overview</h4>
                     <ul>
                         entry4contributions
                     </ul>
                 </div>
                 <div class="col span_1_of_2 box">
                     <img src="entry4photo" alt="Name 4" class="team-member">
-                    <h3>entry4name</h3>
-                    <span class="role">entry4role</span>
+                    <h3>entry4secondName</h3>
+                    <span class="role">entry4commaRole</span>
                     <div class="social-link">
                         <ul>
                             <li><a href="entry4github"><i class="fab fa-github"></i></a></li>
@@ -80,7 +99,9 @@ def fill_html(member):
     '''
     #
     entry = entry.replace('entry4name', entry4name)
+    entry = entry.replace('entry4secondName', entry4secondName)
     entry = entry.replace('entry4role', entry4role)
+    entry = entry.replace('entry4commaRole', entry4commaRole)
     entry = entry.replace('entry4blueRole', entry4blueRole)
     entry = entry.replace('entry4photo', entry4photo)
     entry = entry.replace('entry4email', entry4email)
@@ -94,7 +115,7 @@ def fill_html(member):
 for member in data:
     fill_html(member)
 #
-with open('fill_html.html', 'w', encoding='utf-8') as file:
+with open('resources/excel script/fill.html', 'w', encoding='utf-8') as file:
     content = '\n'.join(html)
     file.write(content)
 #

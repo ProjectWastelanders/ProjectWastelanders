@@ -21591,7 +21591,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Hp": 2001.0
+                        "Hp": 2250.0
                     },
                     {
                         "Bomb": 375090512
@@ -21615,7 +21615,7 @@
                         "Texture Bomb 6": 306544930
                     },
                     {
-                        "Hp": 2001.0
+                        "Hp": 2250.0
                     },
                     {
                         "Bomb": 375090512
@@ -27506,7 +27506,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Max HP": 100000.0
+                        "Max HP": 100.0
                     },
                     {
                         "Current HP": 100.0
@@ -27545,7 +27545,7 @@
                         "Camera": 1929231542
                     },
                     {
-                        "Max HP": 100000.0
+                        "Max HP": 100.0
                     },
                     {
                         "Current HP": 100.0

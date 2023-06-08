@@ -123,6 +123,13 @@ void HUB_LevelSelect::Update()
 		}
 		return;
 	}
+	else
+	{
+		for (int i = 0; i < 3; ++i)
+		{
+			tutorials[i].SetActive(false);
+		}
+	}
 
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{

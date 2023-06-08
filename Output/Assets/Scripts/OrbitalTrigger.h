@@ -6,6 +6,7 @@
 #include "API/API.h"
 
 class CamMov;
+class ShadowManager;
 
 class OrbitalTrigger : HelloBehavior
 {
@@ -16,6 +17,9 @@ public:
 	void OnCollisionExit(API::API_RigidBody other) override;
 
 	API_GameObject cam;
-	CamMov* camScript;
+	CamMov* camScript = nullptr;
+
+	API_GameObject directionalLight;
+	ShadowManager* shadowManager = nullptr;
 };
 

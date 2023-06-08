@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
 #include "TransformComponent.h"
+#include "DirectionalLightComponent.h"
 
 #define COMPONENT_NUM 14
 

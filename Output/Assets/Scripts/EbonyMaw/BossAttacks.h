@@ -123,4 +123,9 @@ public:
 
 	float takeobjTimer;
 
+	bool audioBigRock = false;
+	bool audioRocks[5] = { false,false,false,false,false };
+	bool audioRocksImpact[5] = { false,false,false,false,false };
+	bool audioBoxes[10] = { false,false,false,false,false, false,false,false,false,false };
+
 };

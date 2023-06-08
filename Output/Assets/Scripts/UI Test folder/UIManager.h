@@ -33,7 +33,7 @@ public:
 	API_GameObject HUDPanel;
 	API_GameObject initialText;
 	API_GameObject finalText;
-	API_GameObject settingsPanel;
+	API_UIInput settingsPanel;
 
 	API_UIButton initialTextConinue;
 	API_UIButton finalTextConinue;

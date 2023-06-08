@@ -28,6 +28,7 @@ namespace API
     class API_Agent;
     class API_AudioSourceComponent;
     class API_VideoPlayer;
+    class API_DirectionalLight;
 
     class TO_API API_GameObject
     {
@@ -75,6 +76,8 @@ namespace API
         API_UIButton GetUIButton();
 
         API_UIImage GetUIImage();
+
+        API_DirectionalLight GetDirectionalLight();
 
         uint GetUID();
 

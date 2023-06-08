@@ -11,7 +11,7 @@ HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script
 	script->AddDragBoxUIButton("Continute button Initial text", &classInstance->initialTextConinue);
 	script->AddDragBoxUIButton("Continute button Final text", &classInstance->finalTextConinue);
 
-	script->AddDragBoxGameObject("Settings Panel", &classInstance->settingsPanel);
+	script->AddDragBoxUIInput("Settings Panel", &classInstance->settingsPanel);
 
 	script->AddDragBoxUIButton("Go Back Button", &classInstance->goBack);
 
@@ -22,7 +22,6 @@ void UIManager::Start()
 {
 	currentPanel = CurrentPanel::NONE;
 	isPaused = true;
-	settingsPanel.SetActive(false);
 	HUB_UIManager::ClosePanel(); // Do this in case the static state of the panel is blocked.
 	map = (Map*)mapPanel.GetParent().GetScript("Map");
 }
@@ -77,7 +76,7 @@ void UIManager::Update()
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_UP)
 	{
 		//Console::Log("ITS B");
-		settingsPanel.SetActive(false);
+		settingsPanel.SetEnable(false);
 		if (currentPanel == CurrentPanel::SETTINGS)
 		{
 			//Console::Log("ITS B && SETTINGS");
@@ -96,7 +95,7 @@ void UIManager::Update()
 
 	if (goBack.OnPress())
 	{
-		settingsPanel.SetActive(false);
+		settingsPanel.SetEnable(false);
 		CloseSettings();
 	}
 
@@ -129,16 +128,21 @@ void UIManager::ShowFinalText()
 
 void UIManager::ShowSettings()
 {
-	settingsPanel.SetActive(true);
+	settingsPanel.SetEnable(true);
+	//settingsPanel.SetActive(true);
 	pausePanel.SetActive(false);
+	settingsPanel.GetGameObject().GetTransform().SetPosition(0, 0, 0);
 
 	currentPanel = CurrentPanel::SETTINGS;
+	Console::Log("Show Settings");
 }
 
 void UIManager::CloseSettings()
 {
-	settingsPanel.SetActive(false);
+	settingsPanel.SetEnable(false);
 	pausePanel.SetActive(true);
+	settingsPanel.GetGameObject().GetTransform().SetPosition(25, 0, 0);
 
 	currentPanel = CurrentPanel::PAUSE;
+	Console::Log("Close Settings");
 }

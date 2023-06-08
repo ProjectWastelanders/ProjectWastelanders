@@ -16,8 +16,8 @@ DirectionalLightComponent::DirectionalLightComponent(GameObject* gameObject) : L
 	data.lightFrustum.type = math::FrustumType::OrthographicFrustum;
 	data.lightFrustum.nearPlaneDistance = 0.0f;
 	data.lightFrustum.farPlaneDistance = 200;
-	data.lightFrustum.orthographicHeight = 70;
-	data.lightFrustum.orthographicWidth = 70;
+	data.lightFrustum.orthographicHeight = 70; //113
+	data.lightFrustum.orthographicWidth = 70; //139
 
 }
 

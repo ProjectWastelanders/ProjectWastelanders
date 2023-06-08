@@ -238,7 +238,14 @@ void BossAttacks::Update()
 							playerPosition[i] = player.GetTransform().GetGlobalPosition();
 							dir[i] = player.GetTransform().GetGlobalPosition() - rocks[currentRock[i]].GetTransform().GetGlobalPosition();
 						}
-						if (currentTimeAttack > timeAttack[i] && hasReachedTarget[i] == false) Seek(&rocks[currentRock[i]], playerPosition[i], speed / 2, i, false, 60.0f);
+						if (currentTimeAttack > timeAttack[i] && hasReachedTarget[i] == false) {
+
+							Seek(&rocks[currentRock[i]], playerPosition[i], speed / 2, i, false, 60.0f);
+							if (audioRocks[i] == false) {
+								audioRocks[i] = true;
+								Audio::Event("ebony_light_throw");
+							}
+						}
 
 						else
 						{
@@ -250,6 +257,10 @@ void BossAttacks::Update()
 					}
 
 					if (currentTimeAttack >= timeAttack[numRocks[attackType]]) {
+						for (int i = 0; i < 5; i++) {
+							audioRocks[i] = false;
+							audioRocksImpact[i] = false;
+						}
 						bossState = BOSS_STATE::IDLE;
 						attacking = false;
 						animAttack = false;
@@ -267,9 +278,12 @@ void BossAttacks::Update()
 				SpecialAttack();
 				if (currentTimeAttack >= specialTimeAttack[numRocks[attackType]] && bossState == BOSS_STATE::SPECIALATTACK) {
 					bossState = BOSS_STATE::IDLE;
+					
 
 					for (int i = 5; i < 14; i++)
-					{ 
+					{
+						audioBoxes[i - 5] = false;
+
 						rocks[i].GetParticleSystem().Stop();
 						rocks[i].GetParticleSystem().StopEmitting();
 					}
@@ -327,7 +341,10 @@ void BossAttacks::Update()
 					if (rocks[1].GetTransform().GetGlobalScale().x >= 6.0f) {
 
 						Seek(&rocks[currentRock[1]], lastPlayerPosition, speed / 5, 1, false, 60.0f);
-
+						if (audioBigRock == false) {
+							Audio::Event("ebony_heavy_throw");
+							audioBigRock = true;
+						}
 						returnFireRockTime += Time::GetDeltaTime();
 
 						if (returnFireRockTime > 0.6f) {
@@ -336,16 +353,15 @@ void BossAttacks::Update()
 							groundFire.GetGameObject().GetTransform().SetPosition(lastPlayerPosition);
 							groundFire.GetGameObject().SetActive(true);
 							groundFire.Play();
-						
-
-
-
+							audioBigRock = false;
+							rocks[1].GetRigidBody().SetBoxScale({ 2, 2, 2 });
 							isFireOn = true;
 						}
 
 					}
 					else {
 						rocks[1].GetTransform().Scale(10 * Time::GetDeltaTime());
+						rocks[1].GetRigidBody().SetBoxScale({ 6,6,6 });
 						lastPlayerPosition = player.GetTransform().GetGlobalPosition();
 						rocks[1].GetParticleSystem().Play();
 
@@ -402,7 +418,6 @@ void BossAttacks::Update()
 			case BOSS_STATE::SELECTATTACK:
 				// Generate a random integer between 0 and 0
 				difficultySetter = rand() % 120 + 1;
-
 				switch (bLoop->phase)
 				{
 				case 0:
@@ -411,7 +426,6 @@ void BossAttacks::Update()
 					else if (difficultySetter > 60 && difficultySetter <= 90) attackType = 1;
 					else if (difficultySetter > 90 && difficultySetter < 101) attackType = 2;
 					else if (difficultySetter > 100) attackType = 5;
-
 					break;
 
 				case 1:
@@ -448,6 +462,7 @@ void BossAttacks::Update()
 				}
 				if (attackType < 3) {
 					bossState = BOSS_STATE::ROCKSELECT;
+					Audio::Event("ebony_rock_attack_preparation");
 				}
 				else if (attackType == 3) {
 					bossState = BOSS_STATE::SPECIALATTACK;
@@ -473,11 +488,12 @@ void BossAttacks::Update()
 					explosionWave1.GetParticleSystem().Play();
 					areaImpact.SetActive(true);
 					areaImpact.GetTransform().SetPosition(0, -1, 0);
+					Audio::Event("ebony_explosion");
 				}
 
 				if (attackType == 5) {
 					bossState = BOSS_STATE::FIREROCKATTACK;
-
+					Audio::Event("ebony_rock_attack_preparation");
 				}
 
 				hasBossCoords = false;
@@ -519,6 +535,7 @@ void BossAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed, 
 			groundFire.GetGameObject().GetTransform().SetPosition(target);
 			groundFire.GetGameObject().SetActive(true);
 			groundFire.Play();
+			Audio::Event("ebony_heavy_rock");
 			isFireOn = true;
 		}
 	}
@@ -528,6 +545,10 @@ void BossAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed, 
 		}
 		else if (bossState == BOSS_STATE::THROWING || bossState == BOSS_STATE::SPECIALATTACK) {
 			//if(rock == numRocks[attackType]) ReturnRock(seeker, rock, true);
+			if (bossState == BOSS_STATE::THROWING && audioRocksImpact[rock] == false) {
+				audioRocksImpact[rock] = true;
+				Audio::Event("ebony_little_explosion");
+			}
 			ReturnRock(seeker, rock, false);
 		}
 		if (currentTimeAttack >= timeAttack[numRocks[attackType]] && bossState == BOSS_STATE::THROWING) {
@@ -573,6 +594,10 @@ void BossAttacks::SpecialAttack()
 		}
 		if (currentTimeAttack > specialTimeAttack[i] && hasReachedTarget[i + 5] == false) 
 		{
+			if (audioBoxes[i] == false) {
+				audioBoxes[i] = true;
+				Audio::Event("ebony_box_throw");
+			}
 			Seek(&rocks[currentRock[i + 5]], playerPosition[i + 5], speed / 4, i + 5, false, 80.0f);
 
 			if (bLoop->animState != BossLoop::AnimationState::SPECIAL2)

@@ -156,6 +156,7 @@ public:
 
 	API_GameObject meteors[30];
 	API_GameObject columns[12];
+	API_GameObject areaImpact;
 	bool columnsStates[12];
 	API_Vector3 meteorsPosition[30];
 

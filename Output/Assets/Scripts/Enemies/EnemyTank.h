@@ -101,6 +101,8 @@ public:
 	bool hasToBlinkHealing;
 	bool hasToBlinkShield;
 
+	API_ParticleSystem healParticles;
+
 private:
 	bool isRecoveringShield;
 	bool isRestoringHealth;

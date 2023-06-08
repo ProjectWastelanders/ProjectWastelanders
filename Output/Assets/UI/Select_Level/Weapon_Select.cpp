@@ -141,7 +141,7 @@ void Weapon_Select::Update()
         }
     }
 
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN && proceedPanel.GetGameObject().IsActive())
+    if (proceedPanel.GetGameObject().IsActive() && Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_UP)
     {
         if (!firstTimeLevel)
         {

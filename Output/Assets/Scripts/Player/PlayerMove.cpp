@@ -89,18 +89,6 @@ void PlayerMove::Update()
     if (playerStats && playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
 
-    // shoot animations delay
-    if (dualsDelay < 0.8f)
-    {
-        dualsDelay -= dt;
-        if (dualsDelay <= 0.0f)
-        {
-            dualsDelay = 0.8f;
-            dualsDelay -= Time::GetRealTimeDeltaTime();
-            playerAnimator.Play();
-        }
-    }
-
     // impulse
     if (impulseTime > 0.0f)
     {
@@ -123,9 +111,6 @@ void PlayerMove::Update()
     {
         isShooting = false;
         shootParticles.StopEmitting();
-        currentShootAnim = -1;
-        playerAnimator.SetStayLast(false);
-        dualsDelay = 0.8f;
     }
     
     if (dashesAvailable > 0 && !onHUB)
@@ -491,19 +476,6 @@ void PlayerMove::PlayShootAnim(int gunIndex)
         playerAnimator.ChangeAnimation(shootAnim[gunIndex]);
         playerAnimator.Play();
         currentAnim = PlayerAnims::SHOOT;
-
-        currentShootAnim = gunIndex;
-
-        switch (gunIndex)
-        {
-        case 0:
-            playerAnimator.SetStayLast(true);
-            dualsDelay -= Time::GetRealTimeDeltaTime();
-            break;
-        default:
-            playerAnimator.SetStayLast(false);
-            break;
-        }
     }
 }
 

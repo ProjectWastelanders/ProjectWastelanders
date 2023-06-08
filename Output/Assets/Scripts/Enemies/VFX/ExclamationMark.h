@@ -13,8 +13,9 @@ public:
 	void OnEnable() override;
 	void OnDisable() override;
 
+	API_GameObject _pull;
+
 private:
 	float _count = 2.0f;
-	API_GameObject _pull;
 };
 

@@ -5,6 +5,8 @@
 
 #include "API/API.h"
 
+#include "../UITutorial.h"
+
 class HUB_LevelSelect : HelloBehavior
 {
 public:
@@ -29,6 +31,12 @@ public:
 	uint currentSelectedLevel = 0;
 
 	bool lockedLevels = false;
+
+	API_GameObject tutorials[3];
+
+	UITutorial* tutorial = nullptr;
+
+	API_UIInput panel;
 
 	bool unlockedLevels[4]; // List of unlocked levels.
 	bool pressedButtonThisFrame = false;

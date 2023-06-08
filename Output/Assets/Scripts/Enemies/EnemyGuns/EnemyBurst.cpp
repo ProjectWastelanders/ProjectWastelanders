@@ -29,6 +29,9 @@ void EnemyBurst::Start()
     else fullShotCooldown = 0;
 
     shotCount = burstLenght;
+    rangerScript = (EnemyRanger*)enemyGO.GetScript("EnemyRanger");
+    if (!rangerScript)Console::Log("aaaaaaaaaaaaaaaaaaaaaa");
+   
 }
 void EnemyBurst::Update()
 {
@@ -37,11 +40,23 @@ void EnemyBurst::Update()
     {
         if (burstDelay <= 0)
         {
-            shotCount++;
+           shotCount++;
             burstDelay = fullBurstDelay;
             LauchProjectile(shootingSpawn);
-            PlayShotSound(audioEventString);
-           
+             if (rangerScript&& rangerScript->scriptedForQuest)
+            {
+
+                
+                   // Console::Log("obamaaaaaaaaaaaa");
+                    if (rangerScript->distanceBeetweenPlayerEnemy < 300)
+                        PlayShotSound(audioEventString)/*, Console::Log("uwuwuwuwuwuwuwwuwuwuwuw");*/;
+                
+            }
+            else
+            {
+                PlayShotSound(audioEventString);
+            }
+           // PlayShotSound(audioEventString);
         }
         else
         {
@@ -66,7 +81,20 @@ void EnemyBurst::Shoot()
     if (canShoot)
     {
         LauchProjectile(shootingSpawn);
-        PlayShotSound(audioEventString);
+        //PlayShotSound(audioEventString);
+        if (rangerScript && rangerScript->scriptedForQuest)
+        {
+
+
+           // Console::Log("obamaaaaaaaaaaaa");
+            if (rangerScript->distanceBeetweenPlayerEnemy < 300)
+                PlayShotSound(audioEventString)/*, Console::Log("uwuwuwuwuwuwuwwuwuwuwuw");*/;
+
+        }
+        else
+        {
+            PlayShotSound(audioEventString);
+        }
         canShoot = false;
         shotCooldown = fullShotCooldown;
         shotCount = 1;

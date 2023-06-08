@@ -113,6 +113,9 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxGameObject("Column 9", &classInstance->columns[9]);
 	script->AddDragBoxGameObject("Column 10", &classInstance->columns[10]);
 	script->AddDragBoxGameObject("Column 11", &classInstance->columns[11]);
+
+
+	script->AddDragBoxGameObject("Explosion3D", &classInstance->areaImpact);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
@@ -154,7 +157,8 @@ void ThanosAttacks::Start()
 	for (int i = 0; i < 30; i++) {
 		meteorsPosition[i] = meteors[i].GetTransform().GetGlobalPosition();
 	}
-	explosionWave.GetTransform().Translate(0, -10, 0);
+	explosionWave.GetTransform().Translate(0, 0, 0);
+	areaImpact.GetTransform().SetPosition(0, -1000, 0);
 
 }
 void ThanosAttacks::Update()
@@ -200,6 +204,8 @@ void ThanosAttacks::Update()
 			thanosState = THANOS_STATE::PULSE;
 			explosionWave.GetTransform().Translate(0, 10, 0);
 
+			areaImpact.SetActive(true);
+			areaImpact.GetTransform().SetPosition(0, -1, 0);
 			thanosAnimationPlayer.ChangeAnimation(thanosPulseAnimation);
 			thanosAnimationPlayer.SetLoop(false);
 			thanosAnimationPlayer.Play();
@@ -239,7 +245,11 @@ void ThanosAttacks::Update()
 			isAttacking = true;
 			distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
-			explosionTime += Time::GetDeltaTime();
+			explosionTime += Time::GetDeltaTime();				
+			areaImpact.GetTransform().Scale(3.5f * Time::GetDeltaTime());
+			areaImpact.GetTransform().Rotate(4000 * Time::GetDeltaTime(), 2600 * Time::GetDeltaTime(), 5800 * Time::GetDeltaTime());
+
+
 			//explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
 			explosionWave.GetParticleSystem().Play();
@@ -275,6 +285,9 @@ void ThanosAttacks::Update()
 				thanosAnimationPlayer.SetLoop(false);
 				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
+				areaImpact.GetTransform().SetScale(1, 1, 1);
+				areaImpact.GetTransform().SetPosition(0, -1000, 0);
+				areaImpact.SetActive(false);
 			}
 			break;
 		case THANOS_STATE::IDLE:
@@ -373,7 +386,7 @@ void ThanosAttacks::Update()
 				for (int i = 0; i < 3; i++) {
 					bulletThrown[i] = false;
 					bullets[i].SetActive(false);
-					bullets[i].GetTransform().SetRotation(0,0,0);
+					bullets[i].GetTransform().SetPosition(0,0,0);
 				}
 
 			}
@@ -389,8 +402,9 @@ void ThanosAttacks::Update()
 					if (beamThrown[i] == false) {
 						beamThrown[i] = true;
 						beams[i].SetActive(true);
+						beams[i].GetParticleSystem().Play();
 						beamPositions[i] = beamTargets[i].GetTransform().GetGlobalPosition();
-						angle = Rotate(beamPositions[i], angle, &beams[i]);
+						angle = Rotate(beamPositions[i], angle+180, &beams[i]);
 					}
 					if (i == 1 || i == 2) {
 						BulletSeek(&beams[i], beamPositions[i], beamSpeed * 1.2f , i);
@@ -401,6 +415,7 @@ void ThanosAttacks::Update()
 			}
 
 			if (beamTime > beamTimes[4]) {
+
 				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
 				thanosAnimationPlayer.SetLoop(true);
 				thanosAnimationPlayer.Play();
@@ -409,6 +424,9 @@ void ThanosAttacks::Update()
 				beamTime = 0.0f;
 				for (int i = 0; i < 4; i++) {
 					beamThrown[i] = false;
+
+					beams[i].GetParticleSystem().Stop();
+					beams[i].GetParticleSystem().StopEmitting();
 				}
 
 			}
@@ -696,6 +714,9 @@ void ThanosAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed
 	if (direction.x < 0.15 && direction.x > -0.15 && direction.y < 0.15 && direction.y && direction.z < 0.15 && direction.z) {
 		if (tLoop->phase == 2) {
 			Console::Log("telodoyyyy");
+
+			areaImpact.SetActive(true);
+			areaImpact.GetTransform().SetPosition(0, -1, 0);
 			thanosState = THANOS_STATE::PULSE;
 			isAttacking = false;
 			finalSword = true;
@@ -736,6 +757,8 @@ void ThanosAttacks::BulletSeek(API_GameObject* seeker, API_Vector3 target, float
 
 	if (direction.x < 0.9 && direction.x > -0.9 && direction.y < 0.9 && direction.y && direction.z < 0.9 && direction.z) {
 		seeker->SetActive(false);
+		//seeker->GetParticleSystem().Stop();
+		//seeker->GetParticleSystem().StopEmitting();
 	}
 
 }
@@ -751,7 +774,7 @@ float ThanosAttacks::Rotate(API_Vector3 target, float _angle, API_GameObject* ro
 	normLookDir.y = lookDir.y / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
 	_angle = 0;
 	_angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
-	rotator->GetTransform().SetRotation(0, -_angle - 90, 0);
+	rotator->GetTransform().SetRotation(0, -_angle, 0);
 
 	return _angle;
 }

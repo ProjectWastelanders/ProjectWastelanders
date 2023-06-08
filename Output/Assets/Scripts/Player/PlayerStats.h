@@ -12,6 +12,7 @@
 class PlayerMove;
 class HpBar;
 class HUD_Power_Up_Scrip;
+class Power_Ups_Alert;
 class UI_Municion;
 class CamMov;
 
@@ -96,6 +97,7 @@ public:
 
     // HUD
     HUD_Power_Up_Scrip* hudPowerUp;
+    Power_Ups_Alert* hudPowerUp_Alert;
     API_GameObject hudPowerUpGO;
 
     API_GameObject ammo_ScriptGO;

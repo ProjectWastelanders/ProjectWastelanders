@@ -544,6 +544,7 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleMain"]["Delay"] = ParticleEmitter.StartDelay;
 		_j["ParticleModules"]["ModuleMain"]["Looping"] = ParticleEmitter.loop;	
 		_j["ParticleModules"]["ModuleMain"]["PlayOnAwake"] = ParticleEmitter.playOnAwake;
+		_j["ParticleModules"]["ModuleMain"]["RandomRotation"] = ParticleEmitter.randomRotation;
 		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
 		_j["ParticleModules"]["ModuleEmission"]["Enable"] = ParticleEmitter.enableEmissionModule;
 
@@ -602,8 +603,13 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	particleProps.speedVariation = { tempspeedVariation[0],tempspeedVariation[1],tempspeedVariation[2] };
 	std::vector<float> tempacceleration = j["ParticleModules"]["ModuleMain"]["acceleration"];
 	particleProps.acceleration = { tempacceleration[0],tempacceleration[1],tempacceleration[2] };
-	//std::vector<float> temprotation = j["ParticleModules"]["ModuleMain"]["rotation"];
-	//particleProps.rotation = { temprotation[0],temprotation[1],temprotation[2] };
+
+	if (j["ParticleModules"]["ModuleMain"].contains("rotation"))
+	{
+		std::vector<float> temprotation = j["ParticleModules"]["ModuleMain"]["rotation"];
+		particleProps.rotation = { temprotation[0],temprotation[1],temprotation[2] };
+	}
+
 	particleProps.Lifetime = j["ParticleModules"]["ModuleMain"]["LifeTime"];
 	ParticleEmitter.Duration = j["ParticleModules"]["ModuleMain"]["Duration"];
 	ParticleEmitter.DurationCpy = ParticleEmitter.Duration;
@@ -614,7 +620,16 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	size = j["ParticleVectorSize"];
 	sizeCpy = j["ParticleVectorSize"];
-	//ParticleEmitter.manager->isParticleAnimated = j["IsParticleAnimated"];
+
+	if (j["ParticleModules"]["ModuleMain"].contains("RandomRotation"))
+	{
+		ParticleEmitter.randomRotation = j["ParticleModules"]["ModuleMain"]["RandomRotation"];
+	}
+
+	if (j.contains("IsParticleAnimated"))
+	{
+		ParticleEmitter.isParticleAnimated = j["IsParticleAnimated"];
+	}
 
 	ParticleEmitter.SetParticlePoolSize(size);
 

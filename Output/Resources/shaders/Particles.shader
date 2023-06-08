@@ -4,9 +4,9 @@
     layout (location = 1) in mat4 model;
     layout (location = 5) in vec3 normals;
     layout (location = 6) in vec2 texCoords;
-    layout (location = 7) in vec4 textOffsets;
-    layout (location = 8) in vec2 textinfos;
-    layout (location = 9) in float texID;
+    layout (location = 7) in float texID;
+    layout (location = 8) in vec4 textOffsets;
+    layout (location = 9) in vec2 textinfos;
 
     uniform mat4 view;
     uniform mat4 projection;

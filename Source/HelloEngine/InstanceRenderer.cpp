@@ -321,15 +321,13 @@ void InstanceRenderer::DrawInstancedSorting()
 
     for (auto& mesh : meshes)
     {
+        if (mesh.second.mesh.isParticleAnim)
+            continue;
+
         Mesh& currentMesh = mesh.second.mesh;
         RenderUpdateState state = currentMesh.Update();
         if (state == RenderUpdateState::NODRAW)
             continue;
-
-        if (state == RenderUpdateState::SELECTED)
-        {
-            renderManger.SetSelectedMesh(&currentMesh);
-        }
 
         modelMatrices.push_back(currentMesh.modelMatrix); // Insert updated matrices
         textureIDs.push_back(currentMesh.OpenGLTextureID);
@@ -380,12 +378,12 @@ void InstanceRenderer::DrawInstancedSorting()
     sortedAndDrawn = true;
     // Reset model matrices.
     modelMatrices.clear();
+    textureIDs.clear();
     TextureManager::UnBindTextures();
 }
 
 void InstanceRenderer::DrawInstancedSortingAnimated()
 {
-
     OPTICK_EVENT();
 
     glDepthMask(GL_FALSE);
@@ -402,15 +400,13 @@ void InstanceRenderer::DrawInstancedSortingAnimated()
 
     for (auto& mesh : meshes)
     {
+        if (!mesh.second.mesh.isParticleAnim)
+            continue;
+
         Mesh& currentMesh = mesh.second.mesh;
         RenderUpdateState state = currentMesh.Update();
         if (state == RenderUpdateState::NODRAW)
             continue;
-
-        if (state == RenderUpdateState::SELECTED)
-        {
-            renderManger.SetSelectedMesh(&currentMesh);
-        }
 
         modelMatrices.push_back(currentMesh.modelMatrix); // Insert updated matrices
         textureIDs.push_back(currentMesh.OpenGLTextureID);
@@ -423,12 +419,9 @@ void InstanceRenderer::DrawInstancedSortingAnimated()
         // Update View and Projection matrices
         particleShader->shader.Bind();
 
-        /*if (!particleShader->shader.data.hasUpdatedCamera)
-        {*/
-            particleShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
-            particleShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
-            particleShader->shader.data.hasUpdatedCamera = true;
-        /*}*/
+        particleShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
+        particleShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
+        particleShader->shader.data.hasUpdatedCamera = true;
 
         // Draw using Dynamic Geometrys
         glBindVertexArray(VAO);
@@ -438,11 +431,6 @@ void InstanceRenderer::DrawInstancedSortingAnimated()
         void* ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
         memcpy(ptr, &modelMatrices.front(), drawingMeshes * sizeof(float4x4));
         glUnmapBuffer(GL_ARRAY_BUFFER);
-
-        /* for (int i = 0; i < TextureManager::bindedTextures; i++)
-         {
-             particleShader->shader.SetInt("texture_albedo", i);
-         }*/
 
         glBindBuffer(GL_ARRAY_BUFFER, TBO);
         void* ptr2 = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
@@ -468,6 +456,7 @@ void InstanceRenderer::DrawInstancedSortingAnimated()
     // Reset model matrices.
     modelMatrices.clear();
     particleAnimInfos.clear();
+    textureIDs.clear();
     TextureManager::UnBindTextures();
 }
 
@@ -518,13 +507,9 @@ void InstanceRenderer::CreateBuffers()
     {
         CreateDynamicBuffers();
     }
-    else if (isParticleAnimated)
-    {
-        CreateDynamicBuffersParticles();
-    }
     else
     {
-        CreateDynamicBuffers();
+        CreateDynamicBuffersParticles();
     }
     
 }
@@ -565,22 +550,16 @@ void InstanceRenderer::ReallocateMoreMemory()
     // Add instance num
     instanceNum += (int)(instanceNum * 0.5f);
 
-    if (this->isParticle == false)
+    if (!isParticle)
     {
         DestroyDynamicBuffers();
         CreateDynamicBuffers();
     }
-    else if(this->isParticleAnimated)
+    else
     {
         DestroyDynamicBuffersParticles();
         CreateDynamicBuffersParticles();
     }
-    else
-    {
-        DestroyDynamicBuffers();
-        CreateDynamicBuffers();
-    }
-    
 }
 
 void InstanceRenderer::DestroyDynamicBuffers()
@@ -667,30 +646,31 @@ void InstanceRenderer::CreateDynamicBuffersParticles()
     glVertexAttribDivisor(3, 1);
     glVertexAttribDivisor(4, 1);
 
-    // Create Particle buffer object
-    glGenBuffers(1, &PBO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, PBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(ParticleAnimInfo)  * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
-
-    glEnableVertexAttribArray(7);
-    glVertexAttribPointer(7, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleAnimInfo), (void*)offsetof(ParticleAnimInfo, textOffsets));
-
-    glEnableVertexAttribArray(8);
-    glVertexAttribPointer(8, 2, GL_FLOAT, GL_FALSE, sizeof(ParticleAnimInfo), (void*)offsetof(ParticleAnimInfo, texInfo));
-
-    glVertexAttribDivisor(7, 1);
-    glVertexAttribDivisor(8, 1);
-
+    // Generate Texture buffer object
     glGenBuffers(1, &TBO);
 
     glBindBuffer(GL_ARRAY_BUFFER, TBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamically change
 
 
-    glEnableVertexAttribArray(9);
-    glVertexAttribPointer(9, 1, GL_FLOAT, GL_FALSE, sizeof(float), (void*)0);
+    glEnableVertexAttribArray(7);
+    glVertexAttribPointer(7, 1, GL_FLOAT, GL_FALSE, sizeof(float), (void*)0);
 
+    glVertexAttribDivisor(7, 1);
+
+    // Create Particle buffer object
+    glGenBuffers(1, &PBO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, PBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(ParticleAnimInfo)  * instanceNum, nullptr, GL_DYNAMIC_DRAW); // TODO: This buffer size should dynamicaly change
+
+    glEnableVertexAttribArray(8);
+    glVertexAttribPointer(8, 4, GL_FLOAT, GL_FALSE, sizeof(ParticleAnimInfo), (void*)offsetof(ParticleAnimInfo, textOffsets));
+
+    glEnableVertexAttribArray(9);
+    glVertexAttribPointer(9, 2, GL_FLOAT, GL_FALSE, sizeof(ParticleAnimInfo), (void*)offsetof(ParticleAnimInfo, texInfo));
+
+    glVertexAttribDivisor(8, 1);
     glVertexAttribDivisor(9, 1);
 
     glBindVertexArray(0);

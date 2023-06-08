@@ -134,18 +134,19 @@ void ParticleManager::Draw()
 
 
 			emitter->UpdateParticles();
-			if (!emitter->manager->sortedAndDrawn && emitter->isParticleAnimated)
-			{
-				emitter->manager->DrawInstancedSortingAnimated();
-			}
-			else if (!emitter->manager->sortedAndDrawn)
-			{
-				emitter->manager->DrawInstancedSorting();
-			}
 			
 		}
 
 	}
+
+	if (!EmitterList.empty())
+	{
+		InstanceRenderer* renderer = EmitterList[0]->manager;
+
+		renderer->DrawInstancedSortingAnimated();
+		renderer->DrawInstancedSorting();
+	}
+	
 	
 }
 

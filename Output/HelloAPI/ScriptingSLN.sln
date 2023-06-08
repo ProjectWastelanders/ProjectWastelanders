@@ -10,6 +10,7 @@ Global
 		Debug|x86 = Debug|x86
 		Development|x86 = Development|x86
 		Release|x86 = Release|x86
+		Runtime|x86 = Runtime|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A5A13813-DB02-41B7-BBB2-42B51AE43A1C}.Debug|x86.ActiveCfg = Debug|Win32
@@ -18,6 +19,8 @@ Global
 		{A5A13813-DB02-41B7-BBB2-42B51AE43A1C}.Development|x86.Build.0 = Development|Win32
 		{A5A13813-DB02-41B7-BBB2-42B51AE43A1C}.Release|x86.ActiveCfg = Release|Win32
 		{A5A13813-DB02-41B7-BBB2-42B51AE43A1C}.Release|x86.Build.0 = Release|Win32
+		{A5A13813-DB02-41B7-BBB2-42B51AE43A1C}.Runtime|x86.ActiveCfg = Runtime|Win32
+		{A5A13813-DB02-41B7-BBB2-42B51AE43A1C}.Runtime|x86.Build.0 = Runtime|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

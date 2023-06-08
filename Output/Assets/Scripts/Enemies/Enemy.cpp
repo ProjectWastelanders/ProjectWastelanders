@@ -135,7 +135,25 @@ void Enemy::Update()
         }
         else
         {
-            enemyShader.SetColor(1.1, 0, 0, 0.5);
+            if (!isTank)
+            {
+                enemyShader.SetColor(1.1, 0, 0, 0.5);
+            }
+            else 
+            {
+                EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+                if (tankScript)
+                {
+                    if (tankScript->currentShield > 0) 
+                    {
+                        enemyShader.SetColor(0, 0, 1.1, 0.5);
+                    }
+                    else 
+                    {
+                        enemyShader.SetColor(1.1, 0, 0, 0.5);
+                    }
+                }
+            }
         }
     }
     else
@@ -143,6 +161,21 @@ void Enemy::Update()
         if (!isTank)
         {
             enemyShader.SetColor(1, 1, 1, 255);
+        }
+        else
+        {
+            EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+            if (tankScript)
+            {
+                if (tankScript->hasToBlinkHealing == false)
+                {
+                    enemyShader.SetColor(1, 1, 1, 255);
+                }
+               /* else 
+                {
+                    enemyShader.SetColor(1, 1, 1, 255);
+                }*/
+            }
         }
     }
 }
@@ -175,7 +208,11 @@ void Enemy::TakeDamage(float damage, float resistanceDamage)
 {
 
     isHit = true;
-    enemyShader.SetColor(255, 0, 0, 0.5);
+    if (!isTank) 
+    { 
+        enemyShader.SetColor(255, 0, 0, 0.5); 
+    }
+
     if (!_hitShader) _hitShader = true;
 
     if (currentHp <= 0.0f)

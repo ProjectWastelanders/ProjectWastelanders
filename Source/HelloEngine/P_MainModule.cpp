@@ -36,6 +36,7 @@ void P_MainModule::OnEditor()
 		ImGui::DragFloat3("Speed Variation", &component->particleProps.speedVariation[0], 0.1f);
 		ImGui::DragFloat3("Acceleration", &component->particleProps.acceleration[0], 0.1f);
 		ImGui::DragFloat3("Rotation", &component->particleProps.rotation[0],0.1f);
+		ImGui::Checkbox("Random Rotation", &component->ParticleEmitter.randomRotation);
 	}
 
 }

@@ -155,8 +155,17 @@ void ParticleSystemComponent::CreateEmitterMesh(uint resourceUID)
 		
 		//This line is needed because when you add mesh into the rendermanager it will be drawn,
 		//when we are at this point we don't want to draw the mesh of the particle till the engine is playing
-		Application::Instance()->renderer3D->renderManager.GetRenderManager(resourceUID, 0)->GetMap()[var._instanceID].mesh.draw = false;
-			
+		Mesh& meshRef = Application::Instance()->renderer3D->renderManager.GetRenderManager(resourceUID, 0)->GetMap()[var._instanceID].mesh;
+		
+		meshRef.draw = false;
+		if (ParticleEmitter.isParticleAnimated)
+		{
+			meshRef.isParticleAnim = true;
+		}
+		else
+		{
+			meshRef.isParticleAnim = false;
+		}
 	}
 
 }
@@ -291,7 +300,7 @@ void ParticleSystemComponent::OnEditor()
 
 		if (ParticleEmitter._meshID == -1)
 		{
-			ImGui::Checkbox("Particle Animated", &ParticleEmitter.manager->isParticleAnimated);
+			ImGui::Checkbox("Particle Animated", &ParticleEmitter.isParticleAnimated);
 
 			ImGui::TextWrapped("First ensure yourself that if you want an animated particle the checkbox above is marked");
 			ImGui::TextWrapped("No mesh loaded! Drag an .hmesh file below to load a mesh ");
@@ -353,11 +362,11 @@ void ParticleSystemComponent::OnEditor()
 				ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 				imageName = "None";
 			}
-			if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent && ParticleEmitter.manager->isParticleAnimated)
+			if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent && ParticleEmitter.isParticleAnimated)
 			{
 				if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
 				{
-					if (ParticleEmitter.manager->isParticleAnimated)
+					if (ParticleEmitter.isParticleAnimated)
 					{
 						for (Particle& var : ParticleEmitter.ParticleList)
 						{
@@ -546,7 +555,7 @@ void ParticleSystemComponent::Serialization(json& j)
 			GetCurrentShape()->Serialization(_j);
 		}		
 	}
-	_j["IsParticleAnimated"] = ParticleEmitter.manager->isParticleAnimated;
+	_j["IsParticleAnimated"] = ParticleEmitter.isParticleAnimated;
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
 
@@ -593,8 +602,8 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	particleProps.speedVariation = { tempspeedVariation[0],tempspeedVariation[1],tempspeedVariation[2] };
 	std::vector<float> tempacceleration = j["ParticleModules"]["ModuleMain"]["acceleration"];
 	particleProps.acceleration = { tempacceleration[0],tempacceleration[1],tempacceleration[2] };
-	std::vector<float> temprotation = j["ParticleModules"]["ModuleMain"]["rotation"];
-	particleProps.rotation = { temprotation[0],temprotation[1],temprotation[2] };
+	//std::vector<float> temprotation = j["ParticleModules"]["ModuleMain"]["rotation"];
+	//particleProps.rotation = { temprotation[0],temprotation[1],temprotation[2] };
 	particleProps.Lifetime = j["ParticleModules"]["ModuleMain"]["LifeTime"];
 	ParticleEmitter.Duration = j["ParticleModules"]["ModuleMain"]["Duration"];
 	ParticleEmitter.DurationCpy = ParticleEmitter.Duration;
@@ -605,7 +614,7 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	size = j["ParticleVectorSize"];
 	sizeCpy = j["ParticleVectorSize"];
-	ParticleEmitter.manager->isParticleAnimated = j["IsParticleAnimated"];
+	//ParticleEmitter.manager->isParticleAnimated = j["IsParticleAnimated"];
 
 	ParticleEmitter.SetParticlePoolSize(size);
 

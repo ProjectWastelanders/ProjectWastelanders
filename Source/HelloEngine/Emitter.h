@@ -65,6 +65,8 @@ private:
 	bool loop;//
 	bool stop;//
 	bool playOnAwake;//
+	bool isParticleAnimated = false;
+	bool randomRotation = true;
 
 	float StartDelay;//
 	float StartDelayCpy;

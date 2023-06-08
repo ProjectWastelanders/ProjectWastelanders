@@ -47,7 +47,7 @@ void Emitter::SetParticlePoolSize(uint size)
 	}
 	component->CreateEmitterMesh(component->_resourceUID);
 
-	if (manager && manager->isParticleAnimated)
+	if (isParticleAnimated)
 	{
 		for (Particle& var : this->ParticleList)
 		{
@@ -96,8 +96,15 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 	particle.speed.y += particleProps.speedVariation.y * (random.Float() - 0.5f);
 	particle.speed.z += particleProps.speedVariation.z * (random.Float() - 0.5f);
 
+	if (randomRotation)
+	{
+		particle.rotation.z = particleProps.rotation.z * (random.Float() - 0.5f);
+	}
+	else
+	{
+		particle.rotation.z = particleProps.rotation.z;
+	}
 	
-	particle.rotation.z = particleProps.rotation.z * (random.Float() - 0.5f);
 
 	// Acceleration
 	particle.acceleration = particleProps.acceleration;
@@ -116,6 +123,8 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 
 	particle.particleAnim.textOffsets = float4 (0.0f,0.0f,0.0f,0.0f);
 	particle.particleAnim.texInfo = float2(emitterTexture.numOfRows, 0.0f);
+
+	particle.texture = emitterTexture;
 	
 	currentparticle--;
 
@@ -204,7 +213,7 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
 
-	if (manager->isParticleAnimated)
+	if (isParticleAnimated)
 	{
 		manager->particleAnimInfos.push_back(ParticleList[i].particleAnim);
 	}
@@ -223,7 +232,7 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 void Emitter::UpdateParticlesOnScene(int i)
 {
 	
-	if (manager->isParticleAnimated)
+	if (isParticleAnimated)
 	{
 		ParticleList[i].UpdateTextureCoords();
 	}
@@ -245,7 +254,7 @@ void Emitter::UpdateParticlesOnScene(int i)
 
 void Emitter::UpdateParticlesOnGame(int i)
 {
-	if (manager->isParticleAnimated)
+	if (isParticleAnimated)
 	{
 		ParticleList[i].UpdateTextureCoords();
 	}

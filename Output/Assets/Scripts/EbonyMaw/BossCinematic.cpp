@@ -40,6 +40,8 @@ void BossCinematic::Start()
     showedStartDialog = false;
     nextDialog = false;
     animBoss = false;
+    DraxAudio = false;
+    endBattleAudio = false;
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
@@ -93,14 +95,17 @@ void BossCinematic::Update()
             case 1:
                 camMov->target = boss;
                 PrintDialog(Dialog_1);
+                Audio::Event("ebony_threatening");
                 break;
             case 2:
                 camMov->target = player;
                 PrintDialog(Dialog_2);
+                Audio::Event("starlord_confident");
                 break;
             case 3:
                 camMov->target = boss;
                 PrintDialog(Dialog_3);
+                Audio::Event("ebony_threatening");
                 break;
             case 4:
                 camMov->target = boss;
@@ -109,10 +114,12 @@ void BossCinematic::Update()
             case 5:
                 camMov->target = player;
                 PrintDialog(Dialog_5);
+                Audio::Event("starlord_dubitative");
                 break;
             case 6:
                 camMov->target = boss;
                 PrintDialog(Dialog_6);
+                Audio::Event("ebony_threatening");
                 break;
             }
         }
@@ -133,6 +140,10 @@ void BossCinematic::Update()
             }
             else {
                 Console::Log("Print start battle");
+                if (!DraxAudio) {
+                    Audio::Event("drax_excited");
+                    DraxAudio = true;
+                }
                 Dialog_StartBattle.GetGameObject().SetActive(true);
 
                 if (Dialog_StartBattle.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
@@ -163,6 +174,10 @@ void BossCinematic::Update()
             }
             else {
                 Console::Log("Print end battle");
+                if (!endBattleAudio) {
+                    Audio::Event("starlord_confident");
+                    endBattleAudio = true;
+                }
                 Dialog_EndBattle.GetGameObject().SetActive(true);
 
                 if (Dialog_EndBattle.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)

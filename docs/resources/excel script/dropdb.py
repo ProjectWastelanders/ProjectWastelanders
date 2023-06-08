@@ -43,7 +43,7 @@ def fill_html(member):
     clean_str(entry4secondName)
     entry4role = member['role'].replace('\n','').lower().replace(' ','').replace(',',' ')
     clean_str(entry4role)
-    entry4commaRole = entry4role.title().join(', ')
+    entry4commaRole = entry4role.title().replace(' ', ', ')
     clean_str(entry4commaRole)
     entry4blueRole = 'Lead' if 'production' in entry4role else ''
     clean_str(entry4blueRole)

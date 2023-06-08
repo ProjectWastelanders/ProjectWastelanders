@@ -163,6 +163,12 @@ void ThanosAttacks::Start()
 }
 void ThanosAttacks::Update()
 {
+
+	if (pStats->currentHp < 0 && playerDeath == false) {
+		Audio::Event("thanos_laugh");
+		playerDeath = true;
+	}
+
 	if (whichColumn > -1) {
 
 		for (int i = 0; i < 12; i++) {
@@ -222,6 +228,7 @@ void ThanosAttacks::Update()
 			//thanosAnimationPlayer.Play();
 			isMeteorAnimationReady = true;
 			isRainingMeteors = true;
+			
 		}
 		else {
 			meteorRainCooldown += Time::GetDeltaTime();
@@ -234,6 +241,7 @@ void ThanosAttacks::Update()
 				thanosAnimationPlayer.ChangeAnimation(thanosIdle2Animation);
 				thanosAnimationPlayer.SetLoop(true);
 				thanosAnimationPlayer.Play();
+				Audio::Event("thanos_meteor_spawn");
 			}
 			MeteorAttack();
 		}
@@ -335,7 +343,7 @@ void ThanosAttacks::Update()
 					playerPosition = player.GetTransform().GetGlobalPosition();
 					thanosPosition = gameObject.GetTransform().GetGlobalPosition();
 					thanosState = THANOS_STATE::DASH2;
-
+					Audio::Event("thanos_power_charging");
 					thanosAnimationPlayer.ChangeAnimation(thanosPunchAttack);
 					thanosAnimationPlayer.SetLoop(false);
 					thanosAnimationPlayer.Play();
@@ -348,6 +356,7 @@ void ThanosAttacks::Update()
 					thanosAnimationPlayer.Play();
 					//laserCilinder.SetActive(true);
 					thanosState = THANOS_STATE::LASER;
+					Audio::Event("thanos_lasers");
 				}
 			}
 
@@ -400,6 +409,7 @@ void ThanosAttacks::Update()
 			for (int i = 0; i < 4; i++) {
 				if (beamTime > beamTimes[i]) {
 					if (beamThrown[i] == false) {
+						Audio::Event("thanos_wall_throw");
 						beamThrown[i] = true;
 						beams[i].SetActive(true);
 						beams[i].GetParticleSystem().Play();
@@ -571,6 +581,8 @@ void ThanosAttacks::Update()
 						thanosAnimationPlayer.SetLoop(false);
 						thanosAnimationPlayer.Play();
 						thanosState = THANOS_STATE::DASHATTACK;
+						Audio::Event("thanos_power_charging");
+
 					}
 				}
 
@@ -606,7 +618,7 @@ void ThanosAttacks::Update()
 				if (swordThrown == false) {
 
 					aimPosition = bTarget.GetTransform().GetGlobalPosition();
-
+					Audio::Event("thanos_sword_throw");
 					swordThrown = true;
 				}
 

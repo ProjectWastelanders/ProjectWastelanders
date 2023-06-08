@@ -96,6 +96,7 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
                 if (bosss->defenseSword.IsActive() == true) {
                     gameObject.GetTransform().Rotate(0, 180, 0);
                     reflected = true;
+                    Audio::Event("bullet_bounce");
                 }
                 else {
                     if (boss) {
@@ -149,6 +150,8 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
                  if (bosss->defenseSword.IsActive() == true) {
                      gameObject.GetTransform().Rotate(0, 180, 0);
                      reflected = true;
+                     Audio::Event("bullet_bounce");
+
                  }
                  else {
                      if(boss) boss->TakeDamage(damage);
@@ -222,6 +225,8 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
             if (bosss->defenseSword.IsActive() == true) {
                 gameObject.GetTransform().Rotate(0, 180, 0);
                 reflected = true;
+                Audio::Event("bullet_bounce");
+
             }
             else {
                 if (boss) boss->TakeDamage(damage);
@@ -289,6 +294,8 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
             if (bosss->defenseSword.IsActive() == true) {
                 gameObject.GetTransform().Rotate(0, 180, 0);
                 reflected = true;
+                Audio::Event("bullet_bounce");
+
             }
             else {
                 if (boss) boss->TakeDamage(damage);

@@ -1106,6 +1106,49 @@
                 ],
                 "Script Resource": 3847216677,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Alert_Material": 753483367
+                    },
+                    {
+                        "SPEED_INCREASE": 2106974311
+                    },
+                    {
+                        "FIRERATE_INCREASE": 4155904388
+                    },
+                    {
+                        "SHIELD": 566044221
+                    },
+                    {
+                        "MAX AMMO": 1324976979
+                    },
+                    {
+                        "SLOW_TIME": 1488176253
+                    },
+                    {
+                        "Alert_Material": 753483367
+                    },
+                    {
+                        "SPEED_INCREASE": 2106974311
+                    },
+                    {
+                        "FIRERATE_INCREASE": 4155904388
+                    },
+                    {
+                        "SHIELD": 566044221
+                    },
+                    {
+                        "MAX AMMO": 1324976979
+                    },
+                    {
+                        "SLOW_TIME": 1488176253
+                    }
+                ],
+                "Script Resource": 101407316,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
@@ -1315,6 +1358,46 @@
         "PrefabUID": 3349850819,
         "Tag": "UI",
         "UID": 1655485220,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    1.5,
+                    1.100000023841858,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.30000001192092896,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Alert_Material",
+        "ParentUID": 1198064966,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 753483367,
         "UpdateWithBones": false
     },
     {
@@ -1596,7 +1679,13 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
+                        "Bar": 1107379058
+                    },
+                    {
                         "hp": false
+                    },
+                    {
+                        "Bar": 1107379058
                     },
                     {
                         "hp": false
@@ -1693,137 +1782,6 @@
         "PrefabUID": 3349850819,
         "Tag": "UI",
         "UID": 1107379058,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Ultimate_HUD_On": 775792212
-                    },
-                    {
-                        "Player": 2252131494
-                    },
-                    {
-                        "Ultimate_HUD_On": 775792212
-                    },
-                    {
-                        "Player": 2252131494
-                    }
-                ],
-                "Script Resource": 3179689792,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Casete",
-        "ParentUID": 1089113459,
-        "PrefabUID": 3349850819,
-        "Tag": "Default",
-        "UID": 2174433818,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.9750000238418579,
-                    0.8799999952316284,
-                    -0.009999999776482582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.11999999731779099,
-                    0.20000000298023224,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3089702664,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Casete_Off",
-        "ParentUID": 2174433818,
-        "PrefabUID": 3349850819,
-        "Tag": "UI",
-        "UID": 1544560865,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": true,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.9950000047683716,
-                    0.8600000143051147,
-                    -0.019999999552965164
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.11999999731779099,
-                    0.20000000298023224,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 0.0,
-                "MaterialResource": 1881453545,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Casete_On",
-        "ParentUID": 2174433818,
-        "PrefabUID": 3349850819,
-        "Tag": "UI",
-        "UID": 775792212,
         "UpdateWithBones": false
     },
     {
@@ -3257,6 +3215,61 @@
                 ],
                 "Script Resource": 291064225,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Alert_Material": 4237808677
+                    },
+                    {
+                        "Upgrade_texture": 3342212545
+                    },
+                    {
+                        "Semi_Alert_texture": 1535217256
+                    },
+                    {
+                        "Automatic_Alert_texture": 673030389
+                    },
+                    {
+                        "Burst_Alert_texture": 1506320295
+                    },
+                    {
+                        "Shotgun_Alert_texture": 2535938575
+                    },
+                    {
+                        "Lanzallamas_Alert_texture": 1795484510
+                    },
+                    {
+                        "Ricochet_Alert_texture": 3268063397
+                    },
+                    {
+                        "Alert_Material": 4237808677
+                    },
+                    {
+                        "Upgrade_texture": 3342212545
+                    },
+                    {
+                        "Semi_Alert_texture": 1535217256
+                    },
+                    {
+                        "Automatic_Alert_texture": 673030389
+                    },
+                    {
+                        "Burst_Alert_texture": 1506320295
+                    },
+                    {
+                        "Shotgun_Alert_texture": 2535938575
+                    },
+                    {
+                        "Lanzallamas_Alert_texture": 1795484510
+                    },
+                    {
+                        "Ricochet_Alert_texture": 3268063397
+                    }
+                ],
+                "Script Resource": 3460182571,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
@@ -3780,6 +3793,46 @@
         "PrefabUID": 3349850819,
         "Tag": "UI",
         "UID": 56807107,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.6499999761581421,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 0,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Alert_Material",
+        "ParentUID": 365067045,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 4237808677,
         "UpdateWithBones": false
     },
     {
@@ -5661,71 +5714,6 @@
         "PrefabUID": 2412455051,
         "Tag": "UI",
         "UID": 3129781380,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.699999988079071,
-                    -0.38999998569488525,
-                    -0.9100000262260437
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.014999999664723873,
-                    0.029999999329447746,
-                    0.5
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "FillImage": 1.0,
-                "MaterialResource": 3336653725,
-                "MeshEnabled": true,
-                "OpacityDirection": 0,
-                "Type": 15
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Level Index": 1
-                    },
-                    {
-                        "Movement Reduction X": 1000.0
-                    },
-                    {
-                        "Movement Reduction Y": 1000.0
-                    },
-                    {
-                        "Level Index": 1
-                    },
-                    {
-                        "Movement Reduction X": 1000.0
-                    },
-                    {
-                        "Movement Reduction Y": 1000.0
-                    }
-                ],
-                "Script Resource": 3185844118,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Indicator",
-        "ParentUID": 2448178164,
-        "PrefabUID": 2412455051,
-        "Tag": "UI",
-        "UID": 182061827,
         "UpdateWithBones": false
     },
     {
@@ -21603,7 +21591,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Hp": 2001.0
+                        "Hp": 2250.0
                     },
                     {
                         "Bomb": 375090512
@@ -21627,7 +21615,7 @@
                         "Texture Bomb 6": 306544930
                     },
                     {
-                        "Hp": 2001.0
+                        "Hp": 2250.0
                     },
                     {
                         "Bomb": 375090512
@@ -27518,7 +27506,7 @@
                 "Enabled": true,
                 "Inspector Fields": [
                     {
-                        "Max HP": 100000.0
+                        "Max HP": 100.0
                     },
                     {
                         "Current HP": 100.0
@@ -27557,7 +27545,7 @@
                         "Camera": 1929231542
                     },
                     {
-                        "Max HP": 100000.0
+                        "Max HP": 100.0
                     },
                     {
                         "Current HP": 100.0

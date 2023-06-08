@@ -87,39 +87,51 @@ void stealDivinerDialog::Update()
         {
         case 1:
             PrintDialog(Dialog_1);
+            Audio::Event("starlord_confident");
             break;
         case 2:
             PrintDialog(Dialog_2);
+            Audio::Event("collector_help");
             break;
         case 3:
             PrintDialog(Dialog_3);
+            Audio::Event("starlord_dubitative");
             break;
         case 4:
             PrintDialog(Dialog_4);
+            Audio::Event("collector_help");
             break;
         case 5:
             PrintDialog(Dialog_5);
+            Audio::Event("starlord_surprised");
             break;
         case 6:
             PrintDialog(Dialog_6);
+            Audio::Event("collector_hey");
             break;
         case 7:
             PrintDialog(Dialog_7);
+            Audio::Event("starlord_surprised");
             break;
         case 8:
             PrintDialog(Dialog_8);
+            Audio::Event("collector_hey");
             break;
         case 9:
             PrintDialog(Dialog_9);
+            Audio::Event("gamora_warning");
             break;
         case 10:
             PrintDialog(Dialog_10);
+            Audio::Event("starlord_confident");
             break;
         case 11:
             PrintDialog(Dialog_11);
+            Audio::Event("rocket_annoyed");
             break;
         case 12:
             PrintDialog(Dialog_12);
+            Audio::Event("starlord_confident");
             break;
         default:
             break;

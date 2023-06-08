@@ -12,6 +12,7 @@ class Map : HelloBehavior
 public:
     void Start() override;
     void Update() override;
+    void MissionsEnable(bool hasMap);
 
     API_GameObject casette1, casette2, casette3;
     API_GameObject mapGO;

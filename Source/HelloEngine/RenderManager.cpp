@@ -295,11 +295,15 @@ void RenderManager::Draw()
 
 	// Draw meshes that must be rendered in an individual draw call.
 	DrawIndependentMeshes();
-	// Draw selected mesh
-	DrawSelectedMesh();
 
-	// Draw meshes that have transparency textures applied on their material.
-	DrawTransparentMeshes();
+	if (!drawDepthIndependent)
+	{
+		// Draw meshes that have transparency textures applied on their material.
+		// Draw selected mesh
+		DrawSelectedMesh();
+		DrawTransparentMeshes();
+	}
+	drawDepthIndependent = !drawDepthIndependent;
 }
 
 void RenderManager::DrawDebug()
@@ -1211,7 +1215,7 @@ void RenderManager::DrawIndependentMeshes()
 				Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second.mesh); //Selected without Mat
 		}
 	}
-	//drawDepthIndependent = !drawDepthIndependent;
+
 }
 
 void RenderManager::DrawTextObjects()

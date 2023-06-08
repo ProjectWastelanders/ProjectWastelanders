@@ -47,7 +47,6 @@ void CasetteManager::Start()
 
 void CasetteManager::Update()
 {
-    Console::Log("3");
     if ((playerStorage->casette1Picked == true || playerStorage->casette2Picked == true || playerStorage->casette3Picked == true) && CasettePicked == true)
     {
         activeTutorial = true;
@@ -59,18 +58,21 @@ void CasetteManager::Update()
     if (!playerStorage) return;
     if (playerStorage->casette1Picked && !playedCasetteMusic[0])
     {
+        casette1.GetParticleSystem().Stop();
         casette1.SetActive(false);
         musicManager->PlayCasette(0);
         playedCasetteMusic[0] = true;
     }
     if (playerStorage->casette2Picked && !playedCasetteMusic[1])
     {
+        casette2.GetParticleSystem().Stop();
         casette2.SetActive(false);
         musicManager->PlayCasette(1);
         playedCasetteMusic[1] = true;
     }
     if (playerStorage->casette3Picked && !playedCasetteMusic[2])
     {
+        casette3.GetParticleSystem().Stop();
         casette3.SetActive(false);
         musicManager->PlayCasette(2);
         playedCasetteMusic[2] = true;

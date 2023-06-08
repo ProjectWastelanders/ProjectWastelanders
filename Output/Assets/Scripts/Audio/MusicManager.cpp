@@ -13,12 +13,16 @@ HELLO_ENGINE_API_C MusicManager* CreateMusicManager(ScriptToInspectorInterface* 
 
 void MusicManager::Start()
 {
-	mainMusic.Play();
+	if (!playingCinematic)
+		mainMusic.Play();
 }
+
 void MusicManager::Update()
 {
-	if (!casettePlaying)
+	if (!casettePlaying || playingCinematic)
+	{
 		return;
+	}
 
 	if (!casetteMusic[currentPlayingCassette].IsPlaying())
 	{
@@ -29,6 +33,9 @@ void MusicManager::Update()
 
 void MusicManager::PlayCasette(int casetteNum)
 {
+	if (playingCinematic)
+		return;
+
 	switch (casetteNum)
 	{
 	case 0:

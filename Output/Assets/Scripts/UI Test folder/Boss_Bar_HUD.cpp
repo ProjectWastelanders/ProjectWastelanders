@@ -42,7 +42,7 @@ void Boss_Bar_HUD::Update()
         shields[0] = bossStats->shield[0];
         shields[1] = bossStats->shield[1];
         shields[2] = bossStats->shield[2];
-        if (bossStats->dist < 80.0f)
+        if (bossStats->dist < 80.0f && bossStats->battle)
         {
             boss_HUD.SetActive(true);
             Boss_Bar(bossStats->hp / 1500.0f, shields, bossStats->phase, bossStats->canTakeDamage);

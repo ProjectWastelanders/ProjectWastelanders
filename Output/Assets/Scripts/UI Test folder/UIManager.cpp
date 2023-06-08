@@ -1,4 +1,5 @@
 #include "UIManager.h"
+#include "HUB/HUB_UIManager.h"
 HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script)
 {
 	UIManager* classInstance = new UIManager();
@@ -12,6 +13,8 @@ HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script
 
 	script->AddDragBoxGameObject("Settings Panel", &classInstance->settingsPanel);
 
+	script->AddDragBoxUIButton("Go Back Button", &classInstance->goBack);
+
 	return classInstance;
 }
 
@@ -19,13 +22,16 @@ void UIManager::Start()
 {
 	currentPanel = CurrentPanel::NONE;
 	isPaused = true;
+	settingsPanel.SetActive(false);
+	HUB_UIManager::ClosePanel(); // Do this in case the static state of the panel is blocked.
+	map = (Map*)mapPanel.GetParent().GetScript("Map");
 }
 
 void UIManager::Update()
 {
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_START) == KeyState::KEY_DOWN)
 	{
-		if (currentPanel == CurrentPanel::NONE && isPaused)
+		if (currentPanel == CurrentPanel::NONE && isPaused && !HUB_UIManager::IsPanelOpened() /*Esto siempre deveulve false si no estas en HUB*/)
 		{
 			// Call Pause on game
 			Time::ChangeTimeScale(0.0f);
@@ -33,17 +39,33 @@ void UIManager::Update()
 			pausePanel.SetActive(true);
 			HUDPanel.SetActive(false);
 			currentPanel = CurrentPanel::PAUSE;
-			isPaused = false;
-		}
 
-	
+			HUB_UIManager::OpenPanel();
+		}
+		else if (currentPanel == CurrentPanel::PAUSE)
+		{
+			ContinueGame();
+		}
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN)
 	{
 		if (currentPanel != CurrentPanel::PAUSE && currentPanel != CurrentPanel::SETTINGS)
 		{
 			bool hasMap = currentPanel != CurrentPanel::MAP;
-			mapPanel.SetActive(hasMap);
+
+			if (hasMap)
+			{
+				mapPanel.SetActive(hasMap);
+				if (map != nullptr)
+					map->MissionsEnable(hasMap);
+			}
+			else
+			{
+				if (map != nullptr)
+					map->MissionsEnable(hasMap);
+
+				mapPanel.SetActive(hasMap);
+			}
 			HUDPanel.SetActive(!hasMap);
 			currentPanel = hasMap ? CurrentPanel::MAP : CurrentPanel::NONE;
 		}
@@ -52,17 +74,30 @@ void UIManager::Update()
 			//CloseSettings();
 		}
 	}
-	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_UP)
 	{
+		//Console::Log("ITS B");
+		settingsPanel.SetActive(false);
 		if (currentPanel == CurrentPanel::SETTINGS)
 		{
+			//Console::Log("ITS B && SETTINGS");
 			CloseSettings();
+		}
+		else if (currentPanel == CurrentPanel::PAUSE)
+		{
+			ContinueGame();
 		}
 	}
 
 	if (initialTextConinue.OnPress())
 	{
 		initialText.SetActive(false);
+	}
+
+	if (goBack.OnPress())
+	{
+		settingsPanel.SetActive(false);
+		CloseSettings();
 	}
 
 }
@@ -79,6 +114,7 @@ void UIManager::ContinueGame()
 	currentPanel = CurrentPanel::NONE;
 
 	isPaused = true;
+	HUB_UIManager::ClosePanel();
 }
 
 void UIManager::ShowInitialText()

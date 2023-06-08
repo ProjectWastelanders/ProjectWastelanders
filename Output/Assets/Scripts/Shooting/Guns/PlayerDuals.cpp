@@ -30,7 +30,7 @@ void PlayerDuals::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -99,7 +99,7 @@ void PlayerDuals::Update()
     }
 }
 
-void PlayerDuals::Shoot()
+bool PlayerDuals::Shoot()
 {
     if (canShoot)
     {
@@ -110,11 +110,15 @@ void PlayerDuals::Shoot()
         else shotCooldown = fullShotCooldown;
         nextShot = true;
         burstDelay = fullBurstDelay;
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 
@@ -131,35 +135,35 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
     switch (level)
     {
     case 0:
-        projectileSpeed = 30.0f;
-        projectileDamage = 10.0f;
-        projectileResistanceDamage = 5.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.2f;
+        projectileSpeed = 40.0f;
+        projectileDamage = 20.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 1.5f;
         fullBurstDelay = 0.1f;
         break;
     case 1:
-        projectileSpeed = 30.0f;
-        projectileDamage = 10.0f;
-        projectileResistanceDamage = 5.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.5f;
+        projectileSpeed = 40.0f;
+        projectileDamage = 20.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 2.0f;
         fullBurstDelay = 0.1f;
         break;
     case 2:
-        projectileSpeed = 35.0f;
-        projectileDamage = 10.0f;
-        projectileResistanceDamage = 5.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.5f;
+        projectileSpeed = 50.0f;
+        projectileDamage = 20.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 2.0f;
         fullBurstDelay = 0.1f;
         break;
     case 3:
-        projectileSpeed = 35.0f;
-        projectileDamage = 30.0f;
-        projectileResistanceDamage = 15.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.5f;
+        projectileSpeed = 50.0f;
+        projectileDamage = 25.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 2.0f;
         fullBurstDelay = 0.1f;
         break;
     default:

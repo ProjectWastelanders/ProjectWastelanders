@@ -22,6 +22,9 @@ HELLO_ENGINE_API_C feedbackMission* CreatefeedbackMission(ScriptToInspectorInter
 	script->AddDragBoxTextureResource("Material mission 2 Finished", &classInstance->mission2Finish);
 
 	script->AddDragBoxGameObject("Object visual feedback", &classInstance->visualFeedback);
+
+	script->AddCheckBox("mision1 active", &classInstance->m1check);
+	script->AddCheckBox("mision2 active", &classInstance->m2check);
 	
 	return classInstance;
 }
@@ -33,7 +36,7 @@ void feedbackMission::Start()
 	mision_Masacre = (Mision_Masacre*)missionsGO.GetScript("Mision_Masacre");
 	mision_Personal = (Mision_SomethingPersonal*)missionsGO.GetScript("Mision_SomethingPersonal");
 	mision_RageMonster = (Mision_RageMonster*)missionsGO.GetScript("Mision_RageMonster");
-	mision_TheRule = (Mision_TheRuleOfFive*)missionsGO.GetScript("Mision_RageMonster");
+	mision_TheRule = (Mision_TheRuleOfFive*)missionsGO.GetScript("Mision_TheRuleOfFive");
 	//mision_FirstClassTurbulence = (Mision_FirstClassTurbulence*)missionsGO.GetScript("Mision_FirstClassTurbulence");
 
 	viusalFeedbackScript = (AnimationMove*)visualFeedback.GetScript("AnimationMove");
@@ -41,6 +44,29 @@ void feedbackMission::Start()
 
 void feedbackMission::Update()
 {
+	//mision_LikeThe->misionCompleted = m1check;
+	//mision_RageMonster->misionCompleted = m2check;
+
+	/*if (mision_LikeThe->misionCompleted && misionCompleted_1_1)
+	{
+		visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
+		viusalFeedbackScript->ResetAnimationMoveX();
+		viusalFeedbackScript->PlayAnimationMoveX();
+		missionPostit1.GetMaterialCompoennt().ChangeAlbedoTexture(mission1Finish);
+		misionCompleted_1_1 = false;
+		API_QuickSave::SetBool("mision_LikeThe80", true);
+	}
+
+	if (mision_RageMonster->misionCompleted && misionCompleted_2_1)
+	{
+		visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
+		viusalFeedbackScript->ResetAnimationMoveX();
+		viusalFeedbackScript->PlayAnimationMoveX();
+		missionPostit2.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);
+		misionCompleted_2_1 = false;
+		API_QuickSave::SetBool("mision_RageMonster", true);
+	}*/
+
 	switch (playerStorage->levelIndex)
 	{
     case 0: // hub
@@ -56,6 +82,7 @@ void feedbackMission::Update()
 			misionCompleted_1_1 = false;
 			API_QuickSave::SetBool("mision_LikeThe80", true);
 		}
+
 		if (mision_RageMonster->misionCompleted && misionCompleted_2_1)
 		{
 			visualFeedback.GetMaterialCompoennt().ChangeAlbedoTexture(mission2Finish);

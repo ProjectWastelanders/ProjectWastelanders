@@ -50,6 +50,7 @@ public:
 	void AddDragBoxPrefabResource(const char* name, uint* value) override;
 	void AddDragBoxShaderComponent(const char* name, API::API_ShaderComponent* value) override;
 	void AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value) override;
+	void AddDragBoxVideoPlayerComponent(const char* name, API::API_VideoPlayer* value) override;
 
 	uint GetResourceUID();
 	void DestroyedResource();

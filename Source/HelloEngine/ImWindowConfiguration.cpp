@@ -5,6 +5,7 @@
 #include "ModuleFiles.h"
 #include "CycleArray.hpp"
 #include "ModuleCamera3D.h"
+#include "ModuleAudio.h"
 
 #include "Lighting.h"
 
@@ -130,6 +131,10 @@ void ImWindowConfiguration::Update()
 					ModuleFiles::S_SetAutomaticCompilation(_automaticCompilation);
 			}
 			ImGui::SliderFloat("Scene camera speed", _sceneCameraSpeed, 0.0f, 1000.0f);
+			
+			GameObject* defaultListener = ModuleAudio::defaultListenerGameObject;
+			std::string listenerName = defaultListener == nullptr ? "None, add a Camera component." : defaultListener->GetName();
+			ImGui::Text(("Current listener: " + listenerName).c_str());
 		}
 
 		if (ImGui::CollapsingHeader("Window", ImGuiTreeNodeFlags_DefaultOpen))

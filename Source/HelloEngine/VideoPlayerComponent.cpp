@@ -100,6 +100,7 @@ void VideoPlayerComponent::Serialization(json& j)
 	_j["Type"] = _type;
 	_j["Enabled"] = _isEnabled;
 	_j["VideoResource"] = resourceUID;
+	_j["FramesPerSecond"] = fps;
 
 	SaveMeshState(_j);
 
@@ -113,6 +114,12 @@ void VideoPlayerComponent::DeSerialization(json& j)
 	LoadMeshState(j);
 
 	_gameObject->transform->ForceUpdate();
+
+	if (j.contains("FramesPerSecond"))
+	{
+		GetVideoPlayer()->video->SetFPS(j["FramesPerSecond"]);
+		fps = j["FramesPerSecond"];
+	}
 
 	bool enabled = j["Enabled"];
 	if (!enabled)

@@ -11,6 +11,7 @@ HELLO_ENGINE_API_C RockDivider* CreateRockDivider(ScriptToInspectorInterface* sc
 	script->AddDragBoxGameObject("Boss", &classInstance->boss);
 	script->AddDragInt("Num Rock", &classInstance->whichRockAmI);
 	script->AddDragBoxMeshResource("Stone Mesh", &classInstance->stoneMesh);
+	script->AddDragBoxTextureResource("Stone Texture", &classInstance->stoneTexture);
 
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
@@ -18,15 +19,17 @@ HELLO_ENGINE_API_C RockDivider* CreateRockDivider(ScriptToInspectorInterface* sc
 
 void RockDivider::Start()
 {
+	
 	bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
-	gameObject.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.6f, 0.6f, 0.6f), false);
+	//gameObject.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.6f, 0.6f, 0.6f), false); 
 	for (size_t i = 0; i < 8; i++)
 	{
 		API_GameObject stone = Game::CreateGameObject("Stone", "Stone");
 		stone.AddMeshRenderer().ChangeMesh(stoneMesh);
-		stone.AddMaterial();
+		stone.AddMaterial().ChangeAlbedoTexture(stoneTexture);
 		stone.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (0.3f, 0.3f, 0.3f), false);
 		stone.AddScript("Stone");
+		stone.GetRigidBody().SetVelocity({ 0,0,0 });
 		if(whichRockAmI < 5) stone.SetActive(true);
 		else  stone.SetActive(false);
 		
@@ -70,15 +73,18 @@ void RockDivider::OnCollisionEnter(API::API_RigidBody other)
 
 	if (detectionName == "Player") {
 		PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
-		if (whichRockAmI < 16) {	
+		if (whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING) {	
 			pStats->TakeDamage(bAttacks->rockDmg, 0);
 			bAttacks->ReturnRock(&gameObject, whichRockAmI, false);
 		}
-		else {
+		else if (whichRockAmI > 15){
 			pStats->TakeDamage(bAttacks->orbitingRockDmg, 0);
 		}
+		if (whichRockAmI > 5 && whichRockAmI < 15 && bAttacks->bossState == BossAttacks::BOSS_STATE::SPECIALATTACK) {
+			pStats->TakeDamage(bAttacks->rockDmg, 0);
+		}
 	}
-	else if ((detectionTag == "Default" || detectionTag == "Wall") && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {
+	else if (detectionTag == "Wall" && whichRockAmI < 5 && bAttacks->bossState != BossAttacks::BOSS_STATE::SEEKING && bAttacks->bossState != BossAttacks::BOSS_STATE::FIREROCKATTACK) {
 		rockDivided = true;
 	}
 

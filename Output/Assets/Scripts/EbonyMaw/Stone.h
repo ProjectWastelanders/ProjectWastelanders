@@ -14,6 +14,7 @@ public:
 	void OnCollisionEnter(API::API_RigidBody other);
 
 	API_GameObject boss; 
+	API_GameObject rock; 
 	BossAttacks* bAttacks;
 
 };

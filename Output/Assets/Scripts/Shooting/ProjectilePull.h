@@ -60,5 +60,8 @@ public:
     uint shotgunTex = 0;
     uint ricochetTex = 0;
 
+    uint normalMesh = 0;
+    uint ricochetMesh = 0;
+
     bool testing = false;
 };

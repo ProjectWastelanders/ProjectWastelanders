@@ -26,6 +26,8 @@ public:
 	API_Vector3 rockPositions[20];
 	API_GameObject selectedRock;
 
+	API_GameObject areaImpact;
+
 	API_Vector3 dir[16] = { 0,0,0 };
 	BossLoop* bLoop;
 	PlayerStats* pStats;
@@ -120,5 +122,10 @@ public:
 	BOSS_STATE bossState = BOSS_STATE::IDLE;
 
 	float takeobjTimer;
+
+	bool audioBigRock = false;
+	bool audioRocks[5] = { false,false,false,false,false };
+	bool audioRocksImpact[5] = { false,false,false,false,false };
+	bool audioBoxes[10] = { false,false,false,false,false, false,false,false,false,false };
 
 };

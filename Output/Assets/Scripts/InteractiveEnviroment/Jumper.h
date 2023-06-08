@@ -23,6 +23,7 @@ public:
 	float height = 50.0f;
 	
 	//Jumping & Setup
+	bool Inactive = false;
 	bool isJumping = false;
 	float timeJumping;
 	API_Vector3 initialPos;

@@ -13,7 +13,14 @@ public:
     void Start() override;
     void Update() override;
 
+    void OnEnable() override;
+
+    void OnDisable() override;
+
     void UpgradeSkill();
+    void ShowBlockedImage();
+
+
     int upgradeCost;
 
     API_UIButton Upgrate1;
@@ -30,8 +37,12 @@ public:
 
     API_UIInput mainPanel;
     API_UIInput currentPanel;
+    API_UIInput currentBoughtPanel;
 
+    API_GameObject blockedAbility;
 
+    API_UIButton boughtButtons[5];
+    API_UIButton nonBoughtButtons[5];
 
     int skillLevel;
     int treeIndex;

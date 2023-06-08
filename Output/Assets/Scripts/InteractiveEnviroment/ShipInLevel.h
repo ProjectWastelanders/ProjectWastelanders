@@ -7,11 +7,12 @@
 
 class FadeToBlack;
 class PlayerStorage;
+class ControlPanelShip;
 
 class ShipInLevel : HelloBehavior
 {
 public:
-
+	void Init() override;
 	void Start() override; 
 	void Update() override;
 
@@ -21,6 +22,9 @@ public:
 
 	API_GameObject fadeToBlackGO;
 	FadeToBlack* fadeToBlackRef;
+
+	API_GameObject controlPanelShipGO;
+	ControlPanelShip* controlPanelShipRef;
 
 	API_GameObject playerGO;
 	PlayerStorage* playerStorageRef;

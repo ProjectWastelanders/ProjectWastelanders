@@ -10,6 +10,8 @@ HELLO_ENGINE_API_C Chest* CreateChest(ScriptToInspectorInterface* script)
     script->AddCheckBox("Tutorial Weapon Blueprint", &classInstance->tutorialWeaponBlueprint);
     script->AddDragInt("Chest Index", &classInstance->chestIndex);
     script->AddDragInt("Item Index", &classInstance->itemIndex);
+    script->AddCheckBox("Can Get Special Gun", &classInstance->canGetGun);
+    script->AddCheckBox("Save Chest Interaction", &classInstance->saveChest);
 
     script->AddDragBoxUIImage("Guide Button", &classInstance->guideButton);
 
@@ -51,6 +53,7 @@ void Chest::Update()
         if (openChestTime <= 0.0f)
         {
             opening = false;
+            guideButton.GetGameObject().SetActive(false);
 
             if (!playerGunManager || !playerStats || !playerMove)
             {
@@ -61,29 +64,33 @@ void Chest::Update()
             switch (itemIndex)
             {
             case 0: // Upgrade Blueprint
-                playerStats->SaveChestData(itemIndex, chestIndex);
+                playerStats->SaveChestData(itemIndex, chestIndex, saveChest);
                 if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->UpgradeAlert(itemIndex);
+                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(itemIndex);
                 break;
             case 1: // Unlock Gun
             case 2:
             case 3:
             case 4:
-                playerStats->SaveChestData(itemIndex, chestIndex);
+                playerStats->SaveChestData(itemIndex, chestIndex, saveChest);
                 if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->New_WeaponAlert(itemIndex);
+                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(itemIndex);
                 break;
             case 5: // Get Flamethrower
                 playerGunManager->GetGun(3, 5);
                 playerStats->specialAmmo = 600;
                 playerStats->maxSpecialAmmo = 600;
-                playerStats->SaveChestData(6, chestIndex); // save game
+                playerStats->SaveChestData(6, chestIndex, saveChest); // save game
                 if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(5);
+                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(5);
                 break;
             case 6: // Get Ricochet
                 playerGunManager->GetGun(3, 6);
-                playerStats->specialAmmo = 20;
-                playerStats->maxSpecialAmmo = 20;
-                playerStats->SaveChestData(7, chestIndex); // save game
+                playerStats->specialAmmo = 50;
+                playerStats->maxSpecialAmmo = 50;
+                playerStats->SaveChestData(7, chestIndex, saveChest); // save game
                 if (playerStats->storage->hud_blueprints) playerStats->storage->hud_blueprints->Special_WeaponAlert(6);
+                if (playerStats->storage->hud_Alert_Prints) playerStats->storage->hud_Alert_Prints->Swap_BluePrint_Texture(6);
                 break;
             default:
                 Console::Log("Item Index is not between 0 and 7.");
@@ -93,6 +100,7 @@ void Chest::Update()
             Audio::Event("open_chest");
             playerMove->StopOpenChestAnim();
             chestAnimatorPlayer.Play();
+            opened = true;
             if (endTutorial == true || bluprintTutorial == false)
             {
                 Tutorial_Img.GetGameObject().SetActive(false);
@@ -102,7 +110,7 @@ void Chest::Update()
 
         }
     }
-    guideButton.FillImage(openChestTime/maxOpenChestTime);
+    //guideButton.FillImage(openChestTime/maxOpenChestTime);
 
 
     if (activeTutorial == true && endTutorial == false && hideChest == false)
@@ -209,6 +217,7 @@ void Chest::OpenChestOnStart()
 {
     chestAnimatorPlayer.Play();
     gameObject.SetActive(false);
+    opened = true;
 }
 
 void Chest::OnCollisionEnter(API::API_RigidBody other)

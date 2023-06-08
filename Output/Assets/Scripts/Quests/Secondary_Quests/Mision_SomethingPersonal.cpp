@@ -15,21 +15,16 @@ void Mision_SomethingPersonal::Start()
 {
 	hiddenTank = Game::FindGameObject("HiddenTank");
 
+	misionCompleted = API_QuickSave::GetBool("mision_Personal");
+
 	playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
 	if (playerStorage == nullptr) Console::Log("PlayerStorage missing in GetDiviner Script.");
 }
 
 void Mision_SomethingPersonal::Update()
 {
-	if (misionCompleted == true)
+	if (misionCompleted == false)
 	{
-
-		Console::Log("MISSION 2 COMPLETED CONGRATULATIONS!");
-
-	}
-	else
-	{
-
 		if (hiddenTank.IsActive() == false)
 		{
 

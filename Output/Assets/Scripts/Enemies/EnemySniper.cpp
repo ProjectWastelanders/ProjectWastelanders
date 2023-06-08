@@ -11,6 +11,9 @@ HELLO_ENGINE_API_C EnemySniper* CreateEnemySniper(ScriptToInspectorInterface* sc
     script->AddDragBoxAnimationResource("Aim Animation", &classInstance->aimAnim);
     script->AddDragBoxAnimationResource("Hited Animation", &classInstance->hitAnim);
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
+    script->AddDragFloat("Aiming Time", &classInstance->aimTime);
+    script->AddDragFloat("Stay Time", &classInstance->stayTime);
+    script->AddDragFloat("Recover Time", &classInstance->recovTime);
 	return classInstance;
 }
 
@@ -22,6 +25,9 @@ void EnemySniper::Start()
 
     enemy = (Enemy*)gameObject.GetScript("Enemy");
     targStats = (PlayerStats*)target.GetScript("PlayerStats");
+
+    _aimCooldown = _stayCooldown = _recovCooldown = _resetCooldown = 0;
+    shooted = false;
 }
 void EnemySniper::Update()
 {
@@ -43,7 +49,7 @@ void EnemySniper::Update()
 
         if (!enemy->dying)
         {
-            LookAt(target.GetTransform().GetGlobalPosition());
+            //LookAt(target.GetTransform().GetGlobalPosition());
             if (dis < range) {
                 enemState = States::ATTACKIG;
             }
@@ -55,6 +61,14 @@ void EnemySniper::Update()
         switch (enemState)
         {
         case States::TARGETING:
+            LookAt(target.GetTransform().GetGlobalPosition());
+            _resetCooldown += Time::GetDeltaTime();
+            if (_resetCooldown >= _resetTime)
+            {
+                _resetCooldown = 0;
+                ResetAttackingValues();
+            }
+           
             //animation
             if (animState != AnimationState::IDLE && !enemy->takingDmg)
             {
@@ -64,11 +78,32 @@ void EnemySniper::Update()
             }
             break;
         case States::ATTACKIG:
-
-            if (enemyGun != nullptr)
+            _aimCooldown += Time::GetDeltaTime();
+            if (_aimCooldown >= aimTime)
             {
-                enemyGun->Shoot();
+                _stayCooldown += Time::GetDeltaTime();
+                if (_stayCooldown >= stayTime )
+                {
+                    if (enemyGun != nullptr && !shooted)
+                    {
+                        shooted = true;
+                        enemyGun->Shoot();
+                    }
+                    _recovCooldown += Time::GetDeltaTime();
+                    if (_recovCooldown >= stayTime)
+                    {
+                        ResetAttackingValues();
+                    }
+
+                    
+                }
+                
             }
+            else
+            {
+                LookAt(target.GetTransform().GetGlobalPosition());
+            }
+            
             //animation
             if (animState != AnimationState::SHOOT && !enemy->takingDmg)
             {
@@ -98,6 +133,14 @@ void EnemySniper::Update()
             break;
         }
     }
+}
+
+void EnemySniper::ResetAttackingValues()
+{
+    _aimCooldown = 0;
+    _stayCooldown = 0;
+    _recovCooldown = 0;
+    shooted = false;
 }
 
 void EnemySniper::LookAt(API_Vector3 tarPos)

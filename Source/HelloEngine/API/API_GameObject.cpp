@@ -23,6 +23,7 @@
 #include "ComponentUIButton.h"
 #include "ComponentUIImage.h"
 #include "API_UIImage.h"
+#include "API_DirectionalLight.h"
 
 API::API_GameObject::API_GameObject()
 {
@@ -92,12 +93,12 @@ void API::API_GameObject::SetName(const char name)
     _gameObject->name = name;
 }
 
-void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
+int API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
 {
     if (_gameObject == nullptr)
     {
         Console::S_Log("Trying to acces a NULLPTR GameObject! GetChildren()");
-        return;
+        return 0;
     }
     std::vector<GameObject*>* children = _gameObject->GetChildren();
     int currentCount = 0;
@@ -110,8 +111,9 @@ void API::API_GameObject::GetChildren(API_GameObject* buffer, int count)
         ++buffer;
         ++currentCount;
         if (currentCount == count)
-            return;
+            return count;
     }
+    return children->size();
 }
 
 API::API_GameObject API::API_GameObject::GetParent()
@@ -124,6 +126,19 @@ API::API_GameObject API::API_GameObject::GetParent()
     API_GameObject parent;
     parent.SetGameObject(_gameObject->GetParent());
     return parent;
+}
+
+bool API::API_GameObject::SetParent(API_GameObject parent)
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetParent()");
+        return false;
+    }
+
+    _gameObject->SetParent(parent._gameObject);
+
+    return false;
 }
 
 HelloBehavior* API::API_GameObject::AddScript(const char* className)
@@ -379,6 +394,19 @@ API::API_UIImage API::API_GameObject::GetUIImage()
     return ret;
 }
 
+API::API_DirectionalLight API::API_GameObject::GetDirectionalLight()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetDirectionalLight()");
+        return API::API_DirectionalLight();
+    }
+
+    API_DirectionalLight ret;
+    ret.SetComponent(_gameObject->GetComponent<DirectionalLightComponent>());
+    return ret;
+}
+
 void API::API_GameObject::SetActive(bool active)
 {
     if (_gameObject == nullptr)
@@ -435,15 +463,15 @@ API::API_RigidBody API::API_GameObject::CreateRigidBodyBox(API::API_Vector3 pos,
     physComponent->_physBody->colPos = { pos.x, pos.y, pos.z };
     physComponent->_physBody->colRot = { rotation.x, rotation.y, rotation.z };
     physComponent->_physBody->colScl = { scale.x, scale.y, scale.z };
+    physComponent->_physBody->mass = 1.0f;
     physComponent->CallUpdatePos();
     physComponent->CallUpdateRotation();
     physComponent->CallUpdateScale();
     if (isStatic)
     {
         physComponent->_physBody->isStatic = true;
-        physComponent->CallUpdateMass();
     }
-
+    physComponent->CallUpdateMass();
     API_RigidBody ret;
     ret.SetComponent(physComponent);
     return ret;

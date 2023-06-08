@@ -108,7 +108,7 @@ private:
 
 	bool is2D = false;
 
-	bool depthDraw = false;
+	bool depthDraw = true;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;

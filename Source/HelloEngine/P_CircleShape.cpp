@@ -34,6 +34,7 @@ float3 P_CircleShape::GetRandomPos()
 	float z = r * sin(angle);
 
 	x += center.x;
+	y += center.y;
 	z += center.z;
 
 	return float3(x, y, z);

@@ -32,5 +32,7 @@
 #include "API_UICheckBox.h"
 #include "API_UISlider.h"
 #include "API_AudioSource.h"
+#include "API_VideoPlayer.h"
+#include "API/API_DirectionalLight.h"
 
 using namespace API;

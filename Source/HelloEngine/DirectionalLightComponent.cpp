@@ -15,9 +15,9 @@ DirectionalLightComponent::DirectionalLightComponent(GameObject* gameObject) : L
 
 	data.lightFrustum.type = math::FrustumType::OrthographicFrustum;
 	data.lightFrustum.nearPlaneDistance = 0.0f;
-	data.lightFrustum.farPlaneDistance = 185;
-	data.lightFrustum.orthographicHeight = 64;
-	data.lightFrustum.orthographicWidth = 64;
+	data.lightFrustum.farPlaneDistance = 200;
+	data.lightFrustum.orthographicHeight = 70; //113
+	data.lightFrustum.orthographicWidth = 70; //139
 
 }
 
@@ -62,10 +62,10 @@ void DirectionalLightComponent::DeSerializationUnique(json& j)
 #ifdef STANDALONE
 void DirectionalLightComponent::OnEditorUnique()
 {
-	//ImGui::DragFloat("Near plane Distance", &data.lightFrustum.nearPlaneDistance);
-	//ImGui::DragFloat("Far plane Distance", &data.lightFrustum.farPlaneDistance);
-	//ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
-	//ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);
+	/*ImGui::DragFloat("Near plane Distance", &data.lightFrustum.nearPlaneDistance);
+	ImGui::DragFloat("Far plane Distance", &data.lightFrustum.farPlaneDistance);
+	ImGui::DragFloat("Orthographic Height", &data.lightFrustum.orthographicHeight);
+	ImGui::DragFloat("Orthographic Width", &data.lightFrustum.orthographicWidth);*/
 
 	UpdateToLightMap();
 }

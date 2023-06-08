@@ -18,5 +18,6 @@ public:
 
 	bool casettePlaying = false;
 	int currentPlayingCassette = 0;
+	bool playingCinematic = false;
 };
 

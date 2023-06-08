@@ -46,5 +46,8 @@ public:
 	bool misionCompleted_2_2 = true;
 	bool misionCompleted_1_3 = true;
 	bool misionCompleted_2_3 = true;
+
+	bool m1check = false;
+	bool m2check = false;
 };
 

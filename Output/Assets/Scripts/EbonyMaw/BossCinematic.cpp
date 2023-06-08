@@ -18,7 +18,12 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
     script->AddDragBoxUIImage("Dialog Start Battle", &classInstance->Dialog_StartBattle);
     script->AddDragBoxUIImage("Dialog End Battle", &classInstance->Dialog_EndBattle);
 
-    script->AddDragFloat("Dialog timer", &classInstance->timer);
+    script->AddDragFloat("Dialog start battle timer", &classInstance->timerSB);
+    script->AddDragFloat("Dialog end battle timer", &classInstance->timerEB);
+
+    script->AddDragFloat("Dialog Pos X", &classInstance->finalPos.x);
+    script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
+    script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
 
 	return classInstance;
 }
@@ -26,16 +31,21 @@ HELLO_ENGINE_API_C BossCinematic* CreateBossCinematic(ScriptToInspectorInterface
 void BossCinematic::Start()
 {
     bLoop = (BossLoop*)boss.GetScript("BossLoop");
+    bAttacks = (BossAttacks*)boss.GetScript("BossAttacks");
     camMov = (CamMov*)camera.GetScript("CamMov");
     playerMov = (PlayerMove*)player.GetScript("PlayerMove");
 
     activeCinematic = false;
+    showedCinematic = false;
+    showedStartDialog = false;
     nextDialog = false;
     animBoss = false;
+    DraxAudio = false;
+    endBattleAudio = false;
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
-    finalPos = { 0, -0.500, 0 };
+    //finalPos = { 0, -0.500, 0 };
 
     currentDialog = 1;
 
@@ -77,20 +87,25 @@ void BossCinematic::Update()
 
 
         if (activeCinematic) {            
-
+            playerMov->openingChest = true;
+            player.GetRigidBody().SetVelocity((0, 0, 0));
+            playerMov->PlayIdleAnim();
             switch (currentDialog)
             {
             case 1:
                 camMov->target = boss;
                 PrintDialog(Dialog_1);
+                Audio::Event("ebony_threatening");
                 break;
             case 2:
                 camMov->target = player;
                 PrintDialog(Dialog_2);
+                Audio::Event("starlord_confident");
                 break;
             case 3:
                 camMov->target = boss;
                 PrintDialog(Dialog_3);
+                Audio::Event("ebony_threatening");
                 break;
             case 4:
                 camMov->target = boss;
@@ -99,22 +114,84 @@ void BossCinematic::Update()
             case 5:
                 camMov->target = player;
                 PrintDialog(Dialog_5);
+                Audio::Event("starlord_dubitative");
                 break;
             case 6:
                 camMov->target = boss;
                 PrintDialog(Dialog_6);
+                Audio::Event("ebony_threatening");
                 break;
             }
         }
 
-        if (bLoop->battle)
+        if (bLoop->draxDialog && !showedStartDialog)
         {
-            PrintTempDialog(Dialog_StartBattle, timer);
+            if (_timerSB >= timerSB)
+            {
+                Console::Log("UnPrint start battle");
+                if (Dialog_StartBattle.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
+                {
+                    movingPos.y -= 1 * Time::GetDeltaTime();
+                }
+                else {
+                    Dialog_StartBattle.GetGameObject().SetActive(false);
+                    showedStartDialog = true;
+                }
+            }
+            else {
+                Console::Log("Print start battle");
+                if (!DraxAudio) {
+                    Audio::Event("drax_excited");
+                    DraxAudio = true;
+                }
+                Dialog_StartBattle.GetGameObject().SetActive(true);
+
+                if (Dialog_StartBattle.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
+                {
+                    movingPos.y += 1 * Time::GetDeltaTime();
+                }
+                else {
+                    _timerSB += Time::GetDeltaTime();
+                }
+            }
+
+            Dialog_StartBattle.GetGameObject().GetTransform().SetPosition(movingPos);
         }
 
         if (bLoop->endBattle)
         {
-            PrintTempDialog(Dialog_EndBattle, timer);
+            
+            if (_timerEB >= timerEB)
+            {
+                Console::Log("UnPrint end battle");
+                if (Dialog_EndBattle.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
+                {
+                    movingPos.y -= 1 * Time::GetDeltaTime();
+                }
+                else {
+                    Dialog_EndBattle.GetGameObject().SetActive(false);
+                }
+            }
+            else {
+                Console::Log("Print end battle");
+                if (!endBattleAudio) {
+                    Audio::Event("starlord_confident");
+                    endBattleAudio = true;
+                }
+                Dialog_EndBattle.GetGameObject().SetActive(true);
+
+                if (Dialog_EndBattle.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
+                {
+                    Console::Log("Moving");
+                    movingPos.y += 1 * Time::GetDeltaTime();
+                }
+                else {
+                    Console::Log("Showing");
+                    _timerEB += Time::GetDeltaTime();
+                }
+            }
+
+            Dialog_EndBattle.GetGameObject().GetTransform().SetPosition(movingPos);
         }
     }
 }
@@ -130,10 +207,13 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
         }
         else {
             if (currentDialog == 6) {
+                Dialog.GetGameObject().SetActive(false);
                 camMov->target = player;
                 bLoop->battle = true;
                 activeCinematic = false;
                 playerMov->openingChest = false;
+                bAttacks->orbitingRocks.SetActive(true);
+                
             }
             else {
                 currentDialog += 1;
@@ -156,76 +236,12 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
     Dialog.GetGameObject().GetTransform().SetPosition(movingPos);    
 }
 
-void BossCinematic::PrintTempDialog(API_UIImage& Dialog, float temp)
-{
-
-    if (temp <= 0.0f)
-    {
-        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y > initalPos.y)
-        {
-            movingPos.y -= 1 * Time::GetDeltaTime();
-        }
-        else {
-            Dialog.GetGameObject().SetActive(false);
-        }
-    }
-    else {
-        Dialog.GetGameObject().SetActive(true);
-
-        if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
-        {
-            movingPos.y += 1 * Time::GetDeltaTime();
-        }
-        else {
-            temp -= Time::GetDeltaTime();
-        }
-    }
-
-    Dialog.GetGameObject().GetTransform().SetPosition(movingPos);
-
-   /* if (activeTutorial == true && endTutorial == false && hideChest == false)
-    {
-        Tutorial_Img.GetGameObject().SetActive(true);
-        if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < finalPos.x)
-        {
-            movingPos.x += 0.32 * Time::GetDeltaTime();
-            timerTutorial = true;
-
-        }
-        if (timerTutorial == true)
-        {
-            showTutorial += 1.0f * Time::GetDeltaTime();
-
-        }
-
-    }
-
-    if (showTutorial >= 8.0f)
-    {
-
-        if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x > initalPos.x)
-        {
-            movingPos.x -= 0.32 * Time::GetDeltaTime();
-            timerTutorial = false;
-            hideChest = true;
-        }
-
-        else if (Tutorial_Img.GetGameObject().GetTransform().GetLocalPosition().x < initalPos.x) {
-            endTutorial = true;
-        }
-
-
-
-    }
-    Tutorial_Img.GetGameObject().GetTransform().SetPosition(movingPos);*/
-}
-
 void BossCinematic::OnCollisionEnter(API::API_RigidBody other)
 {
     std::string detectionTag = other.GetGameObject().GetTag();
-    if (detectionTag == "Player")
+    if (detectionTag == "Player" && !showedCinematic)
     {
         activeCinematic = true;
-        //playerMov->openingChest = true;
+        showedCinematic = true;
     }
 }

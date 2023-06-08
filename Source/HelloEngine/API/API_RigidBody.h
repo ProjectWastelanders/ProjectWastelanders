@@ -55,5 +55,6 @@ namespace API
 		friend class API_GameObject;
 		friend class ScriptComponent;
 		friend class DragBoxRigidBody;
+		friend class ModuleLayers;
 	};
 }

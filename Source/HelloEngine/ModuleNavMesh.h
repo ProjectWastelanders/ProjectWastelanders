@@ -159,6 +159,8 @@ public:
 	static BuildSettings* S_GetBuildSettings() { return _buildSettings; };
 	static Pathfinder* S_GetPathfinding() { return _pathfinder; };
 
+	static bool availableNavMesh;
+
 private:
 	static int AddAgentToList(ComponentAgent* const agent);
 

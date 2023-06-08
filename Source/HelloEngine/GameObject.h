@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
 #include "TransformComponent.h"
+#include "DirectionalLightComponent.h"
 
 #define COMPONENT_NUM 14
 
@@ -98,6 +99,9 @@ public:
 
 	bool GetBonesUpdate() { return _updateTransformWithBones; }
 	void SetUpdateWithBones(bool active) { _updateTransformWithBones = active; }
+
+	// Only for debugging purposes, DO NOT USE!
+	void ChangeID(uint ID);
 
 #ifdef STANDALONE
 	void OnEditor();

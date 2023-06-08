@@ -32,8 +32,16 @@ public:
 
     AbilityTreeUpgrades* upgradeScripts[4];
 
+    API_UIImage Tutorial_1;
+    API_UIImage Tutorial_2;
+    API_UIImage Tutorial_3;
+
     bool ability1 = true;
     bool ability2 = true;
     bool ability3 = true;
     bool ability4 = true;
+    int tutorialActive = true;
+    bool tutorial1 = true;
+    bool tutorial2 = false;
+    bool tutorial3 = false;
 };

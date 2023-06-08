@@ -50,6 +50,8 @@ public:
 
     bool reflected = false;
 
+    API_RigidBody rigidBody;
+
     // ricochet
     int targetsHitted = 0;
     uint ricochetTarget;

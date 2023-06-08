@@ -35,6 +35,16 @@ void API::API_Material::ChangeAlbedoTexture(uint textureUID)
 	_material->ChangeTexture((ResourceTexture*)ModuleResourceManager::S_LoadResource(textureUID));
 }
 
+bool API::API_Material::IsTextureNull()
+{
+	if (!_material)
+	{
+		Engine::Console::S_Log("Trying to acces a NULLPTR API_Material. IsTextureNull()");
+		return true;
+	}
+	return _material->GetResourceUID() == -1.0f;
+}
+
 TextureComponent* API::API_Material::GetComponent()
 {
     return _material;

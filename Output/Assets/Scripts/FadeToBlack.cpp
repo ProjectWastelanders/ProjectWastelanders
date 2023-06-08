@@ -47,35 +47,44 @@ void FadeToBlack::Update()
 	
 }
 
+void FadeToBlack::SetOpacity(float opacity)
+{
+	blackImage.SetOpacity(opacity);
+}
+
 void FadeToBlack::FadeOUT()
 {
-	if (faded == false)blackImage.SetOpacity(1.0f);
 
-	faded = true;
+	if (!faded)
+	{
+		blackImage.SetOpacity(1.0f);
+		faded = true;
+	}
 
+	opacity = 1.0f - fadeTimer;
 
-	opacity = 1.0f * fadeTimer;
-
-	if (opacity >= 1.0f)
+	if (opacity <= 0.0f)
 	{
 		blackToFade = false;
 		fadeTimer = 0.0f;
 	}
 	else
 	{
-		blackImage.SetOpacity(1.0f - opacity);
+		blackImage.SetOpacity(opacity);
 	}
 }
 
 void FadeToBlack::FadeIN()
 {
-	if (faded == false)blackImage.SetOpacity(0.0f);
 
-	faded = true;
+	if (!faded)
+	{
+		blackImage.SetOpacity(0.0f);
+		faded = true;
+	}
 
-
-	opacity = 1.0f * fadeTimer;
-
+	opacity = fadeTimer;
+	 
 	if (opacity >= 1.0f)
 	{
 		fadeToBlack = false;

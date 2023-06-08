@@ -17,6 +17,6 @@ public:
 	bool hasUpdatedLights = false;
 	bool hasUpdatedCamera = false;
 
-	uint _maxPointLights = 32;
-	uint _maxSpotLights = 32;
+	uint _maxPointLights = 0;
+	uint _maxSpotLights = 0;
 };

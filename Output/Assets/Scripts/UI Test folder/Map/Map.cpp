@@ -42,3 +42,22 @@ void Map::Update()
         }
     }*/
 }
+
+void Map::MissionsEnable(bool hasMap)
+{
+    if (true)
+    {
+        if (playerStorage == nullptr) return;
+        casette1.SetActive(playerStorage->casette1Picked);
+        casette2.SetActive(playerStorage->casette2Picked);
+        casette3.SetActive(playerStorage->casette3Picked);
+    }
+    else
+    {
+        
+        casette1.SetActive(false);
+        casette2.SetActive(false);
+        casette3.SetActive(false);
+    }
+
+}

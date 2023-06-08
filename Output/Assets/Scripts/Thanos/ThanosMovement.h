@@ -50,6 +50,7 @@ public:
 	float walkCooldown = 0.0f;
 	WALKSTATE walkState = WALKSTATE::NORMAL;
 
+	bool cinematic = true;
 	bool letsFight = false;
 };
 

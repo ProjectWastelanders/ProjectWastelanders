@@ -1,5 +1,5 @@
 {
-    "Shader resource UID": 1280200565,
+    "Shader resource UID": 3576356457,
     "Uniforms": [
         {
             "Index": 0,
@@ -40,7 +40,7 @@
             "Size": 1,
             "String Type": "sampler2D",
             "Type": 35678,
-            "Value": -1
+            "Value": 2635113362
         },
         {
             "Index": 552,
@@ -69,8 +69,8 @@
             ]
         },
         {
-            "Index": 555,
-            "Layer": 1,
+            "Index": 554,
+            "Layer": 31,
             "Name": "shadowMap",
             "Read": 9,
             "Size": 1,

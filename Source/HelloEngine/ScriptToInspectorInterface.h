@@ -241,6 +241,15 @@ class DragBoxAudioSourceComponent : public ScriptInspectorField
 #endif
 };
 
+class DragBoxVideoPlayerComponent : public ScriptInspectorField
+{
+	void OnEditor() override;
+#ifndef HELLO_ENGINE_EXPORTS
+	void OnSerialize(json& j) override;
+	void OnDeserialize(json& j) override;
+#endif
+};
+
 class TO_API ScriptToInspectorInterface
 {
 public:
@@ -268,6 +277,7 @@ public:
 	virtual void AddDragBoxPrefabResource(const char* name, uint* value) = 0;
 	virtual void AddDragBoxShaderComponent(const char* name, API::API_ShaderComponent* value) = 0;
 	virtual void AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value) = 0;
+	virtual void AddDragBoxVideoPlayerComponent(const char* name, API::API_VideoPlayer* value) = 0;
 
 
 protected:

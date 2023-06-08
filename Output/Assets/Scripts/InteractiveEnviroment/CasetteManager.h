@@ -14,6 +14,8 @@ public:
     void Start() override;
     void Update() override;
     void FeedBack_Tutorial();
+    void ActiveDialogs();
+    void PrintDialog(API_UIImage& Dialog);
 
     API_GameObject casette1;
     API_GameObject casette2;

@@ -167,7 +167,7 @@ void ChestManager::Update()
         else if (chestScript1->tutorialWeaponBlueprint) chestScript1->itemIndex = GetGunBlueprint();
         else
         {
-            int loot = GetRandomLoot();
+            int loot = GetRandomLoot(chestScript1->canGetGun);
 
             if (loot == 0)
             {
@@ -192,7 +192,7 @@ void ChestManager::Update()
         else if (chestScript2->tutorialWeaponBlueprint) chestScript2->itemIndex = GetGunBlueprint();
         else
         {
-            int loot = GetRandomLoot();
+            int loot = GetRandomLoot(chestScript2->canGetGun);
 
             if (loot == 0)
             {
@@ -217,7 +217,7 @@ void ChestManager::Update()
         else if (chestScript3->tutorialWeaponBlueprint) chestScript3->itemIndex = GetGunBlueprint();
         else
         {
-            int loot = GetRandomLoot();
+            int loot = GetRandomLoot(chestScript3->canGetGun);
 
             if (loot == 0)
             {
@@ -242,7 +242,7 @@ void ChestManager::Update()
         else if (chestScript4->tutorialWeaponBlueprint) chestScript4->itemIndex = GetGunBlueprint();
         else
         {
-            int loot = GetRandomLoot();
+            int loot = GetRandomLoot(chestScript4->canGetGun);
 
             if (loot == 0)
             {
@@ -264,7 +264,7 @@ void ChestManager::Update()
     check = true;
 }
 
-int ChestManager::GetRandomLoot()
+int ChestManager::GetRandomLoot(bool canGetGun)
 {
     if (specialGunAsigned && gunBlueprintAsigned && remainingUpgradeBlueprints == 0) return -1;
 
@@ -272,18 +272,18 @@ int ChestManager::GetRandomLoot()
 
     if (random == 0)
     {
-        if (!specialGunAsigned) return 0;
-        else return GetRandomLoot();
+        if (!specialGunAsigned && canGetGun) return 0;
+        else return GetRandomLoot(canGetGun);
     }
     else if (random == 1 && playerStorage && playerStorage->levelIndex != 3) // level 3 dont have gun blueprint
     {
         if (!gunBlueprintAsigned) return 1;
-        else return GetRandomLoot();
+        else return GetRandomLoot(canGetGun);
     }
     else if (random > 1 || (random == 1 && playerStorage && playerStorage->levelIndex == 3))
     {
         if (remainingUpgradeBlueprints > 0) return 2;
-        else return GetRandomLoot();
+        else return GetRandomLoot(canGetGun);
     }
 }
 

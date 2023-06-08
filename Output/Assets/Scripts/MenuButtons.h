@@ -8,6 +8,7 @@
 class MenuButtons : HelloBehavior
 {
 public:
+	void Init() override;
 	void Start() override;
 	void Update() override;
 	API_UIButton Continue;
@@ -19,5 +20,7 @@ public:
 	API_GameObject mainPanel;
 
 	bool settingsActive;
+
+	string goLevel;
 };
 

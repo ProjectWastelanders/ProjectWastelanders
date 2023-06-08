@@ -83,7 +83,6 @@ void Coleccionable_buttons::Update()
 	if (tutorial != nullptr)
 	{	
 		coleccionable_panel.SetEnable(false);
-		Console::Log("Turotial");
 		if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
 		{
 			if (!tutorial->NextScreen())

@@ -24,6 +24,11 @@ HELLO_ENGINE_API_C HUB_LevelSelect* CreateHUB_LevelSelect(ScriptToInspectorInter
 	script->AddDragBoxGameObject("Santuary", &classInstance->floorTexts[2]);
 	script->AddDragBoxGameObject("Thanos", &classInstance->floorTexts[3]);
 
+	script->AddDragBoxGameObject("Tutorial 1", &classInstance->tutorials[0]);
+	script->AddDragBoxGameObject("Tutorial 2", &classInstance->tutorials[1]);
+	script->AddDragBoxGameObject("Tutorial 3", &classInstance->tutorials[2]);
+	script->AddDragBoxUIInput("Panel", &classInstance->panel);
+
 	script->AddCheckBox("Unlocked levels", &classInstance->lockedLevels);
 
 	return classInstance;
@@ -51,6 +56,22 @@ void HUB_LevelSelect::Init()
 
 void HUB_LevelSelect::Start()
 {
+	if (!API_QuickSave::GetBool("SelectLevel_Tutorial", false))
+	{
+		tutorial = new UITutorial(tutorials, 3);
+		tutorials[0].SetActive(true);
+		tutorials[1].SetActive(false);
+		tutorials[2].SetActive(false);
+		Console::Log("Tut!");
+	}
+	else
+	{
+		tutorial = nullptr;
+		tutorials[0].SetActive(false);
+		tutorials[1].SetActive(false);
+		tutorials[2].SetActive(false);
+	}
+
 	for (int i = 0; i < 4; ++i)
 	{
 		// initialize images
@@ -86,6 +107,23 @@ void HUB_LevelSelect::Start()
 
 void HUB_LevelSelect::Update()
 {
+	if (tutorial != nullptr)
+	{
+		panel.SetEnable(false);
+		if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
+		{
+			if (!tutorial->NextScreen())
+			{
+				tutorial->Unable();
+				delete tutorial;
+				tutorial = nullptr;
+				panel.SetEnable(true);
+				API_QuickSave::SetBool("SelectLevel_Tutorial", true);
+			}
+		}
+		return;
+	}
+
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
 		gameObject.SetActive(false);

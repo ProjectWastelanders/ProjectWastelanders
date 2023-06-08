@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.9359999895095825,
+                "Aspect ratio": 1.6379019021987915,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -24441,6 +24441,22 @@
                 "listButtons": [
                     0
                 ]
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Tutorial 1": 929910094
+                    },
+                    {
+                        "Tutorial 2": 1925638136
+                    },
+                    {
+                        "Armory Main Panel": 3432315266
+                    }
+                ],
+                "Script Resource": 1910180755,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
@@ -27248,6 +27264,86 @@
                 "Position": [
                     0.0,
                     0.0,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 4094448063,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tutorial1",
+        "ParentUID": 2963029982,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 929910094,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 220652001,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tutorial2",
+        "ParentUID": 2963029982,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 1925638136,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
                     0.0
                 ],
                 "Rotation": [
@@ -27312,6 +27408,18 @@
                     },
                     {
                         "Thanos": 3963088882
+                    },
+                    {
+                        "Tutorial 1": 311774401
+                    },
+                    {
+                        "Tutorial 2": 3346130744
+                    },
+                    {
+                        "Tutorial 3": 2752991525
+                    },
+                    {
+                        "Panel": 3253975403
                     },
                     {
                         "Unlocked levels": false
@@ -30877,6 +30985,126 @@
         "PrefabUID": 446200265,
         "Tag": "UI",
         "UID": 3705164893,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2102304545,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tutorial1",
+        "ParentUID": 2279618498,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 311774401,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3944261788,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tutorial2",
+        "ParentUID": 2279618498,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3346130744,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.5
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 445391924,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Tutorial3",
+        "ParentUID": 2279618498,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2752991525,
         "UpdateWithBones": false
     },
     {

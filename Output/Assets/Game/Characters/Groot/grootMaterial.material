@@ -1,11 +1,109 @@
 {
-    "Shader resource UID": 0,
-    "Uniforms": {
-        "Index": 0,
-        "Name": "Null",
-        "Read": 0,
-        "Size": 0,
-        "String Type": "Null",
-        "Type": 0
-    }
+    "Shader resource UID": 1090855872,
+    "Uniforms": [
+        {
+            "Index": 0,
+            "Name": "Actual_Point",
+            "Read": 12,
+            "Size": 1,
+            "String Type": "int",
+            "Type": 5124,
+            "Value": 0
+        },
+        {
+            "Index": 1,
+            "Name": "Actual_Spot",
+            "Read": 11,
+            "Size": 1,
+            "String Type": "int",
+            "Type": 5124,
+            "Value": 0
+        },
+        {
+            "Index": 2,
+            "Name": "ColourTest",
+            "Read": 10,
+            "Size": 1,
+            "String Type": "vec4",
+            "Type": 35666,
+            "Value": [
+                -6.259853398707798e+18,
+                -6.260125527835673e+18,
+                -6.260125527835673e+18,
+                -6.260125527835673e+18
+            ]
+        },
+        {
+            "Index": 823,
+            "Layer": 0,
+            "Name": "albedo_texture",
+            "Read": 14,
+            "Size": 1,
+            "String Type": "sampler2D",
+            "Type": 35678,
+            "Value": 1975642302
+        },
+        {
+            "Index": 824,
+            "Name": "finalBonesMatrices[0]",
+            "Read": 21,
+            "Size": 100,
+            "String Type": "mat4",
+            "Type": 35676,
+            "Value": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "Index": 825,
+            "Name": "lightSpaceMatrix",
+            "Read": 16,
+            "Size": 1,
+            "String Type": "mat4",
+            "Type": 35676,
+            "Value": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "Index": 828,
+            "Layer": 31,
+            "Name": "shadowMap",
+            "Read": 9,
+            "Size": 1,
+            "String Type": "sampler2D",
+            "Type": 35678,
+            "Value": -1
+        }
+    ]
 }

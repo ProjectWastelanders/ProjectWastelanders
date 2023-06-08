@@ -143,6 +143,7 @@ void Weapon_Select::Update()
 
     if (proceedPanel.GetGameObject().IsActive() && Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_UP)
     {
+        //@Ruben Resetear el QuicSave por nivel
         if (!firstTimeLevel)
         {
             int selectedLevel = API_QuickSave::GetInt("currentSelectedLevel");

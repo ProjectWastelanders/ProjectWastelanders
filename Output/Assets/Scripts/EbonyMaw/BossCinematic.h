@@ -39,6 +39,8 @@ public:
 	CamMov* camMov;
 	PlayerMove* playerMov;
 
+	bool DraxAudio, endBattleAudio;
+
 	bool activeCinematic, nextDialog, animBoss;
 	bool showedCinematic, showedStartDialog;
 	int currentDialog;

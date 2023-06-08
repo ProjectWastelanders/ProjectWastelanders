@@ -47,7 +47,7 @@ void ControlPanelShip::OnCollisionStay(API_RigidBody other)
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
         {
             timerToShip += Time::GetDeltaTime();
-
+            Audio::Event("spaceship_call");
             if (timerToShip >= 0.98f)
             {
                 ShipManagerRef->SetShipActive(Ship);

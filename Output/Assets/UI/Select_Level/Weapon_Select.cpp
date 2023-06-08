@@ -143,10 +143,11 @@ void Weapon_Select::Update()
 
     if (proceedPanel.GetGameObject().IsActive() && Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_UP)
     {
-        //@Ruben Resetear el QuicSave por nivel
         if (!firstTimeLevel)
         {
             int selectedLevel = API_QuickSave::GetInt("currentSelectedLevel");
+
+            ResetQuickSaveValues(selectedLevel + 1);
 
             switch (selectedLevel)
             {
@@ -205,5 +206,29 @@ void Weapon_Select::Update()
         HUB_UIManager::ClosePanel();
 
         firstTimeLevel = false;
+    }
+}
+
+void Weapon_Select::ResetQuickSaveValues(int levelIndex)
+{
+    // guns
+    API_QuickSave::SetInt("equipedSpecialGun", -1);
+    API_QuickSave::SetInt("normalAmmo", -1);
+    API_QuickSave::SetInt("specialAmmo", -1);
+
+    // enemies
+    std::string name = "lvl" + std::to_string(levelIndex) + "_enemy";
+    for (size_t i = 0; i < 59; i++)
+    {
+        std::string variable = name + std::to_string(i);
+        API_QuickSave::SetBool(variable.c_str(), true);
+    }
+
+    // boxes
+    name = "lvl" + std::to_string(levelIndex) + "box";
+    for (size_t i = 0; i < 30; i++)
+    {
+        std::string variable = name + std::to_string(i);
+        API_QuickSave::SetBool(variable.c_str(), true);
     }
 }

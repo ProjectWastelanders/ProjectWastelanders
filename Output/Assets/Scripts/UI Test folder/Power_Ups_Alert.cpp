@@ -7,7 +7,7 @@ HELLO_ENGINE_API_C Power_Ups_Alert* CreatePower_Ups_Alert(ScriptToInspectorInter
 	script->AddDragBoxTextureResource("SPEED_INCREASE", &classInstance->textures_Power_up[0]);
 	script->AddDragBoxTextureResource("FIRERATE_INCREASE", &classInstance->textures_Power_up[1]);
 	script->AddDragBoxTextureResource("SHIELD", &classInstance->textures_Power_up[2]);
-	//script->AddDragBoxTextureResource("MAX AMMO", &classInstance->textures_Power_up[3]);
+	script->AddDragBoxTextureResource("MAX AMMO", &classInstance->textures_Power_up[3]);
 	//
 	script->AddDragBoxTextureResource("SLOW_TIME", &classInstance->textures_Power_up[4]);
 	return classInstance;
@@ -20,16 +20,9 @@ void Power_Ups_Alert::Start()
 
 void Power_Ups_Alert::Update()
 {
-	//if (Reset == true)
-	//{
-	//	timer_Active = 1.8;
-	//	active = false;
-	//	opacity_Alert = 1;
-	//	Reset = false;
-	//}
 
-	//if (Reset == false)
-	//{
+	if (Reset == false)
+	{
 		if (timer_Active < 1.8f)
 		{
 			timer_Active -= Time::GetDeltaTime();
@@ -49,13 +42,23 @@ void Power_Ups_Alert::Update()
 				timer_Active = 1.8;
 			}
 		}
-	//}
+	}
 }
 
 void Power_Ups_Alert::Swap_PowerUp_Texture(int Power_Up)
 {
+	
+	if (Reset == true)
+	{
+		timer_Active = 1.8;
+		active = false;
+		opacity_Alert = 0;
+		Reset = false;
+	}
 	timer_Active -= Time::GetDeltaTime();
 	active = true;
+
+	
 
 	switch (Power_Up)
 	{
@@ -69,6 +72,7 @@ void Power_Ups_Alert::Swap_PowerUp_Texture(int Power_Up)
 		power_up_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures_Power_up[2]);
 		break;
 	case 3:
+		power_up_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures_Power_up[3]);
 		break;
 	case 4:
 		power_up_Alert.GetGameObject().GetMaterialCompoennt().ChangeAlbedoTexture(textures_Power_up[4]);

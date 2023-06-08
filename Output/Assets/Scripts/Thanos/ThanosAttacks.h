@@ -205,5 +205,7 @@ public:
 	int whichColumn = -1;
 
 	float dashTimer = 0.0f;
+
+	bool playerDeath = false;
 };
 

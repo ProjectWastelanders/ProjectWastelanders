@@ -12,6 +12,8 @@ HELLO_ENGINE_API_C SimpleAutoDialog* CreateSimpleAutoDialog(ScriptToInspectorInt
     script->AddDragFloat("Dialog Pos Y", &classInstance->finalPos.y);
     script->AddDragFloat("Dialog Pos Z", &classInstance->finalPos.z);
 
+    script->AddInputBox("Audio Event String", &classInstance->audioEvent);
+
 	return classInstance;
 }
 
@@ -25,11 +27,13 @@ void SimpleAutoDialog::Start()
 
 	Dialog.GetGameObject().GetTransform().SetPosition(initalPos);
 	Dialog.GetGameObject().SetActive(false);
+
 }
 void SimpleAutoDialog::Update()
 {
 	if (activeDialog) {
 		PrintDialog(Dialog);
+        Audio::Event(audioEvent.c_str());
 	}
 }
 

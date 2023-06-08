@@ -12,6 +12,8 @@ void Mision_RageMonster::Start()
 {
     Game::FindGameObjectsWithTag("Box", &boxes[0], 16);
 
+    misionCompleted = API_QuickSave::GetBool("Mision_RageMonster");
+
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in GetDiviner Script.");
 }
@@ -22,7 +24,7 @@ void Mision_RageMonster::Update()
     {
         bool completed = true;
 
-        for (size_t i = 0; i < 16; i++)
+        for (size_t i = 0; i <= 16; i++)
         {
             if (boxes[i].IsActive())
             {

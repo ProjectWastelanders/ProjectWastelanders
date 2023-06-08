@@ -16,7 +16,7 @@ void Mision_Masacre::Start()
 {
 
 	enemies.resize(enemiessize);
-
+	misionCompleted = API_QuickSave::GetBool("Mision_Masacre");
 	Game::FindGameObjectsWithTag("Enemy", &enemies[0], enemiessize); 
 	 
 	playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
@@ -25,11 +25,7 @@ void Mision_Masacre::Start()
 }
 void Mision_Masacre::Update()
 {
-	if (misionCompleted == true)
-	{
-		Console::Log("MISSION COMPLETED CONGRATULATIONS!");
-	}
-	else 
+	if (misionCompleted == false)
 	{
 		for (int i = 0; i < enemiessize; i++)
 		{

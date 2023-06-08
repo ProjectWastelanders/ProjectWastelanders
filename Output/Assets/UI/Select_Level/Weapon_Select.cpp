@@ -141,8 +141,9 @@ void Weapon_Select::Update()
         }
     }
 
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN && proceedPanel.GetGameObject().IsActive())
+    if (proceedPanel.GetGameObject().IsActive() && Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_UP)
     {
+        //@Ruben Resetear el QuicSave por nivel
         if (!firstTimeLevel)
         {
             int selectedLevel = API_QuickSave::GetInt("currentSelectedLevel");
@@ -160,12 +161,21 @@ void Weapon_Select::Update()
                 Scene::LoadScene(scene.c_str());
                 break;
             case 1:
-                API_QuickSave::SetFloat("PlayerPosX", 147.6f);
-                API_QuickSave::SetFloat("PlayerPosY", 2.115f);
-                API_QuickSave::SetFloat("PlayerPosZ", 14.54f);
-                API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
-                API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
-                API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+                if (API_QuickSave::GetBool("IsInMiddleOfLevel") == true)
+                {
+                    API_QuickSave::SetFloat("PlayerIndicatorPosX", -0.7f);
+                    API_QuickSave::SetFloat("PlayerIndicatorPosY", -0.39f);
+                    
+                }
+                else
+                {
+                    API_QuickSave::SetFloat("PlayerPosX", 147.6f);
+                    API_QuickSave::SetFloat("PlayerPosY", 2.115f);
+                    API_QuickSave::SetFloat("PlayerPosZ", 14.54f);
+                    API_QuickSave::SetFloat("PlayerIndicatorPosX", 0);
+                    API_QuickSave::SetFloat("PlayerIndicatorPosY", 0);
+                    API_QuickSave::SetBool("IsInMiddleOfLevel", false);
+                }
                 scene = std::string("Level2.HScene");
                 Scene::LoadScene(scene.c_str());
                 break;

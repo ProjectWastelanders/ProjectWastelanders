@@ -13,10 +13,10 @@ HELLO_ENGINE_API_C ReachTheSpaceship* CreateReachTheSpaceship(ScriptToInspectorI
     script->AddDragBoxGameObject("Enemy to Active 1", &classInstance->enebledEnemies[1]);
     script->AddDragBoxGameObject("Enemy to Active 2", &classInstance->enebledEnemies[2]);
     script->AddDragBoxGameObject("Enemy to Active 3", &classInstance->enebledEnemies[3]);
-    script->AddDragBoxGameObject("Enemy to Active 4", &classInstance->enebledEnemies[4]);
+   /* script->AddDragBoxGameObject("Enemy to Active 4", &classInstance->enebledEnemies[4]);
     script->AddDragBoxGameObject("Enemy to Active 5", &classInstance->enebledEnemies[5]);
     script->AddDragBoxGameObject("Enemy to Active 6", &classInstance->enebledEnemies[6]);
-    script->AddDragBoxGameObject("Enemy to Active 7", &classInstance->enebledEnemies[7]);
+    script->AddDragBoxGameObject("Enemy to Active 7", &classInstance->enebledEnemies[7]);*/
     script->AddCheckBox("aaaaaaaaaaaaaaaa", &classInstance->enabled);
 
     return classInstance;
@@ -27,6 +27,40 @@ void ReachTheSpaceship::Start()
     currentHp = maxHp;
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
     if (!playerStorage) Console::Log("Storage Missing in ReachSpaceShip Script.");
+
+
+    for (size_t i = 0; i < 4; i++)
+    {
+        spawnPosShip[i].x = enebledEnemies[i].GetTransform().GetGlobalPosition().x;
+        spawnPosShip[i].y = enebledEnemies[i].GetTransform().GetGlobalPosition().y;
+        spawnPosShip[i].z = enebledEnemies[i].GetTransform().GetGlobalPosition().z;
+    }
+
+    for (size_t i = 0; i < 4; i++)
+    {
+        enebledEnemies[i].GetTransform().SetPosition(10000, 0, 10000);
+    }
+    
+    //for (size_t i = 0; i < 3; i++)
+    //{
+    //    //enebledEnemies[i].SetActive(true);
+    //    //enebledEnemies[i].GetTransform().SetPosition();
+    //    enemyScript[i] = (Enemy*)enebledEnemies[i].GetScript("Enemy");
+    //    if(!enemyScript[i]) Console::Log("Obamaaaaaa");
+    //}
+
+    /*enemyScript1 = (Enemy*)enebledEnemies[0].GetScript("Enemy");
+    if (!enemyScript1) Console::Log("Enemy Missing in ReachSpaceShip Script.");
+
+    enemyScript2 = (Enemy*)enebledEnemies[1].GetScript("Enemy");
+    if (!enemyScript2) Console::Log("Enemy Missing in ReachSpaceShip Script.");
+
+    enemyScript3 = (Enemy*)enebledEnemies[2].GetScript("Enemy");
+    if (!enemyScript3) Console::Log("Enemy Missing in ReachSpaceShip Script.");
+
+    enemyScript4 = (Enemy*)enebledEnemies[3].GetScript("Enemy");
+    if (!enemyScript4) Console::Log("Enemy Missing in ReachSpaceShip Script.");*/
+    //EnableMision();
 }
 
 void ReachTheSpaceship::Update()
@@ -45,7 +79,7 @@ void ReachTheSpaceship::Update()
         enebledEnemies[i].SetActive(false);
     }*/
 
-    if (enabled)
+   /* if (enabled)
     {
         cooldownHit += Time::GetDeltaTime();
         if (cooldownHit >= timeHit)
@@ -53,7 +87,7 @@ void ReachTheSpaceship::Update()
             currentHp -= damagePerProjectile*8;
             cooldownHit = 0;
         }
-    }
+    }*/
 }
 
 void ReachTheSpaceship::OnCollisionEnter(API_RigidBody other)
@@ -99,8 +133,16 @@ void ReachTheSpaceship::EnableMision()
 {
     enabled = true;
 
-    for (size_t i = 0; i < 8; i++)
+    for (size_t i = 0; i < 4; i++)
     {
-        enebledEnemies[i].SetActive(true);
+        //enebledEnemies[i].SetActive(true);
+    
+       // Console::Log("Obamaaaaaa");
+            enebledEnemies[i].GetTransform().SetPosition(spawnPosShip[i]);
+        //if (enemyScript[i])
+        //{
+        //    Console::Log("Obamaaaaaa");
+        //  //  enebledEnemies[i].GetTransform().SetPosition((enemyScript[i]->spawnPos.x, enemyScript[i]->spawnPos.y, enemyScript[i]->spawnPos.z));
+        //}
     }
 }

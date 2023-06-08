@@ -2,6 +2,7 @@
 #include "API_Engine.h"
 #include "ModuleWindow.h"
 #include "LayerGame.h"
+#include "ModuleRenderer3D.h"
 
 bool API::Engine::hideMouse = false;
 bool API::Engine::centerMouse = false;
@@ -14,6 +15,11 @@ void API::Engine::ApplyEngineProperties()
 	else
 		SDL_ShowCursor(1);
 	SDL_SetRelativeMouseMode((SDL_bool)centerMouse);
+}
+
+void API::Engine::SetVSync(bool active)
+{
+	Application::Instance()->renderer3D->ToggleVSync(active);
 }
 
 void API::Engine::EnginePropertiesUpdate()

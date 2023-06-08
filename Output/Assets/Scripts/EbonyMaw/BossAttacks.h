@@ -26,6 +26,8 @@ public:
 	API_Vector3 rockPositions[20];
 	API_GameObject selectedRock;
 
+	API_GameObject areaImpact;
+
 	API_Vector3 dir[16] = { 0,0,0 };
 	BossLoop* bLoop;
 	PlayerStats* pStats;

@@ -23,6 +23,7 @@
 #include "ComponentUIButton.h"
 #include "ComponentUIImage.h"
 #include "API_UIImage.h"
+#include "API_DirectionalLight.h"
 
 API::API_GameObject::API_GameObject()
 {
@@ -390,6 +391,19 @@ API::API_UIImage API::API_GameObject::GetUIImage()
     }
     API_UIImage ret;
     ret.SetComponent(_gameObject->GetComponent<ComponentUIImage>());
+    return ret;
+}
+
+API::API_DirectionalLight API::API_GameObject::GetDirectionalLight()
+{
+    if (_gameObject == nullptr)
+    {
+        Console::S_Log("Trying to acces a NULLPTR GameObject! GetDirectionalLight()");
+        return API::API_DirectionalLight();
+    }
+
+    API_DirectionalLight ret;
+    ret.SetComponent(_gameObject->GetComponent<DirectionalLightComponent>());
     return ret;
 }
 

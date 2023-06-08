@@ -25,7 +25,7 @@ void PlayerAutomatic::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("automatic_level")); // read from save file
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("automatic_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -63,7 +63,7 @@ void PlayerAutomatic::Update()
     }
 }
 
-void PlayerAutomatic::Shoot()
+bool PlayerAutomatic::Shoot()
 {
     if (canShoot)
     {
@@ -73,7 +73,11 @@ void PlayerAutomatic::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
+
+    return false;
 }
 
 void PlayerAutomatic::EnableGuns(bool enable)
@@ -89,7 +93,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.3f;
+        projectileLifetime = 0.5f;
         cadence = 20.0f;
         // max damage 10
         // damage aument speed 0%
@@ -98,7 +102,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.7f;
         cadence = 20.0f;
         // max damage 10
         // damage aument speed 0%
@@ -107,7 +111,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.7f;
         cadence = 20.0f;
         // max damage 20
         // damage aument speed 0%
@@ -116,7 +120,7 @@ void PlayerAutomatic::SetGunStatsPerLevel(int level)
         projectileSpeed = 40.0f;
         projectileDamage = 3.0f;
         projectileResistanceDamage = 1.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.7f;
         cadence = 20.0f;
         // max damage 10
         // damage aument speed 50%

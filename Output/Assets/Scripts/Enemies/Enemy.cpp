@@ -5,6 +5,7 @@
 #include "EnemyMeleeMovement.h"
 #include "EnemyRanger.h"
 #include "../Shooting/StickBomb.h"
+#include "../InteractiveEnviroment/StickyBombParticle.h"
 #include "../Quests/Secondary_Quests/EnemyDieEvent.h"
 
 HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
@@ -35,6 +36,7 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     // script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
      //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
     script->AddCheckBox("Static Wander", &classInstance->staticWand);
+    script->AddCheckBox("Appears after diviner?(LVL3)", &classInstance->isEQEnemy);
     return classInstance;
 }
 
@@ -76,6 +78,8 @@ void Enemy::Start()
     {
         _tAnimDie = 1.43f;
     }
+
+    Game::FindGameObjectsWithTag("StickyBombParticles", &bombParticles[0], 10);
 
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
 
@@ -136,7 +140,10 @@ void Enemy::Update()
     }
     else
     {
-        enemyShader.SetColor(1, 1, 1, 255);
+        if (!isTank)
+        {
+            enemyShader.SetColor(1, 1, 1, 255);
+        }
     }
 }
 
@@ -166,6 +173,11 @@ void Enemy::TakingDmgState()
 
 void Enemy::TakeDamage(float damage, float resistanceDamage)
 {
+
+    isHit = true;
+    enemyShader.SetColor(255, 0, 0, 0.5);
+    if (!_hitShader) _hitShader = true;
+
     if (currentHp <= 0.0f)
         return;
 
@@ -236,7 +248,8 @@ void Enemy::Die()
     EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
     EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
     // some animation
-    if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(gameObject.GetTransform().GetGlobalPosition());
+    API_Vector3 dropPos = { gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y + 1.0f, gameObject.GetTransform().GetGlobalPosition().z };
+    if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(dropPos);
 
     //hitParticles.StopEmitting();
     if (!meleeScript && !rangeScript && !tankScript)
@@ -272,12 +285,12 @@ void Enemy::OnCollisionEnter(API::API_RigidBody other)
             if (meleeScript->enemState == EnemyMeleeMovement::States::ATTACKIG && meleeIsAtking) pStats->TakeDamage(10, 0), meleeIsAtking = false;
         }
     }
-    if (detectionTag == "Projectile")
+    /*if (detectionTag == "Projectile")
     {
         isHit = true;
         enemyShader.SetColor(255, 0, 0, 0.5);
         if (!_hitShader) _hitShader = true;
-    }
+    }*/
 }
 
 void Enemy::ActiveSlow(float q, float time)
@@ -351,17 +364,27 @@ void Enemy::CheckBombs()
 {
     if (currentBombNum > 0)
     {
-        StickBomb* stickBomb = (StickBomb*)bomb.GetScript("StickBomb");
-        if (stickBomb == nullptr) Console::Log("StickyBomb missing in Bomb from enemy.");
-        else
-        {
-            stickBomb->triggerActive = true;
-            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
-            else stickBomb->damage = 10.0f * currentBombNum;
-        }
+        if (shotgunLevel > 2) TakeDamage(15.0f * currentBombNum, 15.0f * currentBombNum);
+        else TakeDamage(10.0f * currentBombNum, 10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
+        API_GameObject particles = GetFirstInactiveBombParticle();
+        particles.SetActive(true);
+        particles.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+        particles.GetParticleSystem().Play();
+        StickyBombParticle* script = (StickyBombParticle*)particles.GetScript("StickyBombParticle");
+        script->time = 0.1f;
     }
+}
+
+API_GameObject Enemy::GetFirstInactiveBombParticle()
+{
+    for (size_t i = 0; i < 10; i++)
+    {
+        if (!bombParticles[i].IsActive()) return bombParticles[i];
+    }
+
+    return bombParticles[0];
 }
 
 void Enemy::AddBurn()

@@ -157,7 +157,6 @@
     <ClCompile Include="..\..\Assets\Scripts\OrbitalTrigger.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.cpp" />
     <ClCompile Include="../../Assets/Scripts/UI Test folder/FeedbackChest.cpp" />
-    <ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.cpp" />
     <ClCompile Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.cpp" />
     <ClCompile Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.cpp" />
     <ClCompile Include="../../Assets/Scripts/AidKitRotation.cpp" />
@@ -169,6 +168,13 @@
     <ClCompile Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.cpp" />
     <ClCompile Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.cpp" />
     <ClCompile Include="..\..\Assets\Scripts\Armory_Tutorial.cpp" />
+    <ClCompile Include="../../Assets/Scripts/PlayCinematic.cpp" />
+    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.cpp" />
+    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.cpp" />
+    <ClCompile Include="../../Assets/Scripts/Groot/GrootAnimationScript.cpp" />
+    <ClCompile Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.cpp" />
+    <ClCompile Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.cpp" />
+    <ClCompile Include="..\..\Assets\Scripts\Audio\S_AudioMixer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Assets\Scripts\EbonyMaw\BossAttacks.h" />
@@ -328,7 +334,6 @@
     <ClInclude Include="..\..\Assets\Scripts\OrbitalTrigger.h" />
     <ClInclude Include="..\..\Assets\Scripts\UI Test folder\HUB\HUB_MissionsCheck.h" />
     <ClInclude Include="../../Assets/Scripts/UI Test folder/FeedbackChest.h" />
-    <ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_2/StarLord_Leaves_TheShip.h" />
     <ClInclude Include="../../Assets/Scripts/Dialogs/SimpleAutoDialog.h" />
     <ClInclude Include="../../Assets/Scripts/Dialogs/Lvl_1/Tp_Dialog.h" />
     <ClInclude Include="../../Assets/Scripts/AidKitRotation.h" />
@@ -340,5 +345,12 @@
     <ClInclude Include="..\..\Assets\Scripts\Enemies\VFX\ExclamationMarkPool.h" />
     <ClInclude Include="..\..\Assets\Game\Prefabs\Environment\TP_Sphere\TpRotateSphere.h" />
     <ClInclude Include="..\..\Assets\Scripts\Armory_Tutorial.h" />
+    <ClInclude Include="../../Assets/Scripts/PlayCinematic.h" />
+    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ControlPanelShip.h" />
+    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/ShipManager.h" />
+    <ClInclude Include="../../Assets/Scripts/Groot/GrootAnimationScript.h" />
+    <ClInclude Include="../../Assets/Scripts/InteractiveEnviroment/SpecialGunChestTexture.h" />
+    <ClInclude Include="../../Assets/Scripts/UI Test folder/Map/Map_Swap_LVL3.h" />
+    <ClInclude Include="..\..\Assets\Scripts\Audio\S_AudioMixer.h" />
   </ItemGroup>
 </Project>

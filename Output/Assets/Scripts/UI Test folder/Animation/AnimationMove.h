@@ -52,6 +52,12 @@ public:
 
 	float startRotate;
 
+	float stopTimeUP;
+	float stopTimeRight;
+	float stopTime = 0;
+
+	bool stopMovingUP = false;
+	bool stopMovingRight = false;
 	//true is up or right, false is oposite
 	bool movingUP = true;
 	bool movingRight = true;

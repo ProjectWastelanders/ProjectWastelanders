@@ -216,6 +216,11 @@ void GameObject::OnCollisionExit(PhysBody3D* other)
 
 #ifdef STANDALONE
 
+void GameObject::ChangeID(uint ID)
+{
+	_ID = ID;
+}
+
 void GameObject::OnEditor()
 {
     if (_isPendingToDelete) return;
@@ -299,6 +304,8 @@ void GameObject::OnEditor()
         }
         ImGui::EndCombo();
         }
+	ImGui::TextColored(ImVec4(1, 1, 1, 0.5f), "GameObject UID: "); ImGui::SameLine();
+	ImGui::TextColored(ImVec4(1, 1, 1, 0.5f), std::to_string(this->_ID).c_str());
     if (_prefabUID != 0)
     {
         ImGui::TextColored(ImVec4(1, 1, 1, 0.5f), "Prefab UID: "); ImGui::SameLine();

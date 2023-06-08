@@ -1,5 +1,7 @@
 #include "PlayerGunManager.h"
 #include "../UI Test folder/SwapWeapon.h"
+#include "Guns/PlayerFlamethrower.h"
+
 HELLO_ENGINE_API_C PlayerGunManager* CreatePlayerGunManager(ScriptToInspectorInterface* script)
 {
     PlayerGunManager* classInstance = new PlayerGunManager();
@@ -31,6 +33,9 @@ void PlayerGunManager::Start()
     swapWeapon = (SwapWeapon*)swapWeaponGO.GetScript("SwapWeapon");
     if (swapWeapon == nullptr) Console::Log("Missing SwapWeapon on PlayerGunManager Script.");
 
+    playerFlamethrower = (PlayerFlamethrower*)flamethrower.GetScript("PlayerFlamethrower");
+    if (swapWeapon == nullptr) Console::Log("Missing flamethrower on PlayerGunManager Script.");
+
     // add guns to the array in order
     guns.push_back(duals);
     guns.push_back(semiauto);
@@ -45,7 +50,9 @@ void PlayerGunManager::Start()
     int equipedNormalGun = API_QuickSave::GetInt("equipedNormalGun");
     if (equipedNormalGun < -1 || equipedNormalGun > 4) equipedNormalGun = -1;
     GetGun(2, equipedNormalGun);
-    GetGun(3, -1);
+    int equipedSpecialGun = API_QuickSave::GetInt("equipedNormalGun");
+    if (equipedSpecialGun < 5 || equipedSpecialGun > 6) equipedSpecialGun = -1;
+    GetGun(3, equipedSpecialGun);
     //GetGun(1, gunOnHandIndex1);
     //GetGun(2, gunOnHandIndex2);
     //GetGun(3, gunOnHandIndex3);
@@ -55,23 +62,39 @@ void PlayerGunManager::Start()
     {
     case 1: // semiautomatic
         playerStats->maxLaserAmmo = 100;
-        playerStats->laserAmmo = 100;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 100);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
         break;
     case 2: // automatic
         playerStats->maxLaserAmmo = 350;
-        playerStats->laserAmmo = 350;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 350);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
         break;
     case 3: // burst
         playerStats->maxLaserAmmo = 100;
-        playerStats->laserAmmo = 100;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 100);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
         break;
     case 4: // shotgun
         playerStats->maxLaserAmmo = 100;
-        playerStats->laserAmmo = 100;
+        playerStats->laserAmmo = API_QuickSave::GetInt("normalAmmo", 100);
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+        break;
+    default:
+        break;
+    }
+
+    switch (equipedSpecialGun)
+    {
+    case 5: // flame
+        playerStats->maxLaserAmmo = 600;
+        playerStats->laserAmmo = API_QuickSave::GetInt("specialAmmo", 600);
+        if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::FLAMETHROWER);
+        break;
+    case 6: // rico
+        playerStats->maxLaserAmmo = 50;
+        playerStats->laserAmmo = API_QuickSave::GetInt("specialAmmo", 50);
+        if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::RICOCHET);
         break;
     default:
         break;
@@ -152,8 +175,8 @@ void PlayerGunManager::Update()
     {
         if (playerStats && playerStats->GetAmmonByType(equipedGun->ammoType) > 0)
         {
-            equipedGun->Shoot();
-            if (playerMove) playerMove->PlayShootAnim(equipedIndex);
+            bool shooted = equipedGun->Shoot();
+            if (shooted && playerMove) playerMove->PlayShootAnim(equipedIndex);
         }
         else
         {
@@ -211,26 +234,33 @@ void PlayerGunManager::EquipGun(int index)
     PlayerGunType* gunType = (PlayerGunType*)guns[index].GetScript("PlayerGunType");
     if (gunType == nullptr) return;
 
+    
+
     switch (gunType->gunType)
     {
     case 0: // duals
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerDuals");
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 1: // semiautomatic
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerSemiAuto");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SEMI);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 2: // automatic
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerAutomatic");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::AUTO);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 3: // burst
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerBurst");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::BURST);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 4: // shotgun
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerShotgun");
         if (swapWeapon) swapWeapon->SwapWeapon2(normalWeapon_Type::SHOTGUN);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     case 5: // flamethrower
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerFlamethrower");
@@ -239,6 +269,7 @@ void PlayerGunManager::EquipGun(int index)
     case 6: // ricochet
         equipedGun = (PlayerGun*)guns[index].GetScript("PlayerRicochet");
         if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::RICOCHET);
+        //playerFlamethrower->fireParticles.StopEmitting();
         break;
     default:
         equipedGun = nullptr;
@@ -252,6 +283,8 @@ void PlayerGunManager::EquipGun(int index)
 void PlayerGunManager::UnequipGun(int index)
 {
     if (index == -1) return;
+    playerFlamethrower->fireParticles.StopEmitting();
+    playerFlamethrower->playingParticlesCd = 0.0f;
 
     if (playerMove)
     {

@@ -30,9 +30,9 @@ void PlayerGun::Update()
 
 }
 
-void PlayerGun::Shoot()
+bool PlayerGun::Shoot()
 {
-
+    return false;
 }
 
 void PlayerGun::EnableGuns(bool enable)

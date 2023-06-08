@@ -43,7 +43,7 @@ void ThanosMovement::Update()
             Tattack->thanosAnimationPlayer.Resume();
             startFightTimer += Time::GetDeltaTime();
 
-            if (startFightTimer > 6.1f) {
+            if (startFightTimer > 5.9f) {
                 letsFight = false;
                 Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosRunAnimation);
                 Tattack->thanosAnimationPlayer.SetLoop(true);

@@ -39,6 +39,11 @@ void CamMov::Start()
 
 void CamMov::Update()
 {
+	if (Input::GetGamePadButton(GamePadButton::BUTTON_RIGHT_STICK) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_C) == KeyState::KEY_DOWN)
+	{
+		orbital = !orbital;
+	}
+
 	if (testEarthquake) Earthquake(0.5f);	//ERASE THIS
 
 	gameObject.GetTransform().SetRotation(camRot);

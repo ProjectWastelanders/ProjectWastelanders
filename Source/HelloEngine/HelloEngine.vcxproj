@@ -72,7 +72,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</IntDir>
-    <TargetName>ProjectWastelanders</TargetName>
+    <TargetName>GOTG_The_Bet</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -401,6 +401,7 @@
     <ClCompile Include="API\API_AnimationPlayer.cpp" />
     <ClCompile Include="API\API_Audio.cpp" />
     <ClCompile Include="API\API_AudioSource.cpp" />
+    <ClCompile Include="API\API_DirectionalLight.cpp" />
     <ClCompile Include="API\API_QuickSave.cpp" />
     <ClCompile Include="API\API_RayCast.cpp" />
     <ClCompile Include="API\API_RayCastCollision.cpp" />
@@ -660,6 +661,7 @@
     <ClInclude Include="API\API_AnimationPlayer.h" />
     <ClInclude Include="API\API_Audio.h" />
     <ClInclude Include="API\API_AudioSource.h" />
+    <ClInclude Include="API\API_DirectionalLight.h" />
     <ClInclude Include="API\API_QuickSave.h" />
     <ClInclude Include="API\API_RayCast.h" />
     <ClInclude Include="API\API_RayCastCollision.h" />

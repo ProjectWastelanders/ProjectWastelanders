@@ -27,6 +27,7 @@ public:
     float openChestTimeBar;
     float maxOpenChestTime = 1.0f;
     bool opening;
+    bool opened = false;
     PlayerGunManager* playerGunManager;
     PlayerStats* playerStats;
     PlayerMove* playerMove;
@@ -49,6 +50,8 @@ public:
     bool endTutorial = false;
     bool timerTutorial = false;
     bool hideChest = false;
+
+    bool saveChest = true;
 
     float showTutorial = 0;
 

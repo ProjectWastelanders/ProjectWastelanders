@@ -23,6 +23,13 @@ public:
 	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
 	void LookAt(API_Vector3 tarPos, API_GameObject* go);
 
+	void OnCollisionStay(API::API_RigidBody other);
+
+	void OnCollisionEnter(API::API_RigidBody other);
+
+	void OnCollisionExit(API::API_RigidBody other);
+
+
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
 	bool hasPulsed = false;
@@ -148,6 +155,9 @@ public:
 	API_ParticleSystem laserPS3;
 
 	API_GameObject meteors[30];
+	API_GameObject columns[12];
+	API_GameObject areaImpact;
+	bool columnsStates[12];
 	API_Vector3 meteorsPosition[30];
 
 	//ThanosAnimations
@@ -191,5 +201,9 @@ public:
 	float laserDirectionTimer = 0.0f;
 
 	bool laserExpanded = false;
+
+	int whichColumn = -1;
+
+	float dashTimer = 0.0f;
 };
 

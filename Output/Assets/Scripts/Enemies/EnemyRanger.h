@@ -5,7 +5,7 @@
 #include "EnemyGun.h"
 #include "API/API.h"
 #include "Enemy.h"
-#include "VFX/ExclamationMarkPool.h"
+#include "VFX/ExclamationPool.h"
 
 class EnemyRanger : HelloBehavior
 {
@@ -54,7 +54,7 @@ public:
     float attackEscapeDis = 6.0f;
     bool playerEnterInFollowDis = false;
     //----------------------------------------------------------
-
+    float distanceBeetweenPlayerEnemy;
     bool wander = false;
     bool targeting = false;
 
@@ -109,6 +109,4 @@ private:
 
     float _agCooldown;
     float _agTime;
-
-    ExclamationMarkPool* _exclamationPool = nullptr;
 };

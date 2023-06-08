@@ -19,7 +19,8 @@ HELLO_ENGINE_API_C EnemyTank* CreateEnemyTank(ScriptToInspectorInterface* script
 	script->AddDragBoxGameObject("Enemy gun", &classInstance->gunObj);
 
 	//script->AddDragBoxGameObject("Target", &classInstance->target);
-	script->AddDragBoxRigidBody("Action Rb zone", &classInstance->zoneRb);
+	//script->AddDragBoxRigidBody("Action Rb zone", &classInstance->zoneRb);
+	script->AddDragBoxGameObject("Action  zone", &classInstance->zone);
 	script->AddDragFloat("Attack Range", &classInstance->attackRange);
 	script->AddDragFloat("Approximate Range", &classInstance->approximateRange);
 	script->AddDragFloat("Separate Range", &classInstance->separateRange);
@@ -33,6 +34,8 @@ HELLO_ENGINE_API_C EnemyTank* CreateEnemyTank(ScriptToInspectorInterface* script
 	script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
 
 	script->AddDragBoxAnimationPlayer("Animation", &classInstance->animationPlayer);
+	script->AddDragBoxParticleSystem("Heal Particles", &classInstance->healParticles);
+	//script->AddDragBoxShaderComponent("Material", &classInstance->material);
 
 	return classInstance;
 }
@@ -41,13 +44,35 @@ void EnemyTank::Start()
 {
 	Game::FindGameObjectsWithTag("Player", &target, 1);
 	
+	zoneRb = zone.GetRigidBody();
 	isReturning = false;
 	currentShield = maxShield;
 	isRecoveringShield = false;
 	isRestoringHealth = false;
 	shieldRecoverCounter = 0;
 
+	hasToBlinkHealing = false;
+	hasToBlinkShield = false;
+
+	nonBlinkingTimer = 0.0f;
+	blinkingTimer = 0.0f;
+
+	nonBlinkingTime = 1;
+	blinkingTime = 3;
+
+	fadeInTime = blinkingTime / 2;
+	fadeOutTime = blinkingTime / 2;
+
+	isBlinking = false;
+
 	isProtectingAlly = false;
+
+	_fadeInCooldown_blink = _fadeOutCooldown_blink = 0;
+	fading_blink = true;
+
+	r_blink = 0;
+	g_blink = 0;
+	b_blink = 1;
 
 	animationPlayer.ChangeAnimation(idleAnim);
 	animationPlayer.Play();
@@ -56,8 +81,16 @@ void EnemyTank::Start()
 
 
 	enemyScript = (Enemy*)gameObject.GetScript("Enemy");
-	if (enemyScript->hasShield == false) {
-		enemyScript->hasShield = true;
+	if (enemyScript) 
+	{
+		if (enemyScript->hasShield == false) {
+			enemyScript->hasShield = true;
+		}
+		if (enemyScript->isTank == false) {
+			enemyScript->isTank = true;
+		}
+
+		material = enemyScript->enemyShader;
 	}
 
 	initialPosition = gameObject.GetTransform().GetGlobalPosition();
@@ -79,7 +112,7 @@ void EnemyTank::Start()
 	}
 
 	state = States::WANDERING;
-
+	
 }
 void EnemyTank::Update()
 {
@@ -117,9 +150,148 @@ void EnemyTank::Update()
 			else {
 				ReturnToZone();
 			}
+			
+			if (hasToBlinkShield) 
+			{
+				BlinkShield();
+			}
+			else if (hasToBlinkHealing)
+			{
+				BlinkHealth();
+			}
+			else 
+			{
+				blinkingTimer = 0.0f;
+				nonBlinkingTimer = 0.0f;
+				_r = 1;
+				_g = 1;
+				_b = 1;
+				fading_blink = true;
+				_fadeOutCooldown_blink = 0;
+				_fadeInCooldown_blink = 0;
+				material.SetColor(1, 1, 1, 1);
+			}
 		}
 	}
 }
+
+void EnemyTank::FadeIn()
+{
+	if (_fadeInCooldown_blink < fadeInTime)
+	{
+		_fadeInCooldown_blink += Time::GetDeltaTime();
+		_r = Lerp(1, r_blink, _fadeInCooldown_blink / fadeInTime);
+		_g = Lerp(1, g_blink, _fadeInCooldown_blink / fadeInTime);
+		_b = Lerp(1, b_blink, _fadeInCooldown_blink / fadeInTime);
+
+	}
+	else if (_fadeInCooldown_blink >= fadeInTime)
+	{
+		fading_blink = false;
+		_fadeInCooldown_blink = 0;
+	}
+}
+
+void EnemyTank::FadeOut()
+{
+	if (_fadeOutCooldown_blink < fadeOutTime)
+	{
+		_fadeOutCooldown_blink += Time::GetDeltaTime();
+		_r = Lerp(r_blink, 1, _fadeOutCooldown_blink / fadeOutTime);
+		_g = Lerp(g_blink, 1, _fadeOutCooldown_blink / fadeOutTime);
+		_b = Lerp(b_blink, 1, _fadeOutCooldown_blink / fadeOutTime);
+
+	}
+	else if (_fadeOutCooldown_blink >= fadeOutTime)
+	{
+		fading_blink = true;
+		_fadeOutCooldown_blink = 0;
+	}
+}
+
+float EnemyTank::Lerp(float a, float b, float time)
+{
+	return a + time * (b - a);
+}
+
+void EnemyTank::BlinkShield() 
+{
+	r_blink = 0;
+	g_blink = 0;
+	b_blink = 1;
+
+	if (isBlinking) 
+	{
+		fading_blink ? FadeIn() : FadeOut();
+		material.SetColor(_r, _g, _b, 255);
+
+		blinkingTimer += Time::GetDeltaTime();
+		nonBlinkingTimer = 0.0f;
+		
+		if (blinkingTimer >= blinkingTime) 
+		{
+			_r = 1;
+			_g = 1;
+			_b = 1;
+			material.SetColor(1, 1, 1, 1);
+			isBlinking = false;
+		}
+	}
+	else 
+	{
+		nonBlinkingTimer += Time::GetDeltaTime();
+		blinkingTimer = 0.0f;
+		
+		if (nonBlinkingTimer >= nonBlinkingTime)
+		{
+			fading_blink = true;
+			_fadeOutCooldown_blink = 0;
+			_fadeInCooldown_blink = 0;
+			isBlinking = true;
+		}
+	}
+}
+
+void EnemyTank::BlinkHealth()
+{
+	r_blink = 0;
+	g_blink = 1;
+	b_blink = 0;
+
+	if (isBlinking)
+	{
+		fading_blink ? FadeIn() : FadeOut();
+		material.SetColor(_r, _g, _b, 255);
+
+		blinkingTimer += Time::GetDeltaTime();
+		nonBlinkingTimer = 0.0f;
+
+		if (blinkingTimer >= blinkingTime)
+		{
+			_r = 1;
+			_g = 1;
+			_b = 1;
+			material.SetColor(1, 1, 1, 1);
+			isBlinking = false;
+		}
+	}
+	else
+	{
+		nonBlinkingTimer += Time::GetDeltaTime();
+		blinkingTimer = 0.0f;
+
+		if (nonBlinkingTimer >= nonBlinkingTime)
+		{
+			fading_blink = true;
+			_fadeOutCooldown_blink = 0;
+			_fadeInCooldown_blink = 0;
+			isBlinking = true;
+		}
+	}
+
+	
+}
+
 void EnemyTank::ReturnToZone() {
 
 	float xDif = gameObject.GetTransform().GetGlobalPosition().x - actionZone.GetTransform().GetGlobalPosition().x;
@@ -242,7 +414,6 @@ void EnemyTank::Seek()
 
 				//3
 				float CrossProductABAC = ((AB[0] * AC[1]) - (AB[1] * AC[0]));
-				testingFloat1 = CrossProductABAC;
 
 				float dirToAlly[2] = { 0,0 };
 				bool isInZone = false;
@@ -395,7 +566,6 @@ void EnemyTank::ProtectEnemy()
 
 	//3
 	float CrossProductABAC = ((AB[0] * AC[1]) - (AB[1] * AC[0]));
-	testingFloat1 = CrossProductABAC;
 
 	float rotatedVec[2] = { 0,0 };
 	//tank is on the right - need anti schedule rotated vector
@@ -474,6 +644,11 @@ void EnemyTank::Recovering()
 		if (isRecoveringShield == false) {
 			isRecoveringShield = true;
 		}
+		hasToBlinkShield = false;
+	}
+	else
+	{
+		hasToBlinkShield = true;
 	}
 
 	if (isRecoveringShield == true) {
@@ -491,17 +666,24 @@ void EnemyTank::Recovering()
 			hasToRestoreHealth = true;
 		}
 	}
+	else 
+	{
+		hasToBlinkHealing = false;
+	}
 
 	if (hasToRestoreHealth == true) {
 		healthRestoreCounter += Time::GetDeltaTime();
 		if (healthRestoreCounter >= healthRestoreCooldown) {
 			if (isRestoringHealth == false) {
 				isRestoringHealth = true;
+				healParticles.Play();
 			}
 		}
 	}
 
 	if (isRestoringHealth == true) {
+
+		hasToBlinkHealing = true;
 
 		if (enemyScript->currentHp + Time::GetDeltaTime() * healthRestorePerSecond < enemyScript->maxHp) {
 			enemyScript->currentHp += Time::GetDeltaTime() * healthRestorePerSecond;
@@ -511,6 +693,7 @@ void EnemyTank::Recovering()
 			hasToRestoreHealth = false;
 			isRestoringHealth = false;
 			healthRestoreCounter = 0;
+			healParticles.Stop();
 		}
 	}
 }
@@ -529,7 +712,6 @@ float EnemyTank::TakeDamageTank(float life, float damage)
 		isRestoringHealth = false;
 		healthRestoreCounter = 0;
 	}
-
 
 	return life;
 }

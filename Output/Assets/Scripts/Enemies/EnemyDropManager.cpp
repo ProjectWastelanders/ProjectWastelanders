@@ -154,6 +154,7 @@ void EnemyDropManager::SpinDropRate(API_Vector3 position) // check if enemy drop
 
         go.SetActive(true);
         go.GetTransform().SetPosition(position);
+        go.GetParticleSystem().Play();
     }
 }
 
@@ -270,4 +271,5 @@ void EnemyDropManager::BossSpinDropRate(API_Vector3 position)
     go.SetActive(true);
     API_Vector3 newPos = { position.x, position.y + 1.0f, position.z };
     go.GetTransform().SetPosition(newPos);
+    go.GetParticleSystem().Play();
 }

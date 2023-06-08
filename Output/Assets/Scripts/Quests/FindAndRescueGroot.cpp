@@ -30,36 +30,32 @@ void FindAndRescueGroot::OnCollisionStay(API_RigidBody other)
     if (detectionName == "Player")
     {
 
-        if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+        if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
         {
-            fadeToBlackRef->blackToFade = false;
-            fadeToBlackRef->fadeToBlack = true;
+            timerToTp += Time::GetDeltaTime();
 
-            if (playerStorage)
+            if (timerToTp >= 0.98f)
             {
-                playerStorage->skillPoints += 3;
-                playerStorage->SaveData();
+                
+                if (playerStorage)
+                {
+                    playerStorage->skillPoints += 3;
+                    playerStorage->SaveData();
+                }
+                API_QuickSave::SetBool("level2_completed", true);
+                timerToTp = 0.0f;
+                Scene::LoadScene("SpaceshipHUB_Scene.HScene");
             }
-            API_QuickSave::SetBool("level2_completed", true);
-
+            else
+            {
+                fadeToBlackRef->fadeToBlack = true;
+            }
         }
         else if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP)
         {
             fadeToBlackRef->fadeToBlack = false;
             fadeToBlackRef->blackToFade = true;
             timerToTp = 0.0f;
-        }
-
-        if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
-        {
-            timerToTp += Time::GetDeltaTime();
-
-            if (timerToTp >= 1.2f)
-            {
-
-                Scene::LoadScene("SpaceshipHUB_Scene.HScene");
-                timerToTp = 0.0f;
-            }
         }
         
 

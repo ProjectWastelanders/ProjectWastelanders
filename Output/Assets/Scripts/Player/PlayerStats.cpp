@@ -4,7 +4,10 @@
 #include "../UI Test folder/HpBar.h"
 #include "../UsefulScripts/IndexContainer.h"
 #include "../UI Test folder/HUD_Power_Up_Scrip.h"
+#include "../UI Test folder/Power_Ups_Alert.h"
 #include "../UI Test folder/UI_Municion.h"
+#include "../CamMov.h"
+
 HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* script)
 {
     PlayerStats* classInstance = new PlayerStats();
@@ -22,6 +25,7 @@ HELLO_ENGINE_API_C PlayerStats* CreatePlayerStats(ScriptToInspectorInterface* sc
     script->AddDragBoxGameObject("Player GO", &classInstance->playerGO);
     script->AddDragBoxGameObject("Power Ups Managers (HUD)", &classInstance->hudPowerUpGO);
     script->AddDragBoxGameObject("Hud Munition GO", &classInstance->ammo_ScriptGO);
+    script->AddDragBoxGameObject("Camera", &classInstance->cameraGameObject);
     //script->AddDragInt("movement tree lvl", &classInstance->movementTreeLvl); // use it only for playtesting
     //script->AddDragInt("armory tree lvl", &classInstance->armoryTreeLvl);
     //script->AddDragInt("health tree lvl", &classInstance->healthTreeLvl);
@@ -60,8 +64,14 @@ void PlayerStats::Start()
     hudPowerUp = (HUD_Power_Up_Scrip*)hudPowerUpGO.GetScript("HUD_Power_Up_Scrip");
     if (!hudPowerUp) Console::Log("HUD_Power_Up_Scrip Missing in PlayerStats. Only needed in levels.");
     
+    hudPowerUp_Alert = (Power_Ups_Alert*)hudPowerUpGO.GetScript("Power_Ups_Alert");
+    if (!hudPowerUp_Alert) Console::Log("Power_Ups_Alert Missing in PlayerStats. Only needed in levels.");
+    
     ammo_Script = (UI_Municion*)ammo_ScriptGO.GetScript("UI_Municion");
     if (!ammo_Script) Console::Log("UI_Municion Missing in PlayerStats. Only needed in levels.");
+
+    cam = (CamMov*)cameraGameObject.GetScript("CamMov");
+    if (!cam) Console::Log("CamMov Missing in PlayerStats. Only needed in levels.");
 }
 
 void PlayerStats::Update()
@@ -221,12 +231,6 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
             return;
         }
 
-        // check casette amount
-        int casettesPicked = 0;
-        if (storage->casette1Picked) casettesPicked++;
-        if (storage->casette2Picked) casettesPicked++;
-        if (storage->casette3Picked) casettesPicked++;
-
         /*switch (casettesPicked)
         {
         case 0:
@@ -246,12 +250,15 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         {
         case 1:
             storage->casette1Picked = true;
+            storage->SaveData();
             break;
         case 2:
             storage->casette2Picked = true;
+            storage->SaveData();
             break;
         case 3:
             storage->casette3Picked = true;
+            storage->SaveData();
             break;
         default:
             Console::Log("Casette index only can be 1, 2 or 3.");
@@ -319,6 +326,11 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
         blinkTime = 0.5f;
         positiveBlink = false;
         material.SetColor(1, 0, 0, 1);
+        if (cam != nullptr) 
+        {
+            cam->Shake(0.1f, 0.5f);
+        }
+
     }
 
     lastHitTime = 3.0f; // 3 seg to auto heal after a hit
@@ -428,14 +440,20 @@ void PlayerStats::GetPowerUp(int index)
     case 0:
         speedPowerUp = 5.0f;
         hudPowerUp->AddPowerUp(PowerUp_Type::SPEED_INCREASE, speedPowerUp);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(0);
         break;
     case 1:
         fireratePowerUp = 5.0f;
         hudPowerUp->AddPowerUp(PowerUp_Type::FIRERATE_INCREASE, fireratePowerUp);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(1);
         break;
     case 2:
         shield = 50.0f;
         hudPowerUp->AddPowerUp(PowerUp_Type::SHIELD, 1);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(2);
         break;
     case 3:
         GetAmmo(1, maxLaserAmmo);
@@ -445,6 +463,8 @@ void PlayerStats::GetPowerUp(int index)
         slowTimePowerUp = 5.0f;
         Time::ChangeTimeScale(0.5f);
         hudPowerUp->AddPowerUp(PowerUp_Type::SLOW_TIME, slowTimePowerUp);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(4);
         break;
     default:
         Console::Log("Invalid powe up index, can only be 0, 1, 2 or 3.");
@@ -482,9 +502,9 @@ void PlayerStats::SaveInStorage(int index)
     storage->SaveData();
 }
 
-void PlayerStats::SaveChestData(int chestContent, int chestIndex)
+void PlayerStats::SaveChestData(int chestContent, int chestIndex, bool saveChest)
 {
-    storage->SaveDataFromChest(chestIndex, chestContent);
+    if (saveChest) storage->SaveDataFromChest(chestIndex, chestContent);
 
     SaveInStorage(chestContent);
 }

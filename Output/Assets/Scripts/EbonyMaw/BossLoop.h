@@ -31,6 +31,8 @@ public:
     API_GameObject cover11;
     API_GameObject cover12;
 
+    API_GameObject blood;
+
     //TEMPORAL FOR ALPHA 1
     API_GameObject finalTextPanel;
 
@@ -43,6 +45,12 @@ public:
     float maxHpLoss[3] = { 1000.0f,500.0f,0.0f };
     float shield[3] = { 500.0f,750.0f,1000.0f };
     float maxShield[3] = { 500.0f,750.0f,1000.0f };
+
+    bool damaged = false;
+    float bloodTimer = 0;
+
+    bool destroyHighCover = false;
+    float highCoverTime = 0.0f;
 
     float hp = 1500.0f;
 
@@ -83,6 +91,8 @@ public:
     float DieTimer;
     float recoverTimer;
     float knockUpTimer;
+
+    bool draxDialog;
 
     enum class AnimationState
     {

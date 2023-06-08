@@ -3,6 +3,7 @@
 #include "ThanosLoop.h"
 #include "../Player/PlayerStats.h"
 #include "../Player/PlayerMove.h"
+#include "../../Assets/Game/Characters/Enemies/enemyThanos_Animations/ThanosAssets/Columna.h"
 
 HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface* script)
 {
@@ -99,6 +100,22 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 	script->AddDragBoxAnimationResource("Thanos Out Of Combat", &classInstance->thanosOutOfCombat);
 	script->AddDragBoxAnimationResource("Thanos Punch Attack", &classInstance->thanosPunchAttack);
 	script->AddDragBoxAnimationResource("Thanos Punch Attack 2", &classInstance->thanosPunchAttack2);
+
+	script->AddDragBoxGameObject("Column 0", &classInstance->columns[0]);
+	script->AddDragBoxGameObject("Column 1", &classInstance->columns[1]);
+	script->AddDragBoxGameObject("Column 2", &classInstance->columns[2]);
+	script->AddDragBoxGameObject("Column 3", &classInstance->columns[3]);
+	script->AddDragBoxGameObject("Column 4", &classInstance->columns[4]);
+	script->AddDragBoxGameObject("Column 5", &classInstance->columns[5]);
+	script->AddDragBoxGameObject("Column 6", &classInstance->columns[6]);
+	script->AddDragBoxGameObject("Column 7", &classInstance->columns[7]);
+	script->AddDragBoxGameObject("Column 8", &classInstance->columns[8]);
+	script->AddDragBoxGameObject("Column 9", &classInstance->columns[9]);
+	script->AddDragBoxGameObject("Column 10", &classInstance->columns[10]);
+	script->AddDragBoxGameObject("Column 11", &classInstance->columns[11]);
+
+
+	script->AddDragBoxGameObject("Explosion3D", &classInstance->areaImpact);
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
 }
@@ -140,13 +157,42 @@ void ThanosAttacks::Start()
 	for (int i = 0; i < 30; i++) {
 		meteorsPosition[i] = meteors[i].GetTransform().GetGlobalPosition();
 	}
-	explosionWave.GetTransform().Translate(0, -10, 0);
+	explosionWave.GetTransform().Translate(0, 0, 0);
+	areaImpact.GetTransform().SetPosition(0, -1000, 0);
 
 }
 void ThanosAttacks::Update()
 {
+	if (whichColumn > -1) {
 
-	
+		for (int i = 0; i < 12; i++) {
+			if (columnsStates[i] == true) {
+				columns[i].GetTransform().Translate(0, -1 * Time::GetDeltaTime(), 0);
+			}
+		}
+
+		switch (whichColumn)
+		{
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+			columns[whichColumn].GetTransform().Translate(0, -2 * Time::GetDeltaTime(), 0);
+
+			break;
+		default:
+			break;
+		}
+
+	}
 
 	//defenseSword.GetTransform().SetPosition(boss.GetTransform().GetGlobalPosition());
 	if (tLoop->phase == 2) {
@@ -158,6 +204,8 @@ void ThanosAttacks::Update()
 			thanosState = THANOS_STATE::PULSE;
 			explosionWave.GetTransform().Translate(0, 10, 0);
 
+			areaImpact.SetActive(true);
+			areaImpact.GetTransform().SetPosition(0, -1, 0);
 			thanosAnimationPlayer.ChangeAnimation(thanosPulseAnimation);
 			thanosAnimationPlayer.SetLoop(false);
 			thanosAnimationPlayer.Play();
@@ -197,7 +245,11 @@ void ThanosAttacks::Update()
 			isAttacking = true;
 			distSA = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
-			explosionTime += Time::GetDeltaTime();
+			explosionTime += Time::GetDeltaTime();				
+			areaImpact.GetTransform().Scale(3.5f * Time::GetDeltaTime());
+			areaImpact.GetTransform().Rotate(4000 * Time::GetDeltaTime(), 2600 * Time::GetDeltaTime(), 5800 * Time::GetDeltaTime());
+
+
 			//explosionWave.GetTransform().Scale(20.0f * Time::GetDeltaTime());
 			explosionWave.SetActive(true);
 			explosionWave.GetParticleSystem().Play();
@@ -233,6 +285,9 @@ void ThanosAttacks::Update()
 				thanosAnimationPlayer.SetLoop(false);
 				thanosAnimationPlayer.Play();
 				thanosState = THANOS_STATE::IDLE;
+				areaImpact.GetTransform().SetScale(1, 1, 1);
+				areaImpact.GetTransform().SetPosition(0, -1000, 0);
+				areaImpact.SetActive(false);
 			}
 			break;
 		case THANOS_STATE::IDLE:
@@ -331,7 +386,7 @@ void ThanosAttacks::Update()
 				for (int i = 0; i < 3; i++) {
 					bulletThrown[i] = false;
 					bullets[i].SetActive(false);
-					bullets[i].GetTransform().SetRotation(0,0,0);
+					bullets[i].GetTransform().SetPosition(0,0,0);
 				}
 
 			}
@@ -347,8 +402,9 @@ void ThanosAttacks::Update()
 					if (beamThrown[i] == false) {
 						beamThrown[i] = true;
 						beams[i].SetActive(true);
+						beams[i].GetParticleSystem().Play();
 						beamPositions[i] = beamTargets[i].GetTransform().GetGlobalPosition();
-						angle = Rotate(beamPositions[i], angle, &beams[i]);
+						angle = Rotate(beamPositions[i], angle+180, &beams[i]);
 					}
 					if (i == 1 || i == 2) {
 						BulletSeek(&beams[i], beamPositions[i], beamSpeed * 1.2f , i);
@@ -359,6 +415,7 @@ void ThanosAttacks::Update()
 			}
 
 			if (beamTime > beamTimes[4]) {
+
 				thanosAnimationPlayer.ChangeAnimation(thanosWalk2Animation);
 				thanosAnimationPlayer.SetLoop(true);
 				thanosAnimationPlayer.Play();
@@ -367,6 +424,9 @@ void ThanosAttacks::Update()
 				beamTime = 0.0f;
 				for (int i = 0; i < 4; i++) {
 					beamThrown[i] = false;
+
+					beams[i].GetParticleSystem().Stop();
+					beams[i].GetParticleSystem().StopEmitting();
 				}
 
 			}
@@ -529,6 +589,16 @@ void ThanosAttacks::Update()
 					dashing = true;
 					DashAttack();
 
+					dashTimer += Time::GetDeltaTime();
+
+					if (dashTimer > 1.5f) {
+						thanosAnimationPlayer.ChangeAnimation(thanosMeleeAnimation);
+						thanosAnimationPlayer.SetLoop(false);
+						thanosAnimationPlayer.Play();
+						thanosState = THANOS_STATE::MELEEATTACK;
+						dashTimer = 0.0f;
+					}
+
 				break;
 			case THANOS_STATE::THROWINGATTACK:
 
@@ -589,6 +659,7 @@ void ThanosAttacks::MeleeAttack() {
 
 	meleeAttackTime += Time::GetDeltaTime();
 	if (meleeAttackTime >= 0.75f) {
+		dashTimer = 0.0f;
 		melee1.SetActive(false);
 		meleeAttackTime = 0.0f;
 		isAttacking = false;
@@ -643,6 +714,9 @@ void ThanosAttacks::Seek(API_GameObject* seeker, API_Vector3 target, float speed
 	if (direction.x < 0.15 && direction.x > -0.15 && direction.y < 0.15 && direction.y && direction.z < 0.15 && direction.z) {
 		if (tLoop->phase == 2) {
 			Console::Log("telodoyyyy");
+
+			areaImpact.SetActive(true);
+			areaImpact.GetTransform().SetPosition(0, -1, 0);
 			thanosState = THANOS_STATE::PULSE;
 			isAttacking = false;
 			finalSword = true;
@@ -683,6 +757,8 @@ void ThanosAttacks::BulletSeek(API_GameObject* seeker, API_Vector3 target, float
 
 	if (direction.x < 0.9 && direction.x > -0.9 && direction.y < 0.9 && direction.y && direction.z < 0.9 && direction.z) {
 		seeker->SetActive(false);
+		//seeker->GetParticleSystem().Stop();
+		//seeker->GetParticleSystem().StopEmitting();
 	}
 
 }
@@ -698,7 +774,7 @@ float ThanosAttacks::Rotate(API_Vector3 target, float _angle, API_GameObject* ro
 	normLookDir.y = lookDir.y / sqrt(pow(lookDir.x, 2) + pow(lookDir.y, 2));
 	_angle = 0;
 	_angle = atan2(normLookDir.y, normLookDir.x) * RADTODEG - 90.0f;
-	rotator->GetTransform().SetRotation(0, -_angle - 90, 0);
+	rotator->GetTransform().SetRotation(0, -_angle, 0);
 
 	return _angle;
 }
@@ -750,4 +826,54 @@ void ThanosAttacks::LookAt(API_Vector3 tarPos, API_GameObject* go)
 	movDir.z = tarPos.y / norm;
 
 	go->GetTransform().SetRotation(0.0f, atan2(movDir.x, movDir.z), 0.0f);
+}
+
+void ThanosAttacks::OnCollisionStay(API::API_RigidBody other)
+{
+	std::string detectionName = other.GetGameObject().GetName();
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if ((detectionTag == "Column" || detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+		//other.GetGameObject().SetActive(false);
+		other.GetGameObject().GetRigidBody().SetTrigger(true);
+		if (detectionTag == "Column") {
+			Columna* ColumnaScript = (Columna*)other.GetGameObject().GetScript("Columna");
+
+			whichColumn = ColumnaScript->numColumn;
+			ColumnaScript->isDestroying = true;
+			columnsStates[whichColumn] = ColumnaScript->isDestroying;
+			columns[whichColumn].GetParticleSystem().Play();
+			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });
+		}
+
+	}
+}
+
+void ThanosAttacks::OnCollisionEnter(API::API_RigidBody other)
+{
+	std::string detectionName = other.GetGameObject().GetName();
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if ((detectionTag == "Column"|| detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+		other.GetGameObject().GetRigidBody().SetTrigger(true);
+		if (detectionTag == "Column") {
+			Columna* ColumnaScript = (Columna*)other.GetGameObject().GetScript("Columna");
+
+			whichColumn = ColumnaScript->numColumn;
+			ColumnaScript->isDestroying = true;
+			columnsStates[whichColumn] = ColumnaScript->isDestroying;
+			columns[whichColumn].GetParticleSystem().Play();
+			columns[whichColumn].GetRigidBody().SetBoxScale({ 0,0,0 });
+		}
+	}
+}
+
+void ThanosAttacks::OnCollisionExit(API::API_RigidBody other)
+{
+	std::string detectionName = other.GetGameObject().GetName();
+	std::string detectionTag = other.GetGameObject().GetTag();
+
+	if ((detectionTag == "Torch" || detectionTag == "Box") && (thanosState == THANOS_STATE::DASHATTACK || thanosState == THANOS_STATE::DASH2)) {
+		other.GetGameObject().GetRigidBody().SetTrigger(false);
+	}
 }

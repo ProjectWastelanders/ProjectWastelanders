@@ -23,7 +23,7 @@ void EnemyProjectile::Update()
         return;
     }
     
-    rigidbody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime() * 60.0f });
+    rigidbody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * 0.015f * 60.0f });
     //gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 

@@ -37,13 +37,6 @@ public:
     API_Vector3 finalPos;
     API_Vector3 movingPos;
 
-    API_UIImage Dialog_1;
-    API_UIImage Dialog_2;
-
-    API_Vector3 initalPosDialog;
-    API_Vector3 finalPosDialog;
-    API_Vector3 movingPosDialog;
-
     bool activeTutorial = false;
     bool endTutorial = false;
     bool timerTutorial = false;
@@ -53,10 +46,4 @@ public:
     float showTutorial = 0;
 
     bool playedCasetteMusic[3] = { false,false,false };
-
-    bool activeDialogs, nextDialog;
-    int currentDialog;
-
-    float timer = 0.0f;
-    float _timer = 0.0f;
 };

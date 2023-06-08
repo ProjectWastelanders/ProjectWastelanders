@@ -19,22 +19,62 @@ HELLO_ENGINE_API_C HUB_LevelSelect* CreateHUB_LevelSelect(ScriptToInspectorInter
 	script->AddDragBoxGameObject("Level3 Info", &classInstance->levelInfo[2]);
 	script->AddDragBoxGameObject("Level4 Info", &classInstance->levelInfo[3]);
 
-	script->AddDragBoxGameObject("Hala1", &classInstance->Hala1);
-	script->AddDragBoxGameObject("Hala2", &classInstance->Hala2);
-	script->AddDragBoxGameObject("Santuary", &classInstance->Santuary);
-	script->AddDragBoxGameObject("Thanos", &classInstance->Thanos);
+	script->AddDragBoxGameObject("Hala1", &classInstance->floorTexts[0]);
+	script->AddDragBoxGameObject("Hala2", &classInstance->floorTexts[1]);
+	script->AddDragBoxGameObject("Santuary", &classInstance->floorTexts[2]);
+	script->AddDragBoxGameObject("Thanos", &classInstance->floorTexts[3]);
 
+	script->AddDragBoxGameObject("Tutorial 1", &classInstance->tutorials[0]);
+	script->AddDragBoxGameObject("Tutorial 2", &classInstance->tutorials[1]);
+	script->AddDragBoxGameObject("Tutorial 3", &classInstance->tutorials[2]);
+	script->AddDragBoxUIInput("Panel", &classInstance->panel);
 
+	script->AddCheckBox("Unlocked levels", &classInstance->lockedLevels);
 
 	return classInstance;
 }
 
-void HUB_LevelSelect::Start()
+void HUB_LevelSelect::Init()
 {
-	currentSelectedLevel = API_QuickSave::GetInt("currentSelectedLevel"); // Default value = 0 = LVL1
+	for (int i = 0; i < 4; ++i)
+	{
+		std::string name = "level" + std::to_string(i + 1) + "_completed";
+		if (API_QuickSave::GetBool(name, false)) // Find which is the highest completed level
+		{
+			Console::Log("completed!");
+			currentSelectedLevel = i +1;
+			if (currentSelectedLevel > 3)
+				currentSelectedLevel = 3;
+		}
+	}
 
 	for (int i = 0; i < 4; ++i)
 	{
+		floorTexts[i].SetActive(currentSelectedLevel == i);
+	}
+}
+
+void HUB_LevelSelect::Start()
+{
+	if (!API_QuickSave::GetBool("SelectLevel_Tutorial", false))
+	{
+		tutorial = new UITutorial(tutorials, 3);
+		tutorials[0].SetActive(true);
+		tutorials[1].SetActive(false);
+		tutorials[2].SetActive(false);
+		Console::Log("Tut!");
+	}
+	else
+	{
+		tutorial = nullptr;
+		tutorials[0].SetActive(false);
+		tutorials[1].SetActive(false);
+		tutorials[2].SetActive(false);
+	}
+
+	for (int i = 0; i < 4; ++i)
+	{
+		// initialize images
 		API_GameObject children[2];
 		selectedLevelImage[i].GetChildren(children, 2);
 		for (int j = 0; j < 2; ++j)
@@ -44,6 +84,22 @@ void HUB_LevelSelect::Start()
 			if (image.IsAlive())
 				holdBarsSelectedLevel[i] = image;
 		}
+		// read unlocked levels
+		if (!lockedLevels)
+		{
+			unlockedLevels[0] = true;
+			unlockedLevels[1] = API_QuickSave::GetBool("level1_completed", false);
+			unlockedLevels[2] = API_QuickSave::GetBool("level2_completed", false);
+			unlockedLevels[3] = API_QuickSave::GetBool("level3_completed", false);
+		}
+		else
+		{
+			unlockedLevels[0] = true;
+			unlockedLevels[1] = true;
+			unlockedLevels[2] = true;
+			unlockedLevels[3] = true;
+		}
+
 	}
 
 	levels[currentSelectedLevel].SetBlocked(true);
@@ -51,17 +107,39 @@ void HUB_LevelSelect::Start()
 
 void HUB_LevelSelect::Update()
 {
+	if (tutorial != nullptr)
+	{
+		panel.SetEnable(false);
+		if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
+		{
+			if (!tutorial->NextScreen())
+			{
+				tutorial->Unable();
+				delete tutorial;
+				tutorial = nullptr;
+				panel.SetEnable(true);
+				API_QuickSave::SetBool("SelectLevel_Tutorial", true);
+			}
+		}
+		return;
+	}
+	else
+	{
+		for (int i = 0; i < 3; ++i)
+		{
+			tutorials[i].SetActive(false);
+		}
+	}
+
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
 	{
-		std::string message = this->gameObject.GetName();
-		this->gameObject.SetActive(false);
+		gameObject.SetActive(false);
 		HUB_UIManager::ClosePanel();
-
 		return;
 	}
 
-	bool pressedButtonThisFrame = false;
-	int currentHoveredLevel = -1;
+	pressedButtonThisFrame = false;
+	currentHoveredLevel = -1;
 	// Iterate all buttons
 	for (int i = 0; i < 4; ++i)
 	{
@@ -70,14 +148,17 @@ void HUB_LevelSelect::Update()
 		{
 			if (currentSelectedLevel != i)
 				selectedLevelImage[i].SetActive(true);
-			
+
 			currentHoveredLevel = i;
 		}
 
-		if (levels[i].OnHold() || levels[i].OnPress()) // Ignore this instructions if this is already the selected level
+		// If this level is unlocked 
+		if (levels[i].OnHold() || levels[i].OnPress())
 		{
 			currentHoveredLevel = i;
 			if (currentSelectedLevel == i) // If we are already selecting this, only mark it as currently being hovered and ignore the other funcitonality.
+				continue;
+			if (!unlockedLevels[i])
 				continue;
 
 			pressedButtonThisFrame = true;
@@ -98,6 +179,13 @@ void HUB_LevelSelect::Update()
 
 		selectedLevelImage[i].SetActive(false); // Deactivate progress bar of other buttons.
 	}
+
+	UpdateInfoAndProgressBar();
+
+}
+
+void HUB_LevelSelect::UpdateInfoAndProgressBar()
+{
 	// If no button was pressed this frame, reset all bars to 0 to be sure, and set current press time to 0.
 	if (!pressedButtonThisFrame)
 	{
@@ -125,33 +213,6 @@ void HUB_LevelSelect::SelectLevel(uint level)
 	for (int i = 0; i < 4; ++i)
 	{
 		levels[i].SetBlocked(level == i);
-	}
-	if (level == 0)
-	{
-		Hala1.SetActive(true);
-		Hala2.SetActive(false);
-		Santuary.SetActive(false);
-		Thanos.SetActive(false);
-	}
-	if (level == 1)
-	{
-		Hala1.SetActive(false);
-		Hala2.SetActive(true);
-		Santuary.SetActive(false);
-		Thanos.SetActive(false);
-	}
-	if (level == 2)
-	{
-		Hala1.SetActive(false);
-		Hala2.SetActive(false);
-		Santuary.SetActive(true);
-		Thanos.SetActive(false);
-	}
-	if (level == 3)
-	{
-		Hala1.SetActive(false);
-		Hala2.SetActive(false);
-		Santuary.SetActive(false);
-		Thanos.SetActive(true);
+		floorTexts[i].SetActive(level == i);
 	}
 }

@@ -3,26 +3,51 @@
 	<Bool>
 		<default value="0" />
 		<level1_casette1 value="true" />
-		<level1_casette2 value="false" />
-		<level1_casette3 value="false" />
+		<level1_casette2 value="true" />
+		<level1_casette3 value="true" />
 		<level1_chest4 value="true" />
+		<level2_casette1 value="false" />
+		<level2_casette2 value="false" />
+		<level2_casette3 value="false" />
+		<level2_completed value="true" />
+		<mision_RageMonster value="true" />
+		<level1_chest1 value="true" />
+		<burstGunBlueprint value="true" />
+		<Cinematic_Comlpeted value="true" />
+		<semiautomaticGunBlueprint value="true" />
+		<level1_chest2 value="true" />
+		<level1_chest3 value="true" />
+		<mision_LikeThe80 value="true" />
+		<level2_chest3 value="true" />
+		<mision_Personal value="true" />
+		<level2_chest4 value="true" />
+		<level2_chest2 value="true" />
+		<level2_chest1 value="true" />
+		<automaticGunBlueprint value="true" />
 	</Bool>
 	<String>
 		<default value="nothing" />
 	</String>
 	<Int>
 		<default value="0" />
-		<skillPointsAmount value="3112" />
-		<upgradeBlueprintAmount value="1" />
-		<currentSelectedLevel value="0" />
+		<skillPointsAmount value="3132" />
+		<upgradeBlueprintAmount value="5" />
+		<currentSelectedLevel value="1" />
 		<level1_chest4_content value="2" />
+		<level1_chest1_content value="1" />
+		<level1_chest2_content value="0" />
+		<level1_chest3_content value="2" />
+		<level2_chest3_content value="0" />
+		<level2_chest4_content value="2" />
+		<level2_chest2_content value="2" />
+		<level2_chest1_content value="1" />
 	</Int>
 	<Float>
 		<default value="0.0" />
-		<PlayerPosX value="-56.338600f" />
-		<PlayerPosY value="-13.966529f" />
-		<PlayerPosZ value="-17.465769f" />
-		<PlayerIndicatorPosX value="1.038921f" />
-		<PlayerIndicatorPosY value="1.020792f" />
+		<PlayerPosX value="-224.998535f" />
+		<PlayerPosY value="60.793419f" />
+		<PlayerPosZ value="49.677559f" />
+		<PlayerIndicatorPosX value="1.249833f" />
+		<PlayerIndicatorPosY value="0.862927f" />
 	</Float>
 </QuickSave>

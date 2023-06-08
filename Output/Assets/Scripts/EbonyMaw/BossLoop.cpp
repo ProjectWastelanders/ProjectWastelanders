@@ -50,8 +50,11 @@ HELLO_ENGINE_API_C BossLoop* CreateBossLoop(ScriptToInspectorInterface* script)
     script->AddDragBoxAnimationResource("Die Animation", &classInstance->dieAnim);
     //TEMPORAL FOR ALPHA 1
 
+    script->AddDragBoxGameObject("BLOOD", &classInstance->blood);
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     return classInstance;
+
+
 }
 
 void BossLoop::Start()
@@ -60,12 +63,103 @@ void BossLoop::Start()
     recoverTimer = 0;
     DieTimer = 0;
     knockUpTimer = 0;
+
+    draxDialog = false;
+
+    blood.GetTransform().SetPosition(0, -1000, 0);
+
 }
 
 void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
 
+    
+
+    if (destroyHighCover == true) {
+        highCoverTime += Time::GetDeltaTime();
+
+        cover1.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover2.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover3.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover4.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover5.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover6.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover7.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover8.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover9.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover10.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover11.GetTransform().Scale(-2 * Time::GetDeltaTime());
+        cover12.GetTransform().Scale(-2 * Time::GetDeltaTime());
+
+        if (highCoverTime > 1.0f)
+        {
+
+
+       
+
+            cover1.GetTransform().SetPosition(0, -1000, 0);
+            cover2.GetTransform().SetPosition(0, -1000, 0);
+            cover3.GetTransform().SetPosition(0, -1000, 0);
+            cover4.GetTransform().SetPosition(0, -1000, 0);
+            cover5.GetTransform().SetPosition(0, -1000, 0);
+            cover6.GetTransform().SetPosition(0, -1000, 0);
+            cover7.GetTransform().SetPosition(0, -1000, 0);
+            cover8.GetTransform().SetPosition(0, -1000, 0);
+            cover9.GetTransform().SetPosition(0, -1000, 0);
+            cover10.GetTransform().SetPosition(0, -1000, 0);
+            cover11.GetTransform().SetPosition(0, -1000, 0);
+            cover12.GetTransform().SetPosition(0, -1000, 0);
+
+
+            cover1.SetActive(false);
+           
+           
+            cover2.SetActive(false);
+
+            cover3.SetActive(false);
+
+            cover4.SetActive(false);
+
+            cover5.SetActive(false);
+
+            cover6.SetActive(false);
+
+            cover7.SetActive(false);
+
+            cover8.SetActive(false);
+
+            cover9.SetActive(false);
+
+            cover10.SetActive(false);
+
+            cover11.SetActive(false);
+
+            cover12.SetActive(false);
+
+            destroyHighCover = false;
+
+
+        }
+
+    }
+    if (damaged == true)
+    {
+       
+
+        
+         bloodTimer += Time::GetDeltaTime();
+         if (bloodTimer > 0.2f) 
+        {
+            bloodTimer = 0;
+            blood.GetTransform().SetPosition(0, -1000, 0);
+            damaged = false;
+           
+           
+        }
+        
+        
+    }
     if (!battle)
     {
         rockShield.SetActive(false);
@@ -94,13 +188,14 @@ void BossLoop::Update()
                 }
             }
             else {
-                rockShield.SetActive(true);
+                rockShield.SetActive(true);                
             }
             if (weakTime >= time[phase]) {
                 weakTime = 0;
                 phase--;
                 shield[phase] = maxShield[phase];
                 canTakeDamage = false;
+                draxDialog = true;
                 dt = Time::GetDeltaTime();
                 if (recoverTimer <= 6) {
                     if (animState != AnimationState::RECOVER)
@@ -122,19 +217,25 @@ void BossLoop::Update()
             if (hp <= maxHpLoss[phase - 1]) {
                 weakTime = 0;
                 canTakeDamage = false;
+
                 if (phase == 2) {
-                    cover1.SetActive(false);
-                    cover2.SetActive(false);
-                    cover3.SetActive(false);
-                    cover4.SetActive(false);
-                    cover5.SetActive(false);
-                    cover6.SetActive(false);
-                    cover7.SetActive(false);
-                    cover8.SetActive(false);
-                    cover9.SetActive(false);
-                    cover10.SetActive(false);
-                    cover11.SetActive(false);
-                    cover12.SetActive(false);
+                    
+                    destroyHighCover = true;
+
+                    cover1.GetParticleSystem().Play();
+                    cover2.GetParticleSystem().Play();
+                    cover3.GetParticleSystem().Play();
+                    cover4.GetParticleSystem().Play();
+                    cover5.GetParticleSystem().Play();
+                    cover6.GetParticleSystem().Play();
+                    cover7.GetParticleSystem().Play();
+                    cover8.GetParticleSystem().Play();
+                    cover9.GetParticleSystem().Play();
+                    cover10.GetParticleSystem().Play();
+                    cover11.GetParticleSystem().Play();
+                    cover12.GetParticleSystem().Play();
+
+
                 }
             }
         }
@@ -190,9 +291,20 @@ void BossLoop::OnCollisionEnter(API::API_RigidBody other)
 
 void BossLoop::TakeDamage(float damage)
 {
+ 
+
     if (hp <= 0) return;
     
     if (canTakeDamage == true) {
+
+        
+        
+         bloodTimer = 0.0f;
+        blood.GetTransform().SetPosition(0,0, 0);
+
+        damaged = true;
+       
+       
 
         hp -= damage;
         if (hp <= maxHpLoss[phase - 1]) {
@@ -227,17 +339,10 @@ void BossLoop::CheckBombs()
 {
     if (currentBombNum > 0)
     {
-        StickBomb* stickBomb = (StickBomb*)bomb.GetScript("StickBomb");
-        if (stickBomb == nullptr) Console::Log("StickyBomb missing in Bomb from enemy.");
-        else
-        {
-            stickBomb->triggerActive = true;
-            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
-            else stickBomb->damage = 10.0f * currentBombNum;
-        }
+        if (shotgunLevel > 2) TakeDamage(15.0f * currentBombNum);
+        else TakeDamage(10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
-        bombShield.SetActive(false);
     }
 }
 

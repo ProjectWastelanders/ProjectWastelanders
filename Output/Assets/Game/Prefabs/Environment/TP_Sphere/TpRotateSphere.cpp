@@ -15,7 +15,6 @@ void TpRotateSphere::Start()
 {
 	timeCount = 0.0f;
 	deformationTime = 0.0f;
-	deformationTimeMid = 0.0f;
 	deformedVer = false;
 	inInFirstPart = true;
 	partsCount = 0;
@@ -24,7 +23,6 @@ void TpRotateSphere::Update()
 {
 	timeCount += Time::GetDeltaTime();
 	deformationTime += Time::GetDeltaTime();
-	deformationTimeMid += Time::GetDeltaTime();
 
 	float rotY = gameObject.GetTransform().GetLocalRotation().y;
 	bool hasChanged = false;

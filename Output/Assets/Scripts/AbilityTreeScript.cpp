@@ -39,11 +39,13 @@ void AbilityTreeScript::Start()
         PanelAbility[i].SetActive(false);
         upgradeScripts[i] = (AbilityTreeUpgrades*)PanelAbility[i].GetScript("AbilityTreeUpgrades");
     }
+    tutorialActive = API_QuickSave::GetBool("SkillTree_Tutorial", true);
 }
 
 void AbilityTreeScript::Update()
 {
-    if (tutorialActive == false) {
+    if (tutorialActive == false) 
+    {
         if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN && mainPanel.IsEnabled())
         {
             Audio::Event("click");
@@ -116,10 +118,11 @@ void AbilityTreeScript::Update()
     }
     else if (tutorialActive == true)
     {
+        mainPanel.SetEnable(false);
         if (tutorial1 == true)
         {
             Tutorial_1.GetGameObject().SetActive(true);
-            if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+            if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
             {
                 Tutorial_1.GetGameObject().SetActive(false);
                 tutorial2 = true;
@@ -130,7 +133,7 @@ void AbilityTreeScript::Update()
         {
             Tutorial_2.GetGameObject().SetActive(true);
             PanelAbility[2].SetActive(true);
-            if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+            if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
             {
                 Tutorial_2.GetGameObject().SetActive(false);
                 Tutorial_2.GetGameObject().SetActive(false);
@@ -141,12 +144,14 @@ void AbilityTreeScript::Update()
         else if (tutorial3 == true)
         {
             Tutorial_3.GetGameObject().SetActive(true);
-            if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN)
+            if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN)
             {
                 Tutorial_3.GetGameObject().SetActive(false);
                 PanelAbility[2].SetActive(false);
                 tutorial3 = false;
                 tutorialActive = false;
+                API_QuickSave::SetBool("SkillTree_Tutorial", false); // False means not showing tutorial.
+                mainPanel.SetEnable(true);
             }
         }
     }

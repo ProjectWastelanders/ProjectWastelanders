@@ -4,14 +4,17 @@ HELLO_ENGINE_API_C ExclamationMark* CreateExclamationMark(ScriptToInspectorInter
 {
 	ExclamationMark* classInstance = new ExclamationMark();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+
+	script->AddDragBoxGameObject("Parent", &classInstance->_pull);
+
 	return classInstance;
 }
 
 void ExclamationMark::Start()
 {
-	_count = 3.0f;
+	_count = 2.0f;
 
-	_pull = gameObject.GetParent();
+	//_pull = gameObject.GetParent();
 }
 
 void ExclamationMark::Update()
@@ -20,7 +23,10 @@ void ExclamationMark::Update()
 	{
 		_count -= Time::GetDeltaTime();
 		if (_count <= 0)
+		{
+			gameObject.SetParent(_pull);
 			gameObject.SetActive(false);
+		}
 	}
 }
 

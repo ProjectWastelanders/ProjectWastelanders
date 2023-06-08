@@ -12,7 +12,9 @@
 class PlayerMove;
 class HpBar;
 class HUD_Power_Up_Scrip;
+class Power_Ups_Alert;
 class UI_Municion;
+class CamMov;
 
 class PlayerStats : HelloBehavior
 {
@@ -88,15 +90,20 @@ public:
     API_GameObject playerGO;
     PlayerStorage* storage;
     void SaveInStorage(int index);
-    void SaveChestData(int chestContent, int chestIndex);
+    void SaveChestData(int chestContent, int chestIndex, bool saveChest);
 
     // move
     PlayerMove* playerMove;
 
     // HUD
     HUD_Power_Up_Scrip* hudPowerUp;
+    Power_Ups_Alert* hudPowerUp_Alert;
     API_GameObject hudPowerUpGO;
 
     API_GameObject ammo_ScriptGO;
     UI_Municion* ammo_Script;
+
+    API_GameObject cameraGameObject;
+    CamMov* cam;
+
 };

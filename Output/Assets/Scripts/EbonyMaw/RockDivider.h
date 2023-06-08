@@ -25,5 +25,7 @@ public:
 	
 	float dt;
 	float stoneTime = 0.0f;
+
+	uint stoneTexture;
 };
 

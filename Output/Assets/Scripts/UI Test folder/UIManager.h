@@ -2,6 +2,7 @@
 #include "API/HelloBehavior.h"
 #include "ScriptToInspectorInterface.h"
 #include "Macro.h"
+#include "Map/Map.h"
 
 #include "API/API.h"
 
@@ -39,6 +40,7 @@ public:
 	API_UIButton goBack;
 
 	CurrentPanel currentPanel;
+	Map* map;
 
 	bool isPaused;
 };

@@ -30,7 +30,7 @@ void PlayerDuals::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -99,7 +99,7 @@ void PlayerDuals::Update()
     }
 }
 
-void PlayerDuals::Shoot()
+bool PlayerDuals::Shoot()
 {
     if (canShoot)
     {
@@ -110,11 +110,15 @@ void PlayerDuals::Shoot()
         else shotCooldown = fullShotCooldown;
         nextShot = true;
         burstDelay = fullBurstDelay;
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 

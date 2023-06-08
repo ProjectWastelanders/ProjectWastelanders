@@ -12,6 +12,7 @@
 #include "../Player/PlayerMove.h"
 
 class SwapWeapon;
+class PlayerFlamethrower;
 
 class PlayerGunManager : HelloBehavior
 {
@@ -49,6 +50,8 @@ public:
     API_GameObject shotgun; // index 4
     API_GameObject flamethrower; // index 5
     API_GameObject ricochet; // index 6
+
+    PlayerFlamethrower* playerFlamethrower;
 
     // animations
     PlayerMove* playerMove;

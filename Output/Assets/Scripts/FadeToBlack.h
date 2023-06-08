@@ -14,6 +14,8 @@ public:
 	void Start() override; 
 	void Update() override;
 
+	void SetOpacity(float opacity);
+
 	void FadeOUT();
 
 	void FadeIN();

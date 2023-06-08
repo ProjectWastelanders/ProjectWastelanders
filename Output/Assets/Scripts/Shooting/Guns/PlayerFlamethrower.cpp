@@ -26,7 +26,7 @@ void PlayerFlamethrower::Start()
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
     pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
-    if (pull->testing) SetGunStatsPerLevel(0);
+    if (!pull->testing) SetGunStatsPerLevel(0);
 
     if (cadence == 0)
     {
@@ -72,7 +72,7 @@ void PlayerFlamethrower::Update()
     }
 }
 
-void PlayerFlamethrower::Shoot()
+bool PlayerFlamethrower::Shoot()
 {
     if (canShoot)
     {
@@ -85,7 +85,11 @@ void PlayerFlamethrower::Shoot()
 
         if (playingParticlesCd <= 0.0f) fireParticles.Play();
         playingParticlesCd = 0.2f;
+
+        return true;
     }
+
+    return false;
 }
 
 void PlayerFlamethrower::EnableGuns(bool enable)
@@ -98,6 +102,6 @@ void PlayerFlamethrower::SetGunStatsPerLevel(int level)
     projectileSpeed = 30.0f;
     projectileDamage = 10.0f;
     projectileResistanceDamage = 5.0f;
-    projectileLifetime = 0.8f;
+    projectileLifetime = 0.3f;
     cadence = 20.0f;
 }

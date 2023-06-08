@@ -54,12 +54,16 @@ void UIManager::Update()
 
 			if (hasMap)
 			{
+				Audio::Event("minimap_open");
+
 				mapPanel.SetActive(hasMap);
 				if (map != nullptr)
 					map->MissionsEnable(hasMap);
 			}
 			else
 			{
+				Audio::Event("minimap_close");
+
 				if (map != nullptr)
 					map->MissionsEnable(hasMap);
 
@@ -97,6 +101,12 @@ void UIManager::Update()
 	{
 		settingsPanel.SetEnable(false);
 		CloseSettings();
+	}
+
+	if (currentPanel == CurrentPanel::MAP)
+	{
+		//@Roger queda en revisó
+		Audio::Event("minimap_ambience");
 	}
 
 }

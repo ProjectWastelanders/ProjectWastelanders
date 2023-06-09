@@ -1,6 +1,7 @@
 #include "CasetteManager.h"
 #include "../Player/PlayerStorage.h"
 #include "../Audio/MusicManager.h"
+#include "../Player/PlayerStats.h"
 
 HELLO_ENGINE_API_C CasetteManager* CreateCasetteManager(ScriptToInspectorInterface* script)
 {
@@ -22,6 +23,7 @@ HELLO_ENGINE_API_C CasetteManager* CreateCasetteManager(ScriptToInspectorInterfa
 void CasetteManager::Start()
 {
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
+    playerStats = (PlayerStats*)playerStorageGO.GetScript("PlayerStats");
 
     //FeedBack
     initalPos = { -1.250, -0.700, 0 };
@@ -29,6 +31,7 @@ void CasetteManager::Start()
     Casette_Img.GetGameObject().GetTransform().SetPosition(initalPos);
     Casette_Img.GetGameObject().SetActive(false);
     finalPos = { -0.780, -0.700, 0 };
+    playerStats->CassetePicked = false;
 
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in CasetteManager.");
     else
@@ -41,20 +44,17 @@ void CasetteManager::Start()
     musicManager = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");
     if (musicManager == nullptr) Console::Log("Music manager missing in CasetteManager");
     check = false;
-
    
 }
 
 void CasetteManager::Update()
 {
-    if ((playerStorage->casette1Picked == true || playerStorage->casette2Picked == true || playerStorage->casette3Picked == true) && CasettePicked == true)
+    if (playerStats->CassetePicked == true)
     {
         activeTutorial = true;
-        CasettePicked = false;
-        Casette_Img.GetGameObject().SetActive(true);
-        Console::Log("1");
+        FeedBack_Tutorial();
     }
-    FeedBack_Tutorial();
+    
     if (!playerStorage) return;
     if (playerStorage->casette1Picked && !playedCasetteMusic[0])
     {

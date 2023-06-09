@@ -7,6 +7,7 @@
 
 class PlayerStorage;
 class MusicManager;
+class PlayerStats;
 
 class CasetteManager : HelloBehavior
 {
@@ -29,6 +30,7 @@ public:
     API_String playAudio2;
     API_String playAudio3;
     MusicManager* musicManager = nullptr;
+    PlayerStats* playerStats = nullptr;
 
     //FeedBack Tutorial
     API_UIImage Casette_Img;
@@ -41,7 +43,6 @@ public:
     bool endTutorial = false;
     bool timerTutorial = false;
     bool hideChest = false;
-    bool CasettePicked = true;
 
     float showTutorial = 0;
 

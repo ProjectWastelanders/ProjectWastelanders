@@ -344,7 +344,17 @@ void Enemy::OnCollisionEnter(API::API_RigidBody other)
        /* isHit = true;
         enemyShader.SetColor(255, 0, 0, 0.5);
         if (!_hitShader) _hitShader = true;*/
-        Audio::Event("bullet_impact");
+        EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+        if (tankScript)
+        {
+            if (tankScript->currentShield > 0)
+            {
+                Audio::Event("shield_impact");
+            }
+            else  Audio::Event("bullet_impact");
+        }
+        else  Audio::Event("bullet_impact");
+       
         //Audio::Event("box_breaking");
     }
 }
@@ -374,7 +384,7 @@ void Enemy::EnemySlow(float xSlow, float time)
         _coldSlow = 0;
         slowVel = 1;
         actSlow = false;
-        Console::Log("slowingggggggggggg");
+       // Console::Log("slowingggggggggggg");
 
     }
     else
@@ -388,7 +398,7 @@ void Enemy::EnemyRecoil(float xRec)
 
     // rb.SetVelocity(gameObject.GetTransform().GetBackward() * xRec);
     gameObject.GetTransform().Translate(gameObject.GetTransform().GetBackward() * xRec);
-    Console::Log("aaaaaa");
+   // Console::Log("aaaaaa");
 }
 
 void Enemy::EnemyStun(float timeStun)

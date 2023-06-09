@@ -33,6 +33,7 @@ void API::API_DirectionalLight::SetFrustumOrthographicSize(int width, int height
 
 	_directionalLight->data.lightFrustum.orthographicWidth = width;
 	_directionalLight->data.lightFrustum.orthographicHeight = height;
+	_directionalLight->UpdateToLightMap();
 }
 
 void API::API_DirectionalLight::SetActive(bool active)

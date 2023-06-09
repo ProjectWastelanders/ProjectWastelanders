@@ -34,6 +34,7 @@ void Tp_Dialog::Update()
 		if (playerStats->showTpDialog)
 		{
 			PrintDialog(Dialog_1);
+			Audio::Event("rocket_surprised");
 		}
 	}
 }

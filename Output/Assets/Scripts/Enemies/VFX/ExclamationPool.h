@@ -24,6 +24,8 @@ public:
 	API_GameObject mark9;
 	API_GameObject mark10;
 
+	static bool active;
+
 private:
 	static API_GameObject _marks[10];
 	static int _marksCount;

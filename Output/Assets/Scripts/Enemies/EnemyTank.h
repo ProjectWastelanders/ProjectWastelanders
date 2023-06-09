@@ -48,6 +48,8 @@ public:
 
 	void FadeIn();
 	void FadeOut();
+	void FadeInShield();
+	void FadeOutShield();
 	float Lerp(float a, float b, float time);
 
 	/*void Seek(float vel, API_Vector3 tarPos, API_RigidBody rb);
@@ -133,5 +135,16 @@ private:
 	float r_blink = 2;
 	float g_blink = 2;
 	float b_blink = 2;
+
+
+	float blinkingTimer_Shield;
+	float blinkingTime_Shield;
+
+	float fadeInTime_Shield = 1.0f;
+	float fadeOutTime_Shield = 1.0f;
+
+	//float isBlinking_Shield;
+	float fading_blink_shield;
+	bool isFirstHitFrame;
 };
 

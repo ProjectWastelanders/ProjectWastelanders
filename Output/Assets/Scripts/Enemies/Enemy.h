@@ -104,6 +104,8 @@ public:
     bool isTank;
     bool isEQEnemy = false;// if is enemy on lvl3 who appears after stealing the diviner
 
+    bool _hitShader;
+
 private:
 
     float _coldStun;
@@ -118,7 +120,7 @@ private:
     
     float _coldHitColor;
 
-    bool _hitShader;
+   
 
 };
 

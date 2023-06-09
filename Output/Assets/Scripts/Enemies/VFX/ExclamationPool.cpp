@@ -3,6 +3,7 @@
 int ExclamationPool::_marksCount = 10;
 int ExclamationPool::_currentMark = 0;
 API_GameObject ExclamationPool::_marks[10];
+bool ExclamationPool::active = false;
 
 HELLO_ENGINE_API_C ExclamationPool* CreateExclamationPool(ScriptToInspectorInterface* script)
 {
@@ -38,6 +39,7 @@ void ExclamationPool::Start()
 
 	_marksCount = 10;
 	_currentMark = 0;
+	active = false;
 
 	gameObject.GetTransform().SetPosition(API_Vector3(_marksCount, _marksCount, _marksCount));
 }

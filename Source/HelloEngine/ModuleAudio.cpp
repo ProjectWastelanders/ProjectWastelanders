@@ -284,11 +284,27 @@ void ModuleAudio::InitSoundBanks()
     {
         eResult = AK::SoundEngine::LoadBank(L"Cinematics.bnk", _musicBank);
     }
+    if (eResult == AK_Success)
+    {
+        eResult = AK::SoundEngine::LoadBank(L"EbonyCombat_Soundbank.bnk", _musicBank);
+    } 
+    if (eResult == AK_Success)
+    {
+        eResult = AK::SoundEngine::LoadBank(L"ThanosCombat_Soundbank.bnk", _musicBank);
+    }
+    if (eResult == AK_Success)
+    {
+        eResult = AK::SoundEngine::LoadBank(L"Voice_Soundbank.bnk", _musicBank);
+    }
 }
 
 void ModuleAudio::TerminateSoundBanks()
 {
     AK::SoundEngine::UnloadBank(L"General_Soundbank.bnk", NULL);
+    AK::SoundEngine::UnloadBank(L"EbonyCombat_Soundbank.bnk", NULL);
+    AK::SoundEngine::UnloadBank(L"ThanosCombat_Soundbank.bnk", NULL);
+    AK::SoundEngine::UnloadBank(L"Voice_Soundbank.bnk", NULL);
+
     AK::SoundEngine::UnloadBank(L"Cinematics.bnk", NULL);
     AK::SoundEngine::UnloadBank(L"Music_Soundbank.bnk", NULL);
     AK::SoundEngine::UnloadBank(L"Music_Soundbank2.bnk", NULL);

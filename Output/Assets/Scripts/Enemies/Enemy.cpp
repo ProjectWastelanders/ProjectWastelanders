@@ -113,17 +113,17 @@ void Enemy::Update()
     if (takingDmg && !dying)
         TakingDmgState();
 
-    /*if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
-    {
-	    EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
-	    EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
-	    EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
-	    if (meleeScript ||rangeScript || tankScript)
-	    {
-	     currentHp = 0;
-	     Die();
-	    }
-    }*/
+    //if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
+    //{
+	   // EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
+	   // EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
+	   // EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+	   // if (/*meleeScript ||rangeScript || */tankScript)
+	   // {
+	   //  currentHp = 0;
+	   //  Die();
+	   // }
+    //}
     if (_hitShader)
     {
         _coldHitColor += Time::GetDeltaTime();
@@ -289,6 +289,23 @@ void Enemy::Die()
     if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(dropPos);
 
     //hitParticles.StopEmitting();
+
+    if (meleeScript)
+    {
+        Audio::Event("outrider_die");
+        //Audio::Event("box_breaking");
+    }
+    else if ( rangeScript )
+    {
+        Audio::Event("kree_die");
+        //Audio::Event("box_breaking");
+    }
+    else if (tankScript)
+    {
+        Audio::Event("tank_die");
+        //Audio::Event("box_breaking");
+    }
+
     if (!meleeScript && !rangeScript && !tankScript)
     {
         gameObject.SetActive(false);
@@ -322,12 +339,14 @@ void Enemy::OnCollisionEnter(API::API_RigidBody other)
             if (meleeScript->enemState == EnemyMeleeMovement::States::ATTACKIG && meleeIsAtking) pStats->TakeDamage(10, 0), meleeIsAtking = false;
         }
     }
-    /*if (detectionTag == "Projectile")
+    if (detectionTag == "Projectile")
     {
-        isHit = true;
+       /* isHit = true;
         enemyShader.SetColor(255, 0, 0, 0.5);
-        if (!_hitShader) _hitShader = true;
-    }*/
+        if (!_hitShader) _hitShader = true;*/
+        Audio::Event("bullet_impact");
+        //Audio::Event("box_breaking");
+    }
 }
 
 void Enemy::ActiveSlow(float q, float time)

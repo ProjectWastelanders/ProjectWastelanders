@@ -44,6 +44,8 @@ void StealTheDivinerAgain::OnCollisionStay(API_RigidBody other)
         
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN)
         {
+            Audio::Event("earthquake");
+           // Audio::Event("box_breaking");
             stealDiviner_Dialog->activeDialogs = true;
             if (playerStorage)
             {

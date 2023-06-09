@@ -98,6 +98,13 @@ void Coleccionable_buttons::Update()
 
 		return;
 	}
+	else
+	{
+		for (int i = 0; i < 2; ++i)
+		{
+			tutorialScreens[i].SetActive(false);
+		}
+	}
 
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN /* && coleccionable_panel.IsActive()*/)
 	{
@@ -150,26 +157,38 @@ void Coleccionable_buttons::Update()
 			case 0:
 				if (casetes_levels[9])
 				{
-					song1 = Audio::Event("L1_collectable3");
+					Audio::StopEvent(song1);
 					Audio::StopEvent(song2);
 					Audio::StopEvent(song3);
+					if (!checkBox[i].getIsActive())
+					{
+						song1 = Audio::Event("L1_collectable3");
+					}
 				}
 
 				break;
 			case 1:
 				if (casetes_levels[10])
 				{
-					song2 = Audio::Event("L2_collectable3");
 					Audio::StopEvent(song1);
+					Audio::StopEvent(song2);
 					Audio::StopEvent(song3);
+					if (!checkBox[i].getIsActive())
+					{
+						song2 = Audio::Event("L2_collectable3");
+					}
 				}
 				break;
 			case 2:
 				if (casetes_levels[11])
 				{
-					song3 = Audio::Event("L3_collectable3");
-					Audio::StopEvent(song2);
 					Audio::StopEvent(song1);
+					Audio::StopEvent(song2);
+					Audio::StopEvent(song3);
+					if (!checkBox[i].getIsActive())
+					{
+						song3 = Audio::Event("L3_collectable3");
+					}
 				}
 				break;
 			default:

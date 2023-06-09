@@ -103,10 +103,18 @@ void HUB_LevelSelect::Start()
 	}
 
 	levels[currentSelectedLevel].SetBlocked(true);
+	selecting_Level = false;
+
 }
 
 void HUB_LevelSelect::Update()
 {
+	if (!selecting_Level)
+	{
+		audioLoopLevelSelect = Audio::Event("spaceship_table_sounds");
+		selecting_Level = true;
+	}
+
 	if (tutorial != nullptr)
 	{
 		panel.SetEnable(false);
@@ -135,6 +143,8 @@ void HUB_LevelSelect::Update()
 	{
 		gameObject.SetActive(false);
 		HUB_UIManager::ClosePanel();
+		Audio::StopEvent(audioLoopLevelSelect);
+		selecting_Level = false;
 		return;
 	}
 

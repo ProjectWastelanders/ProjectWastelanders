@@ -20,6 +20,7 @@ HELLO_ENGINE_API_C SimpleAutoDialog* CreateSimpleAutoDialog(ScriptToInspectorInt
 void SimpleAutoDialog::Start()
 {
 	activeDialog = false;
+    activeAudio = true;
 
 	initalPos = { 0, -1.500, 0 };
 	movingPos = { 0, -1.500, 0 };
@@ -33,7 +34,10 @@ void SimpleAutoDialog::Update()
 {
 	if (activeDialog) {
 		PrintDialog(Dialog);
-        Audio::Event(audioEvent.c_str());
+        if (activeAudio) {
+            Audio::Event(audioEvent.c_str());
+            activeAudio = false;
+        }        
 	}
 }
 

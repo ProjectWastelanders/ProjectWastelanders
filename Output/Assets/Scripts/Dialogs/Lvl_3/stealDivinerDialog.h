@@ -22,16 +22,12 @@ public:
     API_UIImage Dialog_6;
     API_UIImage Dialog_7;
     API_UIImage Dialog_8;
-    API_UIImage Dialog_9;
-    API_UIImage Dialog_10;
-    API_UIImage Dialog_11;
-    API_UIImage Dialog_12;
 
     API_Vector3 initalPos;
     API_Vector3 finalPos;
     API_Vector3 movingPos;
 
-    bool activeDialogs;
+    bool activeDialogs, activeAudio;
     int currentDialog;
 
     API_GameObject reachTheSpaceShipGO;

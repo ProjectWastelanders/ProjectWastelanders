@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 2.008298873901367,
+                "Aspect ratio": 1.9476860761642456,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -23397,8 +23397,7 @@
                     2412762651,
                     2777578711,
                     1199903426,
-                    1362514346,
-                    963583409
+                    1362514346
                 ]
             },
             {
@@ -23429,13 +23428,10 @@
                         "Skillpoints needed LvL 4": 2
                     },
                     {
-                        "Upgrate 5": 963583409
+                        "Skillpoints needed LvL 5": 0
                     },
                     {
-                        "Skillpoints needed LvL 5": 3
-                    },
-                    {
-                        "Upgrade Number": 5
+                        "Upgrade Number": 4
                     },
                     {
                         "Main Panel": 2937841997
@@ -23466,9 +23462,6 @@
                     },
                     {
                         "Bought upgrade 4": 833522299
-                    },
-                    {
-                        "Bought upgrade 5": 1904497699
                     }
                 ],
                 "Script Resource": 477126565,
@@ -23508,16 +23501,16 @@
             },
             {
                 "Enabled": true,
-                "MaterialResource": 18640436,
+                "MaterialResource": 962993018,
                 "MeshEnabled": true,
                 "State": 0,
                 "Type": 12,
                 "hoverBlockImage": 2246531119,
-                "hoverImage": 1816090980,
+                "hoverImage": 2942853897,
                 "idleBlockImage": 1487730403,
-                "idleImage": 18640436,
+                "idleImage": 962993018,
                 "pressBlockImage": 964319235,
-                "pressImage": 2927959955
+                "pressImage": 1573633164
             },
             {
                 "Enabled": true,
@@ -23710,61 +23703,6 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.03999999910593033,
-                    -0.5799999833106995,
-                    0.0989999994635582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.30000001192092896,
-                    0.15000000596046448,
-                    0.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "MaterialResource": 393356939,
-                "MeshEnabled": true,
-                "State": 0,
-                "Type": 12,
-                "hoverBlockImage": 1843429432,
-                "hoverImage": 4171383660,
-                "idleBlockImage": 1750194025,
-                "idleImage": 393356939,
-                "pressBlockImage": 1187623283,
-                "pressImage": 115080057
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 963583409
-                    }
-                ],
-                "Script Resource": 911506408,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Ability 5",
-        "ParentUID": 2934290476,
-        "PrefabUID": 1352842423,
-        "Tag": "UI",
-        "UID": 963583409,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
                     0.0,
                     0.0,
                     0.0
@@ -23790,8 +23728,7 @@
                     706199478,
                     972774661,
                     1853495132,
-                    833522299,
-                    1904497699
+                    833522299
                 ]
             }
         ],
@@ -24022,61 +23959,6 @@
         "PrefabUID": 4187143948,
         "Tag": "UI",
         "UID": 833522299,
-        "UpdateWithBones": false
-    },
-    {
-        "Active": false,
-        "Components": [
-            {
-                "Enabled": true,
-                "Position": [
-                    -0.03999999910593033,
-                    -0.5799999833106995,
-                    0.0989999994635582
-                ],
-                "Rotation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "Scale": [
-                    0.30000001192092896,
-                    0.15000000596046448,
-                    0.0
-                ],
-                "Type": 1
-            },
-            {
-                "Enabled": true,
-                "MaterialResource": 2623192227,
-                "MeshEnabled": true,
-                "State": 0,
-                "Type": 12,
-                "hoverBlockImage": 1843429432,
-                "hoverImage": 3188612942,
-                "idleBlockImage": 1750194025,
-                "idleImage": 2623192227,
-                "pressBlockImage": 1187623283,
-                "pressImage": 567396762
-            },
-            {
-                "Enabled": true,
-                "Inspector Fields": [
-                    {
-                        "Button": 963583409
-                    }
-                ],
-                "Script Resource": 911506408,
-                "Type": 5
-            }
-        ],
-        "FirstOnPrefab": false,
-        "IsStatic": false,
-        "Name": "Ability 5 Bought",
-        "ParentUID": 915786542,
-        "PrefabUID": 1352842423,
-        "Tag": "UI",
-        "UID": 1904497699,
         "UpdateWithBones": false
     },
     {
@@ -32546,7 +32428,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    550.4000244140625,
+                    875.4000244140625,
                     0.33500000834465027,
                     0.0
                 ],
@@ -32570,7 +32452,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 575.4000244140625,
+                "PositionX": 900.4000244140625,
                 "PositionY": 0.33500000834465027,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32592,7 +32474,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    550.4000244140625,
+                    875.4000244140625,
                     0.03999999910593033,
                     0.0
                 ],
@@ -32616,7 +32498,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 575.4000244140625,
+                "PositionX": 900.4000244140625,
                 "PositionY": 0.03999999910593033,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32638,7 +32520,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    550.4000244140625,
+                    875.4000244140625,
                     -0.36000001430511475,
                     0.0
                 ],
@@ -32662,7 +32544,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 575.4000244140625,
+                "PositionX": 900.4000244140625,
                 "PositionY": -0.36000001430511475,
                 "Scale": 0.30000001192092896,
                 "Text": "50",

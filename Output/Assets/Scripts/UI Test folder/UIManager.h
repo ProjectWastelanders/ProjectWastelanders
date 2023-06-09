@@ -44,5 +44,6 @@ public:
 
 	bool isPaused;
 	bool inHUB;
+	uint audioLoopMap;
 };
 

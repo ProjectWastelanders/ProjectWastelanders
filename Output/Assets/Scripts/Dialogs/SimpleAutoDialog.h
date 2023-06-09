@@ -21,7 +21,7 @@ public:
 
 	API_String audioEvent;
 
-	bool activeDialog;
+	bool activeDialog, activeAudio;
 
 	float timer = 0.0f;
 	float _timer = 0.0f;

@@ -42,7 +42,7 @@ void PlayerDuals::Start()
         fullShotCooldown = 1 / cadence;
         fullShotCooldownWithPowerUp = 1 / (cadence * 1.5f); // 50% increase
 
-        if (playerStats->armoryTreeLvl > 1)
+        if (playerStats && playerStats->armoryTreeLvl > 1)
         {
             fullShotCooldown = 1 / (cadence + cadence * upgradeFireratePercentage / 100.0f);
             fullShotCooldownWithPowerUp = 1 / ((cadence + cadence * upgradeFireratePercentage / 100.0f) * 1.5f); // 50% increase
@@ -53,7 +53,7 @@ void PlayerDuals::Start()
 void PlayerDuals::Update()
 {
     float dt;
-    if (playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
+    if (playerStats && playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
 
     if (shotBuffer)
@@ -106,7 +106,7 @@ bool PlayerDuals::Shoot()
         CalculateShoot(shootingSpawn);
         PlayShotSound(audioEventString);
         canShoot = false;
-        if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
+        if (playerStats && playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         nextShot = true;
         burstDelay = fullBurstDelay;
@@ -174,14 +174,14 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
 
 void PlayerDuals::CalculateShoot(API_Transform projectileSpawn)
 {
-    if (playerStats->specialTreeLvl == 0) LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE);
-    else if (playerStats->specialTreeLvl == 1)
+    if (playerStats && playerStats->specialTreeLvl == 0) LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE);
+    else if (playerStats && playerStats->specialTreeLvl == 1)
     {
         float n = rand() % 100;
         if (n < slowProbability) LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE, PROJECTILE_ACTION::SLOW);
         else LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE);
     }
-    else if (playerStats->specialTreeLvl == 2)
+    else if (playerStats && playerStats->specialTreeLvl == 2)
     {
         float m = rand() % 100;
         float n = rand() % 100;

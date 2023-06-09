@@ -25,6 +25,8 @@ void Tp_Dialog::Start()
 	initalPosDialog = { 0, -1.500, 0 };
 	movingPosDialog = { 0, -1.500, 0 };
 
+	activeAudio = true;
+
 	Dialog_1.GetGameObject().GetTransform().SetPosition(initalPosDialog);
 	Dialog_1.GetGameObject().SetActive(false);
 }
@@ -34,7 +36,10 @@ void Tp_Dialog::Update()
 		if (playerStats->showTpDialog)
 		{
 			PrintDialog(Dialog_1);
-			Audio::Event("rocket_surprised");
+			if (activeAudio) {
+				Audio::Event("rocket_surprised");
+				activeAudio = false;
+			}
 		}
 	}
 }

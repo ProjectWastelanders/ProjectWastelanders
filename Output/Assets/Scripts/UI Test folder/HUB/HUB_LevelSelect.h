@@ -41,6 +41,10 @@ public:
 	bool unlockedLevels[4]; // List of unlocked levels.
 	bool pressedButtonThisFrame = false;
 	int currentHoveredLevel = -1;
+
+	bool selecting_Level;
+	uint audioLoopLevelSelect;
+
 private:
 	void SelectLevel(uint level);
 };

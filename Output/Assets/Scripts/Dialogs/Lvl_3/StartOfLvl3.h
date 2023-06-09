@@ -22,7 +22,7 @@ public:
 	API_Vector3 finalPos;
 	API_Vector3 movingPos;
 
-	bool activeDialogs, nextDialog;
+	bool activeDialogs, nextDialog, activeAudio;
 	int currentDialog;
 
 	float timer = 0.0f;

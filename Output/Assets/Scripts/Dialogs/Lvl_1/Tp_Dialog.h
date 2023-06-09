@@ -24,5 +24,6 @@ public:
 	API_Vector3 movingPosDialog;
 	float timer = 0.0f;
 	float _timer = 0.0f;
+	bool activeAudio;
 };
 

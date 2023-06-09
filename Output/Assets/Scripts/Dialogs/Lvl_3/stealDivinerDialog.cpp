@@ -13,10 +13,6 @@ HELLO_ENGINE_API_C stealDivinerDialog* CreatestealDivinerDialog(ScriptToInspecto
     script->AddDragBoxUIImage("Dialog 6", &classInstance->Dialog_6);
     script->AddDragBoxUIImage("Dialog 7", &classInstance->Dialog_7);
     script->AddDragBoxUIImage("Dialog 8", &classInstance->Dialog_8);
-    script->AddDragBoxUIImage("Dialog 9", &classInstance->Dialog_9);
-    script->AddDragBoxUIImage("Dialog 10", &classInstance->Dialog_10);
-    script->AddDragBoxUIImage("Dialog 11", &classInstance->Dialog_11);
-    script->AddDragBoxUIImage("Dialog 12", &classInstance->Dialog_12);
 
     script->AddDragFloat("Dialog timer", &classInstance->timer);
 
@@ -35,6 +31,7 @@ void stealDivinerDialog::Start()
     if (reachTheSpaceShip == nullptr) Console::Log("ReachTheSpaceship missing in StealTheDivinerAgain Script.");
 
     activeDialogs = false;
+    activeAudio = true;
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
@@ -65,18 +62,6 @@ void stealDivinerDialog::Start()
 
     Dialog_8.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_8.GetGameObject().SetActive(false);
-
-    Dialog_9.GetGameObject().GetTransform().SetPosition(initalPos);
-    Dialog_9.GetGameObject().SetActive(false);
-
-    Dialog_10.GetGameObject().GetTransform().SetPosition(initalPos);
-    Dialog_10.GetGameObject().SetActive(false);
-
-    Dialog_11.GetGameObject().GetTransform().SetPosition(initalPos);
-    Dialog_11.GetGameObject().SetActive(false);
-
-    Dialog_12.GetGameObject().GetTransform().SetPosition(initalPos);
-    Dialog_12.GetGameObject().SetActive(false);
 }
 void stealDivinerDialog::Update()
 {
@@ -87,51 +72,59 @@ void stealDivinerDialog::Update()
         {
         case 1:
             PrintDialog(Dialog_1);
-            Audio::Event("starlord_confident");
+            if (activeAudio) {
+                Audio::Event("collector_hey");
+                activeAudio = false;
+            }
             break;
         case 2:
             PrintDialog(Dialog_2);
-            Audio::Event("collector_help");
+            if (activeAudio) {
+                Audio::Event("starlord_dubitative");
+                activeAudio = false;
+            }            
             break;
         case 3:
             PrintDialog(Dialog_3);
-            Audio::Event("starlord_dubitative");
+            if (activeAudio) {
+                Audio::Event("collector_help");
+                activeAudio = false;
+            }
             break;
         case 4:
             PrintDialog(Dialog_4);
-            Audio::Event("collector_help");
+            if (activeAudio) {
+                Audio::Event("starlord_surprised");
+                activeAudio = false;
+            }
             break;
         case 5:
             PrintDialog(Dialog_5);
-            Audio::Event("starlord_surprised");
+            if (activeAudio) {
+                Audio::Event("collector_hey");
+                activeAudio = false;
+            }            
             break;
         case 6:
             PrintDialog(Dialog_6);
-            Audio::Event("collector_hey");
+            if (activeAudio) {
+                Audio::Event("collector_help");
+                activeAudio = false;
+            }            
             break;
         case 7:
             PrintDialog(Dialog_7);
-            Audio::Event("starlord_surprised");
+            if (activeAudio) {
+                Audio::Event("gamora_warning");
+                activeAudio = false;
+            }            
             break;
         case 8:
             PrintDialog(Dialog_8);
-            Audio::Event("collector_hey");
-            break;
-        case 9:
-            PrintDialog(Dialog_9);
-            Audio::Event("gamora_warning");
-            break;
-        case 10:
-            PrintDialog(Dialog_10);
-            Audio::Event("starlord_confident");
-            break;
-        case 11:
-            PrintDialog(Dialog_11);
-            Audio::Event("rocket_annoyed");
-            break;
-        case 12:
-            PrintDialog(Dialog_12);
-            Audio::Event("starlord_confident");
+            if (activeAudio) {
+                Audio::Event("rocket_annoyed");
+                activeAudio = false;
+            }            
             break;
         default:
             break;
@@ -149,13 +142,17 @@ void stealDivinerDialog::PrintDialog(API_UIImage& Dialog)
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 12) {
-                Dialog.GetGameObject().SetActive(false);
-                activeDialogs = false;
+            if (currentDialog == 7)
+            {
                 if (reachTheSpaceShip) reachTheSpaceShip->EnableMision();
+            }
+            else if (currentDialog == 8) {
+                Dialog.GetGameObject().SetActive(false);
+                activeDialogs = false;                
             }
             else {
                 currentDialog += 1;
+                activeAudio = true;
                 Dialog.GetGameObject().SetActive(false);
                 _timer = 0;
             }

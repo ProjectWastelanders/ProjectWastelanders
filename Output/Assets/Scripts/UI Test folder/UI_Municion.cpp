@@ -53,7 +53,7 @@ void UI_Municion::Start()
 void UI_Municion::Update()
 {
 
-	if (cinematic.IsActive() == true || fadeToBlack->fadeTimer != 0)
+	if (cinematic.IsActive() == true || (fadeToBlack && fadeToBlack->fadeTimer != 0))
 	{
 		avaliable = false;
 		text_munition_Normal_On.GetGameObject().SetActive(false);

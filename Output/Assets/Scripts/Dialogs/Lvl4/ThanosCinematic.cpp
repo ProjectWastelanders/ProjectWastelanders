@@ -48,6 +48,8 @@ void ThanosCinematic::Start()
 
     currentDialog = 1;
 
+    activeAudio = true;
+
     Dialog_1.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_1.GetGameObject().SetActive(false);
 
@@ -87,47 +89,74 @@ void ThanosCinematic::Update()
         case 1:
             camMov->target = player;
             PrintDialog(Dialog_1);
-            Audio::Event("starlord_confident");
+            if (activeAudio) {
+                Audio::Event("starlord_confident");
+                activeAudio = false;
+            }
             break;
         case 2:
             camMov->target = boss;
             PrintDialog(Dialog_2);
-            Audio::Event("thanos_doubt");
+            if (activeAudio) {
+                Audio::Event("thanos_doubt");
+                activeAudio = false;
+            }
             break;
         case 3:
             camMov->target = player;
             PrintDialog(Dialog_3);
-            Audio::Event("starlord_confident");
+            if (activeAudio) {
+                Audio::Event("starlord_confident");
+                activeAudio = false;
+            }
             break;
         case 4:
             camMov->target = boss;
             PrintDialog(Dialog_4);
-            Audio::Event("thanos_cool");
+            if (activeAudio) {
+                Audio::Event("thanos_cool");
+                activeAudio = false;
+            }
             break;
         case 5:
             camMov->target = boss;
             PrintDialog(Dialog_5);
-            Audio::Event("thanos_calm");
+            if (activeAudio) {
+                Audio::Event("thanos_calm");
+                activeAudio = false;
+            }
             break;
         case 6:
             camMov->target = player;
             PrintDialog(Dialog_6);
-            Audio::Event("starlord_sorry");
+            if (activeAudio) {
+                Audio::Event("starlord_sorry");
+                activeAudio = false;
+            }
             break;
         case 7:
             camMov->target = boss;
             PrintDialog(Dialog_7);
-            Audio::Event("thanos_facing");
+            if (activeAudio) {
+                Audio::Event("thanos_facing");
+                activeAudio = false;
+            }
             break;
         case 8:
             camMov->target = player;
             PrintDialog(Dialog_8);
-            Audio::Event("starlord_confident");
+            if (activeAudio) {
+                Audio::Event("starlord_confident");
+                activeAudio = false;
+            }
             break;
         case 9:
             camMov->target = boss;
             PrintDialog(Dialog_9);
-            Audio::Event("thanos_threatening");
+            if (activeAudio) {
+                Audio::Event("thanos_threatening");
+                activeAudio = false;
+            }
             break;
         }
     }
@@ -155,6 +184,7 @@ void ThanosCinematic::PrintDialog(API_UIImage& Dialog)
             else {
                 currentDialog += 1;
                 nextDialog = false;
+                activeAudio = true;
                 Dialog.GetGameObject().SetActive(false);
             }
         }

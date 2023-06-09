@@ -12,7 +12,7 @@ void IndexContainer::Start()
     gameObject.GetParticleSystem().Play();
 }
 
-void Update()
+void IndexContainer::Update()
 {
 
 }

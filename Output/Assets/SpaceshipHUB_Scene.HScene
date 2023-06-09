@@ -11611,7 +11611,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.9408766031265259,
+                "Aspect ratio": 2.008298873901367,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -20610,9 +20610,6 @@
                         "Secundary menu game object": 2937841997
                     },
                     {
-                        "Secundary menu game object": 2937841997
-                    },
-                    {
                         "Button to press game object": 3437375339
                     }
                 ],
@@ -24689,7 +24686,8 @@
                     2125686633,
                     740957820,
                     3667161260,
-                    1398139035
+                    1398139035,
+                    875025187
                 ]
             }
         ],
@@ -24709,7 +24707,7 @@
                 "Enabled": true,
                 "Position": [
                     -0.8550000190734863,
-                    0.6200000047683716,
+                    0.8500000238418579,
                     0.0
                 ],
                 "Rotation": [
@@ -24785,7 +24783,7 @@
         "IsStatic": false,
         "Name": "Weapon1 (B)",
         "ParentUID": 3432315266,
-        "PrefabUID": 2406411174,
+        "PrefabUID": 1385153556,
         "Tag": "UI",
         "UID": 2125686633,
         "UpdateWithBones": false
@@ -24797,7 +24795,7 @@
                 "Enabled": true,
                 "Position": [
                     -0.8550000190734863,
-                    0.28999999165534973,
+                    0.550000011920929,
                     -0.20000000298023224
                 ],
                 "Rotation": [
@@ -24869,6 +24867,9 @@
                     },
                     {
                         "Gun Index": 4
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -24891,7 +24892,7 @@
                 "Enabled": true,
                 "Position": [
                     -0.8550000190734863,
-                    0.0,
+                    0.27000001072883606,
                     0.0
                 ],
                 "Rotation": [
@@ -24963,6 +24964,9 @@
                     },
                     {
                         "Gun Index": 3
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -24985,7 +24989,7 @@
                 "Enabled": true,
                 "Position": [
                     -0.8550000190734863,
-                    -0.30000001192092896,
+                    0.0,
                     -0.20000000298023224
                 ],
                 "Rotation": [
@@ -25020,6 +25024,9 @@
                         "Weapon": 1398139035
                     },
                     {
+                        "Next Weapon": 875025187
+                    },
+                    {
                         "Prev Weapon": 3667161260
                     },
                     {
@@ -25027,6 +25034,12 @@
                     },
                     {
                         "Panel Unlock": 801303102
+                    },
+                    {
+                        "Next Panel Upgrate": 861952033
+                    },
+                    {
+                        "Next Panel Unlock": 861952033
                     },
                     {
                         "Prev Panel Upgrate": 1250319448
@@ -25048,6 +25061,9 @@
                     },
                     {
                         "Gun Index": 2
+                    },
+                    {
+                        "Player": 1862169540
                     }
                 ],
                 "Script Resource": 1737653682,
@@ -25101,6 +25117,94 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 1046225449,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.8550000190734863,
+                    -0.30000001192092896,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 4072617269,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 1209215528,
+                "hoverImage": 4102752492,
+                "idleBlockImage": 3873045612,
+                "idleImage": 4072617269,
+                "pressBlockImage": 3873045612,
+                "pressImage": 2648647856
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Weapon": 875025187
+                    },
+                    {
+                        "Prev Weapon": 1398139035
+                    },
+                    {
+                        "Panel Upgrate": 861952033
+                    },
+                    {
+                        "Panel Unlock": 861952033
+                    },
+                    {
+                        "Prev Panel Upgrate": 385359660
+                    },
+                    {
+                        "Prev Panel Unlock": 801303102
+                    },
+                    {
+                        "Material Weapon": 2984314687
+                    },
+                    {
+                        "Material Weapon Locked": 4116342376
+                    },
+                    {
+                        "SelectedWeapon": 1046225449
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 1
+                    },
+                    {
+                        "Player": 1862169540
+                    }
+                ],
+                "Script Resource": 1737653682,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Weapon5 (B)",
+        "ParentUID": 3432315266,
+        "PrefabUID": 1385153556,
+        "Tag": "UI",
+        "UID": 875025187,
         "UpdateWithBones": false
     },
     {
@@ -25169,7 +25273,7 @@
         "IsStatic": false,
         "Name": "Upgrate W1",
         "ParentUID": 2963029982,
-        "PrefabUID": 2406411174,
+        "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 911611964,
         "UpdateWithBones": false
@@ -25214,7 +25318,7 @@
         "IsStatic": false,
         "Name": "Upgrate 1 (B)",
         "ParentUID": 911611964,
-        "PrefabUID": 2406411174,
+        "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 604812651,
         "UpdateWithBones": false
@@ -25259,7 +25363,7 @@
         "IsStatic": false,
         "Name": "Upgrate 2 (B)",
         "ParentUID": 911611964,
-        "PrefabUID": 2406411174,
+        "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 4097172583,
         "UpdateWithBones": false
@@ -25304,7 +25408,7 @@
         "IsStatic": false,
         "Name": "Upgrate 3 (B)",
         "ParentUID": 911611964,
-        "PrefabUID": 2406411174,
+        "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 3294404498,
         "UpdateWithBones": false
@@ -25344,7 +25448,7 @@
         "IsStatic": false,
         "Name": "WeeaponInfo W1 (I)",
         "ParentUID": 911611964,
-        "PrefabUID": 2406411174,
+        "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 4186981562,
         "UpdateWithBones": false
@@ -26720,6 +26824,252 @@
         "PrefabUID": 3103935309,
         "Tag": "UI",
         "UID": 3239985290,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.009999999776482582
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": false,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    679429780,
+                    2105882532,
+                    644144115
+                ]
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Upgrate 1": 679429780
+                    },
+                    {
+                        "Upgrate 2": 2105882532
+                    },
+                    {
+                        "Upgrate 3": 644144115
+                    },
+                    {
+                        "Panel Upgrate": 861952033
+                    },
+                    {
+                        "Player": 1862169540
+                    },
+                    {
+                        "List Weapons": 3432315266
+                    },
+                    {
+                        "Gun Index": 1
+                    }
+                ],
+                "Script Resource": 1414171341,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Upgrate W5",
+        "ParentUID": 2963029982,
+        "PrefabUID": 675833853,
+        "Tag": "UI",
+        "UID": 861952033,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.44999998807907104,
+                    0.25,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 1912700799,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 644878184,
+                "hoverImage": 2080007791,
+                "idleBlockImage": 2340429309,
+                "idleImage": 1912700799,
+                "pressBlockImage": 2121955852,
+                "pressImage": 2121955852
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Upgrate 1 (B)",
+        "ParentUID": 861952033,
+        "PrefabUID": 675833853,
+        "Tag": "UI",
+        "UID": 679429780,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.44999998807907104,
+                    -0.10000000149011612,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 317947480,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 1524150428,
+                "hoverImage": 3248838484,
+                "idleBlockImage": 3683239595,
+                "idleImage": 317947480,
+                "pressBlockImage": 3213623159,
+                "pressImage": 3213623159
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Upgrate 2 (B)",
+        "ParentUID": 861952033,
+        "PrefabUID": 675833853,
+        "Tag": "UI",
+        "UID": 2105882532,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.44999998807907104,
+                    -0.44999998807907104,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.30000001192092896,
+                    0.20000000298023224,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 3878999702,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 1000605338,
+                "hoverImage": 3153219901,
+                "idleBlockImage": 1714793349,
+                "idleImage": 3878999702,
+                "pressBlockImage": 1473558259,
+                "pressImage": 1473558259
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Upgrate 3 (B)",
+        "ParentUID": 861952033,
+        "PrefabUID": 675833853,
+        "Tag": "UI",
+        "UID": 644144115,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    -0.3199999928474426,
+                    -0.75,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.2750000059604645,
+                    0.2750000059604645,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 3331385431,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "WeeaponInfo W1 (I)",
+        "ParentUID": 861952033,
+        "PrefabUID": 675833853,
+        "Tag": "UI",
+        "UID": 2203892879,
         "UpdateWithBones": false
     },
     {
@@ -32196,7 +32546,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    300.3999938964844,
+                    550.4000244140625,
                     0.33500000834465027,
                     0.0
                 ],
@@ -32220,7 +32570,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 325.3999938964844,
+                "PositionX": 575.4000244140625,
                 "PositionY": 0.33500000834465027,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32242,7 +32592,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    300.3999938964844,
+                    550.4000244140625,
                     0.03999999910593033,
                     0.0
                 ],
@@ -32266,7 +32616,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 325.3999938964844,
+                "PositionX": 575.4000244140625,
                 "PositionY": 0.03999999910593033,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32288,7 +32638,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    300.3999938964844,
+                    550.4000244140625,
                     -0.36000001430511475,
                     0.0
                 ],
@@ -32312,7 +32662,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 325.3999938964844,
+                "PositionX": 575.4000244140625,
                 "PositionY": -0.36000001430511475,
                 "Scale": 0.30000001192092896,
                 "Text": "50",

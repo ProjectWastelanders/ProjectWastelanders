@@ -135,6 +135,16 @@ API_GameObject ProjectilePull::GetFirstInactiveShotgunBomb()
 
 void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, PROJECTILE_ACTION projectileAction)
 {
+
+    for (size_t i = 0; i < dualsPullSize; i++)
+    {
+        if (pullDuals[i].IsActive())
+            continue;
+
+        pullDuals[i].GetParticleSystem().SetRotation(API_Vector3(0.0f, 0.0f, playerGO.GetTransform().GetLocalRotation().y + 90));
+
+    }
+
     API_GameObject go = GetFirstInactiveDualProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());

@@ -45,8 +45,12 @@ InstanceRenderer::~InstanceRenderer()
 
 void InstanceRenderer::SetMeshInformation(ResourceMesh* resMesh, ResourceMaterial* resMat)
 {
-    if (initialized) 
+    if (initialized)
+    {
         LOG("Tried to call RenderManager::SetMeshInformation more than once in a single Render Manager instance.");
+        return;
+    }
+        
     
     if (resMesh == nullptr)
         return;

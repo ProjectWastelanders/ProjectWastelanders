@@ -182,8 +182,8 @@ void EnemyRanger::Update()
 					targStats->detectedCount++;
 					// For The Mark Effect
 
-					//if (ExclamationPool::exist)
-					//	ExclamationPool::ActivateMark(gameObject);
+					if (ExclamationPool::active)
+						ExclamationPool::ActivateMark(gameObject);
 				}
 				break;
 			}

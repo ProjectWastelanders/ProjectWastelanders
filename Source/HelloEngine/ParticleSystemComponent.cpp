@@ -45,6 +45,7 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject) : Compo
 	particleProps.startsize = float3::one;
 	particleProps.endsize = float3::zero;
 	particleProps.speed = float3(0.0f, 1.0f, 0.0f);
+	particleProps.rotation = float3(0.0f, 0.0f, 360.0f);
 	particleProps.acceleration = float3(1.0f, 1.0f, 1.0f);
 	particleProps.speedVariation = float3(1.0f, 1.0f, 1.0f);
 	particleProps.startColor = float4(255.0f, 255.0f, 255.0f, 1.0f); //r g b a
@@ -71,6 +72,10 @@ ParticleSystemComponent::ParticleSystemComponent(GameObject* gameObject, Particl
 	P_Module* emissionModule = (P_Module*)new P_EmissionModule();
 	emissionModule->component = this;
 	ParticleModules.push_back(emissionModule);
+
+	P_Module* shapeModule = (P_Module*)new P_ShapeModule();
+	shapeModule->component = this;
+	ParticleModules.push_back(shapeModule);
 
 	BillBoardComponent* billboard = (BillBoardComponent*)_gameObject->AddComponentOfType(Type::BILLBOARD);
 	BillBoardComponent* copyBB = copy._gameObject->GetComponent<BillBoardComponent>();
@@ -142,13 +147,25 @@ void ParticleSystemComponent::CreateEmitterMesh(uint resourceUID)
 
 	ParticleEmitter._meshID = resourceUID;
 	ParticleEmitter.manager = app->renderer3D->renderManager.GetRenderManager(resourceUID,0);
+	ParticleEmitter.manager->isParticle = true;
 
 	for (Particle& var : ParticleEmitter.ParticleList)
 	{
-		var._instanceID = Application::Instance()->renderer3D->renderManager.AddMesh(_resource, 0, MeshRenderType::INSTANCED);
+		var._instanceID = Application::Instance()->renderer3D->renderManager.AddMeshParticle(_resource);
+		
 		//This line is needed because when you add mesh into the rendermanager it will be drawn,
 		//when we are at this point we don't want to draw the mesh of the particle till the engine is playing
-		Application::Instance()->renderer3D->renderManager.GetRenderManager(resourceUID, 0)->GetMap()[var._instanceID].mesh.draw = false;
+		Mesh& meshRef = Application::Instance()->renderer3D->renderManager.GetRenderManager(resourceUID, 0)->GetMap()[var._instanceID].mesh;
+		
+		meshRef.draw = false;
+		if (ParticleEmitter.isParticleAnimated)
+		{
+			meshRef.isParticleAnim = true;
+		}
+		else
+		{
+			meshRef.isParticleAnim = false;
+		}
 	}
 
 }
@@ -201,18 +218,23 @@ void ParticleSystemComponent::ChangeEmitterMeshTexture(ResourceTexture* resource
 {
 	if (resource == nullptr)
 	{
-		ParticleEmitter._textureID = -1.0f;
+		ParticleEmitter.emitterTexture._textureID = -1.0f;
 		_resourceText = nullptr;
 
 		return;
 	}
 
-	ParticleEmitter._textureID = resource->OpenGLID;
+	ParticleEmitter.emitterTexture._textureID = resource->OpenGLID;
 
 	if (_resourceText != nullptr)
 		_resourceText->Dereference();
 
 	_resourceText = resource;
+
+	for (Particle& var : ParticleEmitter.ParticleList)
+	{
+		var.texture = ParticleEmitter.emitterTexture;
+	}
 
 	//if (resource->isTransparent && !isUI)
 	//	meshRenderer->ChangeMeshRenderType(MeshRenderType::TRANSPARENCY);
@@ -266,7 +288,6 @@ void ParticleSystemComponent::OnEditor()
 			{
 				ParticleEmitter.SetParticlePoolSize(size);
 				sizeCpy = size;
-				CreateEmitterMesh(_resourceUID);
 				//ChangeEmitterMeshTexture((ResourceTexture*)ModuleResourceManager::S_LoadResource(_resourceTextUID));
 			}
 			else
@@ -279,6 +300,9 @@ void ParticleSystemComponent::OnEditor()
 
 		if (ParticleEmitter._meshID == -1)
 		{
+			ImGui::Checkbox("Particle Animated", &ParticleEmitter.isParticleAnimated);
+
+			ImGui::TextWrapped("First ensure yourself that if you want an animated particle the checkbox above is marked");
 			ImGui::TextWrapped("No mesh loaded! Drag an .hmesh file below to load a mesh ");
 
 			ImGui::TextColored(ImVec4(1, 1, 0, 1), "Drag .hmesh here"); ImGui::SameLine();
@@ -321,76 +345,90 @@ void ParticleSystemComponent::OnEditor()
 				LayerEditor::S_AddPopUpMessage(popUpmessage);
 
 			}
-		}
 
-		std::string imageName;
-		int width = 0;
-		int height = 0;
-		if (ParticleEmitter._textureID != -1.0f && _resourceText != nullptr)
-		{
-			ImGui::Image((ImTextureID)(uint)ParticleEmitter._textureID, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
-
-			imageName = _resourceText->debugName;
-			width = _resourceText->width;
-			height = _resourceText->height;
-		}
-		else
-		{
-			ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
-			imageName = "None";
-		}
-
-		if (ParticleEmitter._textureID == -1)
-		{
-			ImGui::TextWrapped("No texture loaded! Drag an .htext file below to load a texture ");
-
-			ImGui::TextColored(ImVec4(1, 1, 0, 1), "Drag .htext here"); ImGui::SameLine();
-
-			if (ImGui::BeginDragDropTarget())
+			std::string imageName;
+			int width = 0;
+			int height = 0;
+			if (ParticleEmitter.emitterTexture._textureID != -1.0f && _resourceText != nullptr)
 			{
-				if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
-				{
-					//Drop asset from Asset window to scene window
-					const uint* drop = (uint*)payload->Data;
+				ImGui::Image((ImTextureID)(uint)ParticleEmitter.emitterTexture._textureID, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
 
-					ResourceTexture* resource = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
-
-					ChangeEmitterMeshTexture(resource);
-
-					std::string popUpmessage = "Loaded Texture: ";
-					LayerEditor::S_AddPopUpMessage(popUpmessage);
-				}
-				ImGui::EndDragDropTarget();
+				imageName = _resourceText->debugName;
+				width = _resourceText->width;
+				height = _resourceText->height;
 			}
-
-		}
-		else
-		{
-			if (_resourceText)
+			else
 			{
-				if (ImGui::Checkbox("Transparent", &_resourceText->isTransparent))
+				ImGui::Image((ImTextureID)0, ImVec2(64, 64), ImVec2(0, 1), ImVec2(1, 0));
+				imageName = "None";
+			}
+			if (ParticleEmitter.emitterTexture._textureID != -1 && _resourceText && _resourceText->isTransparent && ParticleEmitter.isParticleAnimated)
+			{
+				if (ImGui::DragInt("Num of Rows in Atlas", &ParticleEmitter.emitterTexture.numOfRows, 1.0f, 1, 12))
 				{
-					std::string popUpmessage = "Texture in the emitter set as transparent";
-					LayerEditor::S_AddPopUpMessage(popUpmessage);
+					if (ParticleEmitter.isParticleAnimated)
+					{
+						for (Particle& var : ParticleEmitter.ParticleList)
+						{
+							var.texture = ParticleEmitter.emitterTexture;
+						}
+					}
 				}
 			}
 
-			if (ImGui::Button("Delete Emitter Texture"))
+			if (ParticleEmitter.emitterTexture._textureID == -1)
 			{
+				ImGui::TextWrapped("No texture loaded! Drag an .htext file below to load a texture ");
 
-				DestroyEmitterMeshTexture();
+				ImGui::TextColored(ImVec4(1, 1, 0, 1), "Drag .htext here"); ImGui::SameLine();
 
-				std::string popUpmessage = "Texture in the emitter Destroyed ";
-				LayerEditor::S_AddPopUpMessage(popUpmessage);
+				if (ImGui::BeginDragDropTarget())
+				{
+					if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("Texture"))
+					{
+						//Drop asset from Asset window to scene window
+						const uint* drop = (uint*)payload->Data;
+
+						ResourceTexture* resource = (ResourceTexture*)ModuleResourceManager::S_LoadResource(*drop);
+
+						ChangeEmitterMeshTexture(resource);
+
+						std::string popUpmessage = "Loaded Texture: ";
+						LayerEditor::S_AddPopUpMessage(popUpmessage);
+					}
+					ImGui::EndDragDropTarget();
+				}
 
 			}
+			else
+			{
+				if (_resourceText)
+				{
+					if (ImGui::Checkbox("Transparent", &_resourceText->isTransparent))
+					{
+						std::string popUpmessage = "Texture in the emitter set as transparent";
+						LayerEditor::S_AddPopUpMessage(popUpmessage);
+					}
+				}
+
+				if (ImGui::Button("Delete Emitter Texture"))
+				{
+
+					DestroyEmitterMeshTexture();
+
+					std::string popUpmessage = "Texture in the emitter Destroyed ";
+					LayerEditor::S_AddPopUpMessage(popUpmessage);
+
+				}
+			}
+			ImGui::NewLine();
+			for (int i = 0; i < ParticleModules.size(); i++)
+			{
+				ParticleModules[i]->OnEditor();
+			}
 		}
-		ImGui::NewLine();
-		for (int i = 0; i < ParticleModules.size(); i++)
-		{
-			ParticleModules[i]->OnEditor(); 
-		}		
-	}
+		}
+
 	if (!created)
 		this->_gameObject->DestroyComponent(this);
 }
@@ -437,8 +475,13 @@ void ParticleSystemComponent::DestroyEmitterMeshTexture()
 {
 	if (_resourceText != nullptr)
 	{
-		ParticleEmitter._textureID = -1.0f;
+		ParticleEmitter.emitterTexture._textureID = -1.0f;
 		_resourceText = nullptr;
+
+		for (Particle& var : ParticleEmitter.ParticleList)
+		{
+			var.texture = ParticleEmitter.emitterTexture;
+		}
 
 	}
 }
@@ -495,11 +538,13 @@ void ParticleSystemComponent::Serialization(json& j)
 		_j["ParticleModules"]["ModuleMain"]["Speed"] = { particleProps.speed.x, particleProps.speed.y, particleProps.speed.z };
 		_j["ParticleModules"]["ModuleMain"]["SpeedVariation"] = { particleProps.speedVariation.x, particleProps.speedVariation.y, particleProps.speedVariation.z };
 		_j["ParticleModules"]["ModuleMain"]["acceleration"] = { particleProps.acceleration.x, particleProps.acceleration.y, particleProps.acceleration.z };
+		_j["ParticleModules"]["ModuleMain"]["rotation"] = { particleProps.rotation.x, particleProps.rotation.y, particleProps.rotation.z };
 		_j["ParticleModules"]["ModuleMain"]["LifeTime"] = particleProps.Lifetime;
 		_j["ParticleModules"]["ModuleMain"]["Duration"] = ParticleEmitter.Duration;
 		_j["ParticleModules"]["ModuleMain"]["Delay"] = ParticleEmitter.StartDelay;
 		_j["ParticleModules"]["ModuleMain"]["Looping"] = ParticleEmitter.loop;	
 		_j["ParticleModules"]["ModuleMain"]["PlayOnAwake"] = ParticleEmitter.playOnAwake;
+		_j["ParticleModules"]["ModuleMain"]["RandomRotation"] = ParticleEmitter.randomRotation;
 		_j["ParticleModules"]["ModuleEmission"]["ParticlesPerSecond"] = ParticleEmitter.ParticlesPerSecond;
 		_j["ParticleModules"]["ModuleEmission"]["Enable"] = ParticleEmitter.enableEmissionModule;
 
@@ -511,6 +556,7 @@ void ParticleSystemComponent::Serialization(json& j)
 			GetCurrentShape()->Serialization(_j);
 		}		
 	}
+	_j["IsParticleAnimated"] = ParticleEmitter.isParticleAnimated;
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
 
@@ -557,6 +603,13 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	particleProps.speedVariation = { tempspeedVariation[0],tempspeedVariation[1],tempspeedVariation[2] };
 	std::vector<float> tempacceleration = j["ParticleModules"]["ModuleMain"]["acceleration"];
 	particleProps.acceleration = { tempacceleration[0],tempacceleration[1],tempacceleration[2] };
+
+	if (j["ParticleModules"]["ModuleMain"].contains("rotation"))
+	{
+		std::vector<float> temprotation = j["ParticleModules"]["ModuleMain"]["rotation"];
+		particleProps.rotation = { temprotation[0],temprotation[1],temprotation[2] };
+	}
+
 	particleProps.Lifetime = j["ParticleModules"]["ModuleMain"]["LifeTime"];
 	ParticleEmitter.Duration = j["ParticleModules"]["ModuleMain"]["Duration"];
 	ParticleEmitter.DurationCpy = ParticleEmitter.Duration;
@@ -567,6 +620,18 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	ParticleEmitter.enableEmissionModule = j["ParticleModules"]["ModuleEmission"]["Enable"];
 	size = j["ParticleVectorSize"];
 	sizeCpy = j["ParticleVectorSize"];
+
+	if (j["ParticleModules"]["ModuleMain"].contains("RandomRotation"))
+	{
+		ParticleEmitter.randomRotation = j["ParticleModules"]["ModuleMain"]["RandomRotation"];
+	}
+
+	if (j.contains("IsParticleAnimated"))
+	{
+		ParticleEmitter.isParticleAnimated = j["IsParticleAnimated"];
+	}
+
+	ParticleEmitter.SetParticlePoolSize(size);
 
 	ShapeType shape = ShapeType::NONE;
 

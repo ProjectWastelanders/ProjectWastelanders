@@ -1,4 +1,5 @@
 #pragma once
+#include "InstanceRenderer.h"
 
 struct ParticleProperties
 {
@@ -14,6 +15,16 @@ struct ParticleProperties
 	float3 startsize,endsize,sizevariation;
 	//Life time of the particle
 	float Lifetime = 1.0f;
+};
+
+struct ParticleTexture
+{
+
+	//Texture id
+	uint _textureID = -1;
+	//Number of Rows
+	int numOfRows = 1;
+
 };
 
 
@@ -48,16 +59,29 @@ struct Particle
 	//End size of the particle
 	float3 endSize;
 
+	//Elapsed Time
+	float elapsedTime = 0.0f;
 	//ID of the instance
 	uint _instanceID;
 	
 	bool Active = false;
-	
+
+	//Particle Texture
+	ParticleTexture texture;
+	//Texture Offsets;
+	ParticleAnimInfo particleAnim;
+
+	float blendFactor = 100.0f;
+
 	//Angular velocity of the particle
 	//float rotationSpeed;
 
 	//Calculate the Transform Matrix of the particle
 	void SetTransformMatrix(Quat rot);
+
+	void UpdateTextureCoords();
+
+	float FindModule(float a, float b);
 
 };
 

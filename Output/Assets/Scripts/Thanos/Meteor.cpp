@@ -37,9 +37,23 @@ void Meteor::OnCollisionEnter(API::API_RigidBody other) {
 		gameObject.GetMeshRenderer().SetActive(false);
 		position = gameObject.GetTransform().GetGlobalPosition();
 		isFireOn = true;
+		if (audioHasCollided == false) {
+			audioHasCollided = true;
+			Audio::Event("thanos_meteor_impact");
+		}
 	}
 	if (detectionName == "Player" && isFireOn == true) {
 		PlayerStats* pStats = (PlayerStats*)other.GetGameObject().GetScript("PlayerStats");
 		pStats->TakeDamage(dmg, 0);
+	}
+}
+
+void Meteor::OnCollisionExit(API::API_RigidBody other) {
+
+	std::string detectionTag = other.GetGameObject().GetTag();
+	std::string detectionName = other.GetGameObject().GetName();
+
+	if (detectionTag == "Floor") {
+		audioHasCollided = false;
 	}
 }

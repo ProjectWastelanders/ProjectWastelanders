@@ -47,15 +47,19 @@ void StartOfLvl3::Update()
         {
         case 1:
             PrintDialog(Dialog_1);
+            Audio::Event("starlord_surprised");
             break;
         case 2:
             PrintDialog(Dialog_2);
+            Audio::Event("groot_surprised");
             break;
         case 3:
             PrintDialog(Dialog_3);
+            Audio::Event("rocket_annoyed");
             break;
         case 4:
             PrintDialog(Dialog_4);
+            Audio::Event("starlord_sorry");
             break;
         default:
             break;

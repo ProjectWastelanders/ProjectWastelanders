@@ -43,9 +43,9 @@ public:
 public:
 
 	int64_t _meshID = -1;
-	int _textureID = -1;
 
 private:
+	int cont = 0;
 	//Position Emitter
 	float3 position;
 	
@@ -59,10 +59,14 @@ private:
 
 	InstanceRenderer* manager;
 
+	ParticleTexture emitterTexture;
+
 	int currentparticle;
 	bool loop;//
 	bool stop;//
 	bool playOnAwake;//
+	bool isParticleAnimated = false;
+	bool randomRotation = true;
 
 	float StartDelay;//
 	float StartDelayCpy;

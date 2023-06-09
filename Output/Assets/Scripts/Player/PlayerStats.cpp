@@ -458,6 +458,8 @@ void PlayerStats::GetPowerUp(int index)
     case 3:
         GetAmmo(1, maxLaserAmmo);
         GetAmmo(2, maxSpecialAmmo);
+        hudPowerUp_Alert->Reset = true;
+        hudPowerUp_Alert->Swap_PowerUp_Texture(3);
         break;
     case 4:
         slowTimePowerUp = 5.0f;

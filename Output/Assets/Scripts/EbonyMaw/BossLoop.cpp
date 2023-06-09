@@ -94,10 +94,6 @@ void BossLoop::Update()
 
         if (highCoverTime > 1.0f)
         {
-
-
-       
-
             cover1.GetTransform().SetPosition(0, -1000, 0);
             cover2.GetTransform().SetPosition(0, -1000, 0);
             cover3.GetTransform().SetPosition(0, -1000, 0);
@@ -111,9 +107,7 @@ void BossLoop::Update()
             cover11.GetTransform().SetPosition(0, -1000, 0);
             cover12.GetTransform().SetPosition(0, -1000, 0);
 
-
             cover1.SetActive(false);
-           
            
             cover2.SetActive(false);
 
@@ -138,8 +132,6 @@ void BossLoop::Update()
             cover12.SetActive(false);
 
             destroyHighCover = false;
-
-
         }
 
     }
@@ -250,6 +242,10 @@ void BossLoop::Update()
             if (DieTimer >= 4) {
                 endBattle = true;
                 gameObject.SetActive(false);
+                blood.SetActive(false);
+                blood.GetParticleSystem().Stop();
+                blood.GetParticleSystem().StopEmitting();
+
                 gameObject.GetTransform().SetScale(0, 0, 0);
                 //TEMPORAL FOR ALPHA 1
                 finalTextPanel.SetActive(true);
@@ -297,15 +293,11 @@ void BossLoop::TakeDamage(float damage)
     
     if (canTakeDamage == true) {
 
-        
-        
-         bloodTimer = 0.0f;
+        bloodTimer = 0.0f;
         blood.GetTransform().SetPosition(0,0, 0);
 
         damaged = true;
        
-       
-
         hp -= damage;
         if (hp <= maxHpLoss[phase - 1]) {
             exploting = true;
@@ -314,6 +306,7 @@ void BossLoop::TakeDamage(float damage)
     }
     else {
         shield[phase] -= damage;
+        Audio::Event("ebony_bullet_rock");
     }
 
     if (shield[phase] <= 0) {

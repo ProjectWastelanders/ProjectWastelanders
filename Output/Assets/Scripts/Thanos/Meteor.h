@@ -12,12 +12,14 @@ public:
 	void Update() override;
 	void OnCollisionEnter(API::API_RigidBody other);
 
+	void OnCollisionExit(API::API_RigidBody other);
+
 	API_Vector3 position;
 	API_ParticleSystem fire;
 	bool isFireOn = false;
 	float fireCounter = 0.0f;
 
 	float dmg = 5.0f;
-	bool hasCollided = false;
+	bool audioHasCollided = false;
 };
 

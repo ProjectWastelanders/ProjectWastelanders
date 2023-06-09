@@ -155,6 +155,8 @@ void HUB_LevelSelect::Update()
 		// If this level is unlocked 
 		if (levels[i].OnHold() || levels[i].OnPress())
 		{
+			Audio::Event("spaceshipTable_button_hold");
+
 			currentHoveredLevel = i;
 			if (currentSelectedLevel == i) // If we are already selecting this, only mark it as currently being hovered and ignore the other funcitonality.
 				continue;

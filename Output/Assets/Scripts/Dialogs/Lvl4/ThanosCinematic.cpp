@@ -87,38 +87,47 @@ void ThanosCinematic::Update()
         case 1:
             camMov->target = player;
             PrintDialog(Dialog_1);
+            Audio::Event("starlord_confident");
             break;
         case 2:
             camMov->target = boss;
             PrintDialog(Dialog_2);
+            Audio::Event("thanos_doubt");
             break;
         case 3:
             camMov->target = player;
             PrintDialog(Dialog_3);
+            Audio::Event("starlord_confident");
             break;
         case 4:
             camMov->target = boss;
             PrintDialog(Dialog_4);
+            Audio::Event("thanos_cool");
             break;
         case 5:
             camMov->target = boss;
             PrintDialog(Dialog_5);
+            Audio::Event("thanos_calm");
             break;
         case 6:
             camMov->target = player;
             PrintDialog(Dialog_6);
+            Audio::Event("starlord_sorry");
             break;
         case 7:
             camMov->target = boss;
             PrintDialog(Dialog_7);
+            Audio::Event("thanos_facing");
             break;
         case 8:
             camMov->target = player;
             PrintDialog(Dialog_8);
+            Audio::Event("starlord_confident");
             break;
         case 9:
             camMov->target = boss;
             PrintDialog(Dialog_9);
+            Audio::Event("thanos_threatening");
             break;
         }
     }

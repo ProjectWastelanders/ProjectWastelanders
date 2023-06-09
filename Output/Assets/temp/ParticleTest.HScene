@@ -23,11 +23,13 @@
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Root",
         "ParentUID": 0,
         "PrefabUID": 0,
         "Tag": "None",
-        "UID": 2302572981
+        "UID": 2302572981,
+        "UpdateWithBones": false
     },
     {
         "Active": true,
@@ -35,9 +37,9 @@
             {
                 "Enabled": true,
                 "Position": [
-                    314.23968505859375,
-                    -1.3359868944462505e-06,
-                    -10.172199249267578
+                    -0.7646705508232117,
+                    -4.207746505737305,
+                    12.437823295593262
                 ],
                 "Rotation": [
                     -0.0,
@@ -54,11 +56,12 @@
             {
                 "Enabled": true,
                 "Index inside model": 0,
+                "IsParticleAnimated": true,
                 "ModelUID": 13,
                 "ParticleModules": {
                     "ModuleEmission": {
                         "Enable": true,
-                        "ParticlesPerSecond": 48
+                        "ParticlesPerSecond": 11
                     },
                     "ModuleMain": {
                         "BeginScale": [
@@ -73,36 +76,90 @@
                             0.0,
                             0.0
                         ],
-                        "LifeTime": 8.0,
+                        "LifeTime": 4.0,
                         "Looping": true,
-                        "PlayOnAwake": false,
+                        "PlayOnAwake": true,
                         "Speed": [
                             0.0,
-                            0.0,
+                            5.099999904632568,
                             0.0
                         ],
                         "SpeedVariation": [
-                            0.0,
-                            0.0,
+                            11.100000381469727,
+                            7.199999809265137,
                             0.0
                         ],
                         "acceleration": [
                             0.0,
                             0.0,
                             0.0
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            360.0
                         ]
+                    },
+                    "ShapeModule": {
+                        "ShapeType": 0
                     }
                 },
-                "ParticleVectorSize": 1000,
-                "ResourceTextUID": 839034386,
+                "ParticleVectorSize": 24,
+                "ResourceTextUID": 197171579,
                 "Type": 6
             }
         ],
         "FirstOnPrefab": true,
+        "IsStatic": false,
         "Name": "Empty",
         "ParentUID": 2302572981,
         "PrefabUID": 0,
         "Tag": "Default",
-        "UID": 762304228
+        "UID": 762304228,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 1.9408766031265259,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Empty",
+        "ParentUID": 2302572981,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 3622378366,
+        "UpdateWithBones": false
     }
 ]

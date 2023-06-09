@@ -105,6 +105,7 @@ public:
 
 	bool isIndependent = false;
 	bool is2D = false;
+	bool isParticleAnim = false;
 
 	// TODO: Change this when refacotring the UI rendering pipeline!! TEMPORAL CODE FOR ALPHA 1
 	float opacity = 1.0f;

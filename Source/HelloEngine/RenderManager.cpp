@@ -376,6 +376,16 @@ uint RenderManager::AddMesh(ResourceMesh* resource, uint resMat, MeshRenderType 
 	}
 }
 
+uint RenderManager::AddMeshParticle(ResourceMesh* resource)
+{
+	_renderMap[resource->UID].isParticle = true;
+	ModuleResourceManager::S_LoadResource(resource->UID);
+	_renderMap[resource->UID].SetMeshInformation((ResourceMesh*)ModuleResourceManager::resources[resource->UID],0);
+
+
+	return _renderMap[resource->UID].AddMesh();
+}
+
 uint RenderManager::AddTransparentMesh(ResourceMesh* resource, uint resMat)
 {
 	uint randomID = HelloUUID::GenerateUUID();

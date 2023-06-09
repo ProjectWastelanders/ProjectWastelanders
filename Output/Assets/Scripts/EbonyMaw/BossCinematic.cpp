@@ -42,6 +42,7 @@ void BossCinematic::Start()
     animBoss = false;
     DraxAudio = false;
     endBattleAudio = false;
+    activeAudio = true;
 
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
@@ -95,17 +96,26 @@ void BossCinematic::Update()
             case 1:
                 camMov->target = boss;
                 PrintDialog(Dialog_1);
-                Audio::Event("ebony_threatening");
+                if (activeAudio) {
+                    Audio::Event("ebony_threatening");
+                    activeAudio = false;
+                }
                 break;
             case 2:
                 camMov->target = player;
                 PrintDialog(Dialog_2);
-                Audio::Event("starlord_confident");
+                if (activeAudio) {
+                    Audio::Event("starlord_confident");
+                    activeAudio = false;
+                }
                 break;
             case 3:
                 camMov->target = boss;
                 PrintDialog(Dialog_3);
-                Audio::Event("ebony_threatening");
+                if (activeAudio) {
+                    Audio::Event("ebony_threatening");
+                    activeAudio = false;
+                }
                 break;
             case 4:
                 camMov->target = boss;
@@ -114,12 +124,18 @@ void BossCinematic::Update()
             case 5:
                 camMov->target = player;
                 PrintDialog(Dialog_5);
-                Audio::Event("starlord_dubitative");
+                if (activeAudio) {
+                    Audio::Event("starlord_dubitative");
+                    activeAudio = false;
+                }
                 break;
             case 6:
                 camMov->target = boss;
                 PrintDialog(Dialog_6);
-                Audio::Event("ebony_threatening");
+                if (activeAudio) {
+                    Audio::Event("ebony_threatening");
+                    activeAudio = false;
+                }
                 break;
             }
         }
@@ -218,6 +234,7 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
             else {
                 currentDialog += 1;
                 nextDialog = false;
+                activeAudio = true;
                 Dialog.GetGameObject().SetActive(false);
             }
         }

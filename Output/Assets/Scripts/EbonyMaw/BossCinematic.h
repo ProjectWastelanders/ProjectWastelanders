@@ -41,7 +41,7 @@ public:
 
 	bool DraxAudio, endBattleAudio;
 
-	bool activeCinematic, nextDialog, animBoss;
+	bool activeCinematic, nextDialog, animBoss, activeAudio;
 	bool showedCinematic, showedStartDialog;
 	int currentDialog;
 	float timerSB = 0.0f;

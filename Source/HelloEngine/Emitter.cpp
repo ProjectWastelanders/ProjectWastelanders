@@ -25,6 +25,7 @@ Emitter::Emitter()
 	playOnAwake = false;
 	enableEmissionModule = true;
 	ParticlesPerSecond = 1;
+	emitterTexture.numOfRows = 4;
 }
 
 Emitter::~Emitter()
@@ -39,6 +40,20 @@ void Emitter::SetParticlePoolSize(uint size)
 	currentparticle = size - 1;
 
 	ParticleList.resize(size);
+
+	if (component->_resource)
+	{
+		component->_resourceUID = component->_resource->UID;
+	}
+	component->CreateEmitterMesh(component->_resourceUID);
+
+	if (isParticleAnimated)
+	{
+		for (Particle& var : this->ParticleList)
+		{
+			var.texture = this->emitterTexture;
+		}
+	}
 }
 
 void Emitter::ResetEmitter()
@@ -81,6 +96,16 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 	particle.speed.y += particleProps.speedVariation.y * (random.Float() - 0.5f);
 	particle.speed.z += particleProps.speedVariation.z * (random.Float() - 0.5f);
 
+	if (randomRotation)
+	{
+		particle.rotation.z = particleProps.rotation.z * (random.Float() - 0.5f);
+	}
+	else
+	{
+		particle.rotation.z = particleProps.rotation.z;
+	}
+	
+
 	// Acceleration
 	particle.acceleration = particleProps.acceleration;
 
@@ -93,6 +118,14 @@ void Emitter::EmitParticles(ParticleProperties& particleProps)
 
 	particle.SetTransformMatrix(BBRotAroundZ);
 
+	particle.elapsedTime = 0.0f;
+	particle.blendFactor = 0.0f;
+
+	particle.particleAnim.textOffsets = float4 (0.0f,0.0f,0.0f,0.0f);
+	particle.particleAnim.texInfo = float2(emitterTexture.numOfRows, 0.0f);
+
+	particle.texture = emitterTexture;
+	
 	currentparticle--;
 
 }
@@ -180,15 +213,18 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 
 	manager = app->renderer3D->renderManager.GetRenderManager(_meshID, 0);
 
-	manager->isParticle = true;
-
+	if (isParticleAnimated)
+	{
+		manager->particleAnimInfos.push_back(ParticleList[i].particleAnim);
+	}
+	
 	Mesh& meshReference = manager->GetMap()[ParticleList[i]._instanceID].mesh;
 
 	meshReference.draw = true;
 
 	meshReference.modelMatrix = ParticleList[i].transformMat;
 
-	meshReference.textureID = _textureID;
+	meshReference.textureID = emitterTexture._textureID;
 
 	meshReference.CalculateBoundingBoxes();
 }
@@ -196,10 +232,15 @@ void Emitter::UpdateParticleTransform(int i, const math::Quat& rotation)
 void Emitter::UpdateParticlesOnScene(int i)
 {
 	
+	if (isParticleAnimated)
+	{
+		ParticleList[i].UpdateTextureCoords();
+	}
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::EngineTimeDeltaTime();
+	ParticleList[i].elapsedTime += EngineTime::EngineTimeDeltaTime();
 
 
 	// velocity = acceleration * dt
@@ -213,11 +254,16 @@ void Emitter::UpdateParticlesOnScene(int i)
 
 void Emitter::UpdateParticlesOnGame(int i)
 {
+	if (isParticleAnimated)
+	{
+		ParticleList[i].UpdateTextureCoords();
+	}
 	
 	// Compute all the calculus needed to move the particles
 
 	// Remaining life minus dt
 	ParticleList[i].remainingLifetime -= EngineTime::GameDeltaTime();
+	ParticleList[i].elapsedTime += EngineTime::GameDeltaTime();
 
 
 	// velocity = acceleration * dt

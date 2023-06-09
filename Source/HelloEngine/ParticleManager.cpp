@@ -132,15 +132,21 @@ void ParticleManager::Draw()
 				}
 			}
 
+
 			emitter->UpdateParticles();
-			if (!emitter->manager->sortedAndDrawn)
-			{
-				emitter->manager->DrawInstancedSorting();
-			}
 			
 		}
 
 	}
+
+	if (!EmitterList.empty())
+	{
+		InstanceRenderer* renderer = EmitterList[0]->manager;
+
+		renderer->DrawInstancedSortingAnimated();
+		renderer->DrawInstancedSorting();
+	}
+	
 	
 }
 

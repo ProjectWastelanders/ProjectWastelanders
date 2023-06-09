@@ -19,6 +19,7 @@ namespace API
         void StopEmitting();
         void Stop();
         void SetInitialSpeed(API_Vector3 speed);
+        void SetRotation(API_Vector3 rotation);
 
     private:
         ParticleSystemComponent* GetComponent();

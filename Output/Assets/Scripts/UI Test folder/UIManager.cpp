@@ -15,6 +15,8 @@ HELLO_ENGINE_API_C UIManager* CreateUIManager(ScriptToInspectorInterface* script
 
 	script->AddDragBoxUIButton("Go Back Button", &classInstance->goBack);
 
+	script->AddCheckBox("Is in HUB", &classInstance->inHUB);
+
 	return classInstance;
 }
 
@@ -48,7 +50,7 @@ void UIManager::Update()
 	}
 	if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN)
 	{
-		if (currentPanel != CurrentPanel::PAUSE && currentPanel != CurrentPanel::SETTINGS)
+		if (currentPanel != CurrentPanel::PAUSE && currentPanel != CurrentPanel::SETTINGS && !inHUB)
 		{
 			bool hasMap = currentPanel != CurrentPanel::MAP;
 

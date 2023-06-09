@@ -149,6 +149,8 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	if (app->layers->editor->S_GetWindowActive(ImWindowID::SCENE) &&
 		_cameras->sceneCamera->active)
 	{
+		hasMaxRenderDistance = hasMaxRenderDistanceOnInspector;
+
 		_cameras->currentDrawingCamera = _cameras->sceneCamera;
 		
 		ShadowRenderPass();
@@ -188,6 +190,7 @@ UpdateStatus ModuleRenderer3D::PostUpdate()
 	if (app->layers->editor->S_GetWindowActive(ImWindowID::GAME) && 
 		_cameras->activeGameCamera != nullptr && _cameras->activeGameCamera->active)
 	{
+		hasMaxRenderDistance = true;
 		_cameras->currentDrawingCamera = _cameras->activeGameCamera;
 
 		ShadowRenderPass();

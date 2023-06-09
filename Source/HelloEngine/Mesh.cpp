@@ -24,6 +24,8 @@ Mesh::Mesh()
 	stencilShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/stencil.shader", 109, "Stencil");
 	depthShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMap.shader", 111, "Depth Map (Normal)");
 	depthBoneShader = ModuleResourceManager::S_CreateResourceShader("Resources/shaders/depthMapBone.shader", 113, "Depth Map (Boned)");
+
+	_app = Application::Instance();
 }
 
 Mesh::~Mesh()
@@ -67,6 +69,8 @@ Mesh::~Mesh()
 	{
 		Application::Instance()->renderer3D->renderManager.RemoveSelectedMesh();
 	}
+
+	_app = nullptr;
 }
 
 void Mesh::CreateBufferData()
@@ -85,6 +89,23 @@ void Mesh::CreateBufferData()
 
 void Mesh::Draw(Material material, bool useMaterial)
 {
+	//Checks if model should be drawn 
+	if (_app->renderer3D->hasMaxRenderDistance)
+	{
+		float3 modelTranslate = modelMatrix.Transposed().TranslatePart();
+		float3 frustumPos = _app->camera->currentDrawingCamera->GetFrustumPosition();
+
+		float2 modPos(modelTranslate.x, modelTranslate.z);
+		float2 camPos(frustumPos.x, frustumPos.z);
+
+		float dist = modPos.Distance(camPos);
+
+		if (dist > _app->renderer3D->maxRenderDistance)
+		{
+			return;
+		}
+	}
+
 	if (useMaterial) // We use this function to draw the outilne too.
 	{
 		UniformDraw(material);

@@ -2,6 +2,7 @@
 #include "../Player/PlayerStats.h"
 #include "../Shooting/Projectile.h"
 #include "../Shooting/StickBomb.h"
+#include "../InteractiveEnviroment/StickyBombParticle.h"
 //Pau Olmos
 
 HELLO_ENGINE_API_C BossLoop* CreateBossLoop(ScriptToInspectorInterface* script)
@@ -59,6 +60,8 @@ HELLO_ENGINE_API_C BossLoop* CreateBossLoop(ScriptToInspectorInterface* script)
 
 void BossLoop::Start()
 {
+    Game::FindGameObjectsWithTag("StickyBombParticles", &bombParticles[0], 10);
+
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
     recoverTimer = 0;
     DieTimer = 0;
@@ -336,6 +339,13 @@ void BossLoop::CheckBombs()
         else TakeDamage(10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
+        API_GameObject particles = GetFirstInactiveBombParticle();
+        particles.SetActive(true);
+        particles.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+        particles.GetParticleSystem().Play();
+        StickyBombParticle* script = (StickyBombParticle*)particles.GetScript("StickyBombParticle");
+        script->time = 0.1f;
+        Audio::Event("sticky_bomb");
     }
 }
 
@@ -344,4 +354,14 @@ void BossLoop::AddBurn()
     burnTime += Time::GetDeltaTime();
     if (burnTime > 6.0f) burnTime = 6.0f;
     resetBurn = 0.2f;
+}
+
+API_GameObject BossLoop::GetFirstInactiveBombParticle()
+{
+    for (size_t i = 0; i < 10; i++)
+    {
+        if (!bombParticles[i].IsActive()) return bombParticles[i];
+    }
+
+    return bombParticles[0];
 }

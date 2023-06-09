@@ -1,5 +1,6 @@
 #include "ThanosLoop.h"
 #include "../Shooting/StickBomb.h"
+#include "../InteractiveEnviroment/StickyBombParticle.h"
 HELLO_ENGINE_API_C ThanosLoop* CreateThanosLoop(ScriptToInspectorInterface* script)
 {
     ThanosLoop* classInstance = new ThanosLoop();
@@ -21,6 +22,8 @@ void ThanosLoop::Start()
 }
 void ThanosLoop::Update()
 {
+    Game::FindGameObjectsWithTag("StickyBombParticles", &bombParticles[0], 10);
+
     //burn
     if (burnTime > 3.0f)
     {
@@ -82,6 +85,13 @@ void ThanosLoop::CheckBombs()
         else TakeDamage(10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
+        API_GameObject particles = GetFirstInactiveBombParticle();
+        particles.SetActive(true);
+        particles.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+        particles.GetParticleSystem().Play();
+        StickyBombParticle* script = (StickyBombParticle*)particles.GetScript("StickyBombParticle");
+        script->time = 0.1f;
+        Audio::Event("sticky_bomb");
     }
 }
 
@@ -90,4 +100,14 @@ void ThanosLoop::AddBurn()
     burnTime += Time::GetDeltaTime();
     if (burnTime > 3.0f) burnTime = 6.0f;
     resetBurn = 0.2f;
+}
+
+API_GameObject ThanosLoop::GetFirstInactiveBombParticle()
+{
+    for (size_t i = 0; i < 10; i++)
+    {
+        if (!bombParticles[i].IsActive()) return bombParticles[i];
+    }
+
+    return bombParticles[0];
 }

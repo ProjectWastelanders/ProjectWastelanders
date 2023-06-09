@@ -80,6 +80,8 @@ public:
     API_GameObject bomb;
     API_GameObject bombShield;
     uint textureBomb[6];
+    API_GameObject bombParticles[10];
+    API_GameObject GetFirstInactiveBombParticle();
     int shotgunLevel;
 
     // burn

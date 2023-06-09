@@ -430,6 +430,7 @@ void Enemy::CheckBombs()
         particles.GetParticleSystem().Play();
         StickyBombParticle* script = (StickyBombParticle*)particles.GetScript("StickyBombParticle");
         script->time = 0.1f;
+        Audio::Event("sticky_bomb");
     }
 }
 

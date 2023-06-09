@@ -193,7 +193,7 @@ void PlayerGunManager::Update()
         }
         else
         {
-            // no ammo sound?
+            Audio::Event("w_ammo_empty");
         }
     }
 

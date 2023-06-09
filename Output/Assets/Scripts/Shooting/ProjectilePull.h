@@ -21,7 +21,9 @@ public:
     void Start() override;
     void Update() override;
 
-    API_GameObject GetFirstInactiveProjectile();
+    API_GameObject GetFirstInactiveDualProjectile();
+    API_GameObject GetFirstInactiveNormalProjectile();
+    API_GameObject GetFirstInactiveRicochetProjectile();
     API_GameObject GetFirstInactiveShotgunBomb();
     void LauchProjectileNORMAL(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, PROJECTILE_ACTION projectileAction);
     void LauchProjectileSEMI(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale);
@@ -34,8 +36,12 @@ public:
     void LauchProjectileRICOCHET(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale);
     API_Vector3 CheckTargetDirectionRICOCHET(API_Vector3 ricochetPos, uint& targetUID, uint ignoreGO);
 
-    int pullSize;
-    std::vector<API_GameObject> pull;
+    int dualsPullSize;
+    int normalsPullSize;
+    int ricochetPullSize;
+    std::vector<API_GameObject> pullDuals;
+    std::vector<API_GameObject> pullNormals;
+    std::vector<API_GameObject> pullRicochet;
     // shotgun
     int shotgunBombPullSize;
     std::vector<API_GameObject> shotgunBombPull;
@@ -45,7 +51,9 @@ public:
     
     API_GameObject playerGO;
     PlayerStats* playerStats;
-    uint projectilePrefab;
+    uint projectilePrefabDuals = 0;
+    uint projectilePrefabNormals = 0;
+    uint projectilePrefabRicochet = 0;
     uint shotgunBombPrefab;
     uint checkRicochetTargetsPrefab;
 
@@ -59,9 +67,6 @@ public:
     uint burstTex = 0;
     uint shotgunTex = 0;
     uint ricochetTex = 0;
-
-    uint normalMesh = 0;
-    uint ricochetMesh = 0;
 
     bool testing = false;
 };

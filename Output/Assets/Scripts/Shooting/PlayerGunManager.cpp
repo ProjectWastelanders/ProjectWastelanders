@@ -96,14 +96,14 @@ void PlayerGunManager::Start()
     switch (equipedSpecialGun)
     {
     case 5: // flame
-        playerStats->maxLaserAmmo = 600;
+        playerStats->maxSpecialAmmo = 600;
         ammo = API_QuickSave::GetInt("specialAmmo", 600);
         if (ammo > 0) playerStats->specialAmmo = ammo;
         else playerStats->specialAmmo = 600;
         if (swapWeapon) swapWeapon->SwapWeapon3(specialWeapon_Type::FLAMETHROWER);
         break;
     case 6: // rico
-        playerStats->maxLaserAmmo = 50;
+        playerStats->maxSpecialAmmo = 50;
         ammo = API_QuickSave::GetInt("specialAmmo", 50);
         if (ammo > 0) playerStats->specialAmmo = ammo;
         else playerStats->specialAmmo = 50;

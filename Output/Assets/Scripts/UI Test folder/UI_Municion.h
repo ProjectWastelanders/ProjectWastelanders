@@ -9,6 +9,8 @@
 #include "../Player/PlayerStats.h"
 #include "../Shooting/PlayerGunManager.h"
 
+class FadeToBlack;
+
 class UI_Municion : HelloBehavior
 {
 public:
@@ -28,9 +30,16 @@ public:
     API_GameObject playerStatsGO;
     PlayerStats* playerStats;
     PlayerGunManager* playerGunManager;
+  
+    API_GameObject cinematic;
+
+    API_GameObject fade_to_black_GO;
+    FadeToBlack* fadeToBlack;
 
     float opacity_Munition = 0;
     bool opacity_Active = false;
     bool opacity_Reset = true;
+
+    bool avaliable = true;
 };
 

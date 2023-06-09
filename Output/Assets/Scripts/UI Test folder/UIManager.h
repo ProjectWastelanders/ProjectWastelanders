@@ -43,5 +43,6 @@ public:
 	Map* map;
 
 	bool isPaused;
+	bool inHUB;
 };
 

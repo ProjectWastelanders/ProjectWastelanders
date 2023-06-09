@@ -86,6 +86,18 @@ void API::API_ParticleSystem::SetInitialSpeed(API_Vector3 speed)
     _particleSystem->particleProps.speed = speed;
 }
 
+void API::API_ParticleSystem::SetRotation(API_Vector3 rotation)
+{
+
+    if (_particleSystem == nullptr)
+    {
+        Engine::Console::S_Log("Trying to acces a NULLPTR API_ParicleSystem. SetInitialSpeed()");
+        return;
+    }
+    _particleSystem->particleProps.rotation = rotation;
+
+}
+
 ParticleSystemComponent* API::API_ParticleSystem::GetComponent()
 {
 

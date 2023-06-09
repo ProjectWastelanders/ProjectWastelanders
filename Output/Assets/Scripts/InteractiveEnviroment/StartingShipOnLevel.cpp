@@ -37,12 +37,14 @@ void StartingShipOnLevel::Start()
 		lvlIndex = 1;
 	}
 
-	playerStorageRef->levelIndex = lvlIndex;
+	if(playerStorageRef)
+		playerStorageRef->levelIndex = lvlIndex;
 
 	
 	if (API_QuickSave::GetBool("IsInMiddleOfLevel") == true)
 	{
-		controlPanelShipRef->ShipActivated = false;
+		if (controlPanelShipRef)
+			controlPanelShipRef->ShipActivated = false;
 	}
 }
 void StartingShipOnLevel::Update()

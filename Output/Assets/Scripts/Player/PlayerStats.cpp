@@ -264,6 +264,7 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
             Console::Log("Casette index only can be 1, 2 or 3.");
             break;
         }
+        indexContainer->StopParticles();
         other.GetGameObject().SetActive(false);
     }
     else if (detectionTag == "CheckPoint")

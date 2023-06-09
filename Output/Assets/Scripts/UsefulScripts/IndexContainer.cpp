@@ -12,7 +12,12 @@ void IndexContainer::Start()
     gameObject.GetParticleSystem().Play();
 }
 
-void IndexContainer::Update()
+void Update()
 {
 
+}
+
+void IndexContainer::StopParticles()
+{
+    gameObject.GetParticleSystem().StopEmitting();
 }

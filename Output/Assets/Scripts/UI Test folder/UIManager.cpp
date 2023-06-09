@@ -106,7 +106,7 @@ void UIManager::Update()
 	if (currentPanel == CurrentPanel::MAP)
 	{
 		//@Roger queda en revisó
-		Audio::Event("minimap_ambience");
+		//Audio::Event("minimap_ambience");
 	}
 
 }

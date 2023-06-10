@@ -113,6 +113,10 @@ void stealDivinerDialog::PrintDialog(API_UIImage& Dialog, string audioEvent)
             if (currentDialog == 6)
             {
                 if (reachTheSpaceShip) reachTheSpaceShip->EnableMision();
+                currentDialog += 1;
+                activeAudio = true;
+                Dialog.GetGameObject().SetActive(false);
+                _timer = 0;
             }
             else if (currentDialog == 7) {
                 Dialog.GetGameObject().SetActive(false);

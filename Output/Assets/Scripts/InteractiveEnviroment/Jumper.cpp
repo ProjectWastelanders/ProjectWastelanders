@@ -59,6 +59,7 @@ void Jumper::OnCollisionEnter(API_RigidBody other)
     std::string tag = other.GetGameObject().GetTag();
     if (tag == "Player") {
         SetupJump();
+        Audio::Event("jumper");
     }
 }
 

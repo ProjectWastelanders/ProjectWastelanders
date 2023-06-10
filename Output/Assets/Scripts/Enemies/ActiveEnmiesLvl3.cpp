@@ -56,6 +56,14 @@ void ActiveEnmiesLvl3::Update()
 	{
 		EnableEnemies();
 	}
+	else if (spaceShip && !actived)
+	{
+		for (size_t i = 0; i < 18; i++)
+		{
+			enebledEnemies[i].GetRigidBody().SetVelocity((0,0,0));
+			
+		}
+	}
 }
 
 void ActiveEnmiesLvl3::EnableEnemies()

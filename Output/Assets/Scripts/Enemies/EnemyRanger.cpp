@@ -381,9 +381,40 @@ void EnemyRanger::Update()
 	}
 	if (scriptedForQuest)
 	{
-		distanceBeetweenPlayerEnemy = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
-		enemyGun->Shoot();
-		enemy->enemyRb.SetVelocity(0);
+		if (!enemy->dying)
+		{
+			distanceBeetweenPlayerEnemy = gameObject.GetTransform().GetGlobalPosition().Distance(target.GetTransform().GetGlobalPosition());
+			enemyGun->Shoot();
+			enemy->enemyRb.SetVelocity(0);
+			if (animState != AnimationState::SHOOT && !enemy->takingDmg)
+			{
+				animState = AnimationState::SHOOT;
+				animationPlayer.ChangeAnimation(aimAnim);
+				animationPlayer.Play();
+				//Console::Log("Walk");
+			}
+		}
+		else
+		{
+
+			enemy->_coldAnimDie += dt;
+			// enemy->dying = true;
+			enemy->enemyAgent.Stop();
+			enemy->enemyRb.SetVelocity(0);
+			if (enemy->_coldAnimDie < enemy->_tAnimDie)
+			{
+				if (animState != AnimationState::DIE)
+				{
+					animState = AnimationState::DIE;
+					animationPlayer.ChangeAnimation(dieAnim);
+					animationPlayer.Play();
+				}
+			}
+			else
+			{
+				gameObject.SetActive(false);
+			}
+		}
 	}
 }
 
@@ -490,6 +521,7 @@ void EnemyRanger::HitAnimation()
 		animationPlayer.ChangeAnimation(hitAnim);
 		animationPlayer.Play();
 	}
+	Console::Log("maojakjdfnjwFNJWdbwHBHWBJWnwJNWJ");
 
 }
 

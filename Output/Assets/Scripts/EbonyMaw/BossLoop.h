@@ -5,6 +5,9 @@
 #include "Macro.h"
 
 #include "API/API.h"
+
+class PlayerStats;
+
 class BossLoop : HelloBehavior
 {
 public:
@@ -14,6 +17,8 @@ public:
     void OnCollisionEnter(API::API_RigidBody other);
 
     void TakeDamage(float damage);
+
+    PlayerStats* playerStats;
 
     API_GameObject player;
     API_GameObject boss;
@@ -71,6 +76,8 @@ public:
     float speed = 75.0f;
     float acceleration = 1.2f;
     float currentSpeed = 0.0f;
+
+    bool LaughAudio = true;
 
     // bomb mechanic
     void AddBomb();

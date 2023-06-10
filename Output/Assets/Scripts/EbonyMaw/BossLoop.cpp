@@ -62,12 +62,16 @@ void BossLoop::Start()
 {
     Game::FindGameObjectsWithTag("StickyBombParticles", &bombParticles[0], 10);
 
+    playerStats = (PlayerStats*)player.GetScript("PlayerStats");
+    if (playerStats == nullptr) Console::Log("playerStats missing in BossLoop Script.");
+
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
     recoverTimer = 0;
     DieTimer = 0;
     knockUpTimer = 0;
 
     draxDialog = false;
+    LaughAudio = true;
 
     blood.GetTransform().SetPosition(0, -1000, 0);
 
@@ -76,8 +80,6 @@ void BossLoop::Start()
 void BossLoop::Update()
 {
     dist = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
-
-    
 
     if (destroyHighCover == true) {
         highCoverTime += Time::GetDeltaTime();
@@ -161,6 +163,12 @@ void BossLoop::Update()
     }
 
     if (dist < 80.0f && battle) {
+
+        if (playerStats->currentHp <= 0 && LaughAudio == true)
+        {
+            Audio::Event("ebony_laugh");
+            LaughAudio = false;
+        }
         if (hp > 0) {
             if (canTakeDamage == true) {
                 dt = Time::GetDeltaTime();
@@ -295,7 +303,7 @@ void BossLoop::TakeDamage(float damage)
     if (hp <= 0) return;
     
     if (canTakeDamage == true) {
-
+        Audio::Event("ebony_damaged");
         bloodTimer = 0.0f;
         blood.GetTransform().SetPosition(0,0, 0);
 

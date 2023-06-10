@@ -91,7 +91,7 @@ public:
     PlayerStorage* storage;
     void SaveInStorage(int index);
     void SaveChestData(int chestContent, int chestIndex, bool saveChest);
-
+    bool CassetePicked = false;
     // move
     PlayerMove* playerMove;
 

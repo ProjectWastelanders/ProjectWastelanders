@@ -251,14 +251,17 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         case 1:
             storage->casette1Picked = true;
             storage->SaveData();
+            CassetePicked = true;
             break;
         case 2:
             storage->casette2Picked = true;
             storage->SaveData();
+            CassetePicked = true;
             break;
         case 3:
             storage->casette3Picked = true;
             storage->SaveData();
+            CassetePicked = true;
             break;
         default:
             Console::Log("Casette index only can be 1, 2 or 3.");

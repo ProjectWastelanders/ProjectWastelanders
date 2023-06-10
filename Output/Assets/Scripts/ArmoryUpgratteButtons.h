@@ -21,6 +21,8 @@ public:
     API_UIButton Upgrate2;
     API_UIButton Upgrate3;
 
+    API_GameObject upgradeHoldImages[3];
+
     API_UIInput PanelUpgrate;
 
     API_UIInput SelectWeaponList;

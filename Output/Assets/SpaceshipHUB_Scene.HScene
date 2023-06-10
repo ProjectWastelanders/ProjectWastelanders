@@ -25184,7 +25184,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25217,6 +25217,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 604812651,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2420570611,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.10000000149011612,
                     0.0
@@ -25229,7 +25269,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25262,6 +25302,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 4097172583,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2155677621,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.44999998807907104,
                     0.0
@@ -25274,7 +25354,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25299,6 +25379,46 @@
         "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 3294404498,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 3294404498,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2079372440,
         "UpdateWithBones": false
     },
     {
@@ -25419,7 +25539,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25444,6 +25564,46 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 2830347253,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.699999988079071,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 2830347253,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2942520291,
         "UpdateWithBones": false
     },
     {
@@ -25575,7 +25735,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25608,6 +25768,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 2912728259,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 454344266,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.10000000149011612,
                     0.0
@@ -25620,7 +25820,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25653,6 +25853,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 173239198,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 1993093369,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.44999998807907104,
                     0.0
@@ -25665,7 +25905,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25690,6 +25930,46 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 818036790,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 818036790,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 1187431856,
         "UpdateWithBones": false
     },
     {
@@ -25810,7 +26090,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25835,6 +26115,46 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 3848750910,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.699999988079071,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 3848750910,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 3607126075,
         "UpdateWithBones": false
     },
     {
@@ -25966,7 +26286,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -25999,6 +26319,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 2388101176,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 1892240366,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.10000000149011612,
                     0.0
@@ -26011,7 +26371,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26044,6 +26404,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 3807946136,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2923991945,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.44999998807907104,
                     0.0
@@ -26056,7 +26456,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26081,6 +26481,46 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 1866621559,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 1866621559,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2427079627,
         "UpdateWithBones": false
     },
     {
@@ -26201,7 +26641,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26226,6 +26666,46 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 193056597,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.699999988079071,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 193056597,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 3755258611,
         "UpdateWithBones": false
     },
     {
@@ -26357,7 +26837,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26390,6 +26870,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 2759158044,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 1201104101,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.10000000149011612,
                     0.0
@@ -26402,7 +26922,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26435,6 +26955,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 2929867724,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 2233847868,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.44999998807907104,
                     0.0
@@ -26447,7 +27007,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26472,6 +27032,46 @@
         "PrefabUID": 2406411174,
         "Tag": "UI",
         "UID": 3733990972,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 3733990972,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 3345210471,
         "UpdateWithBones": false
     },
     {
@@ -26803,7 +27403,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26836,6 +27436,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 679429780,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 1162509497,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.10000000149011612,
                     0.0
@@ -26848,7 +27488,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26881,6 +27521,46 @@
             {
                 "Enabled": true,
                 "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 2105882532,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 1976533884,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
                     0.44999998807907104,
                     -0.44999998807907104,
                     0.0
@@ -26893,7 +27573,7 @@
                 "Scale": [
                     0.30000001192092896,
                     0.20000000298023224,
-                    0.0
+                    1.0
                 ],
                 "Type": 1
             },
@@ -26918,6 +27598,46 @@
         "PrefabUID": 675833853,
         "Tag": "UI",
         "UID": 644144115,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.6000000238418579,
+                    -0.5,
+                    -0.800000011920929
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.4000000059604645,
+                    0.3799999952316284,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FillImage": 1.0,
+                "MaterialResource": 2270556087,
+                "MeshEnabled": true,
+                "OpacityDirection": 0,
+                "Type": 15
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "HoldImage",
+        "ParentUID": 644144115,
+        "PrefabUID": 1912271846,
+        "Tag": "UI",
+        "UID": 161584550,
         "UpdateWithBones": false
     },
     {
@@ -32434,7 +33154,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    1275.4000244140625,
+                    1350.4000244140625,
                     0.33500000834465027,
                     0.0
                 ],
@@ -32458,7 +33178,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 1300.4000244140625,
+                "PositionX": 1375.4000244140625,
                 "PositionY": 0.33500000834465027,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32480,7 +33200,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    1275.4000244140625,
+                    1350.4000244140625,
                     0.03999999910593033,
                     0.0
                 ],
@@ -32504,7 +33224,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 1300.4000244140625,
+                "PositionX": 1375.4000244140625,
                 "PositionY": 0.03999999910593033,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32526,7 +33246,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    1275.4000244140625,
+                    1350.4000244140625,
                     -0.36000001430511475,
                     0.0
                 ],
@@ -32550,7 +33270,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 1300.4000244140625,
+                "PositionX": 1375.4000244140625,
                 "PositionY": -0.36000001430511475,
                 "Scale": 0.30000001192092896,
                 "Text": "50",

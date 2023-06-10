@@ -26,7 +26,7 @@ void LaserDmg::OnCollisionStay(API::API_RigidBody other)
 	std::string detectionName = other.GetGameObject().GetName();
 	
 
-	if (detectionName == "Player" && Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER && Tmov->distBP < 25.0f)
+	if (detectionName == "Player" && Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER)
 	{
 
 		dmgCooldown += Time::GetDeltaTime();

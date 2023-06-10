@@ -30,6 +30,8 @@ void ControlPanelShip::Start()
     {
         ShipManagerRef->SetShipInactive(Ship);
     }
+    AudioActivated = true;
+    AudioActivated2 = true;
 }
 void ControlPanelShip::Update()
 {
@@ -43,14 +45,23 @@ void ControlPanelShip::OnCollisionStay(API_RigidBody other)
     std::string detectionName = other.GetGameObject().GetName();
     if (detectionName == "Player")
     {
-
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_REPEAT)
         {
             timerToShip += Time::GetDeltaTime();
-            Audio::Event("spaceship_call");
+            if (AudioActivated == true) 
+            {
+                Audio::Event("spaceship_call");
+                AudioActivated = false;
+            }
             if (timerToShip >= 0.98f)
             {
+                if (AudioActivated2 == true)
+                {
+                    Audio::Event("spaceship_come");
+                    AudioActivated2 = false;
+                }
                 ShipManagerRef->SetShipActive(Ship);
+                
             }
             else
             {
@@ -61,6 +72,8 @@ void ControlPanelShip::OnCollisionStay(API_RigidBody other)
         {
             fadeToBlackRef->fadeToBlack = false;
             fadeToBlackRef->blackToFade = true;
+            AudioActivated = true;
+            AudioActivated = true;
             timerToShip = 0.0f;
         }
 

@@ -207,5 +207,8 @@ public:
 	float dashTimer = 0.0f;
 
 	bool playerDeath = false;
+
+	bool brokenFloor = false;
+	float brokenFloorTimer = 0.0f;
 };
 

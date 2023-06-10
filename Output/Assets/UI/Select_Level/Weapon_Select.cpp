@@ -48,30 +48,23 @@ void Weapon_Select::Start()
 }
 void Weapon_Select::Update()
 {
-    if (inOpen)
-    {
-        if (API_QuickSave::GetBool("semiautomaticUnlocked"))
-            weapons[0].SetBlocked(true);
-        else
-            weapons[0].SetBlocked(false);
+    if (API_QuickSave::GetBool("shotgunUnlocked"))
+        weapons[0].SetBlocked(false);
+    else
+        weapons[0].SetBlocked(true);
 
-        if (API_QuickSave::GetBool("automaticUnlocked"))
-            weapons[1].SetBlocked(true);
-        else
-            weapons[1].SetBlocked(false);
+    if (API_QuickSave::GetBool("automaticUnlocked"))
+        weapons[1].SetBlocked(false);
+    else
+        weapons[1].SetBlocked(true);
 
-        if (API_QuickSave::GetBool("burstUnlocked"))
-            weapons[2].SetBlocked(true);
-        else
-            weapons[2].SetBlocked(false);
+    if (API_QuickSave::GetBool("burstUnlocked"))
+        weapons[2].SetBlocked(false);
+    else
+        weapons[2].SetBlocked(true);
 
-        if (API_QuickSave::GetBool("shotgunUnlocked"))
-            weapons[3].SetBlocked(true);
-        else
-            weapons[3].SetBlocked(false);
+    weapons[3].SetBlocked(false);
 
-        inOpen = false;
-    }
 
     if ((Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetGamePadAxis(GamePadAxis::AXIS_LEFTY) > 10000 && isPress) && indexLevles >= 1 && weaponSelectPanel.GetGameObject().IsActive())
     {
@@ -92,7 +85,7 @@ void Weapon_Select::Update()
     {
         for (int i = 0; i < 4; ++i)
         {
-            if (weapons[i].OnPress())
+            if (weapons[i].OnPress() && !weapons[i].getIsBlocked())
             {
                 weaponSelectPanel.GetGameObject().SetActive(false);
                 proceedPanel.GetGameObject().SetActive(true);

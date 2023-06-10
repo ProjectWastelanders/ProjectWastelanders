@@ -10,6 +10,7 @@
 class AbilityTreeUpgrades : HelloBehavior
 {
 public:
+    void Init() override;
     void Start() override;
     void Update() override;
 
@@ -19,7 +20,6 @@ public:
 
     void UpgradeSkill();
     void ShowBlockedImage();
-
 
     int upgradeCost;
 
@@ -34,6 +34,8 @@ public:
     API_UIButton Upgrate5;
     int skillPoints5;
     int upgradeNum;
+
+    API_GameObject upgradeHoldImages[5];
 
     API_UIInput mainPanel;
     API_UIInput currentPanel;

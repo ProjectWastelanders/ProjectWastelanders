@@ -30,6 +30,16 @@ HELLO_ENGINE_API_C AbilityTreeUpgrades* CreateAbilityTreeUpgrades(ScriptToInspec
     return classInstance;
 }
 
+void AbilityTreeUpgrades::Init()
+{
+    // Get hold images from the 3 upgrade buttons
+    Upgrate1.GetGameObject().GetChildren(&upgradeHoldImages[0], 1);
+    Upgrate2.GetGameObject().GetChildren(&upgradeHoldImages[1], 1);
+    Upgrate3.GetGameObject().GetChildren(&upgradeHoldImages[2], 1);
+    Upgrate4.GetGameObject().GetChildren(&upgradeHoldImages[3], 1);
+    Upgrate5.GetGameObject().GetChildren(&upgradeHoldImages[4], 1);
+}
+
 void AbilityTreeUpgrades::Start()
 {
     skillLevel = API_QuickSave::GetInt("tree" + std::to_string(treeIndex) + "_level");
@@ -61,7 +71,13 @@ void AbilityTreeUpgrades::Start()
 void AbilityTreeUpgrades::Update()
 {
     if (!isOn)
+    {
+        for (int i = 0; i < 5; ++i)
+        {
+            upgradeHoldImages[i].SetActive(false);
+        }
         return;
+    }
     currentBoughtPanel.SetEnable(true);
 
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN && currentPanel.IsEnabled())
@@ -123,6 +139,13 @@ void AbilityTreeUpgrades::Update()
             }
         }
     }
+
+    upgradeHoldImages[0].SetActive((Upgrate1.OnHovered() || Upgrate1.OnPress() || Upgrate1.OnHold()) && skillLevel == 0);
+    upgradeHoldImages[1].SetActive((Upgrate2.OnHovered() || Upgrate2.OnPress() || Upgrate2.OnHold()) && skillLevel == 1);
+    upgradeHoldImages[2].SetActive((Upgrate3.OnHovered() || Upgrate3.OnPress() || Upgrate3.OnHold()) && skillLevel == 2);
+    upgradeHoldImages[3].SetActive((Upgrate4.OnHovered() || Upgrate4.OnPress() || Upgrate4.OnHold()) && skillLevel == 3);
+    upgradeHoldImages[4].SetActive((Upgrate5.OnHovered() || Upgrate5.OnPress() || Upgrate5.OnHold()) && skillLevel == 4);
+
 
     ShowBlockedImage(); // Logic that shows the Blocked image when hovering a blocked skill.
 

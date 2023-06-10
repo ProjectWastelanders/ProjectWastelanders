@@ -14,7 +14,7 @@ class ThanosCinematic : HelloBehavior
 public:
 	void Start() override; 
 	void Update() override;
-	void PrintDialog(API_UIImage& Dialog);
+	void PrintDialog(API_UIImage& Dialog, string audioEvent);
 	void OnCollisionEnter(API::API_RigidBody other) override;
 
 	API_UIImage Dialog_1;

@@ -46,7 +46,7 @@ void ThanosCinematic::Start()
     movingPos = { 0, -1.500, 0 };
     //finalPos = { 0, -0.500, 0 };
 
-    currentDialog = 1;
+    currentDialog = 0;
 
     activeAudio = true;
 
@@ -86,83 +86,47 @@ void ThanosCinematic::Update()
         playerMov->PlayIdleAnim();
         switch (currentDialog)
         {
-        case 1:
+        case 0:
             camMov->target = player;
-            PrintDialog(Dialog_1);
-            if (activeAudio) {
-                Audio::Event("starlord_confident");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_1, "starlord_confident");
+            break;
+        case 1:
+            camMov->target = boss;
+            PrintDialog(Dialog_2, "thanos_doubt");
             break;
         case 2:
-            camMov->target = boss;
-            PrintDialog(Dialog_2);
-            if (activeAudio) {
-                Audio::Event("thanos_doubt");
-                activeAudio = false;
-            }
+            camMov->target = player;
+            PrintDialog(Dialog_3, "starlord_confident");
             break;
         case 3:
-            camMov->target = player;
-            PrintDialog(Dialog_3);
-            if (activeAudio) {
-                Audio::Event("starlord_confident");
-                activeAudio = false;
-            }
+            camMov->target = boss;
+            PrintDialog(Dialog_4, "thanos_cool");
             break;
         case 4:
             camMov->target = boss;
-            PrintDialog(Dialog_4);
-            if (activeAudio) {
-                Audio::Event("thanos_cool");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_5, "thanos_calm");
             break;
         case 5:
-            camMov->target = boss;
-            PrintDialog(Dialog_5);
-            if (activeAudio) {
-                Audio::Event("thanos_calm");
-                activeAudio = false;
-            }
+            camMov->target = player;
+            PrintDialog(Dialog_6, "starlord_sorry");
             break;
         case 6:
-            camMov->target = player;
-            PrintDialog(Dialog_6);
-            if (activeAudio) {
-                Audio::Event("starlord_sorry");
-                activeAudio = false;
-            }
+            camMov->target = boss;
+            PrintDialog(Dialog_7, "thanos_facing");
             break;
         case 7:
-            camMov->target = boss;
-            PrintDialog(Dialog_7);
-            if (activeAudio) {
-                Audio::Event("thanos_facing");
-                activeAudio = false;
-            }
+            camMov->target = player;
+            PrintDialog(Dialog_8, "starlord_confident");
             break;
         case 8:
-            camMov->target = player;
-            PrintDialog(Dialog_8);
-            if (activeAudio) {
-                Audio::Event("starlord_confident");
-                activeAudio = false;
-            }
-            break;
-        case 9:
             camMov->target = boss;
-            PrintDialog(Dialog_9);
-            if (activeAudio) {
-                Audio::Event("thanos_threatening");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_9, "thanos_threatening");
             break;
         }
     }
 }
 
-void ThanosCinematic::PrintDialog(API_UIImage& Dialog)
+void ThanosCinematic::PrintDialog(API_UIImage& Dialog, string audioEvent)
 {
     Dialog.GetGameObject().SetActive(true);
 
@@ -172,7 +136,7 @@ void ThanosCinematic::PrintDialog(API_UIImage& Dialog)
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 9) {
+            if (currentDialog == 8) {
                 Dialog.GetGameObject().SetActive(false);
                 camMov->target = player;
                 tMovement->cinematic = false;
@@ -190,6 +154,10 @@ void ThanosCinematic::PrintDialog(API_UIImage& Dialog)
         }
     }
     else {
+        if (activeAudio) {
+            Audio::Event(audioEvent.c_str());
+            activeAudio = false;
+        }
         if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
         {
             movingPos.y += 1 * Time::GetDeltaTime();

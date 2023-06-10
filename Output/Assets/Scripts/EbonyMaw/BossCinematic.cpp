@@ -48,7 +48,7 @@ void BossCinematic::Start()
     movingPos = { 0, -1.500, 0 };
     //finalPos = { 0, -0.500, 0 };
 
-    currentDialog = 1;
+    currentDialog = 0;
 
     Dialog_1.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_1.GetGameObject().SetActive(false);
@@ -93,49 +93,29 @@ void BossCinematic::Update()
             playerMov->PlayIdleAnim();
             switch (currentDialog)
             {
-            case 1:
+            case 0:
                 camMov->target = boss;
-                PrintDialog(Dialog_1);
-                if (activeAudio) {
-                    Audio::Event("ebony_threatening");
-                    activeAudio = false;
-                }
+                PrintDialog(Dialog_1, "ebony_threatening");
+                break;
+            case 1:
+                camMov->target = player;
+                PrintDialog(Dialog_2, "starlord_confident");
                 break;
             case 2:
-                camMov->target = player;
-                PrintDialog(Dialog_2);
-                if (activeAudio) {
-                    Audio::Event("starlord_confident");
-                    activeAudio = false;
-                }
+                camMov->target = boss;
+                PrintDialog(Dialog_3, "ebony_threatening");
                 break;
             case 3:
                 camMov->target = boss;
-                PrintDialog(Dialog_3);
-                if (activeAudio) {
-                    Audio::Event("ebony_threatening");
-                    activeAudio = false;
-                }
+                PrintDialog(Dialog_4, "ebony_threatening");
                 break;
             case 4:
-                camMov->target = boss;
-                PrintDialog(Dialog_4);
+                camMov->target = player;
+                PrintDialog(Dialog_5, "starlord_dubitative");
                 break;
             case 5:
-                camMov->target = player;
-                PrintDialog(Dialog_5);
-                if (activeAudio) {
-                    Audio::Event("starlord_dubitative");
-                    activeAudio = false;
-                }
-                break;
-            case 6:
                 camMov->target = boss;
-                PrintDialog(Dialog_6);
-                if (activeAudio) {
-                    Audio::Event("ebony_threatening");
-                    activeAudio = false;
-                }
+                PrintDialog(Dialog_6, "ebony_threatening");
                 break;
             }
         }
@@ -212,7 +192,7 @@ void BossCinematic::Update()
     }
 }
 
-void BossCinematic::PrintDialog(API_UIImage &Dialog)
+void BossCinematic::PrintDialog(API_UIImage &Dialog, string audioEvent)
 {
     Dialog.GetGameObject().SetActive(true);
 
@@ -222,7 +202,7 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 6) {
+            if (currentDialog == 5) {
                 Dialog.GetGameObject().SetActive(false);
                 camMov->target = player;
                 bLoop->battle = true;
@@ -240,6 +220,10 @@ void BossCinematic::PrintDialog(API_UIImage &Dialog)
         }
     }
     else {
+        if (activeAudio) {
+            Audio::Event(audioEvent.c_str());
+            activeAudio = false;
+        }
         if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
         {
             movingPos.y += 1 * Time::GetDeltaTime();

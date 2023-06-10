@@ -12,7 +12,7 @@ class stealDivinerDialog : HelloBehavior
 public:
 	void Start() override; 
 	void Update() override;
-	void PrintDialog(API_UIImage& Dialog);
+	void PrintDialog(API_UIImage& Dialog, string audioEvent);
 
     API_UIImage Dialog_1;
     API_UIImage Dialog_2;

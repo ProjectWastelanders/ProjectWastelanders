@@ -26,7 +26,7 @@ void StartOfLvl3::Start()
     movingPos = { 0, -1.500, 0 };
     //finalPos = { 0, -0.500, 0 };
 
-    currentDialog = 1;
+    currentDialog = 0;
 
     Dialog_1.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_1.GetGameObject().SetActive(false);
@@ -46,33 +46,17 @@ void StartOfLvl3::Update()
 
         switch (currentDialog)
         {
+        case 0:
+            PrintDialog(Dialog_1, "starlord_surprised");
+            break;
         case 1:
-            PrintDialog(Dialog_1);
-            if (activeAudio) {
-                Audio::Event("starlord_surprised");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_2, "groot_surprised");
             break;
         case 2:
-            PrintDialog(Dialog_2);
-            if (activeAudio) {
-                Audio::Event("groot_surprised");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_3, "rocket_annoyed");
             break;
         case 3:
-            PrintDialog(Dialog_3);
-            if (activeAudio) {
-                Audio::Event("rocket_annoyed");
-                activeAudio = false;
-            }
-            break;
-        case 4:
-            PrintDialog(Dialog_4);
-            if (activeAudio) {
-                Audio::Event("starlord_sorry");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_4, "starlord_sorry");
             break;
         default:
             break;
@@ -80,7 +64,7 @@ void StartOfLvl3::Update()
     }
 }
 
-void StartOfLvl3::PrintDialog(API_UIImage& Dialog)
+void StartOfLvl3::PrintDialog(API_UIImage& Dialog, string audioEvent)
 {
     Dialog.GetGameObject().SetActive(true);
     if (_timer >= timer) {
@@ -89,7 +73,7 @@ void StartOfLvl3::PrintDialog(API_UIImage& Dialog)
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 4) {
+            if (currentDialog == 3) {
                 Dialog.GetGameObject().SetActive(false);
                 activeDialogs = false;
             }
@@ -102,6 +86,10 @@ void StartOfLvl3::PrintDialog(API_UIImage& Dialog)
         }
     }
     else {
+        if (activeAudio) {
+            Audio::Event(audioEvent.c_str());
+            activeAudio = false;
+        }
         if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
         {
             movingPos.y += 1 * Time::GetDeltaTime();

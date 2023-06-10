@@ -37,7 +37,7 @@ void stealDivinerDialog::Start()
     movingPos = { 0, -1.500, 0 };
     //finalPos = { 0, -0.500, 0 };
 
-    currentDialog = 1;
+    currentDialog = 0;
 
     Dialog_1.GetGameObject().GetTransform().SetPosition(initalPos);
     Dialog_1.GetGameObject().SetActive(false);
@@ -70,61 +70,29 @@ void stealDivinerDialog::Update()
 
         switch (currentDialog)
         {
+        case 0:
+            PrintDialog(Dialog_1, "collector_hey");
+            break;
         case 1:
-            PrintDialog(Dialog_1);
-            if (activeAudio) {
-                Audio::Event("collector_hey");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_2, "starlord_dubitative");         
             break;
         case 2:
-            PrintDialog(Dialog_2);
-            if (activeAudio) {
-                Audio::Event("starlord_dubitative");
-                activeAudio = false;
-            }            
+            PrintDialog(Dialog_3, "collector_help");
             break;
         case 3:
-            PrintDialog(Dialog_3);
-            if (activeAudio) {
-                Audio::Event("collector_help");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_4, "starlord_surprised");
             break;
         case 4:
-            PrintDialog(Dialog_4);
-            if (activeAudio) {
-                Audio::Event("starlord_surprised");
-                activeAudio = false;
-            }
+            PrintDialog(Dialog_5, "collector_hey");
             break;
         case 5:
-            PrintDialog(Dialog_5);
-            if (activeAudio) {
-                Audio::Event("collector_hey");
-                activeAudio = false;
-            }            
+            PrintDialog(Dialog_6, "collector_help");
             break;
         case 6:
-            PrintDialog(Dialog_6);
-            if (activeAudio) {
-                Audio::Event("collector_help");
-                activeAudio = false;
-            }            
+            PrintDialog(Dialog_7, "gamora_warning");  
             break;
         case 7:
-            PrintDialog(Dialog_7);
-            if (activeAudio) {
-                Audio::Event("gamora_warning");
-                activeAudio = false;
-            }            
-            break;
-        case 8:
-            PrintDialog(Dialog_8);
-            if (activeAudio) {
-                Audio::Event("rocket_annoyed");
-                activeAudio = false;
-            }            
+            PrintDialog(Dialog_8, "rocket_annoyed");
             break;
         default:
             break;
@@ -133,7 +101,7 @@ void stealDivinerDialog::Update()
     
 }
 
-void stealDivinerDialog::PrintDialog(API_UIImage& Dialog)
+void stealDivinerDialog::PrintDialog(API_UIImage& Dialog, string audioEvent)
 {
     Dialog.GetGameObject().SetActive(true);
     if (_timer >= timer) {
@@ -142,11 +110,11 @@ void stealDivinerDialog::PrintDialog(API_UIImage& Dialog)
             movingPos.y -= 1 * Time::GetDeltaTime();
         }
         else {
-            if (currentDialog == 7)
+            if (currentDialog == 6)
             {
                 if (reachTheSpaceShip) reachTheSpaceShip->EnableMision();
             }
-            else if (currentDialog == 8) {
+            else if (currentDialog == 7) {
                 Dialog.GetGameObject().SetActive(false);
                 activeDialogs = false;                
             }
@@ -159,6 +127,10 @@ void stealDivinerDialog::PrintDialog(API_UIImage& Dialog)
         }
     }
     else {
+        if (activeAudio) {
+            Audio::Event(audioEvent.c_str());
+            activeAudio = false;
+        }
         if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPos.y)
         {
             movingPos.y += 1 * Time::GetDeltaTime();

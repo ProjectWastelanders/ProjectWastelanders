@@ -35,16 +35,12 @@ void Tp_Dialog::Update()
 	if (playerStats != nullptr) {
 		if (playerStats->showTpDialog)
 		{
-			PrintDialog(Dialog_1);
-			if (activeAudio) {
-				Audio::Event("rocket_surprised");
-				activeAudio = false;
-			}
+			PrintDialog(Dialog_1, "rocket_surprised");
 		}
 	}
 }
 
-void Tp_Dialog::PrintDialog(API_UIImage& Dialog)
+void Tp_Dialog::PrintDialog(API_UIImage& Dialog, string audioEvent)
 {
 	Dialog.GetGameObject().SetActive(true);
 	if (_timer >= timer) {
@@ -58,6 +54,10 @@ void Tp_Dialog::PrintDialog(API_UIImage& Dialog)
 		}
 	}
 	else {
+		if (activeAudio) {
+			Audio::Event(audioEvent.c_str());
+			activeAudio = false;
+		}
 		if (Dialog.GetGameObject().GetTransform().GetGlobalPosition().y < finalPosDialog.y)
 		{
 			movingPosDialog.y += 1 * Time::GetDeltaTime();

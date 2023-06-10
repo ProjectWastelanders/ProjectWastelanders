@@ -12,7 +12,7 @@ class Tp_Dialog : HelloBehavior
 public:
 	void Start() override; 
 	void Update() override;
-	void PrintDialog(API_UIImage& Dialog);
+	void PrintDialog(API_UIImage& Dialog, string audioEvent);
 
 	API_GameObject playerGO;
 	PlayerStats* playerStats;

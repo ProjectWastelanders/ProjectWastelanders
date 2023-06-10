@@ -27,6 +27,8 @@ public:
 	float timerToShip = 0.0f;
 
 	bool ShipActivated = false;
+	bool AudioActivated = true;
+	bool AudioActivated2 = true;
 
 };
 

@@ -106,6 +106,7 @@ void Chest::Update()
                 Tutorial_Img.GetGameObject().SetActive(false);
                 gameObject.SetActive(false);
             }
+            if(tutorialSpecialWeapon == true || tutorialWeaponBlueprint)Audio::Event("info_alert");
             activeTutorial = true;
 
         }

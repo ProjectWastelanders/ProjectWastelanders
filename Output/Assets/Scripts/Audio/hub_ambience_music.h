@@ -5,7 +5,7 @@
 
 #include "API/API.h"
 
-class Hub_Audio_Ambience : HelloBehavior
+class hub_ambience_music : HelloBehavior
 {
 public:
 	void Start() override; 

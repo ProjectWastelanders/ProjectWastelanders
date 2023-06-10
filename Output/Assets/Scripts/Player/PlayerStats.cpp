@@ -251,17 +251,29 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         case 1:
             storage->casette1Picked = true;
             storage->SaveData();
-            CassetePicked = true;
+            if (CassetePicked == false)
+            {
+                CassetePicked = true;
+                Audio::Event("info_alert");
+            }
             break;
         case 2:
             storage->casette2Picked = true;
             storage->SaveData();
-            CassetePicked = true;
+            if (CassetePicked == false)
+            {
+                CassetePicked = true;
+                Audio::Event("info_alert");
+            }
             break;
         case 3:
             storage->casette3Picked = true;
             storage->SaveData();
-            CassetePicked = true;
+            if (CassetePicked == false)
+            {
+                CassetePicked = true;
+                Audio::Event("info_alert");
+            }
             break;
         default:
             Console::Log("Casette index only can be 1, 2 or 3.");
@@ -319,6 +331,7 @@ void PlayerStats::TakeDamage(float amount, float resistanceDamage)
         {
             currentHp = 0;
             Audio::Event("starlord_dead");
+            Audio::Event("game_over");
             deathTime = 1.5f;
             if (playerMove) playerMove->PlayDeathAnim();
             return;

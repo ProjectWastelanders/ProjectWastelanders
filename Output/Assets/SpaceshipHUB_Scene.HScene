@@ -12836,6 +12836,12 @@
                 ],
                 "Script Resource": 775870401,
                 "Type": 5
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 0,
+                "Type": 5
             }
         ],
         "FirstOnPrefab": false,
@@ -32428,7 +32434,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    875.4000244140625,
+                    1275.4000244140625,
                     0.33500000834465027,
                     0.0
                 ],
@@ -32452,7 +32458,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 900.4000244140625,
+                "PositionX": 1300.4000244140625,
                 "PositionY": 0.33500000834465027,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32474,7 +32480,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    875.4000244140625,
+                    1275.4000244140625,
                     0.03999999910593033,
                     0.0
                 ],
@@ -32498,7 +32504,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 900.4000244140625,
+                "PositionX": 1300.4000244140625,
                 "PositionY": 0.03999999910593033,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -32520,7 +32526,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    875.4000244140625,
+                    1275.4000244140625,
                     -0.36000001430511475,
                     0.0
                 ],
@@ -32544,7 +32550,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 900.4000244140625,
+                "PositionX": 1300.4000244140625,
                 "PositionY": -0.36000001430511475,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -36552,6 +36558,44 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 1149988803,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": null,
+                "Script Resource": 473247281,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Hub_ambience_music",
+        "ParentUID": 2830428646,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 995988035,
         "UpdateWithBones": false
     }
 ]

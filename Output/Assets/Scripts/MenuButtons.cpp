@@ -26,6 +26,7 @@ void MenuButtons::Init()
 void MenuButtons::Start()
 {
     settingsActive = true;
+    Audio::Event("main_menu_song");
 }
 void MenuButtons::Update()
 {

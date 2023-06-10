@@ -101,8 +101,10 @@ void BreakableWall::DestroyWall()
     fenceRigidbody.SetTrigger(true);
     tutorial_active = true;
     isDestroyed = true;
-    Audio::Event("info_alert");
-
+    if (hideChest == false)
+    {
+        Audio::Event("info_alert");
+    }
     animationPlayer.Play();
 
 }

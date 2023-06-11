@@ -18,6 +18,6 @@ public:
 	API_GameObject extractorGO;
 	SmokeExtractorTrap* smokeExtractor;
 
-	bool activeAudio;
+	bool activeAudio, playSmoke, playFire;
 };
 

@@ -17,6 +17,8 @@ void ExtractorAudio::Start()
 	if (smokeExtractor == nullptr) Console::Log("smokeExtractor missing in ExtractorAudio Script.");
 
     activeAudio = false;
+	playSmoke = true;
+	playFire = true;
 }
 void ExtractorAudio::Update()
 {
@@ -24,12 +26,17 @@ void ExtractorAudio::Update()
 	{
 		if (activeAudio)
 		{
-			if (smokeExtractor->throwFire)
+			if (smokeExtractor->throwFire && playFire)
 			{
 				Audio::Event("trap_fire");
+				playFire = false;
+				playSmoke = true;
 			}
-			else {
+			if (!smokeExtractor->throwFire && playSmoke)
+			{
 				Audio::Event("trap_smoke");
+				playSmoke = false;
+				playFire = true;
 			}
 		}
 	}	
@@ -44,5 +51,10 @@ void ExtractorAudio::OnCollisionEnter(API::API_RigidBody other)
 void ExtractorAudio::OnCollisionExit(API::API_RigidBody other)
 {
 	std::string detectionTag = other.GetGameObject().GetTag();
-	if (detectionTag == "Player") activeAudio = false;
+	if (detectionTag == "Player")
+	{
+		activeAudio = false;
+		playSmoke = true;
+		playFire = true;
+	}
 }

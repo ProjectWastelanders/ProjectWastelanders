@@ -164,6 +164,14 @@ void ThanosAttacks::Start()
 void ThanosAttacks::Update()
 {
 
+	if (area.IsActive() == true) {
+		brokenFloorTimer += Time::GetDeltaTime();
+		if (brokenFloorTimer > 5.0f) {
+			brokenFloorTimer = 0.0f;
+			area.SetActive(false);
+		}
+	}
+
 	if (pStats->currentHp < 0 && playerDeath == false) {
 		Audio::Event("thanos_laugh");
 		playerDeath = true;
@@ -339,7 +347,7 @@ void ThanosAttacks::Update()
 					thanosAnimationPlayer.SetLoop(true);
 					thanosAnimationPlayer.Play();
 				}
-					if (attackType < 50 && attackType > 25) {
+				if (attackType < 50 && attackType > 25) {
 					playerPosition = player.GetTransform().GetGlobalPosition();
 					thanosPosition = gameObject.GetTransform().GetGlobalPosition();
 					thanosState = THANOS_STATE::DASH2;
@@ -347,6 +355,8 @@ void ThanosAttacks::Update()
 					thanosAnimationPlayer.ChangeAnimation(thanosPunchAttack);
 					thanosAnimationPlayer.SetLoop(false);
 					thanosAnimationPlayer.Play();
+					brokenFloorTimer = 0.0f;
+
 				}
 				if (attackType <= 25) {
 					playerPosition = player.GetTransform().GetGlobalPosition();
@@ -469,7 +479,6 @@ void ThanosAttacks::Update()
 
 			}
 			else {
-				area.SetActive(false);
 				Seek2(&gameObject, thanosPosition, dashSpeed);
 				
 
@@ -701,6 +710,7 @@ void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float spee
 			if (areaDmg == false) {
 				areaDmg = true;
 				area.SetActive(true);
+				area.GetTransform().SetPosition({ gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y - 0.5f, gameObject.GetTransform().GetGlobalPosition().z });
 				thanosAnimationPlayer.ChangeAnimation(thanosIdle2Animation);
 				thanosAnimationPlayer.SetLoop(true);
 				thanosAnimationPlayer.Play();

@@ -198,8 +198,7 @@ hr.rounded {
     font-size: 1.6rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.btn:hover
-{
+.btn:hover {
     color: #fff;
     background: #333;
     border-bottom: #000;
@@ -327,7 +326,6 @@ h4 {
     color: #fff;
     width: 80%;
     height: auto;
-    
 }
 
 /* Number text (1/3 etc) */
@@ -339,10 +337,9 @@ h4 {
     top: 10;
 }
 
-.dotgroup{
-    text-align:center;
+.dotgroup {
+    text-align: center;
     transform: translateX(-100);
-
 }
 
 /* The dots/bullets/indicators */
@@ -597,8 +594,6 @@ header h1 {
     /* margin-bottom: 3.5rem; */
 }
 
-
-
 .hometeam-icon:hover {
     opacity: 0.7;
     cursor: pointer;
@@ -613,13 +608,11 @@ header h1 {
     /* margin-bottom: 3.5rem; */
 }
 
-
 .hometeam-icon2:hover {
     opacity: 0.7;
     cursor: pointer;
     box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
-
 
 .btn-hometeam:link,
 .btn-hometeam:visited {
@@ -627,6 +620,11 @@ header h1 {
     border-bottom: #926060;
     margin-top: 5rem;
     margin-right: 20rem;
+}
+
+.btn-my-hometeam {
+    float: left;
+    margin-left: 50px;
 }
 
 /* Style the Image Used to Trigger the Modal */
@@ -868,6 +866,11 @@ header h1 {
     margin-right: 20rem;
 }
 
+.btn-my-production {
+    float: left;
+    margin-left: 50px;
+}
+
 /*=====================================*/
 /* Old Team Section*/
 /*Game Features*/
@@ -950,7 +953,7 @@ header h1 {
 .text {
     color: black;
     font-size: 20px;
-} 
+}
 
 .team-section h3 {
     color: #27283d;

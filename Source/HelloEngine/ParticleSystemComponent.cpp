@@ -559,6 +559,7 @@ void ParticleSystemComponent::Serialization(json& j)
 	_j["IsParticleAnimated"] = ParticleEmitter.isParticleAnimated;
 	_j["ParticleVectorSize"] = size;
 	_j["Enabled"] = _isEnabled;
+	_j["NumOfRows"] = ParticleEmitter.emitterTexture.numOfRows;
 
 	j["Components"].push_back(_j);
 }
@@ -629,6 +630,11 @@ void ParticleSystemComponent::DeSerialization(json& j)
 	if (j.contains("IsParticleAnimated"))
 	{
 		ParticleEmitter.isParticleAnimated = j["IsParticleAnimated"];
+	}
+
+	if (j.contains("NumOfRows"))
+	{
+		ParticleEmitter.emitterTexture.numOfRows = j["NumOfRows"];
 	}
 
 	ParticleEmitter.SetParticlePoolSize(size);

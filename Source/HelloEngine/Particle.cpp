@@ -50,6 +50,9 @@ void Particle::UpdateTextureCoords()
 {
 	
 	float particleLife = elapsedTime / Lifetime;
+
+	if (particleLife > 1.0f)return;
+
 	int numOfText = texture.numOfRows * texture.numOfRows;
 	float atlasProgression = particleLife * numOfText;
 	int index1 = (int) math::Floor(atlasProgression);

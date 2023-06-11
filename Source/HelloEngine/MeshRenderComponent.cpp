@@ -285,6 +285,8 @@ void MeshRenderComponent::OnEditor()
 
 			currentCombo = (int)renderType;
 
+			ImGui::Checkbox("Camera Distance Culling", &mesh._cameraDistanceCulling); //Distance Culling of mesh by camera ON/OFF
+
 			if (ImGui::BeginCombo("Render Type", _comboOptions[currentCombo].c_str()))
 			{
 				for (int i = 0; i < 3; i++)
@@ -380,6 +382,7 @@ void MeshRenderComponent::Serialization(json& j)
 		_j["ShowOBB"] = m.showOBB;
 		_j["ShowFaceNormals"] = m.showFaceNormals;
 		_j["ShowVertexNormals"] = m.showVertexNormals;
+		_j["CameraDistanceCulling"] = m._cameraDistanceCulling;
 	}
 	else
 	{
@@ -387,6 +390,7 @@ void MeshRenderComponent::Serialization(json& j)
 		_j["ShowOBB"] = false;
 		_j["ShowFaceNormals"] = false;
 		_j["ShowVertexNormals"] = false;
+		_j["CameraDistanceCulling"] = true;
 	}
 
 	if (_resource != nullptr)
@@ -435,6 +439,11 @@ void MeshRenderComponent::DeSerialization(json& j)
 				m.showOBB = j["ShowOBB"];
 				m.showFaceNormals = j["ShowFaceNormals"];
 				m.showVertexNormals = j["ShowVertexNormals"];
+
+				if (j.contains("CameraDistanceCulling"))
+				{
+					m._cameraDistanceCulling = j["CameraDistanceCulling"];
+				}
 			}
 		}
 	}

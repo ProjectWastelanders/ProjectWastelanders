@@ -312,5 +312,5 @@ void PlayerGunManager::UnequipGun(int index)
     else swapDelay = maxSwapDelay + 0.001f;
     swapToIndex = index;
 
-    Audio::Event("w_switch");
+    Audio::Event("w_swap");
 }

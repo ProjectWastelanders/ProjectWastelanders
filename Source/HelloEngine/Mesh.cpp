@@ -92,7 +92,7 @@ void Mesh::Draw(Material material, bool useMaterial)
 	int HUD_UUID = 90291866;
 
 	//Checks if model should be drawn 
-	if (_app->renderer3D->hasMaxRenderDistance)
+	if (_app->renderer3D->hasMaxRenderDistance && _cameraDistanceCulling)
 	{
 		float3 modelTranslate = modelMatrix.Transposed().TranslatePart();
 		float3 frustumPos = _app->camera->currentDrawingCamera->GetFrustumPosition();

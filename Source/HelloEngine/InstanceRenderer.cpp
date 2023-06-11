@@ -118,7 +118,7 @@ void InstanceRenderer::DrawMaterial()
             Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second);
         }
 
-        if (_app->renderer3D->hasMaxRenderDistance)
+        if (_app->renderer3D->hasMaxRenderDistance && mesh.second.mesh._cameraDistanceCulling)
         {
             float2 modPos(mesh.second.mesh.modelMatrix.Transposed().TranslatePart().x, mesh.second.mesh.modelMatrix.Transposed().TranslatePart().z);
             float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
@@ -185,8 +185,8 @@ void InstanceRenderer::DrawRaw()
     uint totalMeshes = meshes.size();
     uint drawingMeshes = 0;
 
-    //modelMatrices.resize(totalMeshes);
-    //textureIDs.resize(totalMeshes);
+    modelMatrices.resize(totalMeshes);
+    textureIDs.resize(totalMeshes);
 
     for (auto& mesh : meshes)
     {
@@ -201,7 +201,7 @@ void InstanceRenderer::DrawRaw()
         }
 
 
-        if (_app->renderer3D->hasMaxRenderDistance)
+        if (_app->renderer3D->hasMaxRenderDistance && mesh.second.mesh._cameraDistanceCulling)
         {
             float2 modPos(mesh.second.mesh.modelMatrix.Transposed().TranslatePart().x, mesh.second.mesh.modelMatrix.Transposed().TranslatePart().z);
             float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
@@ -210,19 +210,15 @@ void InstanceRenderer::DrawRaw()
 
             if (dist < _app->renderer3D->maxRenderDistance)
             {
-                modelMatrices.push_back(currentMesh.modelMatrix);
-                textureIDs.push_back(currentMesh.OpenGLTextureID);
-                //modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
-                //textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
+                modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
+                textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
                 currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
             }
         }
         else
         {
-            modelMatrices.push_back(currentMesh.modelMatrix);
-            textureIDs.push_back(currentMesh.OpenGLTextureID);
-            //modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
-            //textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
+            modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
+            textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
             currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
         }
     }
@@ -236,7 +232,7 @@ void InstanceRenderer::DrawRaw()
         {
             instancedShader->shader.SetMatFloat4v("view", Application::Instance()->camera->currentDrawingCamera->GetViewMatrix());
             instancedShader->shader.SetMatFloat4v("projection", Application::Instance()->camera->currentDrawingCamera->GetProjectionMatrix());
-            //instancedShader->shader.data.hasUpdatedCamera = true;
+            instancedShader->shader.data.hasUpdatedCamera = true;
         }
         // Draw using Dynamic Geometrys
         glBindVertexArray(VAO);

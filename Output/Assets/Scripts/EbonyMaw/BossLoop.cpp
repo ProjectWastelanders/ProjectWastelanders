@@ -282,6 +282,8 @@ void BossLoop::Update()
             burnTime -= Time::GetDeltaTime();
         }
     }
+
+    audioTimer += Time::GetDeltaTime();
 }
 
 void BossLoop::OnCollisionEnter(API::API_RigidBody other)
@@ -300,10 +302,14 @@ void BossLoop::TakeDamage(float damage)
 {
  
 
+
     if (hp <= 0) return;
     
     if (canTakeDamage == true) {
-        Audio::Event("ebony_damaged");
+        if (audioTimer > 0.3f) {
+            Audio::Event("ebony_damaged");
+            audioTimer = 0.0f;
+        }
         bloodTimer = 0.0f;
         blood.GetTransform().SetPosition(0,0, 0);
 
@@ -317,7 +323,11 @@ void BossLoop::TakeDamage(float damage)
     }
     else {
         shield[phase] -= damage;
-        Audio::Event("ebony_bullet_rock");
+        if (audioTimer > 0.3f) {
+            Audio::Event("ebony_bullet_rock");
+            audioTimer = 0.0f;
+        }
+        
     }
 
     if (shield[phase] <= 0) {

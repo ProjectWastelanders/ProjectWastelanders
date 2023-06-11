@@ -37,5 +37,7 @@ public:
     float resetBurn;
 
     int phase = 0;
+
+    float audioTimer = 0.0f;
 };
 

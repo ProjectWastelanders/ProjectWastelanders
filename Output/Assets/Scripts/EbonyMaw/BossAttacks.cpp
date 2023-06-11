@@ -624,7 +624,7 @@ void BossAttacks::OrbitingRocks(API_GameObject* orbitingRock1, API_GameObject* o
 	orbitingRock2->GetTransform().SetPosition(-radius, 0, 0);
 	orbitingRock3->GetTransform().SetPosition(0, 0, radius);
 	orbitingRock4->GetTransform().SetPosition(0, 0, -radius);
-	orbitingRocks.GetTransform().Rotate(0, rotationSpeed, 0);
+	orbitingRocks.GetTransform().Rotate(0, rotationSpeed * Time::GetDeltaTime() * 50, 0);
 
 	orbitingRocks.GetTransform().SetPosition(boss.GetTransform().GetGlobalPosition());
 }

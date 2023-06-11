@@ -46,6 +46,8 @@ void ThanosLoop::Update()
         phase = 2;
     }
 
+    audioTimer += Time::GetDeltaTime();
+
 }
 
 void ThanosLoop::OnCollisionEnter(API::API_RigidBody other)
@@ -64,7 +66,10 @@ void ThanosLoop::OnCollisionEnter(API::API_RigidBody other)
 void ThanosLoop::TakeDamage(float damage)
 {
     hp -= damage;
-    Audio::Event("thanos_damaged");
+    if (audioTimer > 0.3f) {
+        Audio::Event("thanos_damaged");
+        audioTimer = 0.0f;
+    }
 }
 
 void ThanosLoop::AddBomb()

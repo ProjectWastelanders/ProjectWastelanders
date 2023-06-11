@@ -133,4 +133,6 @@ public:
     uint takeObjAnim;
     uint throwObjAnim;
     uint dieAnim;
+
+    float audioTimer = 0.0f;
 };

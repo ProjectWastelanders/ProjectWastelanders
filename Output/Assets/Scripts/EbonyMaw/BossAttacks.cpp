@@ -169,7 +169,7 @@ void BossAttacks::Update()
 				rocks[17].SetActive(true);
 				rocks[18].SetActive(true);
 				rocks[19].SetActive(true);
-				if (bossState != BOSS_STATE::KO) OrbitingRocks(&rocks[19], &rocks[18], &rocks[17], &rocks[16], rotationSpeed * 1.5, radius * 1.25);
+				if (bossState != BOSS_STATE::KO) OrbitingRocks(&rocks[19], &rocks[18], &rocks[17], &rocks[16], rotationSpeed * 1.5, radius * 1.15);
 			default:
 				break;
 			}

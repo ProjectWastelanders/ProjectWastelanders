@@ -99,7 +99,7 @@ public:
 	float explosionTime = 0.0f;
 
 	float rotationSpeed = 1;
-	float radius = 0.5f;
+	float radius = 0.45f;
 
 	bool exploted = false;
 

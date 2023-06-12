@@ -897,7 +897,7 @@ header h1 {
 
 .team-member {
     margin-top: 4.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
@@ -1203,6 +1203,11 @@ svg.ui-ux circle {
 .close:focus {
     color: #000;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.myBtn_multi
+{
     cursor: pointer;
 }
 

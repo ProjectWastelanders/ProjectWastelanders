@@ -897,7 +897,7 @@ header h1 {
 
 .team-member {
     margin-top: 4.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
@@ -1085,7 +1085,8 @@ svg.ui-ux circle {
     font-weight: 500;
     /* max-width: 100rem; */
     margin-left: 15%;
-    text-align: justify;
+    text-align: left;
+    font-size: 1.8rem;
 }
 
 .portfolio-section h2 {

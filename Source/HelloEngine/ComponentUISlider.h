@@ -27,6 +27,7 @@ public:
 	SliderState State;
 
 	int perCent = 0;
+	float mousePosX = 0;
 
 private:
 
@@ -39,7 +40,6 @@ private:
 	float numMin = 0;
 
 	bool isFocused = false;
-	float mousePosX = 0;
 
 	float widthBar;
 	float widthBarAux;

@@ -204,7 +204,8 @@ void ComponentUISlider::CalculNormalize()
 
 void ComponentUISlider::SetValue(float value)
 {
-	widthBar = value;
+	mousePosX = value;
+	_gameObject->transform->SetPosition({ mousePosX, 0, -0.003 });
 }
 
 #ifdef STANDALONE

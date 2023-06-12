@@ -91,5 +91,7 @@ void API::API_UISlider::SetValue(int value)
         Engine::Console::S_Log("Trying to acces a NULLPTR UI Slider");
         return;
     }
-    _UISlider->SetValue((float)value / 100.0f);
+
+    //Els valors han d'anar de -0.25 a 0.25
+    _UISlider->SetValue((((float)value - 50) * 2)* 0.0025);
 }

@@ -198,6 +198,7 @@ void PlayerStats::OnCollisionEnter(API_RigidBody other)
         {
         case 0: // laser ammo
             GetAmmo(1, 0.4f * maxLaserAmmo);
+            Audio::Event("w_ammo_pick");
             break;
         case 1: // first aid kit
             if (healthTreeLvl > 3) Heal(upgradedAidKitHeal);

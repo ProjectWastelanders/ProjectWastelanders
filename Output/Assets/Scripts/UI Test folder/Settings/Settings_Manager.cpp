@@ -1,4 +1,5 @@
 #include "Settings_Manager.h"
+#include "../../Audio/S_AudioMixer.h"
 HELLO_ENGINE_API_C Settings_Manager* CreateSettings_Manager(ScriptToInspectorInterface* script)
 {
 	Settings_Manager* classInstance = new Settings_Manager();
@@ -28,6 +29,10 @@ HELLO_ENGINE_API_C Settings_Manager* CreateSettings_Manager(ScriptToInspectorInt
 
 void Settings_Manager::Start()
 {
+	masterSlider.SetValue(API_QuickSave::GetFloat("MasterVolume", 1.0f));
+	sfxSlider.SetValue(API_QuickSave::GetFloat("MusicVolume", 100.0f));
+	musicSlider.SetValue(API_QuickSave::GetFloat("SFXVolume", 100.0f));
+
 	masterHovered = false;
 	sfxHovered = false;
 	musicHovered = false;
@@ -44,6 +49,7 @@ void Settings_Manager::Update()
 			sfxHovered = false;
 		}
 		masterText.SetText(std::to_string(masterSlider.GetValue()).c_str());
+		S_AudioMixer::SetMasterVolume(masterSlider.GetValue() / 100.0f);
 	}
 
 	if (sfxSlider.OnHovered())
@@ -58,6 +64,7 @@ void Settings_Manager::Update()
 			musicHovered = false;
 		}
 		sfxText.SetText(std::to_string(sfxSlider.GetValue()).c_str());
+		S_AudioMixer::SetSFXVolume(sfxSlider.GetValue());
 	}
 
 	if (musicSlider.OnHovered())
@@ -70,6 +77,7 @@ void Settings_Manager::Update()
 			musicHovered = true;
 		}
 		musicText.SetText(std::to_string(musicSlider.GetValue()).c_str());
+		S_AudioMixer::SetMusicVolume(musicSlider.GetValue());
 	}
 
 	if (VSync.OnHovered())
@@ -79,5 +87,6 @@ void Settings_Manager::Update()
 			musicBackground.GetMaterialCompoennt().ChangeAlbedoTexture(musicIdle);
 			musicHovered = false;
 		}
+		Engine::SetVSync(VSync.getIsActive());
 	}
 }

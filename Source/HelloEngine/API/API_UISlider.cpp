@@ -64,7 +64,7 @@ bool API::API_UISlider::OnHovered()
 {
     if (!_UISlider)
     {
-        Engine::Console::S_Log("Trying to acces a NULLPTR UI Button");
+        Engine::Console::S_Log("Trying to acces a NULLPTR UI Slider");
         return false;
     }
     else
@@ -75,6 +75,21 @@ bool API::API_UISlider::OnHovered()
 
 int API::API_UISlider::GetValue()
 {
+    if (!_UISlider)
+    {
+        Engine::Console::S_Log("Trying to acces a NULLPTR UI Slider");
+        return 0;
+    }
     _UISlider->CalculPerCent();
     return _UISlider->perCent;
+}
+
+void API::API_UISlider::SetValue(int value)
+{
+    if (!_UISlider)
+    {
+        Engine::Console::S_Log("Trying to acces a NULLPTR UI Slider");
+        return;
+    }
+    _UISlider->SetValue((float)value / 100.0f);
 }

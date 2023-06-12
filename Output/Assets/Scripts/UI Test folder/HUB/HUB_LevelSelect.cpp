@@ -41,8 +41,7 @@ void HUB_LevelSelect::Init()
 		std::string name = "level" + std::to_string(i + 1) + "_completed";
 		if (API_QuickSave::GetBool(name, false)) // Find which is the highest completed level
 		{
-			Console::Log("completed!");
-			currentSelectedLevel = i +1;
+			currentSelectedLevel = i;
 			if (currentSelectedLevel > 3)
 				currentSelectedLevel = 3;
 		}
@@ -62,7 +61,6 @@ void HUB_LevelSelect::Start()
 		tutorials[0].SetActive(true);
 		tutorials[1].SetActive(false);
 		tutorials[2].SetActive(false);
-		Console::Log("Tut!");
 	}
 	else
 	{

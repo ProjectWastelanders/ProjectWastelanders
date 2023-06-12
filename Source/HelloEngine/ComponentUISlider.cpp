@@ -202,6 +202,11 @@ void ComponentUISlider::CalculNormalize()
 	NormalizedPos = (((mousePosX * (numMax - numMin) / 2) / widthBarAux) + ((numMax - numMin) / 2)) + numMin;
 }
 
+void ComponentUISlider::SetValue(float value)
+{
+	widthBar = value;
+}
+
 #ifdef STANDALONE
 void ComponentUISlider::OnEditor()
 {

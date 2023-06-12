@@ -22,6 +22,8 @@ public:
 	void CalculPerCent();
 	void CalculNormalize();
 
+	void SetValue(float value);
+
 	SliderState State;
 
 	int perCent = 0;

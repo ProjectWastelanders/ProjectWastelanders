@@ -21,6 +21,7 @@ namespace API
 		bool OnHovered();
 
 		int GetValue();
+		void SetValue(int value);
 
 	private:
 		ComponentUISlider* GetComponent();

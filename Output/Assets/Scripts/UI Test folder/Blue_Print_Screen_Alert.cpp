@@ -29,7 +29,7 @@ void Blue_Print_Screen_Alert::Update()
 			prints_Alert.SetOpacity(opacity_Alert = opacity_Alert + 0.05);
 		}
 	
-		if (timer_Active < 1.3)
+		if (timer_Active < 0.7)
 		{
 			active = false;
 			prints_Alert.SetOpacity(opacity_Alert = opacity_Alert - 0.007);

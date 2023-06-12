@@ -371,6 +371,7 @@
 		<ClCompile Include="../../Assets/Scripts/Audio/hub_ambience_music.cpp" />
 		<ClCompile Include="../../Assets/Scripts/Missions/LVL3/ActiveShotsDiviner.cpp" />
 		<ClCompile Include="../../Assets/Scripts/ExtractorAudio.cpp" />
+		<ClCompile Include="../../Assets/Scripts/IntroPlay.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Characters\Enemies\enemyThanos_Animations\ThanosAssets\Columna.h" />
@@ -566,6 +567,7 @@
 		<ClInclude Include="../../Assets/Scripts/Audio/hub_ambience_music.h" />
 		<ClInclude Include="../../Assets/Scripts/Missions/LVL3/ActiveShotsDiviner.h" />
 		<ClInclude Include="../../Assets/Scripts/ExtractorAudio.h" />
+		<ClInclude Include="../../Assets/Scripts/IntroPlay.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

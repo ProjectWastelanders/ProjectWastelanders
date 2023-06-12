@@ -58,6 +58,11 @@ bool API::API_VideoPlayer::IsPlaying()
     return _videoPlayer->GetVideoPlayer()->isPlaying;
 }
 
+bool API::API_VideoPlayer::VideoEnded()
+{
+    return _videoPlayer->GetVideoPlayer()->video->videoEnded;
+}
+
 VideoPlayerComponent* API::API_VideoPlayer::GetComponent()
 {
     return _videoPlayer;

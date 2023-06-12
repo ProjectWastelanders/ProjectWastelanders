@@ -22,7 +22,7 @@ public:
 	double GetFPS();
 
 	void ResetVideo();
-
+	bool videoEnded = false;
 private:
 	bool LoadVideo(const char* filename);
 	AVFrame* GetFrame();
@@ -42,5 +42,6 @@ private:
 	int height = 0;
 	uint glTexture = 0;
 	uint8_t* frameData = nullptr;
+
 };
 

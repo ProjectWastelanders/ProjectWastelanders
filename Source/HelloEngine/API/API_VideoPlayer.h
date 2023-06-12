@@ -23,6 +23,8 @@ namespace API
 
         bool IsPlaying();
 
+        bool VideoEnded();
+
     private:
         VideoPlayerComponent* GetComponent();
         void SetComponent(VideoPlayerComponent* component);

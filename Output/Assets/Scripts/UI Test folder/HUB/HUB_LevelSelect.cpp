@@ -41,9 +41,10 @@ void HUB_LevelSelect::Init()
 		std::string name = "level" + std::to_string(i + 1) + "_completed";
 		if (API_QuickSave::GetBool(name, false)) // Find which is the highest completed level
 		{
-			currentSelectedLevel = i;
+			currentSelectedLevel = i+1;
 			if (currentSelectedLevel > 3)
 				currentSelectedLevel = 3;
+			SelectLevel(currentSelectedLevel);
 		}
 	}
 

@@ -10,6 +10,7 @@ HELLO_ENGINE_API_C IntroPlay* CreateIntroPlay(ScriptToInspectorInterface* script
 
 void IntroPlay::Start()
 {
+	video.Stop();
 	video.Play();
 	audio.Play();
 }

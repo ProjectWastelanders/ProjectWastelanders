@@ -14,5 +14,9 @@ public:
 	API_AudioSourceComponent audio;
 	API_VideoPlayer video;
 	API_UIButton closeButton;
+
+	int cinematicNum = 0;
+
+	API_String quicksaveCheck; // for cinematics 2 and 3
 };
 

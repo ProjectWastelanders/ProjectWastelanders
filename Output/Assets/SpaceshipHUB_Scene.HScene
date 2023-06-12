@@ -31041,8 +31041,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.07580570131540298,
-                    0.23832228779792786,
+                    -0.07943706959486008,
+                    0.23977482318878174,
                     0.0
                 ],
                 "Rotation": [
@@ -31065,8 +31065,8 @@
                     1.0
                 ],
                 "Enabled": false,
-                "PositionX": -0.07664456218481064,
-                "PositionY": 0.23865783214569092,
+                "PositionX": -0.07954966276884079,
+                "PositionY": 0.23981985449790955,
                 "Scale": 0.30000001192092896,
                 "Text": "0",
                 "Type": 17
@@ -31087,8 +31087,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    -0.017924310639500618,
-                    0.23832228779792786,
+                    -0.0716683492064476,
+                    0.23977482318878174,
                     0.0
                 ],
                 "Rotation": [
@@ -31111,8 +31111,8 @@
                     1.0
                 ],
                 "Enabled": false,
-                "PositionX": -0.030339449644088745,
-                "PositionY": 0.23865783214569092,
+                "PositionX": -0.07333467900753021,
+                "PositionY": 0.23981985449790955,
                 "Scale": 0.30000001192092896,
                 "Text": "0",
                 "Type": 17
@@ -31133,8 +31133,8 @@
             {
                 "Enabled": true,
                 "Position": [
-                    0.0307296309620142,
-                    0.23832228779792786,
+                    -0.06513812392950058,
+                    0.23977482318878174,
                     0.0
                 ],
                 "Rotation": [
@@ -31157,8 +31157,8 @@
                     1.0
                 ],
                 "Enabled": false,
-                "PositionX": 0.008583704009652138,
-                "PositionY": 0.23865783214569092,
+                "PositionX": -0.06811050325632095,
+                "PositionY": 0.23981985449790955,
                 "Scale": 0.30000001192092896,
                 "Text": "0",
                 "Type": 17
@@ -33801,7 +33801,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    2000.4000244140625,
+                    2225.39990234375,
                     0.33500000834465027,
                     0.0
                 ],
@@ -33825,7 +33825,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 2025.4000244140625,
+                "PositionX": 2250.39990234375,
                 "PositionY": 0.33500000834465027,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -33847,7 +33847,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    2000.4000244140625,
+                    2225.39990234375,
                     0.03999999910593033,
                     0.0
                 ],
@@ -33871,7 +33871,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 2025.4000244140625,
+                "PositionX": 2250.39990234375,
                 "PositionY": 0.03999999910593033,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -33893,7 +33893,7 @@
             {
                 "Enabled": true,
                 "Position": [
-                    2000.4000244140625,
+                    2225.39990234375,
                     -0.36000001430511475,
                     0.0
                 ],
@@ -33917,7 +33917,7 @@
                     1.0
                 ],
                 "Enabled": true,
-                "PositionX": 2025.4000244140625,
+                "PositionX": 2250.39990234375,
                 "PositionY": -0.36000001430511475,
                 "Scale": 0.30000001192092896,
                 "Text": "50",
@@ -37980,6 +37980,11 @@
                 "Type": 1
             },
             {
+                "AudioEvent": "L1_collectable3",
+                "Enabled": true,
+                "Type": 25
+            },
+            {
                 "Enabled": true,
                 "Inspector Fields": null,
                 "Script Resource": 473247281,
@@ -37993,6 +37998,438 @@
         "PrefabUID": 0,
         "Tag": "Default",
         "UID": 995988035,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Audio Source": 3695052494
+                    },
+                    {
+                        "VideoPlayer": 2102914682
+                    },
+                    {
+                        "Close button": 3359696745
+                    },
+                    {
+                        "Cinematic num": 2
+                    },
+                    {
+                        "From level check": "level2_completed"
+                    }
+                ],
+                "Script Resource": 4139835376,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Cinematic2",
+        "ParentUID": 2830428646,
+        "PrefabUID": 1406127148,
+        "Tag": "Default",
+        "UID": 788593179,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AudioEvent": "cinematic_2",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Audio",
+        "ParentUID": 788593179,
+        "PrefabUID": 1406127148,
+        "Tag": "Default",
+        "UID": 3695052494,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    3359696745
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Panel",
+        "ParentUID": 788593179,
+        "PrefabUID": 1406127148,
+        "Tag": "UI",
+        "UID": 1888523557,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.699999988079071,
+                    -0.8199999928474426,
+                    -0.9100000262260437
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 516501109,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 2113770562,
+                "idleBlockImage": 0,
+                "idleImage": 516501109,
+                "pressBlockImage": 0,
+                "pressImage": 516501109
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Button",
+        "ParentUID": 1888523557,
+        "PrefabUID": 1406127148,
+        "Tag": "UI",
+        "UID": 3359696745,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 25.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 3490339837
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Video",
+        "ParentUID": 788593179,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2102914682,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Audio Source": 1995686743
+                    },
+                    {
+                        "VideoPlayer": 2452285365
+                    },
+                    {
+                        "Close button": 2049291294
+                    },
+                    {
+                        "Cinematic num": 3
+                    },
+                    {
+                        "From level check": "level3_completed"
+                    }
+                ],
+                "Script Resource": 4139835376,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Cinematic3",
+        "ParentUID": 2830428646,
+        "PrefabUID": 1406127148,
+        "Tag": "Default",
+        "UID": 752397903,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AudioEvent": "cinematic_3",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Audio",
+        "ParentUID": 752397903,
+        "PrefabUID": 1406127148,
+        "Tag": "Default",
+        "UID": 1995686743,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 0,
+                "MeshEnabled": false,
+                "Type": 16,
+                "listButtons": [
+                    2049291294
+                ]
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Panel",
+        "ParentUID": 752397903,
+        "PrefabUID": 1406127148,
+        "Tag": "UI",
+        "UID": 3809676099,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.699999988079071,
+                    -0.8199999928474426,
+                    -0.9100000262260437
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    0.20000000298023224,
+                    0.10000000149011612,
+                    0.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "MaterialResource": 516501109,
+                "MeshEnabled": true,
+                "State": 0,
+                "Type": 12,
+                "hoverBlockImage": 0,
+                "hoverImage": 2113770562,
+                "idleBlockImage": 0,
+                "idleImage": 516501109,
+                "pressBlockImage": 0,
+                "pressImage": 516501109
+            }
+        ],
+        "FirstOnPrefab": false,
+        "IsStatic": false,
+        "Name": "Button",
+        "ParentUID": 3809676099,
+        "PrefabUID": 1406127148,
+        "Tag": "UI",
+        "UID": 2049291294,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 25.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 1366312210
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Video",
+        "ParentUID": 752397903,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2452285365,
         "UpdateWithBones": false
     }
 ]

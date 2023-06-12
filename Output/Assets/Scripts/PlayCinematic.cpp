@@ -7,12 +7,15 @@ HELLO_ENGINE_API_C PlayCinematic* CreatePlayCinematic(ScriptToInspectorInterface
 	script->AddDragBoxAudioSourceComponent("Audio Source", &classInstance->audio);
 	script->AddDragBoxVideoPlayerComponent("VideoPlayer", &classInstance->video);
 	script->AddDragBoxUIButton("Close button", &classInstance->closeButton);
+	script->AddDragInt("Cinematic num", &classInstance->cinematicNum);
+	script->AddInputBox("From level check", &classInstance->quicksaveCheck);
 	return classInstance;
 }
 
 void PlayCinematic::Start()
 {
-	if (!API_QuickSave::GetBool("Cinematic_Comlpeted"))
+	std::string string = "Cinematic_Comlpeted" + std::to_string(cinematicNum);
+	if (!API_QuickSave::GetBool(string) && (API_QuickSave::GetBool(quicksaveCheck.c_str(), false) || quicksaveCheck.c_str() == ""))
 	{
 		video.GetGameObject().SetActive(true);
 		audio.GetGameObject().SetActive(true);
@@ -37,7 +40,7 @@ void PlayCinematic::Update()
 		video.Stop();
 		this->gameObject.SetActive(false);
 
-		API_QuickSave::SetBool("Cinematic_Comlpeted", true);
+		API_QuickSave::SetBool("Cinematic_Comlpeted" + std::to_string(cinematicNum), true);
 
 		MusicManager* music = (MusicManager*)Game::FindGameObject("MusicManager").GetScript("MusicManager");
 		if (music != nullptr)

@@ -17,6 +17,6 @@ public:
 
 	int cinematicNum = 0;
 
-	API_String quicksaveCheck; // for cinematics 2 and 3
+	API_String quicksaveCheck = ""; // for cinematics 2 and 3
 };
 

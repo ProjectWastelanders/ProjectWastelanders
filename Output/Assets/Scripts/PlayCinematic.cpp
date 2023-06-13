@@ -15,7 +15,8 @@ HELLO_ENGINE_API_C PlayCinematic* CreatePlayCinematic(ScriptToInspectorInterface
 void PlayCinematic::Start()
 {
 	std::string string = "Cinematic_Comlpeted" + std::to_string(cinematicNum);
-	if (!API_QuickSave::GetBool(string) && (API_QuickSave::GetBool(quicksaveCheck.c_str(), false) || quicksaveCheck.c_str() == ""))
+	std::string quicksaveCheckString = quicksaveCheck.c_str();
+	if (!API_QuickSave::GetBool(string) && (API_QuickSave::GetBool(quicksaveCheckString, false) || quicksaveCheckString == ""))
 	{
 		video.GetGameObject().SetActive(true);
 		audio.GetGameObject().SetActive(true);

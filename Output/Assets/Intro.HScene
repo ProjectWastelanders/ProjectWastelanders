@@ -87,13 +87,13 @@
             },
             {
                 "Enabled": true,
-                "FramesPerSecond": 29.970029830932617,
+                "FramesPerSecond": 32.0,
                 "MeshEnabled": true,
                 "Type": 24,
                 "VideoResource": 2495910813
             },
             {
-                "AudioEvent": "IntroCinematic",
+                "AudioEvent": "cinematic_intro",
                 "Enabled": true,
                 "Type": 25
             }
@@ -149,18 +149,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Video": 3637848411
-                    },
-                    {
-                        "Audio": 2969884273
-                    },
-                    {
-                        "Video": 3637848411
-                    },
-                    {
-                        "Audio": 2969884273
-                    },
                     {
                         "Video": 3637848411
                     },

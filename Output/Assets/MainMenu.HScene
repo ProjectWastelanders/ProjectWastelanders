@@ -1655,7 +1655,7 @@
             },
             {
                 "Enabled": true,
-                "FramesPerSecond": 60.0,
+                "FramesPerSecond": 70.0,
                 "MeshEnabled": true,
                 "Type": 24,
                 "VideoResource": 772560548

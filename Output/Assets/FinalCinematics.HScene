@@ -133,7 +133,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": true,
+        "Active": false,
         "Components": [
             {
                 "Enabled": true,
@@ -156,7 +156,7 @@
             },
             {
                 "Enabled": true,
-                "FramesPerSecond": 25.0,
+                "FramesPerSecond": 29.0,
                 "MeshEnabled": true,
                 "Type": 24,
                 "VideoResource": 596406815
@@ -172,7 +172,7 @@
         "UpdateWithBones": false
     },
     {
-        "Active": false,
+        "Active": true,
         "Components": [
             {
                 "Enabled": true,
@@ -195,7 +195,7 @@
             },
             {
                 "Enabled": true,
-                "FramesPerSecond": 60.0,
+                "FramesPerSecond": 70.0,
                 "MeshEnabled": true,
                 "Type": 24,
                 "VideoResource": 772560548
@@ -234,7 +234,7 @@
             },
             {
                 "Enabled": true,
-                "FramesPerSecond": 25.0,
+                "FramesPerSecond": 29.0,
                 "MeshEnabled": true,
                 "Type": 24,
                 "VideoResource": 3075549914

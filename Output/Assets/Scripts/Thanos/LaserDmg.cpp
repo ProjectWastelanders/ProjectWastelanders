@@ -15,6 +15,7 @@ void LaserDmg::Start()
 {
 	Tattack = (ThanosAttacks*)boss.GetScript("ThanosAttacks");
 	Tmov = (ThanosMovement*)boss.GetScript("ThanosMovement");
+	gameObject.GetRigidBody().SetVelocity({ 0, 0, 0 });
 }
 void LaserDmg::Update()
 {

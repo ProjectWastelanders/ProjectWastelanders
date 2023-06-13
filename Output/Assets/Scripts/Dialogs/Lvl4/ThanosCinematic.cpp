@@ -41,7 +41,7 @@ void ThanosCinematic::Start()
     activeCinematic = false;
     showedDialog = false;
     nextDialog = false;
-    ambienceMusic_L_4 = Audio::Event("L4previous_ambience");
+    //ambienceMusic_L_4 = Audio::Event("L4previous_ambience");
     initalPos = { 0, -1.500, 0 };
     movingPos = { 0, -1.500, 0 };
     //finalPos = { 0, -0.500, 0 };
@@ -176,8 +176,9 @@ void ThanosCinematic::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         activeCinematic = true;
-        Audio::StopEvent(ambienceMusic_L_4);
-        Audio::Event("L4_bossfight");
+        //Audio::StopEvent(ambienceMusic_L_4);
+        //Audio::Event("L4_bossfight");
 
     }
+    //other.GetGameObject().SetActive(false);
 }

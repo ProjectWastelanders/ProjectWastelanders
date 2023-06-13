@@ -142,6 +142,7 @@ public:
 
 	bool areaDmg = false;
 	API_GameObject area;
+	API_GameObject area2;
 	float dashSpeed = 1.0f;
 	API_Vector3 thanosPosition;
 

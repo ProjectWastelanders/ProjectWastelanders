@@ -100,7 +100,7 @@ void Mesh::Draw(Material material, bool useMaterial)
 		float2 modPos(modelTranslate.x, modelTranslate.z);
 		float2 camPos(frustumPos.x, frustumPos.z);
 
-		float dist = modPos.Distance(camPos);
+		float dist = modPos.DistanceSq(camPos);
 
 		//HUD_UUID != resource->UID -> Skips HUD meshes
 		if (dist > _app->renderer3D->maxRenderDistance && HUD_UUID != resource->UID)

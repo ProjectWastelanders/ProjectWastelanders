@@ -14,7 +14,11 @@ public:
 
 	API_VideoPlayer video;
 	API_AudioSourceComponent audio;
+	API_UIButton exitButton;
+	API_UIInput mainPanel;
+	API_UIInput creditsPanel;
 	uint audioPlayingID = 0;
 	bool playing = false;
+	bool justPlayed = false;
 };
 

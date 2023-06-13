@@ -37,7 +37,7 @@ void GetDiviner::OnCollisionStay(API_RigidBody other)
             }
             API_QuickSave::SetBool("level1_completed", true);
             API_QuickSave::SetBool("IsInMiddleOfLevel", false);
-            finalText.SetActive(true);
+            Scene::LoadScene("SpaceshipHUB_Scene.HScene");
         }
         
     }

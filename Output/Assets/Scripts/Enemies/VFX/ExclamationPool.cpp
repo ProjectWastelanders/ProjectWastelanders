@@ -39,7 +39,7 @@ void ExclamationPool::Start()
 
 	_marksCount = 10;
 	_currentMark = 0;
-	active = false;
+	active = true;
 
 	gameObject.GetTransform().SetPosition(API_Vector3(_marksCount, _marksCount, _marksCount));
 }

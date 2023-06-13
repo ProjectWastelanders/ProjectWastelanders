@@ -374,6 +374,7 @@
 		<ClCompile Include="../../Assets/Scripts/IntroPlay.cpp" />
 		<ClCompile Include="../../Assets/Scripts/UI Test folder/PlayCreditsMainMenu.cpp" />
 		<ClCompile Include="../../Assets/Scripts/DetectThanosDeath.cpp" />
+		<ClCompile Include="../../Assets/Scripts/FinalCinematics.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="..\..\Assets\Game\Characters\Enemies\enemyThanos_Animations\ThanosAssets\Columna.h" />
@@ -572,6 +573,7 @@
 		<ClInclude Include="../../Assets/Scripts/IntroPlay.h" />
 		<ClInclude Include="../../Assets/Scripts/UI Test folder/PlayCreditsMainMenu.h" />
 		<ClInclude Include="../../Assets/Scripts/DetectThanosDeath.h" />
+		<ClInclude Include="../../Assets/Scripts/FinalCinematics.h" />
 	</ItemGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 	<ImportGroup Label="ExtensionTargets" />

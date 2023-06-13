@@ -10,7 +10,7 @@ HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* sc
     script->AddDragBoxUIButton("Settings", &classInstance->Settings);
     script->AddDragBoxUIButton("Credits", &classInstance->Credits);
 
-    script->AddDragBoxGameObject("Panel Main Menu", &classInstance->mainPanel);
+    script->AddDragBoxUIInput("Panel Main Menu", &classInstance->mainPanel);
     script->AddDragBoxGameObject("Panel Settings Menu", &classInstance->settingsPanel);
 
     return classInstance;
@@ -32,6 +32,12 @@ void MenuButtons::Start()
 }
 void MenuButtons::Update()
 {
+    if (shouldActivate)
+    {
+        shouldActivate = false;
+        mainPanel.SetEnable(true);
+    }
+
     if (Continue.OnPress())
     {
         // If we completed at least level 1, we must have a current save active.
@@ -88,12 +94,12 @@ void MenuButtons::Update()
     if (Settings.OnPress() && settingsActive)
     {
         settingsPanel.SetActive(true);
-        mainPanel.SetActive(false);
+        mainPanel.GetGameObject().SetActive(false);
     }
 
     if (Credits.OnPress())
     {
-        if (credits)
+        if (credits && !credits->justPlayed)
             credits->PlayCinematic();
     }
 
@@ -102,8 +108,9 @@ void MenuButtons::Update()
         if (settingsPanel.IsActive())
         {
             settingsPanel.SetActive(false);
-            mainPanel.SetActive(true);
+            mainPanel.GetGameObject().SetActive(true);
             settingsActive = true;
         }
     }
 }
+

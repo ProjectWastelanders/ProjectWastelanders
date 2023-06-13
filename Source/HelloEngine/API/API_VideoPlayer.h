@@ -25,6 +25,8 @@ namespace API
 
         bool VideoEnded();
 
+        void Reset();
+
     private:
         VideoPlayerComponent* GetComponent();
         void SetComponent(VideoPlayerComponent* component);

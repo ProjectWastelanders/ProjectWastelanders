@@ -77,6 +77,8 @@ public:
 	virtual void MarkAsDead() {}
 	virtual void MarkAsAlive() {}
 #endif
+	Type _type = Type::NONE;
+
 private:
 	void EnableFromGameObject() { if (_isEnabled) OnEnable(); };
 	void DisableFromGameObject() { if (_isEnabled) OnDisable(); };
@@ -88,8 +90,7 @@ protected:
 	bool _needsTransformCallback = false;
 
 	GameObject* _gameObject = nullptr;
-	Type _type = Type::NONE;
-
+	
 	friend class ModuleNavMesh;
 	friend class Pathfinder;
 };

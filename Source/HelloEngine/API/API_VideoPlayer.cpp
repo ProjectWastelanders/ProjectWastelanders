@@ -63,6 +63,11 @@ bool API::API_VideoPlayer::VideoEnded()
     return _videoPlayer->GetVideoPlayer()->video->videoEnded;
 }
 
+void API::API_VideoPlayer::Reset()
+{
+    _videoPlayer->GetVideoPlayer()->video->ResetVideo();
+}
+
 VideoPlayerComponent* API::API_VideoPlayer::GetComponent()
 {
     return _videoPlayer;

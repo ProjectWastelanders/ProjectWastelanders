@@ -13,6 +13,7 @@ public:
 	void Init() override;
 	void Start() override;
 	void Update() override;
+
 	API_UIButton Continue;
 	API_UIButton NewGame;
 	API_UIButton Exit;
@@ -20,9 +21,10 @@ public:
 	API_UIButton Credits;
 
 	API_GameObject settingsPanel;
-	API_GameObject mainPanel;
+	API_UIInput mainPanel;
 
 	bool settingsActive;
+	bool shouldActivate = false;
 
 	string goLevel;
 

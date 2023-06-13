@@ -189,6 +189,7 @@ void FfmpegVideoPlayer::ResetVideo()
 	// Create texture
 	glBindTexture(GL_TEXTURE_2D, glTexture);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, frameData);
+	videoEnded = false;
 }
 
 void FfmpegVideoPlayer::CleanUp()

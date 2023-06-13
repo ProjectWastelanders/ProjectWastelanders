@@ -117,7 +117,8 @@ void VideoPlayerComponent::DeSerialization(json& j)
 
 	if (j.contains("FramesPerSecond"))
 	{
-		GetVideoPlayer()->video->SetFPS(j["FramesPerSecond"]);
+		if (GetVideoPlayer() != nullptr)
+			GetVideoPlayer()->video->SetFPS(j["FramesPerSecond"]);
 		fps = j["FramesPerSecond"];
 	}
 

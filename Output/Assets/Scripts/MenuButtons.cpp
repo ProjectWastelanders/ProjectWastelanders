@@ -1,6 +1,6 @@
 #include "MenuButtons.h"
 #include "Audio/S_AudioMixer.h"
-
+#include "UI Test folder/PlayCreditsMainMenu.h"
 HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* script)
 {
     MenuButtons* classInstance = new MenuButtons();
@@ -8,6 +8,7 @@ HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* sc
     script->AddDragBoxUIButton("NewGame", &classInstance->NewGame);
     script->AddDragBoxUIButton("Exit", &classInstance->Exit);
     script->AddDragBoxUIButton("Settings", &classInstance->Settings);
+    script->AddDragBoxUIButton("Credits", &classInstance->Credits);
 
     script->AddDragBoxGameObject("Panel Main Menu", &classInstance->mainPanel);
     script->AddDragBoxGameObject("Panel Settings Menu", &classInstance->settingsPanel);
@@ -17,6 +18,7 @@ HELLO_ENGINE_API_C MenuButtons* CreateMenuButtons(ScriptToInspectorInterface* sc
 
 void MenuButtons::Init()
 {
+    credits = (PlayCreditsMainMenu*)Game::FindGameObject("Credits").GetScript("PlayCreditsMainMenu");
     // Initialize Audio quicksave parameters:
     S_AudioMixer::SetMasterVolume(API_QuickSave::GetFloat("MasterVolume", 1.0f));
     S_AudioMixer::SetMusicVolume(API_QuickSave::GetFloat("MusicVolume", 100.0f));
@@ -87,6 +89,12 @@ void MenuButtons::Update()
     {
         settingsPanel.SetActive(true);
         mainPanel.SetActive(false);
+    }
+
+    if (Credits.OnPress())
+    {
+        if (credits)
+            credits->PlayCinematic();
     }
 
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)

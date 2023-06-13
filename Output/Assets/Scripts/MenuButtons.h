@@ -5,6 +5,8 @@
 
 #include "API/API.h"
 
+class PlayCreditsMainMenu;
+
 class MenuButtons : HelloBehavior
 {
 public:
@@ -15,6 +17,7 @@ public:
 	API_UIButton NewGame;
 	API_UIButton Exit;
 	API_UIButton Settings;
+	API_UIButton Credits;
 
 	API_GameObject settingsPanel;
 	API_GameObject mainPanel;
@@ -22,5 +25,7 @@ public:
 	bool settingsActive;
 
 	string goLevel;
+
+	PlayCreditsMainMenu* credits;
 };
 

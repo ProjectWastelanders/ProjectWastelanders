@@ -56,7 +56,7 @@
             {
                 "Active camera": true,
                 "Active culling": true,
-                "Aspect ratio": 1.492561936378479,
+                "Aspect ratio": 1.779411792755127,
                 "Enabled": true,
                 "FOV": 60.0,
                 "Far plane": 1000.0,
@@ -113,22 +113,7 @@
                         "Settings": 3765630460
                     },
                     {
-                        "Panel Main Menu": 2377698017
-                    },
-                    {
-                        "Panel Settings Menu": 793174522
-                    },
-                    {
-                        "Continue": 351199318
-                    },
-                    {
-                        "NewGame": 1741124431
-                    },
-                    {
-                        "Exit": 1551021094
-                    },
-                    {
-                        "Settings": 3765630460
+                        "Credits": 2161746435
                     },
                     {
                         "Panel Main Menu": 2377698017
@@ -284,18 +269,6 @@
                     },
                     {
                         "Vel": 0.0
-                    },
-                    {
-                        "Button": 1741124431
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -349,18 +322,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Button": 351199318
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
-                    },
                     {
                         "Button": 351199318
                     },
@@ -436,18 +397,6 @@
                     },
                     {
                         "Vel": 0.0
-                    },
-                    {
-                        "Button": 3765630460
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
                     }
                 ],
                 "Script Resource": 2045280243,
@@ -501,18 +450,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Button": 1551021094
-                    },
-                    {
-                        "minY": 0.0
-                    },
-                    {
-                        "maxY": 0.0
-                    },
-                    {
-                        "Vel": 0.0
-                    },
                     {
                         "Button": 1551021094
                     },
@@ -612,9 +549,6 @@
             {
                 "Enabled": true,
                 "Inspector Fields": [
-                    {
-                        "Velocity": 1.0
-                    },
                     {
                         "Velocity": 1.0
                     }
@@ -1628,54 +1562,6 @@
                     },
                     {
                         "VSync CheckBox": 3314231203
-                    },
-                    {
-                        "Text Master Volume": 1698258805
-                    },
-                    {
-                        "Text SFX Volume": 1941273593
-                    },
-                    {
-                        "Text Music Volume": 1696567407
-                    },
-                    {
-                        "Slider Master": 1288501553
-                    },
-                    {
-                        "Slider SFX": 4014868040
-                    },
-                    {
-                        "Slider Music": 2063935289
-                    },
-                    {
-                        "Master Ojbect": 1095714396
-                    },
-                    {
-                        "SFX Ojbect": 3466812801
-                    },
-                    {
-                        "Music Ojbect": 2727264771
-                    },
-                    {
-                        "Master Idle": 3301740551
-                    },
-                    {
-                        "Master Hover": 306170160
-                    },
-                    {
-                        "SFX Idle": 973979197
-                    },
-                    {
-                        "SFX Hover": 2826068840
-                    },
-                    {
-                        "Music Idle": 1640090254
-                    },
-                    {
-                        "Music Hover": 3827949153
-                    },
-                    {
-                        "VSync CheckBox": 3314231203
                     }
                 ],
                 "Script Resource": 3900714064,
@@ -1689,6 +1575,127 @@
         "PrefabUID": 4076827353,
         "Tag": "Default",
         "UID": 3846703757,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Video": 4060809243
+                    },
+                    {
+                        "Audio": 1525201713
+                    }
+                ],
+                "Script Resource": 1534968283,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Credits",
+        "ParentUID": 1170745027,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 79602893,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.8999999761581421
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 60.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 772560548
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Video",
+        "ParentUID": 79602893,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 4060809243,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AudioEvent": "credits",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Audio",
+        "ParentUID": 79602893,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 1525201713,
         "UpdateWithBones": false
     },
     {

@@ -65,11 +65,17 @@ void ThanosLoop::OnCollisionEnter(API::API_RigidBody other)
 }
 void ThanosLoop::TakeDamage(float damage)
 {
-    hp -= damage;
-    if (audioTimer > 0.3f) {
-        Audio::Event("thanos_damaged");
-        audioTimer = 0.0f;
+    if (phase > 0)
+    {
+        hp -= damage;
+
+
+        if (audioTimer > 0.3f) {
+            Audio::Event("thanos_damaged");
+            audioTimer = 0.0f;
+        }
     }
+
 }
 
 void ThanosLoop::AddBomb()

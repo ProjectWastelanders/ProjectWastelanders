@@ -16,6 +16,7 @@ HELLO_ENGINE_API_C ThanosAttacks* CreateThanosAttacks(ScriptToInspectorInterface
 
 	script->AddDragBoxGameObject("Melee Attack 1", &classInstance->melee1); 
 	script->AddDragBoxGameObject("Area", &classInstance->area); 
+	script->AddDragBoxGameObject("Area2", &classInstance->area2); 
 	script->AddDragBoxGameObject("SWORD", &classInstance->sword);
 	script->AddDragBoxGameObject("DeflectProjectiles", &classInstance->defenseSword);
 	script->AddDragBoxGameObject("BoomerangTarget", &classInstance->bTarget);
@@ -136,6 +137,7 @@ void ThanosAttacks::Start()
 	bullet2.SetActive(false);
 	bullet3.SetActive(false);
 	area.SetActive(false);
+	area2.SetActive(false);
 	laserGO.SetActive(false);
 	laserGO2.SetActive(false);
 	laserGO3.SetActive(false);
@@ -710,7 +712,8 @@ void ThanosAttacks::Seek2(API_GameObject* seeker, API_Vector3 target, float spee
 			if (areaDmg == false) {
 				areaDmg = true;
 				area.SetActive(true);
-				area.GetTransform().SetPosition({ gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y - 0.5f, gameObject.GetTransform().GetGlobalPosition().z });
+				area2.SetActive(false);
+				area.GetTransform().SetPosition({ gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y - 0.25f, gameObject.GetTransform().GetGlobalPosition().z });
 				thanosAnimationPlayer.ChangeAnimation(thanosIdle2Animation);
 				thanosAnimationPlayer.SetLoop(true);
 				thanosAnimationPlayer.Play();

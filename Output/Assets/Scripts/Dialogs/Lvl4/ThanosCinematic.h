@@ -43,6 +43,6 @@ public:
 	bool activeCinematic, nextDialog, showedDialog, activeAudio;
 	int currentDialog;
 
-	uint ambienceMusic_L_4;
+	//uint ambienceMusic_L_4;
 };
 

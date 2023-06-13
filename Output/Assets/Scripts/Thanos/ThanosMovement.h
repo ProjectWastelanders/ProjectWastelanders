@@ -52,5 +52,8 @@ public:
 
 	bool cinematic = true;
 	bool letsFight = false;
+
+	uint ambienceMusic_L_4;
+	bool lvl4_music = false;
 };
 

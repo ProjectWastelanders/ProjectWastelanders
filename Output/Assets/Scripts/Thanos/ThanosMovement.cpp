@@ -23,6 +23,9 @@ void ThanosMovement::Start()
     Tattack->thanosAnimationPlayer.Play();
     gameObject.GetRigidBody().SetVelocity(API_Vector3(0, 0, 0));
 
+    ambienceMusic_L_4 = Audio::Event("L4previous_ambience");
+
+    lvl4_music = false;
 }
 void ThanosMovement::Update()
 {
@@ -30,6 +33,14 @@ void ThanosMovement::Update()
     if (Tloop->phase < 3 && Tloop->hp>0) {
         if (Tloop->phase == 0 && !cinematic) {
             letsFight = true;
+
+            if (!lvl4_music)
+            {
+                Audio::StopEvent(ambienceMusic_L_4);
+                Audio::Event("L4_bossfight");
+                lvl4_music = true;
+            }
+
             //Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosWakeUp);
             //Tattack->thanosAnimationPlayer.SetLoop(false);
             

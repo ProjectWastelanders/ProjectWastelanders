@@ -120,10 +120,11 @@ void InstanceRenderer::DrawMaterial()
 
         if (_app->renderer3D->hasMaxRenderDistance && mesh.second.mesh._cameraDistanceCulling)
         {
-            float2 modPos(mesh.second.mesh.modelMatrix.Transposed().TranslatePart().x, mesh.second.mesh.modelMatrix.Transposed().TranslatePart().z);
+            float3 transModPos = mesh.second.mesh.modelMatrix.Transposed().TranslatePart();
+            float2 modPos(transModPos.x, transModPos.z);
             float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
 
-            float dist = modPos.Distance(camPos);
+            float dist = modPos.DistanceSq(camPos);
 
             if (dist < _app->renderer3D->maxRenderDistance)
             {
@@ -203,10 +204,11 @@ void InstanceRenderer::DrawRaw()
 
         if (_app->renderer3D->hasMaxRenderDistance && mesh.second.mesh._cameraDistanceCulling)
         {
-            float2 modPos(mesh.second.mesh.modelMatrix.Transposed().TranslatePart().x, mesh.second.mesh.modelMatrix.Transposed().TranslatePart().z);
+            float3 transModPos = mesh.second.mesh.modelMatrix.Transposed().TranslatePart();
+            float2 modPos(transModPos.x, transModPos.z);
             float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
 
-            float dist = modPos.Distance(camPos);
+            float dist = modPos.DistanceSq(camPos);
 
             if (dist < _app->renderer3D->maxRenderDistance)
             {

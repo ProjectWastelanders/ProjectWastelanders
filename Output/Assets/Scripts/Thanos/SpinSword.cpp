@@ -36,7 +36,13 @@ void SpinSword::Update()
 		Tattack->thanosAnimationPlayer.SetLoop(true);
 		Tattack->thanosAnimationPlayer.Play();
 	}
+	if (Tattack->tLoop->phase == 2|| Tattack->tLoop->phase == 0) {
+		gameObject.SetActive(false);
+	}
+	else if (Tattack->tLoop->phase == 1) {
+		gameObject.SetActive(true);
 
+	}
 }
 void SpinSword::OnCollisionEnter(API::API_RigidBody other)
 {

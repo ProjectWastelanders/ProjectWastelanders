@@ -1,5 +1,5 @@
 {
-    "Shader resource UID": 1090855872,
+    "Shader resource UID": 3576356457,
     "Uniforms": [
         {
             "Index": 0,
@@ -24,13 +24,12 @@
             "Name": "ColourTest",
             "Read": 10,
             "Size": 1,
-            "String Type": "vec4",
-            "Type": 35666,
+            "String Type": "vec3",
+            "Type": 35665,
             "Value": [
                 1.0,
                 1.0,
-                1.0,
-                -6.259853398707798e+18
+                1.0
             ]
         },
         {
@@ -45,32 +44,6 @@
         },
         {
             "Index": 824,
-            "Name": "finalBonesMatrices[0]",
-            "Read": 21,
-            "Size": 100,
-            "String Type": "mat4",
-            "Type": 35676,
-            "Value": [
-                1.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                1.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                1.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ]
-        },
-        {
-            "Index": 825,
             "Name": "lightSpaceMatrix",
             "Read": 16,
             "Size": 1,
@@ -96,7 +69,7 @@
             ]
         },
         {
-            "Index": 828,
+            "Index": 826,
             "Layer": 31,
             "Name": "shadowMap",
             "Read": 9,

@@ -31,7 +31,8 @@ void CasetteManager::Start()
     Casette_Img.GetGameObject().GetTransform().SetPosition(initalPos);
     Casette_Img.GetGameObject().SetActive(false);
     finalPos = { -0.780, -0.700, 0 };
-    playerStats->CassetePicked = false;
+    if (playerStats)
+        playerStats->CassetePicked = false;
 
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in CasetteManager.");
     else
@@ -49,7 +50,7 @@ void CasetteManager::Start()
 
 void CasetteManager::Update()
 {
-    if (playerStats->CassetePicked == true)
+    if (playerStats && playerStats->CassetePicked == true)
     {
         activeTutorial = true;
         FeedBack_Tutorial();

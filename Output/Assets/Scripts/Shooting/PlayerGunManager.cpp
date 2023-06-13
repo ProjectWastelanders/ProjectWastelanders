@@ -296,9 +296,11 @@ void PlayerGunManager::EquipGun(int index)
 void PlayerGunManager::UnequipGun(int index)
 {
     if (index == -1) return;
-    playerFlamethrower->fireParticles.StopEmitting();
-    playerFlamethrower->playingParticlesCd = 0.0f;
-
+    if (playerFlamethrower)
+    { 
+        playerFlamethrower->fireParticles.StopEmitting();
+        playerFlamethrower->playingParticlesCd = 0.0f;
+    }
     if (playerMove)
     {
         if (equipedIndex == 0) playerMove->PlaySwapGunAnim(0);

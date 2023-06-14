@@ -41,17 +41,11 @@ void MenuButtons::Update()
     if (Continue.OnPress())
     {
         // If we completed at least level 1, we must have a current save active.
-        /*if (API_QuickSave::GetBool("level1_completed"))
+        if (API_QuickSave::GetBool("level1_completed"))
         {
             Scene::LoadScene("SpaceshipHUB_Scene.HScene");
-        }*/
-        if (API_QuickSave::GetBool("GameStart"))
-        {
-            API_QuickSave::GetString("WhatLevel", goLevel);
-            Scene::LoadScene(goLevel.c_str());
         }
-        else
-            Audio::Event("error");
+   
     }
     if (NewGame.OnPress())
     {
@@ -72,9 +66,6 @@ void MenuButtons::Update()
         API_QuickSave::SetFloat("PlayerPosZ", -29.2f);
 
         API_QuickSave::SetBool("GameStart", true);
-        API_QuickSave::SetBool("Cinematic_Comlpeted", false);
-
-        Scene::LoadScene("Level1.HScene");
 
         API_QuickSave::SetBool("level1_completed", false);
         API_QuickSave::SetBool("level2_completed", false);
@@ -85,6 +76,9 @@ void MenuButtons::Update()
         API_QuickSave::SetBool("level2Selected", false);
         API_QuickSave::SetBool("level3Selected", false);
         API_QuickSave::SetBool("level4Selected", false);
+
+        Scene::LoadScene("Level1.HScene");
+
 
     }
     if (Exit.OnPress())

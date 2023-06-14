@@ -35,7 +35,7 @@ void PlayCinematic::Start()
 }
 void PlayCinematic::Update()
 {
-	if (closeButton.OnPress())
+	if (closeButton.OnPress() || video.VideoEnded())
 	{
 		audio.Stop();
 		video.Stop();

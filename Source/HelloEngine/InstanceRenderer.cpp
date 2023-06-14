@@ -118,23 +118,7 @@ void InstanceRenderer::DrawMaterial()
             Application::Instance()->renderer3D->renderManager.SetSelectedMesh(&mesh.second);
         }
 
-        if (_app->renderer3D->hasMaxRenderDistance && mesh.second.mesh._cameraDistanceCulling)
-        {
-            float3 transModPos = mesh.second.mesh.modelMatrix.Transposed().TranslatePart();
-            float2 modPos(transModPos.x, transModPos.z);
-            float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
-
-            float dist = modPos.DistanceSq(camPos);
-
-            if (dist < _app->renderer3D->maxRenderDistance)
-            {
-                modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
-            }
-        }
-        else
-        {
-            modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
-        }
+        modelMatrices.push_back(mesh.second.mesh.modelMatrix); // Insert updated matrices
     }
 
     if (!modelMatrices.empty())
@@ -201,28 +185,9 @@ void InstanceRenderer::DrawRaw()
             renderManger.SetSelectedMesh(&currentMesh);
         }
 
-
-        if (_app->renderer3D->hasMaxRenderDistance && mesh.second.mesh._cameraDistanceCulling)
-        {
-            float3 transModPos = mesh.second.mesh.modelMatrix.Transposed().TranslatePart();
-            float2 modPos(transModPos.x, transModPos.z);
-            float2 camPos(_app->camera->currentDrawingCamera->GetFrustumPosition().x, _app->camera->currentDrawingCamera->GetFrustumPosition().z);
-
-            float dist = modPos.DistanceSq(camPos);
-
-            if (dist < _app->renderer3D->maxRenderDistance)
-            {
-                modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
-                textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
-                currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
-            }
-        }
-        else
-        {
-            modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
-            textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
-            currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
-        }
+        modelMatrices[drawingMeshes] = currentMesh.modelMatrix; // Insert updated matrices
+        textureIDs[drawingMeshes++] = currentMesh.OpenGLTextureID;
+        currentMesh.OpenGLTextureID = -1; // Reset this, in case the next frame our texture ID changes to -1.
     }
 
     if (!modelMatrices.empty())

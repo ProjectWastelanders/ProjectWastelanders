@@ -1,86 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
-    <meta charset= "UTF-8">
-    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE-Edge">
-    <title>Cuda - A Owesome Html Template</title>
-    <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.png">
+    <title>Guardians Of The Galaxy The Bet</title>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/img/logo.png">
     <!-- Google Fonts ================================================== -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Font Awesome ================================================== -->
-    <script src="https://kit.fontawesome.com/e768f44d60.js" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e768f44d60.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <!--Vendors File ===================================================-->
     <link rel="stylesheet" href="vendors/css/animated-circle.css">
     <link rel="stylesheet" href="vendors/css/normalize.css">
     <link rel="stylesheet" href="vendors/css/grid.css">
     <!--Resource File ==================================================-->
-    <link rel= "stylesheet"  href= "resources/css/style.css"/>
+    <link rel="stylesheet" href="resources/css/style.css" />
     <link rel="stylesheet" href="resources/css/responsive.css">
 </head>
+
 <body>
 
     <!-- Started Header Menu -->
-    
-    <header id= "home">
-        <nav>
-            <div class="row">
-                <a href="#home">
-                    <img class="logo" src="resources/img/logo.png" alt="cuda">
-                </a>
-                <ul class= "main-nav">
-                    <li class= "active" ><a href="#home">Home</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#team">team</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonial">Testimonial</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+
+    <header id="home">
+        <nav class="stroke">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./game.html">game</a>
+                <li><a href="./team.html">team</a>
+                <li><a href="./production.html">production</a>
+            </ul>
         </nav>
-        <div class="row">
-            <div class="hero-text-box">
-                <h1>Hi there! We are the new kids on the block 
-                    and we build awesome websites and mobile apps.</h1>
-                    <a href="#" class= "btn btn-hero" >Work with us</a>
-            </div>
+        <div class="video-overlay"></div>
+        <div class="content">
+            <img class="logo_2" src="resources/img/title.png" alt="logo_2">
+            <h1>An amazing top-down shooter based
+                on The Guardians of the Galaxy!
+            </h1>
         </div>
+        <video autoplay muted loop id="myVideo" style="z-index: -2;">
+            <!-- Poner aqui enlace al video -->
+            <source src="resources/img/TravellingOK.mp4" type="video/mp4">
+        </video>
     </header>
 
     <!-- Ended Header Menu  -->
-   
-    <!--Started Services Section-->
+    <section class="game-section" id="game">
+        <div class="row">
+            <div class="col span_1_of_2 box">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">1 / 3</div> -->
+                        <img id="myImg2" src="resources/img/combat.png" class="hometeam-icon">
+                    </div>
+                    <div id="myModal2" class="modal2">
+                        <span class="close close_multi"></span>
+                        <img class="modal2-content" id="img02">
+                    </div>
 
-    <section class="service-section js-sticky-section" id= "service">
-        <div class="row">
-            <h2>SERVICES WE PROVIDE</h2>
-            <p class= "little-description">We are working with both individuals and businesses from all over the globe 
-                to create awesome websites and applications.</p>
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">2 / 3</div> -->
+                        <img id="myImg3" src="resources/img/hub.png" class="hometeam-icon">
+                    </div>
+                    <div id="myModal3" class="modal2">
+                        <span class="close close_multi"></span>
+                        <img class="modal2-content" id="img03">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">3 / 3</div> -->
+                        <img id="myImg4" src="resources/img/Ebony.png" class="hometeam-icon">
+                    </div>
+                    <div id="myModal4" class="modal2">
+                        <span class="close close_multi"></span>
+                        <img class="modal2-content" id="img04">
+                    </div>
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">3 / 3</div> -->
+                        <img id="myImg5" src="resources/img/sanctuary2.png" class="hometeam-icon">
+                    </div>
+                    <div id="myModal5" class="modal2">
+                        <span class="close close_multi"></span>
+                        <img class="modal2-content" id="img05">
+                    </div>
+
+                    <div class="dotgroup">
+                        <span class="dot" onclick="pressDot(0)"> </span>
+                        <span class="dot" onclick="pressDot(1)"> </span>
+                        <span class="dot" onclick="pressDot(2)"> </span>
+                        <span class="dot" onclick="pressDot(3)"> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col span_1_of_2 box">
+                <h2>The Game</h2>
+                <p class="little-description">Guardians of the Galaxy: The Bet is a Top-Down Action
+                    Shooting game set in
+                    the Marvel Universe. Play through completely different worlds with the Guardians of the Galaxy squad
+                    and battle against those who threaten the universe with unique weapons. Unlock different types of
+                    skills while progressing in the story and create all kinds of weapons to fight the evil.
+                </p>
+                <a href="./game.html" class="btn btn-game">Learn More!</a>
+            </div>
         </div>
+        <br>
+
+        <script>
+            let slideIndex = 0;
+            let timer = null;
+
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                timer = setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+            function pressDot(num) {
+                slideIndex = num;
+                clearTimeout(timer);
+                showSlides();
+            }
+
+        </script>
+
+        <!-- Script Modal Slideshow 1 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal2");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg2");
+            var modalImg = document.getElementById("img02");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Script Modal Slideshow 2 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal3");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg3");
+            var modalImg = document.getElementById("img03");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Script Modal Slideshow 3 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal4");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg4");
+            var modalImg = document.getElementById("img04");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Script Modal Slideshow 4 -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal5");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg5");
+            var modalImg = document.getElementById("img05");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </section>
+
+    <!--Started Team Section-->
+
+    <section class="hometeam-section js-sticky-section" id="team">
         <div class="row">
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/flag.png" alt="flag" class="services-icon">
-                <h3>Branding</h3>
-                <p>Lorem ipsum dolor sit amet, 
-                    consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+            <div class="col span_1_of_2 box">
+                <h2>The Team</h2>
+                <p class="little-description">We are a team composed by 29 people from the Politecnic University of
+                    Terrassa, in Spain.</p>
+                <a href="./team.html" class="btn btn-hometeam btn-my-hometeam">Learn More!</a>
             </div>
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/crayon.png" alt="crayon" class="services-icon">
-                <h3>Design</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                    lorem ipsum  </p>
+            <div class="col span_1_of_2 box">
+                <img id="myImg" src="resources/img/team_big.jpg" class="hometeam-icon2">
+                <div id="myModal" class="modal2">
+                    <span class="close close_multi"></span>
+                    <img class="modal2-content" id="img01">
+                </div>
             </div>
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/gears.png" alt="gears" class="services-icon">
-                <h3>Development</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium</p>
+
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg");
+            var modalImg = document.getElementById("img01");
+
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close close_multi");
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+    </section>
+
+    <section class="production-section" id="production">
+        <div class="row">
+            <div class="col span_1_of_2 box">
+                <img src="resources/img/icon.ico" alt="crayon" width="40%">
             </div>
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/rocket.png" alt="rocket" class="services-icon">
-                <h3>Rocket Science</h3>
-                <p>LEt harum quidem rerum est et expedita distinctio. Nam libero tempore.</p>
+            <div class="col span_1_of_2 box">
+                <h2>Production</h2>
+                <p class="little-description">We have created this videogame using the Scrum methodology, meeting all
+                    the deadlines proposed and using the self made "Hello Engine".</p>
+                <a href="./production.html" class="btn btn-production btn-my-production">Learn More!</a>
             </div>
         </div>
+
     </section>
 
     <!--Ended Services Section-->
@@ -89,130 +333,141 @@
 
     <!-- Started Team Section here-->
 
-    <section class="team-section" id= "team">
-        <div class="row">
-            <h2>MEET OUR BEAUTIFUL TEAM</h2>
-            <p class= "little-description">We are a small team of designers and developers, who help brands with big ideas.</p>
-        </div>
-        <div class="row">
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/1.jpg" alt="Kate Upton" class="team-member">
-                <h3>Kate Upton</h3>
-                <span class="role">Creative Director</span>
-                <p>Duis aute irure dolor in in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat non diam proident.</p>
-                <div class="social-link">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                    </ul>
+    <!-- <section class="team-section" id="team">
+            <div class="row">
+                <h2>MEET OUR BEAUTIFUL TEAM</h2>
+                <p class="little-description">We are a small team of designers and developers, who help brands with big
+                    ideas.</p>
+            </div>
+            <div class="row">
+                <div class="col span_1_of_4 box">
+                    <img src="resources/img/1.jpg" alt="Kate Upton" class="team-member">
+                    <h3>Kate Upton</h3>
+                    <span class="role">Creative Director</span>
+                    <p>Duis aute irure dolor in in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur
+                        sint
+                        occaecat non diam proident.</p>
+                    <div class="social-link">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col span_1_of_4 box">
+                    <img src="resources/img/2.jpg" alt="OLIVIA WILDE" class="team-member">
+                    <h3>OLIVIA WILDE</h3>
+                    <span class="role">Lead Designer</span>
+                    <p>Nemo enim ipsam voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+                        eos
+                        qui ratione voluptatem nesciun</p>
+                    <div class="social-link">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col span_1_of_4 box">
+                    <img src="resources/img/3.jpg" alt="Ashley Greene" class="team-member">
+                    <h3>Ashley Greene</h3>
+                    <span class="role">SEO / Developer</span>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        totam rem aperiam.</p>
+                    <div class="social-link">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col span_1_of_4 box">
+                    <img src="resources/img/4.jpg" alt="ANNE HATHAWAY" class="team-member">
+                    <h3>ANNE HATHAWAY</h3>
+                    <span class="role">CEO / Marketing Guru</span>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
+                    </p>
+                    <div class="social-link">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/2.jpg" alt="OLIVIA WILDE" class="team-member">
-                <h3>OLIVIA WILDE</h3>
-                <span class="role">Lead Designer</span>
-                <p>Nemo enim ipsam voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem nesciun</p>
-                <div class="social-link">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/3.jpg" alt="Ashley Greene" class="team-member">
-                <h3>Ashley Greene</h3>
-                <span class="role">SEO / Developer</span>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                <div class="social-link">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col span_1_of_4 box">
-                <img src="resources/img/4.jpg" alt="ANNE HATHAWAY" class="team-member">
-                <h3>ANNE HATHAWAY</h3>
-                <span class="role">CEO / Marketing Guru</span>
-                <p>Lorem ipsum dolor sit amet, 
-                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
-                <div class="social-link">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section> -->
 
     <!-- End Team Section here-->
 
 
     <!-- Started Skill Section here-->
 
-        <section class="skill-section" id="skill">l
+    <!-- <section class="skill-section" id="skill">l
             <div class="row">
                 <h2>WE GOT SKILLS!</h2>
                 <p class="little-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
             <div class="row">
                 <div class="col span_1_of_4 box">
                     <svg class="radial-progress web-design" data-percentage="90" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;">
+                        </circle>
                         <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">90%</text>
-                      </svg>
-                      <h3>web Design</h3>
+                    </svg>
+                    <h3>web Design</h3>
                 </div>
                 <div class="col span_1_of_4 box">
                     <svg class="radial-progress html-css" data-percentage="70" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;">
+                        </circle>
                         <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">70%</text>
-                      </svg>
-                      <h3>Html / Css</h3>
+                    </svg>
+                    <h3>Html / Css</h3>
                 </div>
                 <div class="col span_1_of_4 box">
                     <svg class="radial-progress graphics-design" data-percentage="75" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;">
+                        </circle>
                         <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">75%</text>
-                      </svg>
-                      <h3>Graphics design</h3>
+                    </svg>
+                    <h3>Graphics design</h3>
                 </div>
                 <div class="col span_1_of_4 box">
                     <svg class="radial-progress ui-ux" data-percentage="85" viewBox="0 0 80 80">
                         <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
+                        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;">
+                        </circle>
                         <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">85%</text>
-                      </svg>
-                      <h3>Ui / Ux</h3>
+                    </svg>
+                    <h3>Ui / Ux</h3>
                 </div>
             </div>
-        </section>
+        </section> -->
 
     <!-- Ended Skill Section here-->
 
 
     <!-- Started Portfolio Section here-->
 
-        <section class="portfolio-section" id="portfolio">
+    <!-- <section class="portfolio-section" id="portfolio">
             <div class="row">
                 <h2>Here is the portfolio</h2>
-                <p class= "litte-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet
+                <p class="litte-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet
                     consectetur, adipisci velit, sed quia non numquam</p>
             </div>
             <div class="row">
@@ -240,19 +495,19 @@ tempor incididunt ut labore et dolore magna aliqua.
                     <img src="resources/img/portfolio4.png" alt="Blog / Magazine Flat UI Kit" class="portfolio-image">
                     <h4>Blog / Magazine Flat UI Kit</h4>
                 </div>
-            </div>
-            <!--  Hidden load more projects
+            </div> -->
+    <!--  Hidden load more projects
             <div class="row">
                 <a href="#" class="btn btn-load-more">load more projects</a>
             </div> -->
-        </section>
+    <!-- </section> -->
 
     <!-- Ended Portfolio Section here-->
 
 
     <!-- Started testimonial Section here-->
 
-        <section class="testimonial-section" id="testimonial">
+    <!-- <section class="testimonial-section" id="testimonial">
             <div class="row">
                 <h2>What People say about us</h2>
                 <p class="little-description">Our clients love us!</p>
@@ -263,7 +518,9 @@ tempor incididunt ut labore et dolore magna aliqua.
                         <img src="resources/img/1.jpg" alt="Chanel Iman">
                     </div>
                     <div class="client-review">
-                        <p>“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</p>
+                        <p>“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu
+                            nisl
+                            scelerisque.”</p>
                         <h3>Chanel Iman</h3>
                         <span class="role">Ceo of Pinterest</span>
                     </div>
@@ -273,7 +530,8 @@ tempor incididunt ut labore et dolore magna aliqua.
                         <img src="resources/img/2.jpg" alt="ADRIANA LIMA">
                     </div>
                     <div class="client-review">
-                        <p>“Vivamus  luctus luctus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta"</p>
+                        <p>“Vivamus luctus luctus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum
+                            facilisis porta"</p>
                         <h3>ADRIANA LIMA</h3>
                         <span class="role">Founder of Instagram</span>
                     </div>
@@ -283,7 +541,8 @@ tempor incididunt ut labore et dolore magna aliqua.
                         <img src="resources/img/3.jpg" alt="ANNE HATHAWAY">
                     </div>
                     <div class="client-review">
-                        <p>“Vivamus luctus urna sed urna luctus luctus  ultricies ac tempor dui sagittis. In condimentum facilisis porta.”</p>
+                        <p>“Vivamus luctus urna sed urna luctus luctus ultricies ac tempor dui sagittis. In condimentum
+                            facilisis porta.”</p>
                         <h3>ANNE HATHAWAY</h3>
                         <span class="role">Lead Designer at Behance</span>
                     </div>
@@ -293,23 +552,27 @@ tempor incididunt ut labore et dolore magna aliqua.
                         <img src="resources/img/4.jpg" alt="Chanel Iman">
                     </div>
                     <div class="client-review">
-                        <p>“Phasellus non purus vel arcu tempor commodo. Fusce semper, purus vel luctus molestie, risus sem cursus </p>
+                        <p>“Phasellus non purus vel arcu tempor commodo. Fusce semper, purus vel luctus molestie, risus
+                            sem
+                            cursus </p>
                         <h3>EMMA STONE</h3>
                         <span class="role">Co-Founder of Shazam</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
     <!-- Ended testimonial Section here-->
 
 
     <!-- Start Contact Section here-->
 
-        <section class="contact-section" id="contact">
+    <!-- <section class="contact-section" id="contact">
             <div class="row">
                 <h2>Get in touch</h2>
-                <p class="little-description">1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111</p>
+                <p class="little-description">1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America.
+                    Tel:
+                    (202) 456-1111</p>
             </div>
             <div class="row">
                 <form action="https://formspree.io/saifyaahoooo@gmail.com" method="POST">
@@ -329,37 +592,38 @@ tempor incididunt ut labore et dolore magna aliqua.
                     </div>
                 </form>
             </div>
-        </section>
+        </section> -->
 
     <!-- Ended Contact Section here-->
 
 
     <!-- Ended Footer Section here-->
 
-        <footer class="footer-section">
-            <div class="row">
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Google</a></li>
-                    <li><a href="#">Linkdin</a></li>
-                    <li><a href="#">Behance</a></li>
-                    <li><a href="#">Dribble</a></li>
-                    <li><a href="#">Github</a></li>
-                </ul>
-            </div>
-        </footer>
+    <footer class="footer-section">
+        <div class="row">
+            <ul>
+                <li><a href="https://twitter.com/rforeststudios?s=11&t=LhsLSz8q6bY5v5V-qTDQtQ">Twitter</a></li>
+                <li><a href="https://www.reddit.com/user/RedForestStudios/">Reddit</a></li>
+                <li><a href="https://www.instagram.com/redforest_studios/?igshid=NTc4MTIwNjQ2YQ%3D%3D">Instagram</a>
+                </li>
+                <li><a href="https://www.tiktok.com/@redforeststudios">TikTok</a></li>
+                <li><a href="https://www.youtube.com/@RedForestStudios">Youtube</a></li>
+                <li><a href="https://github.com/ProjectWastelanders/ProjectWastelanders">Github</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <!-- Ended Footer Section here-->
 
-<!--JavaScript Vendors File ===========================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="vendors/js/jquery.waypoints.min.js"></script>
-<script src= "vendors/js/animated-circle.js"></script>
-<script src="vendors/js/html5shiv.min.js"></script>
-<script src="vendors/js/respond.min.js"></script>
-<script src="vendors/js/selectivizr.js"></script>
-<script src="vendors/js/mixitup.min.js"></script>
-<script src= "resources/js/main.js"></script>
+    <!--JavaScript Vendors File ===========================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="vendors/js/animated-circle.js"></script>
+    <script src="vendors/js/html5shiv.min.js"></script>
+    <script src="vendors/js/respond.min.js"></script>
+    <!-- <script src="vendors/js/selectivizr.js"></script> -->
+    <script src="vendors/js/mixitup.min.js"></script>
+    <script src="resources/js/main.js"></script>
 </body>
+
 </html>

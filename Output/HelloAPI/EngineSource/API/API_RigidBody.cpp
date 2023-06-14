@@ -10,6 +10,10 @@ API::API_RigidBody::API_RigidBody()
 
 API::API_RigidBody::~API_RigidBody()
 {
+	if (_rigidBody != nullptr)
+	{
+		ModuleLayers::apiRigidBodies.erase(GetGameObject().GetUID());
+	}
 }
 
 API::API_GameObject API::API_RigidBody::GetGameObject()
@@ -267,4 +271,6 @@ PhysicsComponent* API::API_RigidBody::GetComponent()
 void API::API_RigidBody::SetComponent(PhysicsComponent* component)
 {
 	_rigidBody = component;
+	if (_rigidBody != nullptr)
+		ModuleLayers::apiRigidBodies[GetGameObject().GetUID()] = this;
 }

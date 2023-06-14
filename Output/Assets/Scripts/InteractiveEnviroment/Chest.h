@@ -27,6 +27,7 @@ public:
     float openChestTimeBar;
     float maxOpenChestTime = 1.0f;
     bool opening;
+    bool opened = false;
     PlayerGunManager* playerGunManager;
     PlayerStats* playerStats;
     PlayerMove* playerMove;
@@ -37,6 +38,7 @@ public:
 
     int chestIndex;
     int itemIndex;
+    bool canGetGun = true;
 
     API_UIImage Tutorial_Img;
 
@@ -48,6 +50,8 @@ public:
     bool endTutorial = false;
     bool timerTutorial = false;
     bool hideChest = false;
+
+    bool saveChest = true;
 
     float showTutorial = 0;
 

@@ -61,6 +61,7 @@ public:
 
 	static void S_AddAnimationComponent(AnimationComponent* component);
 	static void S_RemoveAnimationComponent(AnimationComponent* component);
+	static void S_RemoveAllAnimationComponents();
 
 	static void S_HotReload();
 	static void S_RequestHotReload();

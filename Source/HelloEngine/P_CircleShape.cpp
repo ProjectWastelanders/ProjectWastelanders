@@ -34,6 +34,7 @@ float3 P_CircleShape::GetRandomPos()
 	float z = r * sin(angle);
 
 	x += center.x;
+	y += center.y;
 	z += center.z;
 
 	return float3(x, y, z);
@@ -46,4 +47,14 @@ bool P_CircleShape::IsInside(float3 position)
 	float distance = (position - component->GetGameObject()->transform->GetGlobalPosition()).Normalize();
 
 	return distance <= radius;
+}
+
+void P_CircleShape::Serialization(json& j)
+{
+	j["ParticleModules"]["ShapeModule"]["Radius"] = radius;
+}
+
+void P_CircleShape::DeSerialization(json& j)
+{
+	radius = j["ParticleModules"]["ShapeModule"]["Radius"];
 }

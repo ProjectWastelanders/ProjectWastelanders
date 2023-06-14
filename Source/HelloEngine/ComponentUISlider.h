@@ -4,6 +4,7 @@
 enum class SliderState {
 	NORMAL,
 	ONPRESS,
+	HOVER,
 	ONHOLD,
 	ONUNHOLD
 };
@@ -18,8 +19,15 @@ public:
 
 	void UpdateGamePadInput(bool selected) override;
 
+	void CalculPerCent();
+	void CalculNormalize();
+
+	void SetValue(float value);
+
 	SliderState State;
 
+	int perCent = 0;
+	float mousePosX = 0;
 
 private:
 
@@ -32,12 +40,9 @@ private:
 	float numMin = 0;
 
 	bool isFocused = false;
-	float mousePosX = 0;
 
 	float widthBar;
 	float widthBarAux;
-
-	int perCent = 0;
 
 	float NormalizedPos = 0;
 

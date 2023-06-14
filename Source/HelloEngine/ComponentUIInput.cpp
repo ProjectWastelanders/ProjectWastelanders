@@ -20,6 +20,18 @@ ComponentUIInput::~ComponentUIInput()
 
 void ComponentUIInput::InputUpdate()
 {
+	if (!_isEnabled)
+	{
+		for (int i = 0; i < _listButtons.size(); ++i)
+		{
+			if (_listButtons[i]->_type == Component::Type::UI_BUTTON)
+			{
+				ComponentUIButton* button = (ComponentUIButton*)_listButtons[i];
+				button->State = ButtonState::NORMAL;
+			}
+		}
+	}
+
 	if (_listButtons.size() != 0 && _gameObject->IsActive() && _isEnabled)
 	{
 		if (ButtonSelected < _listButtons.size() - 1 && ((ModuleInput::S_GetGamePadAxis(SDL_CONTROLLER_AXIS_LEFTY) > 10000 && isPress) || ModuleInput::S_GetGamePadButton(GamePad::BUTTON_DOWN) == KEY_DOWN))
@@ -37,11 +49,12 @@ void ComponentUIInput::InputUpdate()
 			isPress = true;
 		}
 
-		_listButtons[ButtonSelected]->UpdateGamePadInput(true);
+		if (_listButtons[ButtonSelected]->IsEnabled() && _listButtons[ButtonSelected]->GetGameObject()->IsActive())
+			_listButtons[ButtonSelected]->UpdateGamePadInput(true);
 
 		for (int i = 0; i < _listButtons.size(); ++i)
 		{
-			if (i == ButtonSelected)
+			if (i == ButtonSelected || !_listButtons[i]->IsEnabled() || !_listButtons[i]->GetGameObject()->IsActive())
 				continue;
 			_listButtons[i]->UpdateGamePadInput(false);
 		}

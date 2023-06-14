@@ -1,5 +1,6 @@
 #include "Headers.h"
 #include "FfmpegVideoPlayer.h"
+#include "LayerGame.h"
 
 FfmpegVideoPlayer::FfmpegVideoPlayer(const char* filename)
 {
@@ -188,6 +189,7 @@ void FfmpegVideoPlayer::ResetVideo()
 	// Create texture
 	glBindTexture(GL_TEXTURE_2D, glTexture);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, frameData);
+	videoEnded = false;
 }
 
 void FfmpegVideoPlayer::CleanUp()
@@ -205,7 +207,7 @@ void FfmpegVideoPlayer::CleanUp()
 
 void FfmpegVideoPlayer::Update()
 {
-	currentTime += EngineTime::EngineTimeDeltaTime();
+	currentTime += LayerGame::S_IsPlaying() ? EngineTime::RealTimeDeltaTime() : EngineTime::EngineTimeDeltaTime();
 
 	if (currentTime >= frameRate)
 	{
@@ -215,8 +217,10 @@ void FfmpegVideoPlayer::Update()
 		if (frame == nullptr)
 		{
 			// Video ended
+			videoEnded = true;
 			return;
 		}
+		videoEnded = false; // sorry
 		// Update texture
 		
 		uint8_t* dst[4] = { frameData, NULL, NULL, NULL };
@@ -228,9 +232,5 @@ void FfmpegVideoPlayer::Update()
 		glBindTexture(GL_TEXTURE_2D, glTexture);
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, frameData);
 
-		//2D case
-
-		//3D case
-		// Obtain videoPlayerComponent and change its texture.	
 	}
 }

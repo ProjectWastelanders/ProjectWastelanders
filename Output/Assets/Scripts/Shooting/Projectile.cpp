@@ -15,6 +15,7 @@ HELLO_ENGINE_API_C Projectile* CreateProjectile(ScriptToInspectorInterface* scri
 void Projectile::Start()
 {
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
+    rigidBody = gameObject.GetRigidBody();
 }
 
 void Projectile::Update()
@@ -33,13 +34,17 @@ void Projectile::Update()
         gameObject.GetRigidBody().SetBoxScale({ 0.1f + scaleMultiply, 0.1f + scaleMultiply, 0.1f + scaleMultiply });
     }
 
-    gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
+    rigidBody.SetVelocity({ gameObject.GetTransform().GetForward() * speed * 0.015f * 60.0f });
+
+   // gameObject.GetTransform().Translate(gameObject.GetTransform().GetForward() * speed * Time::GetDeltaTime());
 }
 
 void Projectile::Destroy()
 {
     gameObject.GetTransform().SetPosition(0, 9999, 0);
+    reflected = false;
     gameObject.SetActive(false);
+    gameObject.GetParticleSystem().StopEmitting();
 }
 
 void Projectile::OnCollisionEnter(API::API_RigidBody other)
@@ -91,6 +96,7 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
                 if (bosss->defenseSword.IsActive() == true) {
                     gameObject.GetTransform().Rotate(0, 180, 0);
                     reflected = true;
+                    Audio::Event("bullet_bounce");
                 }
                 else {
                     if (boss) {
@@ -144,6 +150,8 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
                  if (bosss->defenseSword.IsActive() == true) {
                      gameObject.GetTransform().Rotate(0, 180, 0);
                      reflected = true;
+                     Audio::Event("bullet_bounce");
+
                  }
                  else {
                      if(boss) boss->TakeDamage(damage);
@@ -217,6 +225,8 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
             if (bosss->defenseSword.IsActive() == true) {
                 gameObject.GetTransform().Rotate(0, 180, 0);
                 reflected = true;
+                Audio::Event("bullet_bounce");
+
             }
             else {
                 if (boss) boss->TakeDamage(damage);
@@ -255,7 +265,7 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
         else if (detectionTag == "Thanos")
         {
             ThanosLoop* boss = (ThanosLoop*)other.GetGameObject().GetScript("ThanosLoop");
-            if (boss) boss->TakeDamage(damage);
+            if (boss) boss->AddBomb();
             Destroy();
         }
         break;
@@ -268,18 +278,12 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
         {
             Enemy* enemy = (Enemy*)other.GetGameObject().GetScript("Enemy");
             if (enemy) enemy->TakeDamage(damage, resistanceDamage);
-            pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
-            pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
-            if (shotgunLevel > 1) pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
             Destroy();
         }
         else if (detectionTag == "Boss")
         {
             BossLoop* miniBoss = (BossLoop*)other.GetGameObject().GetScript("BossLoop");
             if (miniBoss) miniBoss->TakeDamage(damage);
-            pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
-            pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
-            if (shotgunLevel > 1) pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
             Destroy();
         }
         else if (detectionTag == "Thanos")
@@ -290,12 +294,11 @@ void Projectile::OnCollisionEnter(API::API_RigidBody other)
             if (bosss->defenseSword.IsActive() == true) {
                 gameObject.GetTransform().Rotate(0, 180, 0);
                 reflected = true;
+                Audio::Event("bullet_bounce");
+
             }
             else {
                 if (boss) boss->TakeDamage(damage);
-                pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
-                pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
-                if (shotgunLevel > 1) pull->LauchProjectileSHOTGUN_BOMB(0.5f, gameObject.GetTransform(), { 0.3f, 0.3f, 0.3f }, other.GetGameObject().GetUID());
                 Destroy();
             }
             

@@ -4,6 +4,7 @@
 #include "Console.h"
 #include "ModuleFiles.h"
 #include "Uniform.h"
+#include <regex>
 
 std::map<std::string, uint> Shader::loadedShaders;
 
@@ -187,14 +188,24 @@ void Shader::VertexShaderCheck()
 		data.hasEngineLight = true;
 
 		//Get max number of lights the shader will be using.
-		std::string spotLights = "const uint MAX_SPOT";
-		std::string pointLights = "const uint MAX_POINT";
+		std::string spotPatternString = "const uint MAX_SPOT\\s*=\\s*(\\d+)";
+		std::string pointPatternString = "const uint MAX_POINT\\s*=\\s*(\\d+)";
 
-		if (data.fragmentCode.find(spotLights) != std::string::npos)
-			data._maxSpotLights = 32;
+		std::regex spotPattern(spotPatternString);
+		std::regex pointPattern(pointPatternString);
+		std::smatch match;
 
-		if (data.fragmentCode.find(pointLights) != std::string::npos)
-			data._maxSpotLights = 32;
+		if (std::regex_search(data.fragmentCode, match, spotPattern)) 
+		{
+			std::string numberString = match[1].str();
+			data._maxSpotLights = std::stoi(numberString);
+		}
+		
+		if (std::regex_search(data.fragmentCode, match, pointPattern))
+		{
+			std::string numberString = match[1].str();
+			data._maxPointLights = std::stoi(numberString);
+		}
 	}
 }
 
@@ -309,5 +320,10 @@ void Shader::SetTexture(const std::string& name, uint id, int layer)
 	glActiveTexture(GL_TEXTURE0 + layer);
 	glBindTexture(GL_TEXTURE_2D, id);
 	SetInt(name, layer);
+}
+
+void Shader::SetIntv(const std::string& name, int* value, int count)
+{
+	glUniform1iv(glGetUniformLocation(data.ID, name.c_str()), count, value);
 }
 

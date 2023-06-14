@@ -1,5 +1,6 @@
 #include "OpenMenuInterruptor.h"
 #include "../Player/PlayerMove.h"
+#include "../UI Test folder/HUB/HUB_UIManager.h"
 HELLO_ENGINE_API_C OpenMenuInterruptor* CreateOpenMenuInterruptor(ScriptToInspectorInterface* script)
 {
     OpenMenuInterruptor* classInstance = new OpenMenuInterruptor();
@@ -44,18 +45,12 @@ void OpenMenuInterruptor::OnCollisionStay(API::API_RigidBody other)
     std::string detectionTag = other.GetGameObject().GetTag();
     if (detectionTag == "Player")
     {
-        if (open) return;
 
         if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN)
         {
-            playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
-            if (playerMove != nullptr) playerMove->openingChest = true;
-
-            float distanceX = gameObject.GetTransform().GetGlobalPosition().x - other.GetGameObject().GetTransform().GetGlobalPosition().x;
-            float distanceZ = gameObject.GetTransform().GetGlobalPosition().z - other.GetGameObject().GetTransform().GetGlobalPosition().z;
-
+            //playerMove = (PlayerMove*)other.GetGameObject().GetScript("PlayerMove");
+            //if (playerMove != nullptr) playerMove->openingChest = true;
             OpenMenus();
-            open = true;
 
         }
     }
@@ -72,8 +67,11 @@ void OpenMenuInterruptor::OnCollisionExit(API::API_RigidBody other)
 
 void OpenMenuInterruptor::OpenMenus()
 {
+    if (HUB_UIManager::IsPanelOpened())
+        return;
     for (size_t i = 0; i < numberOfAsignedMenus; i++)
     {
         menu[i].SetActive(true);
     }
+    HUB_UIManager::OpenPanel();
 }

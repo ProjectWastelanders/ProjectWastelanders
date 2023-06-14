@@ -24,7 +24,7 @@ public:
 	API_GameObject boss;
 
 	float distBP;
-	float bossSpeed = 1.0f;
+	float bossSpeed = 0.75f;
 
 	float angle = 0.0f;
 
@@ -49,5 +49,11 @@ public:
 	};
 	float walkCooldown = 0.0f;
 	WALKSTATE walkState = WALKSTATE::NORMAL;
+
+	bool cinematic = true;
+	bool letsFight = false;
+
+	uint ambienceMusic_L_4;
+	bool lvl4_music = false;
 };
 

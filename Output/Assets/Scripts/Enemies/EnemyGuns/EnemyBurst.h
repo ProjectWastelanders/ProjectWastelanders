@@ -4,7 +4,8 @@
 #include "Macro.h"
 #include "../EnemyGun.h"
 #include "API/API.h"
-
+#include "../EnemyRanger.h"
+#include "../../Missions/LVL3/ActiveShotsDiviner.h"
 class EnemyBurst : public EnemyGun
 {
 public:
@@ -19,5 +20,8 @@ public:
 	float burstDelay;
 	int burstLenght;
 	int shotCount;
+	
+	ActiveShotsDiviner* activeShotsScript = nullptr;
+	EnemyRanger* rangerScript = nullptr;
 };
 

@@ -29,6 +29,14 @@ void EnemyBurst::Start()
     else fullShotCooldown = 0;
 
     shotCount = burstLenght;
+    rangerScript = (EnemyRanger*)enemyGO.GetScript("EnemyRanger");
+    if (!rangerScript)Console::Log("aaaaaaaaaaaaaaaaaaaaaa");
+    API_GameObject shipGo;
+    Game::FindGameObjectsWithTag("ActiveShootsShips", &shipGo, 1);
+
+    activeShotsScript = (ActiveShotsDiviner*)shipGo.GetScript("ActiveShotsDiviner");
+    if (!activeShotsScript)Console::Log("Cant find script ActiveShotsDiviner");
+   
 }
 void EnemyBurst::Update()
 {
@@ -37,11 +45,31 @@ void EnemyBurst::Update()
     {
         if (burstDelay <= 0)
         {
-            shotCount++;
+           shotCount++;
             burstDelay = fullBurstDelay;
             LauchProjectile(shootingSpawn);
-            PlayShotSound(audioEventString);
-           
+            if (rangerScript)
+            {
+                // Console::Log("obamaaaaaaaaaaaa");
+                if (rangerScript->scriptedForQuest)
+                {
+
+                    if (activeShotsScript)
+                    {
+                        if (activeShotsScript->canHearShoot)
+                            PlayShotSound(audioEventString), Console::Log("uwuwuwuwuwuwuwwuwuwuwuw");;
+                    }
+                }
+                else
+                {
+                    PlayShotSound(audioEventString);
+                }
+            }
+            else
+            {
+                PlayShotSound(audioEventString);
+            }
+           // PlayShotSound(audioEventString);
         }
         else
         {
@@ -57,7 +85,7 @@ void EnemyBurst::Update()
     }
     else
     {
-        shotCooldown -= Time::GetDeltaTime();
+        shotCooldown -= Time::GetDeltaTime(); 
     }
 }
 
@@ -66,7 +94,27 @@ void EnemyBurst::Shoot()
     if (canShoot)
     {
         LauchProjectile(shootingSpawn);
-        PlayShotSound(audioEventString);
+        //PlayShotSound(audioEventString);
+        if (rangerScript)
+        {
+            // Console::Log("obamaaaaaaaaaaaa");
+            if (rangerScript->scriptedForQuest)
+            {
+                if (activeShotsScript)
+                {
+                    if (activeShotsScript->canHearShoot)
+                        PlayShotSound(audioEventString), Console::Log("uwuwuwuwuwuwuwwuwuwuwuw");;
+                }
+            }
+            else
+            {
+                PlayShotSound(audioEventString);
+            }
+        }
+        else
+        {
+            PlayShotSound(audioEventString);
+        }
         canShoot = false;
         shotCooldown = fullShotCooldown;
         shotCount = 1;

@@ -65,6 +65,11 @@ void Extractor_FeedBack::OnCollisionEnter(API::API_RigidBody other)
     if (detectionTag == "Player")
     {
         Console::Log("AAA");
+
+        if (activeTutorial == false)
+        {
+            Audio::Event("info_alert");
+        }
         activeTutorial = true;
     }
 }

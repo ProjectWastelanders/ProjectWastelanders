@@ -84,9 +84,7 @@ void Feedback_Level_Select::Update()
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN)
     {
         if (!interruptor) return;
-        Input::HandleGamePadButton(GamePadButton::BUTTON_B);
-        // IT'S CORRECT DON'T REMOVE NOTHING
-        interruptor->menuPanel.SetActive(true); // can set false if is not true
+
         interruptor->menuPanel.SetActive(false);
         if (playerMove) playerMove->openingChest = false;
         interruptor->open = false;
@@ -149,13 +147,13 @@ void Feedback_Level_Select::OnCharge()
     {
         openSelecTime += Time::GetRealTimeDeltaTime();
 
-        if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_UP || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_UP)
+        if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_UP || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_UP)
         {
             openSelecTime = 0;
             selecting = false;
         }
     }
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_X) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN)
+    if (Input::GetGamePadButton(GamePadButton::BUTTON_A) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_E) == KeyState::KEY_DOWN)
     {
         selecting = true;
     }
@@ -259,7 +257,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             casettesNumber++;
         }
 
-        if (API_QuickSave::GetBool("mision_LikeThe80", false))
+        if (API_QuickSave::GetBool("mision_LikeThe80"))
         {
             checkSecundaryMision1.SetActive(true);
         }
@@ -268,7 +266,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             checkSecundaryMision1.SetActive(false);
         }
 
-        if (API_QuickSave::GetBool("mision_RageMonster", false))
+        if (API_QuickSave::GetBool("mision_RageMonster"))
         {
             checkSecundaryMision2.SetActive(true);
         }
@@ -311,7 +309,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             casettesNumber++;
         }
 
-        if (API_QuickSave::GetBool("mision_Masacre", false))
+        if (API_QuickSave::GetBool("mision_Masacre"))
         {
             checkSecundaryMision1.SetActive(true);
         }
@@ -320,7 +318,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             checkSecundaryMision1.SetActive(false);
         }
 
-        if (API_QuickSave::GetBool("mision_Personal", false))
+        if (API_QuickSave::GetBool("mision_Personal"))
         {
             checkSecundaryMision2.SetActive(true);
         }
@@ -363,7 +361,7 @@ void Feedback_Level_Select::SetCurrentLevel()
             casettesNumber++;
         }
 
-        if (API_QuickSave::GetBool("mision_TheRule", false))
+        if (API_QuickSave::GetBool("mision_TheRule"))
         {
             checkSecundaryMision1.SetActive(true);
         }

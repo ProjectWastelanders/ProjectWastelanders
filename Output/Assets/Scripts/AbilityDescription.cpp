@@ -27,7 +27,6 @@ void AbilityDescription::Update()
 		if (audioON)
 		{
 			audioON = false;
-			Console::Log("David");
 			Audio::Event("hover");
 		}
 	}

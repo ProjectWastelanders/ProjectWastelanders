@@ -11,6 +11,8 @@ public:
     void Start() override;
     void Update() override;
 
+    void StopParticles();
+
     int index;
 };
 

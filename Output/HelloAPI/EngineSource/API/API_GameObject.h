@@ -17,15 +17,18 @@ namespace API
     class API_AnimationPlayer;
     class API_ParticleSystem;
     class API_Material;
-	class API_UIButton;
+    class API_UIButton;
     class API_UICheckBox;
-	class API_UIImage;
-	class API_UIInput;
-	class API_UIText;
+    class API_UISlider;
+    class API_UIImage;
+    class API_UIInput;
+    class API_UIText;
     class API_SkinnedMeshRenderer;
     class API_ShaderComponent;
     class API_Agent;
     class API_AudioSourceComponent;
+    class API_VideoPlayer;
+    class API_DirectionalLight;
 
     class TO_API API_GameObject
     {
@@ -44,7 +47,9 @@ namespace API
         /// WARNING: Do not call this function with an array too small!
         /// <param name="buffer">An API_GameObject array to fill with this gameobject's children</param>
         /// <param name="count">Number of children to get. -1 = All children.</param>
-        void GetChildren(API_GameObject* buffer, int count = -1);
+        int GetChildren(API_GameObject* buffer, int count = -1);
+        API_GameObject GetParent();
+        bool SetParent(API_GameObject parent);
 
         HelloBehavior* AddScript(const char* className);
         HelloBehavior* GetScript(const char* className);
@@ -69,6 +74,10 @@ namespace API
         API_Agent GetAgent();
 
         API_UIButton GetUIButton();
+
+        API_UIImage GetUIImage();
+
+        API_DirectionalLight GetDirectionalLight();
 
         uint GetUID();
 
@@ -104,13 +113,15 @@ namespace API
         friend class API_ParticleSystem;
         friend class API_UIButton;
         friend class API_UICheckBox;
-		friend class API_UIImage;
-		friend class API_UIInput;
-		friend class API_UIText;
+        friend class API_UISlider;
+        friend class API_UIImage;
+        friend class API_UIInput;
+        friend class API_UIText;
         friend class API_SkinnedMeshRenderer;
         friend class API_ShaderComponent;
         friend class API_Agent;
         friend class API_RayCast;
         friend class API_AudioSourceComponent;
+        friend class API_VideoPlayer;
     };
 }

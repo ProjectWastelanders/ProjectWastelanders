@@ -31,6 +31,7 @@
 std::map<std::string, Resource*> ModuleResourceManager::loadedResources;
 std::map<uint, Resource*> ModuleResourceManager::resources;
 FileTree* ModuleResourceManager::_fileTree = nullptr;
+bool ModuleResourceManager::changingScene = false;
 
 ModuleResourceManager::ModuleResourceManager()
 {
@@ -395,6 +396,8 @@ void ModuleResourceManager::S_UpdateFileTree()
 
 void ModuleResourceManager::S_SerializeScene(GameObject*& g)
 {
+#ifdef STANDALONE // We do not alow to serialize scenes in Runtime
+
 	if (!g)
 		return;
 
@@ -418,11 +421,13 @@ void ModuleResourceManager::S_SerializeScene(GameObject*& g)
 	std::string buffer = j.dump(4);
 
 	ModuleFiles::S_Save(savePath, &buffer[0], buffer.size(), false);
+#endif
 }
 
 // Ruben Ayora
 void ModuleResourceManager::S_SerializeToPrefab(GameObject* g, const std::string& folderPath)
 {
+
 	if (!g)
 		return;
 
@@ -444,6 +449,7 @@ void ModuleResourceManager::S_SerializeToPrefab(GameObject* g, const std::string
 
 void ModuleResourceManager::S_SerializeScene(GameObject*& g, const std::string& path)
 {
+#ifdef STANDALONE // We do not alow to serialize scenes in Runtime
 	if (!g)
 		return;
 	// Create json
@@ -454,6 +460,7 @@ void ModuleResourceManager::S_SerializeScene(GameObject*& g, const std::string& 
 	std::string buffer = j.dump(4);
 
 	ModuleFiles::S_Save(path, &buffer[0], buffer.size(), false);
+#endif // STANDALONE
 }
 
 // Ruben Ayora
@@ -600,6 +607,7 @@ void ModuleResourceManager::S_OverridePrefab(GameObject* g, const std::string& f
 
 bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 {
+	changingScene = true;
 	// Deselect current selected game object
 	LayerEditor::S_SetSelectGameObject(nullptr);
 	Application::Instance()->renderer3D->renderManager.RemoveSelectedMesh();
@@ -626,8 +634,10 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 	ModuleLayers::DestroyMeshes(); // When all meshes are destroyed, the Instance Renderers get destroyed as well. In this case, we want this to happen BEFORE we Deserialize the scene
 									   // If we let it happen afterwards, the old meshes will destroy the new Instance Renderers.
 	LayerGame::RemoveAllScripts();
+	LayerGame::S_RemoveAllAnimationComponents();
 	Lighting::ClearLights();
 	ModuleAudio::StopAllAudioEvents();
+	ModuleInput::S_ResetFrameInput();
 
 // Create New GameObject for root GameObject
 	if (ModuleLayers::rootGameObject)
@@ -735,6 +745,8 @@ bool ModuleResourceManager::S_DeserializeScene(const std::string& filePath)
 	ModuleLayers::rootGameObject = temp[0].first;
 
 	Application::Instance()->xml->GetConfigXML().FindChildBreadth("currentScene").node.attribute("value").set_value(filePath.c_str());
+
+	changingScene = false;
 
 	if (LayerGame::S_IsPlaying())
 		LayerGame::StartAllScripts();

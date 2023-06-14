@@ -44,11 +44,9 @@
 		{
 			totalPosition = vec4(aPos, 1.0f);
 		}
-	
-		vec4 aPos4 = vec4(aPos, 1.0);
 		
 		//OUT
-		FragPos = vec3(model * aPos4);
+		FragPos = vec3(model * totalPosition);
 		TextureCoords = textCoords;
 		Normal = normalize(mat3(transpose(inverse(model))) * normals);
 		FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0f);
@@ -57,8 +55,8 @@
 	}
 #endif
 #ifdef FRAGMENT_PROGRAM
-	const uint MAX_POINT = 32;
-	const uint MAX_SPOT = 32;
+	const uint MAX_POINT = 48;
+	const uint MAX_SPOT = 48;
 
 	struct Light
 	{
@@ -157,8 +155,35 @@
 	
 	//SHADOW METHODS
 	
+	float CalculateShadow(vec4 fragPosLightSpace, float bias)
+	{
+		float shadow = 0.0;
+		vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
+		
+		// perform perspective divide
+	    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+	    projCoords = projCoords * 0.5 + 0.5;
+	    if (projCoords.z > 1.0f) projCoords.z = 1.0f; //Capping Z
+		
+		float closestDepth = texture(shadowMap, projCoords.xy).r; 
+	    float currentDepth = projCoords.z;
+		
+		for (int x = -1; x <= 1; ++x)
+		{
+			for (int y = -1; y <= 1; ++y)
+			{
+				float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r;
+				shadow += currentDepth - bias > pcfDepth ? 1.0 : 0.0;
+			}
+		}
+		
+		shadow /= 9.0;
+		
+	    return shadow;
+	}
+	
 	//LIGHT METHODS
-	vec4 CalculateLight(Light light, vec3 direction, vec3 normal)
+	vec4 CalculateLight(Light light, vec3 direction, vec3 normal, float shadowFactor)
 	{
 		//Ambient
 		vec4 Ambient = vec4(light.Color, 1.0f) * light.AmbientIntensity;
@@ -171,7 +196,7 @@
 		
 		Diffuse.xyz = clamp(Diffuse.xyz, 0.15, 1.0); 
 	
-		vec4 result = Ambient * Diffuse;
+		vec4 result = (Ambient + (1 - shadowFactor)) * Diffuse;
 		//vec4 result = (Ambient * Diffuse);
 		result.w = 1.0f;
 		return result;
@@ -182,7 +207,10 @@
 	{
 		vec3 dir = normalize(CalculateDirection(Light_Directional.Direction));
 		
-		return CalculateLight(Light_Directional.Base, dir, normal);
+		float bias = max(0.00032 * (1.0 - dot(normal, dir)), 0.00032);
+		float shadowFactor = CalculateShadow(FragPosLightSpace, bias);
+		
+		return CalculateLight(Light_Directional.Base, dir, normal, shadowFactor);
 	}
 	
 	vec4 CalculatePointLight(PointLight light, vec3 normal)
@@ -194,7 +222,8 @@
 		
 		if (light.Distance > dist)
 		{
-			color = CalculateLight(light.Base, lightDir, normal);
+			float shadowFactor = 1.0f;
+			color = CalculateLight(light.Base, lightDir, normal, shadowFactor);
 		}
 		
 		float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -212,11 +241,12 @@
 		
 		if (theta > light.Cutoff)
 		{
-			float dist = length(lightDir);
+			float dist = length(light.Position - FragPos);
 		
 			if (light.Distance > dist)
 			{
-				color = CalculateLight(light.Base, lightDir, normal);
+				float shadowFactor = 1.0f;
+				color = CalculateLight(light.Base, lightDir, normal, shadowFactor);
 			}
 			
 			float attenuation = 1 + (light.Linear * dist) * (light.Exp * dist *dist);
@@ -229,7 +259,7 @@
 		return color;
 	}
 	
-	uniform vec3 ColourTest;
+	uniform vec4 ColourTest;
 	
 	void main()
 	{
@@ -248,12 +278,6 @@
 			result += CalculateSpotLight(Light_Spot[i], Normal);
 		}
 		
-		FragColor = texture(albedo_texture, TextureCoords) * result * vec4(ColourTest, 1.0f);
+		FragColor = texture(albedo_texture, TextureCoords) * result * ColourTest;
 	}
 #endif
-
-
-
-
-
-

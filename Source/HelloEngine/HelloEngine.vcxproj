@@ -72,6 +72,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</IntDir>
+    <TargetName>GOTG_The_Bet</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -400,6 +401,7 @@
     <ClCompile Include="API\API_AnimationPlayer.cpp" />
     <ClCompile Include="API\API_Audio.cpp" />
     <ClCompile Include="API\API_AudioSource.cpp" />
+    <ClCompile Include="API\API_DirectionalLight.cpp" />
     <ClCompile Include="API\API_QuickSave.cpp" />
     <ClCompile Include="API\API_RayCast.cpp" />
     <ClCompile Include="API\API_RayCastCollision.cpp" />
@@ -420,12 +422,14 @@
     <ClCompile Include="API\API_UICheckBox.cpp" />
     <ClCompile Include="API\API_UIImage.cpp" />
     <ClCompile Include="API\API_UIInput.cpp" />
+    <ClCompile Include="API\API_UISlider.cpp" />
     <ClCompile Include="API\API_UIText.cpp" />
     <ClCompile Include="API\API_Vector2.cpp" />
     <ClCompile Include="API\API_Vector3.cpp" />
     <ClCompile Include="API\API_Engine.cpp" />
     <ClCompile Include="API\API_Camera.cpp" />
     <ClCompile Include="API\API_ParticleSystem.cpp" />
+    <ClCompile Include="API\API_VideoPlayer.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AudioSourceComponent.cpp" />
     <ClCompile Include="BillBoardComponent.cpp" />
@@ -657,6 +661,7 @@
     <ClInclude Include="API\API_AnimationPlayer.h" />
     <ClInclude Include="API\API_Audio.h" />
     <ClInclude Include="API\API_AudioSource.h" />
+    <ClInclude Include="API\API_DirectionalLight.h" />
     <ClInclude Include="API\API_QuickSave.h" />
     <ClInclude Include="API\API_RayCast.h" />
     <ClInclude Include="API\API_RayCastCollision.h" />
@@ -678,12 +683,14 @@
     <ClInclude Include="API\API_UICheckBox.h" />
     <ClInclude Include="API\API_UIImage.h" />
     <ClInclude Include="API\API_UIInput.h" />
+    <ClInclude Include="API\API_UISlider.h" />
     <ClInclude Include="API\API_UIText.h" />
     <ClInclude Include="API\API_Vector2.h" />
     <ClInclude Include="API\API_Vector3.h" />
     <ClInclude Include="API\API_Engine.h" />
     <ClInclude Include="API\API_Camera.h" />
     <ClInclude Include="API\API_ParticleSystem.h" />
+    <ClInclude Include="API\API_VideoPlayer.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="AudioSourceComponent.h" />
     <ClInclude Include="BaseShader.h" />

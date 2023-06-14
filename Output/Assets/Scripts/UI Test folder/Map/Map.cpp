@@ -17,13 +17,20 @@ void Map::Start()
 {
     playerStorage = (PlayerStorage*)playerStorageGO.GetScript("PlayerStorage");
     if (playerStorage == nullptr) Console::Log("PlayerStorage missing in CasetteManager.");
+    if (levelIndex == 2)
+    {
+        mapGO.SetActive(false);
+    }
+    else
+    {
+        mapGO.SetActive(true);
+    }
 
-    mapGO.SetActive(true);
 }
 
 void Map::Update()
 {
-    if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_M) == KeyState::KEY_DOWN)
+    /*if (Input::GetGamePadButton(GamePadButton::BUTTON_DOWN) == KeyState::KEY_DOWN || Input::GetKey(KeyCode::KEY_M) == KeyState::KEY_DOWN)
     {
         if (mapOpen)
         {
@@ -40,5 +47,24 @@ void Map::Update()
             casette2.SetActive(playerStorage->casette2Picked);
             casette3.SetActive(playerStorage->casette3Picked);
         }
+    }*/
+}
+
+void Map::MissionsEnable(bool hasMap)
+{
+    if (true)
+    {
+        if (playerStorage == nullptr) return;
+        casette1.SetActive(playerStorage->casette1Picked);
+        casette2.SetActive(playerStorage->casette2Picked);
+        casette3.SetActive(playerStorage->casette3Picked);
     }
+    else
+    {
+        
+        casette1.SetActive(false);
+        casette2.SetActive(false);
+        casette3.SetActive(false);
+    }
+
 }

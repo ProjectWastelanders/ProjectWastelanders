@@ -30,6 +30,7 @@ public:
 	float* GetViewMatrixNoTransp();
 	float* GetProjectionMatrixNoTransp();
 
+	float3 GetFrustumPosition();
 	float3 GetPosition();
 
 	void ChangeToOrthograpic();

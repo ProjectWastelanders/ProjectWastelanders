@@ -19,6 +19,7 @@ public:
 	API_Vector3 new_weapon_movmentX;
 	API_Vector3 special_weapon_movmentX;
 
+	API_UIImage reference;
 	API_UIImage material_upgrade;
 	API_UIImage material_new_weapon;
 	API_UIImage material_special_weapon;

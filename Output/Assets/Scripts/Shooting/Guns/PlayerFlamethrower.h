@@ -13,7 +13,7 @@ public:
     void Start() override;
     void Update() override;
 
-    void Shoot() override;
+    bool Shoot() override;
     void EnableGuns(bool enable) override;
     void SetGunStatsPerLevel(int level) override;
 

@@ -4,6 +4,7 @@ HELLO_ENGINE_API_C UIAudioManager* CreateUIAudioManager(ScriptToInspectorInterfa
 	UIAudioManager* classInstance = new UIAudioManager();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
 	return classInstance;
+	 
 }
 
 void UIAudioManager::Start()

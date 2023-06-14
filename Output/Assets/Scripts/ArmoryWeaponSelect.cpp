@@ -1,6 +1,8 @@
 #include "ArmoryWeaponSelect.h"
 #include "InteractiveEnviroment/OpenMenuInterruptor.h"
 #include "Player/PlayerMove.h"
+#include "UI Test folder/HUB/HUB_UIManager.h"
+
 HELLO_ENGINE_API_C ArmoryWeaponSelect* CreateArmoryWeaponSelect(ScriptToInspectorInterface* script)
 {
     ArmoryWeaponSelect* classInstance = new ArmoryWeaponSelect();
@@ -28,7 +30,6 @@ HELLO_ENGINE_API_C ArmoryWeaponSelect* CreateArmoryWeaponSelect(ScriptToInspecto
     script->AddDragBoxUIInput("List Weapons", &classInstance->SelectWeaponList);
 
     script->AddDragInt("Gun Index", &classInstance->gunIndex);
-    script->AddDragBoxGameObject("Open Menu Interruptor", &classInstance->interruptorGO);
     script->AddDragBoxGameObject("Player", &classInstance->playerGO);
 
     return classInstance;
@@ -38,10 +39,8 @@ void ArmoryWeaponSelect::Start()
 {
     nextW = (ArmoryWeaponSelect*)NextWeapon.GetScript("ArmoryWeaponSelect");
     PrevW = (ArmoryWeaponSelect*)PrevtWeapon.GetScript("ArmoryWeaponSelect");
-    CurrentPanelUnlock.SetEnable(false);
-
-    interruptor = (OpenMenuInterruptor*)interruptorGO.GetScript("OpenMenuInterruptor");
-    if (interruptor == nullptr && gunIndex == 0) Console::Log("OpenMenuInterruptor missing in ArmoryWeaponSelect Script with gunIndex 0.");
+    /*CurrentPanelUnlock.SetEnable(false);*/
+    CurrentPanelUpgrate.GetGameObject().SetActive(true);
 
     playerMove = (PlayerMove*)playerGO.GetScript("PlayerMove");
     if (playerMove == nullptr && gunIndex == 0) Console::Log("PlayerMove missing in ArmoryWeaponSelect Script with gunIndex 0.");
@@ -55,16 +54,22 @@ void ArmoryWeaponSelect::Update()
         Audio::Event("click");
 
         findUnlock = true;
-        if (!interruptor) return;
-        Input::HandleGamePadButton(GamePadButton::BUTTON_B);
-        // IT'S CORRECT DON'T REMOVE NOTHING
-        interruptor->menuPanel.SetActive(true); // can set false if is not true
-        interruptor->menuPanel.SetActive(false);
-        if (playerMove) playerMove->openingChest = false;
-        interruptor->open = false;  
+        SelectWeaponList.GetGameObject().SetActive(false);
+        CurrentPanelUnlock.GetGameObject().SetActive(false);
+
+        API_GameObject allPanels[16];
+        API_GameObject parent = gameObject.GetParent().GetParent();
+        parent.GetChildren(allPanels);
+
+        for (int i = 0; i < 16; ++i)
+        {
+            allPanels[i].SetActive(false);
+        }
+        HUB_UIManager::ClosePanel();
+
         return;
     }
-   
+
     if ((CurrentWeapon.OnHovered() || CurrentWeapon.OnPress()) && SelectWeaponList.IsEnabled() && findUnlock)
     {
         FindUnlock();
@@ -110,6 +115,14 @@ void ArmoryWeaponSelect::Update()
     else if (!CurrentWeapon.OnHovered())
     {
         findUnlock = true;
+    }
+
+    if (CurrentWeapon.OnHovered() || CurrentWeapon.OnPress())
+    {
+        if (isUnlocked)
+            CurrentPanelUpgrate.GetGameObject().SetActive(true);
+        else
+            CurrentPanelUnlock.GetGameObject().SetActive(true);
     }
 }
 

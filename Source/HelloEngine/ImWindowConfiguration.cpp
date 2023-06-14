@@ -5,6 +5,7 @@
 #include "ModuleFiles.h"
 #include "CycleArray.hpp"
 #include "ModuleCamera3D.h"
+#include "ModuleAudio.h"
 
 #include "Lighting.h"
 
@@ -130,6 +131,10 @@ void ImWindowConfiguration::Update()
 					ModuleFiles::S_SetAutomaticCompilation(_automaticCompilation);
 			}
 			ImGui::SliderFloat("Scene camera speed", _sceneCameraSpeed, 0.0f, 1000.0f);
+			
+			GameObject* defaultListener = ModuleAudio::defaultListenerGameObject;
+			std::string listenerName = defaultListener == nullptr ? "None, add a Camera component." : defaultListener->GetName();
+			ImGui::Text(("Current listener: " + listenerName).c_str());
 		}
 
 		if (ImGui::CollapsingHeader("Window", ImGuiTreeNodeFlags_DefaultOpen))
@@ -296,6 +301,9 @@ void ImWindowConfiguration::Update()
 				else 
 					_moduleRenderer->ToggleOpenGLSystem(iter.second.first, iter.second.second);
 			}
+
+			ImGui::Checkbox("Max Render Distance On Inspector", &_app->renderer3D->hasMaxRenderDistanceOnInspector);
+			ImGui::DragFloat("Max Render Distance", &_app->renderer3D->maxRenderDistance, 1.0f, 0.0f);
 
 			ImGui::Checkbox("Show Colliders", &_app->renderer3D->isRenderingColliders);
 		}

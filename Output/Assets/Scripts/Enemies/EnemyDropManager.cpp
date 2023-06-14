@@ -13,20 +13,13 @@ HELLO_ENGINE_API_C EnemyDropManager* CreateEnemyDropManager(ScriptToInspectorInt
     script->AddDragFloat("Box Aid Kit Drop Rate", &classInstance->BoxAidKitDropRate);
     script->AddDragBoxGameObject("Player Stats GO", &classInstance->playerStatsGO);
     script->AddDragInt("Pull Size per Drop Type", &classInstance->pullSize);
-    script->AddDragBoxMeshResource("Lase Ammo Drop Mesh", &classInstance->mesh0);
-    script->AddDragBoxMeshResource("First Aid Kit Drop Mesh", &classInstance->mesh1);
-    script->AddDragBoxMeshResource("Speed Power Up Drop Mesh", &classInstance->mesh2);
-    script->AddDragBoxMeshResource("Firearte Power Up Drop Mesh", &classInstance->mesh3);
-    script->AddDragBoxMeshResource("Shield Drop Mesh", &classInstance->mesh4);
-    script->AddDragBoxMeshResource("Max Ammo Drop Mesh", &classInstance->mesh5);
-    script->AddDragBoxMeshResource("Slow Time Drop Mesh", &classInstance->mesh6);
-    script->AddDragBoxTextureResource("Lase Ammo Drop Material", &classInstance->material0);
-    script->AddDragBoxTextureResource("First Aid Kit Drop Material", &classInstance->material1);
-    script->AddDragBoxTextureResource("Speed Power Up Drop Material", &classInstance->material2);
-    script->AddDragBoxTextureResource("Firearte Power Up Drop Material", &classInstance->material3);
-    script->AddDragBoxTextureResource("Shield Drop Material", &classInstance->material4);
-    script->AddDragBoxTextureResource("Max Ammo Drop Material", &classInstance->material5);
-    script->AddDragBoxTextureResource("Slow Time Drop Material", &classInstance->material6);
+    script->AddDragBoxPrefabResource("Lase Ammo Drop Mesh", &classInstance->prefab0);
+    script->AddDragBoxPrefabResource("First Aid Kit Drop Mesh", &classInstance->prefab1);
+    script->AddDragBoxPrefabResource("Speed Power Up Drop Mesh", &classInstance->prefab2);
+    script->AddDragBoxPrefabResource("Firearte Power Up Drop Mesh", &classInstance->prefab3);
+    script->AddDragBoxPrefabResource("Shield Drop Mesh", &classInstance->prefab4);
+    script->AddDragBoxPrefabResource("Max Ammo Drop Mesh", &classInstance->prefab5);
+    script->AddDragBoxPrefabResource("Slow Time Drop Mesh", &classInstance->prefab6);
     return classInstance;
 }
 
@@ -37,91 +30,71 @@ void EnemyDropManager::Start()
 
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("Ammo Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh0);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material0);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab0, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
+
         enemyDrop->dropIndex = 0;
         newDrop.SetActive(false);
         pull0.push_back(newDrop);
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("First Aid Kit Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh1);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material1);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab1, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 1;
         newDrop.SetActive(false);
         pull1.push_back(newDrop);
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("Speed Power Up Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh2);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material2);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab2, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 2;
         newDrop.SetActive(false);
         pull2.push_back(newDrop);
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("Firerate Power Up Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh3);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material3);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab3, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 3;
         newDrop.SetActive(false);
         pull3.push_back(newDrop);
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("Shield Power Up Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh4);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material4);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab4, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 4;
         newDrop.SetActive(false);
         pull4.push_back(newDrop);
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("Max Ammo Power Up Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh5);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material5);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab5, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 5;
         newDrop.SetActive(false);
         pull5.push_back(newDrop);
     }
     for (size_t i = 0; i < pullSize; i++)
     {
-        API_GameObject newDrop = Game::CreateGameObject("Slow Time Power Up Drop", "EnemyDrop");
-        newDrop.AddMeshRenderer();
-        newDrop.GetMeshRenderer().ChangeMesh(mesh6);
-        newDrop.AddMaterial();
-        newDrop.GetMaterialCompoennt().ChangeAlbedoTexture(material6);
-        newDrop.CreateRigidBodyBox((0, 0, 0), (0, 0, 0), (2.0f, 2.0f, 2.0f), false);
-        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.AddScript("EnemyDrop");
+        API_GameObject newDrop = Game::InstancePrefab(prefab6, API_GameObject());
+        EnemyDrop* enemyDrop = (EnemyDrop*)newDrop.GetScript("EnemyDrop");
+        if (enemyDrop == nullptr)
+            break;
         enemyDrop->dropIndex = 6;
         newDrop.SetActive(false);
         pull6.push_back(newDrop);
@@ -181,6 +154,7 @@ void EnemyDropManager::SpinDropRate(API_Vector3 position) // check if enemy drop
 
         go.SetActive(true);
         go.GetTransform().SetPosition(position);
+        go.GetParticleSystem().Play();
     }
 }
 
@@ -258,10 +232,44 @@ void EnemyDropManager::BoxSpinDropRate(API_Vector3 position)
         go.SetActive(true);
         API_Vector3 newPos = { position.x, position.y + 1.0f, position.z };
         go.GetTransform().SetPosition(newPos);
+        go.GetParticleSystem().Play();
 
     }
     else 
     {
         return;
     }
+}
+
+void EnemyDropManager::BossSpinDropRate(API_Vector3 position)
+{
+    float powerUpDrop = rand() % 5;
+
+    API_GameObject go;
+
+    if (powerUpDrop < 1.0f)
+    {
+        go = GetFirstInactiveObject(2);
+    }
+    else if (powerUpDrop < 2.0f)
+    {
+        go = GetFirstInactiveObject(3);
+    }
+    else if (powerUpDrop < 3.0f)
+    {
+        go = GetFirstInactiveObject(4);
+    }
+    else if (powerUpDrop < 4.0f)
+    {
+        go = GetFirstInactiveObject(5);
+    }
+    else if (powerUpDrop < 5.0f)
+    {
+        go = GetFirstInactiveObject(6);
+    }
+
+    go.SetActive(true);
+    API_Vector3 newPos = { position.x, position.y + 1.0f, position.z };
+    go.GetTransform().SetPosition(newPos);
+    go.GetParticleSystem().Play();
 }

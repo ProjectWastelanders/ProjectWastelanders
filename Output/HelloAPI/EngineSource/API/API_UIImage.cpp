@@ -55,6 +55,11 @@ void API::API_UIImage::SetOpacity(float opacity)
 	_UIImage->SetOpacity(opacity);
 }
 
+bool API::API_UIImage::IsAlive()
+{
+	return _UIImage != nullptr;
+}
+
 ComponentUIImage* API::API_UIImage::GetComponent()
 {
 	return _UIImage;

@@ -29,7 +29,8 @@ void PlayerDuals::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
+    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("duals_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -41,7 +42,7 @@ void PlayerDuals::Start()
         fullShotCooldown = 1 / cadence;
         fullShotCooldownWithPowerUp = 1 / (cadence * 1.5f); // 50% increase
 
-        if (playerStats->armoryTreeLvl > 1)
+        if (playerStats && playerStats->armoryTreeLvl > 1)
         {
             fullShotCooldown = 1 / (cadence + cadence * upgradeFireratePercentage / 100.0f);
             fullShotCooldownWithPowerUp = 1 / ((cadence + cadence * upgradeFireratePercentage / 100.0f) * 1.5f); // 50% increase
@@ -52,7 +53,7 @@ void PlayerDuals::Start()
 void PlayerDuals::Update()
 {
     float dt;
-    if (playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
+    if (playerStats && playerStats->slowTimePowerUp > 0.0f /*&& !paused*/) dt = Time::GetRealTimeDeltaTime();
     else dt = Time::GetDeltaTime();
 
     if (shotBuffer)
@@ -98,22 +99,26 @@ void PlayerDuals::Update()
     }
 }
 
-void PlayerDuals::Shoot()
+bool PlayerDuals::Shoot()
 {
     if (canShoot)
     {
         CalculateShoot(shootingSpawn);
         PlayShotSound(audioEventString);
         canShoot = false;
-        if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
+        if (playerStats && playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         nextShot = true;
         burstDelay = fullBurstDelay;
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 
@@ -130,35 +135,35 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
     switch (level)
     {
     case 0:
-        projectileSpeed = 30.0f;
-        projectileDamage = 10.0f;
-        projectileResistanceDamage = 5.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.2f;
+        projectileSpeed = 40.0f;
+        projectileDamage = 20.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 1.5f;
         fullBurstDelay = 0.1f;
         break;
     case 1:
-        projectileSpeed = 30.0f;
-        projectileDamage = 10.0f;
-        projectileResistanceDamage = 5.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.5f;
+        projectileSpeed = 40.0f;
+        projectileDamage = 20.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 2.0f;
         fullBurstDelay = 0.1f;
         break;
     case 2:
-        projectileSpeed = 35.0f;
-        projectileDamage = 10.0f;
-        projectileResistanceDamage = 5.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.5f;
+        projectileSpeed = 50.0f;
+        projectileDamage = 20.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 2.0f;
         fullBurstDelay = 0.1f;
         break;
     case 3:
-        projectileSpeed = 35.0f;
-        projectileDamage = 30.0f;
-        projectileResistanceDamage = 15.0f;
-        projectileLifetime = 1.0f;
-        cadence = 1.5f;
+        projectileSpeed = 50.0f;
+        projectileDamage = 25.0f;
+        projectileResistanceDamage = 20.0f;
+        projectileLifetime = 0.8f;
+        cadence = 2.0f;
         fullBurstDelay = 0.1f;
         break;
     default:
@@ -169,14 +174,14 @@ void PlayerDuals::SetGunStatsPerLevel(int level)
 
 void PlayerDuals::CalculateShoot(API_Transform projectileSpawn)
 {
-    if (playerStats->specialTreeLvl == 0) LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE);
-    else if (playerStats->specialTreeLvl == 1)
+    if (playerStats && playerStats->specialTreeLvl == 0) LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE);
+    else if (playerStats && playerStats->specialTreeLvl == 1)
     {
         float n = rand() % 100;
         if (n < slowProbability) LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE, PROJECTILE_ACTION::SLOW);
         else LauchProjectile(projectileSpawn, PROJECTILE_TYPE::NONE);
     }
-    else if (playerStats->specialTreeLvl == 2)
+    else if (playerStats && playerStats->specialTreeLvl == 2)
     {
         float m = rand() % 100;
         float n = rand() % 100;

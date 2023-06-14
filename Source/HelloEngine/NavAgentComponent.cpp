@@ -119,6 +119,8 @@ void ComponentAgent::DeSerialization(json& j)
 
 void ComponentAgent::SetTarget(float3 targetPos)
 {
+	if (!ModuleNavMesh::availableNavMesh)
+		return;
 	_target = targetPos;
 
 	agentProperties->path = _pathfinder->CalculatePath(this, _target);
@@ -126,10 +128,14 @@ void ComponentAgent::SetTarget(float3 targetPos)
 
 void ComponentAgent::MoveToTarget()
 {
+	if (!ModuleNavMesh::availableNavMesh)
+		return;
 	_move = true;
 }
 
 void ComponentAgent::Stop()
 {
+	if (!ModuleNavMesh::availableNavMesh)
+		return;
 	_move = false;
 }

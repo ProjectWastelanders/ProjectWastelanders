@@ -23,6 +23,13 @@ public:
 	void BulletSeek(API_GameObject* seeker, API_Vector3 target, float speed, int numBullet);
 	void LookAt(API_Vector3 tarPos, API_GameObject* go);
 
+	void OnCollisionStay(API::API_RigidBody other);
+
+	void OnCollisionEnter(API::API_RigidBody other);
+
+	void OnCollisionExit(API::API_RigidBody other);
+
+
 	ThanosMeleeDmg* tMeleeDmg;
 	bool isAttacking = false;
 	bool hasPulsed = false;
@@ -37,7 +44,7 @@ public:
 	API_GameObject sword;
 	API_GameObject bTarget;
 	bool swordThrown = false;
-	float swordSpeed = 1.0f;
+	float swordSpeed = 0.5f;
 	API_Vector3 aimPosition;
 	float swordTime = 0.0f;
 
@@ -86,12 +93,12 @@ public:
 	API_GameObject bullet3;
 
 	API_GameObject bullets[3];
-	float bulletSpeed = 8.0f;
+	float bulletSpeed = 2.0f;
 
 	bool bulletThrown[3] = { false,false,false };
 
 	API_Vector3 playerPositions[3] = { 0,0,0 };
-	float burstTimes[4] = { 0.01f,0.25f,0.5f,1.0f };
+	float burstTimes[4] = { 0.05f,1.25f,0.5f,2.0f };
 	float busrstTime = 0.0f;
 
 	float attackType = 0.0f;
@@ -135,15 +142,23 @@ public:
 
 	bool areaDmg = false;
 	API_GameObject area;
+	API_GameObject area2;
 	float dashSpeed = 1.0f;
 	API_Vector3 thanosPosition;
 
 	API_GameObject laserPosition;
 	float laserSpeed = 1.5f;
 	API_GameObject laserGO;
+	API_GameObject laserGO2;
+	API_GameObject laserGO3;
 	API_ParticleSystem laserPS;
+	API_ParticleSystem laserPS2;
+	API_ParticleSystem laserPS3;
 
 	API_GameObject meteors[30];
+	API_GameObject columns[12];
+	API_GameObject areaImpact;
+	bool columnsStates[12];
 	API_Vector3 meteorsPosition[30];
 
 	//ThanosAnimations
@@ -170,6 +185,10 @@ public:
 	uint thanosWalkAnimation;
 	uint thanosWalk2Animation;
 	uint thanosWalkBackwardsAnimation;
+	uint thanosPunchAttack;
+	uint thanosPunchAttack2;
+	
+	bool punchAnimation = false;
 
 	bool justRandOnce = false;
 	float meteorAnimationCooldown = 0.0f;
@@ -180,5 +199,17 @@ public:
 
 	bool anotherTimer = 0.0f;
 
+	float laserDirectionTimer = 0.0f;
+
+	bool laserExpanded = false;
+
+	int whichColumn = -1;
+
+	float dashTimer = 0.0f;
+
+	bool playerDeath = false;
+
+	bool brokenFloor = false;
+	float brokenFloorTimer = 0.0f;
 };
 

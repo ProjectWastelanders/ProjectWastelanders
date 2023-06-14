@@ -58,13 +58,21 @@ void ScriptComponent::OnEditor()
 void ScriptComponent::OnEnable()
 {
 	if (scriptUID != 0)
+	{
 		LayerGame::_behaviorScripts[scriptUID].active = true;
+		if (LayerGame::S_IsPlaying() && !ModuleResourceManager::changingScene)
+			LayerGame::_behaviorScripts[scriptUID].script->OnEnable();
+	}
 }
 
 void ScriptComponent::OnDisable()
 {
 	if (scriptUID != 0)
+	{
 		LayerGame::_behaviorScripts[scriptUID].active = false;
+		if (LayerGame::S_IsPlaying() && !ModuleResourceManager::changingScene)
+			LayerGame::_behaviorScripts[scriptUID].script->OnDisable();
+	}
 }
 
 void ScriptComponent::OnCollisionEnter(PhysBody3D* other)
@@ -308,12 +316,12 @@ void ScriptComponent::AddDragBoxMaterialComponent(const char* name, API::API_Mat
 
 void ScriptComponent::AddDragBoxParticleSystem(const char* name, API::API_ParticleSystem* value)
 {
-    DragBoxParticleSystem* dragBoxField = new DragBoxParticleSystem();
-    dragBoxField->valueName = name;
-    dragBoxField->value = value;
-    dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+	DragBoxParticleSystem* dragBoxField = new DragBoxParticleSystem();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
 
-    inspectorFields.push_back(dragBoxField);
+	inspectorFields.push_back(dragBoxField);
 }
 
 void ScriptComponent::AddDragBoxUIButton(const char* name, API::API_UIButton* value)
@@ -366,6 +374,16 @@ void ScriptComponent::AddDragBoxUICheckBox(const char* name, API::API_UICheckBox
 	inspectorFields.push_back(dragBoxField);
 }
 
+void ScriptComponent::AddDragBoxUISlider(const char* name, API::API_UISlider* value)
+{
+	DragBoxUISlider* dragBoxField = new DragBoxUISlider();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
 void ScriptComponent::AddDragBoxPrefabResource(const char* name, uint* value)
 {
 	DragBoxPrefabResource* dragBoxField = new DragBoxPrefabResource();
@@ -389,6 +407,16 @@ void ScriptComponent::AddDragBoxShaderComponent(const char* name, API::API_Shade
 void ScriptComponent::AddDragBoxAudioSourceComponent(const char* name, API::API_AudioSourceComponent* value)
 {
 	DragBoxAudioSourceComponent* dragBoxField = new DragBoxAudioSourceComponent();
+	dragBoxField->valueName = name;
+	dragBoxField->value = value;
+	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;
+
+	inspectorFields.push_back(dragBoxField);
+}
+
+void ScriptComponent::AddDragBoxVideoPlayerComponent(const char* name, API::API_VideoPlayer* value)
+{
+	DragBoxVideoPlayerComponent* dragBoxField = new DragBoxVideoPlayerComponent();
 	dragBoxField->valueName = name;
 	dragBoxField->value = value;
 	dragBoxField->className = scriptResource == nullptr ? addedScript : scriptResource->className;

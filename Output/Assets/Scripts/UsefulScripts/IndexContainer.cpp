@@ -9,10 +9,15 @@ HELLO_ENGINE_API_C IndexContainer* CreateIndexContainer(ScriptToInspectorInterfa
 
 void IndexContainer::Start()
 {
-     
+    gameObject.GetParticleSystem().Play();
 }
 
 void IndexContainer::Update()
 {
 
+}
+
+void IndexContainer::StopParticles()
+{
+    gameObject.GetParticleSystem().StopEmitting();
 }

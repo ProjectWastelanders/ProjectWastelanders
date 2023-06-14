@@ -1,0 +1,172 @@
+[
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Root",
+        "ParentUID": 0,
+        "PrefabUID": 0,
+        "Tag": "None",
+        "UID": 955878157,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Canvas",
+        "ParentUID": 955878157,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2773357071,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 32.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 2495910813
+            },
+            {
+                "AudioEvent": "cinematic_intro",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Video",
+        "ParentUID": 2773357071,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3637848411,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 1.9408766031265259,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            },
+            {
+                "AudioEvent": "Cinematic_Intro",
+                "Enabled": true,
+                "Type": 25
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Video": 3637848411
+                    },
+                    {
+                        "Audio": 2969884273
+                    }
+                ],
+                "Script Resource": 1302677887,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Empty",
+        "ParentUID": 2773357071,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2969884273,
+        "UpdateWithBones": false
+    }
+]

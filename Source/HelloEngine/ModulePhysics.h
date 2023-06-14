@@ -73,6 +73,12 @@ public:
 
 private:
 
+	void ResolveCollisions();
+
+	void IterateFirst();
+	void IterateSecond();
+	void IterateThird();
+
 	btDefaultCollisionConfiguration* collision_conf = nullptr;
 	btCollisionDispatcher* dispatcher = nullptr;
 	btBroadphaseInterface* broad_phase = nullptr;

@@ -118,8 +118,13 @@ void SkinnedMeshRenderComponent::RootBoneDropArea()
 
 void SkinnedMeshRenderComponent::UpdateBones(Animation3D* animation, float animationTime)
 {
-	if (rootBone == nullptr) return;
+	if (rootBone == nullptr) 
+		return;
+	if (_resource == nullptr)
+		return;
+
 	goBonesArr.clear();
+	
 	LinkBones(rootBone, _resource->meshInfo.boneDataMap, animation, float4x4::identity, animationTime);
 }
 

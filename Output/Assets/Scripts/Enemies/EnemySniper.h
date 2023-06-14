@@ -29,6 +29,8 @@ public:
 	void Start() override; 
 	void Update() override;
 
+    void ResetAttackingValues();
+
     void LookAt(API_Vector3 tarPos);
 
     float range = 0;
@@ -49,5 +51,17 @@ public:
 
     Enemy* enemy = nullptr;
     PlayerStats* targStats = nullptr;
+
+    float aimTime = 5.0f;
+    float stayTime = 1.5f;
+    float recovTime = 0.7f;
+    bool shooted = false;
+
+private:
+    float _aimCooldown;
+    float _stayCooldown;
+    float _recovCooldown;
+    float _resetTime = 3.0f;
+    float _resetCooldown;
 };
 

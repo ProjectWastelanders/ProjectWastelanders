@@ -8,6 +8,7 @@
 
 class OpenMenuInterruptor;
 class PlayerMove;
+class AbilityTreeUpgrades;
 
 class AbilityTreeScript : HelloBehavior
 {
@@ -22,19 +23,25 @@ public:
     API_UIButton AbilityList3;
     API_UIButton AbilityList4;
 
-    API_GameObject PanelAbility1;
-    API_GameObject PanelAbility2;
-    API_GameObject PanelAbility3;
-    API_GameObject PanelAbility4;
+    API_GameObject PanelAbility[4];
 
     API_GameObject interruptorGO;
-    OpenMenuInterruptor* interruptor;
 
     API_GameObject playerGO;
     PlayerMove* playerMove;
+
+    AbilityTreeUpgrades* upgradeScripts[4];
+
+    API_UIImage Tutorial_1;
+    API_UIImage Tutorial_2;
+    API_UIImage Tutorial_3;
 
     bool ability1 = true;
     bool ability2 = true;
     bool ability3 = true;
     bool ability4 = true;
+    int tutorialActive = true;
+    bool tutorial1 = true;
+    bool tutorial2 = false;
+    bool tutorial3 = false;
 };

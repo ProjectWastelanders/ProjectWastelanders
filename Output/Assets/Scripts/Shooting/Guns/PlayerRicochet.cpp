@@ -24,7 +24,8 @@ void PlayerRicochet::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(0);
+    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
+    if (!pull->testing) SetGunStatsPerLevel(0);
 
     if (cadence == 0)
     {
@@ -72,7 +73,7 @@ void PlayerRicochet::Update()
     }
 }
 
-void PlayerRicochet::Shoot()
+bool PlayerRicochet::Shoot()
 {
     if (canShoot)
     {
@@ -82,11 +83,15 @@ void PlayerRicochet::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 
@@ -98,9 +103,9 @@ void PlayerRicochet::EnableGuns(bool enable)
 
 void PlayerRicochet::SetGunStatsPerLevel(int level)
 {
-    projectileSpeed = 30.0f;
-    projectileDamage = 80.0f;
-    projectileResistanceDamage = 80.0f;
-    projectileLifetime = 1.0f;
-    cadence = 0.5f;
+    projectileSpeed = 15.0f;
+    projectileDamage = 55.0f;
+    projectileResistanceDamage = 65.0f;
+    projectileLifetime = 5.0f;
+    cadence = 0.35f;
 }

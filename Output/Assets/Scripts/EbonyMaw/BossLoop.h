@@ -5,6 +5,9 @@
 #include "Macro.h"
 
 #include "API/API.h"
+
+class PlayerStats;
+
 class BossLoop : HelloBehavior
 {
 public:
@@ -14,6 +17,8 @@ public:
     void OnCollisionEnter(API::API_RigidBody other);
 
     void TakeDamage(float damage);
+
+    PlayerStats* playerStats;
 
     API_GameObject player;
     API_GameObject boss;
@@ -31,6 +36,8 @@ public:
     API_GameObject cover11;
     API_GameObject cover12;
 
+    API_GameObject blood;
+
     //TEMPORAL FOR ALPHA 1
     API_GameObject finalTextPanel;
 
@@ -44,7 +51,16 @@ public:
     float shield[3] = { 500.0f,750.0f,1000.0f };
     float maxShield[3] = { 500.0f,750.0f,1000.0f };
 
+    bool damaged = false;
+    float bloodTimer = 0;
+
+    bool destroyHighCover = false;
+    float highCoverTime = 0.0f;
+
     float hp = 1500.0f;
+
+    bool battle = false;
+    bool endBattle = false;
 
     bool isBossAlive = false;
     bool isBossActive = false;
@@ -61,6 +77,8 @@ public:
     float acceleration = 1.2f;
     float currentSpeed = 0.0f;
 
+    bool LaughAudio = true;
+
     // bomb mechanic
     void AddBomb();
     void CheckBombs();
@@ -69,6 +87,8 @@ public:
     API_GameObject bomb;
     API_GameObject bombShield;
     uint textureBomb[6];
+    API_GameObject bombParticles[10];
+    API_GameObject GetFirstInactiveBombParticle();
     int shotgunLevel;
 
     // burn
@@ -80,6 +100,8 @@ public:
     float DieTimer;
     float recoverTimer;
     float knockUpTimer;
+
+    bool draxDialog;
 
     enum class AnimationState
     {
@@ -111,4 +133,6 @@ public:
     uint takeObjAnim;
     uint throwObjAnim;
     uint dieAnim;
+
+    float audioTimer = 0.0f;
 };

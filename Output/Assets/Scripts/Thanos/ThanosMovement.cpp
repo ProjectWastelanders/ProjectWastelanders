@@ -21,29 +21,47 @@ void ThanosMovement::Start()
     Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosWakeUp);
     Tattack->thanosAnimationPlayer.SetLoop(false);
     Tattack->thanosAnimationPlayer.Play();
+    gameObject.GetRigidBody().SetVelocity(API_Vector3(0, 0, 0));
 
+    ambienceMusic_L_4 = Audio::Event("L4previous_ambience");
+
+    lvl4_music = false;
 }
 void ThanosMovement::Update()
 {
     distBP = player.GetTransform().GetGlobalPosition().Distance(gameObject.GetTransform().GetGlobalPosition());
     if (Tloop->phase < 3 && Tloop->hp>0) {
-        if (distBP < 20.0f && Tloop->phase == 0) {
+        if (Tloop->phase == 0 && !cinematic) {
+            letsFight = true;
+
+            if (!lvl4_music)
+            {
+                Audio::StopEvent(ambienceMusic_L_4);
+                Audio::Event("L4_bossfight");
+                lvl4_music = true;
+            }
+
             //Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosWakeUp);
             //Tattack->thanosAnimationPlayer.SetLoop(false);
-            Tattack->thanosAnimationPlayer.Resume();
-            Console::Log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-            startFightTimer += Time::GetDeltaTime();
-
-            if (startFightTimer > 6.25f) {
-                Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosRunAnimation);
-                Tattack->thanosAnimationPlayer.SetLoop(true);
-                Tattack->thanosAnimationPlayer.Play();
-                Tloop->phase = 1;
-            }
+            
 
         }
         else if (Tloop->phase == 0) {
             Tattack->thanosAnimationPlayer.Pause();
+        }
+
+        if (letsFight == true) {
+            Tattack->thanosAnimationPlayer.Resume();
+            startFightTimer += Time::GetDeltaTime();
+
+            if (startFightTimer > 5.9f) {
+                letsFight = false;
+                Tattack->thanosAnimationPlayer.ChangeAnimation(Tattack->thanosRunAnimation);
+                Tattack->thanosAnimationPlayer.SetLoop(true);
+                Tattack->thanosAnimationPlayer.Play();
+                Tloop->phase = 1;
+
+            }
         }
 
         if (Tloop->phase == 1 && Tattack->thanosState != ThanosAttacks::THANOS_STATE::IDLE && Tattack->thanosState != ThanosAttacks::THANOS_STATE::DASHATTACK && Tattack->thanosState != ThanosAttacks::THANOS_STATE::THROWINGATTACK) {
@@ -59,12 +77,12 @@ void ThanosMovement::Update()
             if (Tattack->thanosState == ThanosAttacks::THANOS_STATE::LASER)  angle = Rotate(Tattack->laserPosition.GetTransform().GetGlobalPosition(), angle);
             else angle = Rotate(player.GetTransform().GetGlobalPosition(), angle);
 
-            if (distBP > 15.0f && Tattack->thanosState != ThanosAttacks::THANOS_STATE::PULSE && Tattack->thanosState != ThanosAttacks::THANOS_STATE::LASER && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BEAM && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BURST) {
+            if (distBP > 15.0f && Tattack->thanosState != ThanosAttacks::THANOS_STATE::PULSE && Tattack->thanosState != ThanosAttacks::THANOS_STATE::LASER && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BEAM && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BURST && Tattack->thanosState != ThanosAttacks::THANOS_STATE::DASH2) {
                 walkCooldown += Time::GetDeltaTime();
                 walkState = WALKSTATE::IDLE;
                 Seek2(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed);
             }
-            else if (distBP < 10.0f && Tattack->thanosState != ThanosAttacks::THANOS_STATE::PULSE && Tattack->thanosState != ThanosAttacks::THANOS_STATE::LASER && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BEAM && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BURST) {
+            else if (distBP < 10.0f && Tattack->thanosState != ThanosAttacks::THANOS_STATE::PULSE && Tattack->thanosState != ThanosAttacks::THANOS_STATE::LASER && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BEAM && Tattack->thanosState != ThanosAttacks::THANOS_STATE::BURST && Tattack->thanosState != ThanosAttacks::THANOS_STATE::DASH2) {
                 walkCooldown += Time::GetDeltaTime();
                 walkState = WALKSTATE::IDLE;
                 Hide(&gameObject, player.GetTransform().GetGlobalPosition(), bossSpeed * 1.5f);

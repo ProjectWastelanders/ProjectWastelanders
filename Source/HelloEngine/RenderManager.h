@@ -69,6 +69,7 @@ public:
 	void Draw2D();
 
 	uint AddMesh(ResourceMesh* resource, uint resMat, MeshRenderType type);
+	uint AddMeshParticle(ResourceMesh* resource);
 
 	uint AddTransparentMesh(ResourceMesh* resource, uint resMat);
 	uint AddIndependentMesh(ResourceMesh* resource, uint resMat);
@@ -138,6 +139,7 @@ private:
 	// Shaders for drawing debug information
 	ResourceShader* lineShader = nullptr;
 	ResourceShader* localLineShader = nullptr;
+	ResourceShader* instancedShader = nullptr;
 	Shader* textRenderingShader = nullptr;
 
 	uint AABBVAO = 0;
@@ -177,7 +179,7 @@ private:
 
 	InstanceRenderer* renderer2D = nullptr;
 
-	bool drawDepthIndependent = false;
+	bool drawDepthIndependent = true;
 
 	friend class Emitter;
 	friend class ParticleSystemComponent;

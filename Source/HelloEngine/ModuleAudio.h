@@ -3,6 +3,8 @@
 
 #include "Ak/samples/AkFilePackageLowLevelIOBlocking.h"// Sample low-level I/O implementation
 
+class GameObject;
+
 class ModuleAudio : public Module
 {
 public:
@@ -34,6 +36,10 @@ public:
 
 	static void StopAllAudioEvents();
 
+	static void SetDefaultListener();
+
+	static GameObject* defaultListenerGameObject;
+
 
 private:
 
@@ -58,6 +64,5 @@ private:
 
 	// Temporal
 	bool isPlayingBackground = false;
-
 };
 

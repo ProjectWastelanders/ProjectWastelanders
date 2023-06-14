@@ -13,8 +13,10 @@ HELLO_ENGINE_API_C AnimationMove* CreateAnimationMove(ScriptToInspectorInterface
 
 	script->AddDragFloat("Distance move X", &classInstance->distanceX);
 	script->AddDragFloat("Speed move X", &classInstance->speedX);
+	script->AddDragFloat("Time Stoped X", &classInstance->stopTimeRight);
 	script->AddDragFloat("Distance move Y", &classInstance->distanceY);
 	script->AddDragFloat("Speed move Y", &classInstance->speedY);
+	script->AddDragFloat("Time Stoped Y", &classInstance->stopTimeUP);
 
 	script->AddDragInt("Scale animation repeat", &classInstance->repeatScale);
 	script->AddCheckBox("Scale animation in loop", &classInstance->loopScale);
@@ -56,21 +58,50 @@ void AnimationMove::Update()
 		{
 			if (actualRepeatMoveX < repeatMoveX * 2)
 			{
-				MoveAnimationX();
 
-				if (gameObject.GetTransform().GetLocalPosition().x == startPosX)
+				if (!stopMovingRight)
 				{
-					actualRepeatMoveX++;
+					MoveAnimationX();
+
+					if (gameObject.GetTransform().GetLocalPosition().x == startPosX)
+					{
+						actualRepeatMoveX++;
+					}
+				}
+				else
+				{
+					stopTime += Time::GetRealTimeDeltaTime();
+
+					if (stopTime >= stopTimeRight)
+					{
+						stopMovingRight = false;
+						stopTime = 0;
+					}
 				}
 			}
 			if (actualRepeatMoveY < repeatMoveY * 2)
 			{
-				MoveAnimationY();
 
-				if (gameObject.GetTransform().GetLocalPosition().y == startPosY)
+				if (!stopMovingUP)
 				{
-					actualRepeatMoveY++;
+					MoveAnimationY();
+
+					if (gameObject.GetTransform().GetLocalPosition().y == startPosY)
+					{
+						actualRepeatMoveY++;
+					}
 				}
+				else
+				{
+					stopTime += Time::GetRealTimeDeltaTime();
+
+					if (stopTime >= stopTimeUP)
+					{
+						stopMovingUP = false;
+						stopTime = 0;
+					}
+				}
+				
 			}
 			if (actualRepeatMoveY == repeatMoveY * 2 && actualRepeatMoveX == repeatMoveX * 2)
 			{
@@ -135,10 +166,12 @@ void AnimationMove::MoveAnimationX()
 {
 	if (startPosX - gameObject.GetTransform().GetLocalPosition().x >= distanceX)
 	{
+		stopMovingRight = true;
 		movingRight = true;
 	}
 	else if (startPosX - gameObject.GetTransform().GetLocalPosition().x <= -distanceX)
 	{
+		stopMovingRight = true;
 		movingRight = false;
 	}
 
@@ -157,10 +190,12 @@ void AnimationMove::MoveAnimationY()
 {
 	if (startPosY - gameObject.GetTransform().GetLocalPosition().y >= distanceY)
 	{
+		stopMovingUP = true;
 		movingUP = true;
 	}
 	else if (startPosY - gameObject.GetTransform().GetLocalPosition().y <= -distanceY)
 	{
+		stopMovingUP = true;
 		movingUP = false;
 	}
 

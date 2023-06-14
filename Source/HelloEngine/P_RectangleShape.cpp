@@ -35,6 +35,7 @@ float3 P_RectangleShape::GetRandomPos()
 	float z = random.Float() * c2;
 
 	x += center.x;
+	y += center.y;
 	z += center.z;
 
 	return float3(x, y, z);
@@ -53,4 +54,16 @@ bool P_RectangleShape::IsInside(float3 position)
 	}
 
 	return false;
+}
+
+void P_RectangleShape::Serialization(json& j)
+{
+	j["ParticleModules"]["ShapeModule"]["C1"] = c1;
+	j["ParticleModules"]["ShapeModule"]["C1"] = c2;
+}
+
+void P_RectangleShape::DeSerialization(json& j)
+{
+	c1 = j["ParticleModules"]["ShapeModule"]["C1"];
+	c2 = j["ParticleModules"]["ShapeModule"]["C2"];
 }

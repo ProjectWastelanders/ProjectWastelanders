@@ -5,6 +5,7 @@
 #include "EnemyMeleeMovement.h"
 #include "EnemyRanger.h"
 #include "../Shooting/StickBomb.h"
+#include "../InteractiveEnviroment/StickyBombParticle.h"
 #include "../Quests/Secondary_Quests/EnemyDieEvent.h"
 
 HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
@@ -20,7 +21,7 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     script->AddDragFloat("Current speed", &classInstance->currentSpeed);
     script->AddDragBoxGameObject("Enemy Manager", &classInstance->enemyDropManagerGO);
     //script->AddDragBoxRigidBody("Enemy RigidBody", &classInstance->enemyRb);
-    script->AddDragBoxParticleSystem("Hit particle system", &classInstance->hitParticles);
+    //script->AddDragBoxParticleSystem("Hit particle system", &classInstance->hitParticles);
     script->AddCheckBox("Has Shield", &classInstance->hasShield);
     script->AddDragBoxShaderComponent("Color hit", &classInstance->enemyShader);
     script->AddDragFloat("Time hit color", &classInstance->_tHitColor);
@@ -34,6 +35,8 @@ HELLO_ENGINE_API_C Enemy* CreateEnemy(ScriptToInspectorInterface* script)
     script->AddDragFloat("Ult Gain", &classInstance->ultGain);
     // script->AddDragBoxRigidBody("RB", &classInstance->enemyRb);
      //script->AddCheckBox("damagessssss", &classInstance->takingDmg);
+    script->AddCheckBox("Static Wander", &classInstance->staticWand);
+    script->AddCheckBox("Appears after diviner?(LVL3)", &classInstance->isEQEnemy);
     return classInstance;
 }
 
@@ -53,6 +56,7 @@ void Enemy::Start()
     currentResistance = minResistence;
     actSlow = actStun = false;
     baseRot = gameObject.GetTransform().GetGlobalRotation();
+    basePos = gameObject.GetTransform().GetGlobalPosition();
     slowVel = stunVel = 1;
 
     enemyRb = gameObject.GetRigidBody();
@@ -72,30 +76,30 @@ void Enemy::Start()
     }
     else if (tankScript)
     {
-
         _tAnimDie = 1.43f;
     }
+
+    Game::FindGameObjectsWithTag("StickyBombParticles", &bombParticles[0], 10);
 
     shotgunLevel = API_QuickSave::GetInt("shotgun_level");
 
     initialPos.x = gameObject.GetTransform().GetGlobalPosition().x;
     initialPos.z = gameObject.GetTransform().GetGlobalPosition().z;
     enemyAgent = gameObject.GetAgent();
-    isAgent = true;
 }
 
 void Enemy::Update()
 {
+    if (actSlow)
+        EnemySlow(_qSlow, _tSlow);
 
-    if (actSlow)EnemySlow(_qSlow, _tSlow);
-
-    if (actStun)EnemyStun(_tStun);
+    if (actStun)
+        EnemyStun(_tStun);
 
     //burn
     if (burnTime > 3.0f)
-    {
         TakeDamage(30.0f * Time::GetDeltaTime(), 0.0f);
-    }
+
     if (resetBurn > 0.0f)
     {
         resetBurn -= Time::GetDeltaTime();
@@ -107,21 +111,19 @@ void Enemy::Update()
     }
 
     if (takingDmg && !dying)
-    {
         TakingDmgState();
-    }
 
-    /*if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
-    {
-        EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
-        EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
-        EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
-        if (meleeScript ||rangeScript || tankScript)
-        {
-         currentHp = 0;
-         Die();
-        }
-    }*/
+    //if (Input::GetKey(KeyCode::KEY_J) == KeyState::KEY_DOWN)
+    //{
+	   // EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
+	   // EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
+	   // EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+	   // if (/*meleeScript ||rangeScript || */tankScript)
+	   // {
+	   //  currentHp = 0;
+	   //  Die();
+	   // }
+    //}
     if (_hitShader)
     {
         _coldHitColor += Time::GetDeltaTime();
@@ -131,44 +133,93 @@ void Enemy::Update()
             // enemyShader.SetColor(255, 255, 255, 255);
             _hitShader = false;
         }
-        else {
-
-            enemyShader.SetColor(1.1, 0, 0, 0.5);
+        else
+        {
+            if (!isTank)
+            {
+                enemyShader.SetColor(1.1, 0, 0, 0.5);
+            }
+            else 
+            {
+                EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+                if (tankScript)
+                {
+                    if (tankScript->currentShield > 0) 
+                    {
+                        enemyShader.SetColor(0, 0, 1.1, 0.5);
+                    }
+                    else 
+                    {
+                        enemyShader.SetColor(1.1, 0, 0, 0.5);
+                    }
+                }
+            }
         }
     }
     else
     {
-        enemyShader.SetColor(1, 1, 1, 255);
+        if (!isTank)
+        {
+            enemyShader.SetColor(1, 1, 1, 255);
+        }
+        else
+        {
+            EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+            if (tankScript)
+            {
+                if (tankScript->hasToBlinkHealing == false)
+                {
+                    enemyShader.SetColor(1, 1, 1, 255);
+                }
+               /* else 
+                {
+                    enemyShader.SetColor(1, 1, 1, 255);
+                }*/
+            }
+        }
     }
 }
 
 void Enemy::TakingDmgState()
 {
     _coldAnimHit += Time::GetDeltaTime();
+
     if (_coldAnimHit < _tAnimHit)
     {
         EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
         EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
-        if (meleeScript)
-        {
-            meleeScript->HitAnim();
-        }
-        else if (rangeScript)
-        {
-            rangeScript->HitAnimation();
-        }
-        enemyRb.SetVelocity(0);
 
+        if (meleeScript)
+            meleeScript->HitAnim();
+
+        else if (rangeScript)
+            rangeScript->HitAnimation();
+
+        enemyRb.SetVelocity(0);
     }
-    else  takingDmg = false, _coldAnimHit = 0.0f;
+    else
+    {
+        takingDmg = false;
+        _coldAnimHit = 0.0f;
+    }
 }
 
 void Enemy::TakeDamage(float damage, float resistanceDamage)
 {
-    if (currentHp <= 0.0f) return;
 
-    if (hasShield == false) {
+    isHit = true;
+    if (!isTank) 
+    { 
+        enemyShader.SetColor(255, 0, 0, 0.5); 
+    }
 
+    if (!_hitShader) _hitShader = true;
+
+    if (currentHp <= 0.0f)
+        return;
+
+    if (!hasShield)
+    {
         // Health damage
         EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
         if (meleeScript)
@@ -180,7 +231,7 @@ void Enemy::TakeDamage(float damage, float resistanceDamage)
                 /*EnemyMeleeMovement* meleeScript = (EnemyMeleeMovement*)gameObject.GetScript("EnemyMeleeMovement");
                 if (meleeScript)
                 {
-                    meleeScript->HitAnim();
+	                meleeScript->HitAnim();
                 }*/
 
             }
@@ -192,27 +243,24 @@ void Enemy::TakeDamage(float damage, float resistanceDamage)
             /*EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
             if (rangeScript)
             {
-                rangeScript->HitAnimation();
+	            rangeScript->HitAnimation();
             }*/
         }
 
     }
-    else {
+    else
+    {
         EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
-
         if (tankScript)
-        {
-
             currentHp = tankScript->TakeDamageTank(currentHp, damage);
-        }
     }
 
     if (currentHp <= 0)
     {
         currentHp = 0;
-        hitParticles.Stop();
+        /*hitParticles.Stop();
         hitParticles.StopEmitting();
-        hitParticles.Pause();
+        hitParticles.Pause();*/
         Die();
     }
 
@@ -228,11 +276,7 @@ void Enemy::TakeDamage(float damage, float resistanceDamage)
         // reaction
     }
 
-
-
-
-
-    hitParticles.Play();
+    /*hitParticles.Play();*/
 }
 
 void Enemy::Die()
@@ -241,9 +285,27 @@ void Enemy::Die()
     EnemyRanger* rangeScript = (EnemyRanger*)gameObject.GetScript("EnemyRanger");
     EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
     // some animation
-    if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(gameObject.GetTransform().GetGlobalPosition());
+    API_Vector3 dropPos = { gameObject.GetTransform().GetGlobalPosition().x, gameObject.GetTransform().GetGlobalPosition().y + 1.0f, gameObject.GetTransform().GetGlobalPosition().z };
+    if (enemyDropManager != nullptr)enemyDropManager->SpinDropRate(dropPos);
 
-    hitParticles.StopEmitting();
+    //hitParticles.StopEmitting();
+
+    if (meleeScript)
+    {
+        Audio::Event("outrider_die");
+        //Audio::Event("box_breaking");
+    }
+    else if ( rangeScript )
+    {
+        Audio::Event("kree_die");
+        //Audio::Event("box_breaking");
+    }
+    else if (tankScript)
+    {
+        Audio::Event("tank_die");
+        //Audio::Event("box_breaking");
+    }
+
     if (!meleeScript && !rangeScript && !tankScript)
     {
         gameObject.SetActive(false);
@@ -256,7 +318,7 @@ void Enemy::Die()
     EnemyDieEvent::enemyDead();
 
     // add player ult
-    if (playerStats && playerStats->specialTreeLvl > 2 && playerStats->ultPercentage < 100.0f)
+    if (playerStats && playerStats->ultPercentage < 100.0f)
     {
         playerStats->ultPercentage += ultGain;
         if (playerStats->ultPercentage > 100.0f) playerStats->ultPercentage = 100.0f;
@@ -279,9 +341,21 @@ void Enemy::OnCollisionEnter(API::API_RigidBody other)
     }
     if (detectionTag == "Projectile")
     {
-        isHit = true;
+       /* isHit = true;
         enemyShader.SetColor(255, 0, 0, 0.5);
-        if (!_hitShader) _hitShader = true;
+        if (!_hitShader) _hitShader = true;*/
+        EnemyTank* tankScript = (EnemyTank*)gameObject.GetScript("EnemyTank");
+        if (tankScript)
+        {
+            if (tankScript->currentShield > 0)
+            {
+                Audio::Event("shield_impact");
+            }
+            else  Audio::Event("bullet_impact");
+        }
+        else  Audio::Event("bullet_impact");
+       
+        //Audio::Event("box_breaking");
     }
 }
 
@@ -310,7 +384,7 @@ void Enemy::EnemySlow(float xSlow, float time)
         _coldSlow = 0;
         slowVel = 1;
         actSlow = false;
-        Console::Log("slowingggggggggggg");
+       // Console::Log("slowingggggggggggg");
 
     }
     else
@@ -324,7 +398,7 @@ void Enemy::EnemyRecoil(float xRec)
 
     // rb.SetVelocity(gameObject.GetTransform().GetBackward() * xRec);
     gameObject.GetTransform().Translate(gameObject.GetTransform().GetBackward() * xRec);
-    Console::Log("aaaaaa");
+   // Console::Log("aaaaaa");
 }
 
 void Enemy::EnemyStun(float timeStun)
@@ -356,17 +430,28 @@ void Enemy::CheckBombs()
 {
     if (currentBombNum > 0)
     {
-        StickBomb* stickBomb = (StickBomb*)bomb.GetScript("StickBomb");
-        if (stickBomb == nullptr) Console::Log("StickyBomb missing in Bomb from enemy.");
-        else
-        {
-            stickBomb->triggerActive = true;
-            if (shotgunLevel > 2) stickBomb->damage = 15.0f * currentBombNum;
-            else stickBomb->damage = 10.0f * currentBombNum;
-        }
+        if (shotgunLevel > 2) TakeDamage(15.0f * currentBombNum, 15.0f * currentBombNum);
+        else TakeDamage(10.0f * currentBombNum, 10.0f * currentBombNum);
         currentBombNum = 0;
         bomb.SetActive(false);
+        API_GameObject particles = GetFirstInactiveBombParticle();
+        particles.SetActive(true);
+        particles.GetTransform().SetPosition(gameObject.GetTransform().GetGlobalPosition());
+        particles.GetParticleSystem().Play();
+        StickyBombParticle* script = (StickyBombParticle*)particles.GetScript("StickyBombParticle");
+        script->time = 0.1f;
+        Audio::Event("sticky_bomb");
     }
+}
+
+API_GameObject Enemy::GetFirstInactiveBombParticle()
+{
+    for (size_t i = 0; i < 10; i++)
+    {
+        if (!bombParticles[i].IsActive()) return bombParticles[i];
+    }
+
+    return bombParticles[0];
 }
 
 void Enemy::AddBurn()

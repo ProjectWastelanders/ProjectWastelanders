@@ -44,7 +44,6 @@ public:
     API_Material SelectedWeapon;
 
     API_GameObject interruptorGO;
-    OpenMenuInterruptor* interruptor;
 
     API_GameObject playerGO;
     PlayerMove* playerMove;

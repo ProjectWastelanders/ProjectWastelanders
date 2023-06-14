@@ -43,6 +43,15 @@ public:
 	void Seek();
 	void Attack();
 
+	void BlinkHealth();
+	void BlinkShield();
+
+	void FadeIn();
+	void FadeOut();
+	void FadeInShield();
+	void FadeOutShield();
+	float Lerp(float a, float b, float time);
+
 	/*void Seek(float vel, API_Vector3 tarPos, API_RigidBody rb);
 	void Attacking(float vel, API_Vector3 tarPos, API_RigidBody rb);*/
 
@@ -69,20 +78,13 @@ public:
 	API_GameObject target;
 
 	API_GameObject actionZone;
+	API_GameObject zone;
 	API_RigidBody zoneRb;
 
 	float attackRange;
 	float approximateRange;
 	float separateRange;
 	float returnToZoneDistance;
-
-	//API_GameObject enemyToProtect;
-	//bool test;
-	float testingFloat1;
-	float testingFloat2;
-	float testingFloat3;
-	float testingFloat4;
-	float testingFloat5;
 
 	API_GameObject protectedEnemy;
 	API_AnimationPlayer animationPlayer;
@@ -94,6 +96,15 @@ public:
 	uint walkAnim;
 	uint dieAnim;
 
+	API_ShaderComponent material;
+	float blinkingTimer;
+	float nonBlinkingTimer;
+
+	bool hasToBlinkHealing;
+	bool hasToBlinkShield;
+
+	API_ParticleSystem healParticles;
+
 private:
 	bool isRecoveringShield;
 	bool isRestoringHealth;
@@ -103,6 +114,37 @@ private:
 	float targetDistance;
 	bool isReturning;
 
+	float nonBlinkingTime;
+	float blinkingTime;
+
+	bool isBlinking;
+
 	AnimStates animState;
+
+	float _fadeInCooldown_blink;
+	float _fadeOutCooldown_blink;
+	bool fading_blink;
+
+	float _r = 0;
+	float _g = 0;
+	float _b = 0;
+
+	float fadeInTime = 1.0f;
+	float fadeOutTime = 1.0f;
+
+	float r_blink = 2;
+	float g_blink = 2;
+	float b_blink = 2;
+
+
+	float blinkingTimer_Shield;
+	float blinkingTime_Shield;
+
+	float fadeInTime_Shield = 1.0f;
+	float fadeOutTime_Shield = 1.0f;
+
+	//float isBlinking_Shield;
+	float fading_blink_shield;
+	bool isFirstHitFrame;
 };
 

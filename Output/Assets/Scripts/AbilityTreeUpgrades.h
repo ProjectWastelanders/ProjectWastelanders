@@ -10,10 +10,17 @@
 class AbilityTreeUpgrades : HelloBehavior
 {
 public:
+    void Init() override;
     void Start() override;
     void Update() override;
 
+    void OnEnable() override;
+
+    void OnDisable() override;
+
     void UpgradeSkill();
+    void ShowBlockedImage();
+
     int upgradeCost;
 
     API_UIButton Upgrate1;
@@ -28,10 +35,16 @@ public:
     int skillPoints5;
     int upgradeNum;
 
+    API_GameObject upgradeHoldImages[5];
+
     API_UIInput mainPanel;
     API_UIInput currentPanel;
+    API_UIInput currentBoughtPanel;
 
+    API_GameObject blockedAbility;
 
+    API_UIButton boughtButtons[5];
+    API_UIButton nonBoughtButtons[5];
 
     int skillLevel;
     int treeIndex;
@@ -41,6 +54,8 @@ public:
 
     float manteinTime = 0.0f;
     int upgradingLevel;
+
+    bool isOn = false;
 
 };
 

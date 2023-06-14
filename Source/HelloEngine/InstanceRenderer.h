@@ -4,6 +4,13 @@
 #include "Shader.h"
 #include "ModuleResourceManager.h"
 
+
+struct ParticleAnimInfo
+{
+	float4 textOffsets;
+	float2 texInfo;
+};
+
 struct RenderEntry;
 /// <summary>
 /// This class manages the rendering process o a single MeshObject.
@@ -36,12 +43,16 @@ public:
 
 	void DrawInstancedSorting();
 
+	void DrawInstancedSortingAnimated();
+
 	void SetAs2D();
 	uint GetRenderID();
 
 public:
 	bool initialized = false;
 	bool isParticle = false;
+	bool isParticleAnimated = false;
+	bool sortedAndDrawn = false;
 	ResourceMesh* resource = nullptr;
 	ResourceMaterial* resMat = nullptr;
 	uint deletedResourceUID = 0;
@@ -53,6 +64,9 @@ private:
 	void DestroyDynamicBuffers();
 	void CreateDynamicBuffers();
 
+	void CreateDynamicBuffersParticles();
+	void DestroyDynamicBuffersParticles();
+
 private:
 
 	ResourceShader* instancedDepthShader = nullptr;
@@ -60,6 +74,7 @@ private:
 	ResourceShader* instancedShader = nullptr;
 	ResourceShader* perMeshShader = nullptr;
 	ResourceShader* mesh2DShader = nullptr;
+	ResourceShader* particleShader = nullptr;
 
 	std::map<uint, std::pair<uint, RenderEntry>> matMesh;
 	std::map<uint, RenderEntry> meshes;
@@ -67,6 +82,7 @@ private:
 	std::vector<uint>* totalIndices = nullptr;
 	std::vector<float4x4> modelMatrices;
 	std::vector<float> textureIDs;
+	std::vector<ParticleAnimInfo> particleAnimInfos;
 	std::multimap<float, Mesh*> orderedMeshes;
 
 	uint VAO = 0; // Vertex Array
@@ -74,6 +90,7 @@ private:
 	uint IBO = 0; // Elements buffer object
 	uint MBO = 0; // ModelMatrix buffer object
 	uint TBO = 0; // TextureID buffer object 
+	uint PBO = 0; // Particle Buffer object
 
 	// Buffers to be able to draw a single instance with an individual draw call.
 	uint BasicVAO = 0;
@@ -91,9 +108,12 @@ private:
 
 	bool is2D = false;
 
-	bool depthDraw = false;
+	bool depthDraw = true;
+
+	Application* _app = nullptr;
 
 	friend class RenderManager;
 	friend class MeshRenderComponent;
+	friend class Emitter;
 };
 

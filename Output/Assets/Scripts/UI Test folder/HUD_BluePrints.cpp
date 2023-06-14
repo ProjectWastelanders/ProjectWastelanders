@@ -4,6 +4,7 @@ HELLO_ENGINE_API_C HUD_BluePrints* CreateHUD_BluePrints(ScriptToInspectorInterfa
 {
 	HUD_BluePrints* classInstance = new HUD_BluePrints();
 	//Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
+	script->AddDragBoxUIImage("Reference_element", &classInstance->reference);
 	script->AddDragBoxUIImage("Image_Upgrade", &classInstance->material_upgrade);
 	script->AddDragBoxUIImage("Image_New_Weapon", &classInstance->material_new_weapon);
 	script->AddDragBoxUIImage("Image_Special_Weapon", &classInstance->material_special_weapon);
@@ -60,26 +61,25 @@ void HUD_BluePrints::Update()
 	{
 		timer_upgrade -= Time::GetDeltaTime();
 
-		if (timer_upgrade >= 0.0f)
-		{
-			if (material_upgrade.GetGameObject().GetTransform().GetLocalPosition().x > 0.92)
+		
+			if (material_upgrade.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x - 0.06)
 			{
 				material_upgrade.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-			if (text_upgrade.GetGameObject().GetTransform().GetLocalPosition().x > 0.81f)
+			if (text_upgrade.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x -0.17)
 			{
 				text_upgrade.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-			if (material_Background_1.GetGameObject().GetTransform().GetLocalPosition().x > 0.89f)
+			if (material_Background_1.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x - 0.1)
 			{
 				material_Background_1.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-		}
-		else if (timer_upgrade < 0.0f && timer_upgrade > -3.0f)
+		
+		else if (material_upgrade.GetGameObject().GetTransform().GetLocalPosition().x <= 0.94)
 		{
-		material_upgrade.SetOpacity(opacity_upgrade = opacity_upgrade - 0.003);
+		material_upgrade.SetOpacity(opacity_upgrade = opacity_upgrade - 0.005);
 		}
-		else
+		if (opacity_upgrade <= 0)
 		{
 			material_upgrade.GetGameObject().GetTransform().SetPosition(upgrade_position_save);
 			text_upgrade.GetGameObject().GetTransform().SetPosition(text_upgrade_position_save);
@@ -94,28 +94,24 @@ void HUD_BluePrints::Update()
 	{
 		timer_new -= Time::GetDeltaTime();
 
-		if (timer_new >= 0.0f)
-		{
-
-			if (material_new_weapon.GetGameObject().GetTransform().GetLocalPosition().x > 0.92)
+		if (material_new_weapon.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x - 0.06)
 			{
 				material_new_weapon.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-			if (text_new_weapon.GetGameObject().GetTransform().GetLocalPosition().x > 0.81f)
+			if (text_new_weapon.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x - 0.17)
 			{
 				text_new_weapon.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-			if (material_Background_2.GetGameObject().GetTransform().GetLocalPosition().x > 0.89f)
+			if (material_Background_2.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x - 0.1)
 			{
 				material_Background_2.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
 
-		}
-		else if (timer_new > -3.0f && timer_new < 0.0f)
+		else if (material_new_weapon.GetGameObject().GetTransform().GetLocalPosition().x <= 0.94)
 		{
-			material_new_weapon.SetOpacity(opacity_new_weapon = opacity_new_weapon - 0.003);
+			material_new_weapon.SetOpacity(opacity_new_weapon = opacity_new_weapon - 0.005);
 		}
-		else
+		if (opacity_new_weapon <= 0)
 		{
 			material_new_weapon.GetGameObject().GetTransform().SetPosition(new_weapon_position_save);
 			text_new_weapon.GetGameObject().GetTransform().SetPosition(text_new_weapon_position_save);
@@ -130,34 +126,31 @@ void HUD_BluePrints::Update()
 	{
 		timer_special -= Time::GetDeltaTime();
 
-		if (timer_special >= 0.0f)
-		{
-			if (material_special_weapon.GetGameObject().GetTransform().GetLocalPosition().x > 0.92)
+			if (material_special_weapon.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x -0.06)
 			{
 				material_special_weapon.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-			if (text_special_weapon.GetGameObject().GetTransform().GetLocalPosition().x > 0.81f)
+			if (text_special_weapon.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x -0.17 )
 			{
 				text_special_weapon.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-			if (material_Background_3.GetGameObject().GetTransform().GetLocalPosition().x > 0.89f)
+			if (material_Background_3.GetGameObject().GetTransform().GetGlobalPosition().x > reference.GetGameObject().GetTransform().GetGlobalPosition().x-0.1)
 			{
 				material_Background_3.GetGameObject().GetTransform().Translate(upgrade_movmentX);
 			}
-		}
-		else if ( timer_special < 0.0f && timer_special > -3.0f)
+		else if (material_special_weapon.GetGameObject().GetTransform().GetLocalPosition().x <= 0.94)
 		{
-			material_upgrade.SetOpacity(opacity_special_weapon = opacity_special_weapon - 0.01);
+				material_special_weapon.SetOpacity(opacity_special_weapon = opacity_special_weapon - 0.005);
 		
 		}
-		else
+		if (opacity_special_weapon <= 0)
 		{
 			material_special_weapon.GetGameObject().GetTransform().SetPosition(special_weapon_position_save);
 			text_special_weapon.GetGameObject().GetTransform().SetPosition(text_special_weapon_position_save);
 			material_Background_3.GetGameObject().GetTransform().SetPosition(Background_special_weapon_position_save);
 			timer_special = 1.8f;
 			opacity_special_weapon = 1;
-			material_upgrade.SetOpacity(opacity_special_weapon);
+			material_special_weapon.SetOpacity(opacity_special_weapon);
 		}
 	}
 }

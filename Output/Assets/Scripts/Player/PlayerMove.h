@@ -8,20 +8,17 @@
 #include "PlayerStats.h"
 
 class SwapWeapon;
+class PlayerStorage;
 
 class PlayerMove : HelloBehavior
 {
     enum class PlayerAnims
     {
         IDLE,
-        RUN_FORWARD,
-        RUN_BACK,
-        RUN_LEFT,
-        RUN_RIGHT,
+        RUN,
         DASH,
         SHOOT,
         SWAP_GUN,
-        HITTED,
         DEATH,
         OPEN_CHEST,
         JUMPER
@@ -34,9 +31,12 @@ public:
     bool Aim();
     API_Vector2 GetMoveInput();
     float Lerp(float a, float b, float time);
-    void DashSetup();
+    void DashSetup(bool isBuffered = false);
     void Dash();
     bool DashInput();
+    void StopPlayer();
+    bool onHUB = false;
+    bool dashTriggerIdle = true;
 
     void LookAt(API_Vector3 target);
 
@@ -55,6 +55,7 @@ public:
     API_Transform transform;
     API_RigidBody rigidBody;
     float moveSoundCooldown = 0.0f;
+    API_Vector2 bufferDashDirection = { 1.0f, 1.0f };
 
     //Void Tp
     API_Vector3 initialPos;
@@ -89,10 +90,7 @@ public:
     uint idle3Anim = 0;
     bool specialIdleActive = false;
     float specialIdleTime = 1.0f;
-    uint runForwardAnim = 0;
-    uint runBackAnim = 0;
-    uint runLeftAnim = 0;
-    uint runRightAnim = 0;
+    uint runAnim = 0;
     uint shootAnim[7];
     void PlayShootAnim(int gunIndex);
     bool isShooting = false;
@@ -100,8 +98,7 @@ public:
     void PlaySwapGunAnim(int animationIndex);
     void StopSwapGunAnim();
     bool isSwapingGun = false;
-    uint hittedAnim = 0;
-    void PlayHittedAnim();
+    void PlayIdleAnim();
     uint openChestAnim = 0;
     bool openingChest = false;
     void PlayOpenChestAnim();
@@ -116,9 +113,11 @@ public:
     API_ParticleSystem walkParticles;
     bool playingWalkParticles = false;
     API_ParticleSystem shootParticles;
+    API_ParticleSystem dashParticles;
 
     // skills
     API_GameObject playerStatsGO;
     PlayerStats* playerStats;
+    PlayerStorage* playerStorage;
 };
 

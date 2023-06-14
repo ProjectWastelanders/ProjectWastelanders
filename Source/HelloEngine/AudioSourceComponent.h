@@ -19,6 +19,8 @@ public:
 
 	void SetGameParameter(const char* paramName, float value);
 
+	void OnTransformCallback(float4x4 matrix) override;
+
 	bool IsPlaying() { return isPlaying; }
 	bool isPlaying = false;
 private:

@@ -26,7 +26,8 @@ void PlayerBurst::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("burst_level")); // read from save file
+    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("burst_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -99,7 +100,7 @@ void PlayerBurst::Update()
     }
 }
 
-void PlayerBurst::Shoot()
+bool PlayerBurst::Shoot()
 {
     if (canShoot)
     {
@@ -111,11 +112,15 @@ void PlayerBurst::Shoot()
         shotCount = 1;
         burstDelay = fullBurstDelay;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 
@@ -132,7 +137,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
     {
     case 0:
         projectileSpeed = 35.0f;
-        projectileDamage = 0.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 1.0f;
         cadence = 1.0f;
@@ -142,7 +147,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
         break;
     case 1:
         projectileSpeed = 35.0f;
-        projectileDamage = 0.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 1.0f;
         cadence = 1.0f;
@@ -152,7 +157,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
         break;
     case 2:
         projectileSpeed = 45.0f;
-        projectileDamage = 0.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 0.78f;
         cadence = 1.0f;
@@ -162,7 +167,7 @@ void PlayerBurst::SetGunStatsPerLevel(int level)
         break;
     case 3:
         projectileSpeed = 45.0f;
-        projectileDamage = 0.0f;
+        projectileDamage = 10.0f;
         projectileResistanceDamage = 0.0f;
         projectileLifetime = 0.78f;
         cadence = 1.0f;

@@ -27,6 +27,8 @@ public:
     int currentBombNum = 0;
     API_GameObject bomb;
     uint textureBomb[6];
+    API_GameObject bombParticles[10];
+    API_GameObject GetFirstInactiveBombParticle();
     int shotgunLevel;
 
     // burn
@@ -35,5 +37,7 @@ public:
     float resetBurn;
 
     int phase = 0;
+
+    float audioTimer = 0.0f;
 };
 

@@ -118,3 +118,19 @@ bool P_ConeShape::IsInside(float3 position)
 
 	return true;
 }
+
+void P_ConeShape::Serialization(json& j)
+{
+	j["ParticleModules"]["ShapeModule"]["Radius"] = radius;
+	j["ParticleModules"]["ShapeModule"]["Height"] = height;
+	j["ParticleModules"]["ShapeModule"]["Direction"] = dir;
+	j["ParticleModules"]["ShapeModule"]["Invert"] = invert;
+}
+
+void P_ConeShape::DeSerialization(json& j)
+{
+	radius = j["ParticleModules"]["ShapeModule"]["Radius"];
+	height = j["ParticleModules"]["ShapeModule"]["Height"];
+	dir = j["ParticleModules"]["ShapeModule"]["Direction"];
+	invert = j["ParticleModules"]["ShapeModule"]["Invert"];
+}

@@ -1,0 +1,363 @@
+[
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Root",
+        "ParentUID": 0,
+        "PrefabUID": 0,
+        "Tag": "None",
+        "UID": 967070101,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "Active camera": true,
+                "Active culling": true,
+                "Aspect ratio": 1.779411792755127,
+                "Enabled": true,
+                "FOV": 60.0,
+                "Far plane": 1000.0,
+                "Frustum type": 2,
+                "Near plane": 0.009999999776482582,
+                "Orthographic size": 10.0,
+                "Type": 4
+            },
+            {
+                "Enabled": true,
+                "Inspector Fields": [
+                    {
+                        "Credits": 599707945
+                    },
+                    {
+                        "cinematic4": 3847624791
+                    },
+                    {
+                        "cinematic5": 3574758497
+                    },
+                    {
+                        "AudioCredits": 4268776523
+                    },
+                    {
+                        "audio4": 459299299
+                    },
+                    {
+                        "audio5": 844976959
+                    }
+                ],
+                "Script Resource": 2622906946,
+                "Type": 5
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Empty",
+        "ParentUID": 967070101,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 2214123703,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Canvas",
+        "ParentUID": 967070101,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 2152813467,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    -0.8999999761581421
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 29.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 596406815
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Cinematic4",
+        "ParentUID": 2152813467,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3847624791,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 70.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 772560548
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Credits",
+        "ParentUID": 2152813467,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 599707945,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": false,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "Type": 1
+            },
+            {
+                "Enabled": true,
+                "FramesPerSecond": 29.0,
+                "MeshEnabled": true,
+                "Type": 24,
+                "VideoResource": 3075549914
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Cinematic5",
+        "ParentUID": 2152813467,
+        "PrefabUID": 0,
+        "Tag": "UI",
+        "UID": 3574758497,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AudioEvent": "cinematic_4",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Audio4",
+        "ParentUID": 2152813467,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 459299299,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AudioEvent": "credits",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "AudioCredits",
+        "ParentUID": 2152813467,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 4268776523,
+        "UpdateWithBones": false
+    },
+    {
+        "Active": true,
+        "Components": [
+            {
+                "Enabled": true,
+                "Position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "Scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "Type": 1
+            },
+            {
+                "AudioEvent": "cinematic_5",
+                "Enabled": true,
+                "Type": 25
+            }
+        ],
+        "FirstOnPrefab": true,
+        "IsStatic": false,
+        "Name": "Audio5",
+        "ParentUID": 2152813467,
+        "PrefabUID": 0,
+        "Tag": "Default",
+        "UID": 844976959,
+        "UpdateWithBones": false
+    }
+]

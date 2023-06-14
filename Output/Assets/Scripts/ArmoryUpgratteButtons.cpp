@@ -20,6 +20,11 @@ HELLO_ENGINE_API_C ArmoryUpgratteButtons* CreateArmoryUpgratteButtons(ScriptToIn
 
 void ArmoryUpgratteButtons::Start()
 {
+    // Get hold images from the 3 upgrade buttons
+    Upgrate1.GetGameObject().GetChildren(&upgradeHoldImages[0], 1);
+    Upgrate2.GetGameObject().GetChildren(&upgradeHoldImages[1], 1);
+    Upgrate3.GetGameObject().GetChildren(&upgradeHoldImages[2], 1);
+
     switch (gunIndex)
     {
     case 0:
@@ -56,6 +61,10 @@ void ArmoryUpgratteButtons::Start()
 
 void ArmoryUpgratteButtons::Update()
 {
+    upgradeHoldImages[0].SetActive(!Upgrate1.getIsBlocked());
+    upgradeHoldImages[1].SetActive(!Upgrate2.getIsBlocked());
+    upgradeHoldImages[2].SetActive(!Upgrate3.getIsBlocked());
+
     if (Input::GetGamePadButton(GamePadButton::BUTTON_B) == KeyState::KEY_DOWN && PanelUpgrate.IsEnabled())
     {
         Audio::Event("click");

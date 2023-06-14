@@ -36,8 +36,12 @@ public:
 	SDL_GLContext context;
 	static bool isVSync;
 	static bool drawNavMesh;
+	bool hasMaxRenderDistance = true;
+	bool hasMaxRenderDistanceOnInspector = false;
 	bool isRenderingColliders;
 	bool hasShadows = false;
+
+	float maxRenderDistance = 8000.0f;
 
 private:
 	void ShadowRenderPass();

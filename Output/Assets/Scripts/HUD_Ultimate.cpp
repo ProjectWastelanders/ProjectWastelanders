@@ -3,31 +3,28 @@ HELLO_ENGINE_API_C HUD_Ultimate* CreateHUD_Ultimate(ScriptToInspectorInterface* 
 {
     HUD_Ultimate* classInstance = new HUD_Ultimate();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
-    script->AddDragBoxGameObject("Disable_Ultimate_HUD", &classInstance->HudActive);
-    script->AddDragBoxGameObject("Active_Ultimate_HUD", &classInstance->HudDisactive);
-    //
+    script->AddDragBoxUIImage("Ultimate_HUD_On", &classInstance->hudActive);
+
+    script->AddDragBoxGameObject("Player",&classInstance->playerUltimate_GO);
+     
     return classInstance;
 }
 
 void HUD_Ultimate::Start()
 {
-    HudDisactive.SetActive(false);
-    HudActive.SetActive(true);
+
+    playerUltimate = (PlayerStats*)playerUltimate_GO.GetScript("PlayerStats");
+    if (playerUltimate == nullptr) Console::Log("Missing PlayerStats on HUD_Ultimate Script.");
+
+   //HudActive.SetActive(true);
 }
 void HUD_Ultimate::Update()
 {
-    HUD_Ultimate_Active(UltimateAvaliable);
+    if (playerUltimate)
+        HUD_Ultimate_Active(playerUltimate->ultPercentage / 100); 
 }
 
-void HUD_Ultimate::HUD_Ultimate_Active(bool IsActive)
+void HUD_Ultimate::HUD_Ultimate_Active(float IsActive)
 {
-    if (IsActive == true)
-    {
-        HudDisactive.SetActive(true);
-        HudActive.SetActive(false);
-    }
-    else {
-        HudDisactive.SetActive(false);
-        HudActive.SetActive(true);
-    }
+    hudActive.FillImage(IsActive);
 }

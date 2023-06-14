@@ -11,44 +11,43 @@ class PlayerMove;
 class Weapon_Select : HelloBehavior
 {
 public:
-	void Start() override; 
-	void Update() override;
+    void Start() override;
+    void Update() override;
 
-	API_UIButton weapon1;
-	API_UIButton weapon2;
-	API_UIButton weapon3;
-	API_UIButton weapon4;
-	API_UIButton proceedButton;
+    API_UIButton weapons[4];
 
-	API_UIImage infoWeapon;
-	API_UIImage weaponImage;
+    API_UIButton proceedButton;
 
-	API_UIInput weaponSelectPanel;
-	API_UIInput proceedPanel;
+    API_UIImage infoWeapon;
+    API_UIImage weaponImage;
 
-	API_String scene;
+    API_UIInput weaponSelectPanel;
+    API_UIInput proceedPanel;
 
-	uint info1;
-	uint info2;
-	uint info3;
-	uint info4;
+    API_String scene;
 
-	uint weaponImage1;
-	uint weaponImage2;
-	uint weaponImage3;
-	uint weaponImage4;
+    uint info1;
+    uint info2;
+    uint info3;
+    uint info4;
 
-	bool isPress;
-	bool inOpen;
-	bool onProceed;
-	bool firstTime;
-	bool firstTimeLevel;
-	int indexLevles;
+    uint weaponImage1;
+    uint weaponImage2;
+    uint weaponImage3;
+    uint weaponImage4;
 
-	API_GameObject interruptorGO;
-	OpenMenuInterruptor* interruptor;
+    bool isPress;
+    bool inOpen;
+    bool onProceed;
+    bool firstTime;
+    bool firstTimeLevel;
+    int indexLevles;
 
-	API_GameObject playerGO;
-	PlayerMove* playerMove;
+    API_GameObject interruptorGO;
+
+    API_GameObject playerGO;
+    PlayerMove* playerMove;
+
+    void ResetQuickSaveValues(int levelIndex);
 };
 

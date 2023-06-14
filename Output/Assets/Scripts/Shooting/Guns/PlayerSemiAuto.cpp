@@ -24,7 +24,8 @@ void PlayerSemiAuto::Start()
 {
     playerStats = (PlayerStats*)player.GetScript("PlayerStats");
 
-    SetGunStatsPerLevel(API_QuickSave::GetInt("semiauto_level")); // read from save file
+    pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
+    if (!pull->testing) SetGunStatsPerLevel(API_QuickSave::GetInt("semiauto_level")); // read from save file
 
     if (cadence == 0)
     {
@@ -78,7 +79,7 @@ void PlayerSemiAuto::Update()
     }
 }
 
-void PlayerSemiAuto::Shoot()
+bool PlayerSemiAuto::Shoot()
 {
     if (canShoot)
     {
@@ -90,11 +91,15 @@ void PlayerSemiAuto::Shoot()
         if (playerStats->fireratePowerUp) shotCooldown = fullShotCooldownWithPowerUp;
         else shotCooldown = fullShotCooldown;
         playerStats->UseAmmo(ammoType);
+
+        return true;
     }
     else
     {
         shotBuffer = true;
         shotBufferCooldown = SHOT_BUFFER;
+
+        return false;
     }
 }
 
@@ -112,7 +117,7 @@ void PlayerSemiAuto::SetGunStatsPerLevel(int level)
         projectileSpeed = 80.0f;
         projectileDamageWithoutCrit = 60.0f;
         projectileResistanceDamage = 60.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.3f;
         cadence = 1.0f;
         canCrit = false;
         break;
@@ -120,7 +125,7 @@ void PlayerSemiAuto::SetGunStatsPerLevel(int level)
         projectileSpeed = 80.0f;
         projectileDamageWithoutCrit = 70.0f;
         projectileResistanceDamage = 70.0f;
-        projectileLifetime = 0.5f;
+        projectileLifetime = 0.3f;
         cadence = 1.0f;
         canCrit = false;
         break;
@@ -128,7 +133,7 @@ void PlayerSemiAuto::SetGunStatsPerLevel(int level)
         projectileSpeed = 100.0f;
         projectileDamageWithoutCrit = 70.0f;
         projectileResistanceDamage = 70.0f;
-        projectileLifetime = 0.4f;
+        projectileLifetime = 0.3f;
         cadence = 1.0f;
         canCrit = false;
         break;
@@ -136,7 +141,7 @@ void PlayerSemiAuto::SetGunStatsPerLevel(int level)
         projectileSpeed = 100.0f;
         projectileDamageWithoutCrit = 70.0f;
         projectileResistanceDamage = 70.0f;
-        projectileLifetime = 0.4f;
+        projectileLifetime = 0.3f;
         cadence = 1.0f;
         canCrit = true;
         break;

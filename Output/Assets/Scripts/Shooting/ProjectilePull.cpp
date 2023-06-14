@@ -8,8 +8,12 @@ HELLO_ENGINE_API_C ProjectilePull* CreateProjectilePull(ScriptToInspectorInterfa
     ProjectilePull* classInstance = new ProjectilePull();
     //Show variables inside the inspector using script->AddDragInt("variableName", &classInstance->variable);
     script->AddDragBoxGameObject("Player", &classInstance->playerGO);
-    script->AddDragInt("Pull Size", &classInstance->pullSize);
-    script->AddDragBoxPrefabResource("Projectile Prefab", &classInstance->projectilePrefab);
+    script->AddDragInt("Duals Pull Size", &classInstance->dualsPullSize);
+    script->AddDragInt("Normals Pull Size", &classInstance->normalsPullSize);
+    script->AddDragInt("Ricochet Pull Size", &classInstance->ricochetPullSize);
+    script->AddDragBoxPrefabResource("Duals Projectile Prefab", &classInstance->projectilePrefabDuals);
+    script->AddDragBoxPrefabResource("Normals Projectile Prefab", &classInstance->projectilePrefabNormals);
+    script->AddDragBoxPrefabResource("Ricochet Projectile Prefab", &classInstance->projectilePrefabRicochet);
     script->AddDragInt("Shotgun Bomb Pull Size", &classInstance->shotgunBombPullSize);
     script->AddDragBoxPrefabResource("Shotgun Bomb Prefab", &classInstance->shotgunBombPrefab);
     script->AddDragBoxPrefabResource("Check Ricochet Traget Prefab", &classInstance->checkRicochetTargetsPrefab);
@@ -19,6 +23,7 @@ HELLO_ENGINE_API_C ProjectilePull* CreateProjectilePull(ScriptToInspectorInterfa
     script->AddDragBoxTextureResource("Burst Projectile Texture", &classInstance->burstTex);
     script->AddDragBoxTextureResource("Shotgun Projectile Texture", &classInstance->shotgunTex);
     script->AddDragBoxTextureResource("Ricochet Projectile Texture", &classInstance->ricochetTex);
+    script->AddCheckBox("Testing", &classInstance->testing);
     return classInstance;
 }
 
@@ -31,23 +36,37 @@ void ProjectilePull::Start()
 
     automaticLevel = API_QuickSave::GetInt("automatic_level");
 
-    for (size_t i = 0; i < pullSize; i++)
+    for (size_t i = 0; i < dualsPullSize; i++)
     {
-        API_GameObject newProjectile = Game::InstancePrefab(projectilePrefab, API_GameObject());
+        API_GameObject newProjectile = Game::InstancePrefab(projectilePrefabDuals, API_GameObject());
         Projectile* projectileScript = (Projectile*)newProjectile.GetScript("Projectile");
+        if (projectileScript == nullptr)
+            break;
+        projectileScript->Start();
         projectileScript->pull = this;
-        pull.push_back(newProjectile);
+        pullDuals.push_back(newProjectile);
     }
 
-    for (size_t i = 0; i < shotgunBombPullSize; i++)
+    for (size_t i = 0; i < normalsPullSize; i++)
     {
-        API_GameObject newBomb = Game::InstancePrefab(shotgunBombPrefab, API_GameObject());
-        ShotgunBomb* bombScript = (ShotgunBomb*)newBomb.GetScript("ShotgunBomb");
-        API_GameObject explosion[1];
-        newBomb.GetChildren(explosion);
-        bombScript->explosion = (ShotgunBombExplosion*)explosion->GetScript("ShotgunBombExplosion");
-        bombScript->explosion->shotgunBomb = newBomb;
-        shotgunBombPull.push_back(newBomb);
+        API_GameObject newProjectile = Game::InstancePrefab(projectilePrefabNormals, API_GameObject());
+        Projectile* projectileScript = (Projectile*)newProjectile.GetScript("Projectile");
+        if (projectileScript == nullptr)
+            break;
+        projectileScript->Start();
+        projectileScript->pull = this;
+        pullNormals.push_back(newProjectile);
+    }
+
+    for (size_t i = 0; i < ricochetPullSize; i++)
+    {
+        API_GameObject newProjectile = Game::InstancePrefab(projectilePrefabRicochet, API_GameObject());
+        Projectile* projectileScript = (Projectile*)newProjectile.GetScript("Projectile");
+        if (projectileScript == nullptr)
+            break;
+        projectileScript->Start();
+        projectileScript->pull = this;
+        pullRicochet.push_back(newProjectile);
     }
 
     ricochetDetector = Game::InstancePrefab(checkRicochetTargetsPrefab, API_GameObject());
@@ -74,14 +93,34 @@ void ProjectilePull::Update()
     if (autoForce < 0.0f) autoForce = 0.0f;
 }
 
-API_GameObject ProjectilePull::GetFirstInactiveProjectile()
+API_GameObject ProjectilePull::GetFirstInactiveDualProjectile()
 {
-    for (size_t i = 0; i < pullSize; i++)
+    for (size_t i = 0; i < dualsPullSize; i++)
     {
-        if (!pull[i].IsActive()) return pull[i];
+        if (!pullDuals[i].IsActive()) return pullDuals[i];
     }
 
-    return pull[0];
+    return pullDuals[0];
+}
+
+API_GameObject ProjectilePull::GetFirstInactiveNormalProjectile()
+{
+    for (size_t i = 0; i < normalsPullSize; i++)
+    {
+        if (!pullNormals[i].IsActive()) return pullNormals[i];
+    }
+
+    return pullNormals[0];
+}
+
+API_GameObject ProjectilePull::GetFirstInactiveRicochetProjectile()
+{
+    for (size_t i = 0; i <ricochetPullSize; i++)
+    {
+        if (!pullRicochet[i].IsActive()) return pullRicochet[i];
+    }
+
+    return pullRicochet[0];
 }
 
 API_GameObject ProjectilePull::GetFirstInactiveShotgunBomb()
@@ -96,7 +135,17 @@ API_GameObject ProjectilePull::GetFirstInactiveShotgunBomb()
 
 void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, PROJECTILE_ACTION projectileAction)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+
+    for (size_t i = 0; i < dualsPullSize; i++)
+    {
+        if (pullDuals[i].IsActive())
+            continue;
+
+        pullDuals[i].GetParticleSystem().SetRotation(API_Vector3(0.0f, 0.0f, playerGO.GetTransform().GetLocalRotation().y + 90));
+
+    }
+
+    API_GameObject go = GetFirstInactiveDualProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -104,6 +153,7 @@ void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projecti
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(dualsTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
+    go.GetParticleSystem().Play();
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -117,7 +167,7 @@ void ProjectilePull::LauchProjectileNORMAL(float projectileSpeed, float projecti
 
 void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveNormalProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -125,6 +175,7 @@ void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectile
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
+    go.GetParticleSystem().Play();
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -137,7 +188,7 @@ void ProjectilePull::LauchProjectileSEMI(float projectileSpeed, float projectile
 
 void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, float rotateY, uint ignoreGO)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveNormalProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -146,6 +197,7 @@ void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float 
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(semiTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
+    go.GetParticleSystem().Play();
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -158,7 +210,7 @@ void ProjectilePull::LauchProjectileSECONDARY_SEMI(float projectileSpeed, float 
 
 void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveNormalProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -166,11 +218,12 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(autoTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
+    go.GetParticleSystem().Play();
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
     projectile->damage = projectileDamage + (autoForce * 1.5f);
-    projectile->resistanceDamage = projectileResistanceDamage + (autoForce * 4.8f);
+    projectile->resistanceDamage = projectileResistanceDamage + (autoForce * 1.5f);
     projectile->lifeTime = projectileLifetime;
     projectile->type = PROJECTILE_TYPE::AUTO;
     projectile->ignoreGO = 0;
@@ -178,16 +231,16 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
     switch (automaticLevel)
     {
     case 0:
-        if (autoForce <= 6.0f) autoForce += 0.1f;
+        if (autoForce <= 8.0f) autoForce += 0.1f;
         break;
     case 1:
-        if (autoForce <= 6.0f) autoForce += 0.1f;
+        if (autoForce <= 8.0f) autoForce += 0.1f;
         break;
     case 2:
-        if (autoForce <= 9.0f) autoForce += 0.15f;
+        if (autoForce <= 12.0f) autoForce += 0.15f;
         break;
     case 3:
-        if (autoForce <= 9.0f) autoForce += 0.225f;
+        if (autoForce <= 12.0f) autoForce += 0.225f;
         break;
     default:
         break;
@@ -197,7 +250,7 @@ void ProjectilePull::LauchProjectileAUTO(float projectileSpeed, float projectile
 
 void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveNormalProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -205,6 +258,7 @@ void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectil
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(burstTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
+    go.GetParticleSystem().Play();
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;
@@ -217,7 +271,7 @@ void ProjectilePull::LauchProjectileBURST(float projectileSpeed, float projectil
 
 void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, float randomDirectionRange)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveNormalProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -225,6 +279,7 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(shotgunTex);
     go.GetRigidBody().SetBoxScale({ 0.3f, 0.3f, 0.3f });
+    go.GetParticleSystem().Play();
 
     if (randomDirectionRange > 0.0f)
     {
@@ -244,25 +299,27 @@ void ProjectilePull::LauchProjectileSHOTGUN(float projectileSpeed, float project
 
 void ProjectilePull::LauchProjectileSHOTGUN_BOMB(float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale, uint ignoreGO)
 {
-    API_GameObject go = GetFirstInactiveShotgunBomb();
-    go.SetActive(true);
-    go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
-    go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
-    go.GetTransform().SetScale(projectileScale);
-    go.GetMeshRenderer().SetActive(true);
+    //API_GameObject go = GetFirstInactiveShotgunBomb();
+    //go.SetActive(true);
+    //go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
+    //go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
+    //go.GetTransform().SetScale(projectileScale);
+    //go.GetMeshRenderer().SetActive(true);
+    ////go.GetMeshRenderer().ChangeMesh(normalMesh);
+    //go.GetParticleSystem().Play();
 
-    float offsetY = rand() % 360;
-    go.GetTransform().Rotate(0, offsetY, 0);
+    //float offsetY = rand() % 360;
+    //go.GetTransform().Rotate(0, offsetY, 0);
 
-    ShotgunBomb* bomb = (ShotgunBomb*)go.GetScript("ShotgunBomb");
-    bomb->lifeTime = projectileLifetime;
-    bomb->ResetExposion();
-    bomb->ignoreGO = ignoreGO;
+    //ShotgunBomb* bomb = (ShotgunBomb*)go.GetScript("ShotgunBomb");
+    //bomb->lifeTime = projectileLifetime;
+    //bomb->ResetExposion();
+    //bomb->ignoreGO = ignoreGO;
 }
 
 void ProjectilePull::LauchProjectileFLAMETHROWER(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveNormalProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -280,7 +337,7 @@ void ProjectilePull::LauchProjectileFLAMETHROWER(float projectileSpeed, float pr
 
 void ProjectilePull::LauchProjectileRICOCHET(float projectileSpeed, float projectileDamage, float projectileResistanceDamage, float projectileLifetime, API_Transform shootingSpawn, API_Vector3 projectileScale)
 {
-    API_GameObject go = GetFirstInactiveProjectile();
+    API_GameObject go = GetFirstInactiveRicochetProjectile();
     go.SetActive(true);
     go.GetTransform().SetPosition(shootingSpawn.GetGlobalPosition());
     go.GetTransform().SetRotation(playerGO.GetTransform().GetGlobalRotation());
@@ -288,6 +345,7 @@ void ProjectilePull::LauchProjectileRICOCHET(float projectileSpeed, float projec
     go.GetMeshRenderer().SetActive(true);
     go.GetMaterialCompoennt().ChangeAlbedoTexture(ricochetTex);
     go.GetRigidBody().SetBoxScale({ 0.5f, 0.5f, 0.5f });
+    go.GetParticleSystem().Play();
 
     Projectile* projectile = (Projectile*)go.GetScript("Projectile");
     projectile->speed = projectileSpeed;

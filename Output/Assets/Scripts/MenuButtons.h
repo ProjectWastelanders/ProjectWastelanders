@@ -5,15 +5,29 @@
 
 #include "API/API.h"
 
+class PlayCreditsMainMenu;
+
 class MenuButtons : HelloBehavior
 {
 public:
+	void Init() override;
 	void Start() override;
 	void Update() override;
+
 	API_UIButton Continue;
 	API_UIButton NewGame;
 	API_UIButton Exit;
-	API_UIButton Collectibles;
 	API_UIButton Settings;
+	API_UIButton Credits;
+
+	API_GameObject settingsPanel;
+	API_UIInput mainPanel;
+
+	bool settingsActive;
+	bool shouldActivate = false;
+
+	string goLevel;
+
+	PlayCreditsMainMenu* credits;
 };
 

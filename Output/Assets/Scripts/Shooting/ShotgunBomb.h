@@ -18,6 +18,8 @@ public:
     void Destroy();
     void ResetExposion();
 
+    API_RigidBody rb;
+
     float speed = 10.0f;
     float lifeTime = 5.0f;
 

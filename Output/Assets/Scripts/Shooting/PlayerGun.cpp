@@ -30,9 +30,9 @@ void PlayerGun::Update()
 
 }
 
-void PlayerGun::Shoot()
+bool PlayerGun::Shoot()
 {
-
+    return false;
 }
 
 void PlayerGun::EnableGuns(bool enable)
@@ -47,7 +47,6 @@ void PlayerGun::SetGunStatsPerLevel(int level)
 
 void PlayerGun::LauchProjectile(API_Transform projectileSpawn, PROJECTILE_TYPE type, PROJECTILE_ACTION projectileAction, float randomDirectionRange)
 {
-    ProjectilePull* pull = (ProjectilePull*)projectilePull.GetScript("ProjectilePull");
     if (pull == nullptr)
     {
         Console::Log("ProjectilePull not asigned");

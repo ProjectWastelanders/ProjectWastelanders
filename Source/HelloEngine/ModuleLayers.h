@@ -51,6 +51,8 @@ public:
 
 	static void RequestReimportAllScenes(std::vector<std::string>& scenes);
 
+	static void RemoveRigidBody(uint gameObjectUID);
+
 public:
 	static LayerGame* game;
 	static LayerEditor* editor;
@@ -61,6 +63,7 @@ public:
 	static std::map<uint, GameObject*> gameObjects;
 
 	static std::map<uint, API::API_GameObject*> apiGameObjects;
+	static std::map<uint, API::API_RigidBody*> apiRigidBodies;
 
 	// Empty API_Components to return in case you try to access the component of an unexisting game object.
 	static API::API_GameObject* emptyAPIGameObject;

@@ -208,6 +208,14 @@ void ModuleInput::S_ClearOnDropListener()
 	_dropEvent = nullptr;
 }
 
+void ModuleInput::S_ResetFrameInput()
+{
+	for (int i = 0; i < MAX_CONTROLLER_BUTTONS; ++i)
+	{
+		gamePadButtons[i] = KEY_STATE::KEY_IDLE;
+	}
+}
+
 void ModuleInput::OpenController()
 {
 	maxGamePads = SDL_NumJoysticks();
